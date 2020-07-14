@@ -19,9 +19,9 @@ class CreateRoomsTable extends Migration
             $table->string('description');
             $table->boolean('limited')->default(true);
             $table->integer('peoples')->nullable();
-            $table->string('exibitor_name');
-            $table->string('exibitor_profession');
-            $table->string('exibitor_company');
+            $table->string('exhibitor_name');
+            $table->string('exhibitor_profession');
+            $table->string('exhibitor_company');
             $table->dateTime('start_time');
             $table->dateTime('end_time');
             $table->string('country');

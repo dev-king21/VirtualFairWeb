@@ -17,6 +17,7 @@ class CreateTalksTable extends Migration
             $table->id();
             $table->integer("room_id");
             $table->date("talk_date");
+            $table->date("video")->nullable();
             $table->timestamps();
         });
     }

@@ -18,6 +18,7 @@ class CreateStandsTable extends Migration
             $table->integer("fair_id");
             $table->integer("user_id");
             $table->string("site_link");
+            $table->string("logo");
             $table->text("description");
             $table->timestamps();
         });

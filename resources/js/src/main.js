@@ -36,8 +36,8 @@ import '@/firebase/firebaseConfig'
 
 
 // Auth0 Plugin
-import AuthPlugin from './plugins/auth'
-Vue.use(AuthPlugin)
+// import AuthPlugin from './plugins/auth'
+// Vue.use(AuthPlugin)
 
 
 // ACL

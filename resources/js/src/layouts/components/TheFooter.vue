@@ -27,6 +27,17 @@ export default {
     classes: {
       type: String
     }
+<<<<<<< HEAD
   }
+=======
+  },
+  // inject: {
+  //   components:{
+  //     default: {
+  //       BuyNow
+  //     }
+  //   }
+  // }
+>>>>>>> parent of 483d12f... auth service remove
 }
 </script>
