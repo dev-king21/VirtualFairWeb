@@ -27,10 +27,7 @@ export default {
     classes: {
       type: String
     }
-<<<<<<< HEAD
   }
-=======
-  },
   // inject: {
   //   components:{
   //     default: {
@@ -38,6 +35,5 @@ export default {
   //     }
   //   }
   // }
->>>>>>> parent of 483d12f... auth service remove
 }
 </script>
