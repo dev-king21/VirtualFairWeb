@@ -2,11 +2,7 @@
   File Name: TheCustomizer.vue
   Description: Template Customizer
   Component Name: TheCustomizer
-  ----------------------------------------------------------------------------------------
-  
-    Author: Pixinvent
-  
-
+========================================================================================= -->
 
 <template>
   <div id="theme-customizer">

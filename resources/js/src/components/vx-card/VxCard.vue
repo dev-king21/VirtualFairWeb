@@ -2,9 +2,7 @@
     File Name: VxCard.vue
     Description: Card Component
     Component Name: VxCard
-    
-    
-
+========================================================================================= -->    
 
  <template>
     <div class="vx-card" ref="card" :class="[

@@ -2,12 +2,7 @@
   File Name: VerticalNavMenu.vue
   Description: Vertical NavMenu Component
   Component Name: VerticalNavMenu
-  ----------------------------------------------------------------------------------------
-  
-    Author: Pixinvent
-  
-
-
+========================================================================================= -->
 
 <template>
   <div class="parentx">
