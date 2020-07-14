@@ -1,12 +1,3 @@
-<!-- =========================================================================================
-    File Name: VxBreadcrumb.vue
-    Description: Breadcrumb component
-    Component Name: VxBreadcrumb
-    
-    
-
-
-
 <template>
     <div class="vx-breadcrumb">
         <ul class="flex flex-wrap items-center">

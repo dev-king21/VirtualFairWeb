@@ -1,10 +1,3 @@
-<!-- =========================================================================================
-    File Name: TheFooter.vue
-    Description: Footer component
-    Component Name: TheFooter
-========================================================================================== -->
-
-
 <template functional>
     <footer class="the-footer flex-wrap justify-between" :class="classes">
         <p>

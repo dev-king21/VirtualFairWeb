@@ -1,10 +1,3 @@
-<!-- =========================================================================================
-    File Name: StatisticsCard.vue
-    Description: Statistics card component
-    
-    
-
-
 <template>
     <vx-card class="overflow-hidden">
         <div slot="no-body">

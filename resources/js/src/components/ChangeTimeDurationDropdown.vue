@@ -1,12 +1,3 @@
-    <!-- =========================================================================================
-    File Name: ChangeTimeDurationDropdown.vue
-    Description: Change duration dropdown component
-    
-    
-
-
-<!-- :class="data.class" -->
-
 <template functional>
     <vs-dropdown vs-trigger-click class="cursor-pointer" :class="data.staticClass">
         <small class="flex cursor-pointer">

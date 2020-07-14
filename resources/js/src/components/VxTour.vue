@@ -1,10 +1,3 @@
-<!-- =========================================================================================
-    File Name: VxTour.vue
-    Description: Tour Component
-    
-    
-
-
 <template>
     <v-tour name="vuexyTour" :steps="steps">
         <template slot-scope="tour">

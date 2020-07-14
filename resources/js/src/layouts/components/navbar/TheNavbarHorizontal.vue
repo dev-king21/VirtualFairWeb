@@ -2,12 +2,7 @@
   File Name: TheNavbar.vue
   Description: Navbar component
   Component Name: TheNavbar
-  ----------------------------------------------------------------------------------------
-  
-  Author: Pixinvent
-  
-
-
+========================================================================================= -->
 
 <template>
 <div class="relative">
