@@ -1,11 +1,9 @@
 <!-- =========================================================================================
     File Name: MailItem.vue
     Description: Mail Item - Displays mail item
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+    
+
 
 <template>
     <div class="mail__mail-item sm:px-4 px-2 py-6" :class="{'mail__opened-mail': !mail.unread}">

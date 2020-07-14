@@ -1,11 +1,9 @@
 <!-- =========================================================================================
     File Name: SelectAutocomplete.vue
     Description: Select element with autocomplete
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+    
+
 
 
 <template>

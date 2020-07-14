@@ -1,11 +1,9 @@
 <!-- =========================================================================================
     File Name: Error404.vue
     Description: 404 Page
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+    
+
 
 
 <template>

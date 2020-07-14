@@ -1,11 +1,9 @@
 <!-- =========================================================================================
     File Name: NavbarDefault.vue
     Description: Rendering of default Navbar
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+    
+
 
 
 <template>

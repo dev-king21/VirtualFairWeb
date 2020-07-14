@@ -3,10 +3,10 @@
   Description: Template Customizer
   Component Name: TheCustomizer
   ----------------------------------------------------------------------------------------
-  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  
     Author: Pixinvent
-  Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+  
+
 
 <template>
   <div id="theme-customizer">

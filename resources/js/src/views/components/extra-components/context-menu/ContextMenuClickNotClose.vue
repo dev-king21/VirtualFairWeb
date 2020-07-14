@@ -2,10 +2,10 @@
   File Name: ContextMenuClickNotClose.vue
   Description: Click not close on click of context item
   ----------------------------------------------------------------------------------------
-  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  
   Author: Pixinvent
-  Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+  
+
 
 <template>
   <vx-card title="Click Not Close" code-toggler>

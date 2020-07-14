@@ -1,11 +1,9 @@
 <!-- =========================================================================================
     File Name: DatepickerHighlightDates.vue
     Description: Highlight dates in datepicker with function
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+    
+
 
 
 <template>

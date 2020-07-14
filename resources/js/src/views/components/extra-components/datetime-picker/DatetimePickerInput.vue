@@ -2,10 +2,10 @@
     File Name: DatetimePickerInput.vue
     Description: allow input in datetime picker
     ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+    
     Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+
 
 
 <template>

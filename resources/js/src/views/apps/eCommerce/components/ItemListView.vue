@@ -1,11 +1,9 @@
 <!-- =========================================================================================
     File Name: ItemListView.vue
     Description: Item Component - List VIew
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+    
+
 
 <template>
     <vx-card class="list-view-item overflow-hidden" v-on="$listeners">

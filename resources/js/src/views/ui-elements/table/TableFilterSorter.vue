@@ -1,11 +1,9 @@
 <!-- =========================================================================================
     File Name: tableFilterSorter.vue
     Description: Add filter and sorting functionality to table
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+    
+
 
 
 <template>

@@ -2,11 +2,9 @@
     File Name: TailwindAddMoreColors.vue
     Description: Add more colors to theme using tailwind
     Note: You can't use this colors in props
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+    
+
 
 
 <template>

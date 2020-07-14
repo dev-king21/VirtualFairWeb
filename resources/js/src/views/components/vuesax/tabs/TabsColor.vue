@@ -1,11 +1,9 @@
 <!-- =========================================================================================
     File Name: TabsColor.vue
     Description: Change color color of underline in tabs
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+    
+
 
 
 <template>

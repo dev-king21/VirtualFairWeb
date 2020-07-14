@@ -1,11 +1,9 @@
 <!-- =========================================================================================
     File Name: VxTour.vue
     Description: Tour Component
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+    
+
 
 <template>
     <v-tour name="vuexyTour" :steps="steps">

@@ -2,11 +2,9 @@
     File Name: VxCard.vue
     Description: Card Component
     Component Name: VxCard
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+    
+
 
  <template>
     <div class="vx-card" ref="card" :class="[

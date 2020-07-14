@@ -13,9 +13,9 @@
                 NOTE: Submenu don't have any icon(you can add icon if u want to display)
           isDisabled  => disable sidebar item/group
   ----------------------------------------------------------------------------------------
-  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  
   Author: Pixinvent
-  Author URL: http://www.themeforest.net/user/pixinvent
+  
 ==========================================================================================*/
 
 

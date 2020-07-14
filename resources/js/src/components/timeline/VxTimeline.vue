@@ -2,11 +2,9 @@
     File Name: VxTimeline.vue
     Description: Timeline Component
     Component Name: VxTimeline
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+    
+
 
 <template>
   <ul class="vx-timeline">

@@ -2,10 +2,10 @@
   File Name: SidebarGroupCollapsed.vue
   Description: give sidebaritems group using vs-sidebar-group
   ----------------------------------------------------------------------------------------
-  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  
   Author: Pixinvent
-  Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+  
+
 
 
 <template>

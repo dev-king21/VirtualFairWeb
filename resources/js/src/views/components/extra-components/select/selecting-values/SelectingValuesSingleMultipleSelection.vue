@@ -1,11 +1,9 @@
 <!-- =========================================================================================
     File Name: SelectingValuesSingleMultipleSelection.vue
     Description: Selecting single and multiple values
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+    
+
 
 
 <template>

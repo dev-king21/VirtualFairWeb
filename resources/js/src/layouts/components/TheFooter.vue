@@ -2,10 +2,6 @@
     File Name: TheFooter.vue
     Description: Footer component
     Component Name: TheFooter
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
 ========================================================================================== -->
 
 
@@ -21,15 +17,10 @@
             <span>Hand-crafted & Made with</span>
             <feather-icon icon="HeartIcon" svgClasses="stroke-current text-danger w-6 h-6" class="ml-2" />
         </span>
-
-        <!-- buyNow component -->
-        <!-- <component :is="injections.components.BuyNow"></component> -->
     </footer>
 </template>
 
 <script>
-// import BuyNow from '../../components/BuyNow.vue'
-
 export default {
   name: 'the-footer',
   props: {
@@ -37,12 +28,5 @@ export default {
       type: String
     }
   }
-  // inject: {
-  //   components:{
-  //     default: {
-  //       BuyNow
-  //     }
-  //   }
-  // }
 }
 </script>

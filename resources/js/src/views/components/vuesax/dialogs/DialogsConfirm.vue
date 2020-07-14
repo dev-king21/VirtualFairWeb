@@ -1,11 +1,9 @@
 <!-- =========================================================================================
     File Name: DialogsConfirm.vue
     Description: Create Confirm dialogs
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+    
+
 
 
 <template>

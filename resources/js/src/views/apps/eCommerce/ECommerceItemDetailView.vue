@@ -2,10 +2,10 @@
   File Name: ECommerceItemDetail.vue
   Description: eCommerce Item Detail page
   ----------------------------------------------------------------------------------------
-  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  
   Author: Pixinvent
-  Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+  
+
 
 <template>
   <div id="item-detail-page">

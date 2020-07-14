@@ -1,11 +1,9 @@
 <!-- =========================================================================================
     File Name: ColorCustomization.vue
     Description: Change theme's main colors(primary, success etc.)
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+    
+
 
 
 <template>

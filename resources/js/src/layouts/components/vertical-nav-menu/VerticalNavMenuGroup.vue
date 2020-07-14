@@ -3,10 +3,10 @@
   Description: Vertical NavMenu Group Component. Extends vuesax framework's 'vs-sidebar-group' component
   Component Name: VerticalNavMenuGroup
   ----------------------------------------------------------------------------------------
-  Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
+  
   Author: Pixinvent
-  Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+  
+
 
 
 <template>

@@ -1,11 +1,9 @@
 <!-- =========================================================================================
     File Name: GridBasicGrid.vue
     Description: Example of building grid layouts with Tailwind CSS
-    ----------------------------------------------------------------------------------------
-    Item Name: Vuexy - Vuejs, HTML & Laravel Admin Dashboard Template
-      Author: Pixinvent
-    Author URL: http://www.themeforest.net/user/pixinvent
-========================================================================================== -->
+    
+    
+
 
 
 <template>
