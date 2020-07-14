@@ -36,7 +36,7 @@ export default {
     classes: {
       type: String
     }
-  },
+  }
   // inject: {
   //   components:{
   //     default: {
