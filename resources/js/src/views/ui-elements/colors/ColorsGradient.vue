@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: ColorsGradient.vue.vue
     Description: Theme's main colors(primary, success etc.) with gradient
-    
-    
 
+========================================================================================== -->
 
 
 <template>

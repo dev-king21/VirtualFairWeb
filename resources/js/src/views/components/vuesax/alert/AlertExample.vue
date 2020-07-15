@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: AlertExample.vue
     Description: Example of validation using alert
-    
-    
 
+========================================================================================== -->
 
 <template>
     <vx-card title="Example" code-toggler>

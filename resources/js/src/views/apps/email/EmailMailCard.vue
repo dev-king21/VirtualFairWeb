@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: EmailMailCard.vue
     Description: Email Application - Single Email Card View
-    
-    
 
+========================================================================================== -->
 
 <template functional>
   <vx-card class="px-4" :class="data.staticClass">

@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: GridAutoColumnWidth.vue
     Description: Example of building grid layouts with Tailwind CSS
-    
-    
 
+========================================================================================== -->
 
 
 <template>

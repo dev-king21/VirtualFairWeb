@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: FormWizard.vue
     Description: Form Wizard (third-party) - Imports page portions
-    
-    
 
+========================================================================================== -->
 
 <template>
     <div id="extra-component-form-wizard-demo">

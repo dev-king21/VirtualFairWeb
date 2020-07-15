@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: ChatContact.vue
     Description: Chat contact - single component for chat
-    
-    
 
+========================================================================================== -->
 
 <template>
     <div class="chat__contact flex items-center px-2 pt-4 pb-2" :class="{'bg-primary-gradient text-white shadow-lg': isActiveChatUser}">

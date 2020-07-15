@@ -2,9 +2,7 @@
   File Name: ChartjsComponentBubbleChart.vue
   Description: Chartjs component - Bubble Chart
 
-========================================================================================= -->
-  
-
+========================================================================================== -->
 
 <script>
 import { Bubble } from 'vue-chartjs'

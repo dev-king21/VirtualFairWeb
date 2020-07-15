@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: Charts.vue
     Description: Chartjs (third-party) - Imports page portions
-    
-    
 
+========================================================================================== -->
 
 <template>
     <div id="extra-component-chartjs-demo">

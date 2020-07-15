@@ -2,9 +2,7 @@
   File Name: ECommerceCheckout.vue
   Description: eCommerce Checkout page
 
-========================================================================================= -->
-  
-
+========================================================================================== -->
 
 <template>
     <div id="ecommerce-checkout-demo">

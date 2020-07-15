@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: GoogleMao.vue
     Description: Google Map (third-party) - Imports page portions
-    
-    
 
+========================================================================================== -->
 
 <template>
     <div id="extra-component-google-map-demo">

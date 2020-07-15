@@ -2,9 +2,7 @@
   File Name: ECommerceWishList.vue
   Description: eCommerce Wish List Page
 
-========================================================================================= -->
-  
-
+========================================================================================== -->
 
 <template>
   <div id="ecommerce-wishlist-demo">

@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: NotificationsPosition.vue
     Description: Change position of apperance of notification
-    
-    
 
+========================================================================================== -->
 
 
 <template>

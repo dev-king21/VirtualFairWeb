@@ -2,9 +2,8 @@
     File Name: VxTimeline.vue
     Description: Timeline Component
     Component Name: VxTimeline
-    
-    
 
+========================================================================================== -->
 
 <template>
   <ul class="vx-timeline">

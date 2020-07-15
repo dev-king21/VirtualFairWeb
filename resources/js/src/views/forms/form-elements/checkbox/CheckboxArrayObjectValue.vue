@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: CheckboxArrayObjectValue.vue
     Description: Create array of objects using checked checkboxes
-    
-    
 
+========================================================================================== -->
 
 
 <template>

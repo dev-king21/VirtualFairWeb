@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: Select.vue
     Description: Select element - Imports page portions
-    
-    
 
+========================================================================================== -->
 
 <template>
     <div id="form-element-select-demo">

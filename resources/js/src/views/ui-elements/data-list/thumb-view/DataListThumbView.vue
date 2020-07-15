@@ -2,9 +2,7 @@
   File Name: DataListThumbView.vue
   Description: Data List - Thumb View
 
-========================================================================================= -->
-  
-
+========================================================================================== -->
 
 <template>
   <div id="data-list-thumb-view" class="data-list-container">

@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: KnowledgeBaseCategoryQuestion.vue
     Description: Knowledge Base Question - Answer Article
-    
-    
 
+========================================================================================== -->
 
 <template>
     <div id="knowledge-base-article">

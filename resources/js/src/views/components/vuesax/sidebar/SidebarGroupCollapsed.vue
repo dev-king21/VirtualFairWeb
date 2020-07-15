@@ -2,9 +2,7 @@
   File Name: SidebarGroupCollapsed.vue
   Description: give sidebaritems group using vs-sidebar-group
 
-========================================================================================= -->
-  
-
+========================================================================================== -->
 
 
 <template>

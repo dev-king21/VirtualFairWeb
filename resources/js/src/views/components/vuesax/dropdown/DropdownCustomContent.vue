@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: DropdownCustomContent.vue
     Description: Display custom content inside dropdown item
-    
-    
 
+========================================================================================== -->
 
 
 <template>

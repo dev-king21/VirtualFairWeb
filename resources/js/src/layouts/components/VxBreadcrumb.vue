@@ -2,9 +2,8 @@
     File Name: VxBreadcrumb.vue
     Description: Breadcrumb component
     Component Name: VxBreadcrumb
-    
-    
 
+========================================================================================== -->
 
 
 <template>

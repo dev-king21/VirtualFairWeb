@@ -2,8 +2,6 @@
   File Name: state.js
   Description: Vuex Store - state
 
-========================================================================================= -->
-  
 ==========================================================================================*/
 
 import navbarSearchAndPinList from '@/layouts/components/navbar/navbarSearchAndPinList'

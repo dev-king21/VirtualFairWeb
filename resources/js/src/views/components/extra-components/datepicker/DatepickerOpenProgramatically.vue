@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: DatepickerOpenProgramatically.vue
     Description: opening datepicker programatically
-    
-    
 
+========================================================================================== -->
 
 
 <template>

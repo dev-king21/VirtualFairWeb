@@ -2,9 +2,8 @@
     File Name: TailwindBackgroundClasses.vue
     Description: Background Colors classes
     Note: If you added more colors then you can use it using 'bg-{colorName}'
-    
-    
 
+========================================================================================== -->
 
 
 <template>

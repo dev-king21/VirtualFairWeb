@@ -2,9 +2,7 @@
   File Name: ContextMenuClickNotClose.vue
   Description: Click not close on click of context item
 
-========================================================================================= -->
-  
-
+========================================================================================== -->
 
 <template>
   <vx-card title="Click Not Close" code-toggler>

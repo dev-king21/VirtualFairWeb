@@ -2,8 +2,6 @@
   File Name: moduleAuthActions.js
   Description: Auth Module Actions
 
-========================================================================================= -->
-  
 ==========================================================================================*/
 
 import jwt from '../../http/requests/auth/jwt/index.js'

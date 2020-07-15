@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: SidebarCustom.vue
     Description: Rendering of custom sidebar with vx-sidebar(replaces vs-sidebar-item) and vx-sidebar-group(vs-sidebar-group)
-    
-    
 
+========================================================================================== -->
 
 
 <template>

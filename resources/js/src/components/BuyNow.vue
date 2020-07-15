@@ -3,9 +3,7 @@
   Description: Buy Now Button
   Component Name: BuyNow
 
-========================================================================================= -->
-  
-
+========================================================================================== -->
 
 <template functional>
   <vs-button color="danger" type="filled" class="buy-now" target :href="{url: 'https://1.envato.market/vuexy_admin'}">Buy Now</vs-button>

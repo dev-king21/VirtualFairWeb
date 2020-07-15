@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: NotificationsFixedAndFunctionClick.vue
     Description: Rendering of default notifications
-    
-    
 
+========================================================================================== -->
 
 
 <template>

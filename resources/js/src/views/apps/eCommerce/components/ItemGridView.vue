@@ -2,9 +2,7 @@
   File Name: ItemGridView.vue
   Description: Item Component - Grid VIew
 
-========================================================================================= -->
-  
-
+========================================================================================== -->
 
 <template>
     <!-- <div class="item-grid-view vx-row match-height">

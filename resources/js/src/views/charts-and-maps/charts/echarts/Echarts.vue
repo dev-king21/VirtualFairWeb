@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: Echarts.vue
     Description: Echarts (third-party) - Imports page portions
-    
-    
 
+========================================================================================== -->
 
 <template>
     <div id="extra-component-echarts-demo">

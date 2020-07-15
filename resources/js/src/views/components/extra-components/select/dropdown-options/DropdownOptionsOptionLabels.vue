@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: DropdownOptionsOptionLabels.vue
     Description: When option array have objects pass lable prop
-    
-    
 
+========================================================================================== -->
 
 
 <template>

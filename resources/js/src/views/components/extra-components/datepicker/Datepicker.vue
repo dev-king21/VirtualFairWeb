@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: Datepicker.vue
     Description: Datepicker (third-party) - Imports page portions
-    
-    
 
+========================================================================================== -->
 
 <template>
     <div id="extra-component-datepicker-demo">

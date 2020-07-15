@@ -2,9 +2,7 @@
   File Name: DataListListView.vue
   Description: Data List - List View
 
-========================================================================================= -->
-  
-
+========================================================================================== -->
 
 <template>
   <div id="data-list-list-view" class="data-list-container">

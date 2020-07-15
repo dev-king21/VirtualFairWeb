@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: DatepickerHighlightDates.vue
     Description: Highlight dates in datepicker with function
-    
-    
 
+========================================================================================== -->
 
 
 <template>

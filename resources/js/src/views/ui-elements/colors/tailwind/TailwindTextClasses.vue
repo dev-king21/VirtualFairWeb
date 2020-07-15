@@ -2,9 +2,8 @@
     File Name: TailwindTextClasses.vue
     Description: Text Colors classes
     Note: If you added more colors then you can use it using 'text-{colorName}'
-    
-    
 
+========================================================================================== -->
 
 
 <template>

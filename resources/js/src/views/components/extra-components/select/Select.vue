@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: Select.vue
     Description: Select element (third-party) - Imports page portions
-    
-    
 
+========================================================================================== -->
 
 <template>
     <div id="extra-component-select-demo">

@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: FormValidation.vue
     Description: Form validation (third-party) - Imports page portions
-    
-    
 
+========================================================================================== -->
 
 <template>
     <div id="extra-component-form-validation-demo">

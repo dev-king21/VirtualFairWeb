@@ -38,7 +38,6 @@ import '@/firebase/firebaseConfig'
 // import AuthPlugin from './plugins/auth'
 // Vue.use(AuthPlugin)
 
-
 // ACL
 import acl from './acl/acl'
 

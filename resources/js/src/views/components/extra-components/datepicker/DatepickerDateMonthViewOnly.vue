@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: DatepickerDateMonthViewOnly.vue
     Description: Create datepicker with date and month view only
-    
-    
 
+========================================================================================== -->
 
 
 <template>

@@ -2,9 +2,8 @@
     File Name: TailwindAddMoreColors.vue
     Description: Add more colors to theme using tailwind
     Note: You can't use this colors in props
-    
-    
 
+========================================================================================== -->
 
 
 <template>

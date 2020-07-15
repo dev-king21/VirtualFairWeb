@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: CarouselResponsiveBreakpoints.vue
     Description: Carousel with responsive breakpoints
-    
-    
 
+========================================================================================== -->
 
 
 <template>

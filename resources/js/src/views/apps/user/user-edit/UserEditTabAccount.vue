@@ -2,9 +2,7 @@
   File Name: UserEditTabInformation.vue
   Description: User Edit Information Tab content
 
-========================================================================================= -->
-  
-
+========================================================================================== -->
 
 <template>
   <div id="user-edit-tab-info">

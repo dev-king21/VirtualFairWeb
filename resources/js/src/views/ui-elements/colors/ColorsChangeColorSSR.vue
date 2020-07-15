@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: ColorsChangeColorSSR.vue
     Description: Change theme's main colors - Server Side Rendering
-    
-    
 
+========================================================================================== -->
 
 
 <template>

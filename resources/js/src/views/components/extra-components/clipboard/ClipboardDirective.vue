@@ -2,9 +2,7 @@
   File Name: ClipboardDirective.vue
   Description: Clipboard demo
 
-========================================================================================= -->
-  
-
+========================================================================================== -->
 
 <template>
   <vx-card title="Using Directive" subtitle="Use directive on button to copy text" code-toggler>

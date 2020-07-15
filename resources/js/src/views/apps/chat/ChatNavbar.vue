@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: ChatNavbar.vue
     Description: Chat Application - Chat navbar
-    
-    
 
+========================================================================================== -->
 
 <template>
     <div v-if="userId != null" class="chat__header">

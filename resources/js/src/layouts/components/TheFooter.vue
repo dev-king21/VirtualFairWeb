@@ -2,6 +2,7 @@
     File Name: TheFooter.vue
     Description: Footer component
     Component Name: TheFooter
+
 ========================================================================================== -->
 
 
@@ -16,11 +17,12 @@
         <span class="md:flex hidden items-center">
             <span>Hand-crafted & Made with</span>
             <feather-icon icon="HeartIcon" svgClasses="stroke-current text-danger w-6 h-6" class="ml-2" />
-        </span>
+        </span> 
     </footer>
 </template>
 
 <script>
+
 export default {
   name: 'the-footer',
   props: {
@@ -28,12 +30,5 @@ export default {
       type: String
     }
   }
-  // inject: {
-  //   components:{
-  //     default: {
-  //       BuyNow
-  //     }
-  //   }
-  // }
 }
 </script>

@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: ChatLog.vue
     Description: Chat Application - Log of chat
-    
-    
 
+========================================================================================== -->
 
 <template>
     <div id="component-chat-log" class="m-8" v-if="chatData">

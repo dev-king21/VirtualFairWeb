@@ -2,9 +2,7 @@
   File Name: ClipboardWithoutDirective.vue
   Description: Clipboard demo without directive
 
-========================================================================================= -->
-  
-
+========================================================================================== -->
 
 <template>
   <vx-card title="Without directive" subtitle="You can copy text without a specific button. Use $copyText to copy text when event got fired." code-toggler>

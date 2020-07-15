@@ -2,9 +2,7 @@
   File Name: ContextMenuSimple.vue
   Description: Simple context menu Demo
 
-========================================================================================= -->
-  
-
+========================================================================================== -->
 
 <template>
   <vx-card title="Simple" code-toggler>

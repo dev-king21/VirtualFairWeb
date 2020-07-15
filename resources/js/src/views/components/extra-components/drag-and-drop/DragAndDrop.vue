@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: DragAndDrop.vue
     Description: Drag and Drop (third-party) - Imports page portions
-    
-    
 
+========================================================================================== -->
 
 <template>
     <div id="extra-component-drag-and-drop-demo">

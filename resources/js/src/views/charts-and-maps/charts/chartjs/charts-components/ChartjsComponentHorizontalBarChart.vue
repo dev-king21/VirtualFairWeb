@@ -2,9 +2,7 @@
   File Name: ChartjsComponentHorizontalBarChart.vue
   Description: Chartjs component - Horizontal Bar Chart
 
-========================================================================================= -->
-  
-
+========================================================================================== -->
 
 
 <script>

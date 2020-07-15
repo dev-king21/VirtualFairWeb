@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: ItemListView.vue
     Description: Item Component - List VIew
-    
-    
 
+========================================================================================== -->
 
 <template>
     <vx-card class="list-view-item overflow-hidden" v-on="$listeners">

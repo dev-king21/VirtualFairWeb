@@ -1,9 +1,8 @@
 <!-- =========================================================================================
     File Name: ChipCustomizeCloseClearChipIcon.vue
     Description: Change icon used for close and clear button
-    
-    
 
+========================================================================================== -->
 
 
 <template>
