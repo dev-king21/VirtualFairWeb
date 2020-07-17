@@ -19,5 +19,6 @@ class Appointment extends Model
     }
 
     protected $guarded = [];
+    protected $attributes = ["status" => 0];
 
 }

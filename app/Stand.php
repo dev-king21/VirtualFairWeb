@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Stand extends Model
 {
+
     public function fair() {
         return $this->belongsTo('App\Fair');
     }
@@ -41,4 +42,5 @@ class Stand extends Model
 
     
     protected $guarded = [];
+    protected $attributes = ["status" => 0];
 }

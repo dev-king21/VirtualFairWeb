@@ -29,7 +29,7 @@
         <vs-checkbox v-model="checkbox_remember_me" class="mb-3">Remember Me</vs-checkbox>
         <router-link to="/auth/forgot-password">Forgot Password?</router-link>
     </div>
-    <div class="flex flex-wrap justify-between mb-3">
+    <div class="flex flex-wrap justify-between mb-3"> 
       <vs-button  type="border" @click="registerUser">Register</vs-button>
       <vs-button :disabled="!validateForm" @click="loginJWT">Login</vs-button>
     </div>

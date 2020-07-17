@@ -11,6 +11,7 @@ class Fair extends Model
         return $this->hasMany('App\Stand');
     }
 
-    protected $guarded = [];
 
+    protected $guarded = [];
+    protected $attributes = ["status" => 0];
 }
