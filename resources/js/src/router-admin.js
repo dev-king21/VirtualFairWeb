@@ -1,19 +1,3 @@
-/*=========================================================================================
-  File Name: router.js
-  Description: Routes for vue-router. Lazy loading is enabled.
-  Object Strucutre:
-                    path => router path
-                    name => router name
-                    component(lazy loading) => component to load
-                    meta : {
-                      rule => which user can have access (ACL)
-                      breadcrumb => Add breadcrumb to specific page
-                      pageTitle => Display title besides breadcrumb
-                    }
-
-========================================================================================= */
-
-
 import Vue from 'vue'
 import Router from 'vue-router'
 import 'firebase/auth'
@@ -34,7 +18,139 @@ const router = new Router({
       children: [
         {
           path: '/',
-          redirect: '/home'
+          redirect: '/user'
+        },
+        {
+          path: '/user',
+          redirect: '/user/all'
+        },
+        {
+          path: '/user/all',
+          name: 'dashboard-analytics',
+          component: () => import('./views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/user/request',
+          name: 'dashboard-analytics',
+          component: () => import('./views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/user/book',
+          name: 'dashboard-analytics',
+          component: () => import('./views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/user/active',
+          name: 'dashboard-analytics',
+          component: () => import('./views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/user/past',
+          name: 'dashboard-analytics',
+          component: () => import('./views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/room',
+          redirect: '/room/all'
+        },
+        {
+          path: '/room/all',
+          name: 'dashboard-analytics',
+          component: () => import('./views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/room/request_talk',
+          name: 'dashboard-analytics',
+          component: () => import('./views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/room/scheduled_talk',
+          name: 'dashboard-analytics',
+          component: () => import('./views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/room/live_talk',
+          name: 'dashboard-analytics',
+          component: () => import('./views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/room/past_talk',
+          name: 'dashboard-analytics',
+          component: () => import('./views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/fair',
+          redirect: '/fair/all'
+        },
+        {
+          path: '/fair/all',
+          name: 'dashboard-analytics',
+          component: () => import('./views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/fair/scheduled',
+          name: 'dashboard-analytics',
+          component: () => import('./views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/fair/live',
+          name: 'dashboard-analytics',
+          component: () => import('./views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/fair/past',
+          name: 'dashboard-analytics',
+          component: () => import('./views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/payment',
+          name: 'dashboard-analytics',
+          component: () => import('./views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
         },
         {
           path: '/dashboard/analytics',

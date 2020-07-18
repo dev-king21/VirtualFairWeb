@@ -1,21 +1,3 @@
-/*=========================================================================================
-  File Name: sidebarItems.js
-  Description: Sidebar Items list. Add / Remove menu items from here.
-  Strucutre:
-          url     => router path
-          name    => name to display in sidebar
-          slug    => router path name
-          icon    => Feather Icon component/icon name
-          tag     => text to display on badge
-          tagColor  => class to apply on badge element
-          i18n    => Internationalization
-          submenu   => submenu of current item (current item will become dropdown )
-                NOTE: Submenu don't have any icon(you can add icon if u want to display)
-          isDisabled  => disable sidebar item/group
-
-==========================================================================================*/
-
-
 export default [
   // {
   //   url: "/apps/email",
@@ -45,6 +27,140 @@ export default [
         i18n: 'eCommerce'
       }
     ]
+  },
+  {
+    url: null,
+    name: 'User',
+    icon: 'PackageIcon',
+    i18n: 'User',
+    submenu: [
+      {
+        url: '/user/all',
+        name: 'All Users',
+        slug: 'email',
+        icon: 'MailIcon'/* ,
+        i18n: 'AllUsers' */
+      },
+      {
+        url: '/user/request',
+        name: 'Request User',
+        slug: 'chat',
+        icon: 'MessageSquareIcon'/* ,
+        i18n: 'Chat' */
+      },
+      {
+        url: '/user/book',
+        name: 'Booked User',
+        slug: 'todo',
+        icon: 'CheckSquareIcon'/* ,
+        i18n: 'Todo' */
+      },
+      {
+        url: '/user/active',
+        name: 'Active Owner',
+        slug: 'calendar-simple-calendar',
+        icon: 'CalendarIcon',
+        tagColor: 'success'/* ,
+        i18n: 'Calendar' */
+      },
+      {
+        url: '/user/past',
+        name: 'Past Owner',
+        slug: 'calendar-simple-calendar',
+        icon: 'CalendarIcon',
+        tagColor: 'success'/* ,
+        i18n: 'Calendar' */
+      }
+    ]
+  },
+  {
+    url: null,
+    name: 'Room',
+    icon: 'PackageIcon',
+    i18n: 'Room',
+    submenu: [
+      {
+        url: '/room/all',
+        name: 'All Rooms',
+        slug: 'email',
+        icon: 'MailIcon'/* ,
+        i18n: 'AllUsers' */
+      },
+      {
+        url: '/room/request_talk',
+        name: 'Request Talk',
+        slug: 'chat',
+        icon: 'MessageSquareIcon'/* ,
+        i18n: 'Chat' */
+      },
+      {
+        url: '/room/scheduled_talk',
+        name: 'Scheduled Talk',
+        slug: 'todo',
+        icon: 'CheckSquareIcon'/* ,
+        i18n: 'Todo' */
+      },
+      {
+        url: '/room/live_talk',
+        name: 'Live Talk',
+        slug: 'calendar-simple-calendar',
+        icon: 'CalendarIcon',
+        tagColor: 'success'/* ,
+        i18n: 'Calendar' */
+      },
+      {
+        url: '/room/past_talk',
+        name: 'Past Talk',
+        slug: 'calendar-simple-calendar',
+        icon: 'CalendarIcon',
+        tagColor: 'success'/* ,
+        i18n: 'Calendar' */
+      }
+    ]
+  },
+  {
+    url: null,
+    name: 'Fair',
+    icon: 'PackageIcon',
+    i18n: 'Fair',
+    submenu: [
+      {
+        url: '/fair/all',
+        name: 'All Fairs',
+        slug: 'email',
+        icon: 'MailIcon'/* ,
+        i18n: 'AllUsers' */
+      },
+      {
+        url: '/fair/scheduled',
+        name: 'Scheduled Fair',
+        slug: 'todo',
+        icon: 'CheckSquareIcon'/* ,
+        i18n: 'Todo' */
+      },
+      {
+        url: '/fair/live',
+        name: 'Live Fair',
+        slug: 'calendar-simple-calendar',
+        icon: 'CalendarIcon',
+        tagColor: 'success'/* ,
+        i18n: 'Calendar' */
+      },
+      {
+        url: '/fair/past',
+        name: 'Past Fair',
+        slug: 'calendar-simple-calendar',
+        icon: 'CalendarIcon',
+        tagColor: 'success'/* ,
+        i18n: 'Calendar' */
+      }
+    ]
+  },
+  {
+    url: '/payment',
+    name: 'Payment',
+    icon: 'PackageIcon',
+    i18n: 'Payment'
   },
   {
     header: 'Apps',

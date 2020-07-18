@@ -1,10 +1,3 @@
-<!-- =========================================================================================
-    File Name: VerticalNavMenuItem.vue
-    Description: Vertical NavMenu item component. Extends vuesax framework's 'vs-sidebar-item' component
-    Component Name: VerticalNavMenuItem
-
-========================================================================================== -->
-
 <template>
   <div
     v-if="canSee"

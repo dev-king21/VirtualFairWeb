@@ -1,76 +1,34 @@
 import Vue from 'vue'
 import App from './App.vue'
-
-// Vuesax Component Framework
 import Vuesax from 'vuesax'
-
-Vue.use(Vuesax)
-
-
-// axios
 import axios from './axios.js'
-Vue.prototype.$http = axios
-
-// API Calls
-import './http/requests'
-
-// mock
-import './fake-db/index.js'
-
-// Theme Configurations
-import '../themeConfig.js'
-
-
-// Firebase
-import '@/firebase/firebaseConfig'
-
-
-// Auth0 Plugin
-// import AuthPlugin from './plugins/auth'
-// Vue.use(AuthPlugin)
-
-// ACL
 import acl from './acl/acl'
-
-
-// Globally Registered Components
-import './globalComponents.js'
-
-
-// Vue Router
-import router from './router'
-
-
-// Vuex Store
+import router from './router-admin'
 import store from './store/store'
-
-
-// i18n
 import i18n from './i18n/i18n'
-
-
-// Vuexy Admin Filters
+import VueClipboard from 'vue-clipboard2'
+import VueTour from 'vue-tour'
+import VeeValidate from 'vee-validate'
+import * as VueGoogleMaps from 'vue2-google-maps'
+import { VueHammer } from 'vue2-hammer'
+import 'prismjs'
+import 'prismjs/themes/prism-tomorrow.css'
+import './http/requests'
+import './fake-db/index.js'
+import '../themeConfig.js'
+import '@/firebase/firebaseConfig'
+import './globalComponents.js'
 import './filters/filters'
 
-
-// Clipboard
-import VueClipboard from 'vue-clipboard2'
-Vue.use(VueClipboard)
-
-
-// Tour
-import VueTour from 'vue-tour'
-Vue.use(VueTour)
 require('vue-tour/dist/vue-tour.css')
+require('@assets/css/iconfont.css')
 
-
-// VeeValidate
-import VeeValidate from 'vee-validate'
+Vue.use(Vuesax)
+Vue.prototype.$http = axios
+Vue.use(VueClipboard)
+Vue.use(VueTour)
 Vue.use(VeeValidate)
 
-
-// Google Maps
-import * as VueGoogleMaps from 'vue2-google-maps'
 Vue.use(VueGoogleMaps, {
   load: {
     // Add your API key here
@@ -80,24 +38,7 @@ Vue.use(VueGoogleMaps, {
 })
 
 // Vuejs - Vue wrapper for hammerjs
-import { VueHammer } from 'vue2-hammer'
 Vue.use(VueHammer)
-
-
-// PrismJS
-import 'prismjs'
-import 'prismjs/themes/prism-tomorrow.css'
-
-
-// Feather font icon
-require('@assets/css/iconfont.css')
-
-
-// Vue select css
-// Note: In latest version you have to add it separately
-// import 'vue-select/dist/vue-select.css';
-
-
 Vue.config.productionTip = false
 
 new Vue({

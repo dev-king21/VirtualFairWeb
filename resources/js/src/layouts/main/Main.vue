@@ -1,9 +1,3 @@
-<!-- =========================================================================================
-    File Name: Main.vue
-    Description: Main layout
-========================================================================================== -->
-
-
 <template>
   <div class="layout--main" :class="[layoutTypeClass, navbarClasses, footerClasses, {'no-scroll': isAppPage}]">
 
@@ -24,7 +18,7 @@
 
     <v-nav-menu
       :navMenuItems = "navMenuItems"
-      title         = "Vuexy"
+      title         = "Virtual Fair"
       parent        = ".layout--main" />
 
     <div id="content-area" :class="[contentAreaClass, {'show-overlay': bodyOverlay}]">
