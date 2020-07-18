@@ -22,7 +22,7 @@ Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
-  base: '/app/',
+  base: '/admin/',
   scrollBehavior () {
     return { x: 0, y: 0 }
   },

@@ -14,8 +14,12 @@ require('dotenv').config();
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .webpackConfig({
+    if (process.env.section && process.env.section === 'admin')
+        mix.js('resources/js/src/admin.js', 'public/js');
+    else
+        mix.js('resources/js/app.js', 'public/js');
+    
+    mix.webpackConfig({
         resolve: {
             alias: {
                 '@': path.resolve(__dirname, 'resources/js/src'),
