@@ -9,22 +9,22 @@
 
     <title>Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template</title>
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset(mix('css/main.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('css/iconfont.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('css/material-icons/material-icons.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('css/vuesax.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('css/prism-tomorrow.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('css/app.css')) }}">
+    <link rel="stylesheet" href="{{ asset(mix('admin/css/main.css')) }}">
+    <link rel="stylesheet" href="{{ asset(mix('admin/css/iconfont.css')) }}">
+    <link rel="stylesheet" href="{{ asset(mix('admin/css/material-icons/material-icons.css')) }}">
+    <link rel="stylesheet" href="{{ asset(mix('admin/css/vuesax.css')) }}">
+    <link rel="stylesheet" href="{{ asset(mix('admin/css/prism-tomorrow.css')) }}">
+    <link rel="stylesheet" href="{{ asset(mix('admin/css/app.css')) }}">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('images/logo/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('admin/images/logo/favicon.png') }}">
   </head>
   <body>
     <div id="app">
     </div>
 
     <!-- <script src="js/app.js"></script> -->
-    <script src="{{ asset(mix('js/admin.js')) }}"></script>
+    <script src="{{ asset(mix('admin/js/app.js')) }}"></script>
 
   </body>
 </html>
