@@ -20,9 +20,7 @@ class StandController extends Controller
             $res["stands"] = Stand::where("fair_id", $fair_id)->get();
         else
             $res["stands"] = Stand::all();
-        // if (Session::get("user_id", 0) == 0)
-        //     Session::put("user_id", 1); 
-        // $res["user_id"] =  Session::get("user_id");
+       
         
 
         return response()->json($res);
@@ -149,9 +147,7 @@ class StandController extends Controller
             $res["gallery"] = Gallery::where("stand_id", $stand_id)->get();
         else
             $res["gallery"] = Gallery::all();
-        // if (Session::get("user_id", 0) == 0)
-        //     Session::put("user_id", 1); 
-        // $res["user_id"] =  Session::get("user_id");
+       
         return response()->json($res);
     }
 
@@ -183,9 +179,7 @@ class StandController extends Controller
             $res["portfolio"] = Portfolio::where("stand_id", $stand_id)->get();
         else
             $res["portfolio"] = Portfolio::all();
-        // if (Session::get("user_id", 0) == 0)
-        //     Session::put("user_id", 1); 
-        // $res["user_id"] =  Session::get("user_id");
+       
         return response()->json($res);
     }
 
@@ -211,9 +205,7 @@ class StandController extends Controller
               $res["appointments"] = Appointment::all();
 
         }
-        // if (Session::get("user_id", 0) == 0)
-        //     Session::put("user_id", 1); 
-        // $res["user_id"] =  Session::get("user_id");
+       
         
 
         return response()->json($res);

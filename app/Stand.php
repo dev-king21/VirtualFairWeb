@@ -40,6 +40,15 @@ class Stand extends Model
         return $this->hasOne('App\Contact');
     }
 
+    public function getRequestAttribute() {
+        $now = date("y-m-d");
+        $this
+        ->where("status", "=", 0)
+        ->whereHas("fair", function($q){
+            $q->where("start_date", ">", $now);
+        });        
+    }
+
     
     protected $guarded = [];
     protected $attributes = ["status" => 0];

@@ -33,6 +33,13 @@ Route::prefix('auth')->group(function () {
     });
 });
 
+//user
+Route::get('/user/all', 'UserController@all');
+Route::get('/user/request', 'UserController@requestUser');
+Route::get('/user/book', 'UserController@bookedUser');
+Route::get('/user/active', 'UserController@activeUser');
+Route::get('/user/past', 'UserController@pastUser');
+
 //fair
 Route::get('/fair/all', 'FairController@all_fairs');
 Route::get('/fair/year/{year}', 'FairController@fairs_year');

@@ -16,6 +16,7 @@ class CreateTalksTable extends Migration
         Schema::create('talks', function (Blueprint $table) {
             $table->id();
             $table->integer("room_id");
+            $table->integer("user_id");
             $table->date("talk_date");
             $table->string("video")->nullable();
             $table->timestamps();

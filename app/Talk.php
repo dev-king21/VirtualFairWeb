@@ -13,5 +13,10 @@ class Talk extends Model
         return $this->belongsTo('App\Room');
     }
 
+    public function lecturer()
+    {
+        return $this->belongsTo('App\User');
+    }
+
     protected $guarded = [];
 }

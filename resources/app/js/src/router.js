@@ -11,7 +11,7 @@ const router = new Router({
     return { x: 0, y: 0 }
   },
   routes: [
-   {
+    {
       path: '',
       component: () => import('@/layouts/full-page/FullPage.vue'),
       children: [
