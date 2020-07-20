@@ -34,7 +34,7 @@ Route::prefix('auth')->group(function () {
 });
 
 //user
-Route::get('/user/all', 'UserController@all');
+Route::get('/user/all', 'UserController@allUser');
 Route::get('/user/request', 'UserController@requestUser');
 Route::get('/user/book', 'UserController@bookedUser');
 Route::get('/user/active', 'UserController@activeUser');
@@ -47,6 +47,11 @@ Route::get('/fair/current', 'FairController@current_fairs');
 Route::get('/fair/next', 'FairController@next_fairs');
 Route::post('/fair/create', 'FairController@create_fair');
 Route::post('/fair/update/{id}', 'FairController@update_fair');
+Route::get('/fair/request', 'FairController@requestFair');
+Route::get('/fair/book', 'FairController@bookedFair');
+Route::get('/fair/active', 'FairController@activeFair');
+Route::get('/fair/past', 'FairController@pastFair');
+
 
 //stand
 Route::get('/stand/all', 'StandController@all_stands');
@@ -91,6 +96,11 @@ Route::get('/stand/portfolio/all/{stand_id}', 'StandController@all_portfolio');
 Route::post('/room/create', 'RoomController@create_room');
 Route::post('/room/update/{id}', 'RoomController@update_room');
 Route::get('/room/all', 'RoomController@all_room');
+Route::get('/room/request', 'RoomController@requestRoom');
+Route::get('/room/book', 'RoomController@bookedRoom');
+Route::get('/room/active', 'RoomController@activeRoom');
+Route::get('/room/past', 'RoomController@pastRoom');
+
 
 //talk
 Route::post('/room/talk/create', 'RoomController@create_talk');

@@ -17,6 +17,10 @@ class CreateTalksTable extends Migration
             $table->id();
             $table->integer("room_id");
             $table->integer("user_id");
+            $table->integer("status");
+            $table->datetime("start_time");
+            $table->datetime("end_time");
+
             $table->date("talk_date");
             $table->string("video")->nullable();
             $table->timestamps();

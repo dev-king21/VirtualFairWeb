@@ -29,19 +29,34 @@ class UserController extends Controller
             ], 200);
     }
 
+    public function allUser()
+    {
+        $users = User::all();
+        return response()->json(
+            [
+                'status' => 'success',
+                'users' => $users->toArray()
+            ], 200);
+    }
+
     public function requestUser(Request $request) {
         $res = array();
-        $today = date("y-m-d");
-        $now = date("y-m-d h:i:s");
-        $stands = Stand::where("status", "=", 0)
+        
+        $stands = Stand::with(['fair', 'user'])->where("status", "=", 0)
         ->whereHas("fair", function($q){
-            $q->where("start_date", ">", $today);
+            $today = date("y-m-d");
+            $query = [
+                ["start_date", ">", $today]
+            ];
+            $q->where($query);
         })->get();
 
-        $talks = Talk::where("status", "=", 0)
-        ->whereHas("room", function($q){
-            $q->where("start_time", ">", $now);
-        })->get();
+        $now = date("y-m-d h:i:s");
+        $query = [
+            ["start_time", ">", $now],
+            ["status", "=", 0]
+        ];
+        $talks = Talk::with(['room', 'user'])->where($query)->get();
 
         $res["stands"] = $stands;
         $res["talks"] = $talks;
@@ -51,17 +66,21 @@ class UserController extends Controller
 
     public function bookedUser(Request $request) {
         $res = array();
-        $today = date("y-m-d");
-        $now = date("y-m-d h:i:s");
-        $stands = Stand::where("status", "=", 1)
+        $stands = Stand::with(['fair', 'user'])->where("status", "=", 1)
         ->whereHas("fair", function($q){
-            $q->where("start_date", ">", $today);
+            $today = date("y-m-d");
+            $query = [
+                ["start_date", ">", $today]
+            ];
+            $q->where($query);
         })->get();
 
-        $talks = Talk::where("status", "=", 1)
-        ->whereHas("room", function($q){
-            $q->where("start_time", ">", $now);
-        })->get();
+        $now = date("y-m-d h:i:s");
+        $query = [
+            ["start_time", ">", $now],
+            ["status", "=", 1]
+        ];
+        $talks = Talk::with(['room', 'user'])->where($query)->get();
 
         $res["stands"] = $stands;
         $res["talks"] = $talks;
@@ -71,17 +90,48 @@ class UserController extends Controller
 
     public function activeUser(Request $request) {
         $res = array();
-        $today = date("y-m-d");
-        $now = date("y-m-d h:i:s");
-        $stands = Stand::where("status", "=", 1)
+        $stands = Stand::with(['fair', 'user'])->where("status", "=", 1)
         ->whereHas("fair", function($q){
-            $q->where("start_date", ">", $today);
+            $today = date("y-m-d");
+            $query = [
+                ["start_date", "<=", $today],
+                ["end_date",">=", $today]
+            ];
+            $q->where($query);
         })->get();
 
-        $talks = Talk::where("status", "=", 1)
-        ->whereHas("room", function($q){
-            $q->where("start_time", ">", $now);
+        $now = date("y-m-d h:i:s");
+        $query = [
+            ["start_time", "<=", $now],
+            ["end_time",">=", $now], 
+            ["status", "=", 1]
+        ];
+        $talks = Talk::with(['room', 'user'])->where($query)->get();
+
+        $res["stands"] = $stands;
+        $res["talks"] = $talks;
+
+        return response()->json($res);
+    }
+
+    public function pastUser(Request $request) {
+        $res = array();
+
+        $stands = Stand::with(['fair', 'user'])->where("status", "=", 1)
+        ->whereHas("fair", function($q){
+            $today = date("y-m-d");
+            $query = [
+                ["start_date", ">", $today]
+            ];
+            $q->where($query);
         })->get();
+
+        $now = date("y-m-d h:i:s");
+        $query = [
+            ["start_time", ">", $now],
+            ["status", "=", 1]
+        ];
+        $talks = Talk::with(['room', 'user'])->where($query)->get();
 
         $res["stands"] = $stands;
         $res["talks"] = $talks;

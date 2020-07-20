@@ -10,6 +10,7 @@ export default {
     state.products.unshift(item)
   },
   SET_PRODUCTS (state, products) {
+    console.log(products)
     state.products = products
   },
   // SET_LABELS(state, labels) {

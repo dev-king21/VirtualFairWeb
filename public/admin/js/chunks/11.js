@@ -82,13 +82,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -702,11 +695,6 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _axios_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/axios.js */ "./resources/admin/js/src/axios.js");
-/*=========================================================================================
-  File Name: moduleCalendarActions.js
-  Description: Calendar Module Actions
-
-==========================================================================================*/
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   addItem: function addItem(_ref, item) {
@@ -796,11 +784,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/*=========================================================================================
-  File Name: moduleCalendarGetters.js
-  Description: Calendar Module Getters
-
-==========================================================================================*/
 /* harmony default export */ __webpack_exports__["default"] = ({// getItem: state => (productId) => state.products.find((product) => product.id == productId),
 });
 
@@ -825,6 +808,7 @@ __webpack_require__.r(__webpack_exports__);
     state.products.unshift(item);
   },
   SET_PRODUCTS: function SET_PRODUCTS(state, products) {
+    console.log(products);
     state.products = products;
   },
   // SET_LABELS(state, labels) {

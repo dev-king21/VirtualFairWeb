@@ -161,6 +161,7 @@ export default {
       return 0
     },
     products () {
+      console.log(this.$store.state.dataList.products);
       return this.$store.state.dataList.products
     },
     queriedItems () {

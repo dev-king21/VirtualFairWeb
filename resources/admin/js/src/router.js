@@ -14,7 +14,7 @@ const router = new Router({
 
     {
       path: '',
-      component: () => import('./layouts/main/Main.vue'),
+      component: () => import('@/layouts/main/Main.vue'),
       children: [
         {
           path: '/',
@@ -26,40 +26,40 @@ const router = new Router({
         },
         {
           path: '/user/all',
-          name: 'dashboard-analytics',
-          component: () => import('./views/DashboardAnalytics.vue'),
+          name: 'all-user',
+          component: () => import('@/views/user/UserListView.vue'),
           meta: {
             rule: 'editor'
           }
         },
         {
           path: '/user/request',
-          name: 'dashboard-analytics',
-          component: () => import('./views/DashboardAnalytics.vue'),
+          name: 'request-user',
+          component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
           }
         },
         {
           path: '/user/book',
-          name: 'dashboard-analytics',
-          component: () => import('./views/DashboardAnalytics.vue'),
+          name: 'book-user',
+          component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
           }
         },
         {
           path: '/user/active',
-          name: 'dashboard-analytics',
-          component: () => import('./views/DashboardAnalytics.vue'),
+          name: 'active-user',
+          component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
           }
         },
         {
           path: '/user/past',
-          name: 'dashboard-analytics',
-          component: () => import('./views/DashboardAnalytics.vue'),
+          name: 'past-user',
+          component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
           }
@@ -71,7 +71,7 @@ const router = new Router({
         {
           path: '/room/all',
           name: 'dashboard-analytics',
-          component: () => import('./views/DashboardAnalytics.vue'),
+          component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
           }
@@ -79,7 +79,7 @@ const router = new Router({
         {
           path: '/room/request_talk',
           name: 'dashboard-analytics',
-          component: () => import('./views/DashboardAnalytics.vue'),
+          component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
           }
@@ -87,7 +87,7 @@ const router = new Router({
         {
           path: '/room/scheduled_talk',
           name: 'dashboard-analytics',
-          component: () => import('./views/DashboardAnalytics.vue'),
+          component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
           }
@@ -95,7 +95,7 @@ const router = new Router({
         {
           path: '/room/live_talk',
           name: 'dashboard-analytics',
-          component: () => import('./views/DashboardAnalytics.vue'),
+          component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
           }
@@ -103,7 +103,7 @@ const router = new Router({
         {
           path: '/room/past_talk',
           name: 'dashboard-analytics',
-          component: () => import('./views/DashboardAnalytics.vue'),
+          component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
           }
@@ -115,7 +115,7 @@ const router = new Router({
         {
           path: '/fair/all',
           name: 'dashboard-analytics',
-          component: () => import('./views/DashboardAnalytics.vue'),
+          component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
           }
@@ -123,7 +123,7 @@ const router = new Router({
         {
           path: '/fair/scheduled',
           name: 'dashboard-analytics',
-          component: () => import('./views/DashboardAnalytics.vue'),
+          component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
           }
@@ -131,7 +131,7 @@ const router = new Router({
         {
           path: '/fair/live',
           name: 'dashboard-analytics',
-          component: () => import('./views/DashboardAnalytics.vue'),
+          component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
           }
@@ -139,7 +139,7 @@ const router = new Router({
         {
           path: '/fair/past',
           name: 'dashboard-analytics',
-          component: () => import('./views/DashboardAnalytics.vue'),
+          component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
           }
@@ -147,7 +147,7 @@ const router = new Router({
         {
           path: '/payment',
           name: 'dashboard-analytics',
-          component: () => import('./views/DashboardAnalytics.vue'),
+          component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
           }
@@ -155,7 +155,7 @@ const router = new Router({
         {
           path: '/dashboard/analytics',
           name: 'dashboard-analytics',
-          component: () => import('./views/DashboardAnalytics.vue'),
+          component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
           }
@@ -163,7 +163,7 @@ const router = new Router({
         {
           path: '/dashboard/ecommerce',
           name: 'dashboard-ecommerce',
-          component: () => import('./views/DashboardECommerce.vue'),
+          component: () => import('@/views/DashboardECommerce.vue'),
           meta: {
             rule: 'admin'
           }
@@ -175,7 +175,7 @@ const router = new Router({
         },
         {
           path: '/apps/todo/:filter',
-          component: () => import('./views/apps/todo/Todo.vue'),
+          component: () => import('@/views/apps/todo/Todo.vue'),
           meta: {
             rule: 'editor',
             parent: 'todo',
@@ -185,7 +185,7 @@ const router = new Router({
         {
           path: '/apps/chat',
           name: 'chat',
-          component: () => import('./views/apps/chat/Chat.vue'),
+          component: () => import('@/views/apps/chat/Chat.vue'),
           meta: {
             rule: 'editor',
             no_scroll: true
@@ -198,7 +198,7 @@ const router = new Router({
         },
         {
           path: '/apps/email/:filter',
-          component: () => import('./views/apps/email/Email.vue'),
+          component: () => import('@/views/apps/email/Email.vue'),
           meta: {
             rule: 'editor',
             parent: 'email',
@@ -208,7 +208,7 @@ const router = new Router({
         {
           path: '/apps/calendar/vue-simple-calendar',
           name: 'calendar-simple-calendar',
-          component: () => import('./views/apps/calendar/SimpleCalendar.vue'),
+          component: () => import('@/views/apps/calendar/SimpleCalendar.vue'),
           meta: {
             rule: 'editor',
             no_scroll: true
@@ -217,7 +217,7 @@ const router = new Router({
         {
           path: '/apps/eCommerce/shop',
           name: 'ecommerce-shop',
-          component: () => import('./views/apps/eCommerce/ECommerceShop.vue'),
+          component: () => import('@/views/apps/eCommerce/ECommerceShop.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -231,7 +231,7 @@ const router = new Router({
         {
           path: '/apps/eCommerce/wish-list',
           name: 'ecommerce-wish-list',
-          component: () => import('./views/apps/eCommerce/ECommerceWishList.vue'),
+          component: () => import('@/views/apps/eCommerce/ECommerceWishList.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -245,7 +245,7 @@ const router = new Router({
         {
           path: '/apps/eCommerce/checkout',
           name: 'ecommerce-checkout',
-          component: () => import('./views/apps/eCommerce/ECommerceCheckout.vue'),
+          component: () => import('@/views/apps/eCommerce/ECommerceCheckout.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -263,7 +263,7 @@ const router = new Router({
         {
           path: '/apps/eCommerce/item/:item_id',
           name: 'ecommerce-item-detail-view',
-          component: () => import('./views/apps/eCommerce/ECommerceItemDetailView.vue'),
+          component: () => import('@/views/apps/eCommerce/ECommerceItemDetailView.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -377,7 +377,7 @@ const router = new Router({
         {
           path: '/ui-elements/colors',
           name: 'colors',
-          component: () => import('./views/ui-elements/colors/Colors.vue'),
+          component: () => import('@/views/ui-elements/colors/Colors.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -390,7 +390,7 @@ const router = new Router({
         {
           path: '/ui-elements/card/basic',
           name: 'basic-cards',
-          component: () => import('./views/ui-elements/card/CardBasic.vue'),
+          component: () => import('@/views/ui-elements/card/CardBasic.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -404,7 +404,7 @@ const router = new Router({
         {
           path: '/ui-elements/card/statistics',
           name: 'statistics-cards',
-          component: () => import('./views/ui-elements/card/CardStatistics.vue'),
+          component: () => import('@/views/ui-elements/card/CardStatistics.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -418,7 +418,7 @@ const router = new Router({
         {
           path: '/ui-elements/card/analytics',
           name: 'analytics-cards',
-          component: () => import('./views/ui-elements/card/CardAnalytics.vue'),
+          component: () => import('@/views/ui-elements/card/CardAnalytics.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -432,7 +432,7 @@ const router = new Router({
         {
           path: '/ui-elements/card/card-actions',
           name: 'card-actions',
-          component: () => import('./views/ui-elements/card/CardActions.vue'),
+          component: () => import('@/views/ui-elements/card/CardActions.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -446,7 +446,7 @@ const router = new Router({
         {
           path: '/ui-elements/card/card-colors',
           name: 'card-colors',
-          component: () => import('./views/ui-elements/card/CardColors.vue'),
+          component: () => import('@/views/ui-elements/card/CardColors.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -460,7 +460,7 @@ const router = new Router({
         {
           path: '/ui-elements/table',
           name: 'table',
-          component: () => import('./views/ui-elements/table/Table.vue'),
+          component: () => import('@/views/ui-elements/table/Table.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -473,7 +473,7 @@ const router = new Router({
         {
           path: '/ui-elements/ag-grid-table',
           name: 'ag-grid-table',
-          component: () => import('./views/ui-elements/ag-grid-table/AgGridTable.vue'),
+          component: () => import('@/views/ui-elements/ag-grid-table/AgGridTable.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -802,7 +802,7 @@ const router = new Router({
         {
           path: '/forms/form-elements/select',
           name: 'form-element-select',
-          component: () => import('./views/forms/form-elements/select/Select.vue'),
+          component: () => import('@/views/forms/form-elements/select/Select.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -816,7 +816,7 @@ const router = new Router({
         {
           path: '/forms/form-elements/switch',
           name: 'form-element-switch',
-          component: () => import('./views/forms/form-elements/switch/Switch.vue'),
+          component: () => import('@/views/forms/form-elements/switch/Switch.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -830,7 +830,7 @@ const router = new Router({
         {
           path: '/forms/form-elements/checkbox',
           name: 'form-element-checkbox',
-          component: () => import('./views/forms/form-elements/checkbox/Checkbox.vue'),
+          component: () => import('@/views/forms/form-elements/checkbox/Checkbox.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -844,7 +844,7 @@ const router = new Router({
         {
           path: '/forms/form-elements/radio',
           name: 'form-element-radio',
-          component: () => import('./views/forms/form-elements/radio/Radio.vue'),
+          component: () => import('@/views/forms/form-elements/radio/Radio.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -858,7 +858,7 @@ const router = new Router({
         {
           path: '/forms/form-elements/input',
           name: 'form-element-input',
-          component: () => import('./views/forms/form-elements/input/Input.vue'),
+          component: () => import('@/views/forms/form-elements/input/Input.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -872,7 +872,7 @@ const router = new Router({
         {
           path: '/forms/form-elements/number-input',
           name: 'form-element-number-input',
-          component: () => import('./views/forms/form-elements/number-input/NumberInput.vue'),
+          component: () => import('@/views/forms/form-elements/number-input/NumberInput.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },
@@ -886,7 +886,7 @@ const router = new Router({
         {
           path: '/forms/form-elements/textarea',
           name: 'form-element-textarea',
-          component: () => import('./views/forms/form-elements/textarea/Textarea.vue'),
+          component: () => import('@/views/forms/form-elements/textarea/Textarea.vue'),
           meta: {
             breadcrumb: [
               { title: 'Home', url: '/' },

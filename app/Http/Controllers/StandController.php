@@ -231,5 +231,4 @@ class StandController extends Controller
         $res["status"] = "ok";
         return response()->json($res);
     }
-
 }

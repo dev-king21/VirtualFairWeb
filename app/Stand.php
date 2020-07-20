@@ -11,7 +11,7 @@ class Stand extends Model
         return $this->belongsTo('App\Fair');
     }
 
-    public function owner() {
+    public function user() {
         return $this->belongsTo('App\User');
     }
 
@@ -40,16 +40,7 @@ class Stand extends Model
         return $this->hasOne('App\Contact');
     }
 
-    public function getRequestAttribute() {
-        $now = date("y-m-d");
-        $this
-        ->where("status", "=", 0)
-        ->whereHas("fair", function($q){
-            $q->where("start_date", ">", $now);
-        });        
-    }
-
     
-    protected $guarded = [];
+    protected $guarded = ['fair_id', 'user_id'];
     protected $attributes = ["status" => 0];
 }

@@ -41,27 +41,8 @@ class User extends Authenticatable
         return $this->hasMany("App/Stand");
     }
 
-    public function rooms() {
-        return $this->hasMany("App/Room");
+    public function talks() {
+        return $this->hasMany("App/Talk");
     }
-
-    public function getRequestFairAttribute() {
-        $this->whereHas('stands', function($q){
-            $q->where('status', "=", 0)
-            ->whereHas('fair', function($q){
-                $q->where("start_date", ">", $now);
-            });
-        })->get();
-    }
-
-    public function getRequestRoomAttribute() {
-        $this->whereHas('rooms', function($q){
-            $q->where('status', "=", 0)
-            ->whereHas('fair', function($q){
-                $q->where("status", "=", 0);
-            });
-        })->get();
-    }
-
-    
+  
 }

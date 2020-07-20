@@ -5,5 +5,4 @@ const baseURL = ''
 
 export default axios.create({
   baseURL
-  // You can add your headers here
 })

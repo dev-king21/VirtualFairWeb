@@ -172,6 +172,7 @@ __webpack_require__.r(__webpack_exports__);
       return 0;
     },
     products: function products() {
+      console.log(this.$store.state.dataList.products);
       return this.$store.state.dataList.products;
     },
     queriedItems: function queriedItems() {

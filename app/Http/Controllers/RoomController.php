@@ -65,4 +65,58 @@ class RoomController extends Controller
         $res["talk"] = Talk::all();
         return response()->json($res);
     }
+
+    public function requestRoom(Request $request) {
+        $res = array();
+        $now = date("y-m-d h:i:s");
+        $query = [
+            ["start_time", ">", $now],
+            ["status", "=", 0]
+        ];
+        $talks = Talk::with(['room'])->where($query)->get();
+
+        $res["talks"] = $talks;
+
+        return response()->json($res);
+    }
+
+    public function bookedRoom(Request $request) {
+        $res = array();
+        $now = date("y-m-d h:i:s");
+        $query = [
+            ["start_time", ">", $now],
+            ["status", "=", 1]
+        ];
+        $talks = Talk::with(['room'])->where($query)->get();
+
+        $res["talks"] = $talks;
+
+        return response()->json($res);
+    }
+
+    public function activeRoom(Request $request) {
+        $res = array();
+        $now = date("y-m-d h:i:s");
+        $query = [
+            ["start_time", "<=", $now],
+            ["end_time",">=", $now], 
+            ["status", "=", 1]
+        ];
+        $talks = Talk::with(['room'])->where($query)->get();
+        $res["talks"] = $talks;
+        return response()->json($res);
+    }
+
+    public function pastRoom(Request $request) {
+        $res = array();
+        $now = date("y-m-d h:i:s");
+        $query = [
+            ["start_time", ">", $now],
+            ["status", "=", 1]
+        ];
+        $talks = Talk::with(['room'])->where($query)->get();
+        $res["talks"] = $talks;
+        return response()->json($res);
+    }
+
 }

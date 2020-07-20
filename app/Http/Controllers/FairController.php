@@ -70,4 +70,72 @@ class FairController extends Controller
         $res["status"] = "ok";
         return response()->json($res);
     }
+
+
+    public function requestFair(Request $request) {
+        $res = array();
+        
+        $stands = Stand::with(['fair'])->where("status", "=", 0)
+        ->whereHas("fair", function($q){
+            $today = date("y-m-d");
+            $query = [
+                ["start_date", ">", $today]
+            ];
+            $q->where($query);
+        })->get();
+
+        $res["stands"] = $stands;
+        return response()->json($res);
+    }
+
+    public function bookedFair(Request $request) {
+        $res = array();
+        $stands = Stand::with(['fair'])->where("status", "=", 1)
+        ->whereHas("fair", function($q){
+            $today = date("y-m-d");
+            $query = [
+                ["start_date", ">", $today]
+            ];
+            $q->where($query);
+        })->get();
+
+        $res["stands"] = $stands;
+
+        return response()->json($res);
+    }
+
+    public function activeFair(Request $request) {
+        $res = array();
+        $stands = Stand::with(['fair'])->where("status", "=", 1)
+        ->whereHas("fair", function($q){
+            $today = date("y-m-d");
+            $query = [
+                ["start_date", "<=", $today],
+                ["end_date",">=", $today]
+            ];
+            $q->where($query);
+        })->get();
+
+        $res["stands"] = $stands;
+
+        return response()->json($res);
+    }
+
+    public function pastFair(Request $request) {
+        $res = array();
+
+        $stands = Stand::with(['fair'])->where("status", "=", 1)
+        ->whereHas("fair", function($q){
+            $today = date("y-m-d");
+            $query = [
+                ["start_date", ">", $today]
+            ];
+            $q->where($query);
+        })->get();
+
+        $res["stands"] = $stands;
+
+        return response()->json($res);
+    }
+
 }

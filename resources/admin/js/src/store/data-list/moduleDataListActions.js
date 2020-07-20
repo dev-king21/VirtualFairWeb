@@ -1,12 +1,7 @@
-/*=========================================================================================
-  File Name: moduleCalendarActions.js
-  Description: Calendar Module Actions
-
-==========================================================================================*/
-
 import axios from '@/axios.js'
 
 export default {
+
   addItem ({ commit }, item) {
     return new Promise((resolve, reject) => {
       axios.post('/api/data-list/products/', {item})

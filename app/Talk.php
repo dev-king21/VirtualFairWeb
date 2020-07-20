@@ -13,7 +13,7 @@ class Talk extends Model
         return $this->belongsTo('App\Room');
     }
 
-    public function lecturer()
+    public function user()
     {
         return $this->belongsTo('App\User');
     }
