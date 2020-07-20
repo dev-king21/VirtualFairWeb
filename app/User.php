@@ -44,5 +44,6 @@ class User extends Authenticatable
     public function talks() {
         return $this->hasMany("App/Talk");
     }
+
   
 }

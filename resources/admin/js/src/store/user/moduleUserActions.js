@@ -13,7 +13,7 @@ export default {
     })
   },
 
-  requestUser ({ commit }, item) {
+  /* requestUser ({ commit }, item) {
     return new Promise((resolve, reject) => {
       axios.get('/api/user/request', {item})
         .then((response) => {
@@ -76,7 +76,7 @@ export default {
         })
         .catch((error) => { reject(error) })
     })
-  },
+  }, */
   // fetchEventLabels({ commit }) {
   //   return new Promise((resolve, reject) => {
   //     axios.get("/api/apps/calendar/labels")

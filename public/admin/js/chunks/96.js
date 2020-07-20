@@ -59,7 +59,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 var ItemGridView = function ItemGridView() {
-  return __webpack_require__.e(/*! import() */ 12).then(__webpack_require__.bind(null, /*! ./components/ItemGridView.vue */ "./resources/admin/js/src/views/apps/eCommerce/components/ItemGridView.vue"));
+  return __webpack_require__.e(/*! import() */ 13).then(__webpack_require__.bind(null, /*! ./components/ItemGridView.vue */ "./resources/admin/js/src/views/apps/eCommerce/components/ItemGridView.vue"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = ({

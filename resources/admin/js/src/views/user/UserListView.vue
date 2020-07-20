@@ -83,12 +83,16 @@
       </div>
 
       <template slot="thead">
+        <vs-th sort-key="name">ID</vs-th>
+        <vs-th sort-key="name">Username</vs-th>
+        <vs-th sort-key="email">Email</vs-th>
         <vs-th sort-key="name">Name</vs-th>
-        <vs-th sort-key="category">Category</vs-th>
-        <vs-th sort-key="popularity">Popularity</vs-th>
+        <vs-th sort-key="register_date">Register date</vs-th>
+
+       <!--  <vs-th sort-key="popularity">Popularity</vs-th>
         <vs-th sort-key="order_status">Order Status</vs-th>
         <vs-th sort-key="price">Price</vs-th>
-        <vs-th>Action</vs-th>
+        <vs-th>Action</vs-th> -->
       </template>
 
       <template slot-scope="{data}">
@@ -100,10 +104,14 @@
             </vs-td>
 
             <vs-td>
-              <p class="product-category">{{ tr.category | title }}</p>
+              <p class="product-category">{{ tr.email }}</p>
             </vs-td>
 
-            <vs-td>
+             <vs-td>
+              <p class="product-category">{{ tr.register_date }}</p>
+            </vs-td>
+
+           <!--  <vs-td>
               <vs-progress :percent="Number(tr.popularity)" :color="getPopularityColor(Number(tr.popularity))" class="shadow-md" />
             </vs-td>
 
@@ -118,7 +126,7 @@
             <vs-td class="whitespace-no-wrap">
               <feather-icon icon="EditIcon" svgClasses="w-5 h-5 hover:text-primary stroke-current" @click.stop="editData(tr)" />
               <feather-icon icon="TrashIcon" svgClasses="w-5 h-5 hover:text-danger stroke-current" class="ml-2" @click.stop="deleteData(tr.id)" />
-            </vs-td>
+            </vs-td> -->
 
           </vs-tr>
         </tbody>
@@ -197,7 +205,7 @@ export default {
       moduleUser.isRegistered = true
     }
     var action = 'user/allUser';
-    switch (this.$route.name) {
+   /*  switch (this.$route.name) {
       case 'request-user':
         action = 'user/requestUser'
         break
@@ -212,7 +220,7 @@ export default {
         break
       default:
         break    
-    }
+    } */
     this.$store.dispatch(action);
   },
   
