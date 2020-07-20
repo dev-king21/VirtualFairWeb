@@ -40,6 +40,26 @@ class Stand extends Model
         return $this->hasOne('App\Contact');
     }
 
+    public function country()
+    {
+        return $this->hasOne('App\Country');
+    }
+
+    public function stand_location()
+    {
+        return $this->hasOne('App\StandLocation');
+    }
+
+    public function stand_type()
+    {
+        return $this->hasOne('App\StandType');
+    }
+
+    public function stand_contents() {
+        return $this->hasMany('App\StandContent');
+    }
+
+
     
     protected $guarded = ['fair_id', 'user_id'];
     protected $attributes = ["status" => 0];

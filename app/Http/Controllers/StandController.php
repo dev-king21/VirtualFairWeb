@@ -20,9 +20,6 @@ class StandController extends Controller
             $res["stands"] = Stand::where("fair_id", $fair_id)->get();
         else
             $res["stands"] = Stand::all();
-       
-        
-
         return response()->json($res);
     }
 

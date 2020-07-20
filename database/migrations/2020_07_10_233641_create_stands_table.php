@@ -17,6 +17,9 @@ class CreateStandsTable extends Migration
             $table->id();
             $table->integer("fair_id");
             $table->integer("user_id");
+            $table->integer("country_id");
+            $table->integer("stand_location_id");
+            $table->integer("stand_type_id");
             $table->string("site_link");
             $table->string("logo");
             $table->text("description")->nullable();

@@ -35,7 +35,7 @@ const router = new Router({
         {
           path: '/user/request',
           name: 'request-user',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          component: () => import('@/views/user/UserListView.vue'),
           meta: {
             rule: 'editor'
           }
@@ -43,7 +43,7 @@ const router = new Router({
         {
           path: '/user/book',
           name: 'book-user',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          component: () => import('@/views/user/UserListView.vue'),
           meta: {
             rule: 'editor'
           }
@@ -51,7 +51,7 @@ const router = new Router({
         {
           path: '/user/active',
           name: 'active-user',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          component: () => import('@/views/user/UserListView.vue'),
           meta: {
             rule: 'editor'
           }
@@ -59,7 +59,7 @@ const router = new Router({
         {
           path: '/user/past',
           name: 'past-user',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          component: () => import('@/views/user/UserListView.vue'),
           meta: {
             rule: 'editor'
           }

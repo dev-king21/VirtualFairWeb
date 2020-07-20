@@ -12,6 +12,7 @@ export default {
         .catch((error) => { reject(error) })
     })
   },
+  
   fetchDataListItems ({ commit }) {
     return new Promise((resolve, reject) => {
       axios.get('/api/data-list/products')

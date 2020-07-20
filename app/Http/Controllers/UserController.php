@@ -39,7 +39,7 @@ class UserController extends Controller
             ], 200);
     }
 
-    public function requestUser(Request $request) {
+    /* public function requestUser(Request $request) {
         $res = array();
         
         $stands = Stand::with(['fair', 'user'])->where("status", "=", 0)
@@ -137,7 +137,7 @@ class UserController extends Controller
         $res["talks"] = $talks;
 
         return response()->json($res);
-    }
+    } */
 
 
 }

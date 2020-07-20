@@ -91,38 +91,38 @@
         <vs-th>Action</vs-th>
       </template>
 
-        <!-- <template slot-scope="{data}">
-          <tbody>
-            <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data">
+      <template slot-scope="{data}">
+        <tbody>
+          <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data">
 
-              <vs-td>
-                <p class="product-name font-medium truncate">{{ tr.name }}</p>
-              </vs-td>
+            <vs-td>
+              <p class="product-name font-medium truncate">{{ tr.name }}</p>
+            </vs-td>
 
-              <vs-td>
-                <p class="product-category">{{ tr.category | title }}</p>
-              </vs-td>
+            <vs-td>
+              <p class="product-category">{{ tr.category | title }}</p>
+            </vs-td>
 
-              <vs-td>
-                <vs-progress :percent="Number(tr.popularity)" :color="getPopularityColor(Number(tr.popularity))" class="shadow-md" />
-              </vs-td>
+            <vs-td>
+              <vs-progress :percent="Number(tr.popularity)" :color="getPopularityColor(Number(tr.popularity))" class="shadow-md" />
+            </vs-td>
 
-              <vs-td>
-                <vs-chip :color="getOrderStatusColor(tr.order_status)" class="product-order-status">{{ tr.order_status | title }}</vs-chip>
-              </vs-td>
+            <vs-td>
+              <vs-chip :color="getOrderStatusColor(tr.order_status)" class="product-order-status">{{ tr.order_status | title }}</vs-chip>
+            </vs-td>
 
-              <vs-td>
-                <p class="product-price">${{ tr.price }}</p>
-              </vs-td>
+            <vs-td>
+              <p class="product-price">${{ tr.price }}</p>
+            </vs-td>
 
-              <vs-td class="whitespace-no-wrap">
-                <feather-icon icon="EditIcon" svgClasses="w-5 h-5 hover:text-primary stroke-current" @click.stop="editData(tr)" />
-                <feather-icon icon="TrashIcon" svgClasses="w-5 h-5 hover:text-danger stroke-current" class="ml-2" @click.stop="deleteData(tr.id)" />
-              </vs-td>
+            <vs-td class="whitespace-no-wrap">
+              <feather-icon icon="EditIcon" svgClasses="w-5 h-5 hover:text-primary stroke-current" @click.stop="editData(tr)" />
+              <feather-icon icon="TrashIcon" svgClasses="w-5 h-5 hover:text-danger stroke-current" class="ml-2" @click.stop="deleteData(tr.id)" />
+            </vs-td>
 
-            </vs-tr>
-          </tbody>
-        </template> -->
+          </vs-tr>
+        </tbody>
+      </template>
     </vs-table>
   </div>
 </template>
@@ -150,20 +150,16 @@ export default {
   computed: {
     currentPage () {
       if (this.isMounted) {
-        return 1;
-        // return this.$refs.table.currentx
+        return this.$refs.table.currentx
       }
       return 0
     },
     users () {
-      if (this.$store.state.user)
-        console.log(this.$store.state.user.users);
       return this.$store.state.user.users
     },
 
     queriedItems () {
-      //return this.$refs.table ? this.$refs.table.queriedResults.length : this.users.length
-      return 1;
+      return this.$refs.table ? this.$refs.table.queriedResults.length : this.users.length
     }
   },
   methods: {
