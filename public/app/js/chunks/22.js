@@ -3261,7 +3261,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var VxTour = function VxTour() {
-  return __webpack_require__.e(/*! import() */ 91).then(__webpack_require__.bind(null, /*! @/components/VxTour.vue */ "./resources/app/js/src/components/VxTour.vue"));
+  return __webpack_require__.e(/*! import() */ 92).then(__webpack_require__.bind(null, /*! @/components/VxTour.vue */ "./resources/app/js/src/components/VxTour.vue"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = ({

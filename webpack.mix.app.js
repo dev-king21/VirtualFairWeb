@@ -44,6 +44,7 @@ mix.webpackConfig({
         chunkFilename: 'app/js/chunks/[name].js',
     }
 });
+//mix.browserSync({ proxy: 'localhost:8000' });
 mix.mergeManifest();
 // Change below options according to your requirement
 // if (mix.inProduction()) {
