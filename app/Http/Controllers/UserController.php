@@ -31,12 +31,11 @@ class UserController extends Controller
 
     public function allUser()
     {
-        $users = User::all();
-        return response()->json(
-            [
-                'status' => 'success',
-                'users' => $users->toArray()
-            ], 200);
+        $res = array();
+        $res["users"] = User::all();
+        
+        return response()->json($res);
+
     }
 
 

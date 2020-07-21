@@ -37,13 +37,44 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $appends = [
+        'role'
+    ];
+
     public function stands() {
-        return $this->hasMany("App/Stand");
+        return $this->hasMany("App\Stand");
     }
 
     public function talks() {
-        return $this->hasMany("App/Talk");
+        return $this->hasMany("App\Talk");
     }
 
+    public function getRoleAttribute() {
+        $is_owner = 
+            $this->stands()
+            ->where("status", "=", 1)
+            ->whereHas("fair", function($q){
+                $today = date("y-m-d");
+                $query = [
+                    ["start_date", "<=", $today]
+                ];
+                $q->where($query);
+            })->count() != 0;
+
+        $now = date("y-m-d h:i:s");
+        $query = [
+            ["start_time", "<=", $now],
+            ["status", "=", 1]
+        ];
+        $is_lecturer = $this->talks()->where($query)->count() != 0;
+
+        if($is_lecturer)
+            $role = "lecturer";
+        else if($is_owner)
+            $role = "Owner";
+        else
+            $role = "User";
+        return $role;
+    }
   
 }

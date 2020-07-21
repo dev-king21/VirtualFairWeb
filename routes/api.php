@@ -18,6 +18,8 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
+Route::post('register_country', 'CountryController@temp_add');
+
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('users', 'UserController@index')->middleware('isAdmin');
     Route::get('users/{id}', 'UserController@show')->middleware('isAdminOrSelf');

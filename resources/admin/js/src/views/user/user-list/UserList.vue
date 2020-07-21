@@ -2,27 +2,6 @@
 
   <div id="page-user-list">
 
-    <vx-card ref="filterCard" title="Filters" class="user-list-filters mb-8" actionButtons @refresh="resetColFilters" @remove="resetColFilters">
-      <div class="vx-row">
-        <div class="vx-col md:w-1/4 sm:w-1/2 w-full">
-          <label class="text-sm opacity-75">Role</label>
-          <v-select :options="roleOptions" :clearable="false" :dir="$vs.rtl ? 'rtl' : 'ltr'" v-model="roleFilter" class="mb-4 md:mb-0" />
-        </div>
-        <div class="vx-col md:w-1/4 sm:w-1/2 w-full">
-          <label class="text-sm opacity-75">Status</label>
-          <v-select :options="statusOptions" :clearable="false" :dir="$vs.rtl ? 'rtl' : 'ltr'" v-model="statusFilter" class="mb-4 md:mb-0" />
-        </div>
-        <!-- <div class="vx-col md:w-1/4 sm:w-1/2 w-full">
-          <label class="text-sm opacity-75">Verified</label>
-          <v-select :options="isVerifiedOptions" :clearable="false" :dir="$vs.rtl ? 'rtl' : 'ltr'" v-model="isVerifiedFilter" class="mb-4 sm:mb-0" />
-        </div>
-        <div class="vx-col md:w-1/4 sm:w-1/2 w-full">
-          <label class="text-sm opacity-75">Department</label>
-          <v-select :options="departmentOptions" :clearable="false" :dir="$vs.rtl ? 'rtl' : 'ltr'" v-model="departmentFilter" />
-        </div> -->
-      </div>
-    </vx-card>
-
     <div class="vx-card p-6">
 
       <div class="flex flex-wrap items-center">
@@ -135,12 +114,10 @@ import '@sass/vuexy/extraComponents/agGridStyleOverride.scss'
 import vSelect from 'vue-select'
 
 // Store Module
-import moduleUserManagement from '@/store/user-management/moduleUserManagement.js'
+import moduleUser from '@/store/user/moduleUser.js'
 
 // Cell Renderer
 import CellRendererLink from './cell-renderer/CellRendererLink.vue'
-import CellRendererStatus from './cell-renderer/CellRendererStatus.vue'
-import CellRendererVerified from './cell-renderer/CellRendererVerified.vue'
 import CellRendererActions from './cell-renderer/CellRendererActions.vue'
 
 
@@ -151,44 +128,10 @@ export default {
 
     // Cell Renderer
     CellRendererLink,
-    CellRendererStatus,
-    CellRendererVerified,
     CellRendererActions
   },
   data () {
     return {
-
-      // Filter Options
-      roleFilter: { label: 'All', value: 'all' },
-      roleOptions: [
-        { label: 'All', value: 'all' },
-        { label: 'Admin', value: 'admin' },
-        { label: 'User', value: 'user' },
-        { label: 'Staff', value: 'staff' }
-      ],
-
-      statusFilter: { label: 'All', value: 'all' },
-      statusOptions: [
-        { label: 'All', value: 'all' },
-        { label: 'Active', value: 'active' },
-        { label: 'Deactivated', value: 'deactivated' },
-        { label: 'Blocked', value: 'blocked' }
-      ],
-
-      // isVerifiedFilter: { label: 'All', value: 'all' },
-      // isVerifiedOptions: [
-      //   { label: 'All', value: 'all' },
-      //   { label: 'Yes', value: 'yes' },
-      //   { label: 'No', value: 'no' }
-      // ],
-
-      // departmentFilter: { label: 'All', value: 'all' },
-      // departmentOptions: [
-      //   { label: 'All', value: 'all' },
-      //   { label: 'Sales', value: 'sales' },
-      //   { label: 'Development', value: 'development' },
-      //   { label: 'Management', value: 'management' }
-      // ],
 
       searchQuery: '',
 
@@ -241,27 +184,6 @@ export default {
           filter: true,
           width: 150
         },
-        /* {
-          headerName: 'Status',
-          field: 'status',
-          filter: true,
-          width: 150,
-          cellRendererFramework: 'CellRendererStatus'
-        },
-        {
-          headerName: 'Verified',
-          field: 'is_verified',
-          filter: true,
-          width: 125,
-          cellRendererFramework: 'CellRendererVerified',
-          cellClass: 'text-center'
-        },
-        {
-          headerName: 'Department',
-          field: 'department',
-          filter: true,
-          width: 150
-        }, */
         {
           headerName: 'Actions',
           field: 'transactions',
@@ -273,27 +195,11 @@ export default {
       // Cell Renderer Components
       components: {
         CellRendererLink,
-        CellRendererStatus,
-        CellRendererVerified,
         CellRendererActions
       }
     }
   },
-  watch: {
-    roleFilter (obj) {
-      this.setColumnFilter('role', obj.value)
-    },
-    statusFilter (obj) {
-      this.setColumnFilter('status', obj.value)
-    }/* ,
-    isVerifiedFilter (obj) {
-      const val = obj.value === 'all' ? 'all' : obj.value === 'yes' ? 'true' : 'false'
-      this.setColumnFilter('is_verified', val)
-    },
-    departmentFilter (obj) {
-      this.setColumnFilter('department', obj.value)
-    } */
-  },
+  
   computed: {
     usersData () {
       return this.$store.state.user.users
@@ -351,9 +257,9 @@ export default {
     }
   },
   created () {
-    if (!moduleUserManagement.isRegistered) {
-      this.$store.registerModule('user', moduleUserManagement)
-      moduleUserManagement.isRegistered = true
+    if (!moduleUser.isRegistered) {
+      this.$store.registerModule('user', moduleUser)
+      moduleUser.isRegistered = true
     }
     this.$store.dispatch('user/allUser').catch(err => { console.error(err) })
   }
