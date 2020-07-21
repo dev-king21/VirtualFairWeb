@@ -110,3 +110,7 @@ Route::post('/room/talk/update/{id}', 'RoomController@update_talk');
 Route::get('/room/talk/all', 'RoomController@all_talk');
 
 
+//country
+Route::get('/country/all', 'CountryController@show_country');
+Route::post('/country/update', 'CountryController@update_country');
+

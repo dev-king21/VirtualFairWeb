@@ -26,4 +26,11 @@ class CountryController extends Controller
 
         return response()->json($res);
     }
+
+    public function update_state(Request $request, $id){
+        $res = array();
+        $country = Country::whereId($id)->update($request->post());
+        $res["status"] = "ok";
+        return response()->json($res);
+    }
 }
