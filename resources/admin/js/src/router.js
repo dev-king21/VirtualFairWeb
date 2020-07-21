@@ -78,36 +78,37 @@ const router = new Router({
         },
         {
           path: '/fair/all',
-          name: 'dashboard-analytics',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          name: 'fair-all',
+          component: () => import('@/views/fair/fair-list/FairListView.vue'),
           meta: {
             rule: 'editor'
           }
         },
         {
-          path: '/fair/scheduled',
-          name: 'dashboard-analytics',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          path: '/fair/next',
+          name: 'fair-next',
+          component: () => import('@/views/fair/fair-list/FairListView.vue'),
           meta: {
             rule: 'editor'
           }
         },
         {
           path: '/fair/live',
-          name: 'dashboard-analytics',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          name: 'fair-live',
+          component: () => import('@/views/fair/fair-list/FairListView.vue'),
           meta: {
             rule: 'editor'
           }
         },
         {
           path: '/fair/past',
-          name: 'dashboard-analytics',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          name: 'fair-past',
+          component: () => import('@/views/fair/fair-list/FairListView.vue'),
           meta: {
             rule: 'editor'
           }
         },
+        
         {
           path: '/payment',
           name: 'dashboard-analytics',

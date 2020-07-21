@@ -2,6 +2,48 @@ import axios from '@/axios.js'
 
 export default {
 
+  allFairs ({ commit }) {
+    return new Promise((resolve, reject) => {
+      axios.get('/api/fair/all')
+        .then((response) => {
+          commit('SET_FAIRS', response.data)
+          resolve(response)
+        })
+        .catch((error) => { reject(error) })
+    })
+  },
+
+  nextFairs ({ commit }) {
+    return new Promise((resolve, reject) => {
+      axios.get('/api/fair/next')
+        .then((response) => {
+          commit('SET_FAIRS', response.data)
+          resolve(response)
+        })
+        .catch((error) => { reject(error) })
+    })
+  },
+  liveFairs ({ commit }) {
+    return new Promise((resolve, reject) => {
+      axios.get('/api/fair/current')
+        .then((response) => {
+          commit('SET_FAIRS', response.data)
+          resolve(response)
+        })
+        .catch((error) => { reject(error) })
+    })
+  },
+  pastFairs ({ commit }) {
+    return new Promise((resolve, reject) => {
+      axios.get('/api/fair/past')
+        .then((response) => {
+          commit('SET_FAIRS', response.data)
+          resolve(response)
+        })
+        .catch((error) => { reject(error) })
+    })
+  },
+
   addItem ({ commit }, item) {
     return new Promise((resolve, reject) => {
       axios.post('/api/data-list/products/', {item})
@@ -23,16 +65,7 @@ export default {
         .catch((error) => { reject(error) })
     })
   },
-  // fetchEventLabels({ commit }) {
-  //   return new Promise((resolve, reject) => {
-  //     axios.get("/api/apps/calendar/labels")
-  //       .then((response) => {
-  //         commit('SET_LABELS', response.data)
-  //         resolve(response)
-  //       })
-  //       .catch((error) => { reject(error) })
-  //   })
-  // },
+  
   updateItem ({ commit }, item) {
     return new Promise((resolve, reject) => {
       axios.post(`/api/data-list/products/${item.id}`, {item})
@@ -53,20 +86,5 @@ export default {
         .catch((error) => { reject(error) })
     })
   }
-  // eventDragged({ commit }, payload) {
-  //   return new Promise((resolve, reject) => {
-  //     axios.post(`/api/apps/calendar/event/dragged/${payload.event.id}`, {payload: payload})
-  //       .then((response) => {
-
-  //         // Convert Date String to Date Object
-  //         let event = response.data
-  //         event.startDate = new Date(event.startDate)
-  //         event.endDate = new Date(event.endDate)
-
-  //         commit('UPDATE_EVENT', event)
-  //         resolve(response)
-  //       })
-  //       .catch((error) => { reject(error) })
-  //   })
-  // },
+  
 }

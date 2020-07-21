@@ -9667,7 +9667,7 @@ __webpack_require__.r(__webpack_exports__);
     i18n: 'AllUsers' */
 
   }, {
-    url: '/fair/scheduled',
+    url: '/fair/next',
     name: 'Scheduled Fair',
     slug: 'todo',
     icon: 'CheckSquareIcon'

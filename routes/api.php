@@ -52,7 +52,7 @@ Route::post('/fair/update/{id}', 'FairController@update_fair');
 Route::get('/fair/request', 'FairController@requestFair');
 Route::get('/fair/book', 'FairController@bookedFair');
 Route::get('/fair/active', 'FairController@activeFair');
-Route::get('/fair/past', 'FairController@pastFair');
+Route::get('/fair/past', 'FairController@past_fairs ');
 
 
 //stand

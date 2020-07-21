@@ -6,6 +6,9 @@
 
 
 export default {
+  SET_FAIRS (state, data) {
+    state.fairs = data.fairs;
+  },
   ADD_ITEM (state, item) {
     state.products.unshift(item)
   },

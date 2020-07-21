@@ -127,7 +127,7 @@ export default [
         i18n: 'AllUsers' */
       },
       {
-        url: '/fair/scheduled',
+        url: '/fair/next',
         name: 'Scheduled Fair',
         slug: 'todo',
         icon: 'CheckSquareIcon'/* ,

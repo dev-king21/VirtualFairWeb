@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Fair;
+use App\Stand;
 
 class FairController extends Controller
 {
@@ -40,6 +41,16 @@ class FairController extends Controller
         $now = date("y-m-d");
         $query = [
             ["start_date", ">", $now] 
+        ]; 
+        $res["fairs"] = Fair::where($query)->get();
+        return response()->json($res);
+    }
+
+    public function past_fairs(Request $request) {
+        $res = array();
+        $now = date("y-m-d");
+        $query = [
+            ["end_date", "<", $now] 
         ]; 
         $res["fairs"] = Fair::where($query)->get();
         return response()->json($res);

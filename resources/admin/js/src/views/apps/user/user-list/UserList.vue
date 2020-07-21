@@ -1,9 +1,3 @@
-<!-- =========================================================================================
-  File Name: UserList.vue
-  Description: User List page
-
-========================================================================================== -->
-
 <template>
 
   <div id="page-user-list">
@@ -350,12 +344,6 @@ export default {
   },
   mounted () {
     this.gridApi = this.gridOptions.api
-
-    /* =================================================================
-      NOTE:
-      Header is not aligned properly in RTL version of agGrid table.
-      However, we given fix to this issue. If you want more robust solution please contact them at gitHub
-    ================================================================= */
     if (this.$vs.rtl) {
       const header = this.$refs.agGridTable.$el.querySelector('.ag-header-container')
       header.style.left = `-${  String(Number(header.style.transform.slice(11, -3)) + 9)  }px`

@@ -151,12 +151,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 
  // Store Module
@@ -387,11 +381,6 @@ __webpack_require__.r(__webpack_exports__);
   },
   mounted: function mounted() {
     this.gridApi = this.gridOptions.api;
-    /* =================================================================
-      NOTE:
-      Header is not aligned properly in RTL version of agGrid table.
-      However, we given fix to this issue. If you want more robust solution please contact them at gitHub
-    ================================================================= */
 
     if (this.$vs.rtl) {
       var header = this.$refs.agGridTable.$el.querySelector('.ag-header-container');
