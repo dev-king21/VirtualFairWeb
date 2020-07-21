@@ -28,50 +28,6 @@ const router = new Router({
             rule: 'editor'
           }
         },
-        /* {
-          path: '/user',
-          redirect: '/user/all'
-        },
-        {
-          path: '/user/all',
-          name: 'all-user',
-          component: () => import('@/views/user/user-list/UserList.vue'),
-          meta: {
-            rule: 'editor'
-          }
-        },
-        {
-          path: '/user/request',
-          name: 'request-user',
-          component: () => import('@/views/user/UserListView.vue'),
-          meta: {
-            rule: 'editor'
-          }
-        },
-        {
-          path: '/user/book',
-          name: 'book-user',
-          component: () => import('@/views/user/UserListView.vue'),
-          meta: {
-            rule: 'editor'
-          }
-        },
-        {
-          path: '/user/active',
-          name: 'active-user',
-          component: () => import('@/views/user/UserListView.vue'),
-          meta: {
-            rule: 'editor'
-          }
-        },
-        {
-          path: '/user/past',
-          name: 'past-user',
-          component: () => import('@/views/user/UserListView.vue'),
-          meta: {
-            rule: 'editor'
-          }
-        }, */
         {
           path: '/room',
           redirect: '/room/all'
@@ -162,8 +118,8 @@ const router = new Router({
         },
         {
           path: '/settings/country',
-          name: 'dashboard-analytics',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          name: 'country',
+          component: () => import('@/views/setting/country/CountryList.vue'),
           meta: {
             rule: 'editor'
           }

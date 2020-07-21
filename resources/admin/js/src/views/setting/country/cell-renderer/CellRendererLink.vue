@@ -1,0 +1,22 @@
+<template>
+  <div class="flex items-center">
+    <!-- <img :src="avatar" alt="content-img" class="responsive rounded-lg"> -->
+    <vs-avatar :src="avatar" class="flex-shrink-0 mr-2" size="30px" @click="$router.push(url)" />
+    <router-link :to="url" @click.stop.prevent class="text-inherit hover:text-primary">{{ params.value }}</router-link>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'CellRendererLink',
+  computed: {
+    url () {
+      return '/apps/user/user-view/268'
+    },
+
+    avatar () {
+      return 'https://www.countryflags.io/' + this.params.data.code + '/shiny/32.png'
+    }
+  }
+}
+</script>

@@ -61,12 +61,6 @@ class FairController extends Controller
     public function update_fair(Request $request, $id) {
         $res = array();
         $fair = Fair::whereId($id)->update($request->post());
-        // $fair->name = $request->post("name");
-        // $fair->opened_year = $request->post("opened_year");
-        // $fair->start_date = $request->post("start_date");
-        // $fair->end_date = $request->post("end_date");
-        
-
         $res["status"] = "ok";
         return response()->json($res);
     }

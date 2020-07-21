@@ -111,6 +111,22 @@ Route::get('/room/talk/all', 'RoomController@all_talk');
 
 
 //country
-Route::get('/country/all', 'CountryController@show_country');
-Route::post('/country/update', 'CountryController@update_country');
+Route::get('/country/all', 'CountryController@show');
+Route::post('/country/update/{id}', 'CountryController@update');
+Route::post('/country/activate/{status}', 'CountryController@activate');
+
+//standLocation
+Route::get('/standLocation/all', 'StandLocationController@show');
+Route::post('/standLocation/update/{id}', 'StandLocationController@update');
+Route::post('/standLocation/create', 'StandLocationController@create');
+
+//standType
+Route::get('/standType/all', 'StandTypeController@show');
+Route::post('/standType/update/{id}', 'StandTypeController@update');
+Route::post('/standType/create', 'StandTypeController@create');
+
+//standTypeItem
+Route::get('/standTypeItem/all', 'StandTypeItemController@show');
+Route::post('/standTypeItem/update/{id}', 'StandTypeItemController@update');
+Route::post('/standTypeItem/create', 'StandTypeItemController@create');
 

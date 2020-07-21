@@ -19,7 +19,6 @@ class CreateStandLocationsTable extends Migration
             $table->float('top');
             $table->float('width');
             $table->float('height');
-            $table->string('background');
             $table->timestamps();
         });
     }

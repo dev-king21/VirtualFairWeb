@@ -8,18 +8,24 @@ use App\Country;
 class CountryController extends Controller
 {
     //
-    public function show_country(Request $request){
+    public function show(Request $request){
         $res = array();
-        $res["country"] = Country::all();
+        $res["countries"] = Country::all();
         return response()->json($res);
     }
 
     public function temp_add(Request $request){
         $res = array();
-        foreach ($request->post("countries") as $item) {
+        foreach ($request->post() as $key => $item) {
             $ctry = new Country;
             $ctry->name = $item["name"];
-            $ctry->code = $item["code"];
+            $ctry->phone = $item["phone"];
+            $ctry->continent = $item["continent"];
+            $ctry->capital = $item["capital"];
+            $ctry->currency = $item["currency"];
+
+            $ctry->code = $key;
+
             $ctry->save();
         }
         $res["status"] = "ok";
@@ -27,7 +33,14 @@ class CountryController extends Controller
         return response()->json($res);
     }
 
-    public function update_state(Request $request, $id){
+    public function activate(Request $request, $status) {
+        $countries_list = $request->post("countries");
+        $country = Country::whereIn("id", $countries_list)->update(["status"=>$status]);
+        
+        return $this->show($request);
+    }
+
+    public function update(Request $request, $id){
         $res = array();
         $country = Country::whereId($id)->update($request->post());
         $res["status"] = "ok";
