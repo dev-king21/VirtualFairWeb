@@ -1,10 +1,3 @@
-<!-- =========================================================================================
-    File Name: AvatarDefault.vue
-    Description: Rendering of default avatar
-
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Default" code-toggler>
 

@@ -9565,53 +9565,46 @@ __webpack_require__.r(__webpack_exports__);
     i18n: 'eCommerce'
   }]
 }, {
-  url: null,
+  url: '/user',
   name: 'User',
-  icon: 'PackageIcon',
-  i18n: 'User',
-  submenu: [{
-    url: '/user/all',
-    name: 'All Users',
-    slug: 'email',
-    icon: 'MailIcon'
-    /* ,
-    i18n: 'AllUsers' */
+  icon: 'UserIcon',
+  i18n: 'User'
+  /* ,
+  submenu: [
+  {
+  url: '/user/all',
+  name: 'All Users',
+  slug: 'email',
+  icon: 'MailIcon'
+  },
+  {
+  url: '/user/request',
+  name: 'Request User',
+  slug: 'chat',
+  icon: 'MessageSquareIcon'
+  },
+  {
+  url: '/user/book',
+  name: 'Booked User',
+  slug: 'todo',
+  icon: 'CheckSquareIcon'
+  },
+  {
+  url: '/user/active',
+  name: 'Active Owner',
+  slug: 'calendar-simple-calendar',
+  icon: 'CalendarIcon',
+  tagColor: 'success'
+  },
+  {
+  url: '/user/past',
+  name: 'Past Owner',
+  slug: 'calendar-simple-calendar',
+  icon: 'CalendarIcon',
+  tagColor: 'success'
+  }
+  ] */
 
-  }, {
-    url: '/user/request',
-    name: 'Request User',
-    slug: 'chat',
-    icon: 'MessageSquareIcon'
-    /* ,
-    i18n: 'Chat' */
-
-  }, {
-    url: '/user/book',
-    name: 'Booked User',
-    slug: 'todo',
-    icon: 'CheckSquareIcon'
-    /* ,
-    i18n: 'Todo' */
-
-  }, {
-    url: '/user/active',
-    name: 'Active Owner',
-    slug: 'calendar-simple-calendar',
-    icon: 'CalendarIcon',
-    tagColor: 'success'
-    /* ,
-    i18n: 'Calendar' */
-
-  }, {
-    url: '/user/past',
-    name: 'Past Owner',
-    slug: 'calendar-simple-calendar',
-    icon: 'CalendarIcon',
-    tagColor: 'success'
-    /* ,
-    i18n: 'Calendar' */
-
-  }]
 }, {
   url: null,
   name: 'Room',
@@ -9705,6 +9698,43 @@ __webpack_require__.r(__webpack_exports__);
   name: 'Payment',
   icon: 'PackageIcon',
   i18n: 'Payment'
+}, {
+  url: null,
+  name: 'Settings',
+  icon: 'SettingsIcon',
+  submenu: [{
+    url: '/settings/country',
+    name: 'Countries',
+    slug: 'countries',
+    icon: 'MailIcon'
+    /* ,
+    i18n: 'AllUsers' */
+
+  }, {
+    url: '/settings/stand-location',
+    name: 'Stand Location',
+    slug: 'stand-location',
+    icon: 'MailIcon'
+    /* ,
+    i18n: 'AllUsers' */
+
+  }, {
+    url: '/settings/stand-type',
+    name: 'Stand Type',
+    slug: 'stand-type',
+    icon: 'MailIcon'
+    /* ,
+    i18n: 'AllUsers' */
+
+  }, {
+    url: '/settings/stand-type-item',
+    name: 'Stand Items',
+    slug: 'stand-type-item',
+    icon: 'MailIcon'
+    /* ,
+    i18n: 'AllUsers' */
+
+  }]
 }, {
   header: 'Apps',
   icon: 'PackageIcon',

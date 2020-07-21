@@ -22,12 +22,20 @@ const router = new Router({
         },
         {
           path: '/user',
+          name: 'user',
+          component: () => import('@/views/user/user-list/UserList.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        /* {
+          path: '/user',
           redirect: '/user/all'
         },
         {
           path: '/user/all',
           name: 'all-user',
-          component: () => import('@/views/user/UserListView.vue'),
+          component: () => import('@/views/user/user-list/UserList.vue'),
           meta: {
             rule: 'editor'
           }
@@ -63,7 +71,7 @@ const router = new Router({
           meta: {
             rule: 'editor'
           }
-        },
+        }, */
         {
           path: '/room',
           redirect: '/room/all'
@@ -146,6 +154,38 @@ const router = new Router({
         },
         {
           path: '/payment',
+          name: 'dashboard-analytics',
+          component: () => import('@/views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/settings/country',
+          name: 'dashboard-analytics',
+          component: () => import('@/views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/settings/stand-location',
+          name: 'dashboard-analytics',
+          component: () => import('@/views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/settings/stand-type',
+          name: 'dashboard-analytics',
+          component: () => import('@/views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/settings/stand-type-item',
           name: 'dashboard-analytics',
           component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
