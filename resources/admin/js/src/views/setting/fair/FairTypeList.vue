@@ -12,10 +12,10 @@
                 <vx-card>
                     <div slot="no-body">
                         <router-link :to="'/settings/stand-location/'+ftype.id">
-                            <img :src="imgUrl(ftype.building)" alt="content-img" class="responsive card-img-top">
+                            <img :src="'/fair_image/' + ftype.building" alt="content-img" class="responsive card-img-top">
                         </router-link>
                     </div>
-                    <h5 class="mb-2">{{ ftype.name }}</h5>
+                    <h2 class="mb-2">{{ ftype.name }}</h2>
                     <p class="text-primary">Stand Items: {{ ftype.stand_locations.length }}</p>
                     <div class="flex justify-between flex-wrap">
                         <vs-button 
@@ -46,18 +46,14 @@ export default{
   },
   data () {
     return {
-      // card 1
-      fair_types: [],
-      
+      fair_types: []
     }
   },
   computed: {
 
   },
   methods: {
-    imgUrl(fname) {
-        return `/fair_image/${fname}`
-    }
+    
   },
   mounted () {
     

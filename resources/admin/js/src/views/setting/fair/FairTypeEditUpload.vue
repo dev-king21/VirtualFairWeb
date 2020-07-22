@@ -1,14 +1,27 @@
 <template>
   <div class="excel-import">
-    <input type="file" ref="fileInput" class="hidden" accept=".xlsx, .xls" @change="handleClick">
+    <img :src="preview" ref="imagePreview" alt="user-profile-cover" class="responsive">
+    <input type="file" ref="fileInput" class="hidden" accept=".png, .gif, .jpg, .jpeg" @change="handleClick">
+    <div v-show="selected">
+      <div class="flex justify-between flex-wrap">
+        <vs-button class="mt-4" type="border" icon-pack="feather" icon="icon-upload" color="success"
+            @click="uploadAction()">
+            Upload
+        </vs-button>    
+        <vs-button class="mt-4" type="border" icon-pack="feather" icon="icon-x" color="dark"
+            @click="cancelAction()">
+            Cancel
+        </vs-button>
+      </div>
+    </div>
     <div
       @click="$refs.fileInput.click()"
       @drop="handleDrop"
       @dragover="handleDragover"
       @dragenter="handleDragover"
-      class="px-8 py-16 cursor-pointer text-center border-2 border-dashed d-theme-border-grey-light d-theme-dark-bg text-xl">
+      class="px-8 py-16 mt-4 cursor-pointer text-center border-2 border-dashed d-theme-border-grey-light d-theme-dark-bg text-xl">
       <feather-icon icon="UploadCloudIcon" svgClasses="h-16 w-16 stroke-current text-grey" class="block" />
-      <span>Drop Excel File or </span>
+      <span>Drop Image File or </span>
       <span class="font-medium text-primary" @click.stop="$refs.fileInput.click()">Browse</span>
       <!-- <vs-button type="border" @click.stop="$refs.fileInput.click()">Browse</vs-button> -->
     </div>
@@ -16,46 +29,24 @@
 </template>
 
 <script>
-import XLSX from 'xlsx'
-
+const preloader = '/fair_image/placeholder.png'
 export default {
   props: {
     onSuccess: {
       type: Function,
       required: true
+    },
+    preview: {
+      type: String,
+      required: false
     }
   },
   data () {
     return {
-      excelData: {
-        header: null,
-        results: null,
-        meta: null
-      }
+      selected: false
     }
   },
   methods: {
-    generateData ({ header, results, meta }) {
-      this.excelData.header = header
-      this.excelData.results = results
-      this.excelData.meta = meta
-      if (this.onSuccess) this.onSuccess(this.excelData)
-    },
-    getHeaderRow (sheet) {
-      const headers = []
-      const range = XLSX.utils.decode_range(sheet['!ref'])
-      let C = undefined
-      const R = range.s.r
-      /* start in the first row */
-      for (C = range.s.c; C <= range.e.c; ++C) { /* walk every column in the range */
-        const cell = sheet[XLSX.utils.encode_cell({ c: C, r: R })]
-        /* find the cell in the first row */
-        let hdr = `UNKNOWN ${  C}` // <-- replace with your desired default
-        if (cell && cell.t) hdr = XLSX.utils.format_cell(cell)
-        headers.push(hdr)
-      }
-      return headers
-    },
     handleDragover (e) {
       e.stopPropagation()
       e.preventDefault()
@@ -76,10 +67,10 @@ export default {
         return
       }
       const rawFile = files[0] // only use files[0]
-      if (!this.isExcel(rawFile)) {
+      if (!this.isImage(rawFile)) {
         this.$vs.notify({
           title: 'Login Attempt',
-          text: 'Only supports upload .xlsx, .xls, .csv suffix files',
+          text: 'Only supports upload .png, .gif, .jpg, .jpeg suffix files',
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'warning'
@@ -92,17 +83,11 @@ export default {
       return new Promise((resolve) => {
         const reader = new FileReader()
         reader.onload = e => {
-          const data = e.target.result
-          const workbook = XLSX.read(data, { type: 'array' })
-          const firstSheetName = workbook.SheetNames[0]
-          const worksheet = workbook.Sheets[firstSheetName]
-          const header = this.getHeaderRow(worksheet)
-          const results = XLSX.utils.sheet_to_json(worksheet)
-          const meta = { sheetName: firstSheetName }
-          this.generateData({ header, results, meta })
+          this.$refs.imagePreview.src = e.target.result
+          this.selected = true
           resolve()
         }
-        reader.readAsArrayBuffer(rawFile)
+        reader.readAsDataURL(rawFile)
       })
     },
     handleClick (e) {
@@ -111,14 +96,24 @@ export default {
       if (!rawFile) return
       this.uploadFile(rawFile)
     },
-    isExcel (file) {
-      return /\.(xlsx|xls|csv)$/.test(file.name)
+    isImage (file) {
+      return /\.(jpeg|png|gif|jpg)$/.test(file.name)
     },
     uploadFile (file) {
       this.$refs['fileInput'].value = null // fix can't select the same excel
       this.readerData(file)
+    },
+    uploadAction () {
+
+    },
+    cancelAction () {
+      this.$refs.imagePreview.src = preloader
+      this.selected = false
     }
 
+  },
+  created () {
+    this.preview = preloader
   }
 }
 </script>

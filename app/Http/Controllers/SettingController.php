@@ -31,7 +31,11 @@ class SettingController extends Controller
     public function createFairType(Request $request) {
         $res = array();
         $fairType = new FairType;
-        $fairType->name = $request->post('name');
+        $name = $request->post('name');
+        if ($name === null)
+            $name = 'Fair Type - ' + rand();
+
+        $fairType->name = $name;
         $fairType->building = $request->post('building');
         $fairType->interior = $request->post('interior');
         
@@ -145,7 +149,7 @@ class SettingController extends Controller
         for ($i = 1; $i<8; $i++) {
             $standType = new StandType;
             $standType->name = 'stand type - '.$i;
-            $standType->building = 'stand_building'.$i.'.jpeg';
+            $standType->building = 'stand_building'.$i.'.png';
             $standType->interior = 'stand_interior'.$i.'.jpeg';
             
             $standType->save();

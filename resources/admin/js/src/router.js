@@ -165,7 +165,7 @@ const router = new Router({
         {
           path: '/settings/stand-type',
           name: 'stand-type',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          component: () => import('@/views/setting/fair/StandTypeList.vue'),
           meta: {
             rule: 'editor'
           }

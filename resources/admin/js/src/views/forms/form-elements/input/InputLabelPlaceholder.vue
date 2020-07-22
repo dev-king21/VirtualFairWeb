@@ -1,10 +1,3 @@
-<!-- =========================================================================================
-    File Name: InputLabelPlaceholder.vue
-    Description: Add placeholder to input
-
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Label Placeholder" code-toggler>
 

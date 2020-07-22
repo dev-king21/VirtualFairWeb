@@ -1,10 +1,3 @@
-<!-- =========================================================================================
-    File Name: InputDefault.vue
-    Description: Default input using vs-input
-
-========================================================================================== -->
-
-
 <template>
     <vx-card title="Default" code-toggler>
 
