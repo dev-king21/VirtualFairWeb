@@ -128,6 +128,7 @@ Route::get('/fair_type/{ftype_id}/stand_locations', 'SettingController@allStandL
 
 //standType
 Route::get('/stand_type/all', 'SettingController@allStandType');
+Route::get('/stand_type/get/{id}', 'SettingController@getStandType');
 Route::post('/stand_type/create', 'SettingController@createStandType');
 Route::post('/stand_type/update/{id}', 'SettingController@updateStandType');
 Route::get('/stand_type/{stype_id}/stand_type_items', 'SettingController@allStandTypeItems');

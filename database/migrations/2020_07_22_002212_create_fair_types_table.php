@@ -16,8 +16,8 @@ class CreateFairTypesTable extends Migration
         Schema::create('fair_types', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('building');
-            $table->string('interior');
+            $table->string('building')->nullable();
+            $table->string('interior')->nullable();
             $table->timestamps();
         });
     }

@@ -1,16 +1,17 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[81],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenu.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenu.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/clipboard/Clipboard.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/clipboard/Clipboard.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ContextMenuSimple_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ContextMenuSimple.vue */ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuSimple.vue");
-/* harmony import */ var _ContextMenuClickNotClose_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ContextMenuClickNotClose.vue */ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuClickNotClose.vue");
+/* harmony import */ var _ClipboardDirective_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ClipboardDirective.vue */ "./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardDirective.vue");
+/* harmony import */ var _ClipboardWithoutDirective_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ClipboardWithoutDirective.vue */ "./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardWithoutDirective.vue");
+//
 //
 //
 //
@@ -28,24 +29,22 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    ContextMenuSimple: _ContextMenuSimple_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    ContextMenuClickNotClose: _ContextMenuClickNotClose_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    ClipboardDirective: _ClipboardDirective_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    ClipboardWithoutDirective: _ClipboardWithoutDirective_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuClickNotClose.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuClickNotClose.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardDirective.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardDirective.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_context__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-context */ "./node_modules/vue-context/dist/js/vue-context.js");
-/* harmony import */ var vue_context__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_context__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -107,62 +106,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    VueContext: vue_context__WEBPACK_IMPORTED_MODULE_0__["VueContext"]
+  data: function data() {
+    return {
+      text: 'Copy Me'
+    };
   },
   methods: {
-    optionClicked: function optionClicked(text) {
+    onCopy: function onCopy() {
       this.$vs.notify({
-        title: 'Action Clicked',
-        text: text,
-        icon: 'feather',
-        iconPack: 'icon-alert-circle',
-        color: 'primary'
+        title: 'Success',
+        text: 'Text copied successfully',
+        color: 'success',
+        iconPack: 'feather',
+        position: 'top-center',
+        icon: 'icon-check-circle'
+      });
+    },
+    onError: function onError() {
+      this.$vs.notify({
+        title: 'Failed',
+        text: 'Error in copying text',
+        color: 'danger',
+        iconPack: 'feather',
+        position: 'top-center',
+        icon: 'icon-alert-circle'
       });
     }
   }
@@ -170,17 +138,15 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuSimple.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuSimple.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardWithoutDirective.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardWithoutDirective.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vue_context__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vue-context */ "./node_modules/vue-context/dist/js/vue-context.js");
-/* harmony import */ var vue_context__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue_context__WEBPACK_IMPORTED_MODULE_0__);
 //
 //
 //
@@ -234,68 +200,33 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    VueContext: vue_context__WEBPACK_IMPORTED_MODULE_0__["VueContext"]
+  data: function data() {
+    return {
+      text2: 'Copy Me Without Directive'
+    };
   },
   methods: {
-    optionClicked: function optionClicked(text) {
-      this.$vs.notify({
-        title: 'Action Clicked',
-        text: text,
-        icon: 'feather',
-        iconPack: 'icon-alert-circle',
-        color: 'primary'
+    copyText: function copyText() {
+      var thisIns = this;
+      this.$copyText(this.text2).then(function () {
+        thisIns.$vs.notify({
+          title: 'Success',
+          text: 'Text copied successfully',
+          color: 'success',
+          iconPack: 'feather',
+          position: 'top-center',
+          icon: 'icon-check-circle'
+        });
+      }, function () {
+        thisIns.$vs.notify({
+          title: 'Failed',
+          text: 'Error in copying text',
+          color: 'danger',
+          iconPack: 'feather',
+          position: 'top-center',
+          icon: 'icon-alert-circle'
+        });
       });
     }
   }
@@ -303,10 +234,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenu.vue?vue&type=template&id=412966e9&":
-/*!************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenu.vue?vue&type=template&id=412966e9& ***!
-  \************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/clipboard/Clipboard.vue?vue&type=template&id=0f5cb420&":
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/clipboard/Clipboard.vue?vue&type=template&id=0f5cb420& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -320,12 +251,8 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "context-menu-demo" } },
-    [
-      _c("context-menu-simple"),
-      _vm._v(" "),
-      _c("context-menu-click-not-close")
-    ],
+    { attrs: { id: "page-clipboard-demo" } },
+    [_c("clipboard-directive"), _vm._v(" "), _c("clipboard-without-directive")],
     1
   )
 }
@@ -336,10 +263,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuClickNotClose.vue?vue&type=template&id=12d4abd4&":
-/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuClickNotClose.vue?vue&type=template&id=12d4abd4& ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardDirective.vue?vue&type=template&id=294b3a82&":
+/*!****************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardDirective.vue?vue&type=template&id=294b3a82& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -353,147 +280,58 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Click Not Close", "code-toggler": "" } },
+    {
+      attrs: {
+        title: "Using Directive",
+        subtitle: "Use directive on button to copy text",
+        "code-toggler": ""
+      }
+    },
     [
+      _c("vs-input", {
+        staticClass: "inline-flex mb-2 mr-2",
+        model: {
+          value: _vm.text,
+          callback: function($$v) {
+            _vm.text = $$v
+          },
+          expression: "text"
+        }
+      }),
+      _vm._v(" "),
       _c(
         "vs-button",
         {
-          on: {
-            contextmenu: function($event) {
-              $event.preventDefault()
-              return _vm.$refs.menu.open($event)
+          directives: [
+            {
+              name: "clipboard",
+              rawName: "v-clipboard:copy",
+              value: _vm.text,
+              expression: "text",
+              arg: "copy"
+            },
+            {
+              name: "clipboard",
+              rawName: "v-clipboard:success",
+              value: _vm.onCopy,
+              expression: "onCopy",
+              arg: "success"
+            },
+            {
+              name: "clipboard",
+              rawName: "v-clipboard:error",
+              value: _vm.onError,
+              expression: "onError",
+              arg: "error"
             }
-          }
+          ]
         },
-        [_vm._v("Right click on me - Do not close")]
+        [_vm._v("\n      Copy\n    ")]
       ),
-      _vm._v(" "),
-      _c("vue-context", { ref: "menu", attrs: { closeOnClick: false } }, [
-        _c("li", [
-          _c(
-            "a",
-            {
-              staticClass: "flex items-center text-sm",
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.optionClicked("Next")
-                }
-              }
-            },
-            [
-              _c("feather-icon", {
-                attrs: {
-                  icon: _vm.$vs.rtl ? "ChevronLeftIcon" : "ChevronRightIcon",
-                  svgClasses: "w-5 h-5"
-                }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "ml-2" }, [_vm._v("Next")])
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              staticClass: "flex items-center text-sm",
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.optionClicked("Previous")
-                }
-              }
-            },
-            [
-              _c("feather-icon", {
-                attrs: {
-                  icon: _vm.$vs.rtl ? "ChevronRightIcon" : "ChevronLeftIcon",
-                  svgClasses: "w-5 h-5"
-                }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "ml-2" }, [_vm._v("Previous")])
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              staticClass: "flex items-center text-sm",
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.optionClicked("Increase")
-                }
-              }
-            },
-            [
-              _c("feather-icon", {
-                attrs: { icon: "PlusIcon", svgClasses: "w-5 h-5" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "ml-2" }, [_vm._v("Increase")])
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              staticClass: "flex items-center text-sm",
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.optionClicked("Decrease")
-                }
-              }
-            },
-            [
-              _c("feather-icon", {
-                attrs: { icon: "MinusIcon", svgClasses: "w-5 h-5" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "ml-2" }, [_vm._v("Decrease")])
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              staticClass: "flex items-center text-sm",
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.optionClicked("Random")
-                }
-              }
-            },
-            [
-              _c("feather-icon", {
-                attrs: { icon: "ShuffleIcon", svgClasses: "w-5 h-5" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "ml-2" }, [_vm._v("Random")])
-            ],
-            1
-          )
-        ])
-      ]),
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<template>\n    <vs-button @contextmenu.prevent="$refs.menu.open">Right click on me - Do not close</vs-button>\n    <vue-context ref="menu" :closeOnClick="false">\n        <ul class="bordered-items p-0">\n            <li>\n              <a href="#" @click="optionClicked(\'Next\')" class="flex items-center text-sm">\n                <feather-icon icon="ChevronRightIcon" svgClasses="w-5 h-5" />\n                <span class="ml-2">Next</span>\n              </a>\n            </li>\n            <li>\n              <a href="#" @click="optionClicked(\'Previous\')" class="flex items-center text-sm">\n                <feather-icon icon="ChevronLeftIcon" svgClasses="w-5 h-5" />\n                <span class="ml-2">Previous</span>\n              </a>\n            </li>\n            <li>\n              <a href="#" @click="optionClicked(\'Increase\')" class="flex items-center text-sm">\n                <feather-icon icon="PlusIcon" svgClasses="w-5 h-5" />\n                <span class="ml-2">Increase</span>\n              </a>\n            </li>\n            <li>\n              <a href="#" @click="optionClicked(\'Decrease\')" class="flex items-center text-sm">\n                <feather-icon icon="MinusIcon" svgClasses="w-5 h-5" />\n                <span class="ml-2">Decrease</span>\n              </a>\n            </li>\n            <li>\n              <a href="#" @click="optionClicked(\'Random\')" class="flex items-center text-sm">\n                <feather-icon icon="ShuffleIcon" svgClasses="w-5 h-5" />\n                <span class="ml-2">Random</span>\n              </a>\n            </li>\n        </ul>\n    </vue-context>\n</template>\n\n<script>\nimport { VueContext } from \'vue-context\';\n\nexport default{\n  components: {\n    VueContext\n  },\n  methods: {\n    optionClicked(text) {\n      this.$vs.notify({\n        title:\'Action Clicked\',\n        text: text,\n        icon: \'feather\',\n        iconPack: \'icon-alert-circle\',\n        color:\'primary\'\n      })\n    }\n  }\n}\n</script>\n    '
+          "\n<template>\n    <vs-input v-model=\"text\" class=\"inline-flex\" />\n    <vs-button\n        v-clipboard:copy=\"text\"\n        v-clipboard:success=\"onCopy\"\n        v-clipboard:error=\"onError\">\n        Copy\n    </vs-button>\n</template>\n\n<script>\nexport default {\n    data() {\n        return {\n            text: 'Copy Me!',\n        }\n    },\n    methods: {\n        onCopy() {\n            this.$vs.notify({\n                title: 'Success',\n                text: 'Text copied successfully',\n                color: 'success',\n                iconPack: 'feather',\n                position: 'top-center',\n                icon: 'icon-check-circle'\n            })\n        },\n        onError() {\n            this.$vs.notify({\n                title: 'Failed',\n                text: 'Error in copying text',\n                color: 'danger',\n                iconPack: 'feather',\n                position: 'top-center',\n                icon: 'icon-alert-circle'\n            })\n        },\n    }\n}\n</script>\n    "
         )
       ])
     ],
@@ -507,10 +345,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuSimple.vue?vue&type=template&id=6b810afb&":
-/*!******************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuSimple.vue?vue&type=template&id=6b810afb& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardWithoutDirective.vue?vue&type=template&id=f65c55b2&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardWithoutDirective.vue?vue&type=template&id=f65c55b2& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -524,141 +362,31 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Simple", "code-toggler": "" } },
+    {
+      attrs: {
+        title: "Without directive",
+        subtitle:
+          "You can copy text without a specific button. Use $copyText to copy text when event got fired.",
+        "code-toggler": ""
+      }
+    },
     [
-      _c(
-        "vs-button",
-        {
-          on: {
-            contextmenu: function($event) {
-              $event.preventDefault()
-              return _vm.$refs.menu.open($event)
-            }
-          }
-        },
-        [_vm._v("Right click on me")]
-      ),
+      _c("vs-input", {
+        staticClass: "inline-flex mb-2 mr-2",
+        model: {
+          value: _vm.text2,
+          callback: function($$v) {
+            _vm.text2 = $$v
+          },
+          expression: "text2"
+        }
+      }),
       _vm._v(" "),
-      _c("vue-context", { ref: "menu" }, [
-        _c("li", [
-          _c(
-            "a",
-            {
-              staticClass: "flex items-center text-sm",
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.optionClicked("New")
-                }
-              }
-            },
-            [
-              _c("feather-icon", {
-                attrs: { icon: "PlusIcon", svgClasses: "w-5 h-5" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "ml-2" }, [_vm._v("New")])
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              staticClass: "flex items-center text-sm",
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.optionClicked("Open")
-                }
-              }
-            },
-            [
-              _c("feather-icon", {
-                attrs: { icon: "FileIcon", svgClasses: "w-5 h-5" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "ml-2" }, [_vm._v("Open")])
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              staticClass: "flex items-center text-sm",
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.optionClicked("Save")
-                }
-              }
-            },
-            [
-              _c("feather-icon", {
-                attrs: { icon: "SaveIcon", svgClasses: "w-5 h-5" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "ml-2" }, [_vm._v("Save")])
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              staticClass: "flex items-center text-sm",
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.optionClicked("As")
-                }
-              }
-            },
-            [
-              _c("feather-icon", {
-                attrs: { icon: "SaveIcon", svgClasses: "w-5 h-5" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "ml-2" }, [_vm._v("Save As")])
-            ],
-            1
-          )
-        ]),
-        _vm._v(" "),
-        _c("li", [
-          _c(
-            "a",
-            {
-              staticClass: "flex items-center text-sm",
-              attrs: { href: "#" },
-              on: {
-                click: function($event) {
-                  return _vm.optionClicked("Close")
-                }
-              }
-            },
-            [
-              _c("feather-icon", {
-                attrs: { icon: "XIcon", svgClasses: "w-5 h-5" }
-              }),
-              _vm._v(" "),
-              _c("span", { staticClass: "ml-2" }, [_vm._v("Close")])
-            ],
-            1
-          )
-        ])
-      ]),
+      _c("vs-button", { on: { click: _vm.copyText } }, [_vm._v("Copy")]),
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<template>\n    <vs-button @contextmenu.prevent="$refs.menu.open">Right click on me</vs-button>\n    <vue-context ref="menu">\n        <li>\n          <a href="#" @click="optionClicked(\'New\')" class="flex items-center text-sm">\n            <feather-icon icon="PlusIcon" svgClasses="w-5 h-5" />\n            <span class="ml-2">New</span>\n          </a>\n        </li>\n        <li>\n          <a href="#" @click="optionClicked(\'Open\')" class="flex items-center text-sm">\n            <feather-icon icon="FileIcon" svgClasses="w-5 h-5" />\n            <span class="ml-2">Open</span>\n          </a>\n        </li>\n        <li>\n          <a href="#" @click="optionClicked(\'Save\')" class="flex items-center text-sm">\n            <feather-icon icon="SaveIcon" svgClasses="w-5 h-5" />\n            <span class="ml-2">Save</span>\n          </a>\n        </li>\n        <li>\n          <a href="#" @click="optionClicked(\'As\')" class="flex items-center text-sm">\n            <feather-icon icon="SaveIcon" svgClasses="w-5 h-5" />\n            <span class="ml-2">Save As</span>\n          </a>\n        </li>\n        <li>\n          <a href="#" @click="optionClicked(\'Close\')" class="flex items-center text-sm">\n            <feather-icon icon="XIcon" svgClasses="w-5 h-5" />\n            <span class="ml-2">Close</span>\n          </a>\n        </li>\n    </vue-context>\n</template>\n\n<script>\nimport { VueContext } from \'vue-context\';\n\nexport default {\n    components: {\n        VueContext\n    },\n    methods: {\n        optionClicked(text) {\n            this.$vs.notify({\n                title: \'Action Clicked\',\n                text: text,\n                icon: \'feather\',\n                iconPack: \'icon-alert-circle\',\n                color: \'primary\'\n            })\n        }\n    }\n}\n</script>\n    '
+          "\n<template>\n    <vs-input v-model=\"text2\" class=\"inline-flex\" />\n    <vs-button @click=\"copyText\">Copy</vs-button>\n</template>\n\n<script>\nexport default {\n    data() {\n        return {\n            text2: 'Copy Me Without Directive',\n        }\n    },\n    methods: {\n        copyText() {\n            const thisIns = this;\n            this.$copyText(this.text2).then(function() {\n                thisIns.$vs.notify({\n                    title: 'Success',\n                    text: 'Text copied successfully',\n                    color: 'success',\n                    iconPack: 'feather',\n                    position: 'top-center',\n                    icon: 'icon-check-circle'\n                })\n            }, function() {\n                thisIns.$vs.notify({\n                    title: 'Failed',\n                    text: 'Error in copying text',\n                    color: 'danger',\n                    iconPack: 'feather',\n                    position: 'top-center',\n                    icon: 'icon-alert-circle'\n                })\n            })\n        }\n    }\n}\n</script>\n    "
         )
       ])
     ],
@@ -672,17 +400,17 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenu.vue":
-/*!***********************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenu.vue ***!
-  \***********************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/clipboard/Clipboard.vue":
+/*!******************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/clipboard/Clipboard.vue ***!
+  \******************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ContextMenu_vue_vue_type_template_id_412966e9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ContextMenu.vue?vue&type=template&id=412966e9& */ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenu.vue?vue&type=template&id=412966e9&");
-/* harmony import */ var _ContextMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ContextMenu.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenu.vue?vue&type=script&lang=js&");
+/* harmony import */ var _Clipboard_vue_vue_type_template_id_0f5cb420___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Clipboard.vue?vue&type=template&id=0f5cb420& */ "./resources/admin/js/src/views/components/extra-components/clipboard/Clipboard.vue?vue&type=template&id=0f5cb420&");
+/* harmony import */ var _Clipboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Clipboard.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/clipboard/Clipboard.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -692,9 +420,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ContextMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ContextMenu_vue_vue_type_template_id_412966e9___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ContextMenu_vue_vue_type_template_id_412966e9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Clipboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Clipboard_vue_vue_type_template_id_0f5cb420___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Clipboard_vue_vue_type_template_id_0f5cb420___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -704,54 +432,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/context-menu/ContextMenu.vue"
+component.options.__file = "resources/admin/js/src/views/components/extra-components/clipboard/Clipboard.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenu.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenu.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/clipboard/Clipboard.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/clipboard/Clipboard.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ContextMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ContextMenu.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenu.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ContextMenu_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Clipboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Clipboard.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/clipboard/Clipboard.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Clipboard_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenu.vue?vue&type=template&id=412966e9&":
-/*!******************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenu.vue?vue&type=template&id=412966e9& ***!
-  \******************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/clipboard/Clipboard.vue?vue&type=template&id=0f5cb420&":
+/*!*************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/clipboard/Clipboard.vue?vue&type=template&id=0f5cb420& ***!
+  \*************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContextMenu_vue_vue_type_template_id_412966e9___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ContextMenu.vue?vue&type=template&id=412966e9& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenu.vue?vue&type=template&id=412966e9&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContextMenu_vue_vue_type_template_id_412966e9___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Clipboard_vue_vue_type_template_id_0f5cb420___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Clipboard.vue?vue&type=template&id=0f5cb420& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/clipboard/Clipboard.vue?vue&type=template&id=0f5cb420&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Clipboard_vue_vue_type_template_id_0f5cb420___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContextMenu_vue_vue_type_template_id_412966e9___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Clipboard_vue_vue_type_template_id_0f5cb420___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuClickNotClose.vue":
-/*!************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuClickNotClose.vue ***!
-  \************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardDirective.vue":
+/*!***************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardDirective.vue ***!
+  \***************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ContextMenuClickNotClose_vue_vue_type_template_id_12d4abd4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ContextMenuClickNotClose.vue?vue&type=template&id=12d4abd4& */ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuClickNotClose.vue?vue&type=template&id=12d4abd4&");
-/* harmony import */ var _ContextMenuClickNotClose_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ContextMenuClickNotClose.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuClickNotClose.vue?vue&type=script&lang=js&");
+/* harmony import */ var _ClipboardDirective_vue_vue_type_template_id_294b3a82___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ClipboardDirective.vue?vue&type=template&id=294b3a82& */ "./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardDirective.vue?vue&type=template&id=294b3a82&");
+/* harmony import */ var _ClipboardDirective_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ClipboardDirective.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardDirective.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -761,9 +489,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ContextMenuClickNotClose_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ContextMenuClickNotClose_vue_vue_type_template_id_12d4abd4___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ContextMenuClickNotClose_vue_vue_type_template_id_12d4abd4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _ClipboardDirective_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ClipboardDirective_vue_vue_type_template_id_294b3a82___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ClipboardDirective_vue_vue_type_template_id_294b3a82___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -773,54 +501,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuClickNotClose.vue"
+component.options.__file = "resources/admin/js/src/views/components/extra-components/clipboard/ClipboardDirective.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuClickNotClose.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuClickNotClose.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardDirective.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardDirective.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ContextMenuClickNotClose_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ContextMenuClickNotClose.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuClickNotClose.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ContextMenuClickNotClose_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ClipboardDirective_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ClipboardDirective.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardDirective.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ClipboardDirective_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuClickNotClose.vue?vue&type=template&id=12d4abd4&":
-/*!*******************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuClickNotClose.vue?vue&type=template&id=12d4abd4& ***!
-  \*******************************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardDirective.vue?vue&type=template&id=294b3a82&":
+/*!**********************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardDirective.vue?vue&type=template&id=294b3a82& ***!
+  \**********************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContextMenuClickNotClose_vue_vue_type_template_id_12d4abd4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ContextMenuClickNotClose.vue?vue&type=template&id=12d4abd4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuClickNotClose.vue?vue&type=template&id=12d4abd4&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContextMenuClickNotClose_vue_vue_type_template_id_12d4abd4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ClipboardDirective_vue_vue_type_template_id_294b3a82___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ClipboardDirective.vue?vue&type=template&id=294b3a82& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardDirective.vue?vue&type=template&id=294b3a82&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ClipboardDirective_vue_vue_type_template_id_294b3a82___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContextMenuClickNotClose_vue_vue_type_template_id_12d4abd4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ClipboardDirective_vue_vue_type_template_id_294b3a82___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuSimple.vue":
-/*!*****************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuSimple.vue ***!
-  \*****************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardWithoutDirective.vue":
+/*!**********************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardWithoutDirective.vue ***!
+  \**********************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _ContextMenuSimple_vue_vue_type_template_id_6b810afb___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ContextMenuSimple.vue?vue&type=template&id=6b810afb& */ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuSimple.vue?vue&type=template&id=6b810afb&");
-/* harmony import */ var _ContextMenuSimple_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ContextMenuSimple.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuSimple.vue?vue&type=script&lang=js&");
+/* harmony import */ var _ClipboardWithoutDirective_vue_vue_type_template_id_f65c55b2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ClipboardWithoutDirective.vue?vue&type=template&id=f65c55b2& */ "./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardWithoutDirective.vue?vue&type=template&id=f65c55b2&");
+/* harmony import */ var _ClipboardWithoutDirective_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ClipboardWithoutDirective.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardWithoutDirective.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -830,9 +558,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _ContextMenuSimple_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _ContextMenuSimple_vue_vue_type_template_id_6b810afb___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _ContextMenuSimple_vue_vue_type_template_id_6b810afb___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _ClipboardWithoutDirective_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ClipboardWithoutDirective_vue_vue_type_template_id_f65c55b2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ClipboardWithoutDirective_vue_vue_type_template_id_f65c55b2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -842,38 +570,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuSimple.vue"
+component.options.__file = "resources/admin/js/src/views/components/extra-components/clipboard/ClipboardWithoutDirective.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuSimple.vue?vue&type=script&lang=js&":
-/*!******************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuSimple.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardWithoutDirective.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardWithoutDirective.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ContextMenuSimple_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ContextMenuSimple.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuSimple.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ContextMenuSimple_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ClipboardWithoutDirective_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ClipboardWithoutDirective.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardWithoutDirective.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ClipboardWithoutDirective_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuSimple.vue?vue&type=template&id=6b810afb&":
-/*!************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuSimple.vue?vue&type=template&id=6b810afb& ***!
-  \************************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardWithoutDirective.vue?vue&type=template&id=f65c55b2&":
+/*!*****************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardWithoutDirective.vue?vue&type=template&id=f65c55b2& ***!
+  \*****************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContextMenuSimple_vue_vue_type_template_id_6b810afb___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ContextMenuSimple.vue?vue&type=template&id=6b810afb& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/context-menu/ContextMenuSimple.vue?vue&type=template&id=6b810afb&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContextMenuSimple_vue_vue_type_template_id_6b810afb___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ClipboardWithoutDirective_vue_vue_type_template_id_f65c55b2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ClipboardWithoutDirective.vue?vue&type=template&id=f65c55b2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/clipboard/ClipboardWithoutDirective.vue?vue&type=template&id=f65c55b2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ClipboardWithoutDirective_vue_vue_type_template_id_f65c55b2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContextMenuSimple_vue_vue_type_template_id_6b810afb___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ClipboardWithoutDirective_vue_vue_type_template_id_f65c55b2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

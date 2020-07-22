@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\FairType;
 use App\StandType;
 use App\StandLocation;
+use Hash;
 
 class SettingController extends Controller
 {
@@ -23,8 +24,31 @@ class SettingController extends Controller
 
     public function updateFairType(Request $request, $id) {
         $res = array();
-        FairType::whereId($id)->update($request->post());
-        $res['status'] = 'ok';
+        $query = array();
+        $name = $request->post('name');
+        if ($name === null)
+            $name = 'Fair Type - ' + rand();
+        $query['name'] = $name;
+
+        $request->validate([
+            'building_file' => 'mimes:png,gif,jpeg,jpg',
+            'interior_file' => 'mimes:png,gif,jpeg,jpg',
+        ]);
+  
+        if (isset($request->building_file)) {
+            $b_fileName =  md5(time()).'.'.$request->building_file->extension();  
+            $request->building_file->move(public_path('fair_image'), $b_fileName);
+            $query['building'] = $b_fileName;
+        } 
+        if (isset($request->interior_file))  {
+            $i_fileName =  md5(time()).'.'.$request->interior_file->extension();  
+            $request->interior_file->move(public_path('fair_image'), $i_fileName); 
+            $query['interior'] = $i_fileName;       
+        }
+
+        FairType::whereId($id)->update($query);
+        $res['status'] = 'ok';        
+        $res['id'] = $id;
         return response()->json($res);
     }
 
@@ -34,13 +58,27 @@ class SettingController extends Controller
         $name = $request->post('name');
         if ($name === null)
             $name = 'Fair Type - ' + rand();
-
         $fairType->name = $name;
-        $fairType->building = $request->post('building');
-        $fairType->interior = $request->post('interior');
-        
+
+        $request->validate([
+            'building_file' => 'mimes:png,gif,jpeg,jpg',
+            'interior_file' => 'mimes:png,gif,jpeg,jpg',
+        ]);
+  
+        if (isset($request->building_file)) {
+            $b_fileName = md5(time()).'.'.$request->building_file->extension();  
+            $request->building_file->move(public_path('fair_image'), $b_fileName);
+            $fairType->building = $b_fileName;
+        } 
+        if (isset($request->interior_file))  {
+            $i_fileName =  md5(time()).'.'.$request->interior_file->extension();  
+            $request->interior_file->move(public_path('fair_image'), $i_fileName);   
+            $fairType->interior = $i_fileName;     
+        }
+
         $fairType->save();
         $res['status'] = 'ok';
+        $res['id'] = $fairType->id;
         return response()->json($res);
     }
 
@@ -50,21 +88,69 @@ class SettingController extends Controller
         return response()->json($res);
     }
 
-    public function updateStandType(Request $request, $id){
+    public function getStandType(Request $request, $id) {
         $res = array();
-        StandType::whereId($id)->update($request->post());
-        $res['status'] = 'ok';
+        $res['stand_type'] = StandType::find($id);
         return response()->json($res);
     }
 
-    public function createStandType(Request $request){
+    public function updateStandType(Request $request, $id) {
+        $res = array();
+        $query = array();
+        $name = $request->post('name');
+        if ($name === null)
+            $name = 'Fair Type - ' + rand();
+        $query['name'] = $name;
+
+        $request->validate([
+            'building_file' => 'mimes:png,gif,jpeg,jpg',
+            'interior_file' => 'mimes:png,gif,jpeg,jpg',
+        ]);
+  
+        if (isset($request->building_file)) {
+            $b_fileName =  md5(time()).'.'.$request->building_file->extension();  
+            $request->building_file->move(public_path('fair_image'), $b_fileName);
+            $query['building'] = $b_fileName;
+        } 
+        if (isset($request->interior_file))  {
+            $i_fileName =  md5(time()).'.'.$request->interior_file->extension();  
+            $request->interior_file->move(public_path('fair_image'), $i_fileName);   
+            $query['interior'] = $i_fileName;
+        }
+
+        StandType::whereId($id)->update($query);
+        $res['status'] = 'ok';        
+        $res['id'] = $id;
+        return response()->json($res);
+    }
+
+    public function createStandType(Request $request) {
         $res = array();
         $standType = new StandType;
-        $standType->name = $request->post('name');
-        $standType->building = $request->post('building');
-        $standType->interior = $request->post('interior');
+        $name = $request->post('name');
+        if ($name === null)
+            $name = 'Fair Type - ' + rand();
+        $standType->name = $name;
+
+        $request->validate([
+            'building_file' => 'mimes:png,gif,jpeg,jpg',
+            'interior_file' => 'mimes:png,gif,jpeg,jpg',
+        ]);
+  
+        if (isset($request->building_file)) {
+            $b_fileName = md5(time()).'.'.$request->building_file->extension();  
+            $request->building_file->move(public_path('fair_image'), $b_fileName);
+            $standType->building = $b_fileName;
+        } 
+        if (isset($request->interior_file))  {
+            $i_fileName =  md5(time()).'.'.$request->interior_file->extension();  
+            $request->interior_file->move(public_path('fair_image'), $i_fileName);   
+            $standType->interior = $i_fileName;     
+        }
+
         $standType->save();
         $res['status'] = 'ok';
+        $res['id'] = $standType->id;
         return response()->json($res);
     }
 

@@ -148,7 +148,7 @@ const router = new Router({
         },
         {
           path: '/settings/fair-type/edit',
-          name: 'fair-type-edit',
+          name: 'fair-type-create',
           component: () => import('@/views/setting/fair/FairTypeEdit.vue'),
           meta: {
             rule: 'editor'
@@ -166,6 +166,22 @@ const router = new Router({
           path: '/settings/stand-type',
           name: 'stand-type',
           component: () => import('@/views/setting/fair/StandTypeList.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/settings/stand-type/edit',
+          name: 'stand-type-create',
+          component: () => import('@/views/setting/fair/StandTypeEdit.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/settings/stand-type/edit/:stype_id',
+          name: 'stand-type-edit',
+          component: () => import('@/views/setting/fair/StandTypeEdit.vue'),
           meta: {
             rule: 'editor'
           }
