@@ -1,17 +1,19 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[72],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/upload/Upload.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/upload/Upload.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _UploadDefault_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UploadDefault.vue */ "./resources/admin/js/src/views/components/vuesax/upload/UploadDefault.vue");
-/* harmony import */ var _UploadMultiple_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UploadMultiple.vue */ "./resources/admin/js/src/views/components/vuesax/upload/UploadMultiple.vue");
-/* harmony import */ var _UploadAutomatic_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./UploadAutomatic.vue */ "./resources/admin/js/src/views/components/vuesax/upload/UploadAutomatic.vue");
+/* harmony import */ var _QuillEditorThemeSnow_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuillEditorThemeSnow.vue */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue");
+/* harmony import */ var _QuillEditorThemeBubble_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuillEditorThemeBubble.vue */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue");
+/* harmony import */ var _QuillEditorCustomToolbar_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./QuillEditorCustomToolbar.vue */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue");
+//
+//
 //
 //
 //
@@ -32,23 +34,33 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    UploadDefault: _UploadDefault_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    UploadMultiple: _UploadMultiple_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    UploadAutomatic: _UploadAutomatic_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    QuillEditorThemeSnow: _QuillEditorThemeSnow_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    QuillEditorThemeBubble: _QuillEditorThemeBubble_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    QuillEditorCustomToolbar: _QuillEditorCustomToolbar_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/upload/UploadAutomatic.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/upload/UploadAutomatic.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! quill/dist/quill.core.css */ "./node_modules/quill/dist/quill.core.css");
+/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! quill/dist/quill.snow.css */ "./node_modules/quill/dist/quill.snow.css");
+/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! quill/dist/quill.bubble.css */ "./node_modules/quill/dist/quill.bubble.css");
+/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-quill-editor */ "./node_modules/vue-quill-editor/dist/vue-quill-editor.js");
+/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-prism-component */ "./node_modules/vue-prism-component/dist/vue-prism-component.common.js");
+/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_prism_component__WEBPACK_IMPORTED_MODULE_4__);
 //
 //
 //
@@ -84,29 +96,139 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+// require styles
+
+
+
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      editorOption: {
+        modules: {
+          toolbar: '#toolbar'
+        }
+      },
+      content: "\n<h2><span class=\"ql-font-serif\">Quill Rich Text Editor</span></h2><br />\n<p>Quill is a free, <a href=\"https://github.com/quilljs/quill/\">open source</a> WYSIWYG editor built for the modern web. With its <a href=\"http://quilljs.com/docs/modules/\">modular architecture</a> and expressive <a href=\"http://quilljs.com/docs/api/\">API</a>, it is completely customizable to fit any need.</p><br />\n<iframe class=\"ql-video ql-align-center\" src=\"https://www.youtube.com/embed/QHH3iSeDBLo?showinfo=0\" width=\"560\" height=\"238\"></iframe>\n            "
+    };
+  },
+  components: {
+    quillEditor: vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__["quillEditor"],
+    Prism: vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default.a
+  },
   methods: {
-    successUpload: function successUpload() {
-      this.$vs.notify({
-        color: 'success',
-        title: 'Upload Success',
-        text: 'Lorem ipsum dolor sit amet, consectetur'
-      });
+    customButtonClick: function customButtonClick() {
+      alert('Button clicked!');
     }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/upload/UploadDefault.vue?vue&type=script&lang=js&":
-/*!******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/upload/UploadDefault.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! quill/dist/quill.core.css */ "./node_modules/quill/dist/quill.core.css");
+/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! quill/dist/quill.snow.css */ "./node_modules/quill/dist/quill.snow.css");
+/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! quill/dist/quill.bubble.css */ "./node_modules/quill/dist/quill.bubble.css");
+/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-quill-editor */ "./node_modules/vue-quill-editor/dist/vue-quill-editor.js");
+/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-prism-component */ "./node_modules/vue-prism-component/dist/vue-prism-component.common.js");
+/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_prism_component__WEBPACK_IMPORTED_MODULE_4__);
 //
 //
 //
@@ -146,29 +268,55 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+// require styles
+
+
+
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  methods: {
-    successUpload: function successUpload() {
-      this.$vs.notify({
-        color: 'success',
-        title: 'Upload Success',
-        text: 'Lorem ipsum dolor sit amet, consectetur'
-      });
-    }
+  data: function data() {
+    return {
+      editorOption: {
+        theme: 'bubble'
+      },
+      content: "\n<h2><span class=\"ql-font-serif\">Quill Rich Text Editor</span></h2><br />\n<p>Quill is a free, <a href=\"https://github.com/quilljs/quill/\">open source</a> WYSIWYG editor built for the modern web. With its <a href=\"http://quilljs.com/docs/modules/\">modular architecture</a> and expressive <a href=\"http://quilljs.com/docs/api/\">API</a>.</p><br />\n<iframe class=\"ql-video ql-align-center\" src=\"https://www.youtube.com/embed/QHH3iSeDBLo?showinfo=0\" width=\"560\" height=\"238\"></iframe>\n            "
+    };
+  },
+  components: {
+    quillEditor: vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__["quillEditor"],
+    Prism: vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default.a
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/upload/UploadMultiple.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/upload/UploadMultiple.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! quill/dist/quill.core.css */ "./node_modules/quill/dist/quill.core.css");
+/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! quill/dist/quill.snow.css */ "./node_modules/quill/dist/quill.snow.css");
+/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! quill/dist/quill.bubble.css */ "./node_modules/quill/dist/quill.bubble.css");
+/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-quill-editor */ "./node_modules/vue-quill-editor/dist/vue-quill-editor.js");
+/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-prism-component */ "./node_modules/vue-prism-component/dist/vue-prism-component.common.js");
+/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_prism_component__WEBPACK_IMPORTED_MODULE_4__);
 //
 //
 //
@@ -204,24 +352,38 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+// require styles
+
+
+
+
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  methods: {
-    successUpload: function successUpload() {
-      this.$vs.notify({
-        color: 'success',
-        title: 'Upload Success',
-        text: 'Lorem ipsum dolor sit amet, consectetur'
-      });
-    }
+  data: function data() {
+    return {
+      content: "\n<h2><span class=\"ql-font-serif\">Quill Rich Text Editor</span></h2><br />\n<p>Quill is a free, <a href=\"https://github.com/quilljs/quill/\">open source</a> WYSIWYG editor built for the modern web. With its <a href=\"http://quilljs.com/docs/modules/\">modular architecture</a> and expressive <a href=\"http://quilljs.com/docs/api/\">API</a>, it is completely customizable to fit any need.</p><br />\n<iframe class=\"ql-video ql-align-center\" src=\"https://www.youtube.com/embed/QHH3iSeDBLo?showinfo=0\" width=\"560\" height=\"238\"></iframe>\n            "
+    };
+  },
+  components: {
+    quillEditor: vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__["quillEditor"],
+    Prism: vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default.a
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/upload/Upload.vue?vue&type=template&id=3bac3343&":
-/*!***************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/upload/Upload.vue?vue&type=template&id=3bac3343& ***!
-  \***************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=81317ef6&":
+/*!************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=81317ef6& ***!
+  \************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -235,159 +397,63 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "upload-demo" } },
+    { attrs: { id: "extra-component-quill-editor-demo" } },
     [
-      _c("upload-default"),
+      _vm._m(0),
       _vm._v(" "),
-      _c("upload-multiple"),
+      _c("quill-editor-theme-snow"),
       _vm._v(" "),
-      _c("upload-automatic")
+      _c("quill-editor-theme-bubble"),
+      _vm._v(" "),
+      _c("quill-editor-custom-toolbar")
     ],
     1
   )
 }
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/upload/UploadAutomatic.vue?vue&type=template&id=f1d3d250&":
-/*!************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/upload/UploadAutomatic.vue?vue&type=template&id=f1d3d250& ***!
-  \************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Automatic", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("You can enable automatic submission with the "),
-        _c("code", [_vm._v("Automatic")]),
-        _vm._v(
-          " property that executes the shipment by changing the value of the "
-        ),
-        _c("code", [_vm._v("input")])
-      ]),
-      _vm._v(" "),
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("p", { staticClass: "mb-4" }, [
       _c(
-        "div",
-        { staticClass: "mt-5" },
-        [
-          _c("vs-upload", {
-            attrs: {
-              automatic: "",
-              action: "https://jsonplaceholder.typicode.com/posts/"
-            },
-            on: { "on-success": _vm.successUpload }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          "\n<template>\n  <vs-upload automatic action=\"https://jsonplaceholder.typicode.com/posts/\" @on-success=\"successUpload\" />\n</template>\n\n<script>\nexport default {\n  methods:{\n    successUpload(){\n      this.$vs.notify({color:'success',title:'Upload Success',text:'Lorem ipsum dolor sit amet, consectetur'})\n    }\n  }\n}\n</script>\n        "
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/upload/UploadDefault.vue?vue&type=template&id=741ebda4&":
-/*!**********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/upload/UploadDefault.vue?vue&type=template&id=741ebda4& ***!
-  \**********************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Default", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("You can upload files to the server with the "),
-        _c("code", [_vm._v("vs-upload")]),
-        _vm._v(" component, the requested parameter is "),
-        _c("code", [_vm._v("action")]),
-        _vm._v(" which is the URL of the server")
-      ]),
-      _vm._v(" "),
-      _c(
-        "vs-alert",
+        "a",
         {
-          staticClass: "mt-5",
-          attrs: { color: "primary", icon: "new_releases", active: "true" }
+          attrs: {
+            href: "https://surmon-china.github.io/vue-quill-editor/",
+            target: "_blank",
+            rel: "nofollow"
+          }
         },
-        [
-          _c("p", [
-            _vm._v("For the title of each tab the "),
-            _c("code", [_vm._v("vs-label")]),
-            _vm._v(" property is implemented in the "),
-            _c("code", [_vm._v("vs-tab")]),
-            _vm._v(" component")
-          ])
-        ]
+        [_vm._v("Vue-Quill-Editor")]
       ),
-      _vm._v(" "),
+      _vm._v(
+        " editor component for Vue, support SPA and SSR. Read full documnetation "
+      ),
       _c(
-        "div",
-        { staticClass: "mt-5" },
-        [
-          _c("vs-upload", {
-            attrs: { action: "https://jsonplaceholder.typicode.com/posts/" },
-            on: { "on-success": _vm.successUpload }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          "\n<template>\n  <vs-upload action=\"https://jsonplaceholder.typicode.com/posts/\" @on-success=\"successUpload\" />\n</template>\n\n<script>\nexport default {\n  methods:{\n    successUpload(){\n      this.$vs.notify({color:'success',title:'Upload Success',text:'Lorem ipsum dolor sit amet, consectetur'})\n    }\n  }\n}\n</script>\n        "
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
+        "a",
+        {
+          attrs: {
+            href: "https://quilljs.com/docs/quickstart/",
+            target: "_blank",
+            rel: "nofollow"
+          }
+        },
+        [_vm._v("here")]
+      )
+    ])
+  }
+]
 render._withStripped = true
 
 
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/upload/UploadMultiple.vue?vue&type=template&id=30c4ca73&":
-/*!***********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/upload/UploadMultiple.vue?vue&type=template&id=30c4ca73& ***!
-  \***********************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=5046bf75&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=5046bf75& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -401,33 +467,102 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Multiple", "code-toggler": "" } },
+    { attrs: { title: "Custom Toolbar", "code-toggler": "" } },
     [
-      _c("p", [
-        _vm._v("You can upload multiple files by adding the "),
-        _c("code", [_vm._v("multiple")]),
-        _vm._v(" property within the component")
+      _c("p", { staticClass: "mb-5" }, [
+        _vm._v("You have freedom to create your own custom toolbar")
       ]),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "mt-5" },
-        [
-          _c("vs-upload", {
-            attrs: {
-              multiple: "",
-              text: "Upload Multiple",
-              action: "https://jsonplaceholder.typicode.com/posts/"
-            },
-            on: { "on-success": _vm.successUpload }
-          })
-        ],
-        1
-      ),
+      _c("div", { staticClass: "vx-row" }, [
+        _c(
+          "div",
+          { staticClass: "vx-col w-full md:w-1/2" },
+          [
+            _c(
+              "quill-editor",
+              {
+                attrs: { options: _vm.editorOption },
+                model: {
+                  value: _vm.content,
+                  callback: function($$v) {
+                    _vm.content = $$v
+                  },
+                  expression: "content"
+                }
+              },
+              [
+                _c(
+                  "div",
+                  {
+                    attrs: { slot: "toolbar", id: "toolbar" },
+                    slot: "toolbar"
+                  },
+                  [
+                    _c("button", { staticClass: "ql-bold" }, [_vm._v("Bold")]),
+                    _vm._v(" "),
+                    _c("button", { staticClass: "ql-italic" }, [
+                      _vm._v("Italic")
+                    ]),
+                    _vm._v(" "),
+                    _c("select", { staticClass: "ql-size" }, [
+                      _c("option", { attrs: { value: "small" } }),
+                      _vm._v(" "),
+                      _c("option", { attrs: { selected: "" } }),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "large" } }),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "huge" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("select", { staticClass: "ql-font" }, [
+                      _c("option", { attrs: { selected: "selected" } }),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "serif" } }),
+                      _vm._v(" "),
+                      _c("option", { attrs: { value: "monospace" } })
+                    ]),
+                    _vm._v(" "),
+                    _c("button", {
+                      staticClass: "ql-script",
+                      attrs: { value: "sub" }
+                    }),
+                    _vm._v(" "),
+                    _c("button", {
+                      staticClass: "ql-script",
+                      attrs: { value: "super" }
+                    }),
+                    _vm._v(" "),
+                    _c(
+                      "button",
+                      {
+                        staticStyle: { width: "auto" },
+                        on: { click: _vm.customButtonClick }
+                      },
+                      [_vm._v("Click here")]
+                    )
+                  ]
+                )
+              ]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "vx-col w-full md:w-1/2 flex" },
+          [
+            _c("prism", { staticClass: "rounded-lg" }, [
+              _vm._v(" " + _vm._s(_vm.content) + " ")
+            ])
+          ],
+          1
+        )
+      ]),
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          "\n<template>\n  <vs-upload multiple text=\"Upload Multiple\" action=\"https://jsonplaceholder.typicode.com/posts/\" @on-success=\"successUpload\" />\n</template>\n\n<script>\nexport default {\n  methods:{\n    successUpload(){\n      this.$vs.notify({color:'success',title:'Upload Success',text:'Lorem ipsum dolor sit amet, consectetur'})\n    }\n  }\n}\n</script>\n        "
+          '\n<template>\n  <quill-editor v-model="content" :options="editorOption">\n\n    <div id="toolbar" slot="toolbar">\n\n      <!-- Add a bold button -->\n      <button class="ql-bold">Bold</button>\n      <button class="ql-italic">Italic</button>\n\n      <!-- Add font size dropdown -->\n      <select class="ql-size">\n        <option value="small"></option>\n        <!-- Note a missing, thus falsy value, is used to reset to default -->\n        <option selected></option>\n        <option value="large"></option>\n        <option value="huge"></option>\n      </select>\n\n      <select class="ql-font">\n        <option selected="selected"></option>\n        <option value="serif"></option>\n        <option value="monospace"></option>\n      </select>\n\n      <!-- Add subscript and superscript buttons -->\n      <button class="ql-script" value="sub"></button>\n      <button class="ql-script" value="super"></button>\n\n      <!-- You can also add your own -->\n      <button style="width:auto" @click="customButtonClick">Click here</button>\n    </div>\n  </quill-editor>\n</template>\n\n<script>\n// require styles\nimport \'quill/dist/quill.core.css\'\nimport \'quill/dist/quill.snow.css\'\nimport \'quill/dist/quill.bubble.css\'\n\nimport { quillEditor } from \'vue-quill-editor\'\n\nexport default {\n  data() {\n    return {\n      editorOption: {\n        modules: {\n          toolbar: \'#toolbar\'\n        }\n      },\n      content: `...`,\n    }\n  },\n  components: {\n    quillEditor,\n  },\n  methods: {\n    customButtonClick() {\n      alert("Button clicked!");\n    }\n  }\n}\n</script>\n        '
         )
       ])
     ],
@@ -441,86 +576,124 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/vuesax/upload/Upload.vue":
-/*!**************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/vuesax/upload/Upload.vue ***!
-  \**************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Upload_vue_vue_type_template_id_3bac3343___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Upload.vue?vue&type=template&id=3bac3343& */ "./resources/admin/js/src/views/components/vuesax/upload/Upload.vue?vue&type=template&id=3bac3343&");
-/* harmony import */ var _Upload_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Upload.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/vuesax/upload/Upload.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Upload_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Upload_vue_vue_type_template_id_3bac3343___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Upload_vue_vue_type_template_id_3bac3343___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/vuesax/upload/Upload.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/vuesax/upload/Upload.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/vuesax/upload/Upload.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Upload_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Upload.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/upload/Upload.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Upload_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/vuesax/upload/Upload.vue?vue&type=template&id=3bac3343&":
-/*!*********************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/vuesax/upload/Upload.vue?vue&type=template&id=3bac3343& ***!
-  \*********************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=6360cfa0&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=6360cfa0& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Upload_vue_vue_type_template_id_3bac3343___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Upload.vue?vue&type=template&id=3bac3343& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/upload/Upload.vue?vue&type=template&id=3bac3343&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Upload_vue_vue_type_template_id_3bac3343___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Upload_vue_vue_type_template_id_3bac3343___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Theme Bubble", "code-toggler": "" } },
+    [
+      _c("p", { staticClass: "mb-5" }, [
+        _vm._v("Bubble is a simple tooltip based theme")
+      ]),
+      _vm._v(" "),
+      _c("quill-editor", {
+        attrs: { options: _vm.editorOption },
+        model: {
+          value: _vm.content,
+          callback: function($$v) {
+            _vm.content = $$v
+          },
+          expression: "content"
+        }
+      }),
+      _vm._v(" "),
+      _c("prism", { staticClass: "rounded-lg" }, [
+        _vm._v(" " + _vm._s(_vm.content) + " ")
+      ]),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          "\n<template>\n  <quill-editor v-model=\"content\" :options=\"editorOption\"></quill-editor>\n</template>\n\n<script>\n// require styles\nimport 'quill/dist/quill.core.css'\nimport 'quill/dist/quill.snow.css'\nimport 'quill/dist/quill.bubble.css'\n\nimport { quillEditor } from 'vue-quill-editor'\n\nexport default {\n  data() {\n    return {\n      editorOption: {\n        theme: 'bubble',\n      },\n      content: `...`,\n    }\n  },\n  components: {\n    quillEditor,\n  }\n}\n</script>\n        "
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/vuesax/upload/UploadAutomatic.vue":
-/*!***********************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/vuesax/upload/UploadAutomatic.vue ***!
-  \***********************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=32bdafd2&":
+/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=32bdafd2& ***!
+  \*********************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Theme Snow", "code-toggler": "" } },
+    [
+      _c("p", { staticClass: "mb-5" }, [
+        _vm._v("Snow is a clean, flat toolbar theme")
+      ]),
+      _vm._v(" "),
+      _c("quill-editor", {
+        model: {
+          value: _vm.content,
+          callback: function($$v) {
+            _vm.content = $$v
+          },
+          expression: "content"
+        }
+      }),
+      _vm._v(" "),
+      _c("prism", { staticClass: "rounded-lg" }, [
+        _vm._v(" " + _vm._s(_vm.content) + " ")
+      ]),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          "\n<template>\n  <quill-editor v-model=\"content\"></quill-editor>\n</template>\n\n<script>\n// require styles\nimport 'quill/dist/quill.core.css'\nimport 'quill/dist/quill.snow.css'\nimport 'quill/dist/quill.bubble.css'\n\nimport { quillEditor } from 'vue-quill-editor'\n\nexport default {\n  data() {\n    return {\n      content: `...`,\n    }\n  },\n  components: {\n    quillEditor,\n  }\n}\n</script>\n        "
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue":
+/*!***********************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue ***!
+  \***********************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _UploadAutomatic_vue_vue_type_template_id_f1d3d250___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UploadAutomatic.vue?vue&type=template&id=f1d3d250& */ "./resources/admin/js/src/views/components/vuesax/upload/UploadAutomatic.vue?vue&type=template&id=f1d3d250&");
-/* harmony import */ var _UploadAutomatic_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UploadAutomatic.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/vuesax/upload/UploadAutomatic.vue?vue&type=script&lang=js&");
+/* harmony import */ var _QuillEditor_vue_vue_type_template_id_81317ef6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuillEditor.vue?vue&type=template&id=81317ef6& */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=81317ef6&");
+/* harmony import */ var _QuillEditor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuillEditor.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -530,9 +703,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _UploadAutomatic_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _UploadAutomatic_vue_vue_type_template_id_f1d3d250___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _UploadAutomatic_vue_vue_type_template_id_f1d3d250___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _QuillEditor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _QuillEditor_vue_vue_type_template_id_81317ef6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _QuillEditor_vue_vue_type_template_id_81317ef6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -542,54 +715,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/vuesax/upload/UploadAutomatic.vue"
+component.options.__file = "resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/vuesax/upload/UploadAutomatic.vue?vue&type=script&lang=js&":
+/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditor.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=81317ef6&":
+/*!******************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=81317ef6& ***!
+  \******************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditor_vue_vue_type_template_id_81317ef6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditor.vue?vue&type=template&id=81317ef6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=81317ef6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditor_vue_vue_type_template_id_81317ef6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditor_vue_vue_type_template_id_81317ef6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue":
 /*!************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/vuesax/upload/UploadAutomatic.vue?vue&type=script&lang=js& ***!
+  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue ***!
   \************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadAutomatic_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./UploadAutomatic.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/upload/UploadAutomatic.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadAutomatic_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/vuesax/upload/UploadAutomatic.vue?vue&type=template&id=f1d3d250&":
-/*!******************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/vuesax/upload/UploadAutomatic.vue?vue&type=template&id=f1d3d250& ***!
-  \******************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadAutomatic_vue_vue_type_template_id_f1d3d250___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./UploadAutomatic.vue?vue&type=template&id=f1d3d250& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/upload/UploadAutomatic.vue?vue&type=template&id=f1d3d250&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadAutomatic_vue_vue_type_template_id_f1d3d250___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadAutomatic_vue_vue_type_template_id_f1d3d250___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/vuesax/upload/UploadDefault.vue":
-/*!*********************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/vuesax/upload/UploadDefault.vue ***!
-  \*********************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _UploadDefault_vue_vue_type_template_id_741ebda4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UploadDefault.vue?vue&type=template&id=741ebda4& */ "./resources/admin/js/src/views/components/vuesax/upload/UploadDefault.vue?vue&type=template&id=741ebda4&");
-/* harmony import */ var _UploadDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UploadDefault.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/vuesax/upload/UploadDefault.vue?vue&type=script&lang=js&");
+/* harmony import */ var _QuillEditorCustomToolbar_vue_vue_type_template_id_5046bf75___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuillEditorCustomToolbar.vue?vue&type=template&id=5046bf75& */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=5046bf75&");
+/* harmony import */ var _QuillEditorCustomToolbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuillEditorCustomToolbar.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -599,9 +772,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _UploadDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _UploadDefault_vue_vue_type_template_id_741ebda4___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _UploadDefault_vue_vue_type_template_id_741ebda4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _QuillEditorCustomToolbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _QuillEditorCustomToolbar_vue_vue_type_template_id_5046bf75___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _QuillEditorCustomToolbar_vue_vue_type_template_id_5046bf75___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -611,54 +784,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/vuesax/upload/UploadDefault.vue"
+component.options.__file = "resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/vuesax/upload/UploadDefault.vue?vue&type=script&lang=js&":
+/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorCustomToolbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorCustomToolbar.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorCustomToolbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=5046bf75&":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=5046bf75& ***!
+  \*******************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorCustomToolbar_vue_vue_type_template_id_5046bf75___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorCustomToolbar.vue?vue&type=template&id=5046bf75& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=5046bf75&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorCustomToolbar_vue_vue_type_template_id_5046bf75___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorCustomToolbar_vue_vue_type_template_id_5046bf75___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue":
 /*!**********************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/vuesax/upload/UploadDefault.vue?vue&type=script&lang=js& ***!
+  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue ***!
   \**********************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./UploadDefault.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/upload/UploadDefault.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/vuesax/upload/UploadDefault.vue?vue&type=template&id=741ebda4&":
-/*!****************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/vuesax/upload/UploadDefault.vue?vue&type=template&id=741ebda4& ***!
-  \****************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadDefault_vue_vue_type_template_id_741ebda4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./UploadDefault.vue?vue&type=template&id=741ebda4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/upload/UploadDefault.vue?vue&type=template&id=741ebda4&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadDefault_vue_vue_type_template_id_741ebda4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadDefault_vue_vue_type_template_id_741ebda4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/vuesax/upload/UploadMultiple.vue":
-/*!**********************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/vuesax/upload/UploadMultiple.vue ***!
-  \**********************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _UploadMultiple_vue_vue_type_template_id_30c4ca73___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UploadMultiple.vue?vue&type=template&id=30c4ca73& */ "./resources/admin/js/src/views/components/vuesax/upload/UploadMultiple.vue?vue&type=template&id=30c4ca73&");
-/* harmony import */ var _UploadMultiple_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UploadMultiple.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/vuesax/upload/UploadMultiple.vue?vue&type=script&lang=js&");
+/* harmony import */ var _QuillEditorThemeBubble_vue_vue_type_template_id_6360cfa0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuillEditorThemeBubble.vue?vue&type=template&id=6360cfa0& */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=6360cfa0&");
+/* harmony import */ var _QuillEditorThemeBubble_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuillEditorThemeBubble.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -668,9 +841,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _UploadMultiple_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _UploadMultiple_vue_vue_type_template_id_30c4ca73___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _UploadMultiple_vue_vue_type_template_id_30c4ca73___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _QuillEditorThemeBubble_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _QuillEditorThemeBubble_vue_vue_type_template_id_6360cfa0___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _QuillEditorThemeBubble_vue_vue_type_template_id_6360cfa0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -680,38 +853,107 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/vuesax/upload/UploadMultiple.vue"
+component.options.__file = "resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/vuesax/upload/UploadMultiple.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/vuesax/upload/UploadMultiple.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadMultiple_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./UploadMultiple.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/upload/UploadMultiple.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadMultiple_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeBubble_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorThemeBubble.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeBubble_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/vuesax/upload/UploadMultiple.vue?vue&type=template&id=30c4ca73&":
-/*!*****************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/vuesax/upload/UploadMultiple.vue?vue&type=template&id=30c4ca73& ***!
-  \*****************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=6360cfa0&":
+/*!*****************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=6360cfa0& ***!
+  \*****************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadMultiple_vue_vue_type_template_id_30c4ca73___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./UploadMultiple.vue?vue&type=template&id=30c4ca73& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/upload/UploadMultiple.vue?vue&type=template&id=30c4ca73&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadMultiple_vue_vue_type_template_id_30c4ca73___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeBubble_vue_vue_type_template_id_6360cfa0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorThemeBubble.vue?vue&type=template&id=6360cfa0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=6360cfa0&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeBubble_vue_vue_type_template_id_6360cfa0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UploadMultiple_vue_vue_type_template_id_30c4ca73___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeBubble_vue_vue_type_template_id_6360cfa0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue":
+/*!********************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue ***!
+  \********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _QuillEditorThemeSnow_vue_vue_type_template_id_32bdafd2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuillEditorThemeSnow.vue?vue&type=template&id=32bdafd2& */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=32bdafd2&");
+/* harmony import */ var _QuillEditorThemeSnow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuillEditorThemeSnow.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _QuillEditorThemeSnow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _QuillEditorThemeSnow_vue_vue_type_template_id_32bdafd2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _QuillEditorThemeSnow_vue_vue_type_template_id_32bdafd2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeSnow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorThemeSnow.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeSnow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=32bdafd2&":
+/*!***************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=32bdafd2& ***!
+  \***************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeSnow_vue_vue_type_template_id_32bdafd2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorThemeSnow.vue?vue&type=template&id=32bdafd2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=32bdafd2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeSnow_vue_vue_type_template_id_32bdafd2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeSnow_vue_vue_type_template_id_32bdafd2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

@@ -127,7 +127,7 @@
 
 <script>
 import VuePerfectScrollbar from 'vue-perfect-scrollbar'
-import EmailMailCard from './EmailMailCard.vue'
+import CountryStandsCard from './CountryStandsCard.vue'
 
 export default {
   props: {
@@ -203,7 +203,7 @@ export default {
   },
   components: {
     VuePerfectScrollbar,
-    EmailMailCard
+    CountryStandsCard
   },
   updated () {
     if (!this.currentMail) return

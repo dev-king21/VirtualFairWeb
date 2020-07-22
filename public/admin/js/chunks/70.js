@@ -1,17 +1,19 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[70],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/tooltip/Tooltip.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/tooltip/Tooltip.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _QuillEditorThemeSnow_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuillEditorThemeSnow.vue */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue");
-/* harmony import */ var _QuillEditorThemeBubble_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuillEditorThemeBubble.vue */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue");
-/* harmony import */ var _QuillEditorCustomToolbar_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./QuillEditorCustomToolbar.vue */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue");
+/* harmony import */ var _TooltipDefault_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TooltipDefault.vue */ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDefault.vue");
+/* harmony import */ var _TooltipPosition_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TooltipPosition.vue */ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipPosition.vue");
+/* harmony import */ var _TooltipDelay_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./TooltipDelay.vue */ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDelay.vue");
+/* harmony import */ var _TooltipColor_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./TooltipColor.vue */ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipColor.vue");
+/* harmony import */ var _TooltipTitle_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./TooltipTitle.vue */ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipTitle.vue");
 //
 //
 //
@@ -29,38 +31,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+
+
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    QuillEditorThemeSnow: _QuillEditorThemeSnow_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    QuillEditorThemeBubble: _QuillEditorThemeBubble_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    QuillEditorCustomToolbar: _QuillEditorCustomToolbar_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
+    TooltipDefault: _TooltipDefault_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    TooltipPosition: _TooltipPosition_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    TooltipDelay: _TooltipDelay_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    TooltipTitle: _TooltipTitle_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    TooltipColor: _TooltipColor_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDefault.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDefault.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! quill/dist/quill.core.css */ "./node_modules/quill/dist/quill.core.css");
-/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! quill/dist/quill.snow.css */ "./node_modules/quill/dist/quill.snow.css");
-/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! quill/dist/quill.bubble.css */ "./node_modules/quill/dist/quill.bubble.css");
-/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-quill-editor */ "./node_modules/vue-quill-editor/dist/vue-quill-editor.js");
-/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-prism-component */ "./node_modules/vue-prism-component/dist/vue-prism-component.common.js");
-/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_prism_component__WEBPACK_IMPORTED_MODULE_4__);
 //
 //
 //
@@ -117,273 +113,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// require styles
-
-
-
-
-
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      editorOption: {
-        modules: {
-          toolbar: '#toolbar'
-        }
-      },
-      content: "\n<h2><span class=\"ql-font-serif\">Quill Rich Text Editor</span></h2><br />\n<p>Quill is a free, <a href=\"https://github.com/quilljs/quill/\">open source</a> WYSIWYG editor built for the modern web. With its <a href=\"http://quilljs.com/docs/modules/\">modular architecture</a> and expressive <a href=\"http://quilljs.com/docs/api/\">API</a>, it is completely customizable to fit any need.</p><br />\n<iframe class=\"ql-video ql-align-center\" src=\"https://www.youtube.com/embed/QHH3iSeDBLo?showinfo=0\" width=\"560\" height=\"238\"></iframe>\n            "
+      switch1: true,
+      number1: 10
     };
-  },
-  components: {
-    quillEditor: vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__["quillEditor"],
-    Prism: vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default.a
-  },
-  methods: {
-    customButtonClick: function customButtonClick() {
-      alert('Button clicked!');
-    }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! quill/dist/quill.core.css */ "./node_modules/quill/dist/quill.core.css");
-/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! quill/dist/quill.snow.css */ "./node_modules/quill/dist/quill.snow.css");
-/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! quill/dist/quill.bubble.css */ "./node_modules/quill/dist/quill.bubble.css");
-/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-quill-editor */ "./node_modules/vue-quill-editor/dist/vue-quill-editor.js");
-/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-prism-component */ "./node_modules/vue-prism-component/dist/vue-prism-component.common.js");
-/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_prism_component__WEBPACK_IMPORTED_MODULE_4__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// require styles
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      editorOption: {
-        theme: 'bubble'
-      },
-      content: "\n<h2><span class=\"ql-font-serif\">Quill Rich Text Editor</span></h2><br />\n<p>Quill is a free, <a href=\"https://github.com/quilljs/quill/\">open source</a> WYSIWYG editor built for the modern web. With its <a href=\"http://quilljs.com/docs/modules/\">modular architecture</a> and expressive <a href=\"http://quilljs.com/docs/api/\">API</a>.</p><br />\n<iframe class=\"ql-video ql-align-center\" src=\"https://www.youtube.com/embed/QHH3iSeDBLo?showinfo=0\" width=\"560\" height=\"238\"></iframe>\n            "
-    };
-  },
-  components: {
-    quillEditor: vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__["quillEditor"],
-    Prism: vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default.a
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! quill/dist/quill.core.css */ "./node_modules/quill/dist/quill.core.css");
-/* harmony import */ var quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_core_css__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! quill/dist/quill.snow.css */ "./node_modules/quill/dist/quill.snow.css");
-/* harmony import */ var quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_snow_css__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! quill/dist/quill.bubble.css */ "./node_modules/quill/dist/quill.bubble.css");
-/* harmony import */ var quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(quill_dist_quill_bubble_css__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! vue-quill-editor */ "./node_modules/vue-quill-editor/dist/vue-quill-editor.js");
-/* harmony import */ var vue_quill_editor__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! vue-prism-component */ "./node_modules/vue-prism-component/dist/vue-prism-component.common.js");
-/* harmony import */ var vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(vue_prism_component__WEBPACK_IMPORTED_MODULE_4__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-// require styles
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      content: "\n<h2><span class=\"ql-font-serif\">Quill Rich Text Editor</span></h2><br />\n<p>Quill is a free, <a href=\"https://github.com/quilljs/quill/\">open source</a> WYSIWYG editor built for the modern web. With its <a href=\"http://quilljs.com/docs/modules/\">modular architecture</a> and expressive <a href=\"http://quilljs.com/docs/api/\">API</a>, it is completely customizable to fit any need.</p><br />\n<iframe class=\"ql-video ql-align-center\" src=\"https://www.youtube.com/embed/QHH3iSeDBLo?showinfo=0\" width=\"560\" height=\"238\"></iframe>\n            "
-    };
-  },
-  components: {
-    quillEditor: vue_quill_editor__WEBPACK_IMPORTED_MODULE_3__["quillEditor"],
-    Prism: vue_prism_component__WEBPACK_IMPORTED_MODULE_4___default.a
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=81317ef6&":
-/*!************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=81317ef6& ***!
-  \************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/tooltip/Tooltip.vue?vue&type=template&id=0dc22faa&":
+/*!*****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/tooltip/Tooltip.vue?vue&type=template&id=0dc22faa& ***!
+  \*****************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -397,63 +141,32 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "extra-component-quill-editor-demo" } },
+    { attrs: { id: "tooltip-demo" } },
     [
-      _vm._m(0),
+      _c("tooltip-default"),
       _vm._v(" "),
-      _c("quill-editor-theme-snow"),
+      _c("tooltip-position"),
       _vm._v(" "),
-      _c("quill-editor-theme-bubble"),
+      _c("tooltip-delay"),
       _vm._v(" "),
-      _c("quill-editor-custom-toolbar")
+      _c("tooltip-color"),
+      _vm._v(" "),
+      _c("tooltip-title")
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "mb-4" }, [
-      _c(
-        "a",
-        {
-          attrs: {
-            href: "https://surmon-china.github.io/vue-quill-editor/",
-            target: "_blank",
-            rel: "nofollow"
-          }
-        },
-        [_vm._v("Vue-Quill-Editor")]
-      ),
-      _vm._v(
-        " editor component for Vue, support SPA and SSR. Read full documnetation "
-      ),
-      _c(
-        "a",
-        {
-          attrs: {
-            href: "https://quilljs.com/docs/quickstart/",
-            target: "_blank",
-            rel: "nofollow"
-          }
-        },
-        [_vm._v("here")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=5046bf75&":
-/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=5046bf75& ***!
-  \*************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipColor.vue?vue&type=template&id=75c632b0&":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipColor.vue?vue&type=template&id=75c632b0& ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -467,102 +180,135 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Custom Toolbar", "code-toggler": "" } },
+    { attrs: { title: "Color", "code-toggler": "" } },
     [
-      _c("p", { staticClass: "mb-5" }, [
-        _vm._v("You have freedom to create your own custom toolbar")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "vx-row" }, [
-        _c(
-          "div",
-          { staticClass: "vx-col w-full md:w-1/2" },
-          [
-            _c(
-              "quill-editor",
-              {
-                attrs: { options: _vm.editorOption },
-                model: {
-                  value: _vm.content,
-                  callback: function($$v) {
-                    _vm.content = $$v
-                  },
-                  expression: "content"
-                }
-              },
-              [
-                _c(
-                  "div",
-                  {
-                    attrs: { slot: "toolbar", id: "toolbar" },
-                    slot: "toolbar"
-                  },
-                  [
-                    _c("button", { staticClass: "ql-bold" }, [_vm._v("Bold")]),
-                    _vm._v(" "),
-                    _c("button", { staticClass: "ql-italic" }, [
-                      _vm._v("Italic")
-                    ]),
-                    _vm._v(" "),
-                    _c("select", { staticClass: "ql-size" }, [
-                      _c("option", { attrs: { value: "small" } }),
-                      _vm._v(" "),
-                      _c("option", { attrs: { selected: "" } }),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "large" } }),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "huge" } })
-                    ]),
-                    _vm._v(" "),
-                    _c("select", { staticClass: "ql-font" }, [
-                      _c("option", { attrs: { selected: "selected" } }),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "serif" } }),
-                      _vm._v(" "),
-                      _c("option", { attrs: { value: "monospace" } })
-                    ]),
-                    _vm._v(" "),
-                    _c("button", {
-                      staticClass: "ql-script",
-                      attrs: { value: "sub" }
-                    }),
-                    _vm._v(" "),
-                    _c("button", {
-                      staticClass: "ql-script",
-                      attrs: { value: "super" }
-                    }),
-                    _vm._v(" "),
-                    _c(
-                      "button",
-                      {
-                        staticStyle: { width: "auto" },
-                        on: { click: _vm.customButtonClick }
-                      },
-                      [_vm._v("Click here")]
-                    )
-                  ]
-                )
-              ]
-            )
-          ],
-          1
+      _c("p", [
+        _vm._v(
+          "To change the color of the tooltip, use the property color. You are able to use the Main Colors or "
         ),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "vx-col w-full md:w-1/2 flex" },
-          [
-            _c("prism", { staticClass: "rounded-lg" }, [
-              _vm._v(" " + _vm._s(_vm.content) + " ")
-            ])
-          ],
-          1
-        )
+        _c("strong", [_vm._v("RGB")]),
+        _vm._v(" and "),
+        _c("strong", [_vm._v("HEX")]),
+        _vm._v(" colors")
       ]),
+      _vm._v(" "),
+      _c(
+        "vs-alert",
+        {
+          staticClass: "mt-5",
+          attrs: { icon: "warning", active: "true", color: "warning" }
+        },
+        [
+          _c("span", [
+            _vm._v("Only "),
+            _c("strong", [_vm._v("RGB")]),
+            _vm._v(" and "),
+            _c("strong", [_vm._v("HEX")]),
+            _vm._v(" colors are supported.")
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "demo-alignment" },
+        [
+          _c(
+            "vx-tooltip",
+            { attrs: { text: "Tooltip default" } },
+            [
+              _c("vs-button", { attrs: { type: "gradient" } }, [
+                _vm._v("Default Color")
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vx-tooltip",
+            { attrs: { color: "primary", text: "Tooltip Primary" } },
+            [
+              _c("vs-button", { attrs: { type: "border" } }, [
+                _vm._v("Color primary")
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vx-tooltip",
+            { attrs: { color: "success", text: "Tooltip Success" } },
+            [
+              _c("vs-button", { attrs: { color: "success", type: "border" } }, [
+                _vm._v("Color success")
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vx-tooltip",
+            { attrs: { color: "danger", text: "Tooltip Danger" } },
+            [
+              _c("vs-button", { attrs: { color: "danger", type: "border" } }, [
+                _vm._v("Color danger")
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vx-tooltip",
+            { attrs: { color: "warning", text: "Tooltip Warning" } },
+            [
+              _c("vs-button", { attrs: { color: "warning", type: "border" } }, [
+                _vm._v("Color warning")
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vx-tooltip",
+            { attrs: { color: "dark", text: "Tooltip Dark" } },
+            [
+              _c("vs-button", { attrs: { color: "dark", type: "border" } }, [
+                _vm._v("Color dark")
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vx-tooltip",
+            { attrs: { color: "rgb(42, 207, 133)", text: "Tooltip RGB" } },
+            [
+              _c(
+                "vs-button",
+                { attrs: { color: "rgb(42, 207, 133)", type: "border" } },
+                [_vm._v("Color RGB")]
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vx-tooltip",
+            { attrs: { color: "#4a0d6b", text: "Tooltip HEX" } },
+            [
+              _c("vs-button", { attrs: { color: "#4a0d6b", type: "border" } }, [
+                _vm._v("Color HEX")
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<template>\n  <quill-editor v-model="content" :options="editorOption">\n\n    <div id="toolbar" slot="toolbar">\n\n      <!-- Add a bold button -->\n      <button class="ql-bold">Bold</button>\n      <button class="ql-italic">Italic</button>\n\n      <!-- Add font size dropdown -->\n      <select class="ql-size">\n        <option value="small"></option>\n        <!-- Note a missing, thus falsy value, is used to reset to default -->\n        <option selected></option>\n        <option value="large"></option>\n        <option value="huge"></option>\n      </select>\n\n      <select class="ql-font">\n        <option selected="selected"></option>\n        <option value="serif"></option>\n        <option value="monospace"></option>\n      </select>\n\n      <!-- Add subscript and superscript buttons -->\n      <button class="ql-script" value="sub"></button>\n      <button class="ql-script" value="super"></button>\n\n      <!-- You can also add your own -->\n      <button style="width:auto" @click="customButtonClick">Click here</button>\n    </div>\n  </quill-editor>\n</template>\n\n<script>\n// require styles\nimport \'quill/dist/quill.core.css\'\nimport \'quill/dist/quill.snow.css\'\nimport \'quill/dist/quill.bubble.css\'\n\nimport { quillEditor } from \'vue-quill-editor\'\n\nexport default {\n  data() {\n    return {\n      editorOption: {\n        modules: {\n          toolbar: \'#toolbar\'\n        }\n      },\n      content: `...`,\n    }\n  },\n  components: {\n    quillEditor,\n  },\n  methods: {\n    customButtonClick() {\n      alert("Button clicked!");\n    }\n  }\n}\n</script>\n        '
+          '\n<template>\n  <vx-tooltip text="Tooltip default">\n    <vs-button type="gradient">Default Color</vs-button>\n  </vx-tooltip>\n\n  <vx-tooltip color="primary" text="Tooltip Primary">\n    <vs-button type="border">Color primary</vs-button>\n  </vx-tooltip>\n\n  <vx-tooltip color="success" text="Tooltip Success">\n    <vs-button color="success" type="border">Color success</vs-button>\n  </vx-tooltip>\n\n  <vx-tooltip color="danger" text="Tooltip Danger">\n    <vs-button color="danger" type="border">Color danger</vs-button>\n  </vx-tooltip>\n\n  <vx-tooltip color="warning" text="Tooltip Warning">\n    <vs-button color="warning" type="border">Color warning</vs-button>\n  </vx-tooltip>\n\n  <vx-tooltip color="dark" text="Tooltip Dark">\n    <vs-button color="dark" type="border">Color dark</vs-button>\n  </vx-tooltip>\n\n  <vx-tooltip color="rgb(42, 207, 133)" text="Tooltip RGB">\n    <vs-button color="rgb(42, 207, 133)" type="border">Color RGB</vs-button>\n  </vx-tooltip>\n\n  <vx-tooltip color="#4a0d6b" text="Tooltip HEX">\n    <vs-button color="#4a0d6b" type="border">Color HEX</vs-button>\n  </vx-tooltip>\n</template>\n        '
         )
       ])
     ],
@@ -576,10 +322,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=6360cfa0&":
-/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=6360cfa0& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDefault.vue?vue&type=template&id=4847d174&":
+/*!************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDefault.vue?vue&type=template&id=4847d174& ***!
+  \************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -593,30 +339,68 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Theme Bubble", "code-toggler": "" } },
+    { attrs: { title: "Default", "code-toggler": "" } },
     [
-      _c("p", { staticClass: "mb-5" }, [
-        _vm._v("Bubble is a simple tooltip based theme")
+      _c("p", [
+        _vm._v("To add a tooltip we have the component "),
+        _c("code", [_vm._v("vx-tooltip")])
       ]),
       _vm._v(" "),
-      _c("quill-editor", {
-        attrs: { options: _vm.editorOption },
-        model: {
-          value: _vm.content,
-          callback: function($$v) {
-            _vm.content = $$v
-          },
-          expression: "content"
-        }
-      }),
-      _vm._v(" "),
-      _c("prism", { staticClass: "rounded-lg" }, [
-        _vm._v(" " + _vm._s(_vm.content) + " ")
-      ]),
+      _c(
+        "div",
+        { staticClass: "demo-alignment" },
+        [
+          _c(
+            "vx-tooltip",
+            { attrs: { text: "Tooltip Default" } },
+            [
+              _c("vs-switch", {
+                model: {
+                  value: _vm.switch1,
+                  callback: function($$v) {
+                    _vm.switch1 = $$v
+                  },
+                  expression: "switch1"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vx-tooltip",
+            { attrs: { text: "Tooltip Default" } },
+            [
+              _c("vs-input-number", {
+                model: {
+                  value: _vm.number1,
+                  callback: function($$v) {
+                    _vm.number1 = $$v
+                  },
+                  expression: "number1"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vx-tooltip",
+            { attrs: { text: "Tooltip Default" } },
+            [
+              _c("vs-button", { attrs: { color: "primary", type: "border" } }, [
+                _vm._v("Button")
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          "\n<template>\n  <quill-editor v-model=\"content\" :options=\"editorOption\"></quill-editor>\n</template>\n\n<script>\n// require styles\nimport 'quill/dist/quill.core.css'\nimport 'quill/dist/quill.snow.css'\nimport 'quill/dist/quill.bubble.css'\n\nimport { quillEditor } from 'vue-quill-editor'\n\nexport default {\n  data() {\n    return {\n      editorOption: {\n        theme: 'bubble',\n      },\n      content: `...`,\n    }\n  },\n  components: {\n    quillEditor,\n  }\n}\n</script>\n        "
+          '\n<template>\n  <vx-tooltip text="Tooltip Default">\n    <vs-switch v-model="switch1" />\n  </vx-tooltip>\n\n  <vx-tooltip text="Tooltip Default">\n    <vs-input-number v-model="number1" />\n  </vx-tooltip>\n\n  <vx-tooltip text="Tooltip Default">\n    <vs-button color="primary" type="border">Button</vs-button>\n  </vx-tooltip>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      switch1:true,\n      number1:10,\n    }\n  }\n}\n</script>\n        '
         )
       ])
     ],
@@ -630,10 +414,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=32bdafd2&":
-/*!*********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=32bdafd2& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDelay.vue?vue&type=template&id=331460c8&":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDelay.vue?vue&type=template&id=331460c8& ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -647,29 +431,46 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Theme Snow", "code-toggler": "" } },
+    { attrs: { title: "Delay", "code-toggler": "" } },
     [
-      _c("p", { staticClass: "mb-5" }, [
-        _vm._v("Snow is a clean, flat toolbar theme")
+      _c("p", [
+        _vm._v(
+          "You can change the delay in appearing the tooltip with the property "
+        ),
+        _c("code", [_vm._v("delay")])
       ]),
       _vm._v(" "),
-      _c("quill-editor", {
-        model: {
-          value: _vm.content,
-          callback: function($$v) {
-            _vm.content = $$v
-          },
-          expression: "content"
-        }
-      }),
-      _vm._v(" "),
-      _c("prism", { staticClass: "rounded-lg" }, [
-        _vm._v(" " + _vm._s(_vm.content) + " ")
-      ]),
+      _c(
+        "div",
+        { staticClass: "demo-alignment" },
+        [
+          _c(
+            "vx-tooltip",
+            { attrs: { text: "Tooltip default delay" } },
+            [_c("vs-button", [_vm._v("Delay default")])],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vx-tooltip",
+            { attrs: { delay: ".5s", text: "Tooltip delay 0.5s" } },
+            [_c("vs-button", [_vm._v("Delay 0.5s")])],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vx-tooltip",
+            { attrs: { delay: "2s", text: "Tooltip delay 2s" } },
+            [_c("vs-button", [_vm._v("Delay 2s")])],
+            1
+          )
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          "\n<template>\n  <quill-editor v-model=\"content\"></quill-editor>\n</template>\n\n<script>\n// require styles\nimport 'quill/dist/quill.core.css'\nimport 'quill/dist/quill.snow.css'\nimport 'quill/dist/quill.bubble.css'\n\nimport { quillEditor } from 'vue-quill-editor'\n\nexport default {\n  data() {\n    return {\n      content: `...`,\n    }\n  },\n  components: {\n    quillEditor,\n  }\n}\n</script>\n        "
+          '\n<template>\n  <vx-tooltip text="Tooltip default delay">\n    <vs-button>Delay default</vs-button>\n  </vx-tooltip>\n\n  <vx-tooltip delay=".5s" text="Tooltip delay 0.5s">\n    <vs-button>Delay 0.5s</vs-button>\n  </vx-tooltip>\n\n  <vx-tooltip delay="2s" text="Tooltip delay 2s">\n    <vs-button>Delay 2s</vs-button>\n  </vx-tooltip>\n</template>\n        '
         )
       ])
     ],
@@ -683,17 +484,171 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue":
-/*!***********************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue ***!
-  \***********************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipPosition.vue?vue&type=template&id=69de5418&":
+/*!*************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipPosition.vue?vue&type=template&id=69de5418& ***!
+  \*************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Position", "code-toggler": "" } },
+    [
+      _c("p", [
+        _vm._v(
+          "You can change the position at which the tooltip appears with the property "
+        ),
+        _c("code", [_vm._v("position")])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "demo-alignment" },
+        [
+          _c(
+            "vx-tooltip",
+            { attrs: { text: "Tooltip position Top", position: "top" } },
+            [_c("vs-button", { attrs: { type: "gradient" } }, [_vm._v("Top")])],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vx-tooltip",
+            { attrs: { text: "Tooltip position Bottom", position: "bottom" } },
+            [
+              _c("vs-button", { attrs: { type: "gradient" } }, [
+                _vm._v("Bottom")
+              ])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vx-tooltip",
+            { attrs: { text: "Tooltip position Left", position: "left" } },
+            [
+              _c("vs-button", { attrs: { type: "gradient" } }, [_vm._v("Left")])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vx-tooltip",
+            { attrs: { text: "Tooltip position Right", position: "right" } },
+            [
+              _c("vs-button", { attrs: { type: "gradient" } }, [
+                _vm._v("Right")
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n  <vx-tooltip text="Tooltip position Top" position="top">\n    <vs-button type="gradient">Top</vs-button>\n  </vx-tooltip>\n\n  <vx-tooltip text="Tooltip position Bottom" position="bottom">\n    <vs-button type="gradient">Bottom</vs-button>\n  </vx-tooltip>\n\n  <vx-tooltip text="Tooltip position Left" position="left">\n    <vs-button type="gradient">Left</vs-button>\n  </vx-tooltip>\n\n  <vx-tooltip text="Tooltip position Right" position="right">\n    <vs-button type="gradient">Right</vs-button>\n  </vx-tooltip>\n</template>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipTitle.vue?vue&type=template&id=608551c6&":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipTitle.vue?vue&type=template&id=608551c6& ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Title", "code-toggler": "" } },
+    [
+      _c("p", [
+        _vm._v(
+          "If necessary, you can add a title to the tooltip with the property "
+        ),
+        _c("code", [_vm._v("title")])
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "demo-alignment" },
+        [
+          _c(
+            "vx-tooltip",
+            {
+              attrs: {
+                title: "Are you sure?",
+                color: "warning",
+                text:
+                  "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque non neque sed aliquet."
+              }
+            },
+            [
+              _c("vs-button", { attrs: { color: "warning", type: "flat" } }, [
+                _vm._v("Title Tooltip")
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n  <vx-tooltip\n    title="Are you sure?"\n    color="warning"\n    text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras scelerisque non neque sed aliquet.">\n\n    <vs-button color="warning" type="flat">Title Tooltip</vs-button>\n  </vx-tooltip>\n</template>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/tooltip/Tooltip.vue":
+/*!****************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/tooltip/Tooltip.vue ***!
+  \****************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _QuillEditor_vue_vue_type_template_id_81317ef6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuillEditor.vue?vue&type=template&id=81317ef6& */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=81317ef6&");
-/* harmony import */ var _QuillEditor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuillEditor.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js&");
+/* harmony import */ var _Tooltip_vue_vue_type_template_id_0dc22faa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tooltip.vue?vue&type=template&id=0dc22faa& */ "./resources/admin/js/src/views/components/vuesax/tooltip/Tooltip.vue?vue&type=template&id=0dc22faa&");
+/* harmony import */ var _Tooltip_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Tooltip.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/vuesax/tooltip/Tooltip.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -703,9 +658,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _QuillEditor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _QuillEditor_vue_vue_type_template_id_81317ef6___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _QuillEditor_vue_vue_type_template_id_81317ef6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Tooltip_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Tooltip_vue_vue_type_template_id_0dc22faa___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Tooltip_vue_vue_type_template_id_0dc22faa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -715,66 +670,186 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue"
+component.options.__file = "resources/admin/js/src/views/components/vuesax/tooltip/Tooltip.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/vuesax/tooltip/Tooltip.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/tooltip/Tooltip.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditor.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Tooltip_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Tooltip.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/tooltip/Tooltip.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Tooltip_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=81317ef6&":
-/*!******************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=81317ef6& ***!
-  \******************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/vuesax/tooltip/Tooltip.vue?vue&type=template&id=0dc22faa&":
+/*!***********************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/tooltip/Tooltip.vue?vue&type=template&id=0dc22faa& ***!
+  \***********************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditor_vue_vue_type_template_id_81317ef6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditor.vue?vue&type=template&id=81317ef6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditor.vue?vue&type=template&id=81317ef6&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditor_vue_vue_type_template_id_81317ef6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tooltip_vue_vue_type_template_id_0dc22faa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Tooltip.vue?vue&type=template&id=0dc22faa& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/tooltip/Tooltip.vue?vue&type=template&id=0dc22faa&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tooltip_vue_vue_type_template_id_0dc22faa___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditor_vue_vue_type_template_id_81317ef6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Tooltip_vue_vue_type_template_id_0dc22faa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue":
+/***/ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipColor.vue":
+/*!*********************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/tooltip/TooltipColor.vue ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TooltipColor_vue_vue_type_template_id_75c632b0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TooltipColor.vue?vue&type=template&id=75c632b0& */ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipColor.vue?vue&type=template&id=75c632b0&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _TooltipColor_vue_vue_type_template_id_75c632b0___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TooltipColor_vue_vue_type_template_id_75c632b0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/vuesax/tooltip/TooltipColor.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipColor.vue?vue&type=template&id=75c632b0&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/tooltip/TooltipColor.vue?vue&type=template&id=75c632b0& ***!
+  \****************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipColor_vue_vue_type_template_id_75c632b0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./TooltipColor.vue?vue&type=template&id=75c632b0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipColor.vue?vue&type=template&id=75c632b0&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipColor_vue_vue_type_template_id_75c632b0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipColor_vue_vue_type_template_id_75c632b0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDefault.vue":
+/*!***********************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDefault.vue ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TooltipDefault_vue_vue_type_template_id_4847d174___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TooltipDefault.vue?vue&type=template&id=4847d174& */ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDefault.vue?vue&type=template&id=4847d174&");
+/* harmony import */ var _TooltipDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./TooltipDefault.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDefault.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _TooltipDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _TooltipDefault_vue_vue_type_template_id_4847d174___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TooltipDefault_vue_vue_type_template_id_4847d174___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/vuesax/tooltip/TooltipDefault.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDefault.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue ***!
+  !*** ./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDefault.vue?vue&type=script&lang=js& ***!
   \************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _QuillEditorCustomToolbar_vue_vue_type_template_id_5046bf75___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuillEditorCustomToolbar.vue?vue&type=template&id=5046bf75& */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=5046bf75&");
-/* harmony import */ var _QuillEditorCustomToolbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuillEditorCustomToolbar.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./TooltipDefault.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDefault.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDefault.vue?vue&type=template&id=4847d174&":
+/*!******************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDefault.vue?vue&type=template&id=4847d174& ***!
+  \******************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipDefault_vue_vue_type_template_id_4847d174___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./TooltipDefault.vue?vue&type=template&id=4847d174& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDefault.vue?vue&type=template&id=4847d174&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipDefault_vue_vue_type_template_id_4847d174___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipDefault_vue_vue_type_template_id_4847d174___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDelay.vue":
+/*!*********************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDelay.vue ***!
+  \*********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _TooltipDelay_vue_vue_type_template_id_331460c8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TooltipDelay.vue?vue&type=template&id=331460c8& */ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDelay.vue?vue&type=template&id=331460c8&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _QuillEditorCustomToolbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _QuillEditorCustomToolbar_vue_vue_type_template_id_5046bf75___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _QuillEditorCustomToolbar_vue_vue_type_template_id_5046bf75___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _TooltipDelay_vue_vue_type_template_id_331460c8___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TooltipDelay_vue_vue_type_template_id_331460c8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -784,66 +859,50 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue"
+component.options.__file = "resources/admin/js/src/views/components/vuesax/tooltip/TooltipDelay.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorCustomToolbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorCustomToolbar.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorCustomToolbar_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=5046bf75&":
-/*!*******************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=5046bf75& ***!
-  \*******************************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDelay.vue?vue&type=template&id=331460c8&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDelay.vue?vue&type=template&id=331460c8& ***!
+  \****************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorCustomToolbar_vue_vue_type_template_id_5046bf75___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorCustomToolbar.vue?vue&type=template&id=5046bf75& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorCustomToolbar.vue?vue&type=template&id=5046bf75&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorCustomToolbar_vue_vue_type_template_id_5046bf75___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipDelay_vue_vue_type_template_id_331460c8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./TooltipDelay.vue?vue&type=template&id=331460c8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipDelay.vue?vue&type=template&id=331460c8&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipDelay_vue_vue_type_template_id_331460c8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorCustomToolbar_vue_vue_type_template_id_5046bf75___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipDelay_vue_vue_type_template_id_331460c8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue":
-/*!**********************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue ***!
-  \**********************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipPosition.vue":
+/*!************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/tooltip/TooltipPosition.vue ***!
+  \************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _QuillEditorThemeBubble_vue_vue_type_template_id_6360cfa0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuillEditorThemeBubble.vue?vue&type=template&id=6360cfa0& */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=6360cfa0&");
-/* harmony import */ var _QuillEditorThemeBubble_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuillEditorThemeBubble.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _TooltipPosition_vue_vue_type_template_id_69de5418___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TooltipPosition.vue?vue&type=template&id=69de5418& */ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipPosition.vue?vue&type=template&id=69de5418&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-
-
+var script = {}
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _QuillEditorThemeBubble_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _QuillEditorThemeBubble_vue_vue_type_template_id_6360cfa0___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _QuillEditorThemeBubble_vue_vue_type_template_id_6360cfa0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _TooltipPosition_vue_vue_type_template_id_69de5418___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TooltipPosition_vue_vue_type_template_id_69de5418___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -853,66 +912,50 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue"
+component.options.__file = "resources/admin/js/src/views/components/vuesax/tooltip/TooltipPosition.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeBubble_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorThemeBubble.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeBubble_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=6360cfa0&":
-/*!*****************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=6360cfa0& ***!
-  \*****************************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipPosition.vue?vue&type=template&id=69de5418&":
+/*!*******************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/tooltip/TooltipPosition.vue?vue&type=template&id=69de5418& ***!
+  \*******************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeBubble_vue_vue_type_template_id_6360cfa0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorThemeBubble.vue?vue&type=template&id=6360cfa0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeBubble.vue?vue&type=template&id=6360cfa0&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeBubble_vue_vue_type_template_id_6360cfa0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipPosition_vue_vue_type_template_id_69de5418___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./TooltipPosition.vue?vue&type=template&id=69de5418& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipPosition.vue?vue&type=template&id=69de5418&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipPosition_vue_vue_type_template_id_69de5418___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeBubble_vue_vue_type_template_id_6360cfa0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipPosition_vue_vue_type_template_id_69de5418___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue":
-/*!********************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue ***!
-  \********************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipTitle.vue":
+/*!*********************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/tooltip/TooltipTitle.vue ***!
+  \*********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _QuillEditorThemeSnow_vue_vue_type_template_id_32bdafd2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./QuillEditorThemeSnow.vue?vue&type=template&id=32bdafd2& */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=32bdafd2&");
-/* harmony import */ var _QuillEditorThemeSnow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./QuillEditorThemeSnow.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _TooltipTitle_vue_vue_type_template_id_608551c6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./TooltipTitle.vue?vue&type=template&id=608551c6& */ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipTitle.vue?vue&type=template&id=608551c6&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
-
-
+var script = {}
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _QuillEditorThemeSnow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _QuillEditorThemeSnow_vue_vue_type_template_id_32bdafd2___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _QuillEditorThemeSnow_vue_vue_type_template_id_32bdafd2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _TooltipTitle_vue_vue_type_template_id_608551c6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _TooltipTitle_vue_vue_type_template_id_608551c6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -922,38 +965,24 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue"
+component.options.__file = "resources/admin/js/src/views/components/vuesax/tooltip/TooltipTitle.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeSnow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorThemeSnow.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeSnow_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=32bdafd2&":
-/*!***************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=32bdafd2& ***!
-  \***************************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/vuesax/tooltip/TooltipTitle.vue?vue&type=template&id=608551c6&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/tooltip/TooltipTitle.vue?vue&type=template&id=608551c6& ***!
+  \****************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeSnow_vue_vue_type_template_id_32bdafd2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./QuillEditorThemeSnow.vue?vue&type=template&id=32bdafd2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/quill-editor/QuillEditorThemeSnow.vue?vue&type=template&id=32bdafd2&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeSnow_vue_vue_type_template_id_32bdafd2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipTitle_vue_vue_type_template_id_608551c6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./TooltipTitle.vue?vue&type=template&id=608551c6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/tooltip/TooltipTitle.vue?vue&type=template&id=608551c6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipTitle_vue_vue_type_template_id_608551c6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_QuillEditorThemeSnow_vue_vue_type_template_id_32bdafd2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_TooltipTitle_vue_vue_type_template_id_608551c6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

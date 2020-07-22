@@ -83,11 +83,10 @@
       </div>
 
       <template slot="thead">
+        <vs-th sort-key="id">ID</vs-th>
         <vs-th sort-key="name">Name</vs-th>
-        <vs-th sort-key="category">Category</vs-th>
-        <vs-th sort-key="popularity">Popularity</vs-th>
-        <vs-th sort-key="order_status">Order Status</vs-th>
-        <vs-th sort-key="price">Price</vs-th>
+        <vs-th sort-key="start_date">Start Date</vs-th>
+        <vs-th sort-key="end_date">End Date</vs-th>
         <vs-th>Action</vs-th>
       </template>
 
@@ -95,27 +94,23 @@
           <tbody >
             <vs-tr :data="tr" :key="indextr" v-for="(tr, indextr) in data">
               <vs-td > 
-                <router-link to="/app/asfdasdf">
+                <p >{{ tr.id }}</p>
+              </vs-td>
+              
+              <vs-td > 
+                <router-link :to="{path: routeLink(tr.id)}">
                   <p class="product-name font-medium truncate">{{ tr.name }}</p>
                 </router-link>
               </vs-td>
 
               <vs-td>
-                <p class="product-category">{{ tr.category | title }}</p>
+                <p>{{ tr.start_date }}</p>
               </vs-td>
-
+              
               <vs-td>
-                <vs-progress :percent="Number(tr.popularity)" :color="getPopularityColor(Number(tr.popularity))" class="shadow-md" />
+                <p>{{ tr.end_date }}</p>
               </vs-td>
-
-              <vs-td>
-                <vs-chip :color="getOrderStatusColor(tr.order_status)" class="product-order-status">{{ tr.order_status | title }}</vs-chip>
-              </vs-td>
-
-              <vs-td>
-                <p class="product-price">${{ tr.price }}</p>
-              </vs-td>
-
+             
               <vs-td class="whitespace-no-wrap">
                 <feather-icon icon="EditIcon" svgClasses="w-5 h-5 hover:text-primary stroke-current" @click.stop="editData(tr)" />
                 <feather-icon icon="TrashIcon" svgClasses="w-5 h-5 hover:text-danger stroke-current" class="ml-2" @click.stop="deleteData(tr.id)" />
@@ -149,6 +144,7 @@ export default {
     }
   },
   computed: {
+    
     currentPage () {
       if (this.isMounted) {
         return this.$refs.table.currentx
@@ -192,15 +188,18 @@ export default {
     toggleDataSidebar (val = false) {
       this.addNewDataSidebar = val
     },
+    routeLink(id) {
+      return `/fair/${id}/country`
+    }
     
   },
   created () {
-    console.log("created!!!!!!!")
+    
     if (!moduleFairList.isRegistered) {
       this.$store.registerModule('fair', moduleFairList)
       moduleFairList.isRegistered = true
     }
-    console.log(this.$route.name);
+    
     let action = 'fair/allFairs';
     switch(this.$route.name){
       case 'fair-all':

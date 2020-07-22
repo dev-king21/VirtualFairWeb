@@ -47,12 +47,14 @@ Route::get('/fair/all', 'FairController@all_fairs');
 Route::get('/fair/year/{year}', 'FairController@fairs_year');
 Route::get('/fair/current', 'FairController@current_fairs');
 Route::get('/fair/next', 'FairController@next_fairs');
+Route::get('/fair/past', 'FairController@past_fairs');
+
 Route::post('/fair/create', 'FairController@create_fair');
 Route::post('/fair/update/{id}', 'FairController@update_fair');
 Route::get('/fair/request', 'FairController@requestFair');
 Route::get('/fair/book', 'FairController@bookedFair');
 Route::get('/fair/active', 'FairController@activeFair');
-Route::get('/fair/past', 'FairController@past_fairs ');
+
 
 
 //stand
@@ -61,6 +63,7 @@ Route::post('/stand/create', 'StandController@create_stand');
 Route::get('/stand/user/{user_id}', 'StandController@current_user_stand');
 Route::get('/stand/user/{user_id}/{fair_id}', 'StandController@current_user_stand');
 Route::post('/stand/update/{id}', 'StandController@update_stand');
+
 
 //appointments
 Route::get('/stand/appointment/all', 'AppointmentController@all_appointments');
@@ -129,4 +132,10 @@ Route::post('/standType/create', 'StandTypeController@create');
 Route::get('/standTypeItem/all', 'StandTypeItemController@show');
 Route::post('/standTypeItem/update/{id}', 'StandTypeItemController@update');
 Route::post('/standTypeItem/create', 'StandTypeItemController@create');
+
+//fair-country-stand
+Route::get('/fair/country/stand/{fair_id}/{country_id}', 'StandController@get_stands');
+
+//all the informaton related to stand
+Route::get('fair/country/stand/information/{fair_id}/{country_id}', 'StandController@stand_information');
 

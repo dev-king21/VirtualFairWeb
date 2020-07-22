@@ -52,6 +52,9 @@ class StandController extends Controller
         $res["status"] = "ok";
         return response()->json($res);
     }
+
+    
+
 //contact
     public function create_contact(Request $request){
         $res = array();
@@ -228,4 +231,35 @@ class StandController extends Controller
         $res["status"] = "ok";
         return response()->json($res);
     }
+
+    //stand and user according to fair_id and country_id
+
+    public function get_stands(Request $request, $fair_id, $country_id = 0){
+        $res = array();
+        $query = ["fair_id"=> $fair_id];
+        if ($country_id != 0)
+            $query["country_id"] = $country_id;
+        $res["stands"] = Stand::with(['user'])->where($query)->get();
+        
+        return response()->json($res);
+    }
+
+    //all the information connected to a selected stand 
+ /*    public function stand_information(Request $request, $id){
+        $res = array();
+        $res["stands"] = Stand::with(['user', 'stand_location', 'stand_type_item', 'gallery', 'file','appointment','contact','portfolio'])
+        ->where($id)->get();
+        return response()->json($res);
+    } */
+    public function stand_information(Request $request, $fair_id, $country_id = 0){
+        $res = array();
+        $query = ["fair_id"=> $fair_id];
+        if ($country_id != 0)
+            $query["country_id"] = $country_id;
+
+        $res["stands"] = Stand::with(['user', 'stand_location', 'stand_type_item', 'gallery', 'file','appointment','contact','portfolio'])
+        ->where($query)->get();
+        return response()->json($res);
+    }
+
 }

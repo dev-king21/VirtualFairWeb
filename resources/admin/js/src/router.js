@@ -84,6 +84,15 @@ const router = new Router({
             rule: 'editor'
           }
         },
+
+        {
+          path: '/fair/all/country',
+          name: 'fair-all-country',
+          component: () => import('@/views/fair/country-stands/CountryStandsView.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
         {
           path: '/fair/next',
           name: 'fair-next',
