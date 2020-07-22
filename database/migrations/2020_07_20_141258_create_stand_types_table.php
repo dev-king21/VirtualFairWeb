@@ -15,9 +15,9 @@ class CreateStandTypesTable extends Migration
     {
         Schema::create('stand_types', function (Blueprint $table) {
             $table->id();
-            $table->integer('stand_location_id');
-            $table->string('background');
             $table->string('name');
+            $table->string('building');
+            $table->string('interior');
             $table->timestamps();
         });
     }

@@ -8,7 +8,6 @@ use App\StandType;
 
 class StandTypeController extends Controller
 {
-    //
     public function show(){
         $res = array();
         $res["stand_types"] = StandType::all();

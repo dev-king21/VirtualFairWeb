@@ -16,14 +16,13 @@ class CreateStandsTable extends Migration
         Schema::create('stands', function (Blueprint $table) {
             $table->id();
             $table->integer("fair_id");
-            $table->integer("user_id");
             $table->integer("country_id");
+            $table->integer("user_id")->nullable();
             $table->integer("stand_location_id");
-            $table->integer("stand_type_id");
-            $table->string("site_link");
-            $table->string("logo");
+            $table->string("site_link")->nullable();
+            $table->string("logo")->nullable();
             $table->text("description")->nullable();
-            $table->integer("status");
+            $table->integer("status")->default(0);
             $table->timestamps();
         });
     }

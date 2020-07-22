@@ -15,6 +15,8 @@ class CreateStandLocationsTable extends Migration
     {
         Schema::create('stand_locations', function (Blueprint $table) {
             $table->id();
+            $table->integer('fair_type_id');
+            $table->integer('stand_type_id');
             $table->float('left');
             $table->float('top');
             $table->float('width');

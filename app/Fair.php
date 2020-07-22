@@ -11,6 +11,10 @@ class Fair extends Model
         return $this->hasMany('App\Stand');
     }
 
+    public function fair_type() {
+        return $this->belongsTo('App\FairType');
+    }
+
 
     protected $guarded = [];
     protected $attributes = ["status" => 0];

@@ -16,13 +16,12 @@ class CreateFairsTable extends Migration
         Schema::create('fairs', function (Blueprint $table) {
             $table->id();
             $table->string("name");
+            $table->string("fair_type_id");
             $table->integer("opened_year");
             $table->date("start_date");
             $table->date("end_date");
-            $table->integer("status"); // 0 - preserved, 1 - current, 2 - ended  
+            $table->integer("status")->default(0); // 0 - preserved, 1 - current, 2 - ended  
             
-            // $table->time("start_time")->nullable();
-            // $table->time("end_time")->nullable();
             $table->timestamps();
         });
     }

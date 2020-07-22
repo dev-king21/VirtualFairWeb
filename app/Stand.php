@@ -50,11 +50,6 @@ class Stand extends Model
         return $this->hasOne('App\StandLocation');
     }
 
-    public function stand_type()
-    {
-        return $this->hasOne('App\StandType');
-    }
-
     public function stand_contents() {
         return $this->hasMany('App\StandContent');
     }

@@ -14,7 +14,7 @@ class CountryController extends Controller
         return response()->json($res);
     }
 
-    public function temp_add(Request $request){
+    public function dummyCreate(Request $request){
         $res = array();
         foreach ($request->post() as $key => $item) {
             $ctry = new Country;

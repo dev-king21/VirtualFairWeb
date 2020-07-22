@@ -18,7 +18,9 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::post('register_country', 'CountryController@temp_add');
+Route::post('/register_country', 'CountryController@dummyCreate');
+Route::post('/init_setting', 'SettingController@dummyCreate');
+
 
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('users', 'UserController@index')->middleware('isAdmin');
@@ -112,26 +114,32 @@ Route::post('/room/talk/create', 'RoomController@create_talk');
 Route::post('/room/talk/update/{id}', 'RoomController@update_talk');
 Route::get('/room/talk/all', 'RoomController@all_talk');
 
-
 //country
 Route::get('/country/all', 'CountryController@show');
 Route::post('/country/update/{id}', 'CountryController@update');
 Route::post('/country/activate/{status}', 'CountryController@activate');
 
-//standLocation
-Route::get('/standLocation/all', 'StandLocationController@show');
-Route::post('/standLocation/update/{id}', 'StandLocationController@update');
-Route::post('/standLocation/create', 'StandLocationController@create');
+//fairType
+Route::get('/fair_type/all', 'SettingController@allFairType');
+Route::post('/fair_type/create', 'SettingController@createFairType');
+Route::post('/fair_type/update/{id}', 'SettingController@updateFairType');
+Route::get('/fair_type/{ftype_id}/stand_locations', 'SettingController@allStandLocation');
 
 //standType
-Route::get('/standType/all', 'StandTypeController@show');
-Route::post('/standType/update/{id}', 'StandTypeController@update');
-Route::post('/standType/create', 'StandTypeController@create');
+Route::get('/stand_type/all', 'SettingController@allStandType');
+Route::post('/stand_type/create', 'SettingController@createStandType');
+Route::post('/stand_type/update/{id}', 'SettingController@updateStandType');
+Route::get('/stand_type/{stype_id}/stand_type_items', 'SettingController@allStandTypeItems');
+
+//standLocation
+Route::get('/stand_location/all', 'SettingController@allStandLocation');
+Route::post('/stand_location/create', 'StandLocationController@createStandLocation');
+Route::post('/stand_location/update/{id}', 'StandLocationController@updateStandLocation');
 
 //standTypeItem
-Route::get('/standTypeItem/all', 'StandTypeItemController@show');
-Route::post('/standTypeItem/update/{id}', 'StandTypeItemController@update');
-Route::post('/standTypeItem/create', 'StandTypeItemController@create');
+Route::get('/stand_type_item/all', 'SettingController@allStandTypeItem');
+Route::post('/stand_type_item/update/{id}', 'SettingController@updateStandTypeItem');
+Route::post('/stand_type_item/create', 'StandTypeItemController@createStandTypeItem');
 
 //fair-country-stand
 Route::get('/fair/country/stand/{fair_id}/{country_id}', 'StandController@get_stands');
