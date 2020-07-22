@@ -11,7 +11,13 @@ class SettingController extends Controller
 {
     public function allFairType() {
         $res = array();
-        $res['fair_types'] = FairType::all();
+        $res['fair_types'] = FairType::with('stand_locations')->get();
+        return response()->json($res);
+    }
+
+    public function getFairType(Request $request, $id) {
+        $res = array();
+        $res['fair_type'] = FairType::find($id);
         return response()->json($res);
     }
 

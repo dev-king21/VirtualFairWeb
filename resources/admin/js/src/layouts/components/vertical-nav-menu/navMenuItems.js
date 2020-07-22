@@ -170,15 +170,22 @@ export default [
         i18n: 'AllUsers' */
       },
       {
+        url: '/settings/fair-type',
+        name: 'Fair Types',
+        slug: 'fair-type',
+        icon: 'MailIcon'/* ,
+        i18n: 'AllUsers' */
+      },
+      {
         url: '/settings/stand-location',
-        name: 'Stand Location',
+        name: 'Stand Locations',
         slug: 'stand-location',
         icon: 'MailIcon'/* ,
         i18n: 'AllUsers' */
       },
       {
         url: '/settings/stand-type',
-        name: 'Stand Type',
+        name: 'Stand Types',
         slug: 'stand-type',
         icon: 'MailIcon'/* ,
         i18n: 'AllUsers' */

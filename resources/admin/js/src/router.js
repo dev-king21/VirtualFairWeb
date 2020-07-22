@@ -34,7 +34,7 @@ const router = new Router({
         },
         {
           path: '/room/all',
-          name: 'dashboard-analytics',
+          name: 'room-all',
           component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
@@ -42,7 +42,7 @@ const router = new Router({
         },
         {
           path: '/room/request_talk',
-          name: 'dashboard-analytics',
+          name: 'request_talk',
           component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
@@ -50,7 +50,7 @@ const router = new Router({
         },
         {
           path: '/room/scheduled_talk',
-          name: 'dashboard-analytics',
+          name: 'scheduled_talk',
           component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
@@ -58,7 +58,7 @@ const router = new Router({
         },
         {
           path: '/room/live_talk',
-          name: 'dashboard-analytics',
+          name: 'live_talk',
           component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
@@ -66,7 +66,7 @@ const router = new Router({
         },
         {
           path: '/room/past_talk',
-          name: 'dashboard-analytics',
+          name: 'past_talk',
           component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
@@ -120,7 +120,7 @@ const router = new Router({
         
         {
           path: '/payment',
-          name: 'dashboard-analytics',
+          name: 'payment',
           component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
@@ -135,16 +135,36 @@ const router = new Router({
           }
         },
         {
-          path: '/settings/stand-location',
-          name: 'dashboard-analytics',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          path: '/settings/fair-type',
+          redirect: '/settings/fair-type/show'
+        },
+        {
+          path: '/settings/fair-type/show',
+          name: 'fair-type',
+          component: () => import('@/views/setting/fair/FairTypeList.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/settings/fair-type/edit',
+          name: 'fair-type-edit',
+          component: () => import('@/views/setting/fair/FairTypeEdit.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/settings/fair-type/edit/:ftype_id',
+          name: 'fair-type-edit',
+          component: () => import('@/views/setting/fair/FairTypeEdit.vue'),
           meta: {
             rule: 'editor'
           }
         },
         {
           path: '/settings/stand-type',
-          name: 'dashboard-analytics',
+          name: 'stand-type',
           component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'
@@ -152,7 +172,15 @@ const router = new Router({
         },
         {
           path: '/settings/stand-type-item',
-          name: 'dashboard-analytics',
+          name: 'stand-type-item',
+          component: () => import('@/views/DashboardAnalytics.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/settings/stand-location/:ftype_id',
+          name: 'stand-location',
           component: () => import('@/views/DashboardAnalytics.vue'),
           meta: {
             rule: 'editor'

@@ -121,6 +121,7 @@ Route::post('/country/activate/{status}', 'CountryController@activate');
 
 //fairType
 Route::get('/fair_type/all', 'SettingController@allFairType');
+Route::get('/fair_type/get/{id}', 'SettingController@getFairType');
 Route::post('/fair_type/create', 'SettingController@createFairType');
 Route::post('/fair_type/update/{id}', 'SettingController@updateFairType');
 Route::get('/fair_type/{ftype_id}/stand_locations', 'SettingController@allStandLocation');
