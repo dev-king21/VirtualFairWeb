@@ -132,7 +132,7 @@ __webpack_require__.r(__webpack_exports__);
     exportToExcel: function exportToExcel() {
       var _this = this;
 
-      Promise.all(/*! import() */[__webpack_require__.e(9), __webpack_require__.e(18)]).then(__webpack_require__.bind(null, /*! @/vendor/Export2Excel */ "./resources/admin/js/src/vendor/Export2Excel.js")).then(function (excel) {
+      Promise.all(/*! import() */[__webpack_require__.e(9), __webpack_require__.e(19)]).then(__webpack_require__.bind(null, /*! @/vendor/Export2Excel */ "./resources/admin/js/src/vendor/Export2Excel.js")).then(function (excel) {
         var list = _this.selectedUsers;
 
         var data = _this.formatJson(_this.headerVal, list);
