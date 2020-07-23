@@ -84,15 +84,6 @@ const router = new Router({
             rule: 'editor'
           }
         },
-
-        {
-          path: '/fair/all/country',
-          name: 'fair-all-country',
-          component: () => import('@/views/fair/country-stands/CountryStandsView.vue'),
-          meta: {
-            rule: 'editor'
-          }
-        },
         {
           path: '/fair/next',
           name: 'fair-next',
@@ -117,7 +108,22 @@ const router = new Router({
             rule: 'editor'
           }
         },
-        
+        {
+          path: '/fair/stands/:fair_id',
+          name: 'fair-stands',
+          component: () => import('@/views/fair/stands/Stands.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/fair/stands/:fair_id/:country_code',
+          name: 'fair-stands-country',
+          component: () => import('@/views/fair/stands/Stands.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
         {
           path: '/payment',
           name: 'payment',

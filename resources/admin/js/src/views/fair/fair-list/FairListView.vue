@@ -98,7 +98,7 @@
               </vs-td>
               
               <vs-td > 
-                <router-link :to="{path: routeLink(tr.id)}">
+                <router-link :to="{path: '/fair/stands/' + tr.id}">
                   <p class="product-name font-medium truncate">{{ tr.name }}</p>
                 </router-link>
               </vs-td>
@@ -152,7 +152,6 @@ export default {
       return 0
     },
     fairs () {
-      console.log(this.$store.state.fair.fairs);
       return this.$store.state.fair.fairs
     },
     queriedItems () {
@@ -187,11 +186,7 @@ export default {
     },
     toggleDataSidebar (val = false) {
       this.addNewDataSidebar = val
-    },
-    routeLink(id) {
-      return `/fair/${id}/country`
     }
-    
   },
   created () {
     
@@ -200,22 +195,22 @@ export default {
       moduleFairList.isRegistered = true
     }
     
-    let action = 'fair/allFairs';
-    switch(this.$route.name){
-      case 'fair-all':
-        action = 'fair/allFairs'
-        break
-      case "fair-next":
-        action = 'fair/nextFairs'
-        break
-      case "fair-live":
-        action = 'fair/liveFairs'
-        break
-      case "fair-past":
-        action = 'fair/pastFairs'
-        break
+    let action = 'fair/allFairs'
+    switch (this.$route.name) {
+    case 'fair-all':
+      action = 'fair/allFairs'
+      break
+    case 'fair-next':
+      action = 'fair/nextFairs'
+      break
+    case 'fair-live':
+      action = 'fair/liveFairs'
+      break
+    case 'fair-past':
+      action = 'fair/pastFairs'
+      break
     }
-    this.$store.dispatch(action).catch(err => { console.error(err) });
+    this.$store.dispatch(action).catch(err => { console.error(err) })
 
   },
   mounted () {

@@ -407,7 +407,6 @@ __webpack_require__.r(__webpack_exports__);
       return 0;
     },
     fairs: function fairs() {
-      console.log(this.$store.state.fair.fairs);
       return this.$store.state.fair.fairs;
     },
     queriedItems: function queriedItems() {
@@ -445,9 +444,6 @@ __webpack_require__.r(__webpack_exports__);
     toggleDataSidebar: function toggleDataSidebar() {
       var val = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : false;
       this.addNewDataSidebar = val;
-    },
-    routeLink: function routeLink(id) {
-      return "/fair/".concat(id, "/country");
     }
   },
   created: function created() {
@@ -463,15 +459,15 @@ __webpack_require__.r(__webpack_exports__);
         action = 'fair/allFairs';
         break;
 
-      case "fair-next":
+      case 'fair-next':
         action = 'fair/nextFairs';
         break;
 
-      case "fair-live":
+      case 'fair-live':
         action = 'fair/liveFairs';
         break;
 
-      case "fair-past":
+      case 'fair-past':
         action = 'fair/pastFairs';
         break;
     }
@@ -996,7 +992,9 @@ var render = function() {
                               _c(
                                 "router-link",
                                 {
-                                  attrs: { to: { path: _vm.routeLink(tr.id) } }
+                                  attrs: {
+                                    to: { path: "/fair/stands/" + tr.id }
+                                  }
                                 },
                                 [
                                   _c(
