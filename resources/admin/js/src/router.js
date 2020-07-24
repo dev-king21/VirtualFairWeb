@@ -35,7 +35,7 @@ const router = new Router({
         {
           path: '/room/all',
           name: 'room-all',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          component: () => import('@/views/room/rooms/Rooms.vue'),
           meta: {
             rule: 'editor'
           }
@@ -43,7 +43,7 @@ const router = new Router({
         {
           path: '/room/request_talk',
           name: 'request_talk',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          component: () => import('@/views/room/rooms/Talks.vue'),
           meta: {
             rule: 'editor'
           }
@@ -51,7 +51,7 @@ const router = new Router({
         {
           path: '/room/scheduled_talk',
           name: 'scheduled_talk',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          component: () => import('@/views/room/rooms/Talks.vue'),
           meta: {
             rule: 'editor'
           }
@@ -59,7 +59,7 @@ const router = new Router({
         {
           path: '/room/live_talk',
           name: 'live_talk',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          component: () => import('@/views/room/rooms/Talks.vue'),
           meta: {
             rule: 'editor'
           }
@@ -67,7 +67,15 @@ const router = new Router({
         {
           path: '/room/past_talk',
           name: 'past_talk',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          component: () => import('@/views/room/rooms/Talks.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/rooms/talks/all/:room_id',
+          name: 'room-talks',
+          component: () => import('@/views/room/rooms/Talks.vue'),
           meta: {
             rule: 'editor'
           }
@@ -112,6 +120,15 @@ const router = new Router({
           path: '/fair/stands/:fair_id',
           name: 'fair-stands',
           component: () => import('@/views/fair/stands/Stands.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        
+        {
+          path: '/fair/stands/detail/:id',
+          name: 'stands-detail',
+          component: () => import('@/views/fair/stands-detail/StandDetail.vue'),
           meta: {
             rule: 'editor'
           }

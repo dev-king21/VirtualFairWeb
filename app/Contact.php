@@ -9,7 +9,7 @@ class Contact extends Model
     //
     public function stand()
     {
-        return $this->belongsTo('App\Stand');
+        return $this->hasOne('App\Stand');
     }
 
     protected $guarded = [];

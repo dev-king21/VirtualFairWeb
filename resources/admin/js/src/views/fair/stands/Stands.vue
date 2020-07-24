@@ -1,245 +1,267 @@
 <template>
-    <div id="chat-app" class="border border-solid d-theme-border-grey-light rounded relative overflow-hidden">
-        <vs-sidebar class="items-no-padding" parent="#chat-app" :click-not-close="clickNotClose" :hidden-background="clickNotClose" v-model="isChatSidebarActive" id="chat-list-sidebar">
+  <div id="chat-app" class="border border-solid d-theme-border-grey-light rounded relative overflow-hidden">
+    <vs-sidebar class="items-no-padding" parent="#chat-app" :click-not-close="clickNotClose" :hidden-background="clickNotClose" v-model="isChatSidebarActive" id="chat-list-sidebar">
 
-            <!-- USER PROFILE SIDEBAR -->
-            <user-profile :active="activeProfileSidebar" :userId="userProfileId" class="user-profile-container" :isLoggedInUser="isLoggedInUserProfileView" @closeProfileSidebar="closeProfileSidebar"></user-profile>
-
-            <div class="chat__profile-search flex p-4">
-                <div class="relative inline-flex">
-                    <vs-avatar v-if="activeUser.photoURL" class="m-0 border-2 border-solid border-white" :src="activeUser.photoURL" size="40px" @click="showProfileSidebar(Number(activeUser.uid), true)" />
-                    <div class="h-3 w-3 border-white border border-solid rounded-full absolute right-0 bottom-0" :class="'bg-' + getStatusColor(true)"></div>
-                </div>
-                <vs-input icon-no-border icon="icon-search" icon-pack="feather" class="w-full mx-5 input-rounded-full" placeholder="Search or start a new chat" v-model="searchQuery"/>
-
-                <feather-icon class="md:inline-flex lg:hidden -ml-3 cursor-pointer" icon="XIcon" @click="toggleChatSidebar(false)" />
+        <div class="chat__profile-search flex p-4">
+            <div class="relative inline-flex">
+                <div class="h-3 w-3 border-white border border-solid rounded-full absolute right-0 bottom-0" ></div>
             </div>
+            <vs-input icon-no-border icon="icon-search" icon-pack="feather" class="w-full mx-5 input-rounded-full" 
+            v-model="searchQuery" :data="this.countries" @keypress="searchList()" placeholder="Search..." />
 
-            <vs-divider class="d-theme-border-grey-light m-0" />
-            <component :is="scrollbarTag" class="chat-scroll-area pt-4" :settings="settings" :key="$vs.rtl">
+        </div>
 
-                <!-- ACTIVE CHATS LIST -->
-                <div class="chat__chats-list mb-8">
-                    <h3 class="text-primary mb-5 px-4">Chats</h3>
-                    <ul class="chat__active-chats bordered-items">
-                        <li class="cursor-pointer" v-for="(contact, index) in chatContacts" :key="index" @click="updateActiveChatUser(contact.uid)">
-                            <chat-contact showLastMsg :contact="contact" :lastMessaged="chatLastMessaged(contact.uid).time" :unseenMsg="chatUnseenMessages(contact.uid)" :isActiveChatUser="isActiveChatUser(contact.uid)"></chat-contact>
-                        </li>
-                    </ul>
-                </div>
+        <vs-divider class="d-theme-border-grey-light m-0" />
+        <component :is="scrollbarTag" class="chat-scroll-area pt-4" :settings="settings" :key="$vs.rtl">
 
+            <!-- Country LIST -->
+            <div class="chat__contacts">
+                <ul class="chat__contacts bordered-items" >
+                    <div class="chat__contact flex items-center px-2 pt-4 pb-2 borded-items ml-3" @click="showStands(0)">
+                        <h5 class="font-semibold ">All</h5>
+                      </div>
+                      <vs-divider class="d-theme-border-grey-light m-0" />
+                    <div v-for=" (country, index) in searchedCountries" :key="index">
+                      <li class="cursor-pointer" @click="showStands(country.id)">
+                        
+                        <div class="chat__contact flex items-center px-2 pt-4 pb-2 borded-items" >
+                            <div class="contact__avatar mr-1">
+                                <vs-avatar :src="`https://www.countryflags.io/${country.code}/shiny/32.png`" class="flex-shrink-0 mr-2" size="30px" @click="$router.push(url)" />
+                            </div>
+                            <div class="contact__container w-full flex items-center justify-between overflow-hidden">
+                                <div class="contact__info flex flex-col truncate w-5/6">
+                                    <h5 class="font-semibold">{{ country.name }}</h5>
+                                  <!--  <span class="truncate">{{ showLastMsg ? $store.getters['chat/chatLastMessaged'](contact.uid).textContent : contact.about }}</span> -->
+                                </div>
+                            </div>
+                        </div>
+                        <vs-divider class="d-theme-border-grey-light m-0" />
 
-                <!-- CONTACTS LIST -->
-                <div class="chat__contacts">
-                    <h3 class="text-primary mb-5 px-4">Contacts</h3>
-                    <ul class="chat__contacts bordered-items">
-                        <li class="cursor-pointer" v-for="contact in contacts" :key="contact.uid" @click="updateActiveChatUser(contact.uid)">
-                            <chat-contact :contact="contact"></chat-contact>
-                        </li>
-                    </ul>
-                </div>
-            </component>
-        </vs-sidebar>
+                      </li>
+                    </div>
+                </ul>
+            </div>
+        </component>
+    </vs-sidebar>
 
         <!-- RIGHT COLUMN -->
-        <div class="chat__bg no-scroll-content chat-content-area border border-solid d-theme-border-grey-light border-t-0 border-r-0 border-b-0" :class="{'sidebar-spacer--wide': clickNotClose, 'flex items-center justify-center': activeChatUser === null}">
-            <template v-if="activeChatUser">
-                <div class="chat__navbar">
-                    <chat-navbar :isSidebarCollapsed="!clickNotClose" :user-id="activeChatUser" :isPinnedProp="isChatPinned" @openContactsSidebar="toggleChatSidebar(true)" @showProfileSidebar="showProfileSidebar" @toggleIsChatPinned="toggleIsChatPinned"></chat-navbar>
-                </div>
-                <component :is="scrollbarTag" class="chat-content-scroll-area border border-solid d-theme-border-grey-light" :settings="settings" ref="chatLogPS" :key="$vs.rtl">
-                    <div class="chat__log" ref="chatLog">
-                        <chat-log :userId="activeChatUser" v-if="activeChatUser"></chat-log>
-                    </div>
-                </component>
-                <div class="chat__input flex p-4 bg-white">
-                    <vs-input class="flex-1" placeholder="Type Your Message" v-model="typedMessage" @keyup.enter="sendMsg" />
-                    <vs-button class="bg-primary-gradient ml-4" type="filled" @click="sendMsg">Send</vs-button>
-                </div>
-            </template>
-            <template v-else>
-                <div class="flex flex-col items-center">
-                    <feather-icon icon="MessageSquareIcon" class="mb-4 bg-white p-8 shadow-md rounded-full" svgClasses="w-16 h-16"></feather-icon>
-                    <h4 class=" py-2 px-4 bg-white shadow-md rounded-full cursor-pointer" @click.stop="toggleChatSidebar(true)">Start Conversation</h4>
-                </div>
-            </template>
-        </div>
+    <div id="stands-list" class="border border-solid d-theme-border-grey-light border-t-0 border-r-0 border-b-0 sidebar-spacer--wide">
+      <template>  
+        <ag-grid-vue
+          ref="agGridTable"
+          :components="components"
+          :gridOptions="gridOptions"
+          class="ag-theme-material w-100 my-4 ag-grid-table"
+          :columnDefs="columnDefs"
+          :defaultColDef="defaultColDef"
+          :rowData="this.stands"
+          rowSelection="multiple"
+          colResizeDefault="shift"
+          :animateRows="true"
+          :floatingFilter="true"
+          :pagination="true"
+          :paginationPageSize="paginationPageSize"
+          :suppressPaginationPanel="true"
+          :enableRtl="$vs.rtl">
+        </ag-grid-vue>
+        <vs-pagination
+          :total="totalPages"
+          :max="7"
+          v-model="currentPage" />
+      </template>    
     </div>
+  </div>
 </template>
 
 <script>
-import ChatContact         from './ChatContact.vue'
-import ChatLog             from './ChatLog.vue'
-import ChatNavbar          from './ChatNavbar.vue'
-import UserProfile         from './UserProfile.vue'
-import VuePerfectScrollbar from 'vue-perfect-scrollbar'
-import moduleChat          from '@/store/chat/moduleChat.js'
+
+import VuePerfectScrollbar from 'vue-perfect-scrollbar' 
+
+import { AgGridVue } from 'ag-grid-vue'
+import '@sass/vuexy/extraComponents/agGridStyleOverride.scss'
+import vSelect from 'vue-select'
+
+// Cell Renderer
+import CellRendererLink from './cell-renderer/CellRendererLink.vue'
+import CellRendererStatus from './cell-renderer/CellRendererStatus.vue'
+import CellRendererActions from './cell-renderer/CellRendererActions.vue'
+
+
+
 
 export default {
+  components: {
+    AgGridVue,
+    vSelect,
+
+    VuePerfectScrollbar,
+    // Cell Renderer
+    CellRendererLink,
+    CellRendererStatus,
+    CellRendererActions
+  },
   data () {
     return {
-      active               : true,
-      isHidden             : false,
-      searchContact        : '',
-      activeProfileSidebar : false,
-      activeChatUser       : null,
-      userProfileId        : -1,
-      typedMessage         : '',
-      isChatPinned         : false,
+
+       searchQuery: '',
+
+      // AgGrid
+      gridApi: null,
+      gridOptions: {},
+      defaultColDef: {
+        sortable: true,
+        resizable: true,
+        suppressMenu: true
+      },
+      columnDefs: [
+        {
+          headerName: 'ID',
+          field: 'id',
+          width: 190,
+          filter: true,
+        },
+        {
+          headerName: 'Country Name',
+          field: 'country.name',
+          filter: true,
+          width: 300,
+          cellRendererFramework: 'CellRendererLink'
+        },
+        {
+          headerName: 'owner',
+          field: 'user.name',
+          filter: true,
+          width: 300,
+          cellRendererFramework: 'CellRendererLink'
+        }
+      ],
+
+      // Cell Renderer Components
+      components: {
+        CellRendererLink,
+        CellRendererStatus,
+        CellRendererActions
+      },
       settings             : {
         maxScrollbarLength : 60,
         wheelSpeed         : 0.70
       },
       clickNotClose        : true,
       isChatSidebarActive  : true,
-      isLoggedInUserProfileView: false
+      isLoggedInUserProfileView: false ,
+      isChatSidebarActive  : true,
+      countries:[],
+      searchedCountries: [],
+      stands:[]
     }
   },
-  watch: {
-    windowWidth () {
-      this.setSidebarWidth()
-    }
-  },
+  
   computed: {
-    chatLastMessaged () {
-      return (userId) => this.$store.getters['chat/chatLastMessaged'](userId)
+  paginationPageSize () {
+      if (this.gridApi) return this.gridApi.paginationGetPageSize()
+      else return 10
     },
-    chatUnseenMessages () {
-      return (userId) => {
-        const unseenMsg = this.$store.getters['chat/chatUnseenMessages'](userId)
-        if (unseenMsg) return unseenMsg
-      }
+    totalPages () {
+      if (this.gridApi) return this.gridApi.paginationGetTotalPages()
+      else return 0
     },
-    activeUser () {
-      return this.$store.state.AppActiveUser
-    },
-    getStatusColor () {
-      return (isActiveUser) => {
-        const userStatus = this.getUserStatus(isActiveUser)
-
-        if (userStatus === 'online') {
-          return 'success'
-        } else if (userStatus === 'do not disturb') {
-          return 'danger'
-        } else if (userStatus === 'away') {
-          return 'warning'
-        } else {
-          return 'grey'
-        }
-      }
-    },
-    chatContacts () {
-      return this.$store.getters['chat/chatContacts']
-    },
-    contacts () {
-      return this.$store.getters['chat/contacts']
-    },
-    searchQuery: {
+    currentPage: {
       get () {
-        return this.$store.state.chat.chatSearchQuery
+        if (this.gridApi) return this.gridApi.paginationGetCurrentPage() + 1
+        else return 1
       },
       set (val) {
-        this.$store.dispatch('chat/setChatSearchQuery', val)
+        this.gridApi.paginationGoToPage(val - 1)
       }
     },
+    
     scrollbarTag () {
       return this.$store.getters.scrollbarTag
     },
-    isActiveChatUser () {
-      return (userId) => userId === this.activeChatUser
-    },
+  
     windowWidth () {
       return this.$store.state.windowWidth
     }
-  },
-  methods: {
-    getUserStatus (isActiveUser) {
-      // return "active"
-      return isActiveUser ? this.$store.state.AppActiveUser.status : this.contacts[this.activeChatUser].status
-    },
-    closeProfileSidebar (value) {
-      this.activeProfileSidebar = value
-    },
-    updateActiveChatUser (contactId) {
-      this.activeChatUser = contactId
-      if (this.$store.getters['chat/chatDataOfUser'](this.activeChatUser)) {
-        this.$store.dispatch('chat/markSeenAllMessages', contactId)
-      }
-      const chatData = this.$store.getters['chat/chatDataOfUser'](this.activeChatUser)
-      if (chatData) this.isChatPinned = chatData.isPinned
-      else this.isChatPinned = false
-      this.toggleChatSidebar()
-      this.typedMessage = ''
-    },
-    showProfileSidebar (userId, openOnLeft = false) {
-      this.userProfileId = userId
-      this.isLoggedInUserProfileView = openOnLeft
-      this.activeProfileSidebar = !this.activeProfileSidebar
-    },
-    sendMsg () {
-      if (!this.typedMessage) return
-      const payload = {
-        'isPinned': this.isChatPinned,
-        'msg': {
-          'textContent' : this.typedMessage,
-          'time'        : String(new Date()),
-          'isSent'      : true,
-          'isSeen'      : false
-        },
-        'id': this.activeChatUser
-      }
-      this.$store.dispatch('chat/sendChatMessage', payload)
-      this.typedMessage = ''
+  }, 
+   methods: {
+     setColumnFilter (column, val) {
+      const filter = this.gridApi.getFilterInstance(column)
+      let modelObj = null
 
-      const scroll_el = this.$refs.chatLogPS.$el || this.$refs.chatLogPS
-      scroll_el.scrollTop = this.$refs.chatLog.scrollHeight
-    },
-    toggleIsChatPinned (value) {
-      this.isChatPinned = value
-    },
-    setSidebarWidth () {
-      if (this.windowWidth < 1200) {
-        this.isChatSidebarActive = this.clickNotClose = false
-      } else {
-        this.isChatSidebarActive = this.clickNotClose = true
+      if (val !== 'all') {
+        modelObj = { type: 'equals', filter: val }
       }
+
+      filter.setModel(modelObj)
+      this.gridApi.onFilterChanged()
     },
-    toggleChatSidebar (value = false) {
-      if (!value && this.clickNotClose) return
-      this.isChatSidebarActive = value
+    resetColFilters () {
+      this.gridApi.setFilterModel(null)
+      this.gridApi.onFilterChanged()
+
+      this.roleFilter = this.statusFilter = this.isVerifiedFilter = this.departmentFilter = { label: 'All', value: 'all' }
+
+      this.$refs.filterCard.removeRefreshAnimation()
+    },
+    updateSearchQuery (val) {
+      this.gridApi.setQuickFilter(val)
+    },  
+    searchList() {
+      
+      if (this.searchQuery === '')
+        this.searchedCountries = this.countries;
+      else 
+        this.searchedCountries = this.countries.filter((item) => item.name.toLowerCase().lastIndexOf(this.searchQuery.toLowerCase())!== -1);
+    },
+    showStands (country_id) {
+      let action = `/api/fair/stands/${this.$route.params.fair_id}`
+      if (this.$route.params.fair_id) {
+        action = `/api/fair/stands/${this.$route.params.fair_id}/${country_id}`
+      this.$http.get(action)
+        .then((response) => {
+          const res = response.data
+          this.stands = res.stands
+          console.log(this.stands);
+        })
+        .catch((error) => console.log(error))
+    }
+    }
+  }, 
+  mounted () {
+    this.gridApi = this.gridOptions.api
+
+    if (this.$vs.rtl) {
+      const header = this.$refs.agGridTable.$el.querySelector('.ag-header-container')
+      header.style.left = `-${  String(Number(header.style.transform.slice(11, -3)) + 9)  }px`
     }
   },
-  components: {
-    VuePerfectScrollbar,
-    ChatContact,
-    UserProfile,
-    ChatNavbar,
-    ChatLog
-  },
   created () {
-    this.$store.registerModule('chat', moduleChat)
+  /*   this.$store.registerModule('chat', moduleChat)
     this.$store.dispatch('chat/fetchContacts')
     this.$store.dispatch('chat/fetchChatContacts')
     this.$store.dispatch('chat/fetchChats')
-    this.setSidebarWidth()
+    this.setSidebarWidth() */
 
-    /* if (this.$route.params.fair_id) {
-      const action = `/fair/stands/${this.$route.params.fair_id}`
+    if (this.$route.params.fair_id) {
+      const action = `/api/fair/stands/${this.$route.params.fair_id}`
       this.$http.get(action)
         .then((response) => {
           const res = response.data
           this.countries = res.countries
+          this.searchedCountries = this.countries
+
           this.stands = res.stands
+          console.log(this.stands);
+
         })
         .catch((error) => console.log(error))
-    } */
+    }
   },
-  beforeDestroy () {
+  
+  /* beforeDestroy () {
     this.$store.unregisterModule('chat')
-  },
-  mounted () {
-    this.$store.dispatch('chat/setChatSearchQuery', '')
-  }
+  },*/
+  
 }
 
 </script>

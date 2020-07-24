@@ -38,7 +38,23 @@ class UserController extends Controller
 
     }
 
+    public function createUser(Request $request){
+        $res = array();
+        $user = new User;
+        $user->username = $request->post("username");
+        $user->email = $request->post("email");
+        $user->name = $request->post("name");
+        $user->country = $request->post("country");
+        $user->password = $request->post("password");
+        $user->avatar = $request->post("avatar");
 
+        $user->email_verified_at = $request->post("email_verified_at");
+        
+        $user->save();
+
+        $res["status"] = "ok";
+        return response()->json($res);
+    }
     
     /* public function requestUser(Request $request) {
         $res = array();

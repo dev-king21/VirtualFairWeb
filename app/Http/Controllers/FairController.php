@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Fair;
 use App\Stand;
+use App\Country;
 
 class FairController extends Controller
 {
@@ -140,6 +141,23 @@ class FairController extends Controller
 
         $res["stands"] = $stands;
 
+        return response()->json($res);
+    }
+
+    public function fairStands(Request $request, $id){
+        $res = array();
+        $countries = Country::where("status", "=", 1)->get();
+        $res["stands"] = Stand::with(['fair', 'user', 'country'])->where("fair_id", "=", $id)->get();
+        $res["countries"] = $countries;
+        return response()->json($res);
+    }
+
+    public function countryStands(Request $request, $id, $country_id = 0){
+        $res = array();
+        $query = ["fair_id"=> $id];
+        if ($country_id != 0)
+            $query["country_id"] = $country_id;
+        $res["stands"] = Stand::with(['fair', 'user', 'country'])->where($query)->get();
         return response()->json($res);
     }
 

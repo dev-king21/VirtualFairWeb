@@ -42,13 +42,19 @@ class Stand extends Model
 
     public function country()
     {
-        return $this->hasOne('App\Country');
+        return $this->belongsTo('App\Country');
     }
 
+    public function standType()
+    {
+        return $this->belongsTo('App\StandType');
+    }
+    
     public function stand_location()
     {
-        return $this->hasOne('App\StandLocation');
+        return $this->belongsTo('App\StandLocation');
     }
+
 
     public function stand_contents() {
         return $this->hasMany('App\StandContent');

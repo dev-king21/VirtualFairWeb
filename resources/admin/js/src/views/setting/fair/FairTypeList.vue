@@ -2,7 +2,7 @@
     <div id="demo-basic-card">
         <div class="vx-row">
             <div class="vx-col w-full mb-base text-right">
-                <vs-button color="success" icon-pack="feather" icon="icon-plus" type="filled" :to="{path: '/settings/fair-type/edit'}">
+                <vs-button color="success" icon-pack="feather" icon="icon-plus" type="filled" :to="{path: '/settings/fair-type/edit/1'}">
                     Add New Fair Type
                 </vs-button>
             </div>
@@ -12,10 +12,10 @@
                 <vx-card>
                     <div slot="no-body">
                         <router-link :to="'/settings/stand-location/'+ftype.id">
-                            <img :src="'/fair_image/' + ftype.building" alt="content-img" class="responsive card-img-top">
+                            <img :src="imgUrl(ftype.building)" alt="content-img" class="responsive card-img-top">
                         </router-link>
                     </div>
-                    <h2 class="mb-2">{{ ftype.name }}</h2>
+                    <h5 class="mb-2">{{ ftype.name }}</h5>
                     <p class="text-primary">Stand Items: {{ ftype.stand_locations.length }}</p>
                     <div class="flex justify-between flex-wrap">
                         <vs-button 
@@ -28,7 +28,8 @@
                             :to="{path: '/settings/stand-location/'+ftype.id}">
                             Go Stand Locations
                         </vs-button>    
-                        <vs-button class="mt-4" type="border" icon-pack="feather" icon="icon-edit" color="warning"
+                        <vs-button class="mt-4" type="border" icon-pack="feather" icon="icon-edit"
+                            color="warning"
                             :to="{path: '/settings/fair-type/edit/'+ftype.id}">
                             Edit
                         </vs-button>
@@ -46,14 +47,18 @@ export default{
   },
   data () {
     return {
-      fair_types: []
+      // card 1
+      fair_types: [],
+      
     }
   },
   computed: {
 
   },
   methods: {
-    
+    imgUrl(fname) {
+        return `/fair_image/${fname}`
+    }
   },
   mounted () {
     

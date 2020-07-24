@@ -13,4 +13,9 @@ class Room extends Model
         return $this->hasMany('App\Talk');
     }
 
+    public function country()
+    {
+        return $this->belongsTo('App\Country');
+    }
+
 }

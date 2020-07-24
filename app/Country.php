@@ -18,7 +18,12 @@ class Country extends Model
         else
             return "blocked";
     }
-    
+    public function stands() {
+        return $this->hasMany("App\Stand");
+    }
+    public function rooms() {
+        return $this->hasMany("App\Room");
+    }
     protected $guarded=[];
     protected $attributes = ["status" => 0];
 }

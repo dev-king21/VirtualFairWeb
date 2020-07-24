@@ -17,7 +17,7 @@ class CreateStandContentsTable extends Migration
             $table->id();
             $table->integer('stand_id');
             $table->integer('stand_type_item_id');
-            $table->integer('content');
+            $table->string('content');
             $table->timestamps();
         });
     }

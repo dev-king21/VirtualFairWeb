@@ -17,8 +17,16 @@ class CreateTalksTable extends Migration
             $table->id();
             $table->integer("room_id");
             $table->integer("user_id");
-            $table->integer("country_id");
             $table->integer("status");
+            $table->string("title");
+
+
+            $table->boolean('limited')->default(true);
+            $table->integer('peoples')->nullable();
+
+            $table->string('exhibitor_profession');
+            $table->string('exhibitor_company');
+
             $table->datetime("start_time");
             $table->datetime("end_time");
 

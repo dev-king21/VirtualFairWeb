@@ -43,6 +43,8 @@ Route::get('/user/request', 'UserController@requestUser');
 Route::get('/user/book', 'UserController@bookedUser');
 Route::get('/user/active', 'UserController@activeUser');
 Route::get('/user/past', 'UserController@pastUser');
+Route::post('/user/create', 'UserController@createUser');
+
 
 //fair
 Route::get('/fair/all', 'FairController@all_fairs');
@@ -57,7 +59,8 @@ Route::get('/fair/request', 'FairController@requestFair');
 Route::get('/fair/book', 'FairController@bookedFair');
 Route::get('/fair/active', 'FairController@activeFair');
 
-
+Route::get('/fair/stands/{id}', 'FairController@fairStands');
+Route::get('/fair/stands/{id}/{country_id}', 'FairController@countryStands');
 
 //stand
 Route::get('/stand/all', 'StandController@all_stands');
@@ -65,6 +68,8 @@ Route::post('/stand/create', 'StandController@create_stand');
 Route::get('/stand/user/{user_id}', 'StandController@current_user_stand');
 Route::get('/stand/user/{user_id}/{fair_id}', 'StandController@current_user_stand');
 Route::post('/stand/update/{id}', 'StandController@update_stand');
+Route::get('/stand/stand-detail/{id}', 'StandController@standDetail');
+
 
 
 //appointments
@@ -107,6 +112,15 @@ Route::get('/room/request', 'RoomController@requestRoom');
 Route::get('/room/book', 'RoomController@bookedRoom');
 Route::get('/room/active', 'RoomController@activeRoom');
 Route::get('/room/past', 'RoomController@pastRoom');
+
+
+Route::get('/rooms/all', 'RoomController@allRooms');
+Route::get('/rooms/all/{country_id}', 'RoomController@countryRooms');
+Route::get('/rooms/talks/all/{id}', 'RoomController@Talks');
+Route::get('/rooms/talks/request', 'RoomController@RequestTalks');
+Route::get('/rooms/talks/scheduled', 'RoomController@ScheduledTalks');
+Route::get('/rooms/talks/live', 'RoomController@LiveTalks');
+Route::get('/rooms/talks/past', 'RoomController@PastTalks');
 
 
 //talk

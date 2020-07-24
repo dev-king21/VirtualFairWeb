@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Room;
 use App\Talk;
+use App\Country;
 
 class RoomController extends Controller
 {
@@ -12,15 +13,11 @@ class RoomController extends Controller
     public function create_room(Request $request){
         $res = array();
         $room = new Room;
+        $room->country_id = $request->post("country_id");       
         $room->name = $request->post("name");
         $room->description = $request->post("description");
-        $room->limited = $request->post("limited");
-        $room->exhibitor_name = $request->post("exhibitor_name");
-        $room->exhibitor_profession = $request->post("exhibitor_profession");
-        $room->exhibitor_company = $request->post("exhibitor_company");
-        $room->start_time = $request->post("start_time");
-        $room->end_time = $request->post("end_time");
-        $room->country = $request->post("country");
+        $room->status = $request->post("status");
+
         $room->save();
         $res["status"] = "ok";
         return response()->json($res);
@@ -116,6 +113,98 @@ class RoomController extends Controller
         ];
         $talks = Talk::with(['room'])->where($query)->get();
         $res["talks"] = $talks;
+        return response()->json($res);
+    }
+
+
+    //room menu
+     public function allRooms(Request $request){
+        $res = array();
+        $countries = Country::where("status", "=", 1)->get();
+        $res["rooms"] = Room::with(['country'])->where("status", 1)->get();
+        $res["countries"] = $countries;
+        return response()->json($res);
+    }
+
+    public function countryRooms(Request $request, $country_id){
+        $res = array();
+        if ($country_id != 0)
+          $res["rooms"] = Room::with(['country'])->where("country_id", "=", $country_id)->get();
+        return response()->json($res);
+    }
+
+    public function Talks(Request $request, $id){
+        $id = request('id');
+        $res = array();
+        $res["talks"] = Talk::with(['user', 'room'])
+        ->where("room_id", $id)->get();
+        return response()->json($res);
+    }
+
+    public function RequestTalks(Request $request){
+        $res["status"] = "ok";
+
+        $res = array();
+        $now = date("y-m-d h:i:s");
+
+        $res["now"] = $now;
+        $query = [
+            ["start_time", ">", $now],
+            ["status", "=", 0]
+        ];
+
+        $res["talks"] = Talk::with(['user', 'room'])
+        ->where($query)->get();
+        return response()->json($res);
+    }
+
+    public function ScheduledTalks(Request $request){
+        $res["status"] = "ok";
+
+        $res = array();
+        $now = date("y-m-d h:i:s");
+
+        $res["now"] = $now;
+        $query = [
+            ["start_time", ">", $now],
+            ["status", "=", 1]
+        ];
+
+        $res["talks"] = Talk::with(['user', 'room'])
+        ->where($query)->get();
+        return response()->json($res);
+    }
+
+    public function LiveTalks(Request $request){
+        $res["status"] = "ok";
+
+        $res = array();
+        $now = date("y-m-d h:i:s");
+
+        $res["now"] = $now;
+        $query = [
+            ["start_time", "<=", $now],
+            ["end_time",">=", $now], 
+            ["status", "=", 1]
+        ];
+
+        $res["talks"] = Talk::with(['user', 'room'])
+        ->where($query)->get();
+        return response()->json($res);
+    }
+    public function PastTalks(Request $request){
+        $res["status"] = "ok";
+
+        $res = array();
+        $now = date("y-m-d h:i:s");
+
+        $res["now"] = $now;
+        $query = [
+            ["end_time","<", $now] 
+        ];
+
+        $res["talks"] = Talk::with(['user', 'room'])
+        ->where($query)->get();
         return response()->json($res);
     }
 
