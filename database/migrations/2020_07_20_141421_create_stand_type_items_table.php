@@ -16,10 +16,10 @@ class CreateStandTypeItemsTable extends Migration
         Schema::create('stand_type_items', function (Blueprint $table) {
             $table->id();
             $table->integer('stand_type_id');
-            $table->float('left');
-            $table->float('top');
-            $table->float('width');
-            $table->float('height');
+            $table->double('left', 10, 6);
+            $table->double('top', 10, 6);
+            $table->double('width', 10, 6);
+            $table->double('height', 10, 6);
             $table->enum('type',['image','video','logo','billboards','other']);
             $table->timestamps();
         });

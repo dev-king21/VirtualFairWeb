@@ -148,14 +148,17 @@ Route::post('/stand_type/update/{id}', 'SettingController@updateStandType');
 Route::get('/stand_type/{stype_id}/stand_type_items', 'SettingController@allStandTypeItems');
 
 //standLocation
+Route::get('/stand_location/allTypes', 'SettingController@allTypes');
 Route::get('/stand_location/all', 'SettingController@allStandLocation');
-Route::post('/stand_location/create', 'StandLocationController@createStandLocation');
-Route::post('/stand_location/update/{id}', 'StandLocationController@updateStandLocation');
+Route::get('/stand_location/all/{ftype_id}', 'SettingController@allStandLocation');
+Route::post('/stand_location/save', 'SettingController@saveStandLocation');
+Route::post('/stand_location/remove', 'SettingController@removeStandLocation');
 
 //standTypeItem
 Route::get('/stand_type_item/all', 'SettingController@allStandTypeItem');
-Route::post('/stand_type_item/update/{id}', 'SettingController@updateStandTypeItem');
-Route::post('/stand_type_item/create', 'StandTypeItemController@createStandTypeItem');
+Route::get('/stand_type_item/all/{id}', 'SettingController@allStandTypeItem');
+Route::post('/stand_type_item/save', 'SettingController@saveStandTypeItem');
+Route::post('/stand_type_item/remove', 'SettingController@removeStandTypeItem');
 
 //fair-country-stand
 Route::get('/fair/country/stand/{fair_id}/{country_id}', 'StandController@get_stands');

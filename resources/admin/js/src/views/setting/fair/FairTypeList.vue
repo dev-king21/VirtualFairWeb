@@ -47,17 +47,15 @@ export default{
   },
   data () {
     return {
-      // card 1
-      fair_types: [],
-      
+      fair_types: []
     }
   },
   computed: {
 
   },
   methods: {
-    imgUrl(fname) {
-        return `/fair_image/${fname}`
+    imgUrl (fname) {
+      return `/fair_image/${fname}`
     }
   },
   mounted () {

@@ -211,16 +211,24 @@ const router = new Router({
         },
         {
           path: '/settings/stand-type-item',
+          redirect: '/settings/stand-type-item/1'
+        },
+        {
+          path: '/settings/stand-type-item/:stype_id',
           name: 'stand-type-item',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          component: () => import('@/views/setting/fair/StandTypeItems.vue'),
           meta: {
             rule: 'editor'
           }
         },
         {
+          path: '/settings/stand-location',
+          redirect: '/settings/stand-location/1'
+        },
+        {
           path: '/settings/stand-location/:ftype_id',
           name: 'stand-location',
-          component: () => import('@/views/DashboardAnalytics.vue'),
+          component: () => import('@/views/setting/fair/StandLocation.vue'),
           meta: {
             rule: 'editor'
           }

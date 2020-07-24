@@ -17,10 +17,10 @@ class CreateStandLocationsTable extends Migration
             $table->id();
             $table->integer('fair_type_id');
             $table->integer('stand_type_id');
-            $table->float('left');
-            $table->float('top');
-            $table->float('width');
-            $table->float('height');
+            $table->double('left', 10, 6);
+            $table->double('top', 10, 6);
+            $table->double('width', 10, 6);
+            $table->double('height', 10, 6);
             $table->timestamps();
         });
     }

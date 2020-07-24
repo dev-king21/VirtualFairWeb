@@ -1,21 +1,21 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[41],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInput.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInput.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/Checkbox.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/checkbox/Checkbox.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _NumberInputDefault_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NumberInputDefault.vue */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDefault.vue");
-/* harmony import */ var _NumberInputColor_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NumberInputColor.vue */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputColor.vue");
-/* harmony import */ var _NumberInputMinMax_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./NumberInputMinMax.vue */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputMinMax.vue");
-/* harmony import */ var _NumberInputSize_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./NumberInputSize.vue */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputSize.vue");
-/* harmony import */ var _NumberInputStep_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NumberInputStep.vue */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputStep.vue");
-/* harmony import */ var _NumberInputDecimal_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./NumberInputDecimal.vue */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDecimal.vue");
-/* harmony import */ var _NumberInputLabel_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./NumberInputLabel.vue */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputLabel.vue");
+/* harmony import */ var _CheckboxState_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CheckboxState.vue */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxState.vue");
+/* harmony import */ var _CheckboxColor_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CheckboxColor.vue */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxColor.vue");
+/* harmony import */ var _CheckboxBooleanValue_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CheckboxBooleanValue.vue */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxBooleanValue.vue");
+/* harmony import */ var _CheckboxStringValue_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CheckboxStringValue.vue */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxStringValue.vue");
+/* harmony import */ var _CheckboxArrayValue_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CheckboxArrayValue.vue */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayValue.vue");
+/* harmony import */ var _CheckboxArrayObjectValue_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CheckboxArrayObjectValue.vue */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayObjectValue.vue");
+/* harmony import */ var _CheckboxChangeIcon_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./CheckboxChangeIcon.vue */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxChangeIcon.vue");
 //
 //
 //
@@ -44,21 +44,185 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    NumberInputDefault: _NumberInputDefault_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    NumberInputColor: _NumberInputColor_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    NumberInputMinMax: _NumberInputMinMax_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    NumberInputSize: _NumberInputSize_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    NumberInputStep: _NumberInputStep_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    NumberInputDecimal: _NumberInputDecimal_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    NumberInputLabel: _NumberInputLabel_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+    CheckboxState: _CheckboxState_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    CheckboxColor: _CheckboxColor_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    CheckboxBooleanValue: _CheckboxBooleanValue_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    CheckboxStringValue: _CheckboxStringValue_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    CheckboxArrayValue: _CheckboxArrayValue_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    CheckboxArrayObjectValue: _CheckboxArrayObjectValue_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    CheckboxChangeIcon: _CheckboxChangeIcon_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputColor.vue?vue&type=script&lang=js&":
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayObjectValue.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayObjectValue.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      form: {
+        regions: []
+      },
+      regions: [{
+        id: 1,
+        name: 'Queensland'
+      }, {
+        id: 2,
+        name: 'South Australia'
+      }, {
+        id: 3,
+        name: 'New South Wales'
+      }]
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayValue.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayValue.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      checkBox1: ['luis']
+    };
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxBooleanValue.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputColor.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxBooleanValue.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -112,87 +276,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      number1: 196,
-      number2: 88,
-      number3: 25,
-      number4: 12,
-      number5: 590,
-      number6: 32
+      checkBox1: true,
+      checkBox2: false
     };
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDecimal.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDecimal.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      number0: 1.5
-    };
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDefault.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDefault.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxChangeIcon.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxChangeIcon.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -241,22 +339,65 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      number: 34,
-      number1: 48,
-      number2: 50
+      checkBox1: true,
+      checkBox2: true,
+      checkBox3: true,
+      checkBox4: true,
+      checkBox5: true,
+      checkBox6: true,
+      checkBox7: true
     };
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputLabel.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputLabel.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxColor.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxColor.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -298,20 +439,76 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      passengers: 1
+      checkBox1: true,
+      checkBox2: true,
+      checkBox3: true,
+      checkBox4: true,
+      checkBox5: true,
+      checkBox6: true,
+      checkBox7: true
     };
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputMinMax.vue?vue&type=script&lang=js&":
-/*!******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputMinMax.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxState.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxState.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -353,19 +550,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      number1: 21
+      checkBox1: true,
+      checkBox2: false,
+      checkBox3: true,
+      checkBox4: false
     };
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputSize.vue?vue&type=script&lang=js&":
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxStringValue.vue?vue&type=script&lang=js&":
 /*!****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputSize.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxStringValue.vue?vue&type=script&lang=js& ***!
   \****************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -417,78 +642,21 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      number0: 95,
-      number1: 21,
-      number2: 67,
-      number3: 2
+      checkBox1: null
     };
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputStep.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputStep.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      number0: 5
-    };
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInput.vue?vue&type=template&id=68df5291&":
-/*!****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInput.vue?vue&type=template&id=68df5291& ***!
-  \****************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/Checkbox.vue?vue&type=template&id=705566f4&":
+/*!*********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/checkbox/Checkbox.vue?vue&type=template&id=705566f4& ***!
+  \*********************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -502,21 +670,21 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "form-element-number-input-demo" } },
+    { attrs: { id: "form-element-checkbox-demo" } },
     [
-      _c("number-input-default"),
+      _c("checkbox-state"),
       _vm._v(" "),
-      _c("number-input-color"),
+      _c("checkbox-color"),
       _vm._v(" "),
-      _c("number-input-min-max"),
+      _c("checkbox-boolean-value"),
       _vm._v(" "),
-      _c("number-input-size"),
+      _c("checkbox-string-value"),
       _vm._v(" "),
-      _c("number-input-step"),
+      _c("checkbox-array-value"),
       _vm._v(" "),
-      _c("number-input-decimal"),
+      _c("checkbox-array-object-value"),
       _vm._v(" "),
-      _c("number-input-label")
+      _c("checkbox-change-icon")
     ],
     1
   )
@@ -528,10 +696,532 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputColor.vue?vue&type=template&id=85c5e7fc&":
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayObjectValue.vue?vue&type=template&id=8e019d02&":
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayObjectValue.vue?vue&type=template&id=8e019d02& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Array Object values", "code-toggler": "" } },
+    [
+      _c("span", [
+        _vm._v(
+          "Sometimes you need to link an object as a value when selecting a checkBox for it, you only have to put it as value in "
+        ),
+        _c("strong", [_vm._v("vs-value")]),
+        _vm._v(" an object either literal or linked.")
+      ]),
+      _vm._v(" "),
+      _c(
+        "ul",
+        { staticClass: "demo-alignment" },
+        _vm._l(_vm.regions, function(region, index) {
+          return _c(
+            "li",
+            { key: index },
+            [
+              _c(
+                "vs-checkbox",
+                {
+                  attrs: { "vs-value": region },
+                  model: {
+                    value: _vm.form.regions,
+                    callback: function($$v) {
+                      _vm.$set(_vm.form, "regions", $$v)
+                    },
+                    expression: "form.regions"
+                  }
+                },
+                [_vm._v(_vm._s(region.name))]
+              )
+            ],
+            1
+          )
+        }),
+        0
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "op-block mt-5" }, [
+        _vm._v(_vm._s(_vm.form.regions))
+      ]),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n    <ul class="centerx">\n      <li v-for="(region, index) in regions" :key="index">\n        <vs-checkbox v-model="form.regions" :vs-value="region" >' +
+            _vm._s("{{ region.name }}") +
+            '</vs-checkbox>\n      </li>\n    </ul>\n\n    <div class="modelx">' +
+            _vm._s("{{ form.regions }}") +
+            "</div>\n</template>\n\n<script>\nexport default {\n  data: () => ({\n    form: {\n    regions: []\n  },\n  regions: [\n    { id: 1, name: 'Queensland' },\n    { id: 2, name: 'South Australia' },\n    { id: 3, name: 'New South Wales' },\n  ]\n})\n}\n</script>\n        "
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayValue.vue?vue&type=template&id=14dc8c84&":
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayValue.vue?vue&type=template&id=14dc8c84& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Array Values", "code-toggler": "" } },
+    [
+      _c("span", [
+        _vm._v(
+          "You can have several checkBoxs linked to the same array only by using "
+        ),
+        _c("code", [_vm._v("v-model")]),
+        _vm._v(" with a value of "),
+        _c("strong", [_vm._v("array")]),
+        _vm._v(".")
+      ]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "demo-alignment" }, [
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: { "vs-value": "luis" },
+                model: {
+                  value: _vm.checkBox1,
+                  callback: function($$v) {
+                    _vm.checkBox1 = $$v
+                  },
+                  expression: "checkBox1"
+                }
+              },
+              [_vm._v("Luis")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: { "vs-value": "carols" },
+                model: {
+                  value: _vm.checkBox1,
+                  callback: function($$v) {
+                    _vm.checkBox1 = $$v
+                  },
+                  expression: "checkBox1"
+                }
+              },
+              [_vm._v("Carols")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: { "vs-value": "summer" },
+                model: {
+                  value: _vm.checkBox1,
+                  callback: function($$v) {
+                    _vm.checkBox1 = $$v
+                  },
+                  expression: "checkBox1"
+                }
+              },
+              [_vm._v("Summer")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: { "vs-value": "lyon" },
+                model: {
+                  value: _vm.checkBox1,
+                  callback: function($$v) {
+                    _vm.checkBox1 = $$v
+                  },
+                  expression: "checkBox1"
+                }
+              },
+              [_vm._v("Lyon")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("li", { staticClass: "op-block" }, [
+          _vm._v(
+            "\n                " + _vm._s(_vm.checkBox1) + "\n            "
+          )
+        ])
+      ]),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n  <ul class="centerx">\n    <li>\n      <vs-checkbox v-model="checkBox1" vs-value="luis">Luis</vs-checkbox>\n    </li>\n    <li>\n      <vs-checkbox v-model="checkBox1" vs-value="carols">Carols</vs-checkbox>\n    </li>\n    <li>\n      <vs-checkbox v-model="checkBox1" vs-value="summer">Summer</vs-checkbox>\n    </li>\n    <li>\n      <vs-checkbox v-model="checkBox1" vs-value="lyon">Lyon</vs-checkbox>\n    </li>\n    <li class="modelx">\n      ' +
+            _vm._s("{{ checkBox1 }}") +
+            "\n    </li>\n  </ul>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      checkBox1: ['luis']\n    }\n  }\n}\n</script>\n        "
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxBooleanValue.vue?vue&type=template&id=eeab2562&":
 /*!*********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputColor.vue?vue&type=template&id=85c5e7fc& ***!
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxBooleanValue.vue?vue&type=template&id=eeab2562& ***!
   \*********************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Boolean Value", "code-toggler": "" } },
+    [
+      _c("span", [
+        _vm._v(
+          "In most cases you will need a boolean data type while working with checkBoxes. For making this possible you have to link a boolean value in "
+        ),
+        _c("code", [_vm._v("v-model")])
+      ]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "demo-alignment" }, [
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                model: {
+                  value: _vm.checkBox1,
+                  callback: function($$v) {
+                    _vm.checkBox1 = $$v
+                  },
+                  expression: "checkBox1"
+                }
+              },
+              [_vm._v(_vm._s(_vm.checkBox1))]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                model: {
+                  value: _vm.checkBox2,
+                  callback: function($$v) {
+                    _vm.checkBox2 = $$v
+                  },
+                  expression: "checkBox2"
+                }
+              },
+              [_vm._v(_vm._s(_vm.checkBox2))]
+            )
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n  <ul class="centerx">\n    <li>\n      <vs-checkbox v-model="checkBox1">' +
+            _vm._s("{{ checkBox1 }}") +
+            '</vs-checkbox>\n    </li>\n    <li>\n      <vs-checkbox v-model="checkBox2">' +
+            _vm._s("{{ checkBox2 }}") +
+            "</vs-checkbox>\n    </li>\n  </ul>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      checkBox1: true,\n      checkBox2: false,\n    }\n  }\n}\n</script>\n        "
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxChangeIcon.vue?vue&type=template&id=54e626ef&":
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxChangeIcon.vue?vue&type=template&id=54e626ef& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Change Icon", "code-toggler": "" } },
+    [
+      _c("span", [
+        _vm._v(
+          "Sometimes we want to change the internal icon inside the checkbox. To do so, we have the property "
+        ),
+        _c("code", [_vm._v("icon")])
+      ]),
+      _vm._v(" "),
+      _c("ul", { staticClass: "demo-alignment" }, [
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: { "icon-pack": "feather", icon: "icon-check" },
+                model: {
+                  value: _vm.checkBox1,
+                  callback: function($$v) {
+                    _vm.checkBox1 = $$v
+                  },
+                  expression: "checkBox1"
+                }
+              },
+              [_vm._v("Primary")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: {
+                  "icon-pack": "feather",
+                  icon: "icon-message-square",
+                  color: "success"
+                },
+                model: {
+                  value: _vm.checkBox2,
+                  callback: function($$v) {
+                    _vm.checkBox2 = $$v
+                  },
+                  expression: "checkBox2"
+                }
+              },
+              [_vm._v("SMS")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: {
+                  "icon-pack": "feather",
+                  icon: "icon-x",
+                  color: "danger"
+                },
+                model: {
+                  value: _vm.checkBox3,
+                  callback: function($$v) {
+                    _vm.checkBox3 = $$v
+                  },
+                  expression: "checkBox3"
+                }
+              },
+              [_vm._v("Cancel")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: {
+                  "icon-pack": "feather",
+                  icon: "icon-paperclip",
+                  color: "warning"
+                },
+                model: {
+                  value: _vm.checkBox4,
+                  callback: function($$v) {
+                    _vm.checkBox4 = $$v
+                  },
+                  expression: "checkBox4"
+                }
+              },
+              [_vm._v("File")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: {
+                  "icon-pack": "feather",
+                  icon: "icon-bold",
+                  color: "dark"
+                },
+                model: {
+                  value: _vm.checkBox5,
+                  callback: function($$v) {
+                    _vm.checkBox5 = $$v
+                  },
+                  expression: "checkBox5"
+                }
+              },
+              [_vm._v("Bold")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: {
+                  "icon-pack": "feather",
+                  icon: "icon-map-pin",
+                  color: "rgb(38, 187, 174)"
+                },
+                model: {
+                  value: _vm.checkBox6,
+                  callback: function($$v) {
+                    _vm.checkBox6 = $$v
+                  },
+                  expression: "checkBox6"
+                }
+              },
+              [_vm._v("Location")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: {
+                  "icon-pack": "feather",
+                  icon: "icon-camera",
+                  color: "#720ea8"
+                },
+                model: {
+                  value: _vm.checkBox7,
+                  callback: function($$v) {
+                    _vm.checkBox7 = $$v
+                  },
+                  expression: "checkBox7"
+                }
+              },
+              [_vm._v("Camera")]
+            )
+          ],
+          1
+        )
+      ]),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n    <ul class="demo-alignment">\n      <li>\n        <vs-checkbox icon-pack="feather" icon="icon-check" v-model="checkBox1">Primary</vs-checkbox>\n      </li>\n      <li>\n        <vs-checkbox icon-pack="feather" icon="icon-message-square" color="success" v-model="checkBox2">SMS</vs-checkbox>\n      </li>\n      <li>\n        <vs-checkbox icon-pack="feather" icon="icon-x" color="danger" v-model="checkBox3">Cancel</vs-checkbox>\n      </li>\n      <li>\n        <vs-checkbox icon-pack="feather" icon="icon-paperclip" color="warning" v-model="checkBox4">File</vs-checkbox>\n      </li>\n      <li>\n        <vs-checkbox icon-pack="feather" icon="icon-bold" color="dark" v-model="checkBox5">Bold</vs-checkbox>\n      </li>\n      <li>\n        <vs-checkbox icon-pack="feather" icon="icon-map-pin" color="rgb(38, 187, 174)" v-model="checkBox6">Location</vs-checkbox>\n      </li>\n      <li>\n        <vs-checkbox icon-pack="feather" icon="icon-camera" color="#720ea8" v-model="checkBox7">Camera</vs-checkbox>\n      </li>\n    </ul>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      checkBox1:true,\n      checkBox2:true,\n      checkBox3:true,\n      checkBox4:true,\n      checkBox5:true,\n      checkBox6:true,\n      checkBox7:true,\n    }\n  }\n}\n</script>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxColor.vue?vue&type=template&id=0fe3f9a6&":
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxColor.vue?vue&type=template&id=0fe3f9a6& ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -548,9 +1238,7 @@ var render = function() {
     { attrs: { title: "Color", "code-toggler": "" } },
     [
       _c("span", [
-        _vm._v("You can change the color of the "),
-        _c("strong", [_vm._v("Input-Number")]),
-        _vm._v(" with the property "),
+        _vm._v("You can change the color of the checkBox with the property "),
         _c("code", [_vm._v("color")]),
         _vm._v(". You are able to use the Main Colors or "),
         _c("strong", [_vm._v("RGB")]),
@@ -576,228 +1264,157 @@ var render = function() {
         ]
       ),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "demo-alignment" },
-        [
-          _c("vs-input-number", {
-            attrs: { color: "danger" },
-            model: {
-              value: _vm.number1,
-              callback: function($$v) {
-                _vm.number1 = $$v
+      _c("ul", { staticClass: "demo-alignment" }, [
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                model: {
+                  value: _vm.checkBox1,
+                  callback: function($$v) {
+                    _vm.checkBox1 = $$v
+                  },
+                  expression: "checkBox1"
+                }
               },
-              expression: "number1"
-            }
-          }),
-          _vm._v(" "),
-          _c("vs-input-number", {
-            attrs: { color: "success" },
-            model: {
-              value: _vm.number2,
-              callback: function($$v) {
-                _vm.number2 = $$v
-              },
-              expression: "number2"
-            }
-          }),
-          _vm._v(" "),
-          _c("vs-input-number", {
-            attrs: { color: "warning" },
-            model: {
-              value: _vm.number3,
-              callback: function($$v) {
-                _vm.number3 = $$v
-              },
-              expression: "number3"
-            }
-          }),
-          _vm._v(" "),
-          _c("vs-input-number", {
-            attrs: { color: "dark" },
-            model: {
-              value: _vm.number4,
-              callback: function($$v) {
-                _vm.number4 = $$v
-              },
-              expression: "number4"
-            }
-          }),
-          _vm._v(" "),
-          _c("vs-input-number", {
-            attrs: { color: "rgb(218, 24, 94)" },
-            model: {
-              value: _vm.number5,
-              callback: function($$v) {
-                _vm.number5 = $$v
-              },
-              expression: "number5"
-            }
-          }),
-          _vm._v(" "),
-          _c("vs-input-number", {
-            attrs: { color: "#ad3af9" },
-            model: {
-              value: _vm.number6,
-              callback: function($$v) {
-                _vm.number6 = $$v
-              },
-              expression: "number6"
-            }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<template>\n  <div class="centerx">\n    <vs-input-number color="danger" v-model="number1"/>\n    <vs-input-number color="success" v-model="number2"/>\n    <vs-input-number color="warning" v-model="number3"/>\n    <vs-input-number color="dark" v-model="number4"/>\n    <vs-input-number color="rgb(218, 24, 94)" v-model="number5"/>\n    <vs-input-number color="#ad3af9" v-model="number6"/>\n  </div>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      number1:196,\n      number2:88,\n      number3:25,\n      number4:12,\n      number5:590,\n      number6:32,\n    }\n  }\n}\n</script>\n        '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDecimal.vue?vue&type=template&id=c786f9a0&":
-/*!***********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDecimal.vue?vue&type=template&id=c786f9a0& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Decimal", "code-toggler": "" } },
-    [
-      _c("span", [_vm._v("Number Input also supports decimal values")]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "demo-alignment" },
-        [
-          _c("vs-input-number", {
-            attrs: { step: 0.5 },
-            model: {
-              value: _vm.number0,
-              callback: function($$v) {
-                _vm.number0 = $$v
-              },
-              expression: "number0"
-            }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<template>\n  <div class="centerx">\n    <vs-input-number v-model="number0" :step="0.5"/>\n  </div>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      number0:1.5,\n    }\n  }\n}\n</script>\n        '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDefault.vue?vue&type=template&id=572f63c0&":
-/*!***********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDefault.vue?vue&type=template&id=572f63c0& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Default", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v(
-          "If you need to add a component that handles a single number, use the component "
+              [_vm._v("Primary")]
+            )
+          ],
+          1
         ),
-        _c("code", [_vm._v("vs-input-number")])
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v(
-          "You can also change the increment and decrement button icons using the properties "
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: { color: "success" },
+                model: {
+                  value: _vm.checkBox2,
+                  callback: function($$v) {
+                    _vm.checkBox2 = $$v
+                  },
+                  expression: "checkBox2"
+                }
+              },
+              [_vm._v("Success")]
+            )
+          ],
+          1
         ),
-        _c("code", [_vm._v("icon-inc")]),
-        _vm._v(" and "),
-        _c("code", [_vm._v("icon-dec")]),
-        _vm._v(" respectively")
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: { color: "danger" },
+                model: {
+                  value: _vm.checkBox3,
+                  callback: function($$v) {
+                    _vm.checkBox3 = $$v
+                  },
+                  expression: "checkBox3"
+                }
+              },
+              [_vm._v("Danger")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: { color: "warning" },
+                model: {
+                  value: _vm.checkBox4,
+                  callback: function($$v) {
+                    _vm.checkBox4 = $$v
+                  },
+                  expression: "checkBox4"
+                }
+              },
+              [_vm._v("Warning")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: { color: "dark" },
+                model: {
+                  value: _vm.checkBox5,
+                  callback: function($$v) {
+                    _vm.checkBox5 = $$v
+                  },
+                  expression: "checkBox5"
+                }
+              },
+              [_vm._v("Dark")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: { color: "rgb(38, 187, 174)" },
+                model: {
+                  value: _vm.checkBox6,
+                  callback: function($$v) {
+                    _vm.checkBox6 = $$v
+                  },
+                  expression: "checkBox6"
+                }
+              },
+              [_vm._v("Color RGB")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: { color: "#720ea8" },
+                model: {
+                  value: _vm.checkBox7,
+                  callback: function($$v) {
+                    _vm.checkBox7 = $$v
+                  },
+                  expression: "checkBox7"
+                }
+              },
+              [_vm._v("Color HEX")]
+            )
+          ],
+          1
+        )
       ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "demo-alignment" },
-        [
-          _c("vs-input-number", {
-            model: {
-              value: _vm.number,
-              callback: function($$v) {
-                _vm.number = $$v
-              },
-              expression: "number"
-            }
-          }),
-          _vm._v(" "),
-          _c("vs-input-number", {
-            attrs: { disabled: true },
-            model: {
-              value: _vm.number1,
-              callback: function($$v) {
-                _vm.number1 = $$v
-              },
-              expression: "number1"
-            }
-          }),
-          _vm._v(" "),
-          _c("vs-input-number", {
-            attrs: { "icon-inc": "expand_less", "icon-dec": "expand_more" },
-            model: {
-              value: _vm.number2,
-              callback: function($$v) {
-                _vm.number2 = $$v
-              },
-              expression: "number2"
-            }
-          })
-        ],
-        1
-      ),
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<template>\n  <div class="centerx">\n    <vs-input-number v-model="number"/>\n    <vs-input-number :disabled="true" v-model="number1"/>\n    <vs-input-number v-model="number2" icon-inc="expand_less" icon-dec="expand_more"/>\n  </div>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      number:34,\n      number1:48,\n      number2:50\n    }\n  }\n}\n</script>\n        '
+          '\n<template>\n  <ul class="demo-alignment">\n    <li>\n      <vs-checkbox v-model="checkBox1">Primary</vs-checkbox>\n    </li>\n    <li>\n      <vs-checkbox color="success" v-model="checkBox2">Success</vs-checkbox>\n    </li>\n    <li>\n      <vs-checkbox color="danger" v-model="checkBox3">Danger</vs-checkbox>\n    </li>\n    <li>\n      <vs-checkbox color="warning" v-model="checkBox4">Warning</vs-checkbox>\n    </li>\n    <li>\n      <vs-checkbox color="dark" v-model="checkBox5">Dark</vs-checkbox>\n    </li>\n    <li>\n      <vs-checkbox color="rgb(38, 187, 174)" v-model="checkBox6">Color RGB</vs-checkbox>\n    </li>\n    <li>\n      <vs-checkbox color="#720ea8" v-model="checkBox7">Color HEX</vs-checkbox>\n    </li>\n  </ul>\n</template>\n\n<script>\nexport default {\n    data() {\n        return {\n          checkBox1: true,\n          checkBox2: true,\n          checkBox3: true,\n          checkBox4: true,\n          checkBox5: true,\n          checkBox6: true,\n          checkBox7: true,\n        }\n    }\n}\n</script>\n        '
         )
       ])
     ],
@@ -811,10 +1428,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputLabel.vue?vue&type=template&id=22d12b13&":
-/*!*********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputLabel.vue?vue&type=template&id=22d12b13& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxState.vue?vue&type=template&id=05a7515b&":
+/*!**************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxState.vue?vue&type=template&id=05a7515b& ***!
+  \**************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -828,95 +1445,103 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Label", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("Number Input supports adding labels for number inputs.")
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "demo-alignment" },
-        [
-          _c("vs-input-number", {
-            attrs: { label: "passengers:" },
-            model: {
-              value: _vm.passengers,
-              callback: function($$v) {
-                _vm.passengers = $$v
-              },
-              expression: "passengers"
-            }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<template>\n  <div class="centerx">\n    <vs-input-number v-model="passengers" label="passengers:"/>\n  </div>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      passengers:1,\n    }\n  }\n}\n</script>\n        '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputMinMax.vue?vue&type=template&id=b03316ba&":
-/*!**********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputMinMax.vue?vue&type=template&id=b03316ba& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Min - Max", "code-toggler": "" } },
+    { attrs: { title: "State", "code-toggler": "" } },
     [
       _c("span", [
-        _vm._v(
-          "You can restrict the maximum number or the minimum with the properties "
-        ),
-        _c("code", [_vm._v("min")]),
-        _vm._v(", "),
-        _c("code", [_vm._v("max")])
+        _vm._v("To add a checkBox, we have the "),
+        _c("code", [_vm._v("vs-checkbox")]),
+        _vm._v(" component which expects a principal parameter "),
+        _c("code", [_vm._v("v-model")]),
+        _vm._v(" that would be our value.")
       ]),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "demo-alignment" },
-        [
-          _c("vs-input-number", {
-            attrs: { min: "13", max: "21" },
-            model: {
-              value: _vm.number1,
-              callback: function($$v) {
-                _vm.number1 = $$v
+      _c("ul", { staticClass: "demo-alignment" }, [
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                model: {
+                  value: _vm.checkBox1,
+                  callback: function($$v) {
+                    _vm.checkBox1 = $$v
+                  },
+                  expression: "checkBox1"
+                }
               },
-              expression: "number1"
-            }
-          })
-        ],
-        1
-      ),
+              [_vm._v("Primary - active")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                model: {
+                  value: _vm.checkBox2,
+                  callback: function($$v) {
+                    _vm.checkBox2 = $$v
+                  },
+                  expression: "checkBox2"
+                }
+              },
+              [_vm._v("Primary - inactive")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: { disabled: "true" },
+                model: {
+                  value: _vm.checkBox3,
+                  callback: function($$v) {
+                    _vm.checkBox3 = $$v
+                  },
+                  expression: "checkBox3"
+                }
+              },
+              [_vm._v("Primary - active - disabled")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: { disabled: "true" },
+                model: {
+                  value: _vm.checkBox4,
+                  callback: function($$v) {
+                    _vm.checkBox4 = $$v
+                  },
+                  expression: "checkBox4"
+                }
+              },
+              [_vm._v("Primary - inactive - disabled")]
+            )
+          ],
+          1
+        )
+      ]),
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<template>\n  <div class="centerx">\n    <vs-input-number min="13" max="21" v-model="number1"/>\n  </div>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      number1:21,\n    }\n  }\n}\n</script>\n        '
+          '\n<template>\n  <ul class="centerx">\n    <li>\n      <vs-checkbox v-model="checkBox1">Primary - active</vs-checkbox>\n    </li>\n    <li>\n      <vs-checkbox v-model="checkBox2">Primary - inactive</vs-checkbox>\n    </li>\n    <li>\n      <vs-checkbox disabled="true" v-model="checkBox3">Primary - active - disabled</vs-checkbox>\n    </li>\n    <li>\n      <vs-checkbox disabled="true" v-model="checkBox4">Primary - inactive - disabled</vs-checkbox>\n    </li>\n  </ul>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      checkBox1:true,\n      checkBox2:false,\n      checkBox3:true,\n      checkBox4:false,\n    }\n  }\n}\n</script>\n        '
         )
       ])
     ],
@@ -930,9 +1555,9 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputSize.vue?vue&type=template&id=6d49ec9c&":
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxStringValue.vue?vue&type=template&id=4ee6a3aa&":
 /*!********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputSize.vue?vue&type=template&id=6d49ec9c& ***!
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxStringValue.vue?vue&type=template&id=4ee6a3aa& ***!
   \********************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -947,74 +1572,51 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Size", "code-toggler": "" } },
+    { attrs: { title: "String Value", "code-toggler": "" } },
     [
       _c("span", [
         _vm._v(
-          "To change the size of the component, you can use the property "
+          "You can pass as a value a string by giving it as a value of the property "
         ),
-        _c("code", [_vm._v("size")]),
-        _vm._v(". The allowed values are: "),
-        _c("code", [_vm._v("medium")]),
-        _vm._v(", "),
-        _c("code", [_vm._v("small")]),
-        _vm._v(", and "),
-        _c("code", [_vm._v("mini")])
+        _c("code", [_vm._v("vs-value")])
       ]),
       _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "demo-alignment" },
-        [
-          _c("vs-input-number", {
-            model: {
-              value: _vm.number0,
-              callback: function($$v) {
-                _vm.number0 = $$v
+      _c("ul", { staticClass: "demo-alignment" }, [
+        _c(
+          "li",
+          [
+            _c(
+              "vs-checkbox",
+              {
+                attrs: { "vs-value": "Luis Daniel" },
+                model: {
+                  value: _vm.checkBox1,
+                  callback: function($$v) {
+                    _vm.checkBox1 = $$v
+                  },
+                  expression: "checkBox1"
+                }
               },
-              expression: "number0"
-            }
-          }),
-          _vm._v(" "),
-          _c("vs-input-number", {
-            attrs: { size: "medium" },
-            model: {
-              value: _vm.number1,
-              callback: function($$v) {
-                _vm.number1 = $$v
-              },
-              expression: "number1"
-            }
-          }),
-          _vm._v(" "),
-          _c("vs-input-number", {
-            attrs: { size: "small" },
-            model: {
-              value: _vm.number2,
-              callback: function($$v) {
-                _vm.number2 = $$v
-              },
-              expression: "number2"
-            }
-          }),
-          _vm._v(" "),
-          _c("vs-input-number", {
-            attrs: { size: "mini" },
-            model: {
-              value: _vm.number3,
-              callback: function($$v) {
-                _vm.number3 = $$v
-              },
-              expression: "number3"
-            }
-          })
-        ],
-        1
-      ),
+              [_vm._v("Luis Daniel")]
+            )
+          ],
+          1
+        ),
+        _vm._v(" "),
+        _c("li", { staticClass: "op-block" }, [
+          _vm._v(
+            "\n            " +
+              _vm._s(_vm.checkBox1 == null ? "null" : _vm.checkBox1) +
+              "\n          "
+          )
+        ])
+      ]),
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<template>\n  <div class="centerx">\n    <vs-input-number v-model="number0"/>\n    <vs-input-number size="medium" v-model="number1"/>\n    <vs-input-number size="small" v-model="number2"/>\n    <vs-input-number size="mini" v-model="number3"/>\n  </div>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      number0:95,\n      number1:21,\n      number2:67,\n      number3:2\n    }\n  }\n}\n</script>\n        '
+          '\n<template>\n  <ul class="demo-alignment">\n    <li>\n      <vs-checkbox v-model="checkBox1" vs-value="Luis Daniel">Luis Daniel</vs-checkbox>\n    </li>\n    <li class="op-block">\n      ' +
+            _vm._s("{{ checkBox1==null?&apos;null&apos;:checkBox1 }}") +
+            "\n    </li>\n  </ul>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      checkBox1: null,\n    }\n  }\n}\n</script>\n        "
         )
       ])
     ],
@@ -1028,77 +1630,17 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputStep.vue?vue&type=template&id=27f65a06&":
-/*!********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputStep.vue?vue&type=template&id=27f65a06& ***!
-  \********************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Step", "code-toggler": "" } },
-    [
-      _c("span", [
-        _vm._v(
-          "To change the number to be added or decreased of the component, you can use the property "
-        ),
-        _c("code", [_vm._v("step")])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "demo-alignment" },
-        [
-          _c("vs-input-number", {
-            attrs: { step: 5 },
-            model: {
-              value: _vm.number0,
-              callback: function($$v) {
-                _vm.number0 = $$v
-              },
-              expression: "number0"
-            }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<template>\n  <div class="centerx">\n    <vs-input-number v-model="number0" :step="5"/>\n  </div>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      number0:5,\n    }\n  }\n}\n</script>\n        '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInput.vue":
-/*!***************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInput.vue ***!
-  \***************************************************************************************/
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/Checkbox.vue":
+/*!********************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/Checkbox.vue ***!
+  \********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _NumberInput_vue_vue_type_template_id_68df5291___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NumberInput.vue?vue&type=template&id=68df5291& */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInput.vue?vue&type=template&id=68df5291&");
-/* harmony import */ var _NumberInput_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NumberInput.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInput.vue?vue&type=script&lang=js&");
+/* harmony import */ var _Checkbox_vue_vue_type_template_id_705566f4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Checkbox.vue?vue&type=template&id=705566f4& */ "./resources/admin/js/src/views/forms/form-elements/checkbox/Checkbox.vue?vue&type=template&id=705566f4&");
+/* harmony import */ var _Checkbox_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Checkbox.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/forms/form-elements/checkbox/Checkbox.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -1108,9 +1650,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _NumberInput_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _NumberInput_vue_vue_type_template_id_68df5291___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _NumberInput_vue_vue_type_template_id_68df5291___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Checkbox_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Checkbox_vue_vue_type_template_id_705566f4___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Checkbox_vue_vue_type_template_id_705566f4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1120,54 +1662,192 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/forms/form-elements/number-input/NumberInput.vue"
+component.options.__file = "resources/admin/js/src/views/forms/form-elements/checkbox/Checkbox.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInput.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInput.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/Checkbox.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/Checkbox.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInput_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./NumberInput.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInput.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInput_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Checkbox_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Checkbox.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/Checkbox.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Checkbox_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInput.vue?vue&type=template&id=68df5291&":
-/*!**********************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInput.vue?vue&type=template&id=68df5291& ***!
-  \**********************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/Checkbox.vue?vue&type=template&id=705566f4&":
+/*!***************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/Checkbox.vue?vue&type=template&id=705566f4& ***!
+  \***************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInput_vue_vue_type_template_id_68df5291___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./NumberInput.vue?vue&type=template&id=68df5291& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInput.vue?vue&type=template&id=68df5291&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInput_vue_vue_type_template_id_68df5291___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Checkbox_vue_vue_type_template_id_705566f4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Checkbox.vue?vue&type=template&id=705566f4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/Checkbox.vue?vue&type=template&id=705566f4&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Checkbox_vue_vue_type_template_id_705566f4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInput_vue_vue_type_template_id_68df5291___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Checkbox_vue_vue_type_template_id_705566f4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputColor.vue":
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayObjectValue.vue":
+/*!************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayObjectValue.vue ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CheckboxArrayObjectValue_vue_vue_type_template_id_8e019d02___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CheckboxArrayObjectValue.vue?vue&type=template&id=8e019d02& */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayObjectValue.vue?vue&type=template&id=8e019d02&");
+/* harmony import */ var _CheckboxArrayObjectValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CheckboxArrayObjectValue.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayObjectValue.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CheckboxArrayObjectValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CheckboxArrayObjectValue_vue_vue_type_template_id_8e019d02___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CheckboxArrayObjectValue_vue_vue_type_template_id_8e019d02___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayObjectValue.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayObjectValue.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayObjectValue.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxArrayObjectValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxArrayObjectValue.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayObjectValue.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxArrayObjectValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayObjectValue.vue?vue&type=template&id=8e019d02&":
+/*!*******************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayObjectValue.vue?vue&type=template&id=8e019d02& ***!
+  \*******************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxArrayObjectValue_vue_vue_type_template_id_8e019d02___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxArrayObjectValue.vue?vue&type=template&id=8e019d02& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayObjectValue.vue?vue&type=template&id=8e019d02&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxArrayObjectValue_vue_vue_type_template_id_8e019d02___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxArrayObjectValue_vue_vue_type_template_id_8e019d02___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayValue.vue":
+/*!******************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayValue.vue ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CheckboxArrayValue_vue_vue_type_template_id_14dc8c84___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CheckboxArrayValue.vue?vue&type=template&id=14dc8c84& */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayValue.vue?vue&type=template&id=14dc8c84&");
+/* harmony import */ var _CheckboxArrayValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CheckboxArrayValue.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayValue.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CheckboxArrayValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CheckboxArrayValue_vue_vue_type_template_id_14dc8c84___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CheckboxArrayValue_vue_vue_type_template_id_14dc8c84___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayValue.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayValue.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayValue.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxArrayValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxArrayValue.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayValue.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxArrayValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayValue.vue?vue&type=template&id=14dc8c84&":
+/*!*************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayValue.vue?vue&type=template&id=14dc8c84& ***!
+  \*************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxArrayValue_vue_vue_type_template_id_14dc8c84___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxArrayValue.vue?vue&type=template&id=14dc8c84& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxArrayValue.vue?vue&type=template&id=14dc8c84&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxArrayValue_vue_vue_type_template_id_14dc8c84___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxArrayValue_vue_vue_type_template_id_14dc8c84___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxBooleanValue.vue":
 /*!********************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputColor.vue ***!
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxBooleanValue.vue ***!
   \********************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _NumberInputColor_vue_vue_type_template_id_85c5e7fc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NumberInputColor.vue?vue&type=template&id=85c5e7fc& */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputColor.vue?vue&type=template&id=85c5e7fc&");
-/* harmony import */ var _NumberInputColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NumberInputColor.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputColor.vue?vue&type=script&lang=js&");
+/* harmony import */ var _CheckboxBooleanValue_vue_vue_type_template_id_eeab2562___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CheckboxBooleanValue.vue?vue&type=template&id=eeab2562& */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxBooleanValue.vue?vue&type=template&id=eeab2562&");
+/* harmony import */ var _CheckboxBooleanValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CheckboxBooleanValue.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxBooleanValue.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -1177,9 +1857,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _NumberInputColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _NumberInputColor_vue_vue_type_template_id_85c5e7fc___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _NumberInputColor_vue_vue_type_template_id_85c5e7fc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CheckboxBooleanValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CheckboxBooleanValue_vue_vue_type_template_id_eeab2562___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CheckboxBooleanValue_vue_vue_type_template_id_eeab2562___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1189,54 +1869,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/forms/form-elements/number-input/NumberInputColor.vue"
+component.options.__file = "resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxBooleanValue.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputColor.vue?vue&type=script&lang=js&":
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxBooleanValue.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputColor.vue?vue&type=script&lang=js& ***!
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxBooleanValue.vue?vue&type=script&lang=js& ***!
   \*********************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./NumberInputColor.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputColor.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxBooleanValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxBooleanValue.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxBooleanValue.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxBooleanValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputColor.vue?vue&type=template&id=85c5e7fc&":
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxBooleanValue.vue?vue&type=template&id=eeab2562&":
 /*!***************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputColor.vue?vue&type=template&id=85c5e7fc& ***!
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxBooleanValue.vue?vue&type=template&id=eeab2562& ***!
   \***************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputColor_vue_vue_type_template_id_85c5e7fc___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./NumberInputColor.vue?vue&type=template&id=85c5e7fc& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputColor.vue?vue&type=template&id=85c5e7fc&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputColor_vue_vue_type_template_id_85c5e7fc___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxBooleanValue_vue_vue_type_template_id_eeab2562___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxBooleanValue.vue?vue&type=template&id=eeab2562& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxBooleanValue.vue?vue&type=template&id=eeab2562&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxBooleanValue_vue_vue_type_template_id_eeab2562___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputColor_vue_vue_type_template_id_85c5e7fc___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxBooleanValue_vue_vue_type_template_id_eeab2562___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDecimal.vue":
-/*!**********************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDecimal.vue ***!
-  \**********************************************************************************************/
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxChangeIcon.vue":
+/*!******************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxChangeIcon.vue ***!
+  \******************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _NumberInputDecimal_vue_vue_type_template_id_c786f9a0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NumberInputDecimal.vue?vue&type=template&id=c786f9a0& */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDecimal.vue?vue&type=template&id=c786f9a0&");
-/* harmony import */ var _NumberInputDecimal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NumberInputDecimal.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDecimal.vue?vue&type=script&lang=js&");
+/* harmony import */ var _CheckboxChangeIcon_vue_vue_type_template_id_54e626ef___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CheckboxChangeIcon.vue?vue&type=template&id=54e626ef& */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxChangeIcon.vue?vue&type=template&id=54e626ef&");
+/* harmony import */ var _CheckboxChangeIcon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CheckboxChangeIcon.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxChangeIcon.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -1246,9 +1926,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _NumberInputDecimal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _NumberInputDecimal_vue_vue_type_template_id_c786f9a0___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _NumberInputDecimal_vue_vue_type_template_id_c786f9a0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CheckboxChangeIcon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CheckboxChangeIcon_vue_vue_type_template_id_54e626ef___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CheckboxChangeIcon_vue_vue_type_template_id_54e626ef___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1258,54 +1938,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDecimal.vue"
+component.options.__file = "resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxChangeIcon.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDecimal.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDecimal.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxChangeIcon.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxChangeIcon.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputDecimal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./NumberInputDecimal.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDecimal.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputDecimal_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxChangeIcon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxChangeIcon.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxChangeIcon.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxChangeIcon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDecimal.vue?vue&type=template&id=c786f9a0&":
-/*!*****************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDecimal.vue?vue&type=template&id=c786f9a0& ***!
-  \*****************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxChangeIcon.vue?vue&type=template&id=54e626ef&":
+/*!*************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxChangeIcon.vue?vue&type=template&id=54e626ef& ***!
+  \*************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputDecimal_vue_vue_type_template_id_c786f9a0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./NumberInputDecimal.vue?vue&type=template&id=c786f9a0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDecimal.vue?vue&type=template&id=c786f9a0&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputDecimal_vue_vue_type_template_id_c786f9a0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxChangeIcon_vue_vue_type_template_id_54e626ef___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxChangeIcon.vue?vue&type=template&id=54e626ef& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxChangeIcon.vue?vue&type=template&id=54e626ef&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxChangeIcon_vue_vue_type_template_id_54e626ef___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputDecimal_vue_vue_type_template_id_c786f9a0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxChangeIcon_vue_vue_type_template_id_54e626ef___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDefault.vue":
-/*!**********************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDefault.vue ***!
-  \**********************************************************************************************/
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxColor.vue":
+/*!*************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxColor.vue ***!
+  \*************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _NumberInputDefault_vue_vue_type_template_id_572f63c0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NumberInputDefault.vue?vue&type=template&id=572f63c0& */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDefault.vue?vue&type=template&id=572f63c0&");
-/* harmony import */ var _NumberInputDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NumberInputDefault.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDefault.vue?vue&type=script&lang=js&");
+/* harmony import */ var _CheckboxColor_vue_vue_type_template_id_0fe3f9a6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CheckboxColor.vue?vue&type=template&id=0fe3f9a6& */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxColor.vue?vue&type=template&id=0fe3f9a6&");
+/* harmony import */ var _CheckboxColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CheckboxColor.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxColor.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -1315,9 +1995,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _NumberInputDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _NumberInputDefault_vue_vue_type_template_id_572f63c0___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _NumberInputDefault_vue_vue_type_template_id_572f63c0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CheckboxColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CheckboxColor_vue_vue_type_template_id_0fe3f9a6___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CheckboxColor_vue_vue_type_template_id_0fe3f9a6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1327,54 +2007,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDefault.vue"
+component.options.__file = "resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxColor.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDefault.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDefault.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxColor.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxColor.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./NumberInputDefault.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDefault.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxColor.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxColor.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDefault.vue?vue&type=template&id=572f63c0&":
-/*!*****************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDefault.vue?vue&type=template&id=572f63c0& ***!
-  \*****************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxColor.vue?vue&type=template&id=0fe3f9a6&":
+/*!********************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxColor.vue?vue&type=template&id=0fe3f9a6& ***!
+  \********************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputDefault_vue_vue_type_template_id_572f63c0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./NumberInputDefault.vue?vue&type=template&id=572f63c0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputDefault.vue?vue&type=template&id=572f63c0&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputDefault_vue_vue_type_template_id_572f63c0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxColor_vue_vue_type_template_id_0fe3f9a6___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxColor.vue?vue&type=template&id=0fe3f9a6& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxColor.vue?vue&type=template&id=0fe3f9a6&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxColor_vue_vue_type_template_id_0fe3f9a6___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputDefault_vue_vue_type_template_id_572f63c0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxColor_vue_vue_type_template_id_0fe3f9a6___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputLabel.vue":
-/*!********************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputLabel.vue ***!
-  \********************************************************************************************/
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxState.vue":
+/*!*************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxState.vue ***!
+  \*************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _NumberInputLabel_vue_vue_type_template_id_22d12b13___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NumberInputLabel.vue?vue&type=template&id=22d12b13& */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputLabel.vue?vue&type=template&id=22d12b13&");
-/* harmony import */ var _NumberInputLabel_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NumberInputLabel.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputLabel.vue?vue&type=script&lang=js&");
+/* harmony import */ var _CheckboxState_vue_vue_type_template_id_05a7515b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CheckboxState.vue?vue&type=template&id=05a7515b& */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxState.vue?vue&type=template&id=05a7515b&");
+/* harmony import */ var _CheckboxState_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CheckboxState.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxState.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -1384,9 +2064,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _NumberInputLabel_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _NumberInputLabel_vue_vue_type_template_id_22d12b13___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _NumberInputLabel_vue_vue_type_template_id_22d12b13___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CheckboxState_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CheckboxState_vue_vue_type_template_id_05a7515b___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CheckboxState_vue_vue_type_template_id_05a7515b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1396,123 +2076,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/forms/form-elements/number-input/NumberInputLabel.vue"
+component.options.__file = "resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxState.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputLabel.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputLabel.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxState.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxState.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputLabel_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./NumberInputLabel.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputLabel.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputLabel_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxState_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxState.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxState.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxState_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputLabel.vue?vue&type=template&id=22d12b13&":
-/*!***************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputLabel.vue?vue&type=template&id=22d12b13& ***!
-  \***************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxState.vue?vue&type=template&id=05a7515b&":
+/*!********************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxState.vue?vue&type=template&id=05a7515b& ***!
+  \********************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputLabel_vue_vue_type_template_id_22d12b13___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./NumberInputLabel.vue?vue&type=template&id=22d12b13& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputLabel.vue?vue&type=template&id=22d12b13&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputLabel_vue_vue_type_template_id_22d12b13___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxState_vue_vue_type_template_id_05a7515b___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxState.vue?vue&type=template&id=05a7515b& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxState.vue?vue&type=template&id=05a7515b&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxState_vue_vue_type_template_id_05a7515b___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputLabel_vue_vue_type_template_id_22d12b13___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputMinMax.vue":
-/*!*********************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputMinMax.vue ***!
-  \*********************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _NumberInputMinMax_vue_vue_type_template_id_b03316ba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NumberInputMinMax.vue?vue&type=template&id=b03316ba& */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputMinMax.vue?vue&type=template&id=b03316ba&");
-/* harmony import */ var _NumberInputMinMax_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NumberInputMinMax.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputMinMax.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _NumberInputMinMax_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _NumberInputMinMax_vue_vue_type_template_id_b03316ba___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _NumberInputMinMax_vue_vue_type_template_id_b03316ba___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/forms/form-elements/number-input/NumberInputMinMax.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputMinMax.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputMinMax.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputMinMax_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./NumberInputMinMax.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputMinMax.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputMinMax_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputMinMax.vue?vue&type=template&id=b03316ba&":
-/*!****************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputMinMax.vue?vue&type=template&id=b03316ba& ***!
-  \****************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputMinMax_vue_vue_type_template_id_b03316ba___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./NumberInputMinMax.vue?vue&type=template&id=b03316ba& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputMinMax.vue?vue&type=template&id=b03316ba&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputMinMax_vue_vue_type_template_id_b03316ba___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputMinMax_vue_vue_type_template_id_b03316ba___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxState_vue_vue_type_template_id_05a7515b___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputSize.vue":
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxStringValue.vue":
 /*!*******************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputSize.vue ***!
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxStringValue.vue ***!
   \*******************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _NumberInputSize_vue_vue_type_template_id_6d49ec9c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NumberInputSize.vue?vue&type=template&id=6d49ec9c& */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputSize.vue?vue&type=template&id=6d49ec9c&");
-/* harmony import */ var _NumberInputSize_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NumberInputSize.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputSize.vue?vue&type=script&lang=js&");
+/* harmony import */ var _CheckboxStringValue_vue_vue_type_template_id_4ee6a3aa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CheckboxStringValue.vue?vue&type=template&id=4ee6a3aa& */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxStringValue.vue?vue&type=template&id=4ee6a3aa&");
+/* harmony import */ var _CheckboxStringValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CheckboxStringValue.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxStringValue.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -1522,9 +2133,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _NumberInputSize_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _NumberInputSize_vue_vue_type_template_id_6d49ec9c___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _NumberInputSize_vue_vue_type_template_id_6d49ec9c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CheckboxStringValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CheckboxStringValue_vue_vue_type_template_id_4ee6a3aa___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CheckboxStringValue_vue_vue_type_template_id_4ee6a3aa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1534,107 +2145,38 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/forms/form-elements/number-input/NumberInputSize.vue"
+component.options.__file = "resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxStringValue.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputSize.vue?vue&type=script&lang=js&":
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxStringValue.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputSize.vue?vue&type=script&lang=js& ***!
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxStringValue.vue?vue&type=script&lang=js& ***!
   \********************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputSize_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./NumberInputSize.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputSize.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputSize_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxStringValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxStringValue.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxStringValue.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxStringValue_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputSize.vue?vue&type=template&id=6d49ec9c&":
+/***/ "./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxStringValue.vue?vue&type=template&id=4ee6a3aa&":
 /*!**************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputSize.vue?vue&type=template&id=6d49ec9c& ***!
+  !*** ./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxStringValue.vue?vue&type=template&id=4ee6a3aa& ***!
   \**************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputSize_vue_vue_type_template_id_6d49ec9c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./NumberInputSize.vue?vue&type=template&id=6d49ec9c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputSize.vue?vue&type=template&id=6d49ec9c&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputSize_vue_vue_type_template_id_6d49ec9c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxStringValue_vue_vue_type_template_id_4ee6a3aa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CheckboxStringValue.vue?vue&type=template&id=4ee6a3aa& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/checkbox/CheckboxStringValue.vue?vue&type=template&id=4ee6a3aa&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxStringValue_vue_vue_type_template_id_4ee6a3aa___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputSize_vue_vue_type_template_id_6d49ec9c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputStep.vue":
-/*!*******************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputStep.vue ***!
-  \*******************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _NumberInputStep_vue_vue_type_template_id_27f65a06___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./NumberInputStep.vue?vue&type=template&id=27f65a06& */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputStep.vue?vue&type=template&id=27f65a06&");
-/* harmony import */ var _NumberInputStep_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./NumberInputStep.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputStep.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _NumberInputStep_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _NumberInputStep_vue_vue_type_template_id_27f65a06___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _NumberInputStep_vue_vue_type_template_id_27f65a06___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/forms/form-elements/number-input/NumberInputStep.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputStep.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputStep.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputStep_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./NumberInputStep.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputStep.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputStep_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputStep.vue?vue&type=template&id=27f65a06&":
-/*!**************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputStep.vue?vue&type=template&id=27f65a06& ***!
-  \**************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputStep_vue_vue_type_template_id_27f65a06___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./NumberInputStep.vue?vue&type=template&id=27f65a06& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/forms/form-elements/number-input/NumberInputStep.vue?vue&type=template&id=27f65a06&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputStep_vue_vue_type_template_id_27f65a06___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_NumberInputStep_vue_vue_type_template_id_27f65a06___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CheckboxStringValue_vue_vue_type_template_id_4ee6a3aa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

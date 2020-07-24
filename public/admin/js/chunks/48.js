@@ -1,14 +1,92 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[48],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridResponsiveGrids.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridResponsiveGrids.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/Chip.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/chip/Chip.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ChipDefault_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ChipDefault.vue */ "./resources/admin/js/src/views/components/vuesax/chip/ChipDefault.vue");
+/* harmony import */ var _ChipColor_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ChipColor.vue */ "./resources/admin/js/src/views/components/vuesax/chip/ChipColor.vue");
+/* harmony import */ var _ChipTransparent_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ChipTransparent.vue */ "./resources/admin/js/src/views/components/vuesax/chip/ChipTransparent.vue");
+/* harmony import */ var _ChipIcon_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ChipIcon.vue */ "./resources/admin/js/src/views/components/vuesax/chip/ChipIcon.vue");
+/* harmony import */ var _ChipClosable_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./ChipClosable.vue */ "./resources/admin/js/src/views/components/vuesax/chip/ChipClosable.vue");
+/* harmony import */ var _ChipAddRemove_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./ChipAddRemove.vue */ "./resources/admin/js/src/views/components/vuesax/chip/ChipAddRemove.vue");
+/* harmony import */ var _ChipCustomizeCloseClearChipIcon_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./ChipCustomizeCloseClearChipIcon.vue */ "./resources/admin/js/src/views/components/vuesax/chip/ChipCustomizeCloseClearChipIcon.vue");
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    ChipDefault: _ChipDefault_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    ChipColor: _ChipColor_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    ChipTransparent: _ChipTransparent_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    ChipIcon: _ChipIcon_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    ChipClosable: _ChipClosable_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    ChipAddRemove: _ChipAddRemove_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    ChipCustomizeCloseClearChipIcon: _ChipCustomizeCloseClearChipIcon_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipAddRemove.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/chip/ChipAddRemove.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -55,30 +133,227 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      colClass: 'w-full'
+      chips: ['Dribbble', 'GitHub', 'Behance', 'Vuejs', 'Vuexy']
+    };
+  },
+  methods: {
+    remove: function remove(item) {
+      this.chips.splice(this.chips.indexOf(item), 1);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipClosable.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/chip/ChipClosable.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      chips: ['Dribbble', 'GitHub', 'Behance', 'Vuejs', 'Vuexy']
+    };
+  },
+  methods: {
+    reset: function reset() {
+      this.chips = ['Dribbble', 'GitHub', 'Behance', 'Vuejs', 'Vuexy'];
+    },
+    remove: function remove(item) {
+      this.chips.splice(this.chips.indexOf(item), 1);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipColor.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/chip/ChipColor.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      isDeleted: false,
+      isDeleted2: false
     };
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=script&lang=js&":
-/*!******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipCustomizeCloseClearChipIcon.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/chip/ChipCustomizeCloseClearChipIcon.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _GridBasicGrid_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GridBasicGrid.vue */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridBasicGrid.vue");
-/* harmony import */ var _GridResponsiveGrids_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GridResponsiveGrids.vue */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridResponsiveGrids.vue");
-/* harmony import */ var _GridMixedColumnSizes_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GridMixedColumnSizes.vue */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridMixedColumnSizes.vue");
-/* harmony import */ var _GridWrappingColumns_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./GridWrappingColumns.vue */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridWrappingColumns.vue");
-/* harmony import */ var _GridColumnSpacing_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./GridColumnSpacing.vue */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnSpacing.vue");
-/* harmony import */ var _GridAutoColumnWidth_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./GridAutoColumnWidth.vue */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridAutoColumnWidth.vue");
-/* harmony import */ var _GridColumnOrder_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./GridColumnOrder.vue */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnOrder.vue");
-/* harmony import */ var _GridSimpleOffset_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./GridSimpleOffset.vue */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridSimpleOffset.vue");
 //
 //
 //
@@ -98,1008 +373,175 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-
-
-
-
-
-
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    GridBasicGrid: _GridBasicGrid_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    GridResponsiveGrids: _GridResponsiveGrids_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    GridMixedColumnSizes: _GridMixedColumnSizes_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    GridWrappingColumns: _GridWrappingColumns_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    GridColumnSpacing: _GridColumnSpacing_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    GridAutoColumnWidth: _GridAutoColumnWidth_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    GridSimpleOffset: _GridSimpleOffset_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
-    GridColumnOrder: _GridColumnOrder_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
+  data: function data() {
+    return {
+      chips: ['Dribbble', 'GitHub', 'Behance', 'Vuejs', 'Vuexy']
+    };
+  },
+  methods: {
+    remove: function remove(item) {
+      this.chips.splice(this.chips.indexOf(item), 1);
+    }
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=style&index=0&lang=scss&":
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=style&index=0&lang=scss& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__(/*! ../../../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "[dir] #tailwind-grid-demo .bg-grid-color {\n  background-color: #b8c2cc;\n}\n[dir] #tailwind-grid-demo .bg-grid-color-secondary {\n  background-color: #dae1e7;\n}\n[dir] .theme-dark #tailwind-grid-demo .bg-grid-color {\n  background-color: #262c49;\n}\n[dir] .theme-dark #tailwind-grid-demo .bg-grid-color-secondary {\n  background-color: #414561;\n}", ""]);
-
-// exports
-
-
-/***/ }),
-
-/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=style&index=0&lang=scss&":
-/*!*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=style&index=0&lang=scss& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-
-var content = __webpack_require__(/*! !../../../../../../../../node_modules/css-loader!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GridTailwind.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=style&index=0&lang=scss&");
-
-if(typeof content === 'string') content = [[module.i, content, '']];
-
-var transform;
-var insertInto;
-
-
-
-var options = {"hmr":true}
-
-options.transform = transform
-options.insertInto = undefined;
-
-var update = __webpack_require__(/*! ../../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
-
-if(content.locals) module.exports = content.locals;
-
-if(false) {}
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridAutoColumnWidth.vue?vue&type=template&id=89fbe118&":
-/*!*****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridAutoColumnWidth.vue?vue&type=template&id=89fbe118& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipDefault.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/chip/ChipDefault.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Automatic Column Widths", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("Use "),
-        _c("code", [_vm._v("flex-1")]),
-        _vm._v(
-          " instead of an explicit width on your columns to have them size automatically to fill the row"
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mt-5" }, [
-        _c("div", { staticClass: "flex mb-4" }, [
-          _c("div", { staticClass: "flex-1 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("flex-1")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex mb-4" }, [
-          _c(
-            "div",
-            { staticClass: "flex-1 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("flex-1")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "flex-1 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("flex-1")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "flex-1 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("flex-1")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "flex-1 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("flex-1")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "flex-1 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("flex-1")
-              ])
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex mb-4" }, [
-          _c(
-            "div",
-            { staticClass: "flex-1 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("flex-1")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "flex-1 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("flex-1")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "flex-1 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("flex-1")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "flex-1 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("flex-1")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "flex-1 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("flex-1")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "flex-1 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("flex-1")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "flex-1 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("flex-1")
-              ])
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex mb-4" }, [
-          _c(
-            "div",
-            { staticClass: "flex-1 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("flex-1")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "flex-1 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("flex-1")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "flex-1 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("flex-1")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "flex-1 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("flex-1")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "flex-1 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("flex-1")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "flex-1 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("flex-1")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "flex-1 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("flex-1")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "flex-1 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("flex-1")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "flex-1 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("flex-1")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "flex-1 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("flex-1")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "flex-1 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("flex-1")
-              ])
-            ]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<!-- Full width column -->\n<div class="flex mb-4">\n  <div class="flex-1 bg-grid-color h-12"></div>\n</div>\n\n<!-- Five columns -->\n<div class="flex mb-4">\n  <div class="flex-1 bg-grid-color-secondary h-12"></div>\n  <div class="flex-1 bg-grid-color h-12"></div>\n  <div class="flex-1 bg-grid-color-secondary h-12"></div>\n  <div class="flex-1 bg-grid-color h-12"></div>\n  <div class="flex-1 bg-grid-color-secondary h-12"></div>\n</div>\n\n<!-- Seven columns -->\n<div class="flex mb-4">\n  <div class="flex-1 bg-grid-color-secondary h-12"></div>\n  <div class="flex-1 bg-grid-color h-12"></div>\n  <div class="flex-1 bg-grid-color-secondary h-12"></div>\n  <div class="flex-1 bg-grid-color h-12"></div>\n  <div class="flex-1 bg-grid-color-secondary h-12"></div>\n  <div class="flex-1 bg-grid-color h-12"></div>\n  <div class="flex-1 bg-grid-color-secondary h-12"></div>\n</div>\n\n<!-- Eleven columns -->\n<div class="flex mb-4">\n  <div class="flex-1 bg-grid-color-secondary h-12"></div>\n  <div class="flex-1 bg-grid-color h-12"></div>\n  <div class="flex-1 bg-grid-color-secondary h-12"></div>\n  <div class="flex-1 bg-grid-color h-12"></div>\n  <div class="flex-1 bg-grid-color-secondary h-12"></div>\n  <div class="flex-1 bg-grid-color h-12"></div>\n  <div class="flex-1 bg-grid-color-secondary h-12"></div>\n  <div class="flex-1 bg-grid-color h-12"></div>\n  <div class="flex-1 bg-grid-color-secondary h-12"></div>\n  <div class="flex-1 bg-grid-color h-12"></div>\n  <div class="flex-1 bg-grid-color-secondary h-12"></div>\n</div>\n        '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      isDeleted: false
+    };
+  }
+});
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridBasicGrid.vue?vue&type=template&id=1c537be7&":
-/*!***********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridBasicGrid.vue?vue&type=template&id=1c537be7& ***!
-  \***********************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Basic Grids", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("Use the existing "),
-        _c(
-          "a",
-          {
-            attrs: {
-              href: "https://tailwindcss.com/docs/flexbox-display",
-              rel: "nofollow"
-            }
-          },
-          [_vm._v("Flexbox")]
-        ),
-        _vm._v(" and "),
-        _c(
-          "a",
-          {
-            attrs: {
-              href: "https://tailwindcss.com/docs/width",
-              rel: "nofollow"
-            }
-          },
-          [_vm._v("percentage width")]
-        ),
-        _vm._v(" utilities to construct basic grids")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mt-5" }, [
-        _c("div", { staticClass: "flex mb-4" }, [
-          _c("div", { staticClass: "w-full bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("w-full")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex mb-4" }, [
-          _c(
-            "div",
-            { staticClass: "w-1/2 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("w-1/2")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "w-1/2 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("w-1/2")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex mb-4" }, [
-          _c(
-            "div",
-            { staticClass: "w-1/3 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("w-1/3")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "w-1/3 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("w-1/3")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "w-1/3 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("w-1/3")
-              ])
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex mb-4" }, [
-          _c("div", { staticClass: "w-1/4 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("w-1/4")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "w-1/4 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("w-1/4")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "w-1/4 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("w-1/4")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "w-1/4 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("w-1/4")
-              ])
-            ]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex mb-4" }, [
-          _c("div", { staticClass: "w-1/5 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("w-1/5")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "w-1/5 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("w-1/5")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "w-1/5 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("w-1/5")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "w-1/5 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("w-1/5")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "w-1/5 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("w-1/5")
-            ])
-          ])
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex" }, [
-          _c(
-            "div",
-            { staticClass: "w-1/6 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("w-1/6")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "w-1/6 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("w-1/6")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "w-1/6 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("w-1/6")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "w-1/6 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("w-1/6")
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "w-1/6 bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-                _vm._v("w-1/6")
-              ])
-            ]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "w-1/6 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "sm:flex hidden m-auto" }, [
-              _vm._v("w-1/6")
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<!-- Full width column -->\n<div class="flex mb-4">\n  <div class="w-full bg-grid-color h-12"></div>\n</div>\n<!-- Two columns -->\n<div class="flex mb-4">\n  <div class="w-1/2 bg-grid-color-secondary h-12"></div>\n  <div class="w-1/2 bg-grid-color h-12"></div>\n</div>\n\n<!-- Three columns -->\n<div class="flex mb-4">\n  <div class="w-1/3 bg-grid-color-secondary h-12"></div>\n  <div class="w-1/3 bg-grid-color h-12"></div>\n  <div class="w-1/3 bg-grid-color-secondary h-12"></div>\n</div>\n\n<!-- Four columns -->\n<div class="flex mb-4">\n  <div class="w-1/4 bg-grid-color h-12"></div>\n  <div class="w-1/4 bg-grid-color-secondary h-12"></div>\n  <div class="w-1/4 bg-grid-color h-12"></div>\n  <div class="w-1/4 bg-grid-color-secondary h-12"></div>\n</div>\n\n<!-- Five columns -->\n<div class="flex mb-4">\n  <div class="w-1/5 bg-grid-color h-12"></div>\n  <div class="w-1/5 bg-grid-color-secondary h-12"></div>\n  <div class="w-1/5 bg-grid-color h-12"></div>\n  <div class="w-1/5 bg-grid-color-secondary h-12"></div>\n  <div class="w-1/5 bg-grid-color h-12"></div>\n</div>\n\n<!-- Six columns -->\n<div class="flex">\n  <div class="w-1/6 bg-grid-color-secondary h-12"></div>\n  <div class="w-1/6 bg-grid-color h-12"></div>\n  <div class="w-1/6 bg-grid-color-secondary h-12"></div>\n  <div class="w-1/6 bg-grid-color h-12"></div>\n  <div class="w-1/6 bg-grid-color-secondary h-12"></div>\n  <div class="w-1/6 bg-grid-color h-12"></div>\n</div>\n        '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnOrder.vue?vue&type=template&id=b16017aa&":
-/*!*************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnOrder.vue?vue&type=template&id=b16017aa& ***!
-  \*************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Column Order", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("Use "),
-        _c("code", [_vm._v("flex-row-reverse")]),
-        _vm._v(
-          " to reverse column order. Useful for two-column responsive layouts where the column on right should appear first on smaller screens"
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mt-5" }, [
-        _c("div", { staticClass: "flex md:flex-row-reverse flex-wrap" }, [
-          _c(
-            "div",
-            {
-              staticClass:
-                "w-full md:w-3/4 bg-grey p-4 text-center text-grey-lighter"
-            },
-            [_vm._v("1")]
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "w-full md:w-1/4 bg-grey-light p-4 text-center text-grey-darker"
-            },
-            [_vm._v("2")]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<div class="flex md:flex-row-reverse flex-wrap">\n  <div class="w-full md:w-3/4 bg-grey p-4 text-center text-grey-lighter">1</div>\n  <div class="w-full md:w-1/4 bg-grey-light p-4 text-center text-grey-darker">2</div>\n</div>\n        '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnSpacing.vue?vue&type=template&id=fc82dd40&":
-/*!***************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnSpacing.vue?vue&type=template&id=fc82dd40& ***!
-  \***************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Column Spacing", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("Add a negative horizontal margin like "),
-        _c("code", [_vm._v("-mx-2")]),
-        _vm._v(
-          " to your column container and an equal horizontal padding like "
-        ),
-        _c("code", [_vm._v("px-2")]),
-        _vm._v(" to each column to add gutters")
-      ]),
-      _vm._v(" "),
-      _c("p", [
-        _vm._v("To prevent horizontal scrolling in full width layouts, add "),
-        _c("code", [_vm._v("overflow-hidden")]),
-        _vm._v(
-          " to another parent container, or compensate for the negative margin with matching horizontal padding"
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mt-5" }, [
-        _c("div", { staticClass: "px-2" }, [
-          _c("div", { staticClass: "flex -mx-2" }, [
-            _c("div", { staticClass: "w-1/3 px-2" }, [
-              _c("div", { staticClass: "bg-grid-color-secondary h-12 flex" }, [
-                _c("span", { staticClass: "flex m-auto" }, [_vm._v("w-1/3")])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "w-1/3 px-2" }, [
-              _c("div", { staticClass: "bg-grid-color h-12 flex" }, [
-                _c("span", { staticClass: "flex m-auto" }, [_vm._v("w-1/3")])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "w-1/3 px-2" }, [
-              _c("div", { staticClass: "bg-grid-color-secondary h-12 flex" }, [
-                _c("span", { staticClass: "flex m-auto" }, [_vm._v("w-1/3")])
-              ])
-            ])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<div class="px-2">\n  <div class="flex -mx-2">\n    <div class="w-1/3 px-2">\n      <div class="bg-grid-color-secondary h-12"></div>\n    </div>\n    <div class="w-1/3 px-2">\n      <div class="bg-grid-color h-12"></div>\n    </div>\n    <div class="w-1/3 px-2">\n      <div class="bg-grid-color-secondary h-12"></div>\n    </div>\n  </div>\n</div>\n        '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridMixedColumnSizes.vue?vue&type=template&id=6367c244&":
-/*!******************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridMixedColumnSizes.vue?vue&type=template&id=6367c244& ***!
-  \******************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Mixed Column Sizes", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v(
-          "Mix different percentage width utilities to build mixed size grids"
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mt-5" }, [
-        _c("div", { staticClass: "flex mb-4" }, [
-          _c("div", { staticClass: "w-3/4 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "flex m-auto" }, [_vm._v("w-3/4")])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "w-1/4 bg-grid-color-secondary h-12 flex" },
-            [_c("span", { staticClass: "flex m-auto" }, [_vm._v("w-1/4")])]
-          )
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex" }, [
-          _c("div", { staticClass: "w-1/5 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "flex m-auto" }, [_vm._v("w-1/5")])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "w-3/5 bg-grid-color-secondary h-12 flex" },
-            [_c("span", { staticClass: "flex m-auto" }, [_vm._v("w-3/5")])]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "w-1/5 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "flex m-auto" }, [_vm._v("w-1/5")])
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<!-- Narrower side column -->\n<div class="flex mb-4">\n  <div class="w-3/4 bg-grid-color h-12"></div>\n  <div class="w-1/4 bg-grid-color-secondary h-12"></div>\n</div>\n\n<!-- Wide center column -->\n<div class="flex">\n  <div class="w-1/5 bg-grid-color h-12"></div>\n  <div class="w-3/5 bg-grid-color-secondary h-12"></div>\n  <div class="w-1/5 bg-grid-color h-12"></div>\n</div>\n        '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridResponsiveGrids.vue?vue&type=template&id=5a1be52c&":
-/*!*****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridResponsiveGrids.vue?vue&type=template&id=5a1be52c& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Responsive Grids", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v(
-          "Use the responsive variants of the width utilities to build responsive grid layouts"
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mt-5" }, [
-        _c(
-          "div",
-          { staticClass: "flex flex-wrap mb-base" },
-          [
-            _c(
-              "vs-button",
-              {
-                staticClass: "mr-4 mb-4",
-                attrs: { type: "border" },
-                on: {
-                  click: function($event) {
-                    _vm.colClass = "w-full"
-                  }
-                }
-              },
-              [_vm._v("All (w-full)")]
-            ),
-            _vm._v(" "),
-            _c(
-              "vs-button",
-              {
-                staticClass: "mr-4 mb-4",
-                attrs: { type: "border" },
-                on: {
-                  click: function($event) {
-                    _vm.colClass = "w-1/2"
-                  }
-                }
-              },
-              [_vm._v("sm:w-1/2")]
-            ),
-            _vm._v(" "),
-            _c(
-              "vs-button",
-              {
-                staticClass: "mr-4 mb-4",
-                attrs: { type: "border" },
-                on: {
-                  click: function($event) {
-                    _vm.colClass = "w-1/3"
-                  }
-                }
-              },
-              [_vm._v("md:w-1/3")]
-            ),
-            _vm._v(" "),
-            _c(
-              "vs-button",
-              {
-                staticClass: "mr-4 mb-4",
-                attrs: { type: "border" },
-                on: {
-                  click: function($event) {
-                    _vm.colClass = "w-1/4"
-                  }
-                }
-              },
-              [_vm._v("lg:w-1/4")]
-            ),
-            _vm._v(" "),
-            _c(
-              "vs-button",
-              {
-                staticClass: "mr-4 mb-4",
-                attrs: { type: "border" },
-                on: {
-                  click: function($event) {
-                    _vm.colClass = "w-1/6"
-                  }
-                }
-              },
-              [_vm._v("xl:w-1/6")]
-            )
-          ],
-          1
-        ),
-        _vm._v(" "),
-        _c("div", { staticClass: "flex flex-wrap" }, [
-          _c("div", {
-            staticClass: "mb-4 h-12 bg-grid-color",
-            class: _vm.colClass
-          }),
-          _vm._v(" "),
-          _c("div", {
-            staticClass: "mb-4 h-12 bg-grid-color-secondary",
-            class: _vm.colClass
-          }),
-          _vm._v(" "),
-          _c("div", {
-            staticClass: "mb-4 h-12 bg-grid-color",
-            class: _vm.colClass
-          }),
-          _vm._v(" "),
-          _c("div", {
-            staticClass: "mb-4 h-12 bg-grid-color-secondary",
-            class: _vm.colClass
-          }),
-          _vm._v(" "),
-          _c("div", {
-            staticClass: "mb-4 h-12 bg-grid-color",
-            class: _vm.colClass
-          }),
-          _vm._v(" "),
-          _c("div", {
-            staticClass: "mb-4 h-12 bg-grid-color-secondary",
-            class: _vm.colClass
-          })
-        ])
-      ]),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<div class="flex flex-wrap">\n  <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grid-color"></div>\n  <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grid-color-secondary"></div>\n  <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grid-color"></div>\n  <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 xl:w-1/6 mb-4 bg-grid-color-secondary"></div>\n  <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/6 mb-4 bg-grid-color"></div>\n  <div class="w-full sm:w-1/2 md:w-1/3 lg:w-1/2 xl:w-1/6 mb-4 bg-grid-color-secondary"></div>\n</div>\n        '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridSimpleOffset.vue?vue&type=template&id=362c6f3c&":
-/*!**************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridSimpleOffset.vue?vue&type=template&id=362c6f3c& ***!
-  \**************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Simple Offsets", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("Use auto margin utilities like "),
-        _c("code", [_vm._v("ml-auto")]),
-        _vm._v(" and "),
-        _c("code", [_vm._v("mr-auto")]),
-        _vm._v(" to offset columns in a row")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mt-5" }, [
-        _c("div", { staticClass: "flex flex-wrap" }, [
-          _c("div", { staticClass: "w-1/3 ml-auto bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "flex m-auto" }, [
-              _c("span", { staticClass: "sm:inline hidden mr-2" }, [
-                _vm._v("w-1/3")
-              ]),
-              _vm._v(" "),
-              _c("span", [_vm._v("ml-auto")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "w-1/3 mr-auto bg-grid-color-secondary h-12 flex" },
-            [
-              _c("span", { staticClass: "flex m-auto" }, [
-                _c("span", { staticClass: "sm:inline hidden mr-2" }, [
-                  _vm._v("w-1/3")
-                ]),
-                _vm._v(" "),
-                _c("span", [_vm._v("mr-auto")])
-              ])
-            ]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<div class="flex flex-wrap">\n  <div class="w-1/3 ml-auto bg-grid-color h-12"></div>\n  <div class="w-1/3 mr-auto bg-grid-color-secondary h-12"></div>\n</div>\n        '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=template&id=2a56ce56&":
-/*!**********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=template&id=2a56ce56& ***!
-  \**********************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/Chip.vue?vue&type=template&id=71e9dba3&":
+/*!***********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/chip/Chip.vue?vue&type=template&id=71e9dba3& ***!
+  \***********************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1113,21 +555,21 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { attrs: { id: "tailwind-grid-demo" } },
+    { attrs: { id: "chip-demo" } },
     [
-      _c("grid-basic-grid"),
+      _c("chip-default"),
       _vm._v(" "),
-      _c("grid-responsive-grids"),
+      _c("chip-color"),
       _vm._v(" "),
-      _c("grid-mixed-column-sizes"),
+      _c("chip-transparent"),
       _vm._v(" "),
-      _c("grid-wrapping-columns"),
+      _c("chip-icon"),
       _vm._v(" "),
-      _c("grid-column-spacing"),
+      _c("chip-closable"),
       _vm._v(" "),
-      _c("grid-auto-column-width"),
+      _c("chip-add-remove"),
       _vm._v(" "),
-      _c("grid-simple-offset")
+      _c("chip-customize-close-clear-chip-icon")
     ],
     1
   )
@@ -1139,10 +581,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridWrappingColumns.vue?vue&type=template&id=51fa8014&":
-/*!*****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridWrappingColumns.vue?vue&type=template&id=51fa8014& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipAddRemove.vue?vue&type=template&id=bfe4e85c&":
+/*!********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/chip/ChipAddRemove.vue?vue&type=template&id=bfe4e85c& ***!
+  \********************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1156,49 +598,70 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Wrapping Columns", "code-toggler": "" } },
+    { attrs: { title: "Add and Remove Items", "code-toggler": "" } },
     [
       _c("p", [
-        _vm._v("Add "),
-        _c("code", [_vm._v("flex-wrap")]),
-        _vm._v(
-          " to your column container to allow columns to wrap when they run out of room"
-        )
+        _vm._v("You can add and remove chips with the "),
+        _c("code", [_vm._v("vs-chips")]),
+        _vm._v(" component. For the main parameter, pass the "),
+        _c("code", [_vm._v("items")]),
+        _vm._v(" property, which is an array representing each chip")
       ]),
       _vm._v(" "),
-      _c("div", { staticClass: "mt-5" }, [
-        _c("div", { staticClass: "flex flex-wrap -mb-4" }, [
-          _c(
-            "div",
-            { staticClass: "w-1/3 mb-4 bg-grid-color-secondary h-12 flex" },
-            [_c("span", { staticClass: "flex m-auto" }, [_vm._v("w-1/3")])]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "w-1/3 mb-4 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "flex m-auto" }, [_vm._v("w-1/3")])
+      _c(
+        "div",
+        { staticClass: "mt-5" },
+        [
+          _c("div", { staticClass: "op-block mb-5" }, [
+            _vm._v(" " + _vm._s(_vm.chips) + " ")
           ]),
           _vm._v(" "),
           _c(
-            "div",
-            { staticClass: "w-1/3 mb-4 bg-grid-color-secondary h-12 flex" },
-            [_c("span", { staticClass: "flex m-auto" }, [_vm._v("w-1/3")])]
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "w-1/3 mb-4 bg-grid-color h-12 flex" }, [
-            _c("span", { staticClass: "flex m-auto" }, [_vm._v("w-1/3")])
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "w-1/3 mb-4 bg-grid-color-secondary h-12 flex" },
-            [_c("span", { staticClass: "flex m-auto" }, [_vm._v("w-1/3")])]
+            "vs-chips",
+            {
+              attrs: { color: "rgb(145, 32, 159)", placeholder: "New Element" },
+              model: {
+                value: _vm.chips,
+                callback: function($$v) {
+                  _vm.chips = $$v
+                },
+                expression: "chips"
+              }
+            },
+            _vm._l(_vm.chips, function(chip, index) {
+              return _c(
+                "vs-chip",
+                {
+                  key: chip + "-" + index,
+                  attrs: { closable: "" },
+                  on: {
+                    click: function($event) {
+                      return _vm.remove(chip)
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(chip) +
+                      "\n                "
+                  )
+                ]
+              )
+            }),
+            1
           )
-        ])
-      ]),
+        ],
+        1
+      ),
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<div class="flex flex-wrap -mb-4">\n  <div class="w-1/3 mb-4 bg-grid-color-secondary h-12"></div>\n  <div class="w-1/3 mb-4 bg-grid-color h-12"></div>\n  <div class="w-1/3 mb-4 bg-grid-color-secondary h-12"></div>\n  <div class="w-1/3 mb-4 bg-grid-color h-12"></div>\n  <div class="w-1/3 mb-4 bg-grid-color-secondary h-12"></div>\n</div>\n        '
+          '\n<template>\n  <div class="op-block mb-4"> ' +
+            _vm._s("{{ chips }}") +
+            ' </div>\n  <vs-chips color="rgb(145, 32, 159)" placeholder="New Element" v-model="chips">\n    <vs-chip\n      :key="chip"\n      @click="remove(chip)"\n      v-for="chip in chips"\n      closable>\n      ' +
+            _vm._s("{{ chip }}") +
+            "}\n    </vs-chip>\n  </vs-chips>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      chips:[\n        'Dribbble',\n        'GitHub',\n        'Behance',\n        'Vuejs',\n        'Vuexy',\n      ],\n    }\n  },\n  methods: {\n    remove (item) {\n      this.chips.splice(this.chips.indexOf(item), 1)\n    }\n  }\n}\n</script>\n        "
         )
       ])
     ],
@@ -1212,282 +675,692 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridAutoColumnWidth.vue":
-/*!****************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridAutoColumnWidth.vue ***!
-  \****************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _GridAutoColumnWidth_vue_vue_type_template_id_89fbe118___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GridAutoColumnWidth.vue?vue&type=template&id=89fbe118& */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridAutoColumnWidth.vue?vue&type=template&id=89fbe118&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-var script = {}
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
-  _GridAutoColumnWidth_vue_vue_type_template_id_89fbe118___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _GridAutoColumnWidth_vue_vue_type_template_id_89fbe118___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/ui-elements/grid/tailwind/GridAutoColumnWidth.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridAutoColumnWidth.vue?vue&type=template&id=89fbe118&":
-/*!***********************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridAutoColumnWidth.vue?vue&type=template&id=89fbe118& ***!
-  \***********************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipClosable.vue?vue&type=template&id=0efed7ac&":
+/*!*******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/chip/ChipClosable.vue?vue&type=template&id=0efed7ac& ***!
+  \*******************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridAutoColumnWidth_vue_vue_type_template_id_89fbe118___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GridAutoColumnWidth.vue?vue&type=template&id=89fbe118& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridAutoColumnWidth.vue?vue&type=template&id=89fbe118&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridAutoColumnWidth_vue_vue_type_template_id_89fbe118___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridAutoColumnWidth_vue_vue_type_template_id_89fbe118___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Closable", "code-toggler": "" } },
+    [
+      _c("p", [_vm._v("For making a chip closable")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "demo-alignment" },
+        [
+          _vm.chips.length == 0
+            ? _c(
+                "vs-button",
+                { attrs: { type: "filled" }, on: { click: _vm.reset } },
+                [_vm._v("Reset Chips")]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          _vm._l(_vm.chips, function(chip, index) {
+            return _c(
+              "vs-chip",
+              {
+                key: index,
+                attrs: { closable: "" },
+                on: {
+                  click: function($event) {
+                    return _vm.remove(chip)
+                  }
+                }
+              },
+              [_vm._v(" " + _vm._s(chip) + " ")]
+            )
+          })
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n  <div class="demo-alignment">\n\n    <vs-button v-if="chips.length == 0" @click="reset" type="filled">Reset Chips</vs-button>\n    <vs-chip @click="remove(chip)" v-for="(chip, index) in chips" :key="index" closable> ' +
+            _vm._s("{{ chip }}") +
+            "} </vs-chip>\n\n  </div>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      chips:[\n        'Dribbble',\n        'GitHub',\n        'Behance',\n        'Vuejs',\n        'Vuexy',\n      ],\n    }\n  },\n  methods: {\n    reset () {\n      this.chips = [\n        'Dribbble',\n        'GitHub',\n        'Behance',\n        'Vuejs',\n        'Vuexy',\n      ]\n    },\n    remove (item) {\n      this.chips.splice(this.chips.indexOf(item), 1)\n    }\n  }\n}\n</script>\n        "
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridBasicGrid.vue":
-/*!**********************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridBasicGrid.vue ***!
-  \**********************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _GridBasicGrid_vue_vue_type_template_id_1c537be7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GridBasicGrid.vue?vue&type=template&id=1c537be7& */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridBasicGrid.vue?vue&type=template&id=1c537be7&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-var script = {}
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
-  _GridBasicGrid_vue_vue_type_template_id_1c537be7___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _GridBasicGrid_vue_vue_type_template_id_1c537be7___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/ui-elements/grid/tailwind/GridBasicGrid.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridBasicGrid.vue?vue&type=template&id=1c537be7&":
-/*!*****************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridBasicGrid.vue?vue&type=template&id=1c537be7& ***!
-  \*****************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipColor.vue?vue&type=template&id=9e1143a0&":
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/chip/ChipColor.vue?vue&type=template&id=9e1143a0& ***!
+  \****************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridBasicGrid_vue_vue_type_template_id_1c537be7___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GridBasicGrid.vue?vue&type=template&id=1c537be7& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridBasicGrid.vue?vue&type=template&id=1c537be7&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridBasicGrid_vue_vue_type_template_id_1c537be7___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridBasicGrid_vue_vue_type_template_id_1c537be7___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Color", "code-toggler": "" } },
+    [
+      _c("p", [_vm._v("Change the background color of the chip")]),
+      _vm._v(" "),
+      _c(
+        "vs-alert",
+        {
+          staticClass: "my-3",
+          attrs: { icon: "warning", active: "true", color: "warning" }
+        },
+        [
+          _c("span", [
+            _vm._v("Only "),
+            _c("strong", [_vm._v("RGB")]),
+            _vm._v(" and "),
+            _c("strong", [_vm._v("HEX")]),
+            _vm._v(" colors are supported.")
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "demo-alignment" },
+        [
+          _c("vs-chip", { attrs: { color: "primary" } }, [
+            _vm._v("\n                Basic Chip\n            ")
+          ]),
+          _vm._v(" "),
+          _c(
+            "vs-chip",
+            { attrs: { color: "success" } },
+            [
+              _c("vs-avatar", { attrs: { text: "LD" } }),
+              _vm._v("\n                Avatar Text\n            ")
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-chip",
+            { attrs: { color: "danger" } },
+            [
+              _c("vs-avatar"),
+              _vm._v("\n                Avatar Icon\n            ")
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-chip",
+            { attrs: { color: "warning" } },
+            [
+              _c("vs-avatar", {
+                attrs: { src: "https://randomuser.me/api/portraits/men/4.jpg" }
+              }),
+              _vm._v("\n                Avatar Image\n            ")
+            ],
+            1
+          ),
+          _vm._v(" "),
+          !_vm.isDeleted
+            ? _c(
+                "vs-chip",
+                {
+                  attrs: { closable: "", color: "dark" },
+                  on: {
+                    click: function($event) {
+                      _vm.isDeleted = true
+                    }
+                  }
+                },
+                [_vm._v("\n                Closable chip\n            ")]
+              )
+            : _vm._e(),
+          _vm._v(" "),
+          !_vm.isDeleted2
+            ? _c(
+                "vs-chip",
+                {
+                  attrs: {
+                    closable: "",
+                    color: "#24c1a0",
+                    "close-icon": "close"
+                  },
+                  on: {
+                    click: function($event) {
+                      _vm.isDeleted2 = true
+                    }
+                  }
+                },
+                [
+                  _c("vs-avatar", {
+                    attrs: {
+                      src: "https://randomuser.me/api/portraits/men/16.jpg"
+                    }
+                  }),
+                  _vm._v("\n                Closable chip\n            ")
+                ],
+                1
+              )
+            : _vm._e()
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n  <div class="demo-alignment">\n\n    <vs-chip color="primary">Basic Chip</vs-chip>\n\n    <vs-chip color="success">\n      <vs-avatar text="LD" />\n      Avatar Text\n    </vs-chip>\n\n    <vs-chip color="danger">\n      <vs-avatar />\n      Avatar Icon\n    </vs-chip>\n\n    <vs-chip color="warning">\n      <vs-avatar src="https://randomuser.me/api/portraits/men/4.jpg" />\n      Avatar Image\n    </vs-chip>\n\n    <vs-chip @click="isDeleted=true" v-if="!isDeleted" closable color="dark">\n      Closable chip\n    </vs-chip>\n\n    <vs-chip @click="isDeleted2=true" v-if="!isDeleted2" closable color="#24c1a0" close-icon="close">\n      <vs-avatar src="https://randomuser.me/api/portraits/men/16.jpg" />\n      Closable chip\n    </vs-chip>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      isDeleted: false,\n      isDeleted2: false,\n    }\n  }\n}\n</script>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnOrder.vue":
-/*!************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnOrder.vue ***!
-  \************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _GridColumnOrder_vue_vue_type_template_id_b16017aa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GridColumnOrder.vue?vue&type=template&id=b16017aa& */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnOrder.vue?vue&type=template&id=b16017aa&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-var script = {}
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
-  _GridColumnOrder_vue_vue_type_template_id_b16017aa___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _GridColumnOrder_vue_vue_type_template_id_b16017aa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnOrder.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnOrder.vue?vue&type=template&id=b16017aa&":
-/*!*******************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnOrder.vue?vue&type=template&id=b16017aa& ***!
-  \*******************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipCustomizeCloseClearChipIcon.vue?vue&type=template&id=57b7daea&":
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/chip/ChipCustomizeCloseClearChipIcon.vue?vue&type=template&id=57b7daea& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridColumnOrder_vue_vue_type_template_id_b16017aa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GridColumnOrder.vue?vue&type=template&id=b16017aa& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnOrder.vue?vue&type=template&id=b16017aa&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridColumnOrder_vue_vue_type_template_id_b16017aa___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridColumnOrder_vue_vue_type_template_id_b16017aa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    {
+      attrs: {
+        title: "Customize Close and Clear Chips Icons",
+        "code-toggler": ""
+      }
+    },
+    [
+      _c("p", [
+        _vm._v(
+          "You can change the icons used for the close button and the clear button when using multiple chips with the "
+        ),
+        _c("code", [_vm._v("vs-chips")]),
+        _vm._v(" component.")
+      ]),
+      _vm._v(" "),
+      _c("p", [
+        _vm._v("For the main parameter, pass the "),
+        _c("code", [_vm._v("close-icon")]),
+        _vm._v(
+          " property, which is the close icon that appears on each chip. You can change the Clear Chips button with the "
+        ),
+        _c("code", [_vm._v("remove-icon")]),
+        _vm._v(" property")
+      ]),
+      _vm._v(" "),
+      _c(
+        "vs-alert",
+        {
+          staticClass: "mt-5",
+          attrs: { color: "primary", icon: "new_releases", active: "true" }
+        },
+        [
+          _c("p", [
+            _vm._v(
+              "Vuesax uses the Google Material Icons font library by default. For a list of all available icons, visit the official "
+            ),
+            _c(
+              "a",
+              {
+                attrs: { href: "https://material.io/icons/", target: "_blank" }
+              },
+              [_vm._v("Material Icons page")]
+            ),
+            _vm._v(".")
+          ]),
+          _vm._v(" "),
+          _c("p", [
+            _vm._v(
+              "FontAwesome and other fonts library are supported. Simply use the icon-pack with fa or fas. You still need to include the Font Awesome icons in your project."
+            )
+          ])
+        ]
+      ),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "mt-5" },
+        [
+          _c("div", { staticClass: "op-block mb-5" }, [
+            _vm._v(" " + _vm._s(_vm.chips) + " ")
+          ]),
+          _vm._v(" "),
+          _c(
+            "vs-chips",
+            {
+              attrs: {
+                color: "rgb(145, 32, 159)",
+                placeholder: "New Element",
+                "icon-pack": "feather",
+                "remove-icon": "icon-trash-2"
+              },
+              model: {
+                value: _vm.chips,
+                callback: function($$v) {
+                  _vm.chips = $$v
+                },
+                expression: "chips"
+              }
+            },
+            _vm._l(_vm.chips, function(chip, index) {
+              return _c(
+                "vs-chip",
+                {
+                  key: chip + "-" + index,
+                  attrs: {
+                    closable: "",
+                    "icon-pack": "feather",
+                    "close-icon": "icon-trash-2"
+                  },
+                  on: {
+                    click: function($event) {
+                      return _vm.remove(chip)
+                    }
+                  }
+                },
+                [
+                  _vm._v(
+                    "\n                    " +
+                      _vm._s(chip) +
+                      "\n                "
+                  )
+                ]
+              )
+            }),
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n  <div class="op-block mb-4"> ' +
+            _vm._s("{{ chips }}") +
+            ' </div>\n  <vs-chips color="rgb(145, 32, 159)" placeholder="New Element" v-model="chips" icon-pack="feather" remove-icon="icon-trash-2">\n    <vs-chip\n      :key="chip"\n      @click="remove(chip)"\n      v-for="chip in chips"\n      closable\n      icon-pack="feather"\n      close-icon="icon-trash-2">\n      ' +
+            _vm._s("{{ chip }}") +
+            "\n    </vs-chip>\n  </vs-chips>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      chips:[\n        'Dribbble',\n        'GitHub',\n        'Behance',\n        'Vuejs',\n        'Vuexy',\n      ],\n    }\n  },\n  methods: {\n    remove (item) {\n      this.chips.splice(this.chips.indexOf(item), 1)\n    }\n  }\n}\n</script>\n        "
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnSpacing.vue":
-/*!**************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnSpacing.vue ***!
-  \**************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _GridColumnSpacing_vue_vue_type_template_id_fc82dd40___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GridColumnSpacing.vue?vue&type=template&id=fc82dd40& */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnSpacing.vue?vue&type=template&id=fc82dd40&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-var script = {}
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
-  _GridColumnSpacing_vue_vue_type_template_id_fc82dd40___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _GridColumnSpacing_vue_vue_type_template_id_fc82dd40___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnSpacing.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnSpacing.vue?vue&type=template&id=fc82dd40&":
-/*!*********************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnSpacing.vue?vue&type=template&id=fc82dd40& ***!
-  \*********************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipDefault.vue?vue&type=template&id=3af6ccce&":
+/*!******************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/chip/ChipDefault.vue?vue&type=template&id=3af6ccce& ***!
+  \******************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridColumnSpacing_vue_vue_type_template_id_fc82dd40___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GridColumnSpacing.vue?vue&type=template&id=fc82dd40& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridColumnSpacing.vue?vue&type=template&id=fc82dd40&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridColumnSpacing_vue_vue_type_template_id_fc82dd40___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridColumnSpacing_vue_vue_type_template_id_fc82dd40___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Default", "code-toggler": "" } },
+    [
+      _c("p", [
+        _vm._v("Helps you represent simple data with colorful options")
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "demo-alignment" },
+        [
+          _c("vs-chip", [_vm._v("Basic Chip")]),
+          _vm._v(" "),
+          _c(
+            "vs-chip",
+            [
+              _c("vs-avatar", { attrs: { text: "LD" } }),
+              _vm._v("\n                Avatar Text\n            ")
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-chip",
+            [
+              _c("vs-avatar"),
+              _vm._v("\n                Avatar Icon\n            ")
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-chip",
+            [
+              _c("vs-avatar", {
+                attrs: { src: "https://randomuser.me/api/portraits/men/4.jpg" }
+              }),
+              _vm._v("\n                Avatar Image\n            ")
+            ],
+            1
+          ),
+          _vm._v(" "),
+          !_vm.isDeleted
+            ? _c(
+                "vs-chip",
+                {
+                  attrs: { closable: "" },
+                  on: {
+                    click: function($event) {
+                      _vm.isDeleted = true
+                    }
+                  }
+                },
+                [_vm._v("\n                Closable chip\n            ")]
+              )
+            : _vm._e()
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n  <div class="demo-alignment">\n\n    <vs-chip>Basic Chip</vs-chip>\n\n    <vs-chip>\n      <vs-avatar text="LD"/>\n      Avatar Text\n    </vs-chip>\n\n    <vs-chip>\n      <vs-avatar />\n      Avatar Icon\n    </vs-chip>\n\n    <vs-chip>\n      <vs-avatar src="https://randomuser.me/api/portraits/men/4.jpg"/>\n      Avatar Image\n    </vs-chip>\n\n    <vs-chip @click="isDeleted=true" v-if="!isDeleted" closable>\n      Closable chip\n    </vs-chip>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      isDeleted: false,\n    }\n  }\n}\n</script>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridMixedColumnSizes.vue":
-/*!*****************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridMixedColumnSizes.vue ***!
-  \*****************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _GridMixedColumnSizes_vue_vue_type_template_id_6367c244___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GridMixedColumnSizes.vue?vue&type=template&id=6367c244& */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridMixedColumnSizes.vue?vue&type=template&id=6367c244&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-var script = {}
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
-  script,
-  _GridMixedColumnSizes_vue_vue_type_template_id_6367c244___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _GridMixedColumnSizes_vue_vue_type_template_id_6367c244___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/ui-elements/grid/tailwind/GridMixedColumnSizes.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridMixedColumnSizes.vue?vue&type=template&id=6367c244&":
-/*!************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridMixedColumnSizes.vue?vue&type=template&id=6367c244& ***!
-  \************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipIcon.vue?vue&type=template&id=6a7f1a3c&":
+/*!***************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/chip/ChipIcon.vue?vue&type=template&id=6a7f1a3c& ***!
+  \***************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridMixedColumnSizes_vue_vue_type_template_id_6367c244___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GridMixedColumnSizes.vue?vue&type=template&id=6367c244& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridMixedColumnSizes.vue?vue&type=template&id=6367c244&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridMixedColumnSizes_vue_vue_type_template_id_6367c244___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridMixedColumnSizes_vue_vue_type_template_id_6367c244___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Icon", "code-toggler": "" } },
+    [
+      _c("p", [_vm._v("Add a nice icon to the chip")]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "demo-alignment" },
+        [
+          _c(
+            "vs-chip",
+            [
+              _c("vs-avatar", {
+                attrs: { "icon-pack": "feather", icon: "icon-user" }
+              }),
+              _vm._v(" "),
+              _c("span", [_vm._v("Icon Default")])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-chip",
+            { attrs: { color: "primary" } },
+            [
+              _c("vs-avatar", {
+                attrs: { "icon-pack": "feather", icon: "icon-send" }
+              }),
+              _vm._v(" "),
+              _c("span", [_vm._v("Icon send")])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-chip",
+            { attrs: { color: "success" } },
+            [
+              _c("vs-avatar", {
+                attrs: { "icon-pack": "feather", icon: "icon-mail" }
+              }),
+              _vm._v(" "),
+              _c("span", [_vm._v("Icon markunread")])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-chip",
+            { attrs: { color: "danger" } },
+            [
+              _c("vs-avatar", {
+                attrs: { "icon-pack": "feather", icon: "icon-slash" }
+              }),
+              _vm._v(" "),
+              _c("span", [_vm._v("Icon block")])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-chip",
+            { attrs: { color: "warning" } },
+            [
+              _c("vs-avatar", {
+                attrs: { "icon-pack": "feather", icon: "icon-battery" }
+              }),
+              _vm._v(" "),
+              _c("span", [_vm._v("Icon battery_alert")])
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-chip",
+            { attrs: { color: "dark" } },
+            [
+              _c("vs-avatar", {
+                attrs: { "icon-pack": "feather", icon: "icon-edit" }
+              }),
+              _vm._v(" "),
+              _c("span", [_vm._v("Icon edit")])
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<div class="demo-alignment">\n\n  <vs-chip>\n    <vs-avatar icon-pack="feather" icon="icon-user" />\n    <span>Icon Default</span>\n  </vs-chip>\n\n  <vs-chip color="primary">\n    <vs-avatar icon-pack="feather" icon="icon-send" />\n    <span>Icon send</span>\n  </vs-chip>\n\n  <vs-chip color="success">\n    <vs-avatar icon-pack="feather" icon="icon-mail" />\n    <span>Icon markunread</span>\n  </vs-chip>\n\n  <vs-chip color="danger">\n    <vs-avatar icon-pack="feather" icon="icon-slash" />\n    <span>Icon block</span>\n  </vs-chip>\n\n  <vs-chip color="warning">\n    <vs-avatar icon-pack="feather" icon="icon-battery" />\n    <span>Icon battery_alert</span>\n  </vs-chip>\n\n  <vs-chip color="dark">\n    <vs-avatar icon-pack="feather" icon="icon-edit" />\n    <span>Icon edit</span>\n  </vs-chip>\n</div>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridResponsiveGrids.vue":
-/*!****************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridResponsiveGrids.vue ***!
-  \****************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipTransparent.vue?vue&type=template&id=d183be42&":
+/*!**********************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/vuesax/chip/ChipTransparent.vue?vue&type=template&id=d183be42& ***!
+  \**********************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    { attrs: { title: "Transparent", "code-toggler": "" } },
+    [
+      _c("p", [
+        _vm._v("You can create transparent chip using "),
+        _c("code", [_vm._v("transparent")]),
+        _vm._v(" prop.")
+      ]),
+      _vm._v(" "),
+      _c(
+        "div",
+        { staticClass: "demo-alignment" },
+        [
+          _c("vs-chip", { attrs: { transparent: "", color: "primary" } }, [
+            _vm._v("\n        Basic Chip\n      ")
+          ]),
+          _vm._v(" "),
+          _c(
+            "vs-chip",
+            { attrs: { transparent: "", color: "success" } },
+            [
+              _c("vs-avatar", { attrs: { text: "LD" } }),
+              _vm._v("\n        Avatar Text\n      ")
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-chip",
+            { attrs: { transparent: "", color: "danger" } },
+            [_c("vs-avatar"), _vm._v("\n        Avatar Icon\n      ")],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-chip",
+            { attrs: { transparent: "", color: "warning" } },
+            [
+              _c("vs-avatar", {
+                attrs: { src: "https://randomuser.me/api/portraits/men/4.jpg" }
+              }),
+              _vm._v("\n        Avatar Image\n      ")
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-chip",
+            { attrs: { transparent: "", closable: "", color: "dark" } },
+            [_vm._v("\n        Closable chip\n      ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-chip",
+            {
+              attrs: {
+                transparent: "",
+                closable: "",
+                color: "#24c1a0",
+                "close-icon": "close"
+              }
+            },
+            [
+              _c("vs-avatar", {
+                attrs: { src: "https://randomuser.me/api/portraits/men/16.jpg" }
+              }),
+              _vm._v("\n        Closable chip\n      ")
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n  <div class="demo-alignment">\n    <vs-chip transparent color="primary">\n      Basic Chip\n    </vs-chip>\n    <vs-chip transparent color="success">\n      <vs-avatar text="LD"/>\n      Avatar Text\n    </vs-chip>\n    <vs-chip transparent color="danger">\n      <vs-avatar />\n      Avatar Icon\n    </vs-chip>\n    <vs-chip transparent color="warning">\n      <vs-avatar src="https://randomuser.me/api/portraits/men/4.jpg"/>\n      Avatar Image\n    </vs-chip >\n    <vs-chip transparent closable color="dark">\n      Closable chip\n    </vs-chip>\n    <vs-chip transparent closable color="#24c1a0" close-icon="close">\n      <vs-avatar src="https://randomuser.me/api/portraits/men/16.jpg"/>\n      Closable chip\n    </vs-chip>\n  </div>\n</template>\n    '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/Chip.vue":
+/*!**********************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/Chip.vue ***!
+  \**********************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _GridResponsiveGrids_vue_vue_type_template_id_5a1be52c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GridResponsiveGrids.vue?vue&type=template&id=5a1be52c& */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridResponsiveGrids.vue?vue&type=template&id=5a1be52c&");
-/* harmony import */ var _GridResponsiveGrids_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GridResponsiveGrids.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridResponsiveGrids.vue?vue&type=script&lang=js&");
+/* harmony import */ var _Chip_vue_vue_type_template_id_71e9dba3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Chip.vue?vue&type=template&id=71e9dba3& */ "./resources/admin/js/src/views/components/vuesax/chip/Chip.vue?vue&type=template&id=71e9dba3&");
+/* harmony import */ var _Chip_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Chip.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/vuesax/chip/Chip.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -1497,9 +1370,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _GridResponsiveGrids_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _GridResponsiveGrids_vue_vue_type_template_id_5a1be52c___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _GridResponsiveGrids_vue_vue_type_template_id_5a1be52c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Chip_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Chip_vue_vue_type_template_id_71e9dba3___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Chip_vue_vue_type_template_id_71e9dba3___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1509,53 +1382,398 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/ui-elements/grid/tailwind/GridResponsiveGrids.vue"
+component.options.__file = "resources/admin/js/src/views/components/vuesax/chip/Chip.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridResponsiveGrids.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridResponsiveGrids.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/Chip.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/Chip.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GridResponsiveGrids_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GridResponsiveGrids.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridResponsiveGrids.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GridResponsiveGrids_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Chip_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Chip.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/Chip.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Chip_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridResponsiveGrids.vue?vue&type=template&id=5a1be52c&":
-/*!***********************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridResponsiveGrids.vue?vue&type=template&id=5a1be52c& ***!
-  \***********************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/Chip.vue?vue&type=template&id=71e9dba3&":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/Chip.vue?vue&type=template&id=71e9dba3& ***!
+  \*****************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridResponsiveGrids_vue_vue_type_template_id_5a1be52c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GridResponsiveGrids.vue?vue&type=template&id=5a1be52c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridResponsiveGrids.vue?vue&type=template&id=5a1be52c&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridResponsiveGrids_vue_vue_type_template_id_5a1be52c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Chip_vue_vue_type_template_id_71e9dba3___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Chip.vue?vue&type=template&id=71e9dba3& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/Chip.vue?vue&type=template&id=71e9dba3&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Chip_vue_vue_type_template_id_71e9dba3___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridResponsiveGrids_vue_vue_type_template_id_5a1be52c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Chip_vue_vue_type_template_id_71e9dba3___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridSimpleOffset.vue":
-/*!*************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridSimpleOffset.vue ***!
-  \*************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipAddRemove.vue":
+/*!*******************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipAddRemove.vue ***!
+  \*******************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _GridSimpleOffset_vue_vue_type_template_id_362c6f3c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GridSimpleOffset.vue?vue&type=template&id=362c6f3c& */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridSimpleOffset.vue?vue&type=template&id=362c6f3c&");
+/* harmony import */ var _ChipAddRemove_vue_vue_type_template_id_bfe4e85c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ChipAddRemove.vue?vue&type=template&id=bfe4e85c& */ "./resources/admin/js/src/views/components/vuesax/chip/ChipAddRemove.vue?vue&type=template&id=bfe4e85c&");
+/* harmony import */ var _ChipAddRemove_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ChipAddRemove.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/vuesax/chip/ChipAddRemove.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ChipAddRemove_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ChipAddRemove_vue_vue_type_template_id_bfe4e85c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ChipAddRemove_vue_vue_type_template_id_bfe4e85c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/vuesax/chip/ChipAddRemove.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipAddRemove.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipAddRemove.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipAddRemove_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ChipAddRemove.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipAddRemove.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipAddRemove_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipAddRemove.vue?vue&type=template&id=bfe4e85c&":
+/*!**************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipAddRemove.vue?vue&type=template&id=bfe4e85c& ***!
+  \**************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipAddRemove_vue_vue_type_template_id_bfe4e85c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ChipAddRemove.vue?vue&type=template&id=bfe4e85c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipAddRemove.vue?vue&type=template&id=bfe4e85c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipAddRemove_vue_vue_type_template_id_bfe4e85c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipAddRemove_vue_vue_type_template_id_bfe4e85c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipClosable.vue":
+/*!******************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipClosable.vue ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ChipClosable_vue_vue_type_template_id_0efed7ac___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ChipClosable.vue?vue&type=template&id=0efed7ac& */ "./resources/admin/js/src/views/components/vuesax/chip/ChipClosable.vue?vue&type=template&id=0efed7ac&");
+/* harmony import */ var _ChipClosable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ChipClosable.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/vuesax/chip/ChipClosable.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ChipClosable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ChipClosable_vue_vue_type_template_id_0efed7ac___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ChipClosable_vue_vue_type_template_id_0efed7ac___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/vuesax/chip/ChipClosable.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipClosable.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipClosable.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipClosable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ChipClosable.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipClosable.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipClosable_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipClosable.vue?vue&type=template&id=0efed7ac&":
+/*!*************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipClosable.vue?vue&type=template&id=0efed7ac& ***!
+  \*************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipClosable_vue_vue_type_template_id_0efed7ac___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ChipClosable.vue?vue&type=template&id=0efed7ac& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipClosable.vue?vue&type=template&id=0efed7ac&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipClosable_vue_vue_type_template_id_0efed7ac___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipClosable_vue_vue_type_template_id_0efed7ac___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipColor.vue":
+/*!***************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipColor.vue ***!
+  \***************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ChipColor_vue_vue_type_template_id_9e1143a0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ChipColor.vue?vue&type=template&id=9e1143a0& */ "./resources/admin/js/src/views/components/vuesax/chip/ChipColor.vue?vue&type=template&id=9e1143a0&");
+/* harmony import */ var _ChipColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ChipColor.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/vuesax/chip/ChipColor.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ChipColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ChipColor_vue_vue_type_template_id_9e1143a0___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ChipColor_vue_vue_type_template_id_9e1143a0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/vuesax/chip/ChipColor.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipColor.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipColor.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ChipColor.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipColor.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipColor.vue?vue&type=template&id=9e1143a0&":
+/*!**********************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipColor.vue?vue&type=template&id=9e1143a0& ***!
+  \**********************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipColor_vue_vue_type_template_id_9e1143a0___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ChipColor.vue?vue&type=template&id=9e1143a0& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipColor.vue?vue&type=template&id=9e1143a0&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipColor_vue_vue_type_template_id_9e1143a0___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipColor_vue_vue_type_template_id_9e1143a0___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipCustomizeCloseClearChipIcon.vue":
+/*!*************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipCustomizeCloseClearChipIcon.vue ***!
+  \*************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ChipCustomizeCloseClearChipIcon_vue_vue_type_template_id_57b7daea___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ChipCustomizeCloseClearChipIcon.vue?vue&type=template&id=57b7daea& */ "./resources/admin/js/src/views/components/vuesax/chip/ChipCustomizeCloseClearChipIcon.vue?vue&type=template&id=57b7daea&");
+/* harmony import */ var _ChipCustomizeCloseClearChipIcon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ChipCustomizeCloseClearChipIcon.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/vuesax/chip/ChipCustomizeCloseClearChipIcon.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ChipCustomizeCloseClearChipIcon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ChipCustomizeCloseClearChipIcon_vue_vue_type_template_id_57b7daea___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ChipCustomizeCloseClearChipIcon_vue_vue_type_template_id_57b7daea___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/vuesax/chip/ChipCustomizeCloseClearChipIcon.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipCustomizeCloseClearChipIcon.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipCustomizeCloseClearChipIcon.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipCustomizeCloseClearChipIcon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ChipCustomizeCloseClearChipIcon.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipCustomizeCloseClearChipIcon.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipCustomizeCloseClearChipIcon_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipCustomizeCloseClearChipIcon.vue?vue&type=template&id=57b7daea&":
+/*!********************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipCustomizeCloseClearChipIcon.vue?vue&type=template&id=57b7daea& ***!
+  \********************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipCustomizeCloseClearChipIcon_vue_vue_type_template_id_57b7daea___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ChipCustomizeCloseClearChipIcon.vue?vue&type=template&id=57b7daea& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipCustomizeCloseClearChipIcon.vue?vue&type=template&id=57b7daea&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipCustomizeCloseClearChipIcon_vue_vue_type_template_id_57b7daea___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipCustomizeCloseClearChipIcon_vue_vue_type_template_id_57b7daea___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipDefault.vue":
+/*!*****************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipDefault.vue ***!
+  \*****************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ChipDefault_vue_vue_type_template_id_3af6ccce___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ChipDefault.vue?vue&type=template&id=3af6ccce& */ "./resources/admin/js/src/views/components/vuesax/chip/ChipDefault.vue?vue&type=template&id=3af6ccce&");
+/* harmony import */ var _ChipDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ChipDefault.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/vuesax/chip/ChipDefault.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _ChipDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _ChipDefault_vue_vue_type_template_id_3af6ccce___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ChipDefault_vue_vue_type_template_id_3af6ccce___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/vuesax/chip/ChipDefault.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipDefault.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipDefault.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ChipDefault.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipDefault.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipDefault.vue?vue&type=template&id=3af6ccce&":
+/*!************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipDefault.vue?vue&type=template&id=3af6ccce& ***!
+  \************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipDefault_vue_vue_type_template_id_3af6ccce___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ChipDefault.vue?vue&type=template&id=3af6ccce& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipDefault.vue?vue&type=template&id=3af6ccce&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipDefault_vue_vue_type_template_id_3af6ccce___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipDefault_vue_vue_type_template_id_3af6ccce___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipIcon.vue":
+/*!**************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipIcon.vue ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ChipIcon_vue_vue_type_template_id_6a7f1a3c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ChipIcon.vue?vue&type=template&id=6a7f1a3c& */ "./resources/admin/js/src/views/components/vuesax/chip/ChipIcon.vue?vue&type=template&id=6a7f1a3c&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 var script = {}
@@ -1565,8 +1783,8 @@ var script = {}
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
   script,
-  _GridSimpleOffset_vue_vue_type_template_id_362c6f3c___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _GridSimpleOffset_vue_vue_type_template_id_362c6f3c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _ChipIcon_vue_vue_type_template_id_6a7f1a3c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ChipIcon_vue_vue_type_template_id_6a7f1a3c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1576,126 +1794,39 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/ui-elements/grid/tailwind/GridSimpleOffset.vue"
+component.options.__file = "resources/admin/js/src/views/components/vuesax/chip/ChipIcon.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridSimpleOffset.vue?vue&type=template&id=362c6f3c&":
-/*!********************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridSimpleOffset.vue?vue&type=template&id=362c6f3c& ***!
-  \********************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipIcon.vue?vue&type=template&id=6a7f1a3c&":
+/*!*********************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipIcon.vue?vue&type=template&id=6a7f1a3c& ***!
+  \*********************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridSimpleOffset_vue_vue_type_template_id_362c6f3c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GridSimpleOffset.vue?vue&type=template&id=362c6f3c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridSimpleOffset.vue?vue&type=template&id=362c6f3c&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridSimpleOffset_vue_vue_type_template_id_362c6f3c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipIcon_vue_vue_type_template_id_6a7f1a3c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ChipIcon.vue?vue&type=template&id=6a7f1a3c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipIcon.vue?vue&type=template&id=6a7f1a3c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipIcon_vue_vue_type_template_id_6a7f1a3c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridSimpleOffset_vue_vue_type_template_id_362c6f3c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipIcon_vue_vue_type_template_id_6a7f1a3c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue":
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipTransparent.vue":
 /*!*********************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue ***!
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipTransparent.vue ***!
   \*********************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _GridTailwind_vue_vue_type_template_id_2a56ce56___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GridTailwind.vue?vue&type=template&id=2a56ce56& */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=template&id=2a56ce56&");
-/* harmony import */ var _GridTailwind_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./GridTailwind.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _GridTailwind_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./GridTailwind.vue?vue&type=style&index=0&lang=scss& */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=style&index=0&lang=scss&");
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
-  _GridTailwind_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _GridTailwind_vue_vue_type_template_id_2a56ce56___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _GridTailwind_vue_vue_type_template_id_2a56ce56___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GridTailwind_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GridTailwind.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_GridTailwind_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=style&index=0&lang=scss&":
-/*!*******************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=style&index=0&lang=scss& ***!
-  \*******************************************************************************************************************/
-/*! no static exports found */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_GridTailwind_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/style-loader!../../../../../../../../node_modules/css-loader!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GridTailwind.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=style&index=0&lang=scss&");
-/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_GridTailwind_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_GridTailwind_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_GridTailwind_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_GridTailwind_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
- /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_GridTailwind_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=template&id=2a56ce56&":
-/*!****************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=template&id=2a56ce56& ***!
-  \****************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridTailwind_vue_vue_type_template_id_2a56ce56___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GridTailwind.vue?vue&type=template&id=2a56ce56& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridTailwind.vue?vue&type=template&id=2a56ce56&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridTailwind_vue_vue_type_template_id_2a56ce56___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridTailwind_vue_vue_type_template_id_2a56ce56___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridWrappingColumns.vue":
-/*!****************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridWrappingColumns.vue ***!
-  \****************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _GridWrappingColumns_vue_vue_type_template_id_51fa8014___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./GridWrappingColumns.vue?vue&type=template&id=51fa8014& */ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridWrappingColumns.vue?vue&type=template&id=51fa8014&");
+/* harmony import */ var _ChipTransparent_vue_vue_type_template_id_d183be42___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ChipTransparent.vue?vue&type=template&id=d183be42& */ "./resources/admin/js/src/views/components/vuesax/chip/ChipTransparent.vue?vue&type=template&id=d183be42&");
 /* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 var script = {}
@@ -1705,8 +1836,8 @@ var script = {}
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
   script,
-  _GridWrappingColumns_vue_vue_type_template_id_51fa8014___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _GridWrappingColumns_vue_vue_type_template_id_51fa8014___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _ChipTransparent_vue_vue_type_template_id_d183be42___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ChipTransparent_vue_vue_type_template_id_d183be42___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1716,24 +1847,24 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/ui-elements/grid/tailwind/GridWrappingColumns.vue"
+component.options.__file = "resources/admin/js/src/views/components/vuesax/chip/ChipTransparent.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/ui-elements/grid/tailwind/GridWrappingColumns.vue?vue&type=template&id=51fa8014&":
-/*!***********************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/ui-elements/grid/tailwind/GridWrappingColumns.vue?vue&type=template&id=51fa8014& ***!
-  \***********************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/vuesax/chip/ChipTransparent.vue?vue&type=template&id=d183be42&":
+/*!****************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/vuesax/chip/ChipTransparent.vue?vue&type=template&id=d183be42& ***!
+  \****************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridWrappingColumns_vue_vue_type_template_id_51fa8014___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./GridWrappingColumns.vue?vue&type=template&id=51fa8014& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/ui-elements/grid/tailwind/GridWrappingColumns.vue?vue&type=template&id=51fa8014&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridWrappingColumns_vue_vue_type_template_id_51fa8014___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipTransparent_vue_vue_type_template_id_d183be42___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./ChipTransparent.vue?vue&type=template&id=d183be42& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/vuesax/chip/ChipTransparent.vue?vue&type=template&id=d183be42&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipTransparent_vue_vue_type_template_id_d183be42___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_GridWrappingColumns_vue_vue_type_template_id_51fa8014___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ChipTransparent_vue_vue_type_template_id_d183be42___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

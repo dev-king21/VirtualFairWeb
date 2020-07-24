@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\FairType;
 use App\StandType;
 use App\StandLocation;
+use App\StandTypeItem;
 use Hash;
 
 class SettingController extends Controller
@@ -154,72 +155,93 @@ class SettingController extends Controller
         return response()->json($res);
     }
 
+    public function allTypes(Request $request) {
+        $res = array();
+        $res['fair_types'] = FairType::all();
+        $res['stand_types'] = StandType::all();
+        return response()->json($res);    
+    }
+
     public function allStandLocation(Request $request, $ftype_id = 0) {
         $res = array();
-        $res['stand_locations'] = [];
         if (!isset($ftype_id) || $ftype_id == 0)
-            $res['stand_locations'] = StandLocation::all(); 
-        else 
-            $res['stand_locations']  = FairType::find($ftype_id)->stand_locations();
+            $ftype_id = FairType::first()->id; 
+        $res["ftype"] = FairType::find($ftype_id);
+        $res['stand_locations']  = StandLocation::with('stand_type')->where("fair_type_id", $ftype_id)->get();
         
         return response()->json($res);
     }
 
-    public function updateStandLocation(Request $request, $id){
+    public function saveStandLocation(Request $request){
         $res = array();
-        StandLocation::whereId($id)->update($request->post());
+        foreach ($request->post("locations") as $location) {
+            $updateQuery = [
+                "left" => $location["left"],
+                "top" => $location["top"]
+            ];
+            if (isset($location["id"]))
+                StandLocation::whereId($location["id"])->update($updateQuery);
+            else {
+                $newLocation = new StandLocation;
+                $newLocation->fair_type_id = $location["fair_type_id"];
+                $newLocation->stand_type_id = $location["stand_type_id"];
+                $newLocation->left = $location["left"];
+                $newLocation->top = $location["top"];
+                $newLocation->width = 0.2;
+                $newLocation->height = 0.2;
+                $newLocation->save();
+            }
+        }
         $res['status'] = 'ok';
         return response()->json($res);
     }
 
-    public function createStandLocation(Request $request){
-        $res = array();
-        $standLocation = new StandLocation;
-        $standLocation->name = $request->post('name');
-        $standLocation->fair_type_id = $request->post('fair_type_id');
-        $standLocation->stand_type_id = $request->post('stand_type_id');
-        $standLoation->left = $request->post('left');
-        $standLoation->top = $request->post('top');
-        $standLoation->width = $request->post('width');
-        $standLoation->height = $request->post('height');
-        $standType->save();
-        
-        $res['status'] = 'ok';
-
-        return response()->json($res);
+    public function removeStandLocation(Request $request) {
+        StandLocation::where("id", $request->post("remove_id"))->delete();
+        return response()->json(["status"=> "ok"]);
     }
 
     public function allStandTypeItem(Request $request, $stype_id = 0) {
         $res = array();
-        $res['stand_type_items'] = [];
         if (!isset($stype_id) || $stype_id == 0)
-            $res['stand_type_items'] = StandTypeItem::all();
-        else 
-            $res['stand_type_items'] = StandType::find($stype_id)->stand_type_items();
+            $stype_id = StandType::first()->id;
 
+        $stype = StandType::find($stype_id);
+        $res["stype"] = $stype;
+        $res['stand_type_items'] = StandTypeItem::where("stand_type_id", $stype_id)->get();
+        
         return response()->json($res);
     }
 
-    public function updateStandTypeItem(Request $request, $id){
+    public function saveStandTypeItem(Request $request){
         $res = array();
-        StandTypeItem::whereId($id)->update($request->post());
+        foreach ($request->post("locations") as $location) {
+            $updateQuery = [
+                "left" => $location["left"],
+                "top" => $location["top"],
+                "width" => $location["width"],
+                "height" => $location["height"]
+            ];
+            if (isset($location["id"]))
+                StandTypeItem::whereId($location["id"])->update($updateQuery);
+            else {
+                $standTypeItem = new StandTypeItem;
+                $standTypeItem->stand_type_id = $location["stand_type_id"];
+                $standTypeItem->left = $location["left"];
+                $standTypeItem->top = $location["top"];
+                $standTypeItem->width = $location["width"];
+                $standTypeItem->height = $location["height"];
+                $standTypeItem->type = $location["type"];
+                $standTypeItem->save();
+            }
+        }
         $res['status'] = 'ok';
         return response()->json($res);
     }
 
-    public function createStandTypeItem(Request $request){
-        $res = array();
-        $standTypeItem = new StandTypeItem;
-        $standTypeItem->stand_type_id = $request->post('stand_type_id');
-        $standTypeItem->left = $request->post('left');
-        $standTypeItem->top = $request->post('top');
-        $standTypeItem->width = $request->post('width');
-        $standTypeItem->height = $request->post('height');
-        $standTypeItem->type = $request->post('type');
-
-        $standTypeItem->save();
-        $res['status'] = 'ok';
-        return response()->json($res);
+    public function removeStandTypeItem(Request $request) {
+        StandTypeItem::where('id', $request->post("remove_id"))->delete();
+        return response()->json(["status"=>"ok"]);
     }
 
     public function dummyCreate() {
