@@ -3,52 +3,11 @@
 
     <!-- <data-view-sidebar :isSidebarActive="addNewDataSidebar" @closeSidebar="toggleDataSidebar" :data="sidebarData" /> -->
 
-    <vs-table ref="table"  pagination :max-items="itemsPerPage" search :data="fairs">
+    <vs-table ref="table"  pagination :max-items="itemsPerPage" search :data="this.fairs">
 
       <div slot="header" class="flex flex-wrap-reverse items-center flex-grow justify-between">
 
         <div class="flex flex-wrap-reverse items-center data-list-btn-container">
-
-          <!-- ACTION - DROPDOWN -->
-          <vs-dropdown vs-trigger-click class="dd-actions cursor-pointer mr-4 mb-4">
-
-            <div class="p-4 shadow-drop rounded-lg d-theme-dark-bg cursor-pointer flex items-center justify-center text-lg font-medium w-32 w-full">
-              <span class="mr-2">Actions</span>
-              <feather-icon icon="ChevronDownIcon" svgClasses="h-4 w-4" />
-            </div>
-
-            <vs-dropdown-menu>
-
-              <vs-dropdown-item>
-                <span class="flex items-center">
-                  <feather-icon icon="TrashIcon" svgClasses="h-4 w-4" class="mr-2" />
-                  <span>Delete</span>
-                </span>
-              </vs-dropdown-item>
-
-              <vs-dropdown-item>
-                <span class="flex items-center">
-                  <feather-icon icon="ArchiveIcon" svgClasses="h-4 w-4" class="mr-2" />
-                  <span>Archive</span>
-                </span>
-              </vs-dropdown-item>
-
-              <vs-dropdown-item>
-                <span class="flex items-center">
-                  <feather-icon icon="FileIcon" svgClasses="h-4 w-4" class="mr-2" />
-                  <span>Print</span>
-                </span>
-              </vs-dropdown-item>
-
-              <vs-dropdown-item>
-                <span class="flex items-center">
-                  <feather-icon icon="SaveIcon" svgClasses="h-4 w-4" class="mr-2" />
-                  <span>Another Action</span>
-                </span>
-              </vs-dropdown-item>
-
-            </vs-dropdown-menu>
-          </vs-dropdown>
 
           <!-- ADD NEW -->
           <div class="btn-add-new p-3 mb-4 mr-4 rounded-lg cursor-pointer flex items-center justify-center text-lg font-medium text-base text-primary border border-solid border-primary" @click="addNewData">
@@ -57,6 +16,62 @@
           </div>
         </div>
 
+        <vs-popup class="popupModal w-full" :title="popupTitle" :active.sync="isAddShow" style="width: 1000px;">
+            <div class=" w-full mb-base">
+              <vx-card>
+                <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/4 w-full">
+                    <span>Fair Name</span>
+                  </div>
+                  <div class="vx-col sm:w-3/4 w-full">
+                    <vs-input class="w-full" v-model="name"/>
+                  </div>
+                </div>
+                <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/4 w-full">
+                    <span>Fair Type</span>
+                  </div>
+                  <div class="vx-col sm:w-3/4 w-full">
+                     <div class="vx-row">
+                         <div class="vx-col w-full sm:w-1/2 lg:w-1/3 mb-base" v-for="(ftype, index) in fair_types" :key="index">
+                            <vx-card @click="changeActive(ftype.id)" :class="(active_idx===ftype.id)? 'active-card':''">
+                                <div slot="no-body">
+                                  <img :src="`/fair_image/${ftype.building}`" alt="content-img" class="responsive card-img-top">
+                                </div>
+                                <h5 class="mb-2">{{ ftype.name }}</h5>
+                                <p class="text-primary">Stand Items: {{ ftype.stand_locations.length }}</p>
+                            </vx-card>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+
+                 <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/4 w-full">
+                    <span>Period(Start ~ End)</span>
+                  </div>
+                  <div class="vx-col sm:w-3/4 demo-alignment mt-0">
+                     <template>
+                        <datepicker placeholder="Start Date" :format="format" v-model="startDate"></datepicker>
+                        <span> ~ </span>
+                        <datepicker placeholder="End Date" :format="format" v-model="endDate"></datepicker>
+                    </template> 
+                  </div>
+                </div>
+
+                <div class="vx-row">
+                  <div class="vx-col sm:w-2/3 w-full ml-auto">
+                    <vs-button class="mr-3 mb-2" @click="addEditFair()">OK</vs-button>
+                    <vs-button color="warning" type="border" class="mb-2" @click="cancelAction()" >Cancel</vs-button>
+                  </div>
+                </div>
+
+                <!-- CODE -->
+               
+              </vx-card>
+            </div>
+
+          </vs-popup>
         <!-- ITEMS PER PAGE -->
         <vs-dropdown vs-trigger-click class="cursor-pointer mb-4 mr-4 items-per-page-handler">
           <div class="p-4 border border-solid d-theme-border-grey-light rounded-full d-theme-dark-bg cursor-pointer flex items-center justify-between font-medium">
@@ -112,8 +127,8 @@
               </vs-td>
              
               <vs-td class="whitespace-no-wrap">
-                <feather-icon icon="EditIcon" svgClasses="w-5 h-5 hover:text-primary stroke-current" @click.stop="editData(tr)" />
-                <feather-icon icon="TrashIcon" svgClasses="w-5 h-5 hover:text-danger stroke-current" class="ml-2" @click.stop="deleteData(tr.id)" />
+                <feather-icon icon="EditIcon" svgClasses="w-5 h-5 hover:text-primary stroke-current" @click.stop="editData(tr.id)" />
+                <feather-icon icon="TrashIcon" svgClasses="w-5 h-5 hover:text-danger stroke-current" class="ml-2" @click.stop="confirmDeleteRecord(tr.id)" />
               </vs-td>
 
             </vs-tr>
@@ -126,21 +141,47 @@
 <script>
 import FairViewSidebar from '../FairViewSidebar.vue'
 import moduleFairList from '@/store/fair/moduleFairList.js'
+import Datepicker from 'vuejs-datepicker'
 
 export default {
   components: {
-    FairViewSidebar
+    FairViewSidebar,
+    Datepicker
   },
   data () {
     return {
+
+      format: "yyyy-MM-dd",
+      formatOptions:[
+        {text: "d MMM yyyy - e.g 12 Feb 2016" , value: "d MMM yyyy" },
+        {text: "d MMMM yyyy - e.g 12 February 2016", value: "d MMMM yyyy" },
+        {text: "yyyy-MM-dd - e.g 2016-02-12", value: "yyyy-MM-dd" },
+        {text: "dsu MMM yyyy - e.g 12th Feb 2016", value: "dsu MMM yyyy" },
+        {text: "D dsu MMM yyyy - e.g Sat 12th Feb 2016", value: "D dsu MMM yyyy" },
+      ],
+
+      startDate: null,
+      endDate: null,
       selected: [],
       // fairs: [],
       itemsPerPage: 4,
       isMounted: false,
+      isActive: false,
+      status: false,
 
       // Data Sidebar
       addNewDataSidebar: false,
-      sidebarData: {}
+      sidebarData: {},
+      isAddShow: false,
+      popupTitle: 'Add Fair',
+      name:'',
+      status:'',
+      fairs: [],
+      fair_types:[],
+      active_idx: 0,
+      isAddOrEdit: 0,
+      editId: 0,
+      deleteId: 0
     }
   },
   computed: {
@@ -151,25 +192,45 @@ export default {
       }
       return 0
     },
-    fairs () {
-      return this.$store.state.fair.fairs
-    },
+   
     queriedItems () {
       return this.$refs.table ? this.$refs.table.queriedResults.length : this.fairs.length
     }
   },
   methods: {
     addNewData () {
-      this.sidebarData = {}
-      this.toggleDataSidebar(true)
+      /* this.sidebarData = {}
+      this.toggleDataSidebar(true)   */
+      this.name = ''
+      this.active_idx = 0
+      this.startDate = null
+      this.endDate = null
+      this.status = 1
+      this.isAddOrEdit = 0;
+      this.popupTitle = 'Add Fair'
+      this.isAddShow = true;
     },
     deleteData (id) {
       this.$store.dispatch('dataList/removeItem', id).catch(err => { console.error(err) })
     },
-    editData (data) {
+    editData (id) {
       // this.sidebarData = JSON.parse(JSON.stringify(this.blankData))
-      this.sidebarData = data
-      this.toggleDataSidebar(true)
+      this.editId = id
+      this.isAddOrEdit = 1
+      this.popupTitle="Edit Fair"
+
+      const fair = this.fairs.find((item) => item.id === id)
+      this.name = fair.name
+      
+      this.active_idx = fair.fair_type_id
+      this.startDate = fair.start_date 
+      this.endDate = fair.end_date
+      this.status = 1
+      this.isAddShow = true;
+      
+    },
+    changeActive (idx) {
+      this.active_idx = idx
     },
     getOrderStatusColor (status) {
       if (status === 'on_hold')   return 'warning'
@@ -186,6 +247,119 @@ export default {
     },
     toggleDataSidebar (val = false) {
       this.addNewDataSidebar = val
+    },
+    cancelAction(){
+      this.isAddShow = false
+    },
+    formatDate(date) {
+        var d = new Date(date),
+            month = '' + (d.getMonth() + 1),
+            day = '' + d.getDate(),
+            year = d.getFullYear();
+
+        if (month.length < 2) 
+            month = '0' + month;
+        if (day.length < 2) 
+            day = '0' + day;
+
+        return [year, month, day].join('-');
+    },
+    addEditFair(){
+      if(this.name === '' || this.active_idx === 0 || this.startDate === null || this.endDate === null)
+        return
+      let action = `/api/fair/create`
+      if(this.isAddOrEdit === 1)
+        action = `/api/fair/update/${this.editId}`
+       console.log(action)
+
+      this.startDate = this.formatDate(this.startDate)
+      this.endDate = this.formatDate(this.endDate)
+
+      const newData = {
+        name: this.name,
+        fair_type_id: this.active_idx,
+        start_date: this.startDate,
+        end_date: this.endDate,
+        status: 1
+      }
+      console.log(newData)
+      this.$http.post(action, newData)
+        .then((response) => {
+          this.isAddShow = false
+          this.loadContent()
+        })
+    },
+    loadContent(){
+      let action = '/apifair/all'
+    switch (this.$route.name) {
+    case 'fair-all':
+      action = '/api/fair/all'
+      break
+    case 'fair-next':
+      action = '/api/fair/next'
+      break
+    case 'fair-live':
+      action = '/api/fair/current'
+      break
+    case 'fair-past':
+      action = '/api/fair/past'
+      break
+    }
+    this.$http.get(action)
+    .then((response) => {
+        console.log(action);
+
+        const res = response.data
+        this.fairs = res.fairs
+        console.log(this.fairs);
+    })
+    .catch((error) => console.log(error))
+
+    this.$http.get('/api/fair_type/all')
+      .then((response) => { this.fair_types = response.data.fair_types })
+      .catch((error)   => { console.log(error) })
+    },
+    confirmDeleteRecord (id) {
+      this.$vs.dialog({
+        type: 'confirm',
+        color: 'danger',
+        title: 'Confirm Delete',
+        text: `Do you really delete it?`,
+        accept: this.deleteRecord,
+        acceptText: 'Delete'
+      })
+      this.deleteId = id
+    },
+    deleteRecord () {
+      /* Below two lines are just for demo purpose */
+      this.removeAction(this.deleteId);
+      
+      this.showDeleteSuccess()
+
+      /* UnComment below lines for enabling true flow if deleting user */
+      // this.$store.dispatch("userManagement/removeRecord", this.params.data.id)
+      //   .then(()   => { this.showDeleteSuccess() })
+      //   .catch(err => { console.error(err)       })
+    },
+    removeAction(id){
+      console.log(id);
+       const action = `/api/fair/update/${id}`
+      console.log(action)
+      const newData = {
+        status: 0
+      }
+
+      this.$http.post(action, newData)
+        .then((response) => {
+          this.loadContent()
+        })
+    },
+    showDeleteSuccess () {
+      this.$vs.notify({
+        color: 'success',
+        title: 'Fair Deleted',
+        text: 'The selected Fair was successfully deleted'
+      })
     }
   },
   created () {
@@ -195,23 +369,7 @@ export default {
       moduleFairList.isRegistered = true
     }
     
-    let action = 'fair/allFairs'
-    switch (this.$route.name) {
-    case 'fair-all':
-      action = 'fair/allFairs'
-      break
-    case 'fair-next':
-      action = 'fair/nextFairs'
-      break
-    case 'fair-live':
-      action = 'fair/liveFairs'
-      break
-    case 'fair-past':
-      action = 'fair/pastFairs'
-      break
-    }
-    this.$store.dispatch(action).catch(err => { console.error(err) })
-
+   this.loadContent()
   },
   mounted () {
     this.isMounted = true
@@ -335,6 +493,21 @@ export default {
     .vs-table--pagination {
       justify-content: center;
     }
+   
+    
   }
+  
 }
+
+ .active-card {
+    border: 5px solid red
+  }
+
+   .vs-popup{
+    width: 1000px !important
+  }
+
+   .demo-alignment > * {
+    margin-top: 0 !important;
+  }
 </style>

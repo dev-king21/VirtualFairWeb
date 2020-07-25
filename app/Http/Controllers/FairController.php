@@ -13,7 +13,7 @@ class FairController extends Controller
 
     public function all_fairs() {
         $res = array();
-        $res["fairs"] = Fair::all();
+        $res["fairs"] = Fair::where("status", 1)->get();
         return response()->json($res);
     }
 
@@ -33,6 +33,7 @@ class FairController extends Controller
             ["start_date", "<=", $now], 
             ["end_date", ">=", $now]
         ]; 
+        $query["status"] = 1;
         $res["fairs"] = Fair::where($query)->get();
         return response()->json($res);
     }
@@ -43,6 +44,7 @@ class FairController extends Controller
         $query = [
             ["start_date", ">", $now] 
         ]; 
+        $query["status"] = 1;
         $res["fairs"] = Fair::where($query)->get();
         return response()->json($res);
     }
@@ -53,6 +55,7 @@ class FairController extends Controller
         $query = [
             ["end_date", "<", $now] 
         ]; 
+        $query["status"] = 1;
         $res["fairs"] = Fair::where($query)->get();
         return response()->json($res);
     }
@@ -61,9 +64,11 @@ class FairController extends Controller
         $res = array();
         $fair = new Fair;
         $fair->name = $request->post("name");
-        $fair->opened_year = $request->post("opened_year");
+        $fair->fair_type_id = $request->post("fair_type_id");
+
         $fair->start_date = $request->post("start_date");
         $fair->end_date = $request->post("end_date");
+        $fair->status = $request->post("status");
         $fair->save();
 
         $res["status"] = "ok";

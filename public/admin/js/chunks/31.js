@@ -1,26 +1,29 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[31],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/Datepicker.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/Datepicker.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/Carousel.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DatepickerDefault_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DatepickerDefault.vue */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDefault.vue");
-/* harmony import */ var _DatepickerFormat_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DatepickerFormat.vue */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerFormat.vue");
-/* harmony import */ var _DatepickerMinMaxDateRange_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./DatepickerMinMaxDateRange.vue */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMinMaxDateRange.vue");
-/* harmony import */ var _DatepickerHighlightDates_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DatepickerHighlightDates.vue */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerHighlightDates.vue");
-/* harmony import */ var _DatepickerInline_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./DatepickerInline.vue */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerInline.vue");
-/* harmony import */ var _DatepickerOpenProgramatically_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./DatepickerOpenProgramatically.vue */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerOpenProgramatically.vue");
-/* harmony import */ var _DatepickerTranslation_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./DatepickerTranslation.vue */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerTranslation.vue");
-/* harmony import */ var _DatepickerRtl_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./DatepickerRtl.vue */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerRtl.vue");
-/* harmony import */ var _DatepickerDayViewOnly_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./DatepickerDayViewOnly.vue */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDayViewOnly.vue");
-/* harmony import */ var _DatepickerMonthViewOnly_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./DatepickerMonthViewOnly.vue */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthViewOnly.vue");
-/* harmony import */ var _DatepickerDateMonthViewOnly_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./DatepickerDateMonthViewOnly.vue */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDateMonthViewOnly.vue");
-/* harmony import */ var _DatepickerMonthYearViewOnly_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./DatepickerMonthYearViewOnly.vue */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthYearViewOnly.vue");
+/* harmony import */ var _CarouselDefault_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CarouselDefault.vue */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselDefault.vue");
+/* harmony import */ var _CarouselNavigation_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CarouselNavigation.vue */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselNavigation.vue");
+/* harmony import */ var _CarouselPagination_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CarouselPagination.vue */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselPagination.vue");
+/* harmony import */ var _CarouselProgress_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./CarouselProgress.vue */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselProgress.vue");
+/* harmony import */ var _CarouselMultipleSlidesPerView_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./CarouselMultipleSlidesPerView.vue */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultipleSlidesPerView.vue");
+/* harmony import */ var _CarouselMultiRowSlidesLayout_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./CarouselMultiRowSlidesLayout.vue */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultiRowSlidesLayout.vue");
+/* harmony import */ var _CarouselEffectFade_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./CarouselEffectFade.vue */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselEffectFade.vue");
+/* harmony import */ var _Carousel3dEffect_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./Carousel3dEffect.vue */ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue");
+/* harmony import */ var _Carousel3dCoverflowEffect_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./Carousel3dCoverflowEffect.vue */ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue");
+/* harmony import */ var _CarouselAutoplay_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./CarouselAutoplay.vue */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselAutoplay.vue");
+/* harmony import */ var _CarouselGallery_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./CarouselGallery.vue */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue");
+/* harmony import */ var _CarouselParallax_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./CarouselParallax.vue */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue");
+/* harmony import */ var _CarouselLazyLoading_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./CarouselLazyLoading.vue */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue");
+/* harmony import */ var _CarouselResponsiveBreakpoints_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./CarouselResponsiveBreakpoints.vue */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselResponsiveBreakpoints.vue");
+/* harmony import */ var _CarouselVirtualSlides_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./CarouselVirtualSlides.vue */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue");
 //
 //
 //
@@ -47,47 +50,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
+
+
 
 
 
@@ -102,490 +67,131 @@ __webpack_require__.r(__webpack_exports__);
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    DatepickerDefault: _DatepickerDefault_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    DatepickerFormat: _DatepickerFormat_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    DatepickerMinMaxDateRange: _DatepickerMinMaxDateRange_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    DatepickerHighlightDates: _DatepickerHighlightDates_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    DatepickerInline: _DatepickerInline_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    DatepickerOpenProgramatically: _DatepickerOpenProgramatically_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    DatepickerTranslation: _DatepickerTranslation_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
-    DatepickerRtl: _DatepickerRtl_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
-    DatepickerDayViewOnly: _DatepickerDayViewOnly_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
-    DatepickerMonthViewOnly: _DatepickerMonthViewOnly_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
-    DatepickerDateMonthViewOnly: _DatepickerDateMonthViewOnly_vue__WEBPACK_IMPORTED_MODULE_10__["default"],
-    DatepickerMonthYearViewOnly: _DatepickerMonthYearViewOnly_vue__WEBPACK_IMPORTED_MODULE_11__["default"]
+    CarouselDefault: _CarouselDefault_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
+    CarouselNavigation: _CarouselNavigation_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    CarouselPagination: _CarouselPagination_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
+    CarouselProgress: _CarouselProgress_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    CarouselMultipleSlidesPerView: _CarouselMultipleSlidesPerView_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    CarouselMultiRowSlidesLayout: _CarouselMultiRowSlidesLayout_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    CarouselEffectFade: _CarouselEffectFade_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
+    Carousel3dEffect: _Carousel3dEffect_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
+    Carousel3dCoverflowEffect: _Carousel3dCoverflowEffect_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
+    CarouselAutoplay: _CarouselAutoplay_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
+    CarouselGallery: _CarouselGallery_vue__WEBPACK_IMPORTED_MODULE_10__["default"],
+    CarouselParallax: _CarouselParallax_vue__WEBPACK_IMPORTED_MODULE_11__["default"],
+    CarouselLazyLoading: _CarouselLazyLoading_vue__WEBPACK_IMPORTED_MODULE_12__["default"],
+    CarouselResponsiveBreakpoints: _CarouselResponsiveBreakpoints_vue__WEBPACK_IMPORTED_MODULE_13__["default"],
+    CarouselVirtualSlides: _CarouselVirtualSlides_vue__WEBPACK_IMPORTED_MODULE_14__["default"]
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDateMonthViewOnly.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDateMonthViewOnly.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDayViewOnly.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDayViewOnly.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDefault.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDefault.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      date: null
-    };
-  },
-  components: {
-    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerFormat.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerFormat.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      format: 'd MMMM yyyy',
-      formatOptions: [{
-        text: 'd MMM yyyy - e.g 12 Feb 2016',
-        value: 'd MMM yyyy'
-      }, {
-        text: 'd MMMM yyyy - e.g 12 February 2016',
-        value: 'd MMMM yyyy'
-      }, {
-        text: 'yyyy-MM-dd - e.g 2016-02-12',
-        value: 'yyyy-MM-dd'
-      }, {
-        text: 'dsu MMM yyyy - e.g 12th Feb 2016',
-        value: 'dsu MMM yyyy'
-      }, {
-        text: 'D dsu MMM yyyy - e.g Sat 12th Feb 2016',
-        value: 'D dsu MMM yyyy'
-      }]
-    };
-  },
-  components: {
-    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerHighlightDates.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerHighlightDates.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      highlightedFn: {
-        customPredictor: function customPredictor(date) {
-          if (date.getDate() % 4 === 0) {
-            return true;
-          }
-        }
-      }
-    };
-  },
-  components: {
-    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerInline.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerInline.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMinMaxDateRange.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMinMaxDateRange.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      disabledDates: {
-        to: new Date(new Date().getFullYear(), new Date().getMonth() - 2, 5),
-        // Disable all dates up to specific date
-        from: new Date(new Date().getFullYear(), new Date().getMonth() + 2, 26),
-        // Disable all dates after specific date
-        daysOfMonth: [8, 11, 17] // Disable Specific days
-
-      }
-    };
-  },
-  components: {
-    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthViewOnly.vue?vue&type=script&lang=js&":
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=script&lang=js&":
 /*!******************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthViewOnly.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=script&lang=js& ***!
   \******************************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -620,24 +226,141 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      swiperOption: {
+        effect: 'coverflow',
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        coverflowEffect: {
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true
+        },
+        pagination: {
+          el: '.swiper-pagination'
+        }
+      }
+    };
+  },
   components: {
-    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiperSlide"]
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthYearViewOnly.vue?vue&type=script&lang=js&":
-/*!**********************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthYearViewOnly.vue?vue&type=script&lang=js& ***!
-  \**********************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -672,24 +395,96 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      swiperOption: {
+        effect: 'cube',
+        grabCursor: true,
+        cubeEffect: {
+          shadow: true,
+          slideShadows: true,
+          shadowOffset: 20,
+          shadowScale: 0.94
+        },
+        pagination: {
+          el: '.swiper-pagination'
+        }
+      }
+    };
+  },
   components: {
-    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiperSlide"]
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerOpenProgramatically.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerOpenProgramatically.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselAutoplay.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselAutoplay.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -726,25 +521,70 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 
+
 /* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      swiperOption: {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
+    };
+  },
   components: {
-    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiperSlide"]
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerRtl.vue?vue&type=script&lang=js&":
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselDefault.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerRtl.vue?vue&type=script&lang=js& ***!
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselDefault.vue?vue&type=script&lang=js& ***!
   \********************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
-/* harmony import */ var vuejs_datepicker_src_locale__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuejs-datepicker/src/locale */ "./node_modules/vuejs-datepicker/src/locale/index.js");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -787,29 +627,61 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      languages: vuejs_datepicker_src_locale__WEBPACK_IMPORTED_MODULE_1__
-    };
-  },
   components: {
-    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiperSlide"]
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerTranslation.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerTranslation.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselEffectFade.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselEffectFade.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
-/* harmony import */ var vuejs_datepicker_src_locale__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vuejs-datepicker/src/locale */ "./node_modules/vuejs-datepicker/src/locale/index.js");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -861,312 +733,1944 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      language: 'en',
-      languages: vuejs_datepicker_src_locale__WEBPACK_IMPORTED_MODULE_1__
+      swiperOption: {
+        spaceBetween: 30,
+        effect: 'fade',
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
     };
   },
   components: {
-    Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_0__["default"]
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiperSlide"]
   }
 });
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/Datepicker.vue?vue&type=template&id=04dc9832&":
-/*!*********************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/Datepicker.vue?vue&type=template&id=04dc9832& ***!
-  \*********************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=script&lang=js&":
+/*!********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=script&lang=js& ***!
+  \********************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "extra-component-datepicker-demo" } }, [
-    _vm._m(0),
-    _vm._v(" "),
-    _c("div", { staticClass: "vx-row match-height" }, [
-      _c(
-        "div",
-        { staticClass: "vx-col md:w-1/2 w-full" },
-        [_c("datepicker-default", { staticClass: "mb-base" })],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "vx-col md:w-1/2 w-full" },
-        [_c("datepicker-format", { staticClass: "mb-base" })],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "vx-row match-height" }, [
-      _c(
-        "div",
-        { staticClass: "vx-col md:w-1/2 w-full" },
-        [_c("datepicker-min-max-date-range", { staticClass: "mb-base" })],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "vx-col md:w-1/2 w-full" },
-        [_c("datepicker-highlight-dates", { staticClass: "mb-base" })],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "vx-row match-height" }, [
-      _c(
-        "div",
-        { staticClass: "vx-col md:w-1/2 w-full" },
-        [_c("datepicker-inline", { staticClass: "mb-base" })],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "vx-col md:w-1/2 w-full" },
-        [_c("datepicker-open-programatically", { staticClass: "mb-base" })],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "vx-row match-height" }, [
-      _c(
-        "div",
-        { staticClass: "vx-col md:w-1/2 w-full" },
-        [_c("datepicker-translation", { staticClass: "mb-base" })],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "vx-col md:w-1/2 w-full" },
-        [_c("datepicker-rtl", { staticClass: "mb-base" })],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "vx-row match-height" }, [
-      _c(
-        "div",
-        { staticClass: "vx-col md:w-1/2 w-full" },
-        [_c("datepicker-day-view-only", { staticClass: "mb-base" })],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "vx-col md:w-1/2 w-full" },
-        [_c("datepicker-month-view-only", { staticClass: "mb-base" })],
-        1
-      )
-    ]),
-    _vm._v(" "),
-    _c("div", { staticClass: "vx-row match-height" }, [
-      _c(
-        "div",
-        { staticClass: "vx-col md:w-1/2 w-full" },
-        [_c("datepicker-date-month-view-only")],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "vx-col md:w-1/2 w-full" },
-        [_c("datepicker-month-year-view-only")],
-        1
-      )
-    ])
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("p", { staticClass: "mb-4" }, [
-      _vm._v(
-        "A simple Vue.js datepicker component. Supports disabling of dates, inline mode, translations. Read full documnetation "
-      ),
-      _c(
-        "a",
-        {
-          attrs: {
-            href: "https://github.com/charliekassel/vuejs-datepicker",
-            target: "_blank",
-            rel: "nofollow"
-          }
-        },
-        [_vm._v("here")]
-      )
-    ])
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      swiperOptionTop: {
+        spaceBetween: 10,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      },
+      swiperOptionThumbs: {
+        spaceBetween: 10,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        touchRatio: 0.2,
+        slideToClickedSlide: true
+      }
+    };
+  },
+  mounted: function mounted() {
+    var _this = this;
+
+    this.$nextTick(function () {
+      var swiperTop = _this.$refs.swiperTop.swiper;
+      var swiperThumbs = _this.$refs.swiperThumbs.swiper;
+      swiperTop.controller.control = swiperThumbs;
+      swiperThumbs.controller.control = swiperTop;
+    });
+  },
+  components: {
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiperSlide"]
   }
-]
-render._withStripped = true
-
-
+});
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDateMonthViewOnly.vue?vue&type=template&id=feaa1fbe&":
-/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDateMonthViewOnly.vue?vue&type=template&id=feaa1fbe& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Date and Month View Only", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("Rendering default DatePicker with date and month view only")
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "mt-5" },
-        [
-          _c("datepicker", {
-            attrs: { minimumView: "day", maximumView: "month" }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          "\n<template>\n  <datepicker :minimumView=\"'day'\" :maximumView=\"'month'\"></datepicker>\n</template>\n\n<script>\nimport Datepicker from 'vuejs-datepicker';\n\nexport default {\n  components: {\n    Datepicker\n  }\n}\n</script>\n        "
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      swiperOption: {
+        // Enable lazy loading
+        lazy: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      },
+      slides: [{
+        img: __webpack_require__(/*! @assets/images/pages/carousel/banner-13.jpg */ "./resources/admin/assets/images/pages/carousel/banner-13.jpg")
+      }, {
+        img: __webpack_require__(/*! @assets/images/pages/carousel/banner-7.jpg */ "./resources/admin/assets/images/pages/carousel/banner-7.jpg")
+      }, {
+        img: __webpack_require__(/*! @assets/images/pages/carousel/banner-10.jpg */ "./resources/admin/assets/images/pages/carousel/banner-10.jpg")
+      }, {
+        img: __webpack_require__(/*! @assets/images/pages/carousel/banner-16.jpg */ "./resources/admin/assets/images/pages/carousel/banner-16.jpg")
+      }, {
+        img: __webpack_require__(/*! @assets/images/pages/carousel/banner-20.jpg */ "./resources/admin/assets/images/pages/carousel/banner-20.jpg")
+      }]
+    };
+  },
+  components: {
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiperSlide"]
+  }
+});
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDayViewOnly.vue?vue&type=template&id=18407c6a&":
-/*!********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDayViewOnly.vue?vue&type=template&id=18407c6a& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultiRowSlidesLayout.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultiRowSlidesLayout.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Day View Only", "code-toggler": "" } },
-    [
-      _c("p", [_vm._v("Rendering default DatePicker with Day view only")]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "mt-5" },
-        [
-          _c("datepicker", {
-            attrs: { minimumView: "day", maximumView: "day" }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          "\n<template>\n  <datepicker :minimumView=\"'day'\" :maximumView=\"'day'\"></datepicker>\n</template>\n\n<script>\nimport Datepicker from 'vuejs-datepicker';\n\nexport default {\n  components: {\n    Datepicker\n  }\n}\n</script>\n        "
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      swiperOption: {
+        slidesPerView: 3,
+        slidesPerColumn: 2,
+        spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        breakpoints: {
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 40
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30
+          },
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20
+          }
+        }
+      }
+    };
+  },
+  components: {
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiperSlide"]
+  }
+});
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDefault.vue?vue&type=template&id=3780a15f&":
-/*!****************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDefault.vue?vue&type=template&id=3780a15f& ***!
-  \****************************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultipleSlidesPerView.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultipleSlidesPerView.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Default", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("Rendering default DatePicker with "),
-        _c("code", [_vm._v("v-model")])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "mt-5" },
-        [
-          _c("datepicker", {
-            attrs: { placeholder: "Select Date" },
-            model: {
-              value: _vm.date,
-              callback: function($$v) {
-                _vm.date = $$v
-              },
-              expression: "date"
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      swiperOption: {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        breakpoints: {
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 40
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30
+          },
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20
+          }
+        }
+      }
+    };
+  },
+  components: {
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiperSlide"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselNavigation.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselNavigation.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      swiperOption: {
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
+    };
+  },
+  components: {
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiperSlide"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselPagination.vue?vue&type=script&lang=js&":
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselPagination.vue?vue&type=script&lang=js& ***!
+  \***********************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      swiperOption: {
+        pagination: {
+          el: '.swiper-pagination'
+        }
+      }
+    };
+  },
+  components: {
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiperSlide"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      swiperOption: {
+        speed: 600,
+        parallax: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
+    };
+  },
+  components: {
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiperSlide"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselProgress.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselProgress.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      swiperOption: {
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'progressbar'
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
+    };
+  },
+  components: {
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiperSlide"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselResponsiveBreakpoints.vue?vue&type=script&lang=js&":
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselResponsiveBreakpoints.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  data: function data() {
+    return {
+      swiperOption: {
+        slidesPerView: 5,
+        spaceBetween: 50,
+        // init: false,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        breakpoints: {
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 40
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30
+          },
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20
+          }
+        }
+      }
+    };
+  },
+  components: {
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiperSlide"]
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__);
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiperSlide"]
+  },
+  data: function data() {
+    return {
+      swiperOption: {
+        slidesPerView: 3,
+        centeredSlides: true,
+        spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination',
+          type: 'fraction'
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        },
+        virtual: {
+          slides: function () {
+            var slides = [];
+
+            for (var i = 0; i < 600; i += 1) {
+              slides.push("Slide ".concat(i + 1));
             }
-          }),
-          _vm._v(" "),
-          _c("p", { staticClass: "mt-4" }, [
-            _vm._v("Selected Date: " + _vm._s(_vm.date))
-          ])
-        ],
-        1
-      ),
+
+            return slides;
+          }()
+        },
+        breakpoints: {
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 40
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30
+          },
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20
+          }
+        }
+      }
+    };
+  },
+  methods: {
+    toSlide: function toSlide(i) {
+      this.$refs.mySwiper.swiper.slideTo(i, 0);
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=style&index=0&id=2b4c4b30&lang=scss&scoped=true&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=style&index=0&id=2b4c4b30&lang=scss&scoped=true& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "[dir] .swiper-container[data-v-2b4c4b30] {\n  background-color: #000;\n}\n.gallery-top[data-v-2b4c4b30] {\n  height: 80% !important;\n  width: 100%;\n}\n.gallery-thumbs[data-v-2b4c4b30] {\n  height: 20% !important;\n  box-sizing: border-box;\n}\n[dir] .gallery-thumbs[data-v-2b4c4b30] {\n  padding: 10px 0;\n}\n.gallery-thumbs .swiper-slide[data-v-2b4c4b30] {\n  width: 25%;\n  height: 100%;\n  opacity: 0.4;\n}\n.gallery-thumbs .swiper-slide-active[data-v-2b4c4b30] {\n  opacity: 1;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=style&index=0&id=6b1cbcaa&lang=scss&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=style&index=0&id=6b1cbcaa&lang=scss&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".swiper-container[data-v-6b1cbcaa]  .swiper-slide {\n  font-size: 38px;\n  font-weight: 700;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 300px;\n}[dir] .swiper-container[data-v-6b1cbcaa]  .swiper-slide {\n  text-align: center;\n  background-color: #eee;\n}\n[dir] .theme-dark .swiper-container[data-v-6b1cbcaa]  .swiper-slide {\n  background-color: #242a47;\n}", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=style&index=0&id=30209783&scoped=true&lang=css&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=style&index=0&id=30209783&scoped=true&lang=css& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".swiper-inner[data-v-30209783] {\n  width: 100%;\n  height: 400px;\n}[dir] .swiper-inner[data-v-30209783] {\n  padding-top: 50px;\n  padding-bottom: 50px;\n}\n.swiper-slide[data-v-30209783] {\n  width: 300px;\n  height: 300px;\n}\n[dir] .swiper-slide[data-v-30209783] {\n  background-position: center;\n  background-size: cover;\n}\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=style&index=0&id=489eb774&scoped=true&lang=css&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=style&index=0&id=489eb774&scoped=true&lang=css& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".swiper-inner[data-v-489eb774] {\n  position: relative;\n  overflow: hidden;\n  height: 330px;\n}[dir] .swiper-inner[data-v-489eb774] {\n  padding: 15px;\n}\n.swiper-container[data-v-489eb774] {\n  width: 300px !important;\n  height: 300px;\n  position: absolute;\n  top: 50%;\n}\n[dir] .swiper-container[data-v-489eb774] {\n  margin-top: -150px;\n}\n[dir=ltr] .swiper-container[data-v-489eb774] {\n  left: 50%;\n  margin-left: -150px;\n}\n[dir=rtl] .swiper-container[data-v-489eb774] {\n  right: 50%;\n  margin-right: -150px;\n}\n[dir] .swiper-slide[data-v-489eb774] {\n  background-position: center;\n  background-size: cover;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=style&index=0&id=4c817df4&scoped=true&lang=css&":
+/*!*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=style&index=0&id=4c817df4&scoped=true&lang=css& ***!
+  \*******************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(/*! ../../../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".swiper-slide[data-v-4c817df4] {\n  font-size: 18px;\n  min-height: 300px;\n}[dir] .swiper-slide[data-v-4c817df4] {\n  text-align: center;\n  background: #444 !important;\n}\n.swiper-slide img[data-v-4c817df4] {\n  width: auto;\n  height: auto;\n  max-width: 100%;\n  /*max-height: 100%;*/\n  position: absolute;\n  top: 50%;\n}\n[dir=ltr] .swiper-slide img[data-v-4c817df4] {\n  transform: translate(-50%, -50%);\n  left: 50%;\n}\n[dir=rtl] .swiper-slide img[data-v-4c817df4] {\n  transform: translate(50%, -50%);\n  right: 50%;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=style&index=0&id=53046b29&scoped=true&lang=css&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=style&index=0&id=53046b29&scoped=true&lang=css& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var escape = __webpack_require__(/*! ../../../../../../../../node_modules/css-loader/lib/url/escape.js */ "./node_modules/css-loader/lib/url/escape.js");
+exports = module.exports = __webpack_require__(/*! ../../../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".swiper-slide[data-v-53046b29] {\n  font-size: 18px;\n  color: #fff;\n  box-sizing: border-box;\n  justify-content: space-around !important;\n}[dir] .swiper-slide[data-v-53046b29] {\n  padding: 40px 60px;\n  background-color: transparent !important;\n}\n.parallax-bg[data-v-53046b29] {\n  position: absolute;\n  top: 0;\n  width: 130%;\n  height: 100%;\n  -webkit-background-size: cover;\n}\n[dir] .parallax-bg[data-v-53046b29] {\n  background-size: cover;\n  background-position: center;\n  background-image: url(" + escape(__webpack_require__(/*! ../../../../../../assets/images/pages/carousel/banner-4.jpg */ "./resources/admin/assets/images/pages/carousel/banner-4.jpg")) + ");\n}\n[dir=ltr] .parallax-bg[data-v-53046b29] {\n  left: 0;\n}\n[dir=rtl] .parallax-bg[data-v-53046b29] {\n  right: 0;\n}\n.swiper-slide .title[data-v-53046b29] {\n  font-size: 41px;\n  font-weight: 300;\n}\n.swiper-slide .subtitle[data-v-53046b29] {\n  font-size: 21px;\n}\n.swiper-slide .text[data-v-53046b29] {\n  font-size: 14px;\n  max-width: 400px;\n  line-height: 1.3;\n}\r\n", ""]);
+
+// exports
+
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=style&index=0&id=2b4c4b30&lang=scss&scoped=true&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=style&index=0&id=2b4c4b30&lang=scss&scoped=true& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../../../node_modules/css-loader!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselGallery.vue?vue&type=style&index=0&id=2b4c4b30&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=style&index=0&id=2b4c4b30&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=style&index=0&id=6b1cbcaa&lang=scss&scoped=true&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=style&index=0&id=6b1cbcaa&lang=scss&scoped=true& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../../../node_modules/css-loader!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselVirtualSlides.vue?vue&type=style&index=0&id=6b1cbcaa&lang=scss&scoped=true& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=style&index=0&id=6b1cbcaa&lang=scss&scoped=true&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=style&index=0&id=30209783&scoped=true&lang=css&":
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=style&index=0&id=30209783&scoped=true&lang=css& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../../../node_modules/css-loader??ref--7-1!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Carousel3dCoverflowEffect.vue?vue&type=style&index=0&id=30209783&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=style&index=0&id=30209783&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=style&index=0&id=489eb774&scoped=true&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=style&index=0&id=489eb774&scoped=true&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../../../node_modules/css-loader??ref--7-1!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Carousel3dEffect.vue?vue&type=style&index=0&id=489eb774&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=style&index=0&id=489eb774&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=style&index=0&id=4c817df4&scoped=true&lang=css&":
+/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=style&index=0&id=4c817df4&scoped=true&lang=css& ***!
+  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../../../node_modules/css-loader??ref--7-1!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselLazyLoading.vue?vue&type=style&index=0&id=4c817df4&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=style&index=0&id=4c817df4&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=style&index=0&id=53046b29&scoped=true&lang=css&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader??ref--7-1!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--7-2!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=style&index=0&id=53046b29&scoped=true&lang=css& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var content = __webpack_require__(/*! !../../../../../../../../node_modules/css-loader??ref--7-1!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselParallax.vue?vue&type=style&index=0&id=53046b29&scoped=true&lang=css& */ "./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=style&index=0&id=53046b29&scoped=true&lang=css&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel.vue?vue&type=template&id=fe0af21c&":
+/*!*****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/Carousel.vue?vue&type=template&id=fe0af21c& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "div",
+    { attrs: { id: "extra-component-vue-awesome-swiper-demo" } },
+    [
+      _c("carousel-default"),
       _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<template>\n  <datepicker placeholder="Select Date" v-model="date"></datepicker>\n</template>\n\n<script>\nimport Datepicker from \'vuejs-datepicker\';\n\nexport default {\n  data() {\n    return {\n      date: null,\n    }\n  },\n  components: {\n    Datepicker\n  }\n}\n</script>\n        '
-        )
-      ])
+      _c("carousel-navigation"),
+      _vm._v(" "),
+      _c("carousel-pagination"),
+      _vm._v(" "),
+      _c("carousel-progress"),
+      _vm._v(" "),
+      _c("carousel-multiple-slides-per-view"),
+      _vm._v(" "),
+      _c("carousel-multi-row-slides-layout"),
+      _vm._v(" "),
+      _c("carousel-effect-fade"),
+      _vm._v(" "),
+      _c("carousel-3d-effect"),
+      _vm._v(" "),
+      _c("carousel-3d-coverflow-effect"),
+      _vm._v(" "),
+      _c("carousel-autoplay"),
+      _vm._v(" "),
+      _c("carousel-gallery"),
+      _vm._v(" "),
+      _c("carousel-parallax"),
+      _vm._v(" "),
+      _c("carousel-lazy-loading"),
+      _vm._v(" "),
+      _c("carousel-responsive-breakpoints"),
+      _vm._v(" "),
+      _c("carousel-virtual-slides")
     ],
-    2
+    1
   )
 }
 var staticRenderFns = []
@@ -1176,10 +2680,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerFormat.vue?vue&type=template&id=26d9056e&":
-/*!***************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerFormat.vue?vue&type=template&id=26d9056e& ***!
-  \***************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=template&id=30209783&scoped=true&":
+/*!**********************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=template&id=30209783&scoped=true& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1193,37 +2697,101 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Format Datepicker", "code-toggler": "" } },
+    {
+      staticClass: "carousel-example",
+      attrs: { title: "3d Effect Coverflow Effect", "code-toggler": "" }
+    },
     [
-      _c("p", [
-        _vm._v("Change datepicker format with "),
-        _c("code", [_vm._v("format")])
-      ]),
-      _vm._v(" "),
       _c(
         "div",
-        { staticClass: "mt-5" },
+        { staticClass: "swiper-inner" },
         [
-          _c("datepicker", { attrs: { format: _vm.format } }),
-          _vm._v(" "),
           _c(
-            "vs-select",
+            "swiper",
             {
-              staticClass: "mt-4 w-full",
-              model: {
-                value: _vm.format,
-                callback: function($$v) {
-                  _vm.format = $$v
-                },
-                expression: "format"
+              key: _vm.$vs.rtl,
+              attrs: {
+                options: _vm.swiperOption,
+                dir: _vm.$vs.rtl ? "rtl" : "ltr"
               }
             },
-            _vm._l(_vm.formatOptions, function(option, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: option.value, text: option.text }
+            [
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-39.jpg */ "./resources/admin/assets/images/pages/carousel/banner-39.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-35.jpg */ "./resources/admin/assets/images/pages/carousel/banner-35.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-37.jpg */ "./resources/admin/assets/images/pages/carousel/banner-37.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-38.jpg */ "./resources/admin/assets/images/pages/carousel/banner-38.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-33.jpg */ "./resources/admin/assets/images/pages/carousel/banner-33.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-40.jpg */ "./resources/admin/assets/images/pages/carousel/banner-40.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-32.jpg */ "./resources/admin/assets/images/pages/carousel/banner-32.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", {
+                staticClass: "swiper-pagination",
+                attrs: { slot: "pagination" },
+                slot: "pagination"
               })
-            }),
+            ],
             1
           )
         ],
@@ -1232,7 +2800,7 @@ var render = function() {
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<template>\n  <datepicker :format="format"></datepicker>\n  <vs-select v-model="format" class="mt-4 w-full">\n    <vs-select-item :key="index" :value="option.value" :text="option.text" v-for="(option,index) in formatOptions" />\n  </vs-select>\n</template>\n\n<script>\nimport Datepicker from \'vuejs-datepicker\';\n\nexport default {\n  data() {\n    return {\n      format: "d MMMM yyyy",\n      formatOptions:[\n        {text: "d MMM yyyy - e.g 12 Feb 2016" , value: "d MMM yyyy" },\n        {text: "d MMMM yyyy - e.g 12 February 2016", value: "d MMMM yyyy" },\n        {text: "yyyy-MM-dd - e.g 2016-02-12", value: "yyyy-MM-dd" },\n        {text: "dsu MMM yyyy - e.g 12th Feb 2016", value: "dsu MMM yyyy" },\n        {text: "D dsu MMM yyyy - e.g Sat 12th Feb 2016", value: "D dsu MMM yyyy" },\n      ],\n    }\n  },\n  components: {\n    Datepicker\n  }\n}\n</script>\n        '
+          '\n<template>\n    <div class="carousel-example">\n        <div class="swiper-inner">\n            <!-- swiper -->\n            <swiper :options="swiperOption" :dir="$vs.rtl ? \'rtl\' : \'ltr\'" :key="$vs.rtl">\n                <swiper-slide>\n                  <img class="responsive" src="@assets/images/pages/carousel/banner-39.jpg" alt="banner">\n                </swiper-slide>\n                <swiper-slide>\n                  <img class="responsive" src="@assets/images/pages/carousel/banner-35.jpg" alt="banner">\n                </swiper-slide>\n                <swiper-slide>\n                  <img class="responsive" src="@assets/images/pages/carousel/banner-37.jpg" alt="banner">\n                </swiper-slide>\n                <swiper-slide>\n                  <img class="responsive" src="@assets/images/pages/carousel/banner-38.jpg" alt="banner">\n                </swiper-slide>\n                <swiper-slide>\n                  <img class="responsive" src="@assets/images/pages/carousel/banner-33.jpg" alt="banner">\n                </swiper-slide>\n                <swiper-slide>\n                  <img class="responsive" src="@assets/images/pages/carousel/banner-40.jpg" alt="banner">\n                </swiper-slide>\n                <swiper-slide>\n                  <img class="responsive" src="@assets/images/pages/carousel/banner-32.jpg" alt="banner">\n                </swiper-slide>\n                <div class="swiper-pagination" slot="pagination"></div>\n            </swiper>\n        </div>\n    </div>\n</template>\n\n<script>\nimport \'swiper/dist/css/swiper.min.css\'\nimport { swiper, swiperSlide } from \'vue-awesome-swiper\'\n\nexport default {\n    data() {\n        return {\n            swiperOption: {\n                effect: \'cube\',\n                grabCursor: true,\n                cubeEffect: {\n                    shadow: true,\n                    slideShadows: true,\n                    shadowOffset: 20,\n                    shadowScale: 0.94\n                },\n                pagination: {\n                    el: \'.swiper-pagination\'\n                }\n            }\n        }\n    },\n    components: {\n        swiper,\n        swiperSlide\n    }\n}\n</script>\n\n<style scoped>\n.swiper-inner {\n    position: relative;\n    overflow: hidden;\n    height: 330px;\n    padding: 15px;\n}\n\n.swiper-container {\n    width: 300px !important;\n    height: 300px;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    margin-left: -150px;\n    margin-top: -150px;\n}\n\n.swiper-slide {\n    background-position: center;\n    background-size: cover;\n}\n</style>\n        '
         )
       ])
     ],
@@ -1246,10 +2814,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerHighlightDates.vue?vue&type=template&id=e9b54efa&":
-/*!***********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerHighlightDates.vue?vue&type=template&id=e9b54efa& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=template&id=489eb774&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=template&id=489eb774&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1263,294 +2831,110 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Highlight Dates", "code-toggler": "" } },
+    {
+      staticClass: "carousel-example",
+      attrs: { title: "3d Effect", "code-toggler": "" }
+    },
     [
-      _c("p", [
-        _vm._v("Highlight dates in datepicker using function with "),
-        _c("code", [_vm._v("highlighted")]),
-        _vm._v(" prop")
-      ]),
-      _vm._v(" "),
       _c(
         "div",
-        { staticClass: "mt-5" },
-        [_c("datepicker", { attrs: { highlighted: _vm.highlightedFn } })],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          "\n<template>\n  <datepicker :highlighted=\"highlightedFn\"></datepicker>\n</template>\n\n<script>\nimport Datepicker from 'vuejs-datepicker';\n\nexport default {\n  data() {\n    return {\n      highlightedFn: {\n        customPredictor(date) {\n          if (date.getDate() % 4 === 0) {\n            return true;\n          }\n        }\n      },\n    }\n  },\n  components: {\n    Datepicker\n  }\n}\n</script>\n        "
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerInline.vue?vue&type=template&id=07a706eb&":
-/*!***************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerInline.vue?vue&type=template&id=07a706eb& ***!
-  \***************************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Inline", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("Create inline datepicker using "),
-        _c("code", [_vm._v("inline")]),
-        _vm._v(" prop")
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "mt-5" },
-        [_c("datepicker", { attrs: { inline: true } })],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          "\n<template>\n  <datepicker :inline=\"true\"></datepicker>\n</template>\n\n<script>\nimport Datepicker from 'vuejs-datepicker';\n\nexport default {\n  components: {\n    Datepicker\n  }\n}\n</script>\n        "
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMinMaxDateRange.vue?vue&type=template&id=8fa9b08a&":
-/*!************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMinMaxDateRange.vue?vue&type=template&id=8fa9b08a& ***!
-  \************************************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Min-Max Date Range", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v(
-          "You can add min max date range to disable dates in number of ways: "
-        ),
-        _c(
-          "a",
-          {
-            attrs: {
-              href:
-                "https://github.com/charliekassel/vuejs-datepicker#disabled-dates",
-              target: "_blank",
-              rel: "nofollow"
-            }
-          },
-          [_vm._v("docs")]
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "mt-5" },
-        [_c("datepicker", { attrs: { disabledDates: _vm.disabledDates } })],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          "\n<template>\n  <datepicker :disabledDates=\"disabledDates\"></datepicker>\n</template>\n\n<script>\nimport Datepicker from 'vuejs-datepicker';\n\nexport default {\n  data() {\n    return {\n      disabledDates: {\n        to: new Date(new Date().getFullYear(), new Date().getMonth()-2, 5), // Disable all dates up to specific date\n        from: new Date(new Date().getFullYear(), new Date().getMonth()+2, 26), // Disable all dates after specific date\n        daysOfMonth: [8, 11, 17], // Disable Specific days\n      }\n    }\n  },\n  components: {\n    Datepicker\n  }\n}\n</script>\n        "
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthViewOnly.vue?vue&type=template&id=5033c12f&":
-/*!**********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthViewOnly.vue?vue&type=template&id=5033c12f& ***!
-  \**********************************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Month View Only", "code-toggler": "" } },
-    [
-      _c("p", [_vm._v("Rendering default DatePicker with Month view only")]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "mt-5" },
-        [
-          _c("datepicker", {
-            attrs: { minimumView: "month", maximumView: "month" }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          "\n<template>\n  <datepicker :minimumView=\"'month'\" :maximumView=\"'month'\"></datepicker>\n</template>\n\n<script>\nimport Datepicker from 'vuejs-datepicker';\n\nexport default {\n  components: {\n    Datepicker\n  }\n}\n</script>\n        "
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthYearViewOnly.vue?vue&type=template&id=5873b1e8&":
-/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthYearViewOnly.vue?vue&type=template&id=5873b1e8& ***!
-  \**************************************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Month and Year View Only", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("Rendering default DatePicker with month and year view only")
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "mt-5" },
-        [
-          _c("datepicker", {
-            attrs: { minimumView: "month", maximumView: "year" }
-          })
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          "\n<template>\n  <datepicker :minimumView=\"'month'\" :maximumView=\"'year'\"></datepicker>\n</template>\n\n<script>\nimport Datepicker from 'vuejs-datepicker';\n\nexport default {\n  components: {\n    Datepicker\n  }\n}\n</script>\n        "
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerOpenProgramatically.vue?vue&type=template&id=53f37206&":
-/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerOpenProgramatically.vue?vue&type=template&id=53f37206& ***!
-  \****************************************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Open Programatically", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("Open datepicker programatically using "),
-        _c("strong", [_vm._v("ref")]),
-        _vm._v(" and "),
-        _c("strong", [_vm._v("click-event")])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "mt-5" },
+        { staticClass: "swiper-inner" },
         [
           _c(
-            "vs-button",
+            "swiper",
             {
-              staticClass: "mb-4",
-              on: {
-                click: function($event) {
-                  return _vm.$refs.programaticOpen.showCalendar()
-                }
+              key: _vm.$vs.rtl,
+              attrs: {
+                options: _vm.swiperOption,
+                dir: _vm.$vs.rtl ? "rtl" : "ltr"
               }
             },
-            [_vm._v("Open Picker")]
-          ),
-          _vm._v(" "),
-          _c("datepicker", { ref: "programaticOpen" })
+            [
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-21.jpg */ "./resources/admin/assets/images/pages/carousel/banner-21.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-23.jpg */ "./resources/admin/assets/images/pages/carousel/banner-23.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-27.jpg */ "./resources/admin/assets/images/pages/carousel/banner-27.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-29.jpg */ "./resources/admin/assets/images/pages/carousel/banner-29.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-30.jpg */ "./resources/admin/assets/images/pages/carousel/banner-30.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-37.jpg */ "./resources/admin/assets/images/pages/carousel/banner-37.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-39.jpg */ "./resources/admin/assets/images/pages/carousel/banner-39.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", {
+                staticClass: "swiper-pagination",
+                attrs: { slot: "pagination" },
+                slot: "pagination"
+              })
+            ],
+            1
+          )
         ],
         1
       ),
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<template>\n  <vs-button class="mb-4" @click="$refs.programaticOpen.showCalendar()">Open Picker</vs-button>\n  <datepicker ref="programaticOpen"></datepicker>\n</template>\n\n<script>\nimport Datepicker from \'vuejs-datepicker\';\n\nexport default {\n  components: {\n    Datepicker\n  }\n}\n</script>\n        '
+          '\n<template>\n    <div class="carousel-example">\n        <div class="swiper-inner">\n            <!-- swiper -->\n            <swiper :options="swiperOption" :dir="$vs.rtl ? \'rtl\' : \'ltr\'" :key="$vs.rtl">\n                <swiper-slide>\n                  <img class="responsive" src="@assets/images/pages/carousel/banner-21.jpg" alt="banner">\n                </swiper-slide>\n                <swiper-slide>\n                  <img class="responsive" src="@assets/images/pages/carousel/banner-23.jpg" alt="banner">\n                </swiper-slide>\n                <swiper-slide>\n                  <img class="responsive" src="@assets/images/pages/carousel/banner-27.jpg" alt="banner">\n                </swiper-slide>\n                <swiper-slide>\n                  <img class="responsive" src="@assets/images/pages/carousel/banner-29.jpg" alt="banner">\n                </swiper-slide>\n                <swiper-slide>\n                  <img class="responsive" src="@assets/images/pages/carousel/banner-30.jpg" alt="banner">\n                </swiper-slide>\n                <swiper-slide>\n                  <img class="responsive" src="@assets/images/pages/carousel/banner-37.jpg" alt="banner">\n                </swiper-slide>\n                <swiper-slide>\n                  <img class="responsive" src="@assets/images/pages/carousel/banner-39.jpg" alt="banner">\n                </swiper-slide>\n                <div class="swiper-pagination" slot="pagination"></div>\n            </swiper>\n        </div>\n    </div>\n</template>\n\n<script>\nimport \'swiper/dist/css/swiper.min.css\'\nimport { swiper, swiperSlide } from \'vue-awesome-swiper\'\n\nexport default {\n    data() {\n        return {\n            swiperOption: {\n                effect: \'cube\',\n                grabCursor: true,\n                cubeEffect: {\n                    shadow: true,\n                    slideShadows: true,\n                    shadowOffset: 20,\n                    shadowScale: 0.94\n                },\n                pagination: {\n                    el: \'.swiper-pagination\'\n                }\n            }\n        }\n    },\n    components: {\n        swiper,\n        swiperSlide\n    }\n}\n</script>\n\n<style scoped>\n.swiper-inner {\n    position: relative;\n    overflow: hidden;\n    height: 330px;\n    padding: 15px;\n}\n\n.swiper-container {\n    width: 300px !important;\n    height: 300px;\n    position: absolute;\n    left: 50%;\n    top: 50%;\n    margin-left: -150px;\n    margin-top: -150px;\n}\n\n.swiper-slide {\n    background-position: center;\n    background-size: cover;\n}\n</style>\n        '
         )
       ])
     ],
@@ -1564,9 +2948,115 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerRtl.vue?vue&type=template&id=2f33bc08&":
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselAutoplay.vue?vue&type=template&id=255d70f5&":
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselAutoplay.vue?vue&type=template&id=255d70f5& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    {
+      staticClass: "carousel-example",
+      attrs: { title: "Autoplay", "code-toggler": "" }
+    },
+    [
+      _c(
+        "swiper",
+        {
+          key: _vm.$vs.rtl,
+          attrs: { options: _vm.swiperOption, dir: _vm.$vs.rtl ? "rtl" : "ltr" }
+        },
+        [
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-16.jpg */ "./resources/admin/assets/images/pages/carousel/banner-16.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-13.jpg */ "./resources/admin/assets/images/pages/carousel/banner-13.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-4.jpg */ "./resources/admin/assets/images/pages/carousel/banner-4.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-2.jpg */ "./resources/admin/assets/images/pages/carousel/banner-2.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-pagination",
+            attrs: { slot: "pagination" },
+            slot: "pagination"
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-button-prev swiper-button-white",
+            attrs: { slot: "button-prev" },
+            slot: "button-prev"
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-button-next swiper-button-white",
+            attrs: { slot: "button-next" },
+            slot: "button-next"
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n    <div class="carousel-example">\n        <swiper :options="swiperOption" :dir="$vs.rtl ? \'rtl\' : \'ltr\'" :key="$vs.rtl">\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-16.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-13.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-4.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-2.jpg" alt="banner">\n            </swiper-slide>\n            <div class="swiper-pagination" slot="pagination"></div>\n            <div class="swiper-button-prev" slot="button-prev"></div>\n            <div class="swiper-button-next" slot="button-next"></div>\n        </swiper>\n    </div>\n</template>\n\n<script>\nimport \'swiper/dist/css/swiper.min.css\'\nimport { swiper, swiperSlide } from \'vue-awesome-swiper\'\n\nexport default {\n    data() {\n        return {\n            swiperOption: {\n                spaceBetween: 30,\n                centeredSlides: true,\n                autoplay: {\n                    delay: 2500,\n                    disableOnInteraction: false\n                },\n                pagination: {\n                    el: \'.swiper-pagination\',\n                    clickable: true\n                },\n                navigation: {\n                    nextEl: \'.swiper-button-next\',\n                    prevEl: \'.swiper-button-prev\'\n                }\n            }\n        },\n        components: {\n            swiper,\n            swiperSlide\n        }\n    }\n</script>\n          '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselDefault.vue?vue&type=template&id=dd46cac2&":
 /*!************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerRtl.vue?vue&type=template&id=2f33bc08& ***!
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselDefault.vue?vue&type=template&id=dd46cac2& ***!
   \************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -1581,24 +3071,61 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "RTL Datepicker", "code-toggler": "" } },
+    {
+      staticClass: "carousel-example",
+      attrs: { title: "Default", "code-toggler": "" }
+    },
     [
-      _c("p", [
-        _vm._v("Rendering RTL DatePicker using "),
-        _c("code", [_vm._v("language")]),
-        _vm._v(" prop")
-      ]),
-      _vm._v(" "),
       _c(
-        "div",
-        { staticClass: "mt-5" },
-        [_c("datepicker", { attrs: { language: _vm.languages.he } })],
+        "swiper",
+        { key: _vm.$vs.rtl, attrs: { dir: _vm.$vs.rtl ? "rtl" : "ltr" } },
+        [
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-18.jpg */ "./resources/admin/assets/images/pages/carousel/banner-18.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-15.jpg */ "./resources/admin/assets/images/pages/carousel/banner-15.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-10.jpg */ "./resources/admin/assets/images/pages/carousel/banner-10.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-16.jpg */ "./resources/admin/assets/images/pages/carousel/banner-16.jpg"),
+                alt: "banner"
+              }
+            })
+          ])
+        ],
         1
       ),
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<template>\n  <datepicker :language="languages.he"></datepicker>\n</template>\n\n<script>\nimport Datepicker from \'vuejs-datepicker\';\nimport * as lang from "vuejs-datepicker/src/locale";\n\nexport default {\n  data() {\n    return {\n      languages: lang,\n    }\n  },\n  components: {\n    Datepicker\n  }\n}\n</script>\n        '
+          '\n<template>\n    <div class="carousel-example">\n          <swiper :dir="$vs.rtl ? \'rtl\' : \'ltr\'" :key="$vs.rtl">\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-18.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-15.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-10.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-16.jpg" alt="banner">\n            </swiper-slide>\n          </swiper>\n    </div>\n</template>\n\n<script>\nimport \'swiper/dist/css/swiper.min.css\'\nimport { swiper, swiperSlide } from \'vue-awesome-swiper\'\n\nexport default {\n    components: {\n        swiper,\n        swiperSlide\n    }\n}\n</script>\n          '
         )
       ])
     ],
@@ -1612,10 +3139,10 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerTranslation.vue?vue&type=template&id=a361da62&":
-/*!********************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerTranslation.vue?vue&type=template&id=a361da62& ***!
-  \********************************************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselEffectFade.vue?vue&type=template&id=40125fbf&":
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselEffectFade.vue?vue&type=template&id=40125fbf& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1629,45 +3156,74 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vx-card",
-    { attrs: { title: "Translation", "code-toggler": "" } },
+    {
+      staticClass: "carousel-example",
+      attrs: { title: "Fade Effect", "code-toggler": "" }
+    },
     [
-      _c("p", [
-        _vm._v(
-          "Date picker language: " +
-            _vm._s(_vm.languages[_vm.language].language)
-        )
-      ]),
-      _vm._v(" "),
       _c(
-        "div",
-        { staticClass: "mt-5" },
+        "swiper",
+        {
+          key: _vm.$vs.rtl,
+          attrs: { options: _vm.swiperOption, dir: _vm.$vs.rtl ? "rtl" : "ltr" }
+        },
         [
-          _c(
-            "vs-select",
-            {
-              staticClass: "mb-4 w-1/3",
-              model: {
-                value: _vm.language,
-                callback: function($$v) {
-                  _vm.language = $$v
-                },
-                expression: "language"
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-16.jpg */ "./resources/admin/assets/images/pages/carousel/banner-16.jpg"),
+                alt: "banner"
               }
-            },
-            _vm._l(_vm.languages, function(language, key) {
-              return _c("vs-select-item", {
-                key: key,
-                attrs: { value: key, text: language.language }
-              })
-            }),
-            1
-          ),
+            })
+          ]),
           _vm._v(" "),
-          _c("datepicker", {
-            attrs: {
-              language: _vm.languages[_vm.language],
-              format: "d MMMM yyyy"
-            }
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-10.jpg */ "./resources/admin/assets/images/pages/carousel/banner-10.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-15.jpg */ "./resources/admin/assets/images/pages/carousel/banner-15.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-18.jpg */ "./resources/admin/assets/images/pages/carousel/banner-18.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-pagination swiper-pagination-white",
+            attrs: { slot: "pagination" },
+            slot: "pagination"
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-button-prev swiper-button-white",
+            attrs: { slot: "button-prev" },
+            slot: "button-prev"
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-button-next swiper-button-white",
+            attrs: { slot: "button-next" },
+            slot: "button-next"
           })
         ],
         1
@@ -1675,7 +3231,7 @@ var render = function() {
       _vm._v(" "),
       _c("template", { slot: "codeContainer" }, [
         _vm._v(
-          '\n<template>\n  <vs-select v-model="language" class="mb-4 w-1/3">\n    <vs-select-item :key="key" :value="key" :text="language.language" v-for="(language, key) in languages" />\n  </vs-select>\n  <datepicker :language="languages[language]" format="d MMMM yyyy"></datepicker>\n</template>\n\n<script>\nimport Datepicker from \'vuejs-datepicker\';\nimport * as lang from \'vuejs-datepicker/src/locale\';\n\nexport default {\n  data() {\n    return {\n      language: "en",\n      languages: lang,\n    }\n  },\n  components: {\n    Datepicker\n  }\n}\n</script>\n        '
+          '\n<template>\n  <swiper :options="swiperOption" :dir="$vs.rtl ? \'rtl\' : \'ltr\'" :key="$vs.rtl">\n    <swiper-slide>\n      <img class="responsive" src="@assets/images/pages/carousel/banner-18.jpg" alt="banner">\n    </swiper-slide>\n    <swiper-slide>\n      <img class="responsive" src="@assets/images/pages/carousel/banner-15.jpg" alt="banner">\n    </swiper-slide>\n    <swiper-slide>\n      <img class="responsive" src="@assets/images/pages/carousel/banner-10.jpg" alt="banner">\n    </swiper-slide>\n    <swiper-slide>\n      <img class="responsive" src="@assets/images/pages/carousel/banner-16.jpg" alt="banner">\n    </swiper-slide>\n    <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>\n    <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>\n    <div class="swiper-button-next swiper-button-white" slot="button-next"></div>\n  </swiper>\n</template>\n\n<script>\nimport \'swiper/dist/css/swiper.min.css\'\nimport { swiper, swiperSlide } from \'vue-awesome-swiper\'\n\nexport default {\n  data() {\n    return {\n      swiperOption: {\n        spaceBetween: 30,\n        effect: \'fade\',\n        pagination: {\n            el: \'.swiper-pagination\',\n            clickable: true\n        },\n        navigation: {\n            nextEl: \'.swiper-button-next\',\n            prevEl: \'.swiper-button-prev\'\n        }\n      }\n    }\n  },\n  components: {\n    swiper,\n    swiperSlide\n  }\n}\n</script>\n        '
         )
       ])
     ],
@@ -1689,17 +3245,1582 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/Datepicker.vue":
-/*!********************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/Datepicker.vue ***!
-  \********************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=template&id=2b4c4b30&scoped=true&":
+/*!************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=template&id=2b4c4b30&scoped=true& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    {
+      staticClass: "carousel-example-gallery",
+      attrs: { title: "Gallery", "code-toggler": "" }
+    },
+    [
+      _c(
+        "div",
+        [
+          _c(
+            "swiper",
+            {
+              key: _vm.$vs.rtl + " gallery",
+              ref: "swiperTop",
+              staticClass: "gallery-top",
+              attrs: {
+                options: _vm.swiperOptionTop,
+                dir: _vm.$vs.rtl ? "rtl" : "ltr"
+              }
+            },
+            [
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-10.jpg */ "./resources/admin/assets/images/pages/carousel/banner-10.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-16.jpg */ "./resources/admin/assets/images/pages/carousel/banner-16.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-15.jpg */ "./resources/admin/assets/images/pages/carousel/banner-15.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-13.jpg */ "./resources/admin/assets/images/pages/carousel/banner-13.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("div", {
+                staticClass: "swiper-button-next swiper-button-white",
+                attrs: { slot: "button-next" },
+                slot: "button-next"
+              }),
+              _vm._v(" "),
+              _c("div", {
+                staticClass: "swiper-button-prev swiper-button-white",
+                attrs: { slot: "button-prev" },
+                slot: "button-prev"
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "swiper",
+            {
+              key: _vm.$vs.rtl + " thumbs",
+              ref: "swiperThumbs",
+              staticClass: "gallery-thumbs",
+              attrs: {
+                options: _vm.swiperOptionThumbs,
+                dir: _vm.$vs.rtl ? "rtl gallery" : "ltr gallery"
+              }
+            },
+            [
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-10.jpg */ "./resources/admin/assets/images/pages/carousel/banner-10.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-16.jpg */ "./resources/admin/assets/images/pages/carousel/banner-16.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-15.jpg */ "./resources/admin/assets/images/pages/carousel/banner-15.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ]),
+              _vm._v(" "),
+              _c("swiper-slide", [
+                _c("img", {
+                  staticClass: "responsive",
+                  attrs: {
+                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-13.jpg */ "./resources/admin/assets/images/pages/carousel/banner-13.jpg"),
+                    alt: "banner"
+                  }
+                })
+              ])
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n  <div style="height: 500px">\n\n    <!-- swiper1 -->\n        <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop" :dir="$vs.rtl ? \'rtl\' : \'ltr\'" :key="$vs.rtl">\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-10.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-16.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-15.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-13.jpg" alt="banner">\n            </swiper-slide>\n            <div class="swiper-button-next swiper-button-white" slot="button-next"></div>\n            <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>\n        </swiper>\n\n        <!-- swiper2 Thumbs -->\n        <swiper :options="swiperOptionThumbs" class="gallery-thumbs" ref="swiperThumbs" :dir="$vs.rtl ? \'rtl\' : \'ltr\'" :key="$vs.rtl">\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-10.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-16.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-15.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-13.jpg" alt="banner">\n            </swiper-slide>\n        </swiper>\n  </div>\n</template>\n\n<script>\nimport \'swiper/dist/css/swiper.min.css\'\nimport { swiper, swiperSlide } from \'vue-awesome-swiper\'\n\nexport default {\n  data() {\n    return {\n      swiperOptionTop: {\n        spaceBetween: 10,\n        navigation: {\n          nextEl: \'.swiper-button-next\',\n          prevEl: \'.swiper-button-prev\'\n        }\n      },\n      swiperOptionThumbs: {\n        spaceBetween: 10,\n        centeredSlides: true,\n        slidesPerView: \'auto\',\n        touchRatio: 0.2,\n        slideToClickedSlide: true\n      }\n    }\n  },\n  mounted() {\n    this.$nextTick(() => {\n      const swiperTop = this.$refs.swiperTop.swiper\n      const swiperThumbs = this.$refs.swiperThumbs.swiper\n      swiperTop.controller.control = swiperThumbs\n      swiperThumbs.controller.control = swiperTop\n    })\n  },\n  components: {\n    swiper,\n    swiperSlide\n  }\n}\n</script>\n\n\n<style lang="scss" scoped>\n  .swiper-container {\n    background-color: #000;\n  }\n  .gallery-top {\n    height: 80%!important;\n    width: 100%;\n  }\n  .gallery-thumbs {\n    height: 20%!important;\n    box-sizing: border-box;\n    padding: 10px 0;\n  }\n  .gallery-thumbs .swiper-slide {\n    width: 25%;\n    height: 100%;\n    opacity: 0.4;\n  }\n  .gallery-thumbs .swiper-slide-active {\n    opacity: 1;\n  }\n</style>\n          '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=template&id=4c817df4&scoped=true&":
+/*!****************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=template&id=4c817df4&scoped=true& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    {
+      staticClass: "carousel-example",
+      attrs: { title: "Lazy Loading", "code-toggler": "" }
+    },
+    [
+      _c(
+        "swiper",
+        {
+          key: _vm.$vs.rtl,
+          attrs: { options: _vm.swiperOption, dir: _vm.$vs.rtl ? "rtl" : "ltr" }
+        },
+        [
+          _vm._l(_vm.slides, function(slide) {
+            return _c("swiper-slide", { key: slide.img }, [
+              _c("img", {
+                staticClass: "swiper-lazy",
+                attrs: { "data-src": slide.img }
+              }),
+              _vm._v(" "),
+              _c("div", {
+                staticClass: "swiper-lazy-preloader swiper-lazy-preloader-white"
+              })
+            ])
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-pagination",
+            attrs: { slot: "pagination" },
+            slot: "pagination"
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-button-next swiper-button-white",
+            attrs: { slot: "button-next" },
+            slot: "button-next"
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-button-prev swiper-button-white",
+            attrs: { slot: "button-prev" },
+            slot: "button-prev"
+          })
+        ],
+        2
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n  <!-- swiper -->\n    <swiper :options="swiperOption" :dir="$vs.rtl ? \'rtl\' : \'ltr\'" :key="$vs.rtl">\n\n        <swiper-slide v-for="slide in slides" :key="slide.img">\n            <img :data-src="slide.img" class="swiper-lazy">\n            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>\n        </swiper-slide>\n\n        <div class="swiper-pagination" slot="pagination"></div>\n        <div class="swiper-button-next swiper-button-white" slot="button-next"></div>\n        <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>\n    </swiper>\n</template>\n\n<script>\nimport \'swiper/dist/css/swiper.min.css\'\nimport { swiper, swiperSlide } from \'vue-awesome-swiper\'\n\nexport default {\n    data() {\n        return {\n            swiperOption: {\n                // Enable lazy loading\n                lazy: true,\n                pagination: {\n                    el: \'.swiper-pagination\',\n                    clickable: true\n                },\n                navigation: {\n                    nextEl: \'.swiper-button-next\',\n                    prevEl: \'.swiper-button-prev\'\n                }\n            },\n            slides: [\n              { img: require(\'@assets/images/pages/carousel/banner-13.jpg\') },\n              { img: require(\'@assets/images/pages/carousel/banner-7.jpg\')  },\n              { img: require(\'@assets/images/pages/carousel/banner-10.jpg\') },\n              { img: require(\'@assets/images/pages/carousel/banner-16.jpg\') },\n              { img: require(\'@assets/images/pages/carousel/banner-20.jpg\') },\n            ]\n        }\n    },\n  components: {\n    swiper,\n    swiperSlide\n  }\n}\n</script>\n\n<style scoped>\n.swiper-slide {\n  text-align: center;\n  font-size: 18px;\n  background: #444 !important;\n}\n\n.swiper-slide img {\n  width: auto;\n  height: auto;\n  max-width: 100%;\n  /*max-height: 100%;*/\n  -ms-transform: translate(-50%, -50%);\n  -webkit-transform: translate(-50%, -50%);\n  -moz-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%);\n  position: absolute;\n  left: 50%;\n  top: 50%;\n}\n</style>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultiRowSlidesLayout.vue?vue&type=template&id=62730abf&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultiRowSlidesLayout.vue?vue&type=template&id=62730abf& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    {
+      staticClass: "carousel-example",
+      attrs: { title: "Multi Row Slides Layout", "code-toggler": "" }
+    },
+    [
+      _c(
+        "swiper",
+        {
+          key: _vm.$vs.rtl,
+          attrs: { options: _vm.swiperOption, dir: _vm.$vs.rtl ? "rtl" : "ltr" }
+        },
+        [
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-31.jpg */ "./resources/admin/assets/images/pages/carousel/banner-31.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-32.jpg */ "./resources/admin/assets/images/pages/carousel/banner-32.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-33.jpg */ "./resources/admin/assets/images/pages/carousel/banner-33.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-34.jpg */ "./resources/admin/assets/images/pages/carousel/banner-34.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-35.jpg */ "./resources/admin/assets/images/pages/carousel/banner-35.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-23.jpg */ "./resources/admin/assets/images/pages/carousel/banner-23.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-37.jpg */ "./resources/admin/assets/images/pages/carousel/banner-37.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-38.jpg */ "./resources/admin/assets/images/pages/carousel/banner-38.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-39.jpg */ "./resources/admin/assets/images/pages/carousel/banner-39.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-40.jpg */ "./resources/admin/assets/images/pages/carousel/banner-40.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-pagination",
+            attrs: { slot: "pagination" },
+            slot: "pagination"
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n    <div class="carousel-example">\n        <swiper :options="swiperOption" :dir="$vs.rtl ? \'rtl\' : \'ltr\'" :key="$vs.rtl">\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-31.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-32.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-33.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-34.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-35.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-23.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-37.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-38.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-39.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-40.jpg" alt="banner">\n            </swiper-slide>\n            <div class="swiper-pagination" slot="pagination"></div>\n        </swiper>\n    </div>\n</template>\n\n<script>\nimport \'swiper/dist/css/swiper.min.css\'\nimport { swiper, swiperSlide } from \'vue-awesome-swiper\'\n\nexport default {\n    data() {\n        return {\n            swiperOption: {\n                slidesPerView: 3,\n                slidesPerColumn: 2,\n                spaceBetween: 30,\n                pagination: {\n                    el: \'.swiper-pagination\',\n                    clickable: true\n                },\n                breakpoints: {\n                    1024: {\n                        slidesPerView: 3,\n                        spaceBetween: 40\n                    },\n                    768: {\n                        slidesPerView: 2,\n                        spaceBetween: 30\n                    },\n                    640: {\n                        slidesPerView: 1,\n                        spaceBetween: 20\n                    }\n                }\n            }\n        }\n    },\n    components: {\n        swiper,\n        swiperSlide\n    }\n}\n</script>\n\n<style lang="scss">\n.carousel-example .swiper-container .swiper-slide {\n    text-align: center;\n    font-size: 38px;\n    font-weight: 700;\n    background-color: #eee;\n    display: -webkit-box;\n    display: -ms-flexbox;\n    display: flex;\n    -webkit-box-pack: center;\n    -ms-flex-pack: center;\n    justify-content: center;\n    -webkit-box-align: center;\n    -ms-flex-align: center;\n    align-items: center;\n    min-height: 300px;\n}\n</style>\n          '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultipleSlidesPerView.vue?vue&type=template&id=37010c4e&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultipleSlidesPerView.vue?vue&type=template&id=37010c4e& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    {
+      staticClass: "carousel-example",
+      attrs: { title: "Multiple Slides Per View", "code-toggler": "" }
+    },
+    [
+      _c(
+        "swiper",
+        {
+          key: _vm.$vs.rtl,
+          attrs: { options: _vm.swiperOption, dir: _vm.$vs.rtl ? "rtl" : "ltr" }
+        },
+        [
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-21.jpg */ "./resources/admin/assets/images/pages/carousel/banner-21.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-22.jpg */ "./resources/admin/assets/images/pages/carousel/banner-22.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-23.jpg */ "./resources/admin/assets/images/pages/carousel/banner-23.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-29.jpg */ "./resources/admin/assets/images/pages/carousel/banner-29.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-30.jpg */ "./resources/admin/assets/images/pages/carousel/banner-30.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-pagination",
+            attrs: { slot: "pagination" },
+            slot: "pagination"
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n    <div class="carousel-example">\n        <swiper :options="swiperOption" :dir="$vs.rtl ? \'rtl\' : \'ltr\'" :key="$vs.rtl">\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-21.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-22.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-23.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-29.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-30.jpg" alt="banner">\n            </swiper-slide>\n            <div class="swiper-pagination" slot="pagination"></div>\n        </swiper>\n    </div>\n</template>\n\n<script>\nimport \'swiper/dist/css/swiper.min.css\'\nimport { swiper, swiperSlide } from \'vue-awesome-swiper\'\n\nexport default {\n    data() {\n        return {\n            swiperOption: {\n                slidesPerView: 3,\n                spaceBetween: 30,\n                pagination: {\n                    el: \'.swiper-pagination\',\n                    clickable: true\n                },\n                breakpoints: {\n                    1024: {\n                        slidesPerView: 3,\n                        spaceBetween: 40\n                    },\n                    768: {\n                        slidesPerView: 2,\n                        spaceBetween: 30\n                    },\n                    640: {\n                        slidesPerView: 1,\n                        spaceBetween: 20\n                    }\n                }\n            }\n        }\n    },\n    components: {\n        swiper,\n        swiperSlide\n    }\n}\n</script>\n\n          '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselNavigation.vue?vue&type=template&id=e80beab4&":
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselNavigation.vue?vue&type=template&id=e80beab4& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    {
+      staticClass: "carousel-example",
+      attrs: { title: "Navigations", "code-toggler": "" }
+    },
+    [
+      _c(
+        "swiper",
+        {
+          key: _vm.$vs.rtl,
+          attrs: { options: _vm.swiperOption, dir: _vm.$vs.rtl ? "rtl" : "ltr" }
+        },
+        [
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-13.jpg */ "./resources/admin/assets/images/pages/carousel/banner-13.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-7.jpg */ "./resources/admin/assets/images/pages/carousel/banner-7.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-11.jpg */ "./resources/admin/assets/images/pages/carousel/banner-11.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-1.jpg */ "./resources/admin/assets/images/pages/carousel/banner-1.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-button-prev swiper-button-white",
+            attrs: { slot: "button-prev" },
+            slot: "button-prev"
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-button-next swiper-button-white",
+            attrs: { slot: "button-next" },
+            slot: "button-next"
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n    <div class="carousel-example">\n        <swiper :options="swiperOption" :dir="$vs.rtl ? \'rtl\' : \'ltr\'" :key="$vs.rtl">\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-13.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-7.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-11.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-1.jpg" alt="banner">\n            </swiper-slide>\n            <div class="swiper-button-prev" slot="button-prev"></div>\n            <div class="swiper-button-next" slot="button-next"></div>\n        </swiper>\n    </div>\n</template>\n\n<script>\nimport \'swiper/dist/css/swiper.min.css\'\nimport { swiper, swiperSlide } from \'vue-awesome-swiper\'\n\nexport default{\n  data() {\n    return {\n        swiperOption: {\n            navigation: {\n              nextEl: \'.swiper-button-next\',\n              prevEl: \'.swiper-button-prev\'\n            }\n          }\n    }\n  },\n  components: {\n    swiper,\n    swiperSlide\n  }\n}\n</script>\n          '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselPagination.vue?vue&type=template&id=eb61f5a8&":
+/*!***************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselPagination.vue?vue&type=template&id=eb61f5a8& ***!
+  \***************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    {
+      staticClass: "carousel-example",
+      attrs: { title: "Pagination", "code-toggler": "" }
+    },
+    [
+      _c(
+        "swiper",
+        {
+          key: _vm.$vs.rtl,
+          attrs: { options: _vm.swiperOption, dir: _vm.$vs.rtl ? "rtl" : "ltr" }
+        },
+        [
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-16.jpg */ "./resources/admin/assets/images/pages/carousel/banner-16.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-19.jpg */ "./resources/admin/assets/images/pages/carousel/banner-19.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-5.jpg */ "./resources/admin/assets/images/pages/carousel/banner-5.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-9.jpg */ "./resources/admin/assets/images/pages/carousel/banner-9.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-pagination",
+            attrs: { slot: "pagination" },
+            slot: "pagination"
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n    <div class="carousel-example" :dir="$vs.rtl ? \'rtl\' : \'ltr\'" :key="$vs.rtl">\n        <swiper :options="swiperOption">\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-16.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-19.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-5.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-9.jpg" alt="banner">\n            </swiper-slide>\n            <div class="swiper-pagination" slot="pagination"></div>\n        </swiper>\n    </div>\n</template>\n\n<script>\nimport \'swiper/dist/css/swiper.min.css\'\nimport { swiper, swiperSlide } from \'vue-awesome-swiper\'\n\nexport default {\n    data() {\n        return {\n            swiperOption: {\n                pagination: {\n                    el: \'.swiper-pagination\'\n                }\n            }\n        }\n    },\n    components: {\n        swiper,\n        swiperSlide\n    }\n}\n</script>\n          '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=template&id=53046b29&scoped=true&":
+/*!*************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=template&id=53046b29&scoped=true& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    {
+      staticClass: "carousel-example",
+      attrs: { title: "Parallax", "code-toggler": "" }
+    },
+    [
+      _c(
+        "swiper",
+        {
+          key: _vm.$vs.rtl,
+          attrs: { options: _vm.swiperOption, dir: _vm.$vs.rtl ? "rtl" : "ltr" }
+        },
+        [
+          _c("div", {
+            staticClass: "parallax-bg",
+            attrs: { slot: "parallax-bg", "data-swiper-parallax": "-23%" },
+            slot: "parallax-bg"
+          }),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c(
+              "div",
+              {
+                staticClass: "title",
+                attrs: { "data-swiper-parallax": "-100" }
+              },
+              [_vm._v("Slide 1")]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "subtitle font-semibold",
+                attrs: { "data-swiper-parallax": "-200" }
+              },
+              [_vm._v("Subtitle")]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "text",
+                attrs: { "data-swiper-parallax": "-300" }
+              },
+              [
+                _c("p", { staticClass: "font-medium" }, [
+                  _vm._v(
+                    "Jelly chocolate cupcake chocolate bar caramels chupa chups chupa chups ice cream tiramisu. Oat cake muffin pastry marzipan sweet jujubes powder cupcake carrot cake. Caramels candy pastry marzipan pudding. Sugar plum carrot cake topping cookie."
+                  )
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c(
+              "div",
+              {
+                staticClass: "title",
+                attrs: { "data-swiper-parallax": "-100" }
+              },
+              [_vm._v("Slide 2")]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "subtitle font-semibold",
+                attrs: { "data-swiper-parallax": "-200" }
+              },
+              [_vm._v("Subtitle")]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "text",
+                attrs: { "data-swiper-parallax": "-300" }
+              },
+              [
+                _c("p", { staticClass: "font-medium" }, [
+                  _vm._v(
+                    "Sweet oat cake marzipan jelly brownie ice cream bear claw marshmallow jelly beans. Halvah dessert caramels toffee sweet cake tiramisu. Chocolate bar marshmallow topping biscuit gummies chocolate cake candy liquorice."
+                  )
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c(
+              "div",
+              {
+                staticClass: "title",
+                attrs: { "data-swiper-parallax": "-100" }
+              },
+              [_vm._v("Slide 3")]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "subtitle font-semibold",
+                attrs: { "data-swiper-parallax": "-200" }
+              },
+              [_vm._v("Subtitle")]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              {
+                staticClass: "text",
+                attrs: { "data-swiper-parallax": "-300" }
+              },
+              [
+                _c("p", { staticClass: "font-medium" }, [
+                  _vm._v(
+                    "Powder jelly bonbon liquorice candy canes jujubes fruitcake cotton candy macaroon. Croissant jelly-o tootsie roll halvah. Topping lollipop pastry. Fruitcake powder cupcake apple pie chocolate bar wafer. brownie macaroon dragée chocolate bar candy."
+                  )
+                ])
+              ]
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-pagination swiper-pagination-white",
+            attrs: { slot: "pagination" },
+            slot: "pagination"
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-button-prev swiper-button-white",
+            attrs: { slot: "button-prev" },
+            slot: "button-prev"
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-button-next swiper-button-white",
+            attrs: { slot: "button-next" },
+            slot: "button-next"
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n    <div class="carousel-example">\n        <!-- swiper -->\n        <swiper :options="swiperOption" :dir="$vs.rtl ? \'rtl\' : \'ltr\'" :key="$vs.rtl">\n            <div class="parallax-bg" slot="parallax-bg" data-swiper-parallax="-23%"></div>\n            <swiper-slide>\n                <div class="title" data-swiper-parallax="-100">Slide 1</div>\n                <div class="subtitle font-semibold" data-swiper-parallax="-200">Subtitle</div>\n                <div class="text" data-swiper-parallax="-300">\n                    <p class="font-medium">Jelly chocolate cupcake chocolate bar caramels chupa chups chupa chups ice cream tiramisu. Oat cake muffin pastry marzipan sweet jujubes powder cupcake carrot cake. Caramels candy pastry marzipan pudding. Sugar plum carrot cake topping cookie.</p>\n                </div>\n            </swiper-slide>\n            <swiper-slide>\n                <div class="title" data-swiper-parallax="-100">Slide 2</div>\n                <div class="subtitle font-semibold" data-swiper-parallax="-200">Subtitle</div>\n                <div class="text" data-swiper-parallax="-300">\n                    <p class="font-medium">Sweet oat cake marzipan jelly brownie ice cream bear claw marshmallow jelly beans. Halvah dessert caramels toffee sweet cake tiramisu. Chocolate bar marshmallow topping biscuit gummies chocolate cake candy liquorice.</p>\n                </div>\n            </swiper-slide>\n            <swiper-slide>\n                <div class="title" data-swiper-parallax="-100">Slide 3</div>\n                <div class="subtitle font-semibold" data-swiper-parallax="-200">Subtitle</div>\n                <div class="text" data-swiper-parallax="-300">\n                    <p class="font-medium">Powder jelly bonbon liquorice candy canes jujubes fruitcake cotton candy macaroon. Croissant jelly-o tootsie roll halvah. Topping lollipop pastry. Fruitcake powder cupcake apple pie chocolate bar wafer. brownie macaroon dragée chocolate bar candy.</p>\n                </div>\n            </swiper-slide>\n            <div class="swiper-pagination swiper-pagination-white" slot="pagination"></div>\n            <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>\n            <div class="swiper-button-next swiper-button-white" slot="button-next"></div>\n        </swiper>\n    </div>\n</template>\n\n<script>\nimport \'swiper/dist/css/swiper.min.css\'\nimport { swiper, swiperSlide } from \'vue-awesome-swiper\'\n\nexport default {\n    data() {\n        return {\n            swiperOption: {\n                speed: 600,\n                parallax: true,\n                pagination: {\n                    el: \'.swiper-pagination\',\n                    clickable: true\n                },\n                navigation: {\n                    nextEl: \'.swiper-button-next\',\n                    prevEl: \'.swiper-button-prev\'\n                }\n            }\n        }\n    },\n    components: {\n        swiper,\n        swiperSlide\n    }\n}\n</script>\n\n<style scoped>\n.swiper-slide {\n    font-size: 18px;\n    color: #fff;\n    -webkit-box-sizing: border-box;\n    box-sizing: border-box;\n    padding: 40px 60px;\n    background-color: transparent !important;\n    justify-content: space-around !important;\n}\n\n.parallax-bg {\n    position: absolute;\n    left: 0;\n    top: 0;\n    width: 130%;\n    height: 100%;\n    -webkit-background-size: cover;\n    background-size: cover;\n    background-position: center;\n    background-image: url(\'../../../../../../assets/images/slider/04.jpg\')\n}\n\n.swiper-slide .title {\n    font-size: 41px;\n    font-weight: 300;\n}\n\n.swiper-slide .subtitle {\n    font-size: 21px;\n}\n\n.swiper-slide .text {\n    font-size: 14px;\n    max-width: 400px;\n    line-height: 1.3;\n}\n</style>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselProgress.vue?vue&type=template&id=23427682&":
+/*!*************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselProgress.vue?vue&type=template&id=23427682& ***!
+  \*************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    {
+      staticClass: "carousel-example",
+      attrs: { title: "Progress", "code-toggler": "" }
+    },
+    [
+      _c(
+        "swiper",
+        {
+          key: _vm.$vs.rtl,
+          attrs: { options: _vm.swiperOption, dir: _vm.$vs.rtl ? "rtl" : "ltr" }
+        },
+        [
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-10.jpg */ "./resources/admin/assets/images/pages/carousel/banner-10.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-7.jpg */ "./resources/admin/assets/images/pages/carousel/banner-7.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-9.jpg */ "./resources/admin/assets/images/pages/carousel/banner-9.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-11.jpg */ "./resources/admin/assets/images/pages/carousel/banner-11.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-pagination",
+            attrs: { slot: "pagination" },
+            slot: "pagination"
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-button-prev swiper-button-white",
+            attrs: { slot: "button-prev" },
+            slot: "button-prev"
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-button-next swiper-button-white",
+            attrs: { slot: "button-next" },
+            slot: "button-next"
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n    <div class="carousel-example">\n        <swiper :options="swiperOption" :dir="$vs.rtl ? \'rtl\' : \'ltr\'" :key="$vs.rtl">\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-10.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-7.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-9.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-11.jpg" alt="banner">\n            </swiper-slide>\n            <div class="swiper-pagination" slot="pagination"></div>\n            <div class="swiper-button-prev" slot="button-prev"></div>\n            <div class="swiper-button-next" slot="button-next"></div>\n        </swiper>\n    </div>\n</template>\n\n<script>\nimport \'swiper/dist/css/swiper.min.css\'\nimport { swiper, swiperSlide } from \'vue-awesome-swiper\'\n\nexport default {\n    data() {\n        return {\n            swiperOption: {\n                pagination: {\n                    el: \'.swiper-pagination\',\n                    type: \'progressbar\'\n                },\n                navigation: {\n                    nextEl: \'.swiper-button-next\',\n                    prevEl: \'.swiper-button-prev\'\n                }\n            }\n        }\n    },\n    components: {\n        swiper,\n        swiperSlide\n    }\n}\n</script>\n          '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselResponsiveBreakpoints.vue?vue&type=template&id=70e1e7ac&":
+/*!**************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselResponsiveBreakpoints.vue?vue&type=template&id=70e1e7ac& ***!
+  \**************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    {
+      staticClass: "carousel-example",
+      attrs: { title: "Responsive Breakpoints", "code-toggler": "" }
+    },
+    [
+      _c(
+        "swiper",
+        {
+          key: _vm.$vs.rtl,
+          attrs: { options: _vm.swiperOption, dir: _vm.$vs.rtl ? "rtl" : "ltr" }
+        },
+        [
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-31.jpg */ "./resources/admin/assets/images/pages/carousel/banner-31.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-32.jpg */ "./resources/admin/assets/images/pages/carousel/banner-32.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-33.jpg */ "./resources/admin/assets/images/pages/carousel/banner-33.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-29.jpg */ "./resources/admin/assets/images/pages/carousel/banner-29.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-35.jpg */ "./resources/admin/assets/images/pages/carousel/banner-35.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-23.jpg */ "./resources/admin/assets/images/pages/carousel/banner-23.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-37.jpg */ "./resources/admin/assets/images/pages/carousel/banner-37.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-38.jpg */ "./resources/admin/assets/images/pages/carousel/banner-38.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-39.jpg */ "./resources/admin/assets/images/pages/carousel/banner-39.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("swiper-slide", [
+            _c("img", {
+              staticClass: "responsive",
+              attrs: {
+                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-40.jpg */ "./resources/admin/assets/images/pages/carousel/banner-40.jpg"),
+                alt: "banner"
+              }
+            })
+          ]),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-pagination",
+            attrs: { slot: "pagination" },
+            slot: "pagination"
+          })
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n    <div class="carousel-example">\n        <!-- swiper -->\n        <swiper :options="swiperOption" :dir="$vs.rtl ? \'rtl\' : \'ltr\'" :key="$vs.rtl">\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-31.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-32.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-33.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-29.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-35.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-23.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-37.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-38.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-39.jpg" alt="banner">\n            </swiper-slide>\n            <swiper-slide>\n              <img class="responsive" src="@assets/images/pages/carousel/banner-40.jpg" alt="banner">\n            </swiper-slide>\n            <div class="swiper-pagination" slot="pagination"></div>\n        </swiper>\n    </div>\n</template>\n\n<script>\nimport \'swiper/dist/css/swiper.min.css\'\nimport { swiper, swiperSlide } from \'vue-awesome-swiper\'\n\nexport default {\n    data() {\n        return {\n            swiperOption: {\n                slidesPerView: 5,\n                spaceBetween: 50,\n                // init: false,\n                pagination: {\n                    el: \'.swiper-pagination\',\n                    clickable: true\n                },\n                breakpoints: {\n                    1024: {\n                        slidesPerView: 3,\n                        spaceBetween: 40\n                    },\n                    768: {\n                        slidesPerView: 2,\n                        spaceBetween: 30\n                    },\n                    640: {\n                        slidesPerView: 1,\n                        spaceBetween: 20\n                    }\n                }\n            }\n        }\n    },\n    components: {\n        swiper,\n        swiperSlide\n    }\n}\n</script>\n          '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=template&id=6b1cbcaa&scoped=true&":
+/*!******************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=template&id=6b1cbcaa&scoped=true& ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "vx-card",
+    {
+      staticClass: "carousel-example",
+      attrs: { title: "Virtual Slides", "code-toggler": "" }
+    },
+    [
+      _c(
+        "div",
+        { staticClass: "mb-4" },
+        [
+          _c(
+            "vs-button",
+            {
+              staticClass: "mr-4 mb-4",
+              nativeOn: {
+                click: function($event) {
+                  return _vm.toSlide(0)
+                }
+              }
+            },
+            [_vm._v("To Slide 1")]
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-button",
+            {
+              staticClass: "mr-4 mb-4",
+              nativeOn: {
+                click: function($event) {
+                  return _vm.toSlide(249)
+                }
+              }
+            },
+            [_vm._v("To Slide 250")]
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-button",
+            {
+              staticClass: "mr-4 mb-4",
+              nativeOn: {
+                click: function($event) {
+                  return _vm.toSlide(499)
+                }
+              }
+            },
+            [_vm._v("To Slide 500")]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "swiper",
+        {
+          key: _vm.$vs.rtl,
+          ref: "mySwiper",
+          attrs: { options: _vm.swiperOption, dir: _vm.$vs.rtl ? "rtl" : "ltr" }
+        },
+        [
+          _c("div", {
+            staticClass: "swiper-pagination",
+            attrs: { slot: "pagination" },
+            slot: "pagination"
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-button-prev",
+            attrs: { slot: "button-prev" },
+            slot: "button-prev"
+          }),
+          _vm._v(" "),
+          _c("div", {
+            staticClass: "swiper-button-next",
+            attrs: { slot: "button-next" },
+            slot: "button-next"
+          })
+        ]
+      ),
+      _vm._v(" "),
+      _c("template", { slot: "codeContainer" }, [
+        _vm._v(
+          '\n<template>\n    <div class="carousel-example">\n        <div class="mb-base">\n            <vs-button class="mr-4 mb-4" @click.native="toSlide(0)">To Slide 1</vs-button>\n            <vs-button class="mr-4 mb-4" @click.native="toSlide(249)">To Slide 250</vs-button>\n            <vs-button class="mr-4 mb-4" @click.native="toSlide(499)">To Slide 500</vs-button>\n        </div>\n        <!-- swiper -->\n        <swiper :options="swiperOption" ref="mySwiper" :dir="$vs.rtl ? \'rtl\' : \'ltr\'" :key="$vs.rtl">\n            <div class="swiper-pagination" slot="pagination"></div>\n            <div class="swiper-button-prev" slot="button-prev"></div>\n            <div class="swiper-button-next" slot="button-next"></div>\n        </swiper>\n    </div>\n</template>\n\n<script>\nimport \'swiper/dist/css/swiper.min.css\'\nimport { swiper, swiperSlide } from \'vue-awesome-swiper\'\n\nexport default{\n  components: {\n    swiper,\n    swiperSlide\n  },\n  data() {\n      return {\n        swiperOption: {\n          slidesPerView: 3,\n          centeredSlides: true,\n          spaceBetween: 30,\n          pagination: {\n            el: \'.swiper-pagination\',\n            type: \'fraction\'\n          },\n          navigation: {\n            nextEl: \'.swiper-button-next\',\n            prevEl: \'.swiper-button-prev\'\n          },\n          virtual: {\n            slides: (function () {\n              const slides = [];\n              for (let i = 0; i < 600; i += 1) {\n                slides.push(\'Slide \' + (i + 1))\n              }\n              return slides\n            }())\n          },\n          breakpoints: {\n            1024: {\n              slidesPerView: 3,\n              spaceBetween: 40\n              },\n            768: {\n              slidesPerView: 2,\n              spaceBetween: 30\n              },\n            640: {\n              slidesPerView: 1,\n              spaceBetween: 20\n              }\n          }\n        }\n      }\n    },\n    methods: {\n      toSlide(i) {\n        this.$refs.mySwiper.swiper.slideTo(i, 0)\n      }\n    }\n}\n</script>\n\n<style lang="scss" scoped>\n.swiper-container {\n    ::v-deep .swiper-slide {\n        text-align: center;\n        font-size: 38px;\n        font-weight: 700;\n        background-color: #eee;\n        display: -webkit-box;\n        display: -ms-flexbox;\n        display: flex;\n        -webkit-box-pack: center;\n        -ms-flex-pack: center;\n        justify-content: center;\n        -webkit-box-align: center;\n        -ms-flex-align: center;\n        align-items: center;\n        min-height: 300px;\n\n        .theme-dark & {\n          background-color: #242a47;\n        }\n  }\n}\n</style>\n        '
+        )
+      ])
+    ],
+    2
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-1.jpg":
+/*!*******************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-1.jpg ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-1.jpg?360c88544c8e592dd06f9c3a06619fc9";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-10.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-10.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-10.jpg?fb88ea4fc1468049dd947893d8e85df0";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-11.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-11.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-11.jpg?6f4a134a40da74feae7c47672b90f916";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-13.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-13.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-13.jpg?04939c53cf03053710410aae330a20dd";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-15.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-15.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-15.jpg?402f90acbcac3a73ef58183af2b1d644";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-16.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-16.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-16.jpg?494b2830711b92086bda4ef504fbe2cb";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-18.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-18.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-18.jpg?fed32d927b68adf901c72a1965c7f9a5";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-19.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-19.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-19.jpg?a633b7c96e32e22b3a2c023d00a91494";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-2.jpg":
+/*!*******************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-2.jpg ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-2.jpg?4177aa4225d0496574b3ae3cab2e58a0";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-20.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-20.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-20.jpg?4916d89ae769cad2f3955089bd35c269";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-21.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-21.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-21.jpg?c2fc76f66f94575da60e0c42ed3a46ec";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-22.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-22.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-22.jpg?6d7c72744ac055df82a0a0501dd4ce1d";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-23.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-23.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-23.jpg?a1cc4c357dd9ec800c0e585a1acf43cc";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-27.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-27.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-27.jpg?7076d3ddb1ff0caae9dc2a883b58b89c";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-29.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-29.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-29.jpg?fbd25d2f9220188bde13690468250a4d";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-30.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-30.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-30.jpg?a9c9f8267ab78b7da0a514f3a5495b21";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-31.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-31.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-31.jpg?3650843bb01f6d681cdfde18ce92118c";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-32.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-32.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-32.jpg?6a935d9ec99af1d8919daefbdb596637";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-33.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-33.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-33.jpg?175a6d83cce8590c75e2cf7076012e8d";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-34.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-34.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-34.jpg?096d1a93d7d78d6128884231456a1e6c";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-35.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-35.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-35.jpg?5d7e9c3ee9103c392c270d1cc0ce0006";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-37.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-37.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-37.jpg?e450701c2e4dd200be0d4ee16d0ddb89";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-38.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-38.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-38.jpg?f836f8b37f031e8d036e454a0a339941";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-39.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-39.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-39.jpg?ba77e8e48ff4f8cb223730128815abee";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-4.jpg":
+/*!*******************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-4.jpg ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-4.jpg?385cda2253c959636b31240ddc5bec4d";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-40.jpg":
+/*!********************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-40.jpg ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-40.jpg?1121dfb87c6ec3749cd98ace9afaa053";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-5.jpg":
+/*!*******************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-5.jpg ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-5.jpg?84f62d8cfd2c6bf4cc8e62ca5fedea44";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-7.jpg":
+/*!*******************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-7.jpg ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-7.jpg?329388dfca05a9662bb88f2582da9355";
+
+/***/ }),
+
+/***/ "./resources/admin/assets/images/pages/carousel/banner-9.jpg":
+/*!*******************************************************************!*\
+  !*** ./resources/admin/assets/images/pages/carousel/banner-9.jpg ***!
+  \*******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-9.jpg?ae669d39a9a7eadaa05d68a14b2b61d0";
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel.vue":
+/*!****************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/Carousel.vue ***!
+  \****************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Datepicker_vue_vue_type_template_id_04dc9832___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Datepicker.vue?vue&type=template&id=04dc9832& */ "./resources/admin/js/src/views/components/extra-components/datepicker/Datepicker.vue?vue&type=template&id=04dc9832&");
-/* harmony import */ var _Datepicker_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Datepicker.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/datepicker/Datepicker.vue?vue&type=script&lang=js&");
+/* harmony import */ var _Carousel_vue_vue_type_template_id_fe0af21c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Carousel.vue?vue&type=template&id=fe0af21c& */ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel.vue?vue&type=template&id=fe0af21c&");
+/* harmony import */ var _Carousel_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Carousel.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -1709,9 +4830,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Datepicker_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Datepicker_vue_vue_type_template_id_04dc9832___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Datepicker_vue_vue_type_template_id_04dc9832___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _Carousel_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Carousel_vue_vue_type_template_id_fe0af21c___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Carousel_vue_vue_type_template_id_fe0af21c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -1721,538 +4842,57 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/datepicker/Datepicker.vue"
+component.options.__file = "resources/admin/js/src/views/components/extra-components/carousel/Carousel.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/Datepicker.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/Datepicker.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel.vue?vue&type=script&lang=js&":
+/*!*****************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/Carousel.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Datepicker_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Datepicker.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/Datepicker.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Datepicker_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Carousel.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/Datepicker.vue?vue&type=template&id=04dc9832&":
-/*!***************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/Datepicker.vue?vue&type=template&id=04dc9832& ***!
-  \***************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel.vue?vue&type=template&id=fe0af21c&":
+/*!***********************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/Carousel.vue?vue&type=template&id=fe0af21c& ***!
+  \***********************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Datepicker_vue_vue_type_template_id_04dc9832___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Datepicker.vue?vue&type=template&id=04dc9832& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/Datepicker.vue?vue&type=template&id=04dc9832&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Datepicker_vue_vue_type_template_id_04dc9832___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel_vue_vue_type_template_id_fe0af21c___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Carousel.vue?vue&type=template&id=fe0af21c& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel.vue?vue&type=template&id=fe0af21c&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel_vue_vue_type_template_id_fe0af21c___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Datepicker_vue_vue_type_template_id_04dc9832___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDateMonthViewOnly.vue":
-/*!*************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDateMonthViewOnly.vue ***!
-  \*************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DatepickerDateMonthViewOnly_vue_vue_type_template_id_feaa1fbe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DatepickerDateMonthViewOnly.vue?vue&type=template&id=feaa1fbe& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDateMonthViewOnly.vue?vue&type=template&id=feaa1fbe&");
-/* harmony import */ var _DatepickerDateMonthViewOnly_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DatepickerDateMonthViewOnly.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDateMonthViewOnly.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DatepickerDateMonthViewOnly_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DatepickerDateMonthViewOnly_vue_vue_type_template_id_feaa1fbe___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DatepickerDateMonthViewOnly_vue_vue_type_template_id_feaa1fbe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDateMonthViewOnly.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDateMonthViewOnly.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDateMonthViewOnly.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerDateMonthViewOnly_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerDateMonthViewOnly.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDateMonthViewOnly.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerDateMonthViewOnly_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDateMonthViewOnly.vue?vue&type=template&id=feaa1fbe&":
-/*!********************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDateMonthViewOnly.vue?vue&type=template&id=feaa1fbe& ***!
-  \********************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerDateMonthViewOnly_vue_vue_type_template_id_feaa1fbe___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerDateMonthViewOnly.vue?vue&type=template&id=feaa1fbe& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDateMonthViewOnly.vue?vue&type=template&id=feaa1fbe&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerDateMonthViewOnly_vue_vue_type_template_id_feaa1fbe___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerDateMonthViewOnly_vue_vue_type_template_id_feaa1fbe___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel_vue_vue_type_template_id_fe0af21c___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDayViewOnly.vue":
-/*!*******************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDayViewOnly.vue ***!
-  \*******************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DatepickerDayViewOnly_vue_vue_type_template_id_18407c6a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DatepickerDayViewOnly.vue?vue&type=template&id=18407c6a& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDayViewOnly.vue?vue&type=template&id=18407c6a&");
-/* harmony import */ var _DatepickerDayViewOnly_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DatepickerDayViewOnly.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDayViewOnly.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DatepickerDayViewOnly_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DatepickerDayViewOnly_vue_vue_type_template_id_18407c6a___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DatepickerDayViewOnly_vue_vue_type_template_id_18407c6a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDayViewOnly.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDayViewOnly.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDayViewOnly.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerDayViewOnly_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerDayViewOnly.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDayViewOnly.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerDayViewOnly_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDayViewOnly.vue?vue&type=template&id=18407c6a&":
-/*!**************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDayViewOnly.vue?vue&type=template&id=18407c6a& ***!
-  \**************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerDayViewOnly_vue_vue_type_template_id_18407c6a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerDayViewOnly.vue?vue&type=template&id=18407c6a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDayViewOnly.vue?vue&type=template&id=18407c6a&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerDayViewOnly_vue_vue_type_template_id_18407c6a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerDayViewOnly_vue_vue_type_template_id_18407c6a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDefault.vue":
-/*!***************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDefault.vue ***!
-  \***************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DatepickerDefault_vue_vue_type_template_id_3780a15f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DatepickerDefault.vue?vue&type=template&id=3780a15f& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDefault.vue?vue&type=template&id=3780a15f&");
-/* harmony import */ var _DatepickerDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DatepickerDefault.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDefault.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DatepickerDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DatepickerDefault_vue_vue_type_template_id_3780a15f___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DatepickerDefault_vue_vue_type_template_id_3780a15f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDefault.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDefault.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDefault.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerDefault.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDefault.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDefault.vue?vue&type=template&id=3780a15f&":
-/*!**********************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDefault.vue?vue&type=template&id=3780a15f& ***!
-  \**********************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerDefault_vue_vue_type_template_id_3780a15f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerDefault.vue?vue&type=template&id=3780a15f& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerDefault.vue?vue&type=template&id=3780a15f&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerDefault_vue_vue_type_template_id_3780a15f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerDefault_vue_vue_type_template_id_3780a15f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerFormat.vue":
-/*!**************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerFormat.vue ***!
-  \**************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DatepickerFormat_vue_vue_type_template_id_26d9056e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DatepickerFormat.vue?vue&type=template&id=26d9056e& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerFormat.vue?vue&type=template&id=26d9056e&");
-/* harmony import */ var _DatepickerFormat_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DatepickerFormat.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerFormat.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DatepickerFormat_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DatepickerFormat_vue_vue_type_template_id_26d9056e___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DatepickerFormat_vue_vue_type_template_id_26d9056e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/datepicker/DatepickerFormat.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerFormat.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerFormat.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerFormat_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerFormat.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerFormat.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerFormat_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerFormat.vue?vue&type=template&id=26d9056e&":
-/*!*********************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerFormat.vue?vue&type=template&id=26d9056e& ***!
-  \*********************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerFormat_vue_vue_type_template_id_26d9056e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerFormat.vue?vue&type=template&id=26d9056e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerFormat.vue?vue&type=template&id=26d9056e&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerFormat_vue_vue_type_template_id_26d9056e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerFormat_vue_vue_type_template_id_26d9056e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerHighlightDates.vue":
-/*!**********************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerHighlightDates.vue ***!
-  \**********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DatepickerHighlightDates_vue_vue_type_template_id_e9b54efa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DatepickerHighlightDates.vue?vue&type=template&id=e9b54efa& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerHighlightDates.vue?vue&type=template&id=e9b54efa&");
-/* harmony import */ var _DatepickerHighlightDates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DatepickerHighlightDates.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerHighlightDates.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DatepickerHighlightDates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DatepickerHighlightDates_vue_vue_type_template_id_e9b54efa___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DatepickerHighlightDates_vue_vue_type_template_id_e9b54efa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/datepicker/DatepickerHighlightDates.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerHighlightDates.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerHighlightDates.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerHighlightDates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerHighlightDates.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerHighlightDates.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerHighlightDates_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerHighlightDates.vue?vue&type=template&id=e9b54efa&":
-/*!*****************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerHighlightDates.vue?vue&type=template&id=e9b54efa& ***!
-  \*****************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerHighlightDates_vue_vue_type_template_id_e9b54efa___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerHighlightDates.vue?vue&type=template&id=e9b54efa& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerHighlightDates.vue?vue&type=template&id=e9b54efa&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerHighlightDates_vue_vue_type_template_id_e9b54efa___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerHighlightDates_vue_vue_type_template_id_e9b54efa___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerInline.vue":
-/*!**************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerInline.vue ***!
-  \**************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DatepickerInline_vue_vue_type_template_id_07a706eb___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DatepickerInline.vue?vue&type=template&id=07a706eb& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerInline.vue?vue&type=template&id=07a706eb&");
-/* harmony import */ var _DatepickerInline_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DatepickerInline.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerInline.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DatepickerInline_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DatepickerInline_vue_vue_type_template_id_07a706eb___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DatepickerInline_vue_vue_type_template_id_07a706eb___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/datepicker/DatepickerInline.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerInline.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerInline.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerInline_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerInline.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerInline.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerInline_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerInline.vue?vue&type=template&id=07a706eb&":
-/*!*********************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerInline.vue?vue&type=template&id=07a706eb& ***!
-  \*********************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerInline_vue_vue_type_template_id_07a706eb___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerInline.vue?vue&type=template&id=07a706eb& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerInline.vue?vue&type=template&id=07a706eb&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerInline_vue_vue_type_template_id_07a706eb___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerInline_vue_vue_type_template_id_07a706eb___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMinMaxDateRange.vue":
-/*!***********************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMinMaxDateRange.vue ***!
-  \***********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DatepickerMinMaxDateRange_vue_vue_type_template_id_8fa9b08a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DatepickerMinMaxDateRange.vue?vue&type=template&id=8fa9b08a& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMinMaxDateRange.vue?vue&type=template&id=8fa9b08a&");
-/* harmony import */ var _DatepickerMinMaxDateRange_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DatepickerMinMaxDateRange.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMinMaxDateRange.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DatepickerMinMaxDateRange_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DatepickerMinMaxDateRange_vue_vue_type_template_id_8fa9b08a___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DatepickerMinMaxDateRange_vue_vue_type_template_id_8fa9b08a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMinMaxDateRange.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMinMaxDateRange.vue?vue&type=script&lang=js&":
-/*!************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMinMaxDateRange.vue?vue&type=script&lang=js& ***!
-  \************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerMinMaxDateRange_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerMinMaxDateRange.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMinMaxDateRange.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerMinMaxDateRange_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMinMaxDateRange.vue?vue&type=template&id=8fa9b08a&":
-/*!******************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMinMaxDateRange.vue?vue&type=template&id=8fa9b08a& ***!
-  \******************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerMinMaxDateRange_vue_vue_type_template_id_8fa9b08a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerMinMaxDateRange.vue?vue&type=template&id=8fa9b08a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMinMaxDateRange.vue?vue&type=template&id=8fa9b08a&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerMinMaxDateRange_vue_vue_type_template_id_8fa9b08a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerMinMaxDateRange_vue_vue_type_template_id_8fa9b08a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthViewOnly.vue":
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue":
 /*!*********************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthViewOnly.vue ***!
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue ***!
   \*********************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DatepickerMonthViewOnly_vue_vue_type_template_id_5033c12f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DatepickerMonthViewOnly.vue?vue&type=template&id=5033c12f& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthViewOnly.vue?vue&type=template&id=5033c12f&");
-/* harmony import */ var _DatepickerMonthViewOnly_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DatepickerMonthViewOnly.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthViewOnly.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _Carousel3dCoverflowEffect_vue_vue_type_template_id_30209783_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Carousel3dCoverflowEffect.vue?vue&type=template&id=30209783&scoped=true& */ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=template&id=30209783&scoped=true&");
+/* harmony import */ var _Carousel3dCoverflowEffect_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Carousel3dCoverflowEffect.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Carousel3dCoverflowEffect_vue_vue_type_style_index_0_id_30209783_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Carousel3dCoverflowEffect.vue?vue&type=style&index=0&id=30209783&scoped=true&lang=css& */ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=style&index=0&id=30209783&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -2260,67 +4900,170 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DatepickerMonthViewOnly_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DatepickerMonthViewOnly_vue_vue_type_template_id_5033c12f___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DatepickerMonthViewOnly_vue_vue_type_template_id_5033c12f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Carousel3dCoverflowEffect_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Carousel3dCoverflowEffect_vue_vue_type_template_id_30209783_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Carousel3dCoverflowEffect_vue_vue_type_template_id_30209783_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
-  null,
+  "30209783",
   null
   
 )
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthViewOnly.vue"
+component.options.__file = "resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthViewOnly.vue?vue&type=script&lang=js&":
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=script&lang=js&":
 /*!**********************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthViewOnly.vue?vue&type=script&lang=js& ***!
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=script&lang=js& ***!
   \**********************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerMonthViewOnly_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerMonthViewOnly.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthViewOnly.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerMonthViewOnly_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dCoverflowEffect_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Carousel3dCoverflowEffect.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dCoverflowEffect_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthViewOnly.vue?vue&type=template&id=5033c12f&":
-/*!****************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthViewOnly.vue?vue&type=template&id=5033c12f& ***!
-  \****************************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=style&index=0&id=30209783&scoped=true&lang=css&":
+/*!******************************************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=style&index=0&id=30209783&scoped=true&lang=css& ***!
+  \******************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dCoverflowEffect_vue_vue_type_style_index_0_id_30209783_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/style-loader!../../../../../../../../node_modules/css-loader??ref--7-1!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Carousel3dCoverflowEffect.vue?vue&type=style&index=0&id=30209783&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=style&index=0&id=30209783&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dCoverflowEffect_vue_vue_type_style_index_0_id_30209783_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dCoverflowEffect_vue_vue_type_style_index_0_id_30209783_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dCoverflowEffect_vue_vue_type_style_index_0_id_30209783_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dCoverflowEffect_vue_vue_type_style_index_0_id_30209783_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dCoverflowEffect_vue_vue_type_style_index_0_id_30209783_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=template&id=30209783&scoped=true&":
+/*!****************************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=template&id=30209783&scoped=true& ***!
+  \****************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerMonthViewOnly_vue_vue_type_template_id_5033c12f___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerMonthViewOnly.vue?vue&type=template&id=5033c12f& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthViewOnly.vue?vue&type=template&id=5033c12f&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerMonthViewOnly_vue_vue_type_template_id_5033c12f___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dCoverflowEffect_vue_vue_type_template_id_30209783_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Carousel3dCoverflowEffect.vue?vue&type=template&id=30209783&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dCoverflowEffect.vue?vue&type=template&id=30209783&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dCoverflowEffect_vue_vue_type_template_id_30209783_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerMonthViewOnly_vue_vue_type_template_id_5033c12f___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dCoverflowEffect_vue_vue_type_template_id_30209783_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthYearViewOnly.vue":
-/*!*************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthYearViewOnly.vue ***!
-  \*************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue":
+/*!************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue ***!
+  \************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DatepickerMonthYearViewOnly_vue_vue_type_template_id_5873b1e8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DatepickerMonthYearViewOnly.vue?vue&type=template&id=5873b1e8& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthYearViewOnly.vue?vue&type=template&id=5873b1e8&");
-/* harmony import */ var _DatepickerMonthYearViewOnly_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DatepickerMonthYearViewOnly.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthYearViewOnly.vue?vue&type=script&lang=js&");
+/* harmony import */ var _Carousel3dEffect_vue_vue_type_template_id_489eb774_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Carousel3dEffect.vue?vue&type=template&id=489eb774&scoped=true& */ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=template&id=489eb774&scoped=true&");
+/* harmony import */ var _Carousel3dEffect_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Carousel3dEffect.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Carousel3dEffect_vue_vue_type_style_index_0_id_489eb774_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Carousel3dEffect.vue?vue&type=style&index=0&id=489eb774&scoped=true&lang=css& */ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=style&index=0&id=489eb774&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Carousel3dEffect_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Carousel3dEffect_vue_vue_type_template_id_489eb774_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Carousel3dEffect_vue_vue_type_template_id_489eb774_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "489eb774",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dEffect_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Carousel3dEffect.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dEffect_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=style&index=0&id=489eb774&scoped=true&lang=css&":
+/*!*********************************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=style&index=0&id=489eb774&scoped=true&lang=css& ***!
+  \*********************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dEffect_vue_vue_type_style_index_0_id_489eb774_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/style-loader!../../../../../../../../node_modules/css-loader??ref--7-1!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Carousel3dEffect.vue?vue&type=style&index=0&id=489eb774&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=style&index=0&id=489eb774&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dEffect_vue_vue_type_style_index_0_id_489eb774_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dEffect_vue_vue_type_style_index_0_id_489eb774_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dEffect_vue_vue_type_style_index_0_id_489eb774_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dEffect_vue_vue_type_style_index_0_id_489eb774_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dEffect_vue_vue_type_style_index_0_id_489eb774_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=template&id=489eb774&scoped=true&":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=template&id=489eb774&scoped=true& ***!
+  \*******************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dEffect_vue_vue_type_template_id_489eb774_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Carousel3dEffect.vue?vue&type=template&id=489eb774&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/Carousel3dEffect.vue?vue&type=template&id=489eb774&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dEffect_vue_vue_type_template_id_489eb774_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Carousel3dEffect_vue_vue_type_template_id_489eb774_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselAutoplay.vue":
+/*!************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselAutoplay.vue ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CarouselAutoplay_vue_vue_type_template_id_255d70f5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CarouselAutoplay.vue?vue&type=template&id=255d70f5& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselAutoplay.vue?vue&type=template&id=255d70f5&");
+/* harmony import */ var _CarouselAutoplay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CarouselAutoplay.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselAutoplay.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -2330,9 +5073,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DatepickerMonthYearViewOnly_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DatepickerMonthYearViewOnly_vue_vue_type_template_id_5873b1e8___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DatepickerMonthYearViewOnly_vue_vue_type_template_id_5873b1e8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CarouselAutoplay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CarouselAutoplay_vue_vue_type_template_id_255d70f5___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CarouselAutoplay_vue_vue_type_template_id_255d70f5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -2342,123 +5085,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthYearViewOnly.vue"
+component.options.__file = "resources/admin/js/src/views/components/extra-components/carousel/CarouselAutoplay.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthYearViewOnly.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthYearViewOnly.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselAutoplay.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselAutoplay.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerMonthYearViewOnly_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerMonthYearViewOnly.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthYearViewOnly.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerMonthYearViewOnly_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselAutoplay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselAutoplay.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselAutoplay.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselAutoplay_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthYearViewOnly.vue?vue&type=template&id=5873b1e8&":
-/*!********************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthYearViewOnly.vue?vue&type=template&id=5873b1e8& ***!
-  \********************************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselAutoplay.vue?vue&type=template&id=255d70f5&":
+/*!*******************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselAutoplay.vue?vue&type=template&id=255d70f5& ***!
+  \*******************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerMonthYearViewOnly_vue_vue_type_template_id_5873b1e8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerMonthYearViewOnly.vue?vue&type=template&id=5873b1e8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerMonthYearViewOnly.vue?vue&type=template&id=5873b1e8&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerMonthYearViewOnly_vue_vue_type_template_id_5873b1e8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselAutoplay_vue_vue_type_template_id_255d70f5___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselAutoplay.vue?vue&type=template&id=255d70f5& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselAutoplay.vue?vue&type=template&id=255d70f5&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselAutoplay_vue_vue_type_template_id_255d70f5___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerMonthYearViewOnly_vue_vue_type_template_id_5873b1e8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerOpenProgramatically.vue":
-/*!***************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerOpenProgramatically.vue ***!
-  \***************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DatepickerOpenProgramatically_vue_vue_type_template_id_53f37206___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DatepickerOpenProgramatically.vue?vue&type=template&id=53f37206& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerOpenProgramatically.vue?vue&type=template&id=53f37206&");
-/* harmony import */ var _DatepickerOpenProgramatically_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DatepickerOpenProgramatically.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerOpenProgramatically.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DatepickerOpenProgramatically_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DatepickerOpenProgramatically_vue_vue_type_template_id_53f37206___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DatepickerOpenProgramatically_vue_vue_type_template_id_53f37206___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/datepicker/DatepickerOpenProgramatically.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerOpenProgramatically.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerOpenProgramatically.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerOpenProgramatically_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerOpenProgramatically.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerOpenProgramatically.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerOpenProgramatically_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerOpenProgramatically.vue?vue&type=template&id=53f37206&":
-/*!**********************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerOpenProgramatically.vue?vue&type=template&id=53f37206& ***!
-  \**********************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerOpenProgramatically_vue_vue_type_template_id_53f37206___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerOpenProgramatically.vue?vue&type=template&id=53f37206& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerOpenProgramatically.vue?vue&type=template&id=53f37206&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerOpenProgramatically_vue_vue_type_template_id_53f37206___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerOpenProgramatically_vue_vue_type_template_id_53f37206___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselAutoplay_vue_vue_type_template_id_255d70f5___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerRtl.vue":
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselDefault.vue":
 /*!***********************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerRtl.vue ***!
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselDefault.vue ***!
   \***********************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DatepickerRtl_vue_vue_type_template_id_2f33bc08___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DatepickerRtl.vue?vue&type=template&id=2f33bc08& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerRtl.vue?vue&type=template&id=2f33bc08&");
-/* harmony import */ var _DatepickerRtl_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DatepickerRtl.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerRtl.vue?vue&type=script&lang=js&");
+/* harmony import */ var _CarouselDefault_vue_vue_type_template_id_dd46cac2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CarouselDefault.vue?vue&type=template&id=dd46cac2& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselDefault.vue?vue&type=template&id=dd46cac2&");
+/* harmony import */ var _CarouselDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CarouselDefault.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselDefault.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -2468,9 +5142,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DatepickerRtl_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DatepickerRtl_vue_vue_type_template_id_2f33bc08___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DatepickerRtl_vue_vue_type_template_id_2f33bc08___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CarouselDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CarouselDefault_vue_vue_type_template_id_dd46cac2___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CarouselDefault_vue_vue_type_template_id_dd46cac2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -2480,54 +5154,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/datepicker/DatepickerRtl.vue"
+component.options.__file = "resources/admin/js/src/views/components/extra-components/carousel/CarouselDefault.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerRtl.vue?vue&type=script&lang=js&":
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselDefault.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerRtl.vue?vue&type=script&lang=js& ***!
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselDefault.vue?vue&type=script&lang=js& ***!
   \************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerRtl_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerRtl.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerRtl.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerRtl_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselDefault.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselDefault.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselDefault_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerRtl.vue?vue&type=template&id=2f33bc08&":
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselDefault.vue?vue&type=template&id=dd46cac2&":
 /*!******************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerRtl.vue?vue&type=template&id=2f33bc08& ***!
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselDefault.vue?vue&type=template&id=dd46cac2& ***!
   \******************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerRtl_vue_vue_type_template_id_2f33bc08___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerRtl.vue?vue&type=template&id=2f33bc08& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerRtl.vue?vue&type=template&id=2f33bc08&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerRtl_vue_vue_type_template_id_2f33bc08___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselDefault_vue_vue_type_template_id_dd46cac2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselDefault.vue?vue&type=template&id=dd46cac2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselDefault.vue?vue&type=template&id=dd46cac2&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselDefault_vue_vue_type_template_id_dd46cac2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerRtl_vue_vue_type_template_id_2f33bc08___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselDefault_vue_vue_type_template_id_dd46cac2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerTranslation.vue":
-/*!*******************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerTranslation.vue ***!
-  \*******************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselEffectFade.vue":
+/*!**************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselEffectFade.vue ***!
+  \**************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _DatepickerTranslation_vue_vue_type_template_id_a361da62___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DatepickerTranslation.vue?vue&type=template&id=a361da62& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerTranslation.vue?vue&type=template&id=a361da62&");
-/* harmony import */ var _DatepickerTranslation_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DatepickerTranslation.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerTranslation.vue?vue&type=script&lang=js&");
+/* harmony import */ var _CarouselEffectFade_vue_vue_type_template_id_40125fbf___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CarouselEffectFade.vue?vue&type=template&id=40125fbf& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselEffectFade.vue?vue&type=template&id=40125fbf&");
+/* harmony import */ var _CarouselEffectFade_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CarouselEffectFade.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselEffectFade.vue?vue&type=script&lang=js&");
 /* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
@@ -2537,9 +5211,9 @@ __webpack_require__.r(__webpack_exports__);
 /* normalize component */
 
 var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _DatepickerTranslation_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _DatepickerTranslation_vue_vue_type_template_id_a361da62___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _DatepickerTranslation_vue_vue_type_template_id_a361da62___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  _CarouselEffectFade_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CarouselEffectFade_vue_vue_type_template_id_40125fbf___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CarouselEffectFade_vue_vue_type_template_id_40125fbf___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -2549,38 +5223,800 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/admin/js/src/views/components/extra-components/datepicker/DatepickerTranslation.vue"
+component.options.__file = "resources/admin/js/src/views/components/extra-components/carousel/CarouselEffectFade.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerTranslation.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerTranslation.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselEffectFade.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselEffectFade.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerTranslation_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerTranslation.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerTranslation.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerTranslation_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselEffectFade_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselEffectFade.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselEffectFade.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselEffectFade_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerTranslation.vue?vue&type=template&id=a361da62&":
-/*!**************************************************************************************************************************************!*\
-  !*** ./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerTranslation.vue?vue&type=template&id=a361da62& ***!
-  \**************************************************************************************************************************************/
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselEffectFade.vue?vue&type=template&id=40125fbf&":
+/*!*********************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselEffectFade.vue?vue&type=template&id=40125fbf& ***!
+  \*********************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerTranslation_vue_vue_type_template_id_a361da62___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./DatepickerTranslation.vue?vue&type=template&id=a361da62& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/datepicker/DatepickerTranslation.vue?vue&type=template&id=a361da62&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerTranslation_vue_vue_type_template_id_a361da62___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselEffectFade_vue_vue_type_template_id_40125fbf___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselEffectFade.vue?vue&type=template&id=40125fbf& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselEffectFade.vue?vue&type=template&id=40125fbf&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselEffectFade_vue_vue_type_template_id_40125fbf___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_DatepickerTranslation_vue_vue_type_template_id_a361da62___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselEffectFade_vue_vue_type_template_id_40125fbf___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue":
+/*!***********************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue ***!
+  \***********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CarouselGallery_vue_vue_type_template_id_2b4c4b30_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CarouselGallery.vue?vue&type=template&id=2b4c4b30&scoped=true& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=template&id=2b4c4b30&scoped=true&");
+/* harmony import */ var _CarouselGallery_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CarouselGallery.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _CarouselGallery_vue_vue_type_style_index_0_id_2b4c4b30_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CarouselGallery.vue?vue&type=style&index=0&id=2b4c4b30&lang=scss&scoped=true& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=style&index=0&id=2b4c4b30&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _CarouselGallery_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CarouselGallery_vue_vue_type_template_id_2b4c4b30_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CarouselGallery_vue_vue_type_template_id_2b4c4b30_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "2b4c4b30",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselGallery_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselGallery.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselGallery_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=style&index=0&id=2b4c4b30&lang=scss&scoped=true&":
+/*!*********************************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=style&index=0&id=2b4c4b30&lang=scss&scoped=true& ***!
+  \*********************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselGallery_vue_vue_type_style_index_0_id_2b4c4b30_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/style-loader!../../../../../../../../node_modules/css-loader!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselGallery.vue?vue&type=style&index=0&id=2b4c4b30&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=style&index=0&id=2b4c4b30&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselGallery_vue_vue_type_style_index_0_id_2b4c4b30_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselGallery_vue_vue_type_style_index_0_id_2b4c4b30_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselGallery_vue_vue_type_style_index_0_id_2b4c4b30_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselGallery_vue_vue_type_style_index_0_id_2b4c4b30_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselGallery_vue_vue_type_style_index_0_id_2b4c4b30_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=template&id=2b4c4b30&scoped=true&":
+/*!******************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=template&id=2b4c4b30&scoped=true& ***!
+  \******************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselGallery_vue_vue_type_template_id_2b4c4b30_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselGallery.vue?vue&type=template&id=2b4c4b30&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselGallery.vue?vue&type=template&id=2b4c4b30&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselGallery_vue_vue_type_template_id_2b4c4b30_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselGallery_vue_vue_type_template_id_2b4c4b30_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue":
+/*!***************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue ***!
+  \***************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CarouselLazyLoading_vue_vue_type_template_id_4c817df4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CarouselLazyLoading.vue?vue&type=template&id=4c817df4&scoped=true& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=template&id=4c817df4&scoped=true&");
+/* harmony import */ var _CarouselLazyLoading_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CarouselLazyLoading.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _CarouselLazyLoading_vue_vue_type_style_index_0_id_4c817df4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CarouselLazyLoading.vue?vue&type=style&index=0&id=4c817df4&scoped=true&lang=css& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=style&index=0&id=4c817df4&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _CarouselLazyLoading_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CarouselLazyLoading_vue_vue_type_template_id_4c817df4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CarouselLazyLoading_vue_vue_type_template_id_4c817df4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "4c817df4",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselLazyLoading_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselLazyLoading.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselLazyLoading_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=style&index=0&id=4c817df4&scoped=true&lang=css&":
+/*!************************************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=style&index=0&id=4c817df4&scoped=true&lang=css& ***!
+  \************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselLazyLoading_vue_vue_type_style_index_0_id_4c817df4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/style-loader!../../../../../../../../node_modules/css-loader??ref--7-1!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselLazyLoading.vue?vue&type=style&index=0&id=4c817df4&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=style&index=0&id=4c817df4&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselLazyLoading_vue_vue_type_style_index_0_id_4c817df4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselLazyLoading_vue_vue_type_style_index_0_id_4c817df4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselLazyLoading_vue_vue_type_style_index_0_id_4c817df4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselLazyLoading_vue_vue_type_style_index_0_id_4c817df4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselLazyLoading_vue_vue_type_style_index_0_id_4c817df4_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=template&id=4c817df4&scoped=true&":
+/*!**********************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=template&id=4c817df4&scoped=true& ***!
+  \**********************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselLazyLoading_vue_vue_type_template_id_4c817df4_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselLazyLoading.vue?vue&type=template&id=4c817df4&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselLazyLoading.vue?vue&type=template&id=4c817df4&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselLazyLoading_vue_vue_type_template_id_4c817df4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselLazyLoading_vue_vue_type_template_id_4c817df4_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultiRowSlidesLayout.vue":
+/*!************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultiRowSlidesLayout.vue ***!
+  \************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CarouselMultiRowSlidesLayout_vue_vue_type_template_id_62730abf___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CarouselMultiRowSlidesLayout.vue?vue&type=template&id=62730abf& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultiRowSlidesLayout.vue?vue&type=template&id=62730abf&");
+/* harmony import */ var _CarouselMultiRowSlidesLayout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CarouselMultiRowSlidesLayout.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultiRowSlidesLayout.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CarouselMultiRowSlidesLayout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CarouselMultiRowSlidesLayout_vue_vue_type_template_id_62730abf___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CarouselMultiRowSlidesLayout_vue_vue_type_template_id_62730abf___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/extra-components/carousel/CarouselMultiRowSlidesLayout.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultiRowSlidesLayout.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultiRowSlidesLayout.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselMultiRowSlidesLayout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselMultiRowSlidesLayout.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultiRowSlidesLayout.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselMultiRowSlidesLayout_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultiRowSlidesLayout.vue?vue&type=template&id=62730abf&":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultiRowSlidesLayout.vue?vue&type=template&id=62730abf& ***!
+  \*******************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselMultiRowSlidesLayout_vue_vue_type_template_id_62730abf___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselMultiRowSlidesLayout.vue?vue&type=template&id=62730abf& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultiRowSlidesLayout.vue?vue&type=template&id=62730abf&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselMultiRowSlidesLayout_vue_vue_type_template_id_62730abf___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselMultiRowSlidesLayout_vue_vue_type_template_id_62730abf___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultipleSlidesPerView.vue":
+/*!*************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultipleSlidesPerView.vue ***!
+  \*************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CarouselMultipleSlidesPerView_vue_vue_type_template_id_37010c4e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CarouselMultipleSlidesPerView.vue?vue&type=template&id=37010c4e& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultipleSlidesPerView.vue?vue&type=template&id=37010c4e&");
+/* harmony import */ var _CarouselMultipleSlidesPerView_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CarouselMultipleSlidesPerView.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultipleSlidesPerView.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CarouselMultipleSlidesPerView_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CarouselMultipleSlidesPerView_vue_vue_type_template_id_37010c4e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CarouselMultipleSlidesPerView_vue_vue_type_template_id_37010c4e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/extra-components/carousel/CarouselMultipleSlidesPerView.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultipleSlidesPerView.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultipleSlidesPerView.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselMultipleSlidesPerView_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselMultipleSlidesPerView.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultipleSlidesPerView.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselMultipleSlidesPerView_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultipleSlidesPerView.vue?vue&type=template&id=37010c4e&":
+/*!********************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultipleSlidesPerView.vue?vue&type=template&id=37010c4e& ***!
+  \********************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselMultipleSlidesPerView_vue_vue_type_template_id_37010c4e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselMultipleSlidesPerView.vue?vue&type=template&id=37010c4e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselMultipleSlidesPerView.vue?vue&type=template&id=37010c4e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselMultipleSlidesPerView_vue_vue_type_template_id_37010c4e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselMultipleSlidesPerView_vue_vue_type_template_id_37010c4e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselNavigation.vue":
+/*!**************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselNavigation.vue ***!
+  \**************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CarouselNavigation_vue_vue_type_template_id_e80beab4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CarouselNavigation.vue?vue&type=template&id=e80beab4& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselNavigation.vue?vue&type=template&id=e80beab4&");
+/* harmony import */ var _CarouselNavigation_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CarouselNavigation.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselNavigation.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CarouselNavigation_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CarouselNavigation_vue_vue_type_template_id_e80beab4___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CarouselNavigation_vue_vue_type_template_id_e80beab4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/extra-components/carousel/CarouselNavigation.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselNavigation.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselNavigation.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselNavigation_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselNavigation.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselNavigation.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselNavigation_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselNavigation.vue?vue&type=template&id=e80beab4&":
+/*!*********************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselNavigation.vue?vue&type=template&id=e80beab4& ***!
+  \*********************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselNavigation_vue_vue_type_template_id_e80beab4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselNavigation.vue?vue&type=template&id=e80beab4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselNavigation.vue?vue&type=template&id=e80beab4&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselNavigation_vue_vue_type_template_id_e80beab4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselNavigation_vue_vue_type_template_id_e80beab4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselPagination.vue":
+/*!**************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselPagination.vue ***!
+  \**************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CarouselPagination_vue_vue_type_template_id_eb61f5a8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CarouselPagination.vue?vue&type=template&id=eb61f5a8& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselPagination.vue?vue&type=template&id=eb61f5a8&");
+/* harmony import */ var _CarouselPagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CarouselPagination.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselPagination.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CarouselPagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CarouselPagination_vue_vue_type_template_id_eb61f5a8___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CarouselPagination_vue_vue_type_template_id_eb61f5a8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/extra-components/carousel/CarouselPagination.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselPagination.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselPagination.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselPagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselPagination.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselPagination.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselPagination_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselPagination.vue?vue&type=template&id=eb61f5a8&":
+/*!*********************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselPagination.vue?vue&type=template&id=eb61f5a8& ***!
+  \*********************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselPagination_vue_vue_type_template_id_eb61f5a8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselPagination.vue?vue&type=template&id=eb61f5a8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselPagination.vue?vue&type=template&id=eb61f5a8&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselPagination_vue_vue_type_template_id_eb61f5a8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselPagination_vue_vue_type_template_id_eb61f5a8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue":
+/*!************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CarouselParallax_vue_vue_type_template_id_53046b29_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CarouselParallax.vue?vue&type=template&id=53046b29&scoped=true& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=template&id=53046b29&scoped=true&");
+/* harmony import */ var _CarouselParallax_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CarouselParallax.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _CarouselParallax_vue_vue_type_style_index_0_id_53046b29_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CarouselParallax.vue?vue&type=style&index=0&id=53046b29&scoped=true&lang=css& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=style&index=0&id=53046b29&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _CarouselParallax_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CarouselParallax_vue_vue_type_template_id_53046b29_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CarouselParallax_vue_vue_type_template_id_53046b29_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "53046b29",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselParallax_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselParallax.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselParallax_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=style&index=0&id=53046b29&scoped=true&lang=css&":
+/*!*********************************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=style&index=0&id=53046b29&scoped=true&lang=css& ***!
+  \*********************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselParallax_vue_vue_type_style_index_0_id_53046b29_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/style-loader!../../../../../../../../node_modules/css-loader??ref--7-1!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--7-2!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselParallax.vue?vue&type=style&index=0&id=53046b29&scoped=true&lang=css& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js?!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=style&index=0&id=53046b29&scoped=true&lang=css&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselParallax_vue_vue_type_style_index_0_id_53046b29_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselParallax_vue_vue_type_style_index_0_id_53046b29_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselParallax_vue_vue_type_style_index_0_id_53046b29_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselParallax_vue_vue_type_style_index_0_id_53046b29_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_ref_7_1_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_7_2_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselParallax_vue_vue_type_style_index_0_id_53046b29_scoped_true_lang_css___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=template&id=53046b29&scoped=true&":
+/*!*******************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=template&id=53046b29&scoped=true& ***!
+  \*******************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselParallax_vue_vue_type_template_id_53046b29_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselParallax.vue?vue&type=template&id=53046b29&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselParallax.vue?vue&type=template&id=53046b29&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselParallax_vue_vue_type_template_id_53046b29_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselParallax_vue_vue_type_template_id_53046b29_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselProgress.vue":
+/*!************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselProgress.vue ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CarouselProgress_vue_vue_type_template_id_23427682___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CarouselProgress.vue?vue&type=template&id=23427682& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselProgress.vue?vue&type=template&id=23427682&");
+/* harmony import */ var _CarouselProgress_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CarouselProgress.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselProgress.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CarouselProgress_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CarouselProgress_vue_vue_type_template_id_23427682___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CarouselProgress_vue_vue_type_template_id_23427682___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/extra-components/carousel/CarouselProgress.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselProgress.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselProgress.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselProgress_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselProgress.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselProgress.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselProgress_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselProgress.vue?vue&type=template&id=23427682&":
+/*!*******************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselProgress.vue?vue&type=template&id=23427682& ***!
+  \*******************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselProgress_vue_vue_type_template_id_23427682___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselProgress.vue?vue&type=template&id=23427682& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselProgress.vue?vue&type=template&id=23427682&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselProgress_vue_vue_type_template_id_23427682___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselProgress_vue_vue_type_template_id_23427682___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselResponsiveBreakpoints.vue":
+/*!*************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselResponsiveBreakpoints.vue ***!
+  \*************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CarouselResponsiveBreakpoints_vue_vue_type_template_id_70e1e7ac___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CarouselResponsiveBreakpoints.vue?vue&type=template&id=70e1e7ac& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselResponsiveBreakpoints.vue?vue&type=template&id=70e1e7ac&");
+/* harmony import */ var _CarouselResponsiveBreakpoints_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CarouselResponsiveBreakpoints.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselResponsiveBreakpoints.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _CarouselResponsiveBreakpoints_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CarouselResponsiveBreakpoints_vue_vue_type_template_id_70e1e7ac___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CarouselResponsiveBreakpoints_vue_vue_type_template_id_70e1e7ac___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/extra-components/carousel/CarouselResponsiveBreakpoints.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselResponsiveBreakpoints.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselResponsiveBreakpoints.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselResponsiveBreakpoints_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselResponsiveBreakpoints.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselResponsiveBreakpoints.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselResponsiveBreakpoints_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselResponsiveBreakpoints.vue?vue&type=template&id=70e1e7ac&":
+/*!********************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselResponsiveBreakpoints.vue?vue&type=template&id=70e1e7ac& ***!
+  \********************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselResponsiveBreakpoints_vue_vue_type_template_id_70e1e7ac___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselResponsiveBreakpoints.vue?vue&type=template&id=70e1e7ac& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselResponsiveBreakpoints.vue?vue&type=template&id=70e1e7ac&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselResponsiveBreakpoints_vue_vue_type_template_id_70e1e7ac___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselResponsiveBreakpoints_vue_vue_type_template_id_70e1e7ac___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue":
+/*!*****************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue ***!
+  \*****************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _CarouselVirtualSlides_vue_vue_type_template_id_6b1cbcaa_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./CarouselVirtualSlides.vue?vue&type=template&id=6b1cbcaa&scoped=true& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=template&id=6b1cbcaa&scoped=true&");
+/* harmony import */ var _CarouselVirtualSlides_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CarouselVirtualSlides.vue?vue&type=script&lang=js& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _CarouselVirtualSlides_vue_vue_type_style_index_0_id_6b1cbcaa_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./CarouselVirtualSlides.vue?vue&type=style&index=0&id=6b1cbcaa&lang=scss&scoped=true& */ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=style&index=0&id=6b1cbcaa&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _CarouselVirtualSlides_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _CarouselVirtualSlides_vue_vue_type_template_id_6b1cbcaa_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _CarouselVirtualSlides_vue_vue_type_template_id_6b1cbcaa_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  "6b1cbcaa",
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselVirtualSlides_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselVirtualSlides.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselVirtualSlides_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=style&index=0&id=6b1cbcaa&lang=scss&scoped=true&":
+/*!***************************************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=style&index=0&id=6b1cbcaa&lang=scss&scoped=true& ***!
+  \***************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselVirtualSlides_vue_vue_type_style_index_0_id_6b1cbcaa_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/style-loader!../../../../../../../../node_modules/css-loader!../../../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselVirtualSlides.vue?vue&type=style&index=0&id=6b1cbcaa&lang=scss&scoped=true& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=style&index=0&id=6b1cbcaa&lang=scss&scoped=true&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselVirtualSlides_vue_vue_type_style_index_0_id_6b1cbcaa_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselVirtualSlides_vue_vue_type_style_index_0_id_6b1cbcaa_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselVirtualSlides_vue_vue_type_style_index_0_id_6b1cbcaa_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselVirtualSlides_vue_vue_type_style_index_0_id_6b1cbcaa_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselVirtualSlides_vue_vue_type_style_index_0_id_6b1cbcaa_lang_scss_scoped_true___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=template&id=6b1cbcaa&scoped=true&":
+/*!************************************************************************************************************************************************!*\
+  !*** ./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=template&id=6b1cbcaa&scoped=true& ***!
+  \************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselVirtualSlides_vue_vue_type_template_id_6b1cbcaa_scoped_true___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./CarouselVirtualSlides.vue?vue&type=template&id=6b1cbcaa&scoped=true& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/admin/js/src/views/components/extra-components/carousel/CarouselVirtualSlides.vue?vue&type=template&id=6b1cbcaa&scoped=true&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselVirtualSlides_vue_vue_type_template_id_6b1cbcaa_scoped_true___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_CarouselVirtualSlides_vue_vue_type_template_id_6b1cbcaa_scoped_true___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

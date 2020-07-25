@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::post('/register_country', 'CountryController@dummyCreate');
-Route::post('/init_setting', 'SettingController@dummyCreate');
+Route::any('/init_setting', 'SettingController@dummyCreate');
 
 
 Route::group(['middleware' => 'auth:api'], function(){

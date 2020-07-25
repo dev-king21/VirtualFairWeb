@@ -17,7 +17,6 @@ class CreateFairsTable extends Migration
             $table->id();
             $table->string("name");
             $table->string("fair_type_id");
-            $table->integer("opened_year");
             $table->date("start_date");
             $table->date("end_date");
             $table->integer("status")->default(0); // 0 - preserved, 1 - current, 2 - ended  
