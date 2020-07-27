@@ -45,7 +45,7 @@ class Stand extends Model
         return $this->belongsTo('App\Country');
     }
 
-    public function standType()
+    public function stand_type()
     {
         return $this->belongsTo('App\StandType');
     }
@@ -63,5 +63,6 @@ class Stand extends Model
 
     
     protected $guarded = ['fair_id', 'user_id'];
+    protected $hidden = ['created_at', 'updated_at'];
     protected $attributes = ["status" => 0];
 }

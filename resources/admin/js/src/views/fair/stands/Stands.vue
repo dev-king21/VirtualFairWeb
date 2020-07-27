@@ -86,9 +86,6 @@ import CellRendererLink from './cell-renderer/CellRendererLink.vue'
 import CellRendererStatus from './cell-renderer/CellRendererStatus.vue'
 import CellRendererActions from './cell-renderer/CellRendererActions.vue'
 
-
-
-
 export default {
   components: {
     AgGridVue,
@@ -103,7 +100,7 @@ export default {
   data () {
     return {
 
-       searchQuery: '',
+      searchQuery: '',
 
       // AgGrid
       gridApi: null,
@@ -118,7 +115,7 @@ export default {
           headerName: 'ID',
           field: 'id',
           width: 190,
-          filter: true,
+          filter: true
         },
         {
           headerName: 'Country Name',
@@ -148,8 +145,7 @@ export default {
       },
       clickNotClose        : true,
       isChatSidebarActive  : true,
-      isLoggedInUserProfileView: false ,
-      isChatSidebarActive  : true,
+      isLoggedInUserProfileView: false,
       countries:[],
       searchedCountries: [],
       stands:[]
@@ -157,7 +153,7 @@ export default {
   },
   
   computed: {
-  paginationPageSize () {
+    paginationPageSize () {
       if (this.gridApi) return this.gridApi.paginationGetPageSize()
       else return 10
     },
@@ -183,8 +179,8 @@ export default {
       return this.$store.state.windowWidth
     }
   }, 
-   methods: {
-     setColumnFilter (column, val) {
+  methods: {
+    setColumnFilter (column, val) {
       const filter = this.gridApi.getFilterInstance(column)
       let modelObj = null
 
@@ -206,25 +202,23 @@ export default {
     updateSearchQuery (val) {
       this.gridApi.setQuickFilter(val)
     },  
-    searchList() {
+    searchList () {
       
-      if (this.searchQuery === '')
-        this.searchedCountries = this.countries;
-      else 
-        this.searchedCountries = this.countries.filter((item) => item.name.toLowerCase().lastIndexOf(this.searchQuery.toLowerCase())!== -1);
+      if (this.searchQuery === '') this.searchedCountries = this.countries
+      else this.searchedCountries = this.countries.filter((item) => item.name.toLowerCase().lastIndexOf(this.searchQuery.toLowerCase()) !== -1)
     },
     showStands (country_id) {
       let action = `/api/fair/stands/${this.$route.params.fair_id}`
       if (this.$route.params.fair_id) {
         action = `/api/fair/stands/${this.$route.params.fair_id}/${country_id}`
-      this.$http.get(action)
-        .then((response) => {
-          const res = response.data
-          this.stands = res.stands
-          console.log(this.stands);
-        })
-        .catch((error) => console.log(error))
-    }
+        this.$http.get(action)
+          .then((response) => {
+            const res = response.data
+            this.stands = res.stands
+            console.log(this.stands)
+          })
+          .catch((error) => console.log(error))
+      }
     }
   }, 
   mounted () {
@@ -251,12 +245,12 @@ export default {
           this.searchedCountries = this.countries
 
           this.stands = res.stands
-          console.log(this.stands);
+          console.log(this.stands)
 
         })
         .catch((error) => console.log(error))
     }
-  },
+  }
   
   /* beforeDestroy () {
     this.$store.unregisterModule('chat')

@@ -59,7 +59,9 @@ export default{
   },
   created () {
     this.$http.get('/api/stand_type/all')
-      .then((response) => { this.stand_types = response.data.stand_types })
+      .then((response) => { 
+        this.stand_types = response.data.stand_types 
+      })
       .catch((error)   => { console.log(error) })
   }
 }

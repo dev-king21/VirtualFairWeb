@@ -15,11 +15,10 @@ class CreateRoomsTable extends Migration
     {
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
-            $table->int('country_id');
-
+            $table->integer('country_id');
             $table->string('name');
             $table->string('description');
-          
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

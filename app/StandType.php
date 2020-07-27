@@ -10,7 +10,11 @@ class StandType extends Model
         return $this->hasMany('App\StandTypeItem');
     }
 
+    public function stand_locations() {
+        return $this->hasMany('App\StandLocation');
+    }
+
     protected $guarded = [];
-    
+    protected $hidden = ['created_at', 'updated_at'];
 
 }

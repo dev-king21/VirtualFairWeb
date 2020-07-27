@@ -63,7 +63,9 @@ export default{
   },
   created () {
     this.$http.get('/api/fair_type/all')
-      .then((response) => { this.fair_types = response.data.fair_types })
+      .then((response) => { 
+        this.fair_types = response.data.fair_types 
+      })
       .catch((error)   => { console.log(error) })
   }
 }

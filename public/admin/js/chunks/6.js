@@ -257,8 +257,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FairViewSidebar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../FairViewSidebar.vue */ "./resources/admin/js/src/views/fair/FairViewSidebar.vue");
 /* harmony import */ var _store_fair_moduleFairList_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/store/fair/moduleFairList.js */ "./resources/admin/js/src/store/fair/moduleFairList.js");
 /* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -408,25 +406,23 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
-    var _ref;
-
-    return _ref = {
-      format: "yyyy-MM-dd",
+    return {
+      format: 'yyyy-MM-dd',
       formatOptions: [{
-        text: "d MMM yyyy - e.g 12 Feb 2016",
-        value: "d MMM yyyy"
+        text: 'd MMM yyyy - e.g 12 Feb 2016',
+        value: 'd MMM yyyy'
       }, {
-        text: "d MMMM yyyy - e.g 12 February 2016",
-        value: "d MMMM yyyy"
+        text: 'd MMMM yyyy - e.g 12 February 2016',
+        value: 'd MMMM yyyy'
       }, {
-        text: "yyyy-MM-dd - e.g 2016-02-12",
-        value: "yyyy-MM-dd"
+        text: 'yyyy-MM-dd - e.g 2016-02-12',
+        value: 'yyyy-MM-dd'
       }, {
-        text: "dsu MMM yyyy - e.g 12th Feb 2016",
-        value: "dsu MMM yyyy"
+        text: 'dsu MMM yyyy - e.g 12th Feb 2016',
+        value: 'dsu MMM yyyy'
       }, {
-        text: "D dsu MMM yyyy - e.g Sat 12th Feb 2016",
-        value: "D dsu MMM yyyy"
+        text: 'D dsu MMM yyyy - e.g Sat 12th Feb 2016',
+        value: 'D dsu MMM yyyy'
       }],
       startDate: null,
       endDate: null,
@@ -441,8 +437,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       sidebarData: {},
       isAddShow: false,
       popupTitle: 'Add Fair',
-      name: ''
-    }, _defineProperty(_ref, "status", ''), _defineProperty(_ref, "fairs", []), _defineProperty(_ref, "fair_types", []), _defineProperty(_ref, "active_idx", 0), _defineProperty(_ref, "isAddOrEdit", 0), _defineProperty(_ref, "editId", 0), _defineProperty(_ref, "deleteId", 0), _ref;
+      name: '',
+      fairs: [],
+      fair_types: [],
+      active_idx: 0,
+      isAddOrEdit: 0,
+      editId: 0,
+      deleteId: 0
+    };
   },
   computed: {
     currentPage: function currentPage() {
@@ -478,7 +480,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       // this.sidebarData = JSON.parse(JSON.stringify(this.blankData))
       this.editId = id;
       this.isAddOrEdit = 1;
-      this.popupTitle = "Edit Fair";
+      this.popupTitle = 'Edit Fair';
       var fair = this.fairs.find(function (item) {
         return item.id === id;
       });
@@ -514,18 +516,18 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     },
     formatDate: function formatDate(date) {
       var d = new Date(date),
-          month = '' + (d.getMonth() + 1),
-          day = '' + d.getDate(),
+          month = "".concat(d.getMonth() + 1),
+          day = "".concat(d.getDate()),
           year = d.getFullYear();
-      if (month.length < 2) month = '0' + month;
-      if (day.length < 2) day = '0' + day;
+      if (month.length < 2) month = "0".concat(month);
+      if (day.length < 2) day = "0".concat(day);
       return [year, month, day].join('-');
     },
     addEditFair: function addEditFair() {
       var _this = this;
 
       if (this.name === '' || this.active_idx === 0 || this.startDate === null || this.endDate === null) return;
-      var action = "/api/fair/create";
+      var action = '/api/fair/create';
       if (this.isAddOrEdit === 1) action = "/api/fair/update/".concat(this.editId);
       console.log(action);
       this.startDate = this.formatDate(this.startDate);
@@ -586,7 +588,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         type: 'confirm',
         color: 'danger',
         title: 'Confirm Delete',
-        text: "Do you really delete it?",
+        text: 'Do you really delete it?',
         accept: this.deleteRecord,
         acceptText: 'Delete'
       });
@@ -1270,200 +1272,184 @@ var render = function() {
                   }
                 },
                 [
-                  _c(
-                    "div",
-                    { staticClass: " w-full mb-base" },
-                    [
-                      _c("vx-card", [
-                        _c("div", { staticClass: "vx-row mb-6" }, [
-                          _c("div", { staticClass: "vx-col sm:w-1/4 w-full" }, [
-                            _c("span", [_vm._v("Fair Name")])
-                          ]),
-                          _vm._v(" "),
-                          _c(
-                            "div",
-                            { staticClass: "vx-col sm:w-3/4 w-full" },
-                            [
-                              _c("vs-input", {
-                                staticClass: "w-full",
-                                model: {
-                                  value: _vm.name,
-                                  callback: function($$v) {
-                                    _vm.name = $$v
-                                  },
-                                  expression: "name"
-                                }
-                              })
-                            ],
-                            1
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "vx-row mb-6" }, [
-                          _c("div", { staticClass: "vx-col sm:w-1/4 w-full" }, [
-                            _c("span", [_vm._v("Fair Type")])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "vx-col sm:w-3/4 w-full" }, [
-                            _c(
+                  _c("div", { staticClass: " w-full px-20 mb-base" }, [
+                    _c("div", { staticClass: "vx-row mb-6" }, [
+                      _c("div", { staticClass: "vx-col sm:w-1/4 w-full" }, [
+                        _c("span", [_vm._v("Fair Name")])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "vx-col sm:w-3/4 w-full" },
+                        [
+                          _c("vs-input", {
+                            staticClass: "w-full",
+                            model: {
+                              value: _vm.name,
+                              callback: function($$v) {
+                                _vm.name = $$v
+                              },
+                              expression: "name"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "vx-row mb-6" }, [
+                      _c("div", { staticClass: "vx-col sm:w-1/4 w-full" }, [
+                        _c("span", [_vm._v("Fair Type")])
+                      ]),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "vx-col sm:w-3/4 w-full" }, [
+                        _c(
+                          "div",
+                          { staticClass: "vx-row" },
+                          _vm._l(_vm.fair_types, function(ftype, index) {
+                            return _c(
                               "div",
-                              { staticClass: "vx-row" },
-                              _vm._l(_vm.fair_types, function(ftype, index) {
-                                return _c(
-                                  "div",
+                              {
+                                key: index,
+                                staticClass:
+                                  "vx-col w-full sm:w-1/2 lg:w-1/3 mb-base"
+                              },
+                              [
+                                _c(
+                                  "vx-card",
                                   {
-                                    key: index,
-                                    staticClass:
-                                      "vx-col w-full sm:w-1/2 lg:w-1/3 mb-base"
+                                    class:
+                                      _vm.active_idx === ftype.id
+                                        ? "active-card"
+                                        : "",
+                                    on: {
+                                      click: function($event) {
+                                        return _vm.changeActive(ftype.id)
+                                      }
+                                    }
                                   },
                                   [
                                     _c(
-                                      "vx-card",
+                                      "div",
                                       {
-                                        class:
-                                          _vm.active_idx === ftype.id
-                                            ? "active-card"
-                                            : "",
-                                        on: {
-                                          click: function($event) {
-                                            return _vm.changeActive(ftype.id)
-                                          }
-                                        }
+                                        attrs: { slot: "no-body" },
+                                        slot: "no-body"
                                       },
                                       [
-                                        _c(
-                                          "div",
-                                          {
-                                            attrs: { slot: "no-body" },
-                                            slot: "no-body"
-                                          },
-                                          [
-                                            _c("img", {
-                                              staticClass:
-                                                "responsive card-img-top",
-                                              attrs: {
-                                                src:
-                                                  "/fair_image/" +
-                                                  ftype.building,
-                                                alt: "content-img"
-                                              }
-                                            })
-                                          ]
-                                        ),
-                                        _vm._v(" "),
-                                        _c("h5", { staticClass: "mb-2" }, [
-                                          _vm._v(_vm._s(ftype.name))
-                                        ]),
-                                        _vm._v(" "),
-                                        _c(
-                                          "p",
-                                          { staticClass: "text-primary" },
-                                          [
-                                            _vm._v(
-                                              "Stand Items: " +
-                                                _vm._s(
-                                                  ftype.stand_locations.length
-                                                )
-                                            )
-                                          ]
-                                        )
+                                        _c("img", {
+                                          staticClass:
+                                            "responsive card-img-top",
+                                          attrs: {
+                                            src:
+                                              "/fair_image/" + ftype.building,
+                                            alt: "content-img"
+                                          }
+                                        })
                                       ]
-                                    )
-                                  ],
-                                  1
+                                    ),
+                                    _vm._v(" "),
+                                    _c("h5", { staticClass: "mb-2" }, [
+                                      _vm._v(_vm._s(ftype.name))
+                                    ]),
+                                    _vm._v(" "),
+                                    _c("p", { staticClass: "text-primary" }, [
+                                      _vm._v(
+                                        "Stand Items: " +
+                                          _vm._s(ftype.stand_locations.length)
+                                      )
+                                    ])
+                                  ]
                                 )
-                              }),
-                              0
+                              ],
+                              1
                             )
-                          ])
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "vx-row mb-6" }, [
-                          _c("div", { staticClass: "vx-col sm:w-1/4 w-full" }, [
-                            _c("span", [_vm._v("Period(Start ~ End)")])
-                          ]),
+                          }),
+                          0
+                        )
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "vx-row mb-6" }, [
+                      _c("div", { staticClass: "vx-col sm:w-1/4 w-full" }, [
+                        _c("span", [_vm._v("Period(Start ~ End)")])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "vx-col sm:w-3/4 demo-alignment mt-0" },
+                        [
+                          [
+                            _c("datepicker", {
+                              attrs: {
+                                placeholder: "Start Date",
+                                format: _vm.format
+                              },
+                              model: {
+                                value: _vm.startDate,
+                                callback: function($$v) {
+                                  _vm.startDate = $$v
+                                },
+                                expression: "startDate"
+                              }
+                            }),
+                            _vm._v(" "),
+                            _c("span", [_vm._v(" ~ ")]),
+                            _vm._v(" "),
+                            _c("datepicker", {
+                              attrs: {
+                                placeholder: "End Date",
+                                format: _vm.format
+                              },
+                              model: {
+                                value: _vm.endDate,
+                                callback: function($$v) {
+                                  _vm.endDate = $$v
+                                },
+                                expression: "endDate"
+                              }
+                            })
+                          ]
+                        ],
+                        2
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "vx-row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "vx-col sm:w-2/3 w-full ml-auto" },
+                        [
+                          _c(
+                            "vs-button",
+                            {
+                              staticClass: "mr-3 mb-2",
+                              on: {
+                                click: function($event) {
+                                  return _vm.addEditFair()
+                                }
+                              }
+                            },
+                            [_vm._v("OK")]
+                          ),
                           _vm._v(" "),
                           _c(
-                            "div",
+                            "vs-button",
                             {
-                              staticClass: "vx-col sm:w-3/4 demo-alignment mt-0"
+                              staticClass: "mb-2",
+                              attrs: { color: "warning", type: "border" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.cancelAction()
+                                }
+                              }
                             },
-                            [
-                              [
-                                _c("datepicker", {
-                                  attrs: {
-                                    placeholder: "Start Date",
-                                    format: _vm.format
-                                  },
-                                  model: {
-                                    value: _vm.startDate,
-                                    callback: function($$v) {
-                                      _vm.startDate = $$v
-                                    },
-                                    expression: "startDate"
-                                  }
-                                }),
-                                _vm._v(" "),
-                                _c("span", [_vm._v(" ~ ")]),
-                                _vm._v(" "),
-                                _c("datepicker", {
-                                  attrs: {
-                                    placeholder: "End Date",
-                                    format: _vm.format
-                                  },
-                                  model: {
-                                    value: _vm.endDate,
-                                    callback: function($$v) {
-                                      _vm.endDate = $$v
-                                    },
-                                    expression: "endDate"
-                                  }
-                                })
-                              ]
-                            ],
-                            2
+                            [_vm._v("Cancel")]
                           )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "vx-row" }, [
-                          _c(
-                            "div",
-                            { staticClass: "vx-col sm:w-2/3 w-full ml-auto" },
-                            [
-                              _c(
-                                "vs-button",
-                                {
-                                  staticClass: "mr-3 mb-2",
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.addEditFair()
-                                    }
-                                  }
-                                },
-                                [_vm._v("OK")]
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "vs-button",
-                                {
-                                  staticClass: "mb-2",
-                                  attrs: { color: "warning", type: "border" },
-                                  on: {
-                                    click: function($event) {
-                                      return _vm.cancelAction()
-                                    }
-                                  }
-                                },
-                                [_vm._v("Cancel")]
-                              )
-                            ],
-                            1
-                          )
-                        ])
-                      ])
-                    ],
-                    1
-                  )
+                        ],
+                        1
+                      )
+                    ])
+                  ])
                 ]
               ),
               _vm._v(" "),

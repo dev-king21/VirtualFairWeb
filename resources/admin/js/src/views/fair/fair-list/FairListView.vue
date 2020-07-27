@@ -17,8 +17,8 @@
         </div>
 
         <vs-popup class="popupModal w-full" :title="popupTitle" :active.sync="isAddShow" style="width: 1000px;">
-            <div class=" w-full mb-base">
-              <vx-card>
+            <div class=" w-full px-20 mb-base">
+              <!-- <vx-card> -->
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/4 w-full">
                     <span>Fair Name</span>
@@ -68,7 +68,7 @@
 
                 <!-- CODE -->
                
-              </vx-card>
+              <!-- </vx-card> -->
             </div>
 
           </vs-popup>
@@ -151,13 +151,13 @@ export default {
   data () {
     return {
 
-      format: "yyyy-MM-dd",
+      format: 'yyyy-MM-dd',
       formatOptions:[
-        {text: "d MMM yyyy - e.g 12 Feb 2016" , value: "d MMM yyyy" },
-        {text: "d MMMM yyyy - e.g 12 February 2016", value: "d MMMM yyyy" },
-        {text: "yyyy-MM-dd - e.g 2016-02-12", value: "yyyy-MM-dd" },
-        {text: "dsu MMM yyyy - e.g 12th Feb 2016", value: "dsu MMM yyyy" },
-        {text: "D dsu MMM yyyy - e.g Sat 12th Feb 2016", value: "D dsu MMM yyyy" },
+        {text: 'd MMM yyyy - e.g 12 Feb 2016', value: 'd MMM yyyy' },
+        {text: 'd MMMM yyyy - e.g 12 February 2016', value: 'd MMMM yyyy' },
+        {text: 'yyyy-MM-dd - e.g 2016-02-12', value: 'yyyy-MM-dd' },
+        {text: 'dsu MMM yyyy - e.g 12th Feb 2016', value: 'dsu MMM yyyy' },
+        {text: 'D dsu MMM yyyy - e.g Sat 12th Feb 2016', value: 'D dsu MMM yyyy' }
       ],
 
       startDate: null,
@@ -175,7 +175,6 @@ export default {
       isAddShow: false,
       popupTitle: 'Add Fair',
       name:'',
-      status:'',
       fairs: [],
       fair_types:[],
       active_idx: 0,
@@ -206,9 +205,9 @@ export default {
       this.startDate = null
       this.endDate = null
       this.status = 1
-      this.isAddOrEdit = 0;
+      this.isAddOrEdit = 0
       this.popupTitle = 'Add Fair'
-      this.isAddShow = true;
+      this.isAddShow = true
     },
     deleteData (id) {
       this.$store.dispatch('dataList/removeItem', id).catch(err => { console.error(err) })
@@ -217,7 +216,7 @@ export default {
       // this.sidebarData = JSON.parse(JSON.stringify(this.blankData))
       this.editId = id
       this.isAddOrEdit = 1
-      this.popupTitle="Edit Fair"
+      this.popupTitle = 'Edit Fair'
 
       const fair = this.fairs.find((item) => item.id === id)
       this.name = fair.name
@@ -226,7 +225,7 @@ export default {
       this.startDate = fair.start_date 
       this.endDate = fair.end_date
       this.status = 1
-      this.isAddShow = true;
+      this.isAddShow = true
       
     },
     changeActive (idx) {
@@ -248,29 +247,25 @@ export default {
     toggleDataSidebar (val = false) {
       this.addNewDataSidebar = val
     },
-    cancelAction(){
+    cancelAction () {
       this.isAddShow = false
     },
-    formatDate(date) {
-        var d = new Date(date),
-            month = '' + (d.getMonth() + 1),
-            day = '' + d.getDate(),
-            year = d.getFullYear();
+    formatDate (date) {
+      let d = new Date(date),
+        month = `${  d.getMonth() + 1}`,
+        day = `${  d.getDate()}`,
+        year = d.getFullYear()
 
-        if (month.length < 2) 
-            month = '0' + month;
-        if (day.length < 2) 
-            day = '0' + day;
+      if (month.length < 2) month = `0${  month}`
+      if (day.length < 2) day = `0${  day}`
 
-        return [year, month, day].join('-');
+      return [year, month, day].join('-')
     },
-    addEditFair(){
-      if(this.name === '' || this.active_idx === 0 || this.startDate === null || this.endDate === null)
-        return
-      let action = `/api/fair/create`
-      if(this.isAddOrEdit === 1)
-        action = `/api/fair/update/${this.editId}`
-       console.log(action)
+    addEditFair () {
+      if (this.name === '' || this.active_idx === 0 || this.startDate === null || this.endDate === null) return
+      let action = '/api/fair/create'
+      if (this.isAddOrEdit === 1) action = `/api/fair/update/${this.editId}`
+      console.log(action)
 
       this.startDate = this.formatDate(this.startDate)
       this.endDate = this.formatDate(this.endDate)
@@ -289,42 +284,42 @@ export default {
           this.loadContent()
         })
     },
-    loadContent(){
+    loadContent () {
       let action = '/apifair/all'
-    switch (this.$route.name) {
-    case 'fair-all':
-      action = '/api/fair/all'
-      break
-    case 'fair-next':
-      action = '/api/fair/next'
-      break
-    case 'fair-live':
-      action = '/api/fair/current'
-      break
-    case 'fair-past':
-      action = '/api/fair/past'
-      break
-    }
-    this.$http.get(action)
-    .then((response) => {
-        console.log(action);
+      switch (this.$route.name) {
+      case 'fair-all':
+        action = '/api/fair/all'
+        break
+      case 'fair-next':
+        action = '/api/fair/next'
+        break
+      case 'fair-live':
+        action = '/api/fair/current'
+        break
+      case 'fair-past':
+        action = '/api/fair/past'
+        break
+      }
+      this.$http.get(action)
+        .then((response) => {
+          console.log(action)
 
-        const res = response.data
-        this.fairs = res.fairs
-        console.log(this.fairs);
-    })
-    .catch((error) => console.log(error))
+          const res = response.data
+          this.fairs = res.fairs
+          console.log(this.fairs)
+        })
+        .catch((error) => console.log(error))
 
-    this.$http.get('/api/fair_type/all')
-      .then((response) => { this.fair_types = response.data.fair_types })
-      .catch((error)   => { console.log(error) })
+      this.$http.get('/api/fair_type/all')
+        .then((response) => { this.fair_types = response.data.fair_types })
+        .catch((error)   => { console.log(error) })
     },
     confirmDeleteRecord (id) {
       this.$vs.dialog({
         type: 'confirm',
         color: 'danger',
         title: 'Confirm Delete',
-        text: `Do you really delete it?`,
+        text: 'Do you really delete it?',
         accept: this.deleteRecord,
         acceptText: 'Delete'
       })
@@ -332,7 +327,7 @@ export default {
     },
     deleteRecord () {
       /* Below two lines are just for demo purpose */
-      this.removeAction(this.deleteId);
+      this.removeAction(this.deleteId)
       
       this.showDeleteSuccess()
 
@@ -341,9 +336,9 @@ export default {
       //   .then(()   => { this.showDeleteSuccess() })
       //   .catch(err => { console.error(err)       })
     },
-    removeAction(id){
-      console.log(id);
-       const action = `/api/fair/update/${id}`
+    removeAction (id) {
+      console.log(id)
+      const action = `/api/fair/update/${id}`
       console.log(action)
       const newData = {
         status: 0
@@ -369,7 +364,7 @@ export default {
       moduleFairList.isRegistered = true
     }
     
-   this.loadContent()
+    this.loadContent()
   },
   mounted () {
     this.isMounted = true

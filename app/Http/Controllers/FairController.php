@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Fair;
 use App\Stand;
 use App\Country;
+use App\StandLocation;
 
 class FairController extends Controller
 {
@@ -71,6 +72,19 @@ class FairController extends Controller
         $fair->status = $request->post("status");
         $fair->save();
 
+        $countries = Country::select('id')->where("status", 1)->get();
+        $stand_locations = StandLocation::select('id')->where("fair_type_id", $fair->fair_type_id)->get();
+        foreach($countries as $country) {
+            foreach ($stand_location as $location){
+                $stand = new Stand;
+                $stand->fair_id = $fair->id;
+                $stand->country_id = $country->id;
+                $stand->stand_location_id = $location->id;
+                $stand->save();
+            }
+        }        
+
+
         $res["status"] = "ok";
         return response()->json($res);
     }
@@ -82,11 +96,90 @@ class FairController extends Controller
         return response()->json($res);
     }
 
+    public function get_countries(Request $request, $fair_id = 0) {
+        $res = array();
+        if ($fair_id == 0) {
+            $now = date("y-m-d");
+            $query = [
+                ["start_date", "<=", $now], 
+                ["end_date", ">=", $now]
+            ]; 
+            $query["status"] = 1;
+            $fair = Fair::with('fair_type')->where($query)->first();
+        } else 
+            $fair = Fair::with('fair_type')->find($fair_id);
+
+        if ($fair == null)
+        {
+            $res["status"] = "No current fair";
+        } else {
+            $res["status"] = "ok";
+            $res["fair"] = $fair;
+            $res["countries"] = Stand::select('country_id')->with(['country'=> function($query){
+                $query->select(['id', 'name', 'code'])->get();
+            }])->where("fair_id", $fair->id)->groupBy("country_id")->get();
+        }
+
+        return response()->json($res);
+
+    }
+
+    public function get_stands(Request $request, $fair_id, $country_id = 0) {
+        if (!isset($fair_id) || $fair_id == 0)
+        {
+            $res["status"] = "error";
+            $res["msg"] = "unknown fair";
+            return response()->json($res);
+        }
+        if (!isset($country_id) || $country_id == 0)
+        {
+            $res["status"] = "error";
+            $res["msg"] = "unknown country";
+            return response()->json($res);
+        }
+
+        $res["fair"] = Fair::with('fair_type')->find($fair_id);
+        $res["country"] = Country::find($country_id);
+        $res["stands"] = Stand::with(['stand_location'=> function($query) {
+            $query->with('stand_type')->get();
+        }])->where([
+            "fair_id"=> $fair_id,
+            "country_id"=> $country_id
+        ])->get();
+
+        return response()->json($res);
+
+    }
+
+    public function get_stand(Request $request, $fair_id, $country_id, $stand_id) {
+        if (!isset($fair_id) || $fair_id == 0)
+        {
+            $res["status"] = "error";
+            $res["msg"] = "unknown fair";
+            return response()->json($res);
+        }
+        if (!isset($country_id) || $country_id == 0)
+        {
+            $res["status"] = "error";
+            $res["msg"] = "unknown country";
+            return response()->json($res);
+        }
+
+        $res["fair"] = Fair::find($fair_id);
+        $res["country"] = Country::find($country_id);
+        $res["stand"] = Stand::with(['appointments', 'gallerys', 'portfolios', 'files', 'contact', 'stand_contents'=> function($query) {
+            $query->with('stand_type_item')->get();
+        }])->find($stand_id);
+        
+        $res["stand_type"] = StandLocation::with('stand_type') -> find($res["stand"]->stand_location_id)->stand_type;
+        return response()->json($res);
+
+    }
 
     public function requestFair(Request $request) {
         $res = array();
         
-        $stands = Stand::with(['fair'])->where("status", "=", 0)
+        $stands = Stand::with(['fair'])->where("status", 0)
         ->whereHas("fair", function($q){
             $today = date("y-m-d");
             $query = [
@@ -101,7 +194,7 @@ class FairController extends Controller
 
     public function bookedFair(Request $request) {
         $res = array();
-        $stands = Stand::with(['fair'])->where("status", "=", 1)
+        $stands = Stand::with(['fair'])->where("status", 1)
         ->whereHas("fair", function($q){
             $today = date("y-m-d");
             $query = [
@@ -117,7 +210,7 @@ class FairController extends Controller
 
     public function activeFair(Request $request) {
         $res = array();
-        $stands = Stand::with(['fair'])->where("status", "=", 1)
+        $stands = Stand::with(['fair'])->where("status", 1)
         ->whereHas("fair", function($q){
             $today = date("y-m-d");
             $query = [
@@ -135,7 +228,7 @@ class FairController extends Controller
     public function pastFair(Request $request) {
         $res = array();
 
-        $stands = Stand::with(['fair'])->where("status", "=", 1)
+        $stands = Stand::with(['fair'])->where("status", 1)
         ->whereHas("fair", function($q){
             $today = date("y-m-d");
             $query = [
@@ -151,8 +244,8 @@ class FairController extends Controller
 
     public function fairStands(Request $request, $id){
         $res = array();
-        $countries = Country::where("status", "=", 1)->get();
-        $res["stands"] = Stand::with(['fair', 'user', 'country'])->where("fair_id", "=", $id)->get();
+        $countries = Country::where("status", 1)->get();
+        $res["stands"] = Stand::with(['fair', 'user', 'country'])->where("fair_id", $id)->get();
         $res["countries"] = $countries;
         return response()->json($res);
     }

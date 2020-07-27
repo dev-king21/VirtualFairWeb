@@ -18,4 +18,6 @@ class Room extends Model
         return $this->belongsTo('App\Country');
     }
 
+    protected $guarded = [];
+    protected $hidden = ['created_at', 'updated_at'];
 }

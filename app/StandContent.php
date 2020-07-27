@@ -16,5 +16,6 @@ class StandContent extends Model
         return $this->belongsTo('App\StandTypeItem');
     }
 
+    protected $hidden = ['created_at', 'updated_at'];
     protected $guarded = [];
 }

@@ -36,6 +36,38 @@ const router = new Router({
           }
         },
         {
+          path: '/fair',
+          name: 'fair-home',
+          component: () => import('@/views/fair/FairCountry.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/fair/country/:fair_id',
+          name: 'fair-country',
+          component: () => import('@/views/fair/FairCountry.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/fair/country/:fair_id/:country_id',
+          name: 'fair-country-stands',
+          component: () => import('@/views/fair/FairStands.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/fair/stand/:fair_id/:country_id/:stand_id',
+          name: 'fair-stands',
+          component: () => import('@/views/fair/FairStandContent.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
           path: '/auth/login',
           name: 'auth-login',
           component: () => import('@/views/auth/Login.vue'),

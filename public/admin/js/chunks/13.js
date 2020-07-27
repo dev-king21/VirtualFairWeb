@@ -20,8 +20,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _cell_renderer_CellRendererLink_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./cell-renderer/CellRendererLink.vue */ "./resources/admin/js/src/views/fair/stands/cell-renderer/CellRendererLink.vue");
 /* harmony import */ var _cell_renderer_CellRendererStatus_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./cell-renderer/CellRendererStatus.vue */ "./resources/admin/js/src/views/fair/stands/cell-renderer/CellRendererStatus.vue");
 /* harmony import */ var _cell_renderer_CellRendererActions_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./cell-renderer/CellRendererActions.vue */ "./resources/admin/js/src/views/fair/stands/cell-renderer/CellRendererActions.vue");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 //
 //
 //
@@ -116,9 +114,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     CellRendererActions: _cell_renderer_CellRendererActions_vue__WEBPACK_IMPORTED_MODULE_6__["default"]
   },
   data: function data() {
-    var _ref;
-
-    return _ref = {
+    return {
       searchQuery: '',
       // AgGrid
       gridApi: null,
@@ -158,8 +154,11 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       },
       clickNotClose: true,
       isChatSidebarActive: true,
-      isLoggedInUserProfileView: false
-    }, _defineProperty(_ref, "isChatSidebarActive", true), _defineProperty(_ref, "countries", []), _defineProperty(_ref, "searchedCountries", []), _defineProperty(_ref, "stands", []), _ref;
+      isLoggedInUserProfileView: false,
+      countries: [],
+      searchedCountries: [],
+      stands: []
+    };
   },
   computed: {
     paginationPageSize: function paginationPageSize() {

@@ -52,6 +52,11 @@ Route::get('/fair/year/{year}', 'FairController@fairs_year');
 Route::get('/fair/current', 'FairController@current_fairs');
 Route::get('/fair/next', 'FairController@next_fairs');
 Route::get('/fair/past', 'FairController@past_fairs');
+Route::get('/fair/show', 'FairController@get_countries');
+Route::get('/fair/show/{fair_id}', 'FairController@get_countries');
+Route::get('/fair/show/{fair_id}/{country_id}', 'FairController@get_stands');
+Route::get('/fair/show/{fair_id}/{country_id}/{stand_id}', 'FairController@get_stand');
+
 
 Route::post('/fair/create', 'FairController@create_fair');
 Route::post('/fair/update/{id}', 'FairController@update_fair');

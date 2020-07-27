@@ -18,4 +18,5 @@ class Fair extends Model
 
     protected $guarded = [];
     protected $attributes = ["status" => 0];
+    protected $hidden = ["created_at", "updated_at"];
 }

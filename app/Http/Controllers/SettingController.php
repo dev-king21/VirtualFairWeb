@@ -1026,6 +1026,8 @@ class SettingController extends Controller
                 $standLocation->save();
             }
         }
+
+        $countries = Country::select('id')->where("status", 1)->get();
         for($i = 1; $i < 10; $i++){
             $fair = new Fair;
             $fair->name = 'Fair - '.$i;
@@ -1034,22 +1036,32 @@ class SettingController extends Controller
             $fair->start_date = '2020-07-'.$sd;
             $fair->end_date = '2020-07-'.rand($sd, 31);
             $fair->status = 1;
-            $fair->save();            
+            $fair->save(); 
+            
+            for ($c = 1; $c < 12; $c++) {
+              $stand_counts = ($i==0)? 17 : 12;
+              for($l = 1; $l <= 12; $l++){
+                  $stand = new Stand;
+                  $stand->fair_id = $i;
+                  $stand->country_id = $c;
+                  $stand->stand_location_id = ($i - 1) * 12 + $l;
+                  
+                  if (rand(1, 10) % 2 == 0)
+                  {
+                    $stand->user_id = rand(1, 10);
+                    $stand->site_link = 'http://localhost/site_link'.$i;
+                    $stand->logo = 'logo-'.$i;
+                    $stand->description = 'description-'.$i;
+                    $stand->status = 1;
+                  }
+                  
+                  $stand->save();
+              }
+            }           
         }
 
-        for($i = 1; $i < 10; $i++){
-            $stand = new Stand;
-            $stand->fair_id = rand(1, 10);
-            $stand->country_id = rand(1, 10);
-            $stand->user_id = rand(1, 10);
-            $stand->stand_location_id = rand(1, 60);
-            $stand->stand_location_id = rand(1, 60);
-            $stand->site_link = 'http://localhost/site_link'.$i;
-            $stand->logo = 'logo-'.$i;
-            $stand->description = 'description-'.$i;
-            $stand->status = 1;
-            $stand->save();
-        }
+
+        
 
        //country
 
