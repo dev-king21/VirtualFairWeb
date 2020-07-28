@@ -18,7 +18,8 @@
               </template>
               <template v-if="stand.user_id">
                 <feather-icon class="ml-2" icon="ChevronRightIcon"></feather-icon>
-                <img class="ml-4 logo_img" :src="`/fair_image/${stand.logo}.png`"> 
+                <img class="ml-4 logo_img" :src="`/fair_image/logo-1.png`"> 
+                <!-- <img class="ml-4 logo_img" :src="`/fair_image/${stand.logo}.png`">  -->
                 <h3 class="text-warning ml-4">{{stand.company}}</h3>
               </template>
             </div>
@@ -45,13 +46,114 @@
                     :style="`top: ${item.stand_type_item.top * 100}%; left: ${item.stand_type_item.left * 100}%`" >
             </template>
             <div v-if="loading" class="absolute w-full stand-contents flex items-center justify-center">
-              <vs-button type="filled" size="large" class="ml-8" color="success">Gallery</vs-button>
-              <vs-button type="filled" size="large" class="ml-8" color="success">Portfolio</vs-button>
-              <vs-button type="filled" size="large" class="ml-8" color="success">Files</vs-button>
-              <vs-button type="filled" size="large" class="ml-8" color="success">Appointment</vs-button>
-              <vs-button type="filled" size="large" class="ml-8" color="success">Contact</vs-button>
+              <vs-button type="relief" class="ml-8 items-center" color="success" icon-pack="feather" icon="icon-image">
+                Gallery
+              </vs-button>
+              <vs-button type="relief" class="ml-8" color="success" icon-pack="feather" icon="icon-layers">
+                Portfolio
+              </vs-button>
+              <vs-button type="relief" class="ml-8" color="success" icon-pack="feather" icon="icon-download-cloud">
+                Files
+              </vs-button>
+              <vs-button type="relief" class="ml-8" color="success" icon-pack="feather" icon="icon-airplay">
+                Appointment
+              </vs-button>
+              <vs-button type="relief" class="ml-8" color="success" icon-pack="feather" icon="icon-link">
+                Contact
+              </vs-button>
             </div>
         </div>
+    </div>
+    <div class="vx-row mx-20">
+      <vx-card class="mt-base" v-show="stand.gallerys && stand.gallerys.length">
+        <div class="text-success h2 mb-4">Gallery</div>
+        <div style="height: 800px;">
+            <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop" :dir="$vs.rtl ? 'rtl' : 'ltr'" key="swiper-main">
+              <swiper-slide v-for="(gallery_item, index) in stand.gallerys" :key="`gallery-main-${index}`">
+                <img class="responsive" :src="`/fair_image/${gallery_item.url}`" alt="banner">
+              </swiper-slide>
+              <div class="swiper-button-next swiper-button-white" slot="button-next"></div>
+              <div class="swiper-button-prev swiper-button-white" slot="button-prev"></div>
+            </swiper>
+
+            <swiper :options="swiperOptionThumbs" class="gallery-thumbs" ref="swiperThumbs" :dir="$vs.rtl ? 'rtl' : 'ltr'" key="swiper-thumb">
+              <swiper-slide v-for="(gallery_item, index) in stand.gallerys" :key="`gallery-thumb-${index}`">
+                <img class="responsive" :src="`/fair_image/${gallery_item.url}`" alt="banner">
+              </swiper-slide>
+            </swiper>
+        </div>
+      </vx-card>
+      <vx-card class="mt-base" v-show="stand.portfolios && stand.portfolios.length">
+        <div class="text-success h2 mb-10">Portfolio</div>
+        <div class="vx-row mx-5">
+          <div class="vx-col w-full sm:w-1/2 lg:w-1/3 mb-base" v-for="(portfolio_item, index) in stand.portfolios" :key="`portfolio-item-${index}`">
+              <vx-card class="hover-card">
+                <div slot="no-body" class="card-img-wrapper">
+                  <img class="responsive card-img-top" :src="`/fair_image/${portfolio_item.url}`">
+                </div>
+                <div class="flex justify-between items-center flex-wrap">
+                  <div class="text-warning h3 mb-3">{{portfolio_item.name}}</div>
+                  <div>
+                    {{portfolio_item.description}}
+                  </div>
+                </div>
+              </vx-card>
+          </div>
+        </div>
+      </vx-card>
+      <vx-card class="mt-base" v-show="stand.files && stand.files.length">
+        <div class="text-success h2 mb-10">Files</div>
+        <div v-for="(file_item, index) in stand.files" :key="`file-item-${index}`">
+          <router-link :to="`/fire_image/${url}`">
+            <feather-icon class="ml-2" icon="DownloadCloudIcon"></feather-icon>
+            {{file_item.name}}
+          </router-link>
+        </div>
+      </vx-card>
+      <vx-card class="mt-base" >
+        <div class="text-success h2 mb-10">Contact</div>
+        <div class="vx-row mx-5">
+          <div class="vx-col w-full xs:w-full sm:w-full md-1/2 lg:w-1/2 mb-base">
+            <div class="flex flex-start items-center flex-wrap">
+              <feather-icon class="w-5 h-5 mr-2" icon="MailIcon"></feather-icon>
+              <h5>email: </h5>
+            </div>
+            <div class="flex flex-start items-center flex-wrap mt-3">
+              <feather-icon class="w-5 h-5 mr-2" icon="PhoneIcon"></feather-icon>
+              <h5>Phone: </h5>
+            </div>
+            <div class="flex flex-start items-center flex-wrap mt-3">
+              <feather-icon class="w-5 h-5 mr-2" icon="MapPinIcon"></feather-icon>
+              <h5>Address: </h5>
+            </div>
+            <div class="flex flex-start mt-10">
+                <img class="social-icon" src="https://cdn3.iconfinder.com/data/icons/material-design-social-icons/152/google_plus_icon-128.png">
+                <img class="social-icon" src="https://cdn3.iconfinder.com/data/icons/material-design-social-icons/152/facebook_icon-128.png">
+                <img class="social-icon" src="https://cdn3.iconfinder.com/data/icons/material-design-social-icons/152/Twitter_icon-128.png">
+                <img class="social-icon" src="https://cdn3.iconfinder.com/data/icons/material-design-social-icons/152/You_Tube_icon-128.png">
+                <img class="social-icon" src="https://cdn3.iconfinder.com/data/icons/material-design-social-icons/152/Linkedin_icon-128.png">
+                <img class="social-icon" src="https://cdn3.iconfinder.com/data/icons/material-design-social-icons/152/instagram_icon-128.png">
+                <img class="social-icon" src="https://cdn3.iconfinder.com/data/icons/material-design-social-icons/152/Skype_icon-128.png">
+                <img class="social-icon" src="https://cdn3.iconfinder.com/data/icons/material-design-social-icons/152/Pinterest_icon-128.png">
+            </div>
+          </div>
+          <div class="vx-col w-full xs:w-full sm:w-full md-1/2 lg:w-1/2 mb-base">
+            <GmapMap
+              :center="center"
+              :zoom="7"
+              map-type-id="terrain"
+              style="width: 100%; height: 250px">
+              <GmapMarker
+              :key="index"
+              v-for="(m, index) in markers"
+              :position="m.position"
+              :clickable="true"
+              :draggable="true"
+              />
+            </GmapMap>
+          </div>
+        </div>
+      </vx-card>
     </div>
   </div>
   <app-footer></app-footer>
@@ -60,10 +162,14 @@
 <script>
 import AppHeader from '@/layouts/components/Header.vue'
 import AppFooter from '@/layouts/components/Footer.vue'
+import 'swiper/dist/css/swiper.min.css'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   components: {
     AppHeader,
-    AppFooter
+    AppFooter,
+    swiper,
+    swiperSlide
   },
   data () {
     return {
@@ -73,7 +179,22 @@ export default {
       stand_type: {},
       img_width: 0,
       img_height: 0,
-      loading: false
+      loading: false,
+      swiperOptionTop: {
+        spaceBetween: 10,
+        effect: 'fade',
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      },
+      swiperOptionThumbs: {
+        spaceBetween: 10,
+        centeredSlides: true,
+        slidesPerView: 'auto',
+        touchRatio: 0.2,
+        slideToClickedSlide: true
+      }
     }
   },
   methods: {
@@ -103,32 +224,136 @@ export default {
         this.country = data.country
         this.stand = data.stand
         this.stand_type = data.stand_type
+        this.stand.gallerys = [
+          {
+            url: 'fair_building1.jpeg'
+          },
+          {
+            url: 'fair_building2.jpeg'
+          },
+          {
+            url: 'fair_building3.jpeg'
+          },
+          {
+            url: 'fair_building4.jpeg'
+          },
+          {
+            url: 'fair_building5.jpeg'
+          }
+        ]
+        this.stand.portfolios = [
+          {
+            url: 'fair_building1.jpeg',
+            name: 'portfolio name 1',
+            description: 'User: You can join stands, request appointments for chat (video), see the stands and conference rooms, you can manage a stand when the administrator assigns it to you.'
+          },
+          {
+            url: 'fair_building2.jpeg',
+            name: 'portfolio name 2',
+            description: 'User: You can join stands, request appointments for chat (video), see the stands and conference rooms, you can manage a stand when the administrator assigns it to you.'
+          },
+          {
+            url: 'fair_building3.jpeg',
+            name: 'portfolio name 3',
+            description: 'User: You can join stands, request appointments for chat (video), see the stands and conference rooms, you can manage a stand when the administrator assigns it to you.'
+          },
+          {
+            url: 'fair_building4.jpeg',
+            name: 'portfolio name 4',
+            description: 'User: You can join stands, request appointments for chat (video), see the stands and conference rooms, you can manage a stand when the administrator assigns it to you.'
+          },
+          {
+            url: 'fair_building5.jpeg',
+            name: 'portfolio name 5',
+            description: 'User: You can join stands, request appointments for chat (video), see the stands and conference rooms, you can manage a stand when the administrator assigns it to you.'
+          }
+        ]
+        this.stand.files = this.stand.portfolios
         console.log(data)
       })
+  },
+  mounted () {
+    this.$nextTick(() => {
+      const swiperTop = this.$refs.swiperTop.swiper
+      const swiperThumbs = this.$refs.swiperThumbs.swiper
+      swiperTop.controller.control = swiperThumbs
+      swiperThumbs.controller.control = swiperTop
+    })
   }
 }
 </script>
 <style lang="scss">
-    .stand_img {
-        width: 150px;
-        height: 150px;
-    }
+  .stand_img {
+      width: 150px;
+      height: 150px;
+  }
 
-    .logo_img {
-      max-width: 50px;
-      max-height: 50px;
-      margin-left: 100px;
-      background: white;
-      box-shadow: 1px 2px 3px #33333355;
-    }
+  .logo_img {
+    max-width: 50px;
+    max-height: 50px;
+    margin-left: 100px;
+    background: white;
+    box-shadow: 1px 2px 3px #33333355;
+  }
 
-    .stand-contents {
-      height: 80px;
-      background: #FFFFFF88;
-      bottom: 0px;
-      .vs-button {
-        border-radius: 0 !important;
-        font-weight: 700;
-      }
+  .stand-contents {
+    height: 80px;
+    background: #FFFFFF88;
+    bottom: 0px;
+    .vs-button {
+      border-radius: 0 !important;
+      font-weight: 700;
+      font-size: 1.6rem;
+      padding: 1rem 2rem !important;
     }
+  }
+
+  .hover-card {
+    .card-img-wrapper {
+        overflow: hidden;
+    }
+    .card-img-wrapper:hover{
+        border-top-left-radius: 0.5rem;
+        border-top-right-radius: 0.5rem;
+        background: #333;
+    }
+    .card-img-top {
+        transition: all 0.4s ease-in-out;
+    }
+    .card-img-top:hover {
+        opacity: 0.8;
+        transform: scale(1.2);
+        transform-origin: 50% 50%;
+        overflow: hidden;
+        
+    }
+  }
+
+  .social-icon {
+    width: 50px;
+    height: 50px;
+    margin-left: 10px;
+  }
+</style>
+<style lang="scss" scoped>
+  .swiper-container {
+    background-color: #000;
+  }
+  .gallery-top {
+    height: 80%!important;
+    width: 100%;
+  }
+  .gallery-thumbs {
+    height: 20%!important;
+    box-sizing: border-box;
+    padding: 10px 0;
+  }
+  .gallery-thumbs .swiper-slide {
+    width: 25%;
+    height: 100%;
+    opacity: 0.4;
+  }
+  .gallery-thumbs .swiper-slide-active {
+    opacity: 1;
+  }
 </style>

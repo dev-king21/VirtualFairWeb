@@ -70,6 +70,61 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -120,6 +175,17 @@ __webpack_require__.r(__webpack_exports__);
       _this.country = data.country;
       _this.stand = data.stand;
       _this.stand_type = data.stand_type;
+      _this.stand.gallerys = [{
+        url: 'fair_building1.jpeg'
+      }, {
+        url: 'fair_building2.jpeg'
+      }, {
+        url: 'fair_building3.jpeg'
+      }, {
+        url: 'fair_building4.jpeg'
+      }, {
+        url: 'fair_building5.jpeg'
+      }];
       console.log(data);
     });
   }
@@ -139,7 +205,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".stand_img {\n  width: 150px;\n  height: 150px;\n}\n.logo_img {\n  max-width: 50px;\n  max-height: 50px;\n}\n[dir] .logo_img {\n  background: white;\n}\n[dir=ltr] .logo_img {\n  margin-left: 100px;\n  box-shadow: 1px 2px 3px #33333355;\n}\n[dir=rtl] .logo_img {\n  margin-right: 100px;\n  box-shadow: -1px 2px 3px #33333355;\n}\n.stand-contents {\n  height: 80px;\n  bottom: 0px;\n}\n[dir] .stand-contents {\n  background: #FFFFFF88;\n}\n.stand-contents .vs-button {\n  font-weight: 700;\n}\n[dir] .stand-contents .vs-button {\n  border-radius: 0 !important;\n}", ""]);
+exports.push([module.i, ".stand_img {\n  width: 150px;\n  height: 150px;\n}\n.logo_img {\n  max-width: 50px;\n  max-height: 50px;\n}\n[dir] .logo_img {\n  background: white;\n}\n[dir=ltr] .logo_img {\n  margin-left: 100px;\n  box-shadow: 1px 2px 3px #33333355;\n}\n[dir=rtl] .logo_img {\n  margin-right: 100px;\n  box-shadow: -1px 2px 3px #33333355;\n}\n.stand-contents {\n  height: 80px;\n  bottom: 0px;\n}\n[dir] .stand-contents {\n  background: #FFFFFF88;\n}\n.stand-contents .vs-button {\n  font-weight: 700;\n  font-size: 1.6rem;\n}\n[dir] .stand-contents .vs-button {\n  border-radius: 0 !important;\n  padding: 1rem 2rem !important;\n}", ""]);
 
 // exports
 
@@ -377,14 +443,19 @@ var render = function() {
                         _c(
                           "vs-button",
                           {
-                            staticClass: "ml-8",
+                            staticClass: "ml-8 items-center",
                             attrs: {
-                              type: "filled",
-                              size: "large",
-                              color: "success"
+                              type: "relief",
+                              color: "success",
+                              "icon-pack": "feather",
+                              icon: "icon-image"
                             }
                           },
-                          [_vm._v("Gallery")]
+                          [
+                            _vm._v(
+                              "\r\n                Gallery\r\n              "
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -392,12 +463,17 @@ var render = function() {
                           {
                             staticClass: "ml-8",
                             attrs: {
-                              type: "filled",
-                              size: "large",
-                              color: "success"
+                              type: "relief",
+                              color: "success",
+                              "icon-pack": "feather",
+                              icon: "icon-layers"
                             }
                           },
-                          [_vm._v("Portfolio")]
+                          [
+                            _vm._v(
+                              "\r\n                Portfolio\r\n              "
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -405,12 +481,17 @@ var render = function() {
                           {
                             staticClass: "ml-8",
                             attrs: {
-                              type: "filled",
-                              size: "large",
-                              color: "success"
+                              type: "relief",
+                              color: "success",
+                              "icon-pack": "feather",
+                              icon: "icon-download-cloud"
                             }
                           },
-                          [_vm._v("Files")]
+                          [
+                            _vm._v(
+                              "\r\n                Files\r\n              "
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -418,12 +499,17 @@ var render = function() {
                           {
                             staticClass: "ml-8",
                             attrs: {
-                              type: "filled",
-                              size: "large",
-                              color: "success"
+                              type: "relief",
+                              color: "success",
+                              "icon-pack": "feather",
+                              icon: "icon-airplay"
                             }
                           },
-                          [_vm._v("Appointment")]
+                          [
+                            _vm._v(
+                              "\r\n                Appointment\r\n              "
+                            )
+                          ]
                         ),
                         _vm._v(" "),
                         _c(
@@ -431,12 +517,17 @@ var render = function() {
                           {
                             staticClass: "ml-8",
                             attrs: {
-                              type: "filled",
-                              size: "large",
-                              color: "success"
+                              type: "relief",
+                              color: "success",
+                              "icon-pack": "feather",
+                              icon: "icon-link"
                             }
                           },
-                          [_vm._v("Contact")]
+                          [
+                            _vm._v(
+                              "\r\n                Contact\r\n              "
+                            )
+                          ]
                         )
                       ],
                       1
@@ -445,7 +536,188 @@ var render = function() {
               ],
               2
             )
-          ])
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "vx-row mx-20" },
+            [
+              _c(
+                "vx-card",
+                {
+                  directives: [
+                    {
+                      name: "show",
+                      rawName: "v-show",
+                      value: _vm.stand.gallerys.length,
+                      expression: "stand.gallerys.length"
+                    }
+                  ],
+                  staticClass: "mt-base"
+                },
+                [
+                  _c("div", { staticClass: "text-success h2 mb-base" }, [
+                    _vm._v("Gallery")
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    [
+                      _c(
+                        "swiper",
+                        {
+                          key: _vm.$vs.rtl,
+                          ref: "swiperTop",
+                          staticClass: "gallery-top",
+                          attrs: {
+                            options: _vm.swiperOptionTop,
+                            dir: _vm.$vs.rtl ? "rtl" : "ltr"
+                          }
+                        },
+                        [
+                          _c("swiper-slide", [
+                            _c("img", {
+                              staticClass: "responsive",
+                              attrs: {
+                                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-10.jpg */ "./resources/app/assets/images/pages/carousel/banner-10.jpg"),
+                                alt: "banner"
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("swiper-slide", [
+                            _c("img", {
+                              staticClass: "responsive",
+                              attrs: {
+                                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-16.jpg */ "./resources/app/assets/images/pages/carousel/banner-16.jpg"),
+                                alt: "banner"
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("swiper-slide", [
+                            _c("img", {
+                              staticClass: "responsive",
+                              attrs: {
+                                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-15.jpg */ "./resources/app/assets/images/pages/carousel/banner-15.jpg"),
+                                alt: "banner"
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("swiper-slide", [
+                            _c("img", {
+                              staticClass: "responsive",
+                              attrs: {
+                                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-13.jpg */ "./resources/app/assets/images/pages/carousel/banner-13.jpg"),
+                                alt: "banner"
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("div", {
+                            staticClass:
+                              "swiper-button-next swiper-button-white",
+                            attrs: { slot: "button-next" },
+                            slot: "button-next"
+                          }),
+                          _vm._v(" "),
+                          _c("div", {
+                            staticClass:
+                              "swiper-button-prev swiper-button-white",
+                            attrs: { slot: "button-prev" },
+                            slot: "button-prev"
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "swiper",
+                        {
+                          key: _vm.$vs.rtl,
+                          ref: "swiperThumbs",
+                          staticClass: "gallery-thumbs",
+                          attrs: {
+                            options: _vm.swiperOptionThumbs,
+                            dir: _vm.$vs.rtl ? "rtl" : "ltr"
+                          }
+                        },
+                        [
+                          _c("swiper-slide", [
+                            _c("img", {
+                              staticClass: "responsive",
+                              attrs: {
+                                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-10.jpg */ "./resources/app/assets/images/pages/carousel/banner-10.jpg"),
+                                alt: "banner"
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("swiper-slide", [
+                            _c("img", {
+                              staticClass: "responsive",
+                              attrs: {
+                                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-16.jpg */ "./resources/app/assets/images/pages/carousel/banner-16.jpg"),
+                                alt: "banner"
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("swiper-slide", [
+                            _c("img", {
+                              staticClass: "responsive",
+                              attrs: {
+                                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-15.jpg */ "./resources/app/assets/images/pages/carousel/banner-15.jpg"),
+                                alt: "banner"
+                              }
+                            })
+                          ]),
+                          _vm._v(" "),
+                          _c("swiper-slide", [
+                            _c("img", {
+                              staticClass: "responsive",
+                              attrs: {
+                                src: __webpack_require__(/*! @assets/images/pages/carousel/banner-13.jpg */ "./resources/app/assets/images/pages/carousel/banner-13.jpg"),
+                                alt: "banner"
+                              }
+                            })
+                          ])
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "vx-row mx-10" },
+                    _vm._l(_vm.stand.gallerys, function(gallery_item, index) {
+                      return _c(
+                        "div",
+                        {
+                          key: index,
+                          staticClass: "vx-col w-full sm:w-1/2 lg:w-1/3 mb-base"
+                        },
+                        [
+                          _c("img", {
+                            staticClass: "responsive rounded-lg",
+                            attrs: {
+                              src: "/fair_image/" + gallery_item.url,
+                              alt: "content-img"
+                            }
+                          })
+                        ]
+                      )
+                    }),
+                    0
+                  )
+                ]
+              )
+            ],
+            1
+          )
         ]
       ),
       _vm._v(" "),
@@ -458,6 +730,50 @@ var staticRenderFns = []
 render._withStripped = true
 
 
+
+/***/ }),
+
+/***/ "./resources/app/assets/images/pages/carousel/banner-10.jpg":
+/*!******************************************************************!*\
+  !*** ./resources/app/assets/images/pages/carousel/banner-10.jpg ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-10.jpg?fb88ea4fc1468049dd947893d8e85df0";
+
+/***/ }),
+
+/***/ "./resources/app/assets/images/pages/carousel/banner-13.jpg":
+/*!******************************************************************!*\
+  !*** ./resources/app/assets/images/pages/carousel/banner-13.jpg ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-13.jpg?04939c53cf03053710410aae330a20dd";
+
+/***/ }),
+
+/***/ "./resources/app/assets/images/pages/carousel/banner-15.jpg":
+/*!******************************************************************!*\
+  !*** ./resources/app/assets/images/pages/carousel/banner-15.jpg ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-15.jpg?402f90acbcac3a73ef58183af2b1d644";
+
+/***/ }),
+
+/***/ "./resources/app/assets/images/pages/carousel/banner-16.jpg":
+/*!******************************************************************!*\
+  !*** ./resources/app/assets/images/pages/carousel/banner-16.jpg ***!
+  \******************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/banner-16.jpg?494b2830711b92086bda4ef504fbe2cb";
 
 /***/ }),
 
