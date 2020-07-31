@@ -1,8 +1,8 @@
 <template>
 <div class="w-full" id="home">
   <app-header activeItem="2"></app-header>
-  <div class="w-full" style="padding-top: 100px">
-    <div class="vx-row mx-20 mb-2">
+  <div class="w-full">
+    <!-- <div class="vx-row mb-2">
         <vx-card>
           <div class="flex flex-start justify-between items-center flex-wrap ml-4">
             <div class="flex flex-start items-center flex-wrap">
@@ -19,7 +19,6 @@
               <template v-if="stand.user_id">
                 <feather-icon class="ml-2" icon="ChevronRightIcon"></feather-icon>
                 <img class="ml-4 logo_img" :src="`/fair_image/logo-1.png`"> 
-                <!-- <img class="ml-4 logo_img" :src="`/fair_image/${stand.logo}.png`">  -->
                 <h3 class="text-warning ml-4">{{stand.company}}</h3>
               </template>
             </div>
@@ -31,8 +30,8 @@
             </div>
           </div>
         </vx-card>
-    </div>
-    <div class="vx-row mx-20">
+    </div> -->
+    <div class="vx-row" style="margin: 0; padding: 0">
         <div class="relative mt-base">
             <template v-if="stand_type !== undefined">
               <img class="relative responsive" ref="refStandImg" @load="onImgLoad" :src="`/fair_image/${stand_type.interior}`">
@@ -46,7 +45,7 @@
                     :style="`top: ${item.stand_type_item.top * 100}%; left: ${item.stand_type_item.left * 100}%`" >
             </template>
             <div v-if="loading" class="absolute w-full stand-contents flex items-center justify-center">
-              <vs-button type="relief" class="ml-8 items-center" color="success" icon-pack="feather" icon="icon-image">
+              <vs-button @click="goto('card-gallery')" type="relief" class="ml-8 items-center" color="success" icon-pack="feather" icon="icon-image">
                 Gallery
               </vs-button>
               <vs-button type="relief" class="ml-8" color="success" icon-pack="feather" icon="icon-layers">
@@ -65,7 +64,7 @@
         </div>
     </div>
     <div class="vx-row mx-20">
-      <vx-card class="mt-base" v-show="stand.gallerys && stand.gallerys.length">
+      <vx-card class="mt-base" ref="card-gallery" v-show="stand.gallerys && stand.gallerys.length">
         <div class="text-success h2 mb-4">Gallery</div>
         <div style="height: 800px;">
             <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop" :dir="$vs.rtl ? 'rtl' : 'ltr'" key="swiper-main">
@@ -89,7 +88,7 @@
           <div class="vx-col w-full sm:w-1/2 lg:w-1/3 mb-base" v-for="(portfolio_item, index) in stand.portfolios" :key="`portfolio-item-${index}`">
               <vx-card class="hover-card">
                 <div slot="no-body" class="card-img-wrapper">
-                  <img class="responsive card-img-top" :src="`/fair_image/${portfolio_item.url}`">
+                  <img class="responsive card-img-top" @click="openPortfolio(index)" :src="`/fair_image/${portfolio_item.url}`">
                 </div>
                 <div class="flex justify-between items-center flex-wrap">
                   <div class="text-warning h3 mb-3">{{portfolio_item.name}}</div>
@@ -104,7 +103,7 @@
       <vx-card class="mt-base" v-show="stand.files && stand.files.length">
         <div class="text-success h2 mb-10">Files</div>
         <div v-for="(file_item, index) in stand.files" :key="`file-item-${index}`">
-          <router-link :to="`/fire_image/${url}`">
+          <router-link :to="`/fire_image/${file_item.url}`">
             <feather-icon class="ml-2" icon="DownloadCloudIcon"></feather-icon>
             {{file_item.name}}
           </router-link>
@@ -127,7 +126,9 @@
               <h5>Address: </h5>
             </div>
             <div class="flex flex-start mt-10">
+              <!-- <router-link v-if="stand.contact.google" :to="``"> -->
                 <img class="social-icon" src="https://cdn3.iconfinder.com/data/icons/material-design-social-icons/152/google_plus_icon-128.png">
+              <!-- </router-link> -->
                 <img class="social-icon" src="https://cdn3.iconfinder.com/data/icons/material-design-social-icons/152/facebook_icon-128.png">
                 <img class="social-icon" src="https://cdn3.iconfinder.com/data/icons/material-design-social-icons/152/Twitter_icon-128.png">
                 <img class="social-icon" src="https://cdn3.iconfinder.com/data/icons/material-design-social-icons/152/You_Tube_icon-128.png">
@@ -155,21 +156,26 @@
         </div>
       </vx-card>
     </div>
+    <LightBox ref="lightbox" :media="media" :show-caption="true" :show-light-box="false" />
   </div>
-  <app-footer></app-footer>
+  <!-- <app-footer></app-footer> -->
 </div>
 </template>
 <script>
+import 'swiper/dist/css/swiper.min.css'
+import 'vue-image-lightbox/dist/vue-image-lightbox.min.css'
 import AppHeader from '@/layouts/components/Header.vue'
 import AppFooter from '@/layouts/components/Footer.vue'
-import 'swiper/dist/css/swiper.min.css'
 import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import LightBox from 'vue-image-lightbox'
+
 export default {
   components: {
     AppHeader,
     AppFooter,
     swiper,
-    swiperSlide
+    swiperSlide,
+    LightBox
   },
   data () {
     return {
@@ -194,7 +200,13 @@ export default {
         slidesPerView: 'auto',
         touchRatio: 0.2,
         slideToClickedSlide: true
-      }
+      },
+      center: { lat: 10.0, lng: 10.0 },
+      markers: [
+        { position: { lat: 10.0, lng: 10.0 } },
+        { position: { lat: 11.0, lng: 11.0 } }
+      ],
+      media: []
     }
   },
   methods: {
@@ -210,6 +222,14 @@ export default {
       this.img_width = this.$refs.refStandImg.clientWidth
       this.img_height = this.$refs.refStandImg.clientHeight
       this.loading = true
+    },
+    openPortfolio (index) {
+      this.$refs.lightbox.showImage(index)
+    },
+    goto (refName) {
+      const element = this.$refs[refName]
+      console.log(element.offsetTop)
+      window.scrollTo(0, element.offsetTop)
     }
   },
   created () {
@@ -269,6 +289,11 @@ export default {
           }
         ]
         this.stand.files = this.stand.portfolios
+        this.stand.portfolios.forEach(element => {
+          this.media.push({
+            thumb: `/fair_image/${element.url}`, src: `/fair_image/${element.url}`, caption: element.name
+          })
+        })
         console.log(data)
       })
   },
@@ -319,6 +344,7 @@ export default {
     }
     .card-img-top {
         transition: all 0.4s ease-in-out;
+        cursor: pointer
     }
     .card-img-top:hover {
         opacity: 0.8;
@@ -334,8 +360,7 @@ export default {
     height: 50px;
     margin-left: 10px;
   }
-</style>
-<style lang="scss" scoped>
+
   .swiper-container {
     background-color: #000;
   }
@@ -355,5 +380,15 @@ export default {
   }
   .gallery-thumbs .swiper-slide-active {
     opacity: 1;
+  }
+
+  .vue-lb-container {
+    z-index: 10001 !important;
+    .vue-lb-info {
+      height: 60px !important;
+      padding-top: 20px !important;
+      font-size: 20px;
+      color: #FFAA00
+    }
   }
 </style>

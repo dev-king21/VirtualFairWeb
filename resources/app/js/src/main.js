@@ -11,6 +11,7 @@ import VueTour from 'vue-tour'
 import VeeValidate from 'vee-validate'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import { VueHammer } from 'vue2-hammer'
+import VueLazyLoad from 'vue-lazyload'
 import 'prismjs'
 import 'prismjs/themes/prism-tomorrow.css'
 import './http/requests'
@@ -28,7 +29,7 @@ Vue.prototype.$http = axios
 Vue.use(VueClipboard)
 Vue.use(VueTour)
 Vue.use(VeeValidate)
-
+Vue.use(VueLazyLoad)
 Vue.use(VueGoogleMaps, {
   load: {
     // Add your API key here

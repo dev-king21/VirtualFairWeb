@@ -1,8 +1,8 @@
 <template>
 <div class="w-full" id="home">
   <app-header activeItem="2"></app-header>
-  <div class="w-full" style="padding-top: 100px">
-    <div class="vx-row mx-20 mb-base">
+  <div class="w-full">
+    <!-- <div class="vx-row mx-20 mb-base">
         <vx-card>
             <div class="flex flex-start justify-between items-center flex-wrap ml-4">
                 <h2 class="text-success">{{fair.name}}</h2>
@@ -14,8 +14,8 @@
                 </div>
             </div>
         </vx-card>
-    </div>
-    <div class="vx-row mx-20">
+    </div> -->
+    <div class="vx-row">
         <div class="vx-col w-full sm:w-1/2 lg:w-1/3 mb-base" v-for="(country_item, index) in countries" :key="index">
             <vx-card class="hover-card">
                 <div slot="no-body" class="card-img-wrapper">
@@ -31,7 +31,7 @@
         </div>
     </div>
   </div>
-  <app-footer></app-footer>
+  <!-- <app-footer></app-footer> -->
 </div>
 </template>
 <script>

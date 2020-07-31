@@ -1,8 +1,8 @@
 <template>
 <div class="w-full" id="home">
   <app-header activeItem="2"></app-header>
-  <div class="w-full" style="padding-top: 100px">
-    <div class="vx-row mx-20 mb-2">
+  <div class="w-full">
+    <!-- <div class="vx-row mx-20 mb-2">
         <vx-card>
           <div class="flex flex-start justify-between items-center flex-wrap ml-4">
             <div class="flex flex-start items-center flex-wrap">
@@ -25,8 +25,8 @@
             </div>
           </div>
         </vx-card>
-    </div>
-    <div class="vx-row mx-20">
+    </div> -->
+    <div class="vx-row" style="margin: 0; padding: 0">
         <div class="relative mt-base">
             <template v-if="fair.fair_type !== undefined">
               <img class="relative responsive" @load="onLoadImg()" :src="`/fair_image/${fair.fair_type.interior}`">
@@ -48,7 +48,7 @@
         </div>
     </div>
   </div>
-  <app-footer></app-footer>
+  <!-- <app-footer></app-footer> -->
 </div>
 </template>
 <script>

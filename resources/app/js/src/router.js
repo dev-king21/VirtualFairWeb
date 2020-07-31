@@ -6,13 +6,13 @@ Vue.use(Router)
 
 const router = new Router({
   mode: 'history',
-  base: '/app/',
+  base: '/app',
   scrollBehavior () {
     return { x: 0, y: 0 }
   },
   routes: [
     {
-      path: '',
+      path: '/',
       component: () => import('@/layouts/full-page/FullPage.vue'),
       children: [
         {
@@ -84,6 +84,22 @@ const router = new Router({
           }
         },
         {
+          path: '/auth/register/participant',
+          name: 'register-participant',
+          component: () => import('@/views/sign/RegisterParticipant.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/auth/register/expositor',
+          name: 'register-participant',
+          component: () => import('@/views/sign/RegisterExpositor.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
           path: '/auth/forgot-password',
           name: 'auth-forgot-password',
           component: () => import('@/views/auth/ForgotPassword.vue'),
@@ -143,6 +159,14 @@ const router = new Router({
           path: '/pages/maintenance',
           name: 'page-maintenance',
           component: () => import('@/views/pages/Maintenance.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/room/schedule',
+          name: 'room-schedule',
+          component: () => import('@/views/room/Schedule.vue'),
           meta: {
             rule: 'editor'
           }

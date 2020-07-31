@@ -1533,6 +1533,13 @@
     core-js "^2.5.3"
     regenerator-runtime "^0.11.1"
 
+"@babel/runtime@7.9.2":
+  version "7.9.2"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.9.2.tgz#d90df0583a3a252f09aaa619665367bae518db06"
+  integrity sha512-NE2DtOdufG7R5vnfQUTehdTfNycfUANEtCa9PssN9O/xmTzP4E08UI797ixaei6hBEVL9BI/PsdJS5x7mWoB9Q==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/runtime@^7.0.0", "@babel/runtime@^7.2.0", "@babel/runtime@^7.5.5", "@babel/runtime@^7.8.4", "@babel/runtime@^7.9.2":
   version "7.10.4"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.10.4.tgz#a6724f1a6b8d2f6ea5236dbfe58c7d7ea9c5eb99"
@@ -13993,6 +14000,15 @@ vue-i18n@^8.11.2:
   resolved "https://registry.yarnpkg.com/vue-i18n/-/vue-i18n-8.18.2.tgz#cd7c12f2e178e6faa23b0e3cfd2f7bac9305f8fc"
   integrity sha512-0X5nBTCZAVjlwcrPaYJwNs3iipBBTv0AUHwQUOa8yP3XbQGWKbRHqBb3OhCYtum/IHDD21d/df5Xd2VgyxbxfA==
 
+vue-image-lightbox@^7.1.3:
+  version "7.1.3"
+  resolved "https://registry.yarnpkg.com/vue-image-lightbox/-/vue-image-lightbox-7.1.3.tgz#2a6b96299a2d3d1488b6818070b252d3c3231a79"
+  integrity sha512-5h+SiE0GLIBLsrC9spl0VZFbz1yFvj1ee1tfaHc4sfE3XCo3vKi6OSFI0r4MKhbhnfFIFiwE1l+vgkH35jlGgQ==
+  dependencies:
+    "@babel/runtime" "7.9.2"
+    hammerjs "^2.0.8"
+    vue-lazyload "^1.3.2"
+
 vue-instantsearch@^2.2.1:
   version "2.7.1"
   resolved "https://registry.yarnpkg.com/vue-instantsearch/-/vue-instantsearch-2.7.1.tgz#a0f4d98ebe4235edc625d464652f8329d3c0017e"
@@ -14000,6 +14016,11 @@ vue-instantsearch@^2.2.1:
   dependencies:
     algoliasearch-helper "^2.28.1"
     instantsearch.js "^3.6.0"
+
+vue-lazyload@^1.3.2, vue-lazyload@^1.3.3:
+  version "1.3.3"
+  resolved "https://registry.yarnpkg.com/vue-lazyload/-/vue-lazyload-1.3.3.tgz#4df50a271bde9b74c3caf7a228d6e0af50d5682f"
+  integrity sha512-uHnq0FTEeNmqnbBC2aRKlmtd9LofMZ6Q3mWvgfLa+i9vhxU8fDK+nGs9c1iVT85axSua/AUnMttIq3xPaU9G3A==
 
 vue-loader@^15.2.4, vue-loader@^15.4.2, vue-loader@^15.7.0:
   version "15.9.3"
