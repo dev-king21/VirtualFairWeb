@@ -1,20 +1,27 @@
 <template>
 <div class="w-full">
-  <app-header activeItem="0"></app-header>
+  <app-header activeItem="0" :loggedIn="true"></app-header>
   <div class="flex w-full flex-col home-bg-img justify-between home-main">
     <template v-if="!loggedIn">
       <div class="w-full">
         <template v-if="!logInClicked">
-          <vs-button class="login-btn" color="black" @click="logInClicked = true" icon-pack="feather" icon="icon-log-in"> INGRESAR</vs-button>
+          <div class="login-btn flex items-center text-white cursor-pointer" @click="logInClicked = true"> 
+            <feather-icon svgclasses="w-8 h-8" icon="LogInIcon" />
+            <span class="ml-4">INGRESAR</span>
+          </div>
         </template>
         <template v-else>
-          <div class="login-form">
-            <div class="h4 text-white">
+          <div class="login-form w-full lg:w-1/4 md:w-1/4 sm:w-1/3 xs:w-1/2">
+            <div class="h6 font-bold text-white">
               Por favor ingrese sus datos
             </div>
-            <div class="login-input"><vs-input color="success" class="w-full" placeholder="Ingrese su email" v-model="contact_phone"/></div>
-            <div class="login-input"><vs-input color="success" class="w-full" placeholder="Ingrese su contrasena" v-model="contact_email"/></div>
-            <div class="mt-5">
+            <div class="login-input">
+              <vs-input color="success" class="w-full" placeholder="Ingrese su email" v-model="contact_phone"/>
+            </div>
+            <div class="login-input">
+              <vs-input color="success" class="w-full" placeholder="Ingrese su contrasena" v-model="contact_email"/>
+            </div>
+            <div class="mt-8">
               <vs-button class="w-full sign-btn" @click="login()" color="#164A8B">INGRESAR</vs-button>
             </div>  
           </div>
@@ -66,7 +73,7 @@
           <!-- <div class="flex flex-col justify-between">
             <div class="flex flex-col"> -->
               <div class="text-white">
-                <div class="live-panel text-center">
+                <div class="live-panel text-center cursor-pointer" @click="$router.push('/room/live-video')">
                   <feather-icon svgClasses="w-10 h-10" icon="RadioIcon"/>
                   <div class="text-center font-bold">
                     EN VIVO
@@ -77,43 +84,26 @@
           </div> -->
         </div>
       </div>
-      <div class="flex w-full justify-between items-end home-footer px-10 main-btns">
-        <mfc-button to="/fair/country/2/2" icon="ListIcon" text="stands"></mfc-button>
-        <mfc-button to="/room/schedule" icon="ListIcon" text="Agenda del congreso"></mfc-button>
-        <mfc-button to="/room/schedule" icon="ListIcon" text="expositores"></mfc-button>
-        <mfc-button icon="ListIcon" text="webinars"></mfc-button>
-        <mfc-button icon="ListIcon" text="sostenibilidad"></mfc-button>
-        <mfc-button icon="ListIcon" text="patrocinadores"></mfc-button>
+      <div class="flex justify-between flex-wrap items-center home-footer main-btns">
+        <router-link class="main-link" to="/fair/country/2/2">
+          stands
+        </router-link>
+        <router-link class="main-link" to="/room/schedule">
+          Agenda del congreso
+        </router-link>
+        <router-link class="main-link" to="/room/webinar">
+          webinars
+        </router-link>
+        <router-link class="main-link" to="/fair/chatting">
+          <span>Networking</span>
+          <feather-icon class="ml-2" color="green" icon="" :badge="3" />
+        </router-link>
+        <router-link class="main-link" to="/fair/contact">
+          patrocinadores
+        </router-link>
       </div>  
     </template>  
-    <!-- <div class="vx-col w-full lg:w-1/4 sm:w-1/4 xs:w-1/4 mb-base">
-      <vx-card class="overlay-card overflow-hidden">
-          <template slot="no-body">
-              <img src="@assets/images/pages/home-background.png" alt="user-profile-cover" class="responsive">
-              <div class="card-overlay text-white flex flex-col justify-between">
-                  <h4 class="text-success mb-4">Room</h4>
-                  <p>Conference room to see scheduled talk and view earlier talks</p>
-              </div>
-          </template>
-      </vx-card>
-    </div>
-    <div class="vx-col w-full lg:w-1/4 sm:w-1/4 mb-base">
-    </div>
-    <div class="vx-col w-full lg:w-1/4 sm:w-1/4 xs:w-1/4 mb-base">
-      <router-link to="/fair">
-      <vx-card class="overlay-card overflow-hidden" to="/app/fair">
-          <template slot="no-body">
-              <img src="@assets/images/pages/home-background.png" alt="user-profile-cover" class="responsive">
-              <div class="card-overlay text-white flex flex-col justify-between">
-                  <h4 class="text-success mb-4">Virtual Fair</h4>
-                  <p>Conference room to see scheduled talk and view earlier talks</p>
-              </div>
-          </template>
-      </vx-card>
-      </router-link>
-    </div> -->
   </div>
-  
 </div>
 </template>
 <script>
@@ -156,14 +146,16 @@ export default {
   .login-btn {
     border-radius: 0px !important;
     border-bottom-left-radius: 0.6rem !important;
-    font-size: 0.8rem !important;
+    background: black;
+    padding: 0.8rem 1.5rem;
+    font-size: 1.1rem !important;
     float: right;
   }
 
   .login-form {
     border-radius: 0px !important;
     float: right;
-    padding: 3rem 1rem;
+    padding: 3rem 1.5rem;
     background: #123058;
     input, textarea {
       border-radius: 0 !important;
@@ -206,7 +198,7 @@ export default {
 
   .live-panel {
     padding: 1.5rem;
-    background: rgb(40, 58, 196);
+    background: #123058;
     color: white;
     position: relative;
     width: 8rem;
@@ -214,7 +206,21 @@ export default {
   }
 
   .main-btns {
-    margin-bottom: 10%;
+    margin-bottom: 0%;
+    background: #123058;
+    height: 80px;
+    flex-wrap: wrap;
+    .main-link {
+      padding: 2rem 3rem !important;
+      flex: 0 0 auto;
+      text-transform: uppercase;
+      font-size: 1rem;
+      font-weight: 700;
+      color: white; 
+    }
+    .main-link:hover, .main-link.active{
+      background: #164A8B;
+    }
   }
 }
 

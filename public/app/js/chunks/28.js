@@ -1,68 +1,9 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[28],{
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/Select.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/Select.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SelectSingleSelection_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SelectSingleSelection.vue */ "./resources/app/js/src/views/forms/form-elements/select/SelectSingleSelection.vue");
-/* harmony import */ var _SelectColor_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectColor.vue */ "./resources/app/js/src/views/forms/form-elements/select/SelectColor.vue");
-/* harmony import */ var _SelectAutocomplete_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./SelectAutocomplete.vue */ "./resources/app/js/src/views/forms/form-elements/select/SelectAutocomplete.vue");
-/* harmony import */ var _SelectMultiple_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./SelectMultiple.vue */ "./resources/app/js/src/views/forms/form-elements/select/SelectMultiple.vue");
-/* harmony import */ var _SelectLabels_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SelectLabels.vue */ "./resources/app/js/src/views/forms/form-elements/select/SelectLabels.vue");
-/* harmony import */ var _SelectValidators_vue__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./SelectValidators.vue */ "./resources/app/js/src/views/forms/form-elements/select/SelectValidators.vue");
-/* harmony import */ var _SelectIsSelectedItem_vue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./SelectIsSelectedItem.vue */ "./resources/app/js/src/views/forms/form-elements/select/SelectIsSelectedItem.vue");
-/* harmony import */ var _SelectGroupItems_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./SelectGroupItems.vue */ "./resources/app/js/src/views/forms/form-elements/select/SelectGroupItems.vue");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-
-
-
-
-
-
-
-
-/* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    SelectSingleSelection: _SelectSingleSelection_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    SelectColor: _SelectColor_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
-    SelectAutocomplete: _SelectAutocomplete_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
-    SelectMultiple: _SelectMultiple_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
-    SelectLabels: _SelectLabels_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    SelectValidators: _SelectValidators_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
-    SelectIsSelectedItem: _SelectIsSelectedItem_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
-    SelectGroupItems: _SelectGroupItems_vue__WEBPACK_IMPORTED_MODULE_7__["default"]
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectAutocomplete.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/SelectAutocomplete.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/layouts/components/Header.vue?vue&type=script&lang=js&":
+/*!*********************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/layouts/components/Header.vue?vue&type=script&lang=js& ***!
+  \*********************************************************************************************************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -131,1318 +72,85 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  props: {
+    activeItem: {
+      type: String,
+      required: false
+    },
+    hideNavbar: {
+      type: Boolean,
+      required: false
+    },
+    loggedIn: {
+      type: Boolean,
+      required: false
+    }
+  },
+  components: {},
   data: function data() {
     return {
-      select1: 3,
-      select2: 7,
-      select3: 2,
-      options1: [{
-        text: 'IT',
-        value: 0
-      }, {
-        text: 'Blade Runner',
-        value: 2
-      }, {
-        text: 'Thor Ragnarok',
-        value: 3
-      }],
-      options2: [{
-        text: 'Square',
-        value: 1
-      }, {
-        text: 'Rectangle',
-        value: 2
-      }, {
-        text: 'Rombo',
-        value: 3
-      }, {
-        text: 'Romboid',
-        value: 4
-      }, {
-        text: 'Trapeze',
-        value: 5
-      }, {
-        text: 'Triangle',
-        value: 6
-      }, {
-        text: 'Polygon',
-        value: 7
-      }, {
-        text: 'Regular polygon',
-        value: 8
-      }, {
-        text: 'Circumference',
-        value: 9
-      }, {
-        text: 'Circle',
-        value: 10
-      }, {
-        text: 'Circular sector',
-        value: 11
-      }, {
-        text: 'Circular trapeze',
-        value: 12
-      }],
-      options3: [{
-        text: 'Red',
-        value: 1
-      }, {
-        text: 'Green',
-        value: 2
-      }, {
-        text: 'Blue',
-        value: 3
-      }, {
-        text: 'Purple',
-        value: 4
-      }]
+      search: ''
     };
-  }
+  },
+  methods: {}
 });
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectColor.vue?vue&type=script&lang=js&":
-/*!****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/SelectColor.vue?vue&type=script&lang=js& ***!
-  \****************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/layouts/components/Header.vue?vue&type=style&index=0&lang=scss&":
+/*!********************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/layouts/components/Header.vue?vue&type=style&index=0&lang=scss& ***!
+  \********************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      colorx: '#103767',
-      select1: 3,
-      select2: 'primary',
-      options1: [{
-        text: 'Square',
-        value: 1
-      }, {
-        text: 'Rectangle',
-        value: 2
-      }, {
-        text: 'Rombo',
-        value: 3
-      }, {
-        text: 'Romboid',
-        value: 4
-      }, {
-        text: 'Trapeze',
-        value: 5
-      }, {
-        text: 'Triangle',
-        value: 6
-      }, {
-        text: 'Polygon',
-        value: 7
-      }, {
-        text: 'Regular polygon',
-        value: 8
-      }, {
-        text: 'Circumference',
-        value: 9
-      }, {
-        text: 'Circle',
-        value: 10
-      }, {
-        text: 'Circular sector',
-        value: 11
-      }, {
-        text: 'Circular trapeze',
-        value: 12
-      }],
-      options2: [{
-        text: 'Primary',
-        value: 'primary'
-      }, {
-        text: 'Success',
-        value: 'success'
-      }, {
-        text: 'Danger',
-        value: 'danger'
-      }, {
-        text: 'Warning',
-        value: 'warning'
-      }, {
-        text: 'Dark',
-        value: 'dark'
-      }]
-    };
-  }
-});
+exports = module.exports = __webpack_require__(/*! ../../../../../../node_modules/css-loader/lib/css-base.js */ "./node_modules/css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".vs-navbar {\n  height: 86px;\n}[dir] .vs-navbar {\n  background: #FFFFFFDD !important;\n}\n[dir=ltr] .vs-navbar .vs-button {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n[dir=rtl] .vs-navbar .vs-button {\n  margin-right: 10px;\n  margin-left: 10px;\n}\n[dir=ltr] .vs-navbar .vs-input {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n[dir=rtl] .vs-navbar .vs-input {\n  margin-right: 10px;\n  margin-left: 10px;\n}\n.vs-navbar .logo {\n  position: relative;\n  width: 120px;\n  height: auto;\n}\n[dir] .vs-navbar .logo {\n  margin: 10px 20PX;\n}\n.vs-navbar .vs-con-items {\n  width: 100%;\n  /* margin-right: 100px; */\n  justify-content: flex-end;\n}\n[dir] .vs-navbar .vs-con-items .circleIcon {\n  border-radius: 50%;\n  background: #333;\n}\n.vs-navbar .vs-con-items .is-active-item a {\n  color: white;\n}\n[dir] .vs-navbar .vs-con-items .is-active-item a {\n  background-color: #333;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item {\n  margin: 0;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a {\n  font-size: 0.9rem;\n  text-transform: uppercase;\n  font-weight: 700;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item a {\n  padding: 2.5rem 1.5rem;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a span {\n  text-transform: uppercase;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a:hover {\n  color: white !important;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item a:hover {\n  background-color: #333;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a.mypage-nav {\n  color: white;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item a.mypage-nav {\n  background-color: #123058;\n  padding: 1.5rem;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item .feather-icon {\n  margin: 0 0.2rem;\n}\n[dir] .vs-dropdown--menu {\n  border-radius: 0px !important;\n}\n.vs-dropdown--menu .vs-dropdown--item-link {\n  text-transform: uppercase;\n  font-size: 0.8rem !important;\n}\n.vs-dropdown--menu .vs-dropdown--item-link:hover {\n  color: white !important;\n}\n[dir] .vs-dropdown--menu .vs-dropdown--item-link:hover {\n  background: #333 !important;\n}", ""]);
+
+// exports
+
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectGroupItems.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/SelectGroupItems.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/layouts/components/Header.vue?vue&type=style&index=0&lang=scss&":
+/*!************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/style-loader!./node_modules/css-loader!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src??ref--8-2!./node_modules/sass-loader/dist/cjs.js??ref--8-3!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/layouts/components/Header.vue?vue&type=style&index=0&lang=scss& ***!
+  \************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      select81: 6,
-      select82: [6],
-      select83: ['red'],
-      options81: [{
-        title: 'Figures',
-        group: [{
-          text: 'Romboid',
-          value: 4
-        }, {
-          text: 'Trapeze',
-          value: 5
-        }, {
-          text: 'Triangle',
-          value: 6
-        }, {
-          text: 'Polygon',
-          value: 7
-        }]
-      }, {
-        title: 'Colors',
-        group: [{
-          text: 'Red',
-          value: 'red'
-        }, {
-          text: 'Green',
-          value: 'green'
-        }, {
-          text: 'Blue',
-          value: 'blue'
-        }, {
-          text: 'Purple',
-          value: 'purple'
-        }]
-      }],
-      options82: [{
-        title: 'Figures',
-        group: [{
-          text: 'Romboid',
-          value: 4
-        }, {
-          text: 'Trapeze',
-          value: 5
-        }, {
-          text: 'Triangle',
-          value: 6
-        }, {
-          text: 'Polygon',
-          value: 7
-        }]
-      }, {
-        title: 'Colors',
-        group: [{
-          text: 'Red',
-          value: 'red'
-        }, {
-          text: 'Green',
-          value: 'green'
-        }, {
-          text: 'Blue',
-          value: 'blue'
-        }, {
-          text: 'Purple',
-          value: 'purple'
-        }]
-      }],
-      options83: [{
-        title: 'Figures',
-        group: [{
-          text: 'Romboid',
-          value: 4
-        }, {
-          text: 'Trapeze',
-          value: 5
-        }, {
-          text: 'Triangle',
-          value: 6
-        }, {
-          text: 'Polygon',
-          value: 7
-        }]
-      }, {
-        title: 'Colors',
-        group: [{
-          text: 'Red',
-          value: 'red'
-        }, {
-          text: 'Green',
-          value: 'green'
-        }, {
-          text: 'Blue',
-          value: 'blue'
-        }, {
-          text: 'Purple',
-          value: 'purple'
-        }]
-      }]
-    };
-  }
-});
+
+var content = __webpack_require__(/*! !../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Header.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/layouts/components/Header.vue?vue&type=style&index=0&lang=scss&");
+
+if(typeof content === 'string') content = [[module.i, content, '']];
+
+var transform;
+var insertInto;
+
+
+
+var options = {"hmr":true}
+
+options.transform = transform
+options.insertInto = undefined;
+
+var update = __webpack_require__(/*! ../../../../../../node_modules/style-loader/lib/addStyles.js */ "./node_modules/style-loader/lib/addStyles.js")(content, options);
+
+if(content.locals) module.exports = content.locals;
+
+if(false) {}
 
 /***/ }),
 
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectIsSelectedItem.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/SelectIsSelectedItem.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      select1: 3,
-      options1: [{
-        value: 1,
-        label: 'label 1',
-        selectedText: 'show after select label 1',
-        isSelected: false
-      }, {
-        value: 2,
-        label: 'label 2',
-        selectedText: 'show after select label 2',
-        isSelected: false
-      }, {
-        value: 3,
-        label: 'label 3',
-        selectedText: 'show after select label 3',
-        isSelected: false
-      }]
-    };
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectLabels.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/SelectLabels.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      select1: [],
-      select2: [],
-      options1: [{
-        text: 'IT',
-        value: 0
-      }, {
-        text: 'Blade Runner',
-        value: 2
-      }, {
-        text: 'Thor Ragnarok',
-        value: 3
-      }],
-      options2: [{
-        text: 'Square',
-        value: 1
-      }, {
-        text: 'Rectangle',
-        value: 2
-      }, {
-        text: 'Rombo',
-        value: 3
-      }, {
-        text: 'Romboid',
-        value: 4
-      }, {
-        text: 'Trapeze',
-        value: 5
-      }, {
-        text: 'Triangle',
-        value: 6
-      }, {
-        text: 'Polygon',
-        value: 7
-      }, {
-        text: 'Regular polygon',
-        value: 8
-      }, {
-        text: 'Circumference',
-        value: 9
-      }, {
-        text: 'Circle',
-        value: 10
-      }, {
-        text: 'Circular sector',
-        value: 11
-      }, {
-        text: 'Circular trapeze',
-        value: 12
-      }]
-    };
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectMultiple.vue?vue&type=script&lang=js&":
-/*!*******************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/SelectMultiple.vue?vue&type=script&lang=js& ***!
-  \*******************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      select1: [],
-      select2: [],
-      select3: [],
-      options1: [{
-        text: 'IT',
-        value: 0
-      }, {
-        text: 'Blade Runner',
-        value: 2
-      }, {
-        text: 'Thor Ragnarok',
-        value: 3
-      }],
-      options2: [{
-        text: 'Square',
-        value: 1
-      }, {
-        text: 'Rectangle',
-        value: 2
-      }, {
-        text: 'Rombo',
-        value: 3
-      }, {
-        text: 'Romboid',
-        value: 4
-      }, {
-        text: 'Trapeze',
-        value: 5
-      }, {
-        text: 'Triangle',
-        value: 6
-      }, {
-        text: 'Polygon',
-        value: 7
-      }, {
-        text: 'Regular polygon',
-        value: 8
-      }, {
-        text: 'Circumference',
-        value: 9
-      }, {
-        text: 'Circle',
-        value: 10
-      }, {
-        text: 'Circular sector',
-        value: 11
-      }, {
-        text: 'Circular trapeze',
-        value: 12
-      }],
-      options3: [{
-        text: 'Red',
-        value: 1
-      }, {
-        text: 'Green',
-        value: 2
-      }, {
-        text: 'Blue',
-        value: 3
-      }, {
-        text: 'Purple',
-        value: 4
-      }]
-    };
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectSingleSelection.vue?vue&type=script&lang=js&":
-/*!**************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/SelectSingleSelection.vue?vue&type=script&lang=js& ***!
-  \**************************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      select1: 3,
-      select2: 7,
-      select3: 2,
-      options1: [{
-        text: 'IT',
-        value: 0
-      }, {
-        text: 'Blade Runner',
-        value: 2
-      }, {
-        text: 'Thor Ragnarok',
-        value: 3
-      }],
-      options2: [{
-        text: 'Square',
-        value: 1
-      }, {
-        text: 'Rectangle',
-        value: 2
-      }, {
-        text: 'Rombo',
-        value: 3
-      }, {
-        text: 'Romboid',
-        value: 4
-      }, {
-        text: 'Trapeze',
-        value: 5
-      }, {
-        text: 'Triangle',
-        value: 6
-      }, {
-        text: 'Polygon',
-        value: 7
-      }, {
-        text: 'Regular polygon',
-        value: 8
-      }, {
-        text: 'Circumference',
-        value: 9
-      }, {
-        text: 'Circle',
-        value: 10
-      }, {
-        text: 'Circular sector',
-        value: 11
-      }, {
-        text: 'Circular trapeze',
-        value: 12
-      }],
-      options3: [{
-        text: 'Red',
-        value: 1
-      }, {
-        text: 'Green',
-        value: 2
-      }, {
-        text: 'Blue',
-        value: 3
-      }, {
-        text: 'Purple',
-        value: 4
-      }]
-    };
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectValidators.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/SelectValidators.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-/* harmony default export */ __webpack_exports__["default"] = ({
-  data: function data() {
-    return {
-      select1: [],
-      select2: [],
-      select3: [],
-      select4: [],
-      exampleOptions: [{
-        text: 'Square',
-        value: 1
-      }, {
-        text: 'Rectangle',
-        value: 2
-      }, {
-        text: 'Rombo',
-        value: 3
-      }, {
-        text: 'Romboid',
-        value: 4
-      }, {
-        text: 'Trapeze',
-        value: 5
-      }, {
-        text: 'Triangle',
-        value: 6
-      }, {
-        text: 'Polygon',
-        value: 7
-      }, {
-        text: 'Regular polygon',
-        value: 8
-      }, {
-        text: 'Circumference',
-        value: 9
-      }, {
-        text: 'Circle',
-        value: 10
-      }, {
-        text: 'Circular sector',
-        value: 11
-      }, {
-        text: 'Circular trapeze',
-        value: 12
-      }]
-    };
-  }
-});
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/Select.vue?vue&type=template&id=1eb9f0d4&":
-/*!***************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/Select.vue?vue&type=template&id=1eb9f0d4& ***!
-  \***************************************************************************************************************************************************************************************************************************************/
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/layouts/components/Header.vue?vue&type=template&id=07c95f16&":
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/layouts/components/Header.vue?vue&type=template&id=07c95f16& ***!
+  \*************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1455,1038 +163,278 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "div",
-    { attrs: { id: "form-element-select-demo" } },
+    "vs-navbar",
+    {
+      staticClass: "flex flex-end",
+      model: {
+        value: _vm.activeItem,
+        callback: function($$v) {
+          _vm.activeItem = $$v
+        },
+        expression: "activeItem"
+      }
+    },
     [
-      _c("select-single-selection"),
-      _vm._v(" "),
-      _c("select-color"),
-      _vm._v(" "),
-      _c("select-autocomplete"),
-      _vm._v(" "),
-      _c("select-multiple"),
-      _vm._v(" "),
-      _c("select-labels"),
-      _vm._v(" "),
-      _c("select-validators"),
-      _vm._v(" "),
-      _c("select-is-selected-item"),
-      _vm._v(" "),
-      _c("select-group-items")
-    ],
-    1
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectAutocomplete.vue?vue&type=template&id=32eb1248&":
-/*!***************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/SelectAutocomplete.vue?vue&type=template&id=32eb1248& ***!
-  \***************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Autocomplete", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v(
-          "You can add the autocomplete functionality in the desired selected with the property "
-        ),
-        _c("code", [_vm._v("autocomplete")])
-      ]),
-      _vm._v(" "),
       _c(
         "div",
-        { staticClass: "demo-alignment" },
+        { attrs: { slot: "title" }, slot: "title" },
         [
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: { autocomplete: "" },
-              model: {
-                value: _vm.select1,
-                callback: function($$v) {
-                  _vm.select1 = $$v
-                },
-                expression: "select1"
+          _c("vs-navbar-title", [
+            _c("img", {
+              staticClass: "logo cursor-pointer",
+              attrs: {
+                to: "/home",
+                src: __webpack_require__(/*! @assets/images/logo/logo-color.png */ "./resources/app/assets/images/logo/logo-color.png")
               }
-            },
-            _vm._l(_vm.options1, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: item.value, text: item.text }
-              })
-            }),
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: { autocomplete: "" },
-              model: {
-                value: _vm.select2,
-                callback: function($$v) {
-                  _vm.select2 = $$v
-                },
-                expression: "select2"
-              }
-            },
-            _vm._l(_vm.options2, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: item.value, text: item.text }
-              })
-            }),
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: { autocomplete: "", disabled: "true" },
-              model: {
-                value: _vm.select3,
-                callback: function($$v) {
-                  _vm.select3 = $$v
-                },
-                expression: "select3"
-              }
-            },
-            _vm._l(_vm.options3, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: item.value, text: item.text }
-              })
-            }),
-            1
-          )
+            })
+          ])
         ],
         1
       ),
       _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<template lang="html">\n  <div class="con-select-example">\n\n    <vs-select autocomplete @input-change="autoCompleteFunc" class="selectExample" v-model="select1">\n      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options1" />\n    </vs-select>\n\n    <vs-select autocomplete @input-change="autoCompleteFunc" class="selectExample" v-model="select2">\n      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options2" />\n    </vs-select>\n\n    <vs-select autocomplete @input-change="autoCompleteFunc" disabled="true" class="selectExample" v-model="select3">\n      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options3" />\n    </vs-select>\n\n  </div>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      select1:3,\n      select2:7,\n      select3:2,\n      options1:[\n        {text:\'IT\',value:0},\n        {text:\'Blade Runner\',value:2},\n        {text:\'Thor Ragnarok\',value:3},\n      ],\n      options2:[\n        {text: \'Square\', value: 1},\n        {text: \'Rectangle\', value: 2},\n        {text: \'Rombo\', value: 3},\n        {text: \'Romboid\', value: 4},\n        {text: \'Trapeze\', value: 5},\n        {text: \'Triangle\', value: 6},\n        {text: \'Polygon\', value: 7},\n        {text: \'Regular polygon\', value: 8},\n        {text: \'Circumference\', value: 9},\n        {text: \'Circle\', value: 10},\n        {text: \'Circular sector\', value: 11},\n        {text: \'Circular trapeze\', value: 12},\n      ],\n      options3:[\n        {text: \'Red\', value: 1},\n        {text: \'Green\', value: 2},\n        {text: \'Blue\', value: 3},\n        {text: \'Purple\', value: 4},\n      ],\n    }\n  }\n}\n</script>\n        '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectColor.vue?vue&type=template&id=a0ec40c2&":
-/*!********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/SelectColor.vue?vue&type=template&id=a0ec40c2& ***!
-  \********************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Color", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("You can change the color of the select with the property "),
-        _c("code", [_vm._v("color")])
-      ]),
-      _vm._v(" "),
-      _c(
-        "vs-alert",
-        {
-          staticClass: "mt-5",
-          attrs: { icon: "warning", active: "true", color: "warning" }
-        },
-        [
-          _c("span", [
-            _vm._v("Only "),
-            _c("strong", [_vm._v("RGB")]),
-            _vm._v(" and "),
-            _c("strong", [_vm._v("HEX")]),
-            _vm._v(" colors are supported.")
-          ])
-        ]
-      ),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "demo-alignment" },
-        [
-          _c("input", {
-            directives: [
+      !_vm.loggedIn
+        ? [
+            _c(
+              "vs-navbar-item",
               {
-                name: "model",
-                rawName: "v-model",
-                value: _vm.colorx,
-                expression: "colorx"
-              }
-            ],
-            attrs: { type: "color", value: "" },
-            domProps: { value: _vm.colorx },
-            on: {
-              input: function($event) {
-                if ($event.target.composing) {
-                  return
-                }
-                _vm.colorx = $event.target.value
-              }
-            }
-          }),
-          _vm._v(" "),
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: { color: _vm.colorx },
-              model: {
-                value: _vm.select1,
-                callback: function($$v) {
-                  _vm.select1 = $$v
-                },
-                expression: "select1"
-              }
-            },
-            _vm._l(_vm.options1, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: item.value, text: item.text }
-              })
-            }),
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: { color: _vm.select2 },
-              model: {
-                value: _vm.select2,
-                callback: function($$v) {
-                  _vm.select2 = $$v
-                },
-                expression: "select2"
-              }
-            },
-            _vm._l(_vm.options2, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: item.value, text: item.text }
-              })
-            }),
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          "\n<template>\n  <div class=\"con-select-example\">\n\n    <input v-model=\"colorx\" type=\"color\" value=\"\">\n\n    <vs-select :color=\"colorx\" class=\"selectExample\" v-model=\"select1\">\n      <vs-select-item :key=\"index\" :value=\"item.value\" :text=\"item.text\" v-for=\"(item,index) in options1\" />\n    </vs-select>\n\n    <vs-select :color=\"select2\" class=\"selectExample\" v-model=\"select2\">\n      <vs-select-item :key=\"index\" :value=\"item.value\" :text=\"item.text\" v-for=\"(item,index) in options2\" />\n    </vs-select>\n\n  </div>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      colorx:'#103767',\n      select1:3,\n      select2:'primary',\n      options1:[\n        {text: 'Square', value: 1},\n        {text: 'Rectangle', value: 2},\n        {text: 'Rombo', value: 3},\n        {text: 'Romboid', value: 4},\n        {text: 'Trapeze', value: 5},\n        {text: 'Triangle', value: 6},\n        {text: 'Polygon', value: 7},\n        {text: 'Regular polygon', value: 8},\n        {text: 'Circumference', value: 9},\n        {text: 'Circle', value: 10},\n        {text: 'Circular sector', value: 11},\n        {text: 'Circular trapeze', value: 12},\n      ],\n      options2:[\n        {text: 'Primary', value: 'primary'},\n        {text: 'Success', value: 'success'},\n        {text: 'Danger', value: 'danger'},\n        {text: 'Warning', value: 'warning'},\n        {text: 'Dark', value: 'dark'},\n      ],\n    }\n  }\n}\n</script>\n        "
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectGroupItems.vue?vue&type=template&id=63c39c16&":
-/*!*************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/SelectGroupItems.vue?vue&type=template&id=63c39c16& ***!
-  \*************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Group items", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("You can group elements with the sub component "),
-        _c("code", [_vm._v("vs-select-group")])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "demo-alignment" },
-        [
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              model: {
-                value: _vm.select81,
-                callback: function($$v) {
-                  _vm.select81 = $$v
-                },
-                expression: "select81"
-              }
-            },
-            _vm._l(_vm.options81, function(item, index) {
-              return _c(
-                "div",
-                { key: index },
-                [
-                  item.group
-                    ? _c(
-                        "vs-select-group",
-                        { attrs: { title: item.title } },
-                        _vm._l(item.group, function(item, index) {
-                          return _c("vs-select-item", {
-                            key: index,
-                            attrs: { value: item.value, text: item.text }
-                          })
-                        }),
-                        1
-                      )
-                    : _vm._e()
-                ],
-                1
-              )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: { "vs-multiple": "" },
-              model: {
-                value: _vm.select82,
-                callback: function($$v) {
-                  _vm.select82 = $$v
-                },
-                expression: "select82"
-              }
-            },
-            _vm._l(_vm.options82, function(item, index) {
-              return _c(
-                "div",
-                { key: index },
-                [
-                  item.group
-                    ? _c(
-                        "vs-select-group",
-                        { attrs: { title: item.title } },
-                        _vm._l(item.group, function(item, index) {
-                          return _c("vs-select-item", {
-                            key: index,
-                            attrs: { value: item.value, text: item.text }
-                          })
-                        }),
-                        1
-                      )
-                    : _vm._e()
-                ],
-                1
-              )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: { "vs-autocomplete": "" },
-              model: {
-                value: _vm.select83,
-                callback: function($$v) {
-                  _vm.select83 = $$v
-                },
-                expression: "select83"
-              }
-            },
-            _vm._l(_vm.options83, function(item, index) {
-              return _c(
-                "div",
-                { key: index },
-                [
-                  item.group
-                    ? _c(
-                        "vs-select-group",
-                        { attrs: { title: item.title } },
-                        _vm._l(item.group, function(item, index) {
-                          return _c("vs-select-item", {
-                            key: index,
-                            attrs: { value: item.value, text: item.text }
-                          })
-                        }),
-                        1
-                      )
-                    : _vm._e()
-                ],
-                1
-              )
-            }),
-            0
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          "\n<template lang=\"html\">\n  <div class=\"con-select-example\">\n\n    <vs-select class=\"selectExample\" vs-label=\"Defautl\" v-model=\"select1\">\n      <div :key=\"index\" v-for=\"(item,index) in options1\">\n\n        <vs-select-group :title=\"item.title\" v-if=\"item.group\">\n          <vs-select-item :key=\"index\" :value=\"item.value\" :text=\"item.text\" v-for=\"(item,index) in item.group\" />\n        </vs-select-group>\n\n      </div>\n    </vs-select>\n\n    <vs-select vs-multiple class=\"selectExample\" vs-label=\"Multiple\" v-model=\"select2\">\n      <div :key=\"index\" v-for=\"(item,index) in options2\">\n\n        <vs-select-group :title=\"item.title\" v-if=\"item.group\">\n          <vs-select-item :key=\"index\" :value=\"item.value\" :text=\"item.text\" v-for=\"(item,index) in item.group\" />\n        </vs-select-group>\n\n      </div>\n    </vs-select>\n\n    <vs-select vs-autocomplete class=\"selectExample\" vs-label=\"Autocomplete\" v-model=\"select3\">\n      <div :key=\"index\" v-for=\"(item,index) in options3\">\n\n        <vs-select-group :title=\"item.title\" v-if=\"item.group\">\n          <vs-select-item :key=\"index\" :value=\"item.value\" :text=\"item.text\" v-for=\"(item,index) in item.group\" />\n        </vs-select-group>\n\n      </div>\n    </vs-select>\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      select1: 6,\n      select2: [6],\n      select3: ['red'],\n      options1: [{\n          title: 'Figures',\n          group: [\n            { text: 'Romboid', value: 4 },\n            { text: 'Trapeze', value: 5 },\n            { text: 'Triangle', value: 6 },\n            { text: 'Polygon', value: 7 },\n          ]\n        },\n        {\n          title: 'Colors',\n          group: [\n            { text: 'Red', value: 'red' },\n            { text: 'Green', value: 'green' },\n            { text: 'Blue', value: 'blue' },\n            { text: 'Purple', value: 'purple' },\n          ]\n        }\n      ],\n      options2: [{\n          title: 'Figures',\n          group: [\n            { text: 'Romboid', value: 4 },\n            { text: 'Trapeze', value: 5 },\n            { text: 'Triangle', value: 6 },\n            { text: 'Polygon', value: 7 },\n          ]\n        },\n        {\n          title: 'Colors',\n          group: [\n            { text: 'Red', value: 'red' },\n            { text: 'Green', value: 'green' },\n            { text: 'Blue', value: 'blue' },\n            { text: 'Purple', value: 'purple' },\n          ]\n        }\n      ],\n      options3: [{\n          title: 'Figures',\n          group: [\n            { text: 'Romboid', value: 4 },\n            { text: 'Trapeze', value: 5 },\n            { text: 'Triangle', value: 6 },\n            { text: 'Polygon', value: 7 },\n          ]\n        },\n        {\n          title: 'Colors',\n          group: [\n            { text: 'Red', value: 'red' },\n            { text: 'Green', value: 'green' },\n            { text: 'Blue', value: 'blue' },\n            { text: 'Purple', value: 'purple' },\n          ]\n        }\n      ],\n    }\n  },\n}\n</script>\n        "
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectIsSelectedItem.vue?vue&type=template&id=7ad7d2e8&":
-/*!*****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/SelectIsSelectedItem.vue?vue&type=template&id=7ad7d2e8& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Is Selected Item", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("You can validate if an option is selected with the property "),
-        _c("code", [_vm._v("is-selected.sync")]),
-        _vm._v(
-          " and do with it multiple variants with changing the text of the selected options"
-        )
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "demo-alignment" },
-        [
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              model: {
-                value: _vm.select1,
-                callback: function($$v) {
-                  _vm.select1 = $$v
-                },
-                expression: "select1"
-              }
-            },
-            _vm._l(_vm.options1, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: {
-                  "is-selected": item.isSelected,
-                  value: item.value,
-                  text: item.isSelected ? item.selectedText : item.label
-                },
-                on: {
-                  "update:isSelected": function($event) {
-                    return _vm.$set(item, "isSelected", $event)
-                  },
-                  "update:is-selected": function($event) {
-                    return _vm.$set(item, "isSelected", $event)
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.hideNavbar,
+                    expression: "!hideNavbar"
                   }
-                }
-              })
-            }),
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<template lang="html">\n  <div class="con-select-example">\n\n    <vs-select class="selectExample" v-model="select1" >\n      <vs-select-item\n        :is-selected.sync="item.isSelected"\n        :key="index"\n        :value="item.value"\n        :text="item.isSelected?item.selectedText:item.label"\n        v-for="(item,index) in options1"\n        />\n    </vs-select>\n\n  </div>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      select1:3,\n      options1:[\n        {value: 1, label: \'label 1\', selectedText: \'show after select label 1\', isSelected: false },\n        {value: 2, label: \'label 2\', selectedText: \'show after select label 2\', isSelected: false },\n        {value: 3, label: \'label 3\', selectedText: \'show after select label 3\', isSelected: false },\n      ],\n    }\n  }\n}\n</script>\n\n<style>\n.selectExample {\n  margin: 10px;\n}\n.con-select-example {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n.con-select .vs-select {\n  width: 100%\n}\n@media (max-width: 550px) {\n  .con-select {\n    flex-direction: column;\n  }\n  .con-select .vs-select {\n    width: 100%\n  }\n}\n</style>\n    '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectLabels.vue?vue&type=template&id=d3a50f1a&":
-/*!*********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/SelectLabels.vue?vue&type=template&id=d3a50f1a& ***!
-  \*********************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Labels", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("Add a label to the input with the property "),
-        _c("code", [_vm._v("label")])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "demo-alignment" },
-        [
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: {
-                placeholder: "Select",
-                label: "Multiple",
-                "label-placeholder": "vs-Multiple",
-                "vs-multiple": ""
+                ],
+                attrs: { index: "0" }
               },
-              model: {
-                value: _vm.select1,
-                callback: function($$v) {
-                  _vm.select1 = $$v
-                },
-                expression: "select1"
-              }
-            },
-            _vm._l(_vm.options1, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: item.value, text: item.text }
-              })
-            }),
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: {
-                placeholder: "Search and select",
-                label: "Autocomplete",
-                "label-placeholder": "Autocomplete",
-                "vs-multiple": "",
-                autocomplete: ""
-              },
-              model: {
-                value: _vm.select2,
-                callback: function($$v) {
-                  _vm.select2 = $$v
-                },
-                expression: "select2"
-              }
-            },
-            _vm._l(_vm.options2, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: item.value, text: item.text }
-              })
-            }),
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<template lang="html">\n    <div class="con-select-example">\n\n    <vs-select\n      placeholder="Select"\n      class="selectExample"\n      label="Multiple"\n      label-placeholder="vs-Multiple"\n      vs-multiple\n      v-model="select1"\n      >\n\n      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options1" />\n    </vs-select>\n\n    <vs-select\n      placeholder="Search and select"\n      class="selectExample"\n      label="Autocomplete"\n      label-placeholder="Autocomplete"\n      vs-multiple\n      autocomplete\n      v-model="select2"\n      >\n\n      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options2" />\n    </vs-select>\n\n  </div>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      select1:[],\n      select2:[],\n      options1:[\n        {text:\'IT\',value:0},\n        {text:\'Blade Runner\',value:2},\n        {text:\'Thor Ragnarok\',value:3},\n      ],\n      options2:[\n        {text: \'Square\', value: 1},\n        {text: \'Rectangle\', value: 2},\n        {text: \'Rombo\', value: 3},\n        {text: \'Romboid\', value: 4},\n        {text: \'Trapeze\', value: 5},\n        {text: \'Triangle\', value: 6},\n        {text: \'Polygon\', value: 7},\n        {text: \'Regular polygon\', value: 8},\n        {text: \'Circumference\', value: 9},\n        {text: \'Circle\', value: 10},\n        {text: \'Circular sector\', value: 11},\n        {text: \'Circular trapeze\', value: 12},\n      ]\n    }\n  }\n}\n</script>\n    '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectMultiple.vue?vue&type=template&id=37886704&":
-/*!***********************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/SelectMultiple.vue?vue&type=template&id=37886704& ***!
-  \***********************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Multiple", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v(
-          "You can have a selection with multiple selections with the property "
-        ),
-        _c("code", [_vm._v("multiple")]),
-        _vm._v(
-          ". If you need the user to select only a certain number of options you can use the property "
-        ),
-        _c("code", [_vm._v("max-selected")])
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "demo-alignment" },
-        [
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: { placeholder: "Multiple", multiple: "" },
-              model: {
-                value: _vm.select1,
-                callback: function($$v) {
-                  _vm.select1 = $$v
-                },
-                expression: "select1"
-              }
-            },
-            _vm._l(_vm.options1, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: item.value, text: item.text }
-              })
-            }),
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: {
-                placeholder: "Multiple and autocomplete",
-                multiple: "",
-                "vs-autocomplete": ""
-              },
-              model: {
-                value: _vm.select2,
-                callback: function($$v) {
-                  _vm.select2 = $$v
-                },
-                expression: "select2"
-              }
-            },
-            _vm._l(_vm.options2, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: item.value, text: item.text }
-              })
-            }),
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: {
-                placeholder: "Max Selected",
-                "max-selected": "2",
-                multiple: ""
-              },
-              model: {
-                value: _vm.select3,
-                callback: function($$v) {
-                  _vm.select3 = $$v
-                },
-                expression: "select3"
-              }
-            },
-            _vm._l(_vm.options3, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: item.value, text: item.text }
-              })
-            }),
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<template lang="html">\n  <div class="con-select-example">\n\n    <vs-select placeholder="Multiple" multiple class="selectExample" v-model="select1">\n      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options1" />\n    </vs-select>\n\n    <vs-select placeholder="Multiple and autocomplete" multiple vs-autocomplete class="selectExample" v-model="select2">\n      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options2" />\n    </vs-select>\n\n    <vs-select placeholder="Max Selected" max-selected="2" multiple class="selectExample" v-model="select3">\n      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options3" />\n    </vs-select>\n\n  </div>\n</template>\n\n<script>\nexport default {\n  data() {\n    return {\n      select1: [],\n      select2: [],\n      select3: [],\n      options1: [\n        { text: \'IT\', value: 0 },\n        { text: \'Blade Runner\', value: 2 },\n        { text: \'Thor Ragnarok\', value: 3 },\n      ],\n      options2: [\n        { text: \'Square\', value: 1 },\n        { text: \'Rectangle\', value: 2 },\n        { text: \'Rombo\', value: 3 },\n        { text: \'Romboid\', value: 4 },\n        { text: \'Trapeze\', value: 5 },\n        { text: \'Triangle\', value: 6 },\n        { text: \'Polygon\', value: 7 },\n        { text: \'Regular polygon\', value: 8 },\n        { text: \'Circumference\', value: 9 },\n        { text: \'Circle\', value: 10 },\n        { text: \'Circular sector\', value: 11 },\n        { text: \'Circular trapeze\', value: 12 },\n      ],\n      options3: [\n        { text: \'Red\', value: 1 },\n        { text: \'Green\', value: 2 },\n        { text: \'Blue\', value: 3 },\n        { text: \'Purple\', value: 4 },\n      ],\n    }\n  }\n}\n</script>\n        '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectSingleSelection.vue?vue&type=template&id=7783ae40&":
-/*!******************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/SelectSingleSelection.vue?vue&type=template&id=7783ae40& ***!
-  \******************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Single selection", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v("To add a select to the application we have the component "),
-        _c("code", [_vm._v("vs-select")]),
-        _vm._v(".")
-      ]),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "demo-alignment" },
-        [
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              model: {
-                value: _vm.select1,
-                callback: function($$v) {
-                  _vm.select1 = $$v
-                },
-                expression: "select1"
-              }
-            },
-            _vm._l(_vm.options1, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: item.value, text: item.text }
-              })
-            }),
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              model: {
-                value: _vm.select2,
-                callback: function($$v) {
-                  _vm.select2 = $$v
-                },
-                expression: "select2"
-              }
-            },
-            _vm._l(_vm.options2, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: item.value, text: item.text }
-              })
-            }),
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: { disabled: "true" },
-              model: {
-                value: _vm.select3,
-                callback: function($$v) {
-                  _vm.select3 = $$v
-                },
-                expression: "select3"
-              }
-            },
-            _vm._l(_vm.options3, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: {
-                  disabled: index == 2,
-                  value: item.value,
-                  text: item.text
-                }
-              })
-            }),
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<template lang="html">\n  <div class="con-select-example">\n\n    <vs-select class="selectExample" v-model="select1">\n      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options1" />\n    </vs-select>\n\n    <vs-select class="selectExample" v-model="select2">\n      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in options2" />\n    </vs-select>\n\n    <vs-select disabled="true" class="selectExample" v-model="select3">\n      <vs-select-item :key="index" :disabled="index==2" :value="item.value" :text="item.text" v-for="(item,index) in options3" />\n    </vs-select>\n\n  </div>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      select1:3,\n      select2:7,\n      select3:2,\n      options1:[\n        {text:\'IT\',value:0},\n        {text:\'Blade Runner\',value:2},\n        {text:\'Thor Ragnarok\',value:3},\n      ],\n      options2:[\n        {text: \'Square\', value: 1},\n        {text: \'Rectangle\', value: 2},\n        {text: \'Rombo\', value: 3},\n        {text: \'Romboid\', value: 4},\n        {text: \'Trapeze\', value: 5},\n        {text: \'Triangle\', value: 6},\n        {text: \'Polygon\', value: 7},\n        {text: \'Regular polygon\', value: 8},\n        {text: \'Circumference\', value: 9},\n        {text: \'Circle\', value: 10},\n        {text: \'Circular sector\', value: 11},\n        {text: \'Circular trapeze\', value: 12},\n      ],\n      options3:[\n        {text: \'Red\', value: 1},\n        {text: \'Green\', value: 2},\n        {text: \'Blue\', value: 3},\n        {text: \'Purple\', value: 4},\n      ],\n    }\n  },\n}\n</script>\n        '
-        )
-      ])
-    ],
-    2
-  )
-}
-var staticRenderFns = []
-render._withStripped = true
-
-
-
-/***/ }),
-
-/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectValidators.vue?vue&type=template&id=a3c82e56&":
-/*!*************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/app/js/src/views/forms/form-elements/select/SelectValidators.vue?vue&type=template&id=a3c82e56& ***!
-  \*************************************************************************************************************************************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
-var render = function() {
-  var _vm = this
-  var _h = _vm.$createElement
-  var _c = _vm._self._c || _h
-  return _c(
-    "vx-card",
-    { attrs: { title: "Validators", "code-toggler": "" } },
-    [
-      _c("p", [
-        _vm._v(
-          "You can add a state for example of in affirmative response to a validation with "
-        ),
-        _c("code", [_vm._v("success")]),
-        _vm._v(
-          " and if it is necessary to add a description or help to the user you can do it with the property "
-        ),
-        _c("code", [_vm._v("description")])
-      ]),
-      _vm._v(" "),
-      _c(
-        "vs-alert",
-        {
-          staticClass: "mt-5",
-          attrs: { color: "primary", icon: "new_releases", active: "true" }
-        },
-        [
-          _c("span", [
-            _vm._v(
-              "Each of the states you can change the text, for example in the case of "
+              [
+                _c(
+                  "vs-dropdown",
+                  [
+                    _c(
+                      "a",
+                      { staticClass: "a-icon", attrs: { href: "#" } },
+                      [
+                        _vm._v("\r\n            Registrarme\r\n            "),
+                        _c("vs-icon", { attrs: { icon: "expand_more" } })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "vs-dropdown-menu",
+                      [
+                        _c(
+                          "vs-dropdown-item",
+                          { attrs: { to: "/auth/register/participant" } },
+                          [
+                            _vm._v(
+                              "\r\n              Registro Participante\r\n            "
+                            )
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c(
+                          "vs-dropdown-item",
+                          { attrs: { to: "/auth/register/expositor" } },
+                          [
+                            _vm._v(
+                              "\r\n              Registro Expositor\r\n            "
+                            )
+                          ]
+                        )
+                      ],
+                      1
+                    )
+                  ],
+                  1
+                )
+              ],
+              1
             ),
-            _c("code", [_vm._v("vs-danger-text")]),
-            _vm._v(" for the state of danger.")
-          ])
-        ]
-      ),
-      _c("br"),
-      _vm._v(" "),
-      _c(
-        "div",
-        { staticClass: "demo-alignment" },
-        [
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: {
-                success: true,
-                "success-text": "This field is valid",
-                placeholder: "Select",
-                label: "Success",
-                multiple: ""
+            _vm._v(" "),
+            _c(
+              "vs-navbar-item",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.hideNavbar,
+                    expression: "!hideNavbar"
+                  }
+                ],
+                attrs: { index: "1" }
               },
-              model: {
-                value: _vm.select1,
-                callback: function($$v) {
-                  _vm.select1 = $$v
-                },
-                expression: "select1"
-              }
-            },
-            _vm._l(_vm.exampleOptions, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: item.value, text: item.text }
-              })
-            }),
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: {
-                danger: true,
-                "danger-text": "This field is invalid",
-                placeholder: "Select",
-                label: "Danger",
-                multiple: ""
+              [
+                _c("a", { staticClass: "h3", attrs: { href: "/app/room" } }, [
+                  _vm._v("Webinars")
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "vs-navbar-item",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.hideNavbar,
+                    expression: "!hideNavbar"
+                  }
+                ],
+                attrs: { index: "2" }
               },
-              model: {
-                value: _vm.select2,
-                callback: function($$v) {
-                  _vm.select2 = $$v
-                },
-                expression: "select2"
-              }
-            },
-            _vm._l(_vm.exampleOptions, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: item.value, text: item.text }
-              })
-            }),
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: {
-                warning: true,
-                "warning-text": "This field is invalid",
-                placeholder: "Select",
-                label: "Warning",
-                multiple: ""
+              [
+                _c("a", { staticClass: "h3", attrs: { href: "/app/fair" } }, [
+                  _vm._v("Contacteons")
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "vs-navbar-item",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.hideNavbar,
+                    expression: "!hideNavbar"
+                  }
+                ],
+                attrs: { index: "3" }
               },
-              model: {
-                value: _vm.select3,
-                callback: function($$v) {
-                  _vm.select3 = $$v
-                },
-                expression: "select3"
-              }
-            },
-            _vm._l(_vm.exampleOptions, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: item.value, text: item.text }
-              })
-            }),
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "vs-select",
-            {
-              staticClass: "selectExample",
-              attrs: {
-                "description-text": "Simple info for multiple select",
-                placeholder: "Select",
-                label: "Description",
-                multiple: ""
+              [
+                _c("feather-icon", {
+                  staticClass: "p-2 circleIcon ",
+                  attrs: {
+                    icon: "InstagramIcon",
+                    svgClasses: "text-white h-4 w-4"
+                  }
+                }),
+                _vm._v(" "),
+                _c("feather-icon", {
+                  staticClass: "p-2 circleIcon",
+                  attrs: {
+                    icon: "FacebookIcon",
+                    svgClasses: "text-white h-4 w-4"
+                  }
+                }),
+                _vm._v(" "),
+                _c("feather-icon", {
+                  staticClass: "p-2 circleIcon",
+                  attrs: {
+                    icon: "TwitterIcon",
+                    svgClasses: "text-white h-4 w-4"
+                  }
+                })
+              ],
+              1
+            )
+          ]
+        : [
+            _c(
+              "vs-navbar-item",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.hideNavbar,
+                    expression: "!hideNavbar"
+                  }
+                ],
+                attrs: { index: "0" }
               },
-              model: {
-                value: _vm.select4,
-                callback: function($$v) {
-                  _vm.select4 = $$v
-                },
-                expression: "select4"
-              }
-            },
-            _vm._l(_vm.exampleOptions, function(item, index) {
-              return _c("vs-select-item", {
-                key: index,
-                attrs: { value: item.value, text: item.text }
-              })
-            }),
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c("template", { slot: "codeContainer" }, [
-        _vm._v(
-          '\n<template lang="html">\n  <div class="con-select-example">\n\n    <vs-select\n     :success="true"\n      success-text="This field is valid"\n      placeholder="Select"\n      class="selectExample"\n      label="Success"\n      multiple\n      v-model="select1"\n      >\n      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in exampleOptions" />\n    </vs-select>\n\n    <vs-select\n      :danger="true"\n      danger-text="This field is invalid"\n      placeholder="Select"\n      class="selectExample"\n      label="Danger"\n      multiple\n      v-model="select2"\n      >\n      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in exampleOptions" />\n    </vs-select>\n\n    <vs-select\n      :warning="true"\n      warning-text="This field is invalid"\n      placeholder="Select"\n      class="selectExample"\n      label="Warning"\n      multiple\n      v-model="select3"\n      >\n      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in exampleOptions" />\n    </vs-select>\n\n    <vs-select\n      description-text="Simple info for multiple select"\n      placeholder="Select"\n      class="selectExample"\n      label="Description"\n      multiple\n      v-model="select4"\n      >\n      <vs-select-item :key="index" :value="item.value" :text="item.text" v-for="(item,index) in exampleOptions" />\n    </vs-select>\n\n  </div>\n</template>\n\n<script>\nexport default {\n  data(){\n    return {\n      select1:[],\n      select2:[],\n      select3:[],\n      select4:[],\n      exampleOptions:[\n        {text: \'Square\', value: 1},\n        {text: \'Rectangle\', value: 2},\n        {text: \'Rombo\', value: 3},\n        {text: \'Romboid\', value: 4},\n        {text: \'Trapeze\', value: 5},\n        {text: \'Triangle\', value: 6},\n        {text: \'Polygon\', value: 7},\n        {text: \'Regular polygon\', value: 8},\n        {text: \'Circumference\', value: 9},\n        {text: \'Circle\', value: 10},\n        {text: \'Circular sector\', value: 11},\n        {text: \'Circular trapeze\', value: 12},\n      ]\n    }\n  }\n}\n</script>\n        '
-        )
-      ])
+              [
+                _c("a", { staticClass: "h3", attrs: { href: "/app/room" } }, [
+                  _vm._v("sostenibilidad")
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "vs-navbar-item",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.hideNavbar,
+                    expression: "!hideNavbar"
+                  }
+                ],
+                attrs: { index: "1" }
+              },
+              [
+                _c("a", { staticClass: "h3", attrs: { href: "/app/fair" } }, [
+                  _vm._v("Contacteons")
+                ])
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "vs-navbar-item",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.hideNavbar,
+                    expression: "!hideNavbar"
+                  }
+                ],
+                attrs: { index: "2" }
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    staticClass: "h3 flex items-center",
+                    attrs: { href: "/app/fair" }
+                  },
+                  [
+                    _c("feather-icon", { attrs: { icon: "LogOutIcon" } }),
+                    _vm._v(" "),
+                    _c("span", [_vm._v("Cerrar Session")])
+                  ],
+                  1
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "vs-navbar-item",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.hideNavbar,
+                    expression: "!hideNavbar"
+                  }
+                ],
+                attrs: { index: "3" }
+              },
+              [
+                _c(
+                  "a",
+                  {
+                    staticClass: "h3 mypage-nav text-center",
+                    attrs: { href: "/app/setting" }
+                  },
+                  [
+                    _c("feather-icon", { attrs: { icon: "UsersIcon" } }),
+                    _vm._v(" "),
+                    _c("div", [_vm._v("Mi Cuenta")])
+                  ],
+                  1
+                )
+              ]
+            )
+          ]
     ],
     2
   )
@@ -2498,18 +446,31 @@ render._withStripped = true
 
 /***/ }),
 
-/***/ "./resources/app/js/src/views/forms/form-elements/select/Select.vue":
-/*!**************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/Select.vue ***!
-  \**************************************************************************/
+/***/ "./resources/app/assets/images/logo/logo-color.png":
+/*!*********************************************************!*\
+  !*** ./resources/app/assets/images/logo/logo-color.png ***!
+  \*********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/logo-color.png?aa8ad8b3a558848b927a8a1b26d2bba1";
+
+/***/ }),
+
+/***/ "./resources/app/js/src/layouts/components/Header.vue":
+/*!************************************************************!*\
+  !*** ./resources/app/js/src/layouts/components/Header.vue ***!
+  \************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Select_vue_vue_type_template_id_1eb9f0d4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Select.vue?vue&type=template&id=1eb9f0d4& */ "./resources/app/js/src/views/forms/form-elements/select/Select.vue?vue&type=template&id=1eb9f0d4&");
-/* harmony import */ var _Select_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Select.vue?vue&type=script&lang=js& */ "./resources/app/js/src/views/forms/form-elements/select/Select.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* harmony import */ var _Header_vue_vue_type_template_id_07c95f16___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Header.vue?vue&type=template&id=07c95f16& */ "./resources/app/js/src/layouts/components/Header.vue?vue&type=template&id=07c95f16&");
+/* harmony import */ var _Header_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Header.vue?vue&type=script&lang=js& */ "./resources/app/js/src/layouts/components/Header.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _Header_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Header.vue?vue&type=style&index=0&lang=scss& */ "./resources/app/js/src/layouts/components/Header.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
 
 
 
@@ -2517,10 +478,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _Select_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _Select_vue_vue_type_template_id_1eb9f0d4___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _Select_vue_vue_type_template_id_1eb9f0d4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_3__["default"])(
+  _Header_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _Header_vue_vue_type_template_id_07c95f16___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _Header_vue_vue_type_template_id_07c95f16___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -2530,590 +491,54 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
 
 /* hot reload */
 if (false) { var api; }
-component.options.__file = "resources/app/js/src/views/forms/form-elements/select/Select.vue"
+component.options.__file = "resources/app/js/src/layouts/components/Header.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
 
 /***/ }),
 
-/***/ "./resources/app/js/src/views/forms/form-elements/select/Select.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/Select.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************/
+/***/ "./resources/app/js/src/layouts/components/Header.vue?vue&type=script&lang=js&":
+/*!*************************************************************************************!*\
+  !*** ./resources/app/js/src/layouts/components/Header.vue?vue&type=script&lang=js& ***!
+  \*************************************************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Select_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Select.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/Select.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Select_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Header.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/layouts/components/Header.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
-/***/ "./resources/app/js/src/views/forms/form-elements/select/Select.vue?vue&type=template&id=1eb9f0d4&":
-/*!*********************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/Select.vue?vue&type=template&id=1eb9f0d4& ***!
-  \*********************************************************************************************************/
+/***/ "./resources/app/js/src/layouts/components/Header.vue?vue&type=style&index=0&lang=scss&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/app/js/src/layouts/components/Header.vue?vue&type=style&index=0&lang=scss& ***!
+  \**********************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/style-loader!../../../../../../node_modules/css-loader!../../../../../../node_modules/vue-loader/lib/loaders/stylePostLoader.js!../../../../../../node_modules/postcss-loader/src??ref--8-2!../../../../../../node_modules/sass-loader/dist/cjs.js??ref--8-3!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Header.vue?vue&type=style&index=0&lang=scss& */ "./node_modules/style-loader/index.js!./node_modules/css-loader/index.js!./node_modules/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/postcss-loader/src/index.js?!./node_modules/sass-loader/dist/cjs.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/layouts/components/Header.vue?vue&type=style&index=0&lang=scss&");
+/* harmony import */ var _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__);
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__) if(__WEBPACK_IMPORT_KEY__ !== 'default') (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0__[key]; }) }(__WEBPACK_IMPORT_KEY__));
+ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_style_loader_index_js_node_modules_css_loader_index_js_node_modules_vue_loader_lib_loaders_stylePostLoader_js_node_modules_postcss_loader_src_index_js_ref_8_2_node_modules_sass_loader_dist_cjs_js_ref_8_3_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_style_index_0_lang_scss___WEBPACK_IMPORTED_MODULE_0___default.a); 
+
+/***/ }),
+
+/***/ "./resources/app/js/src/layouts/components/Header.vue?vue&type=template&id=07c95f16&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/app/js/src/layouts/components/Header.vue?vue&type=template&id=07c95f16& ***!
+  \*******************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Select_vue_vue_type_template_id_1eb9f0d4___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Select.vue?vue&type=template&id=1eb9f0d4& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/Select.vue?vue&type=template&id=1eb9f0d4&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Select_vue_vue_type_template_id_1eb9f0d4___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_template_id_07c95f16___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../node_modules/vue-loader/lib??vue-loader-options!./Header.vue?vue&type=template&id=07c95f16& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/layouts/components/Header.vue?vue&type=template&id=07c95f16&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_template_id_07c95f16___WEBPACK_IMPORTED_MODULE_0__["render"]; });
 
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Select_vue_vue_type_template_id_1eb9f0d4___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectAutocomplete.vue":
-/*!**************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectAutocomplete.vue ***!
-  \**************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SelectAutocomplete_vue_vue_type_template_id_32eb1248___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SelectAutocomplete.vue?vue&type=template&id=32eb1248& */ "./resources/app/js/src/views/forms/form-elements/select/SelectAutocomplete.vue?vue&type=template&id=32eb1248&");
-/* harmony import */ var _SelectAutocomplete_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectAutocomplete.vue?vue&type=script&lang=js& */ "./resources/app/js/src/views/forms/form-elements/select/SelectAutocomplete.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _SelectAutocomplete_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _SelectAutocomplete_vue_vue_type_template_id_32eb1248___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _SelectAutocomplete_vue_vue_type_template_id_32eb1248___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/app/js/src/views/forms/form-elements/select/SelectAutocomplete.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectAutocomplete.vue?vue&type=script&lang=js&":
-/*!***************************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectAutocomplete.vue?vue&type=script&lang=js& ***!
-  \***************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectAutocomplete_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SelectAutocomplete.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectAutocomplete.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectAutocomplete_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectAutocomplete.vue?vue&type=template&id=32eb1248&":
-/*!*********************************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectAutocomplete.vue?vue&type=template&id=32eb1248& ***!
-  \*********************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectAutocomplete_vue_vue_type_template_id_32eb1248___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SelectAutocomplete.vue?vue&type=template&id=32eb1248& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectAutocomplete.vue?vue&type=template&id=32eb1248&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectAutocomplete_vue_vue_type_template_id_32eb1248___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectAutocomplete_vue_vue_type_template_id_32eb1248___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectColor.vue":
-/*!*******************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectColor.vue ***!
-  \*******************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SelectColor_vue_vue_type_template_id_a0ec40c2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SelectColor.vue?vue&type=template&id=a0ec40c2& */ "./resources/app/js/src/views/forms/form-elements/select/SelectColor.vue?vue&type=template&id=a0ec40c2&");
-/* harmony import */ var _SelectColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectColor.vue?vue&type=script&lang=js& */ "./resources/app/js/src/views/forms/form-elements/select/SelectColor.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _SelectColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _SelectColor_vue_vue_type_template_id_a0ec40c2___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _SelectColor_vue_vue_type_template_id_a0ec40c2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/app/js/src/views/forms/form-elements/select/SelectColor.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectColor.vue?vue&type=script&lang=js&":
-/*!********************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectColor.vue?vue&type=script&lang=js& ***!
-  \********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SelectColor.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectColor.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectColor_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectColor.vue?vue&type=template&id=a0ec40c2&":
-/*!**************************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectColor.vue?vue&type=template&id=a0ec40c2& ***!
-  \**************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectColor_vue_vue_type_template_id_a0ec40c2___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SelectColor.vue?vue&type=template&id=a0ec40c2& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectColor.vue?vue&type=template&id=a0ec40c2&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectColor_vue_vue_type_template_id_a0ec40c2___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectColor_vue_vue_type_template_id_a0ec40c2___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectGroupItems.vue":
-/*!************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectGroupItems.vue ***!
-  \************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SelectGroupItems_vue_vue_type_template_id_63c39c16___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SelectGroupItems.vue?vue&type=template&id=63c39c16& */ "./resources/app/js/src/views/forms/form-elements/select/SelectGroupItems.vue?vue&type=template&id=63c39c16&");
-/* harmony import */ var _SelectGroupItems_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectGroupItems.vue?vue&type=script&lang=js& */ "./resources/app/js/src/views/forms/form-elements/select/SelectGroupItems.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _SelectGroupItems_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _SelectGroupItems_vue_vue_type_template_id_63c39c16___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _SelectGroupItems_vue_vue_type_template_id_63c39c16___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/app/js/src/views/forms/form-elements/select/SelectGroupItems.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectGroupItems.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectGroupItems.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectGroupItems_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SelectGroupItems.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectGroupItems.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectGroupItems_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectGroupItems.vue?vue&type=template&id=63c39c16&":
-/*!*******************************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectGroupItems.vue?vue&type=template&id=63c39c16& ***!
-  \*******************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectGroupItems_vue_vue_type_template_id_63c39c16___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SelectGroupItems.vue?vue&type=template&id=63c39c16& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectGroupItems.vue?vue&type=template&id=63c39c16&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectGroupItems_vue_vue_type_template_id_63c39c16___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectGroupItems_vue_vue_type_template_id_63c39c16___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectIsSelectedItem.vue":
-/*!****************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectIsSelectedItem.vue ***!
-  \****************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SelectIsSelectedItem_vue_vue_type_template_id_7ad7d2e8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SelectIsSelectedItem.vue?vue&type=template&id=7ad7d2e8& */ "./resources/app/js/src/views/forms/form-elements/select/SelectIsSelectedItem.vue?vue&type=template&id=7ad7d2e8&");
-/* harmony import */ var _SelectIsSelectedItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectIsSelectedItem.vue?vue&type=script&lang=js& */ "./resources/app/js/src/views/forms/form-elements/select/SelectIsSelectedItem.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _SelectIsSelectedItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _SelectIsSelectedItem_vue_vue_type_template_id_7ad7d2e8___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _SelectIsSelectedItem_vue_vue_type_template_id_7ad7d2e8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/app/js/src/views/forms/form-elements/select/SelectIsSelectedItem.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectIsSelectedItem.vue?vue&type=script&lang=js&":
-/*!*****************************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectIsSelectedItem.vue?vue&type=script&lang=js& ***!
-  \*****************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectIsSelectedItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SelectIsSelectedItem.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectIsSelectedItem.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectIsSelectedItem_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectIsSelectedItem.vue?vue&type=template&id=7ad7d2e8&":
-/*!***********************************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectIsSelectedItem.vue?vue&type=template&id=7ad7d2e8& ***!
-  \***********************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectIsSelectedItem_vue_vue_type_template_id_7ad7d2e8___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SelectIsSelectedItem.vue?vue&type=template&id=7ad7d2e8& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectIsSelectedItem.vue?vue&type=template&id=7ad7d2e8&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectIsSelectedItem_vue_vue_type_template_id_7ad7d2e8___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectIsSelectedItem_vue_vue_type_template_id_7ad7d2e8___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectLabels.vue":
-/*!********************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectLabels.vue ***!
-  \********************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SelectLabels_vue_vue_type_template_id_d3a50f1a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SelectLabels.vue?vue&type=template&id=d3a50f1a& */ "./resources/app/js/src/views/forms/form-elements/select/SelectLabels.vue?vue&type=template&id=d3a50f1a&");
-/* harmony import */ var _SelectLabels_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectLabels.vue?vue&type=script&lang=js& */ "./resources/app/js/src/views/forms/form-elements/select/SelectLabels.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _SelectLabels_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _SelectLabels_vue_vue_type_template_id_d3a50f1a___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _SelectLabels_vue_vue_type_template_id_d3a50f1a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/app/js/src/views/forms/form-elements/select/SelectLabels.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectLabels.vue?vue&type=script&lang=js&":
-/*!*********************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectLabels.vue?vue&type=script&lang=js& ***!
-  \*********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectLabels_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SelectLabels.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectLabels.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectLabels_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectLabels.vue?vue&type=template&id=d3a50f1a&":
-/*!***************************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectLabels.vue?vue&type=template&id=d3a50f1a& ***!
-  \***************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectLabels_vue_vue_type_template_id_d3a50f1a___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SelectLabels.vue?vue&type=template&id=d3a50f1a& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectLabels.vue?vue&type=template&id=d3a50f1a&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectLabels_vue_vue_type_template_id_d3a50f1a___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectLabels_vue_vue_type_template_id_d3a50f1a___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectMultiple.vue":
-/*!**********************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectMultiple.vue ***!
-  \**********************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SelectMultiple_vue_vue_type_template_id_37886704___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SelectMultiple.vue?vue&type=template&id=37886704& */ "./resources/app/js/src/views/forms/form-elements/select/SelectMultiple.vue?vue&type=template&id=37886704&");
-/* harmony import */ var _SelectMultiple_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectMultiple.vue?vue&type=script&lang=js& */ "./resources/app/js/src/views/forms/form-elements/select/SelectMultiple.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _SelectMultiple_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _SelectMultiple_vue_vue_type_template_id_37886704___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _SelectMultiple_vue_vue_type_template_id_37886704___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/app/js/src/views/forms/form-elements/select/SelectMultiple.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectMultiple.vue?vue&type=script&lang=js&":
-/*!***********************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectMultiple.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectMultiple_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SelectMultiple.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectMultiple.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectMultiple_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectMultiple.vue?vue&type=template&id=37886704&":
-/*!*****************************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectMultiple.vue?vue&type=template&id=37886704& ***!
-  \*****************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectMultiple_vue_vue_type_template_id_37886704___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SelectMultiple.vue?vue&type=template&id=37886704& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectMultiple.vue?vue&type=template&id=37886704&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectMultiple_vue_vue_type_template_id_37886704___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectMultiple_vue_vue_type_template_id_37886704___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectSingleSelection.vue":
-/*!*****************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectSingleSelection.vue ***!
-  \*****************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SelectSingleSelection_vue_vue_type_template_id_7783ae40___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SelectSingleSelection.vue?vue&type=template&id=7783ae40& */ "./resources/app/js/src/views/forms/form-elements/select/SelectSingleSelection.vue?vue&type=template&id=7783ae40&");
-/* harmony import */ var _SelectSingleSelection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectSingleSelection.vue?vue&type=script&lang=js& */ "./resources/app/js/src/views/forms/form-elements/select/SelectSingleSelection.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _SelectSingleSelection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _SelectSingleSelection_vue_vue_type_template_id_7783ae40___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _SelectSingleSelection_vue_vue_type_template_id_7783ae40___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/app/js/src/views/forms/form-elements/select/SelectSingleSelection.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectSingleSelection.vue?vue&type=script&lang=js&":
-/*!******************************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectSingleSelection.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectSingleSelection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SelectSingleSelection.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectSingleSelection.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectSingleSelection_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectSingleSelection.vue?vue&type=template&id=7783ae40&":
-/*!************************************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectSingleSelection.vue?vue&type=template&id=7783ae40& ***!
-  \************************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectSingleSelection_vue_vue_type_template_id_7783ae40___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SelectSingleSelection.vue?vue&type=template&id=7783ae40& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectSingleSelection.vue?vue&type=template&id=7783ae40&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectSingleSelection_vue_vue_type_template_id_7783ae40___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectSingleSelection_vue_vue_type_template_id_7783ae40___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
-
-
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectValidators.vue":
-/*!************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectValidators.vue ***!
-  \************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _SelectValidators_vue_vue_type_template_id_a3c82e56___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./SelectValidators.vue?vue&type=template&id=a3c82e56& */ "./resources/app/js/src/views/forms/form-elements/select/SelectValidators.vue?vue&type=template&id=a3c82e56&");
-/* harmony import */ var _SelectValidators_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SelectValidators.vue?vue&type=script&lang=js& */ "./resources/app/js/src/views/forms/form-elements/select/SelectValidators.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-
-
-
-
-
-/* normalize component */
-
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
-  _SelectValidators_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
-  _SelectValidators_vue_vue_type_template_id_a3c82e56___WEBPACK_IMPORTED_MODULE_0__["render"],
-  _SelectValidators_vue_vue_type_template_id_a3c82e56___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
-  false,
-  null,
-  null,
-  null
-  
-)
-
-/* hot reload */
-if (false) { var api; }
-component.options.__file = "resources/app/js/src/views/forms/form-elements/select/SelectValidators.vue"
-/* harmony default export */ __webpack_exports__["default"] = (component.exports);
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectValidators.vue?vue&type=script&lang=js&":
-/*!*************************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectValidators.vue?vue&type=script&lang=js& ***!
-  \*************************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectValidators_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SelectValidators.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectValidators.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectValidators_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
-
-/***/ }),
-
-/***/ "./resources/app/js/src/views/forms/form-elements/select/SelectValidators.vue?vue&type=template&id=a3c82e56&":
-/*!*******************************************************************************************************************!*\
-  !*** ./resources/app/js/src/views/forms/form-elements/select/SelectValidators.vue?vue&type=template&id=a3c82e56& ***!
-  \*******************************************************************************************************************/
-/*! exports provided: render, staticRenderFns */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectValidators_vue_vue_type_template_id_a3c82e56___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../../../../node_modules/vue-loader/lib??vue-loader-options!./SelectValidators.vue?vue&type=template&id=a3c82e56& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/app/js/src/views/forms/form-elements/select/SelectValidators.vue?vue&type=template&id=a3c82e56&");
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectValidators_vue_vue_type_template_id_a3c82e56___WEBPACK_IMPORTED_MODULE_0__["render"]; });
-
-/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_SelectValidators_vue_vue_type_template_id_a3c82e56___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_template_id_07c95f16___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
 

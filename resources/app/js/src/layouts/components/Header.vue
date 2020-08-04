@@ -2,41 +2,63 @@
 <vs-navbar v-model="activeItem" class="flex flex-end">
     <div slot="title">
       <vs-navbar-title>
-          <img class ="logo" src="@assets/images/logo/logo-color.png">
+        <img class ="logo cursor-pointer" to="/home" src="@assets/images/logo/logo-color.png">
       </vs-navbar-title>
     </div>
+    <template v-if="!loggedIn">
+      <vs-navbar-item index="0" v-show="!hideNavbar">
+        <!-- <a class="h3" href="/app/home">Registrarme</a> -->
+        <vs-dropdown >
+          <a class="a-icon" href="#">
+            Registrarme
+            <vs-icon class="" icon="expand_more"></vs-icon>
+          </a>
 
-    <vs-navbar-item index="0" v-show="!hideNavbar">
-      <!-- <a class="h3" href="/app/home">Registrarme</a> -->
-       <vs-dropdown >
-        <a class="a-icon" href="#">
-          Registrarme
-          <vs-icon class="" icon="expand_more"></vs-icon>
-        </a>
+          <vs-dropdown-menu>
+            <vs-dropdown-item to="/auth/register/participant">
+              Registro Participante
+            </vs-dropdown-item>
+            <vs-dropdown-item to="/auth/register/expositor">
+              Registro Expositor
+            </vs-dropdown-item>
+          </vs-dropdown-menu>
+        </vs-dropdown>
+      </vs-navbar-item>
 
-        <vs-dropdown-menu>
-          <vs-dropdown-item to="/auth/register/participant">
-            Registro Participante
-          </vs-dropdown-item>
-          <vs-dropdown-item to="/auth/register/expositor">
-            Registro Expositor
-          </vs-dropdown-item>
-        </vs-dropdown-menu>
-      </vs-dropdown>
-    </vs-navbar-item>
+      <vs-navbar-item index="1" v-show="!hideNavbar">
+          <a class="h3" href="/app/room">Webinars</a>
+      </vs-navbar-item>
 
-    <vs-navbar-item index="1" v-show="!hideNavbar">
-        <a class="h3" href="/app/room">Webinars</a>
-    </vs-navbar-item>
+      <vs-navbar-item index="2" v-show="!hideNavbar">
+          <a class="h3" href="/app/fair">Contacteons</a>
+      </vs-navbar-item>
 
-    <vs-navbar-item index="2" v-show="!hideNavbar">
-        <a class="h3" href="/app/fair">Contacteons</a>
-    </vs-navbar-item>
-    <vs-navbar-item index="3" v-show="!hideNavbar">
-      <feather-icon icon="InstagramIcon" svgClasses="text-white h-4 w-4" class="p-2 circleIcon "></feather-icon>
-      <feather-icon icon="FacebookIcon" svgClasses="text-white h-4 w-4" class="p-2 circleIcon"></feather-icon>
-      <feather-icon icon="TwitterIcon" svgClasses="text-white h-4 w-4" class="p-2 circleIcon"></feather-icon>
-    </vs-navbar-item>
+      <vs-navbar-item index="3" v-show="!hideNavbar">
+        <feather-icon icon="InstagramIcon" svgClasses="text-white h-4 w-4" class="p-2 circleIcon "></feather-icon>
+        <feather-icon icon="FacebookIcon" svgClasses="text-white h-4 w-4" class="p-2 circleIcon"></feather-icon>
+        <feather-icon icon="TwitterIcon" svgClasses="text-white h-4 w-4" class="p-2 circleIcon"></feather-icon>
+      </vs-navbar-item>
+    </template>
+    <template v-else>
+      <vs-navbar-item index="0" v-show="!hideNavbar">
+          <a class="h3" href="/app/room">sostenibilidad</a>
+      </vs-navbar-item>
+      <vs-navbar-item index="1" v-show="!hideNavbar">
+          <a class="h3" href="/app/fair">Contacteons</a>
+      </vs-navbar-item>
+      <vs-navbar-item index="2" v-show="!hideNavbar">
+          <a class="h3 flex items-center" href="/app/fair">
+            <feather-icon icon="LogOutIcon"/>
+            <span>Cerrar Session</span>
+          </a>
+      </vs-navbar-item>
+      <vs-navbar-item index="3" v-show="!hideNavbar">
+          <a class="h3 mypage-nav text-center"  href="/app/setting">
+            <feather-icon icon="UsersIcon"/>
+            <div>Mi Cuenta</div>
+          </a>
+      </vs-navbar-item>
+    </template>
 </vs-navbar>
 </template>
 <script>
@@ -44,9 +66,13 @@ export default {
   props: {
     activeItem: {
       type: String,
-      required: true
+      required: false
     },
     hideNavbar: {
+      type: Boolean,
+      required: false
+    },
+    loggedIn: {
       type: Boolean,
       required: false
     }
@@ -86,7 +112,7 @@ export default {
 
   .vs-con-items {
     width: 100%;
-    margin-right: 100px;
+    /* margin-right: 100px; */
     justify-content: flex-end;
 
     .circleIcon {
@@ -98,18 +124,19 @@ export default {
       a {
         background-color:#333;
         color: white;
-        font-weight: 900;
-          /* color: rgba(var(--vs-success), 1) !important; */
       }  
     }
 
     .vs-navbar--item {
-      margin: 0 1rem;
+      margin: 0;
       a {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         padding: 2.5rem 1.5rem;
         text-transform: uppercase;
-        font-weight: 900;
+        font-weight: 700;
+        span {
+          text-transform: uppercase;
+        }
       }
 
       a:hover {
@@ -117,11 +144,18 @@ export default {
         color: white !important;
       }
 
+      a.mypage-nav {
+        background-color:#123058;
+        color:white;
+        padding: 1.5rem;
+      }
+
       .feather-icon {
         margin: 0 0.2rem;
       }
 
     }
+
   }
 
   background: #FFFFFFDD !important;

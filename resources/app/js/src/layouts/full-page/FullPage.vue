@@ -3,9 +3,51 @@
     <router-view></router-view>
   </div>
 </template>
-<style>
+<style lang="scss">
 .layout--full-page {
   width: 1200px;
   margin: auto;
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,.25);
+
+  .vs-button {
+    border-radius: 0 !important;
+  }
+
+  .cyan-light {
+    background: #8BAFB6 !important
+  }
+
+  .cyan-dark {
+    background: #00818D !important
+  }
+
+  .blue-light {
+    background: #164A8B !important
+  }
+
+  .blue-dark {
+    background: #123058 !important
+  }
+
+  .yellow-light {
+    background: #FFC700 !important
+  }
+
+  .yellow-dark {
+    background: #FA712A !important
+  }
+
+  .green-light {
+    background: #009D00 !important
+  }  
+
+  .grey-real {
+    background: #AEB4C2 !important
+  }
+
+}
+
+.font-italic {
+  font-style: italic;
 }
 </style>

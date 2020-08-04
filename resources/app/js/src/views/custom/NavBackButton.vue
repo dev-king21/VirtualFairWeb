@@ -5,13 +5,15 @@
     </vs-button>
 </template>
 <style lang="scss">
-.back-btn {
-    border-radius: 0 !important;
-    border-bottom-right-radius: 0.8rem !important;
-    padding: 0.3rem 0.8rem !important;
-    .back-text {
-        font-size: 0.6rem !important;
+.layout--full-page{
+    .back-btn {
+        border-radius: 0 !important;
+        border-bottom-right-radius: 0.8rem !important;
+        padding: 0.3rem 0.8rem !important;
+        .back-text {
+            font-size: 0.6rem !important;
+        }
+        
     }
-    
 }
 </style>

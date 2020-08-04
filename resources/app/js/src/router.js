@@ -93,7 +93,7 @@ const router = new Router({
         },
         {
           path: '/auth/register/expositor',
-          name: 'register-participant',
+          name: 'register-expositor',
           component: () => import('@/views/sign/RegisterExpositor.vue'),
           meta: {
             rule: 'editor'
@@ -167,6 +167,98 @@ const router = new Router({
           path: '/room/schedule',
           name: 'room-schedule',
           component: () => import('@/views/room/Schedule.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/room/live-video',
+          name: 'room-live',
+          component: () => import('@/views/room/LiveVideo.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/room/webinar',
+          name: 'room-webinar',
+          component: () => import('@/views/room/Webinar.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/fair/chatting',
+          name: 'fair-chatting',
+          component: () => import('@/views/chat/Chatting.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/fair/contact',
+          name: 'fair-contact',
+          component: () => import('@/views/contact/Contact.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/setting',
+          redirect: '/setting/home'
+        },
+        {
+          path: '/setting/home',
+          name: 'setting-home',
+          component: () => import('@/views/setting/Home.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/setting/profile',
+          name: 'setting-profile',
+          component: () => import('@/views/setting/Profile.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/setting/stand',
+          name: 'setting-stand',
+          component: () => import('@/views/contact/Contact.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/setting/webinar',
+          name: 'setting-webinar',
+          component: () => import('@/views/setting/Webinar.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/setting/contact',
+          name: 'setting-contact',
+          component: () => import('@/views/setting/Contact.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/setting/schedule',
+          name: 'setting-schedule',
+          component: () => import('@/views/setting/Schedule.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/setting/download',
+          name: 'setting-download',
+          component: () => import('@/views/contact/Contact.vue'),
           meta: {
             rule: 'editor'
           }

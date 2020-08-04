@@ -71,6 +71,17 @@ module.exports = {
         'white': '#ffffff',
         'grey': '#b8c2cc',
         'grey-light': '#dae1e7',
+        'real-black': '#000000',
+        'blue-dark': '#123058',
+        'blue-light': '#164A8B',
+        'cyan-dark': '#00818D',
+        'cyan-light': '#8BAFB6',
+        'yellow-light': '#FFC700',
+        'yellow-dark': '#FA712A',
+        'green-light': '#009D00',
+        'grey-real': '#AEB4C2',
+        'white-grey': '#F9FAFF',
+        'msg-send': '#DAE5EB'
       },
 
       /*
