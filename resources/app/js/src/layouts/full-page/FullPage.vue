@@ -5,10 +5,6 @@
 </template>
 <style lang="scss">
 .layout--full-page {
-  width: 1200px;
-  margin: auto;
-  box-shadow: 0 4px 20px 0 rgba(0,0,0,.25);
-
   .vs-button {
     border-radius: 0 !important;
   }

@@ -129,7 +129,7 @@ export default {
     position: fixed;
     bottom: 20px;
     text-align: right;
-    width: 1200px;
+    width: 100%;
     padding-right: 30px;
     margin: auto;
     

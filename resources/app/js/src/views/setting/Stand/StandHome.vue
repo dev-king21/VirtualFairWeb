@@ -160,8 +160,6 @@ export default {
 .setting-stand-main {
     height: calc(var(--vh, 1vh) * 100 - 86px); 
     .stand-header {
-        width: 1200px !important;
-        margin: auto;
         z-index: 90;
         .breadcrumb2 {
             background: #ffffffee;
@@ -180,15 +178,11 @@ export default {
         }
     }
     .stand-footer {
-        width: 1200px !important;
-        margin: auto;
         background: #ffffff66;
         bottom: 0;
         z-index: 90;
     }
     .stand-wrapper {
-        width: 1200px;
-        margin: auto;
         z-index: 88;
         height: calc(var(--vh, 1vh) * 100 - 86px); 
         .stand-item-wrapper {
@@ -204,7 +198,7 @@ export default {
     background-image: url("/app/images/pages/stand1.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 1200px calc(var(--vh, 1vh) * 100 - 86px) !important;
+    background-size: 100vw calc(var(--vh, 1vh) * 100 - 86px) !important;
 }
 
 .stand-social-icons {
