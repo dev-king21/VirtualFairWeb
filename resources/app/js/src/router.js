@@ -210,7 +210,7 @@ const router = new Router({
         {
           path: '/setting/home',
           name: 'setting-home',
-          component: () => import('@/views/setting/Home.vue'),
+          component: () => import('@/views/setting/SettingHome.vue'),
           meta: {
             rule: 'editor'
           }
@@ -226,7 +226,47 @@ const router = new Router({
         {
           path: '/setting/stand',
           name: 'setting-stand',
-          component: () => import('@/views/contact/Contact.vue'),
+          component: () => import('@/views/setting/Stand/StandHome.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/setting/stand/information',
+          name: 'setting-stand-info',
+          component: () => import('@/views/setting/Stand/StandInformation.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/setting/stand/brochure',
+          name: 'setting-stand-brochure',
+          component: () => import('@/views/setting/Stand/StandBrochure.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/setting/stand/video',
+          name: 'setting-stand-video',
+          component: () => import('@/views/setting/Stand/StandVideo.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/setting/stand/schedule',
+          name: 'setting-stand-schedule',
+          component: () => import('@/views/setting/Stand/StandSchedule.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/setting/stand/contact',
+          name: 'setting-stand-contact',
+          component: () => import('@/views/setting/Stand/StandContact.vue'),
           meta: {
             rule: 'editor'
           }
@@ -258,7 +298,7 @@ const router = new Router({
         {
           path: '/setting/download',
           name: 'setting-download',
-          component: () => import('@/views/contact/Contact.vue'),
+          component: () => import('@/views/setting/Download.vue'),
           meta: {
             rule: 'editor'
           }

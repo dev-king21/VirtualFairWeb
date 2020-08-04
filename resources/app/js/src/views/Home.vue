@@ -1,6 +1,6 @@
 <template>
 <div class="w-full">
-  <app-header activeItem="0" :loggedIn="true"></app-header>
+  <app-header activeItem="0" :loggedIn="loggedIn"></app-header>
   <div class="flex w-full flex-col home-bg-img justify-between home-main">
     <template v-if="!loggedIn">
       <div class="w-full">

@@ -50,4 +50,8 @@
 .font-italic {
   font-style: italic;
 }
+
+.uppercase {
+  text-transform: uppercase;
+}
 </style>

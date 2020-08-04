@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <app-header activeItem="0"></app-header>
-        <div class="w-full schedule-main">
+        <div class="w-full setting-webinar-main">
             <bread-crumb icon="MonitorIcon" text="webinar" />
             <div class="w-full bg-white-grey">
                 <div class="vx-row page-content">
@@ -96,7 +96,7 @@ export default {
 </script>
 <style lang="scss">
 
-.schedule-main {
+.setting-webinar-main {
   .page-content{
       background: white;
 

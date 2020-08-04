@@ -47,7 +47,7 @@ export default {
 </script>
 <style lang="scss">
 .contact-main {
-  height: calc(var(--vh, 1vh) * 100 - 150px);
+  min-height: calc(var(--vh, 1vh) * 100 - 150px);
 
   .contact-item {
       border: 1px solid #f2f2f2;
