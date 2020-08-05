@@ -36,6 +36,30 @@ const router = new Router({
           }
         },
         {
+          path: '/home/webinar',
+          name: 'home-webinar',
+          component: () => import('@/views/Webinar.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/home/sponsor',
+          name: 'home-sponsor',
+          component: () => import('@/views/contact/Sponsor.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/home/contact',
+          name: 'home-contact',
+          component: () => import('@/views/contact/Contact.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
           path: '/fair',
           name: 'fair-home',
           component: () => import('@/views/fair/FairCountry.vue'),
@@ -196,9 +220,9 @@ const router = new Router({
           }
         },
         {
-          path: '/fair/contact',
-          name: 'fair-contact',
-          component: () => import('@/views/contact/Contact.vue'),
+          path: '/fair/sponsor',
+          name: 'fair-sponsor',
+          component: () => import('@/views/contact/Sponsor.vue'),
           meta: {
             rule: 'editor'
           }

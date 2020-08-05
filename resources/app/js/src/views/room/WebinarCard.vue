@@ -1,5 +1,5 @@
 <template>
-    <div class="webinar-card card-border" :class="{'card-border': !noborder}">
+    <div class="room-webinar-card card-border" :class="{'card-border': !noborder}">
         <div class="relative card-img">
             <img class="relative responsive" :src="require(`@assets/images/pages/${user_img}`)">
             <div class="card-over text-white flex flex-col justify-between" >
@@ -78,7 +78,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.webinar-card {
+.room-webinar-card {
     background: white;
     margin: 1rem;
     font-size: 1rem;

@@ -2,27 +2,56 @@
     <div class="w-full">
         <app-header activeItem="0"></app-header>
         <bread-crumb 
-            icon="MonitorIcon" text="patrocinadores" />
-        <div class="flex w-full flex-col px-8 py-6 bg-white-grey contact-main">
-            <div class="bg-white px-4">
-                <div class="h3 text-center my-4">
-                    Gracias a la colaboracion de nuestros patrocinadores este evento fue posible
+            icon="MonitorIcon" text="contactenos" />
+        <div class="flex w-full justify-center bg-white-grey home-contact-main">
+            <div class="bg-white my-4 py-2 w-1/2 contact-form">
+                <div class="h1 text-center mt-8">
+                    Dejanos tus datos y te contactenos
                 </div>
-                <div class="vx-row">
-                    <div class="vx-col lg:w-1/5 md:w-1/5 sm:w-1/5 xs:w-1/5"
-                        :key="`contact-item-${index}`" v-for="(item, index) in all_contacts">
-                        <div class="contact-item m-4">
-                            <div class="text-center p-2">
-                                <img class="contact-logo" 
-                                :src="(index % 2 === 0)? require('@assets/images/pages/maintenance.png') : require('@assets/images/pages/maintenance-2.png')"/>
-                            </div>
-                            <div class="text-center my-3">
-                                <vs-button class="cyan-dark contact-btn">contactar</vs-button>
-                            </div>
-                        </div>
+                <div class="vx-row px-20 mt-8">
+                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6">
+                        <vs-input class="w-4/5" color="success" placeholder="Numbre"></vs-input>
+                    </div>
+                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6">
+                        <vs-input class="w-4/5" color="success" placeholder="Apellido"></vs-input>
+                    </div>
+                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6">
+                        <vs-input class="w-4/5" color="success" placeholder="Email"></vs-input>
+                    </div>
+                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6">
+                        <vs-input class="w-4/5" color="success" placeholder="Telefono"></vs-input>
+                    </div>
+                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6">
+                        <vs-input class="w-4/5" color="success" placeholder="Compania"></vs-input>
+                    </div>
+                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6">
+                        <vs-input class="w-4/5" color="success" placeholder="Posicion"></vs-input>
+                    </div>
+                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6">
+                        <vs-input class="w-4/5" color="success" placeholder="Seleccione un Pais"></vs-input>
+                    </div>
+                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6">
+                        <vs-input class="w-4/5" color="success" placeholder="Seleccione la Region"></vs-input>
+                    </div>
+                    <div class="vx-col w-full">
+                        <vs-textarea class="w-4/5" color="success" height="100px" placeholder="Comentarios" lines="5"></vs-textarea>
                     </div>
                 </div>
+                <div class="flex items-center justify-center mt-8">
+                    <feather-icon icon="FacebookIcon" />
+                    <feather-icon icon="InstagramIcon" />
+                    <feather-icon icon="LinkedinIcon" />
+                    <feather-icon icon="WhatsappIcon" />
+                    <feather-icon icon="YoutubeIcon" />
+                </div>
+                <div class="mt-8 text-center">
+                    <vs-button class="cyan-dark register-btn">CONTACTAR</vs-button>
+                </div>
+                <div class="text-right mr-2" style="margin-top: -50px;" >
+                    <img src="@assets/images/logo/watermark.png">
+                </div>
             </div>
+            
         </div>
     </div>
 </template>
@@ -46,27 +75,58 @@ export default {
 }
 </script>
 <style lang="scss">
-.contact-main {
+.watermark {
+    position: absolute;
+    bottom: 20px;
+    text-align: right;
+    width: 50%;
+    right: 25%;
+    padding-right: 30px;
+    margin: auto;
+}
+
+.home-contact-main {
   min-height: calc(var(--vh, 1vh) * 100 - 150px);
 
-  .contact-item {
-      border: 1px solid #f2f2f2;
-  }
+  .contact-form {
+    input, textarea {
+        border-radius: 0 !important;
+        font-size: 0.9rem !important;
+        padding: 0.6rem !important;
+    }
+    .vs-input--placeholder {
+        font-size: 0.9rem !important;
+    }
+    .input-span-placeholder {
+        padding: 0.6rem !important;
+        color: #333 !important;
+    }
 
-  .contact-logo {
-      max-width: 100%;
-      width: auto;
-      height: 10rem; 
-  }
-  
-  .contact-btn {
-    padding: 0.5rem 1.5rem;
-    font-size: 1rem;
-    text-transform: uppercase;  
+    .vs-con-textarea {
+        border-radius: 0 !important;
+    }
+    .con-slot-label {
+        font-size: 0.8rem
+    }
+
+    .register-btn {
+        border-radius: 0px !important;
+        border-top-left-radius: 0.6rem !important;
+        font-size: 0.8rem !important;
+        padding: 0.5rem 1rem !important;
+    }
+
+    .watermark {
+        position: absolute;
+        bottom: 20px;
+        text-align: right;
+        /* width: 100 */
+    }
   }
 
   .vx-row {
-      margin: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .vx-col {

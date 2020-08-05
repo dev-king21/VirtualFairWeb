@@ -965,6 +965,13 @@ ol {
   background-size: 100vw 100vh;
 }
 
+[dir] .layout--full-page .home-weinar-bg-img {
+  background-image: url("/app/images/pages/setting-background.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 100vw 100%;
+}
+
 [dir] .layout--full-page .setting-bg-img {
   background-image: url("/app/images/pages/setting-background.jpg");
   background-position: center;

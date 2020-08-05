@@ -65,7 +65,7 @@ export default {
     height: calc(var(--vh, 1vh) * 100 - 86px);
 
     .setting-wrapper {
-        width: 65%;
+        width: 60%;
         height: 100%;
         .buttons-row {
             height: 30%;

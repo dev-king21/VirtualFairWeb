@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <app-header activeItem="0"></app-header>
-        <div class="w-full schedule-main">
+        <div class="w-full room-schedule-main">
             <bread-crumb icon="BookIcon" text="agenda del congreso" />
             <div class="w-full">
                 <div class="vx-row page-content">
@@ -81,7 +81,7 @@ export default {
 </script>
 <style lang="scss">
 
-.schedule-main {
+.room-schedule-main {
   .page-content{
       background: white;
 

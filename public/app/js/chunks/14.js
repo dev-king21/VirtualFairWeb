@@ -199,7 +199,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, "[dir] .schedule-main .page-content {\n  background: white;\n}\n.schedule-main .page-content .event-panel {\n  font-size: 0.8rem;\n  font-weight: 900;\n  color: #555;\n}\n[dir] .schedule-main .page-content .event-panel {\n  padding: 0 !important;\n}\n[dir=ltr] .schedule-main .page-content .event-panel {\n  border-right: 1px solid silver;\n}\n[dir=rtl] .schedule-main .page-content .event-panel {\n  border-left: 1px solid silver;\n}\n.schedule-main .page-content .event-panel .stroke-text {\n  color: transparent;\n  -webkit-text-fill-color: transparent;\n  -webkit-text-stroke-width: 1px;\n  -webkit-text-stroke-color: #EEEEEEEE;\n}\n.schedule-main .page-content .event-los-panel {\n  font-size: 0.8rem;\n  font-weight: 900;\n  color: #555;\n}\n[dir] .schedule-main .page-content .event-los-panel {\n  padding: 0 !important;\n}\n.schedule-main .page-content .event-los-panel .stroke-text {\n  color: transparent;\n  -webkit-text-fill-color: transparent;\n  -webkit-text-stroke-width: 1px;\n  -webkit-text-stroke-color: #EEEEEEEE;\n}\n[dir] .schedule-main .vx-row {\n  margin: 0 !important;\n}\n[dir] .schedule-main .vx-col {\n  padding: 0 !important;\n}", ""]);
+exports.push([module.i, "[dir] .room-schedule-main .page-content {\n  background: white;\n}\n.room-schedule-main .page-content .event-panel {\n  font-size: 0.8rem;\n  font-weight: 900;\n  color: #555;\n}\n[dir] .room-schedule-main .page-content .event-panel {\n  padding: 0 !important;\n}\n[dir=ltr] .room-schedule-main .page-content .event-panel {\n  border-right: 1px solid silver;\n}\n[dir=rtl] .room-schedule-main .page-content .event-panel {\n  border-left: 1px solid silver;\n}\n.room-schedule-main .page-content .event-panel .stroke-text {\n  color: transparent;\n  -webkit-text-fill-color: transparent;\n  -webkit-text-stroke-width: 1px;\n  -webkit-text-stroke-color: #EEEEEEEE;\n}\n.room-schedule-main .page-content .event-los-panel {\n  font-size: 0.8rem;\n  font-weight: 900;\n  color: #555;\n}\n[dir] .room-schedule-main .page-content .event-los-panel {\n  padding: 0 !important;\n}\n.room-schedule-main .page-content .event-los-panel .stroke-text {\n  color: transparent;\n  -webkit-text-fill-color: transparent;\n  -webkit-text-stroke-width: 1px;\n  -webkit-text-stroke-color: #EEEEEEEE;\n}\n[dir] .room-schedule-main .vx-row {\n  margin: 0 !important;\n}\n[dir] .room-schedule-main .vx-col {\n  padding: 0 !important;\n}", ""]);
 
 // exports
 
@@ -218,7 +218,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".schedule-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .schedule-card {\n  background: white;\n  margin: 1rem;\n}\n.schedule-card .reserved {\n  height: 1.6rem;\n}\n.schedule-card .reserved span {\n  font-size: 0.6rem;\n}\n[dir] .schedule-card .reserved span {\n  padding: 0.5rem;\n  background: #FFC700;\n}\n.schedule-card .user-img {\n  height: 4rem !important;\n  width: auto;\n}\n[dir] .schedule-card .user-img {\n  border-radius: 50%;\n  background-color: #33333355;\n}\n.schedule-card .event-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .schedule-card .event-btn {\n  padding: 0.8rem 0.6rem !important;\n}\n[dir] .schedule-card .event-btn.p-big {\n  padding: 0.8rem 1.2rem !important;\n}\n.schedule-card .desc-info {\n  font-size: 0.9rem;\n  font-style: italic;\n}\n[dir] .schedule-card .desc-info {\n  padding: 0 1rem;\n}\n.schedule-card .user-info {\n  font-size: 0.9rem;\n}\n[dir] .card-border {\n  border: 1px solid #E2E2E2;\n}", ""]);
+exports.push([module.i, ".room-schedule-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .room-schedule-card {\n  background: white;\n  margin: 1rem;\n}\n.room-schedule-card .reserved {\n  height: 1.6rem;\n}\n.room-schedule-card .reserved span {\n  font-size: 0.6rem;\n}\n[dir] .room-schedule-card .reserved span {\n  padding: 0.5rem;\n  background: #FFC700;\n}\n.room-schedule-card .user-img {\n  height: 4rem !important;\n  width: auto;\n}\n[dir] .room-schedule-card .user-img {\n  border-radius: 50%;\n  background-color: #33333355;\n}\n.room-schedule-card .event-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .room-schedule-card .event-btn {\n  padding: 0.8rem 0.6rem !important;\n}\n[dir] .room-schedule-card .event-btn.p-big {\n  padding: 0.8rem 1.2rem !important;\n}\n.room-schedule-card .desc-info {\n  font-size: 0.9rem;\n  font-style: italic;\n}\n[dir] .room-schedule-card .desc-info {\n  padding: 0 1rem;\n}\n.room-schedule-card .user-info {\n  font-size: 0.9rem;\n}\n[dir] .card-border {\n  border: 1px solid #E2E2E2;\n}", ""]);
 
 // exports
 
@@ -308,7 +308,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "w-full schedule-main" },
+        { staticClass: "w-full room-schedule-main" },
         [
           _c("bread-crumb", {
             attrs: { icon: "BookIcon", text: "agenda del congreso" }
@@ -473,7 +473,10 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "schedule-card", class: { "card-border": !_vm.noborder } },
+    {
+      staticClass: "room-schedule-card",
+      class: { "card-border": !_vm.noborder }
+    },
     [
       _c(
         "div",

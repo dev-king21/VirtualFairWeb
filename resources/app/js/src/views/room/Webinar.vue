@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <app-header activeItem="0"></app-header>
-        <div class="w-full schedule-main">
+        <div class="w-full room-webinar-main">
             <bread-crumb icon="MonitorIcon" text="webinar" />
             <div class="w-full bg-white-grey">
                 <div class="vx-row page-content">
@@ -77,7 +77,7 @@ export default {
 </script>
 <style lang="scss">
 
-.schedule-main {
+.room-webinar-main {
   .page-content{
       background: white;
 
@@ -117,119 +117,5 @@ export default {
       padding: 0 !important;
   }
 }
-
-/* .schedule-main {
-  .page-content{
-      background: white;
-      .calendar-panel {
-        background: rgb(249, 250, 255) !important;  
-      }
-
-      .event-panel {
-        padding: 0 !important;
-        border-right: 1px solid silver;
-        font-size: 0.8rem;
-        font-weight: 900;
-        color: #555;
-        
-        .stroke-text {
-            color: transparent;
-            -webkit-text-fill-color: transparent; 
-            -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: #EEEEEEEE;
-        }
-      }
-
-       .event-los-panel {
-        padding: 0 !important;
-        font-size: 0.8rem;
-        font-weight: 900;
-        color: #555;
-        
-        .stroke-text {
-            color: transparent;
-            -webkit-text-fill-color: transparent; 
-            -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: #EEEEEEEE;
-        }
-      }
-
-  }
-  .vx-row {
-      margin: 0 !important;
-  }
-
-  .vx-col {
-      padding: 0 !important;
-  }
-
-  .rounded-btn {
-      border-radius: 1.5rem !important;
-  }
-  .event-schedule-color {
-      color: rgb(128, 173, 116)
-  }
-
-  
-}
-.left-rounded {
-    border-top-left-radius: 1.5rem;
-    border-bottom-left-radius: 1.5rem;
-    padding: 0.6rem 0.4rem 0.6rem 1.5rem;
-    color: white;
-    font-size: 0.8rem;
-}
-
-.event-color {
-    background: #00818D !important;
-}
-
-.event-second-color {
-    background: rgb(247, 198, 95) !important;
-}
-
-.event-active-color {
-    background: #283ac4 !important;
-}
-
-.event-inactive-color {
-    background: #ababab !important;
-}
-
-.los-event-color {
-    background: #164A8B !important;
-}
-
-.user-img {
-    border-radius: 0.6rem;
-    background-color: #33333355;
-    height: 4rem !important;
-    width: auto;
-}
-.desc-info {
-    font-size: 0.8rem;
-    padding: 0 2rem;
-    font-style: italic;
-    font-weight: 900;
-}
-
-.user-info {
-    font-size: 0.7rem;
-}
-
-.topleft-corner-btn {
-    border-radius: 0 !important;
-    border-top-left-radius:  0.5rem !important;
-}
-.topright-corner-btn {
-    border-radius: 0 !important;
-    border-top-right-radius:  0.5rem !important;
-}
-
-.event-btn {
-    font-size: 0.6rem !important;
-    padding: 0.8rem 0.6rem !important;
-} */
-
 
 </style>

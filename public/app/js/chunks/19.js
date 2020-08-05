@@ -121,8 +121,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -149,7 +147,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".watermark {\n  position: fixed;\n  bottom: 20px;\n  width: 100%;\n}[dir] .watermark {\n  margin: auto;\n}[dir=ltr] .watermark {\n  text-align: right;\n  padding-right: 30px;\n}[dir=rtl] .watermark {\n  text-align: left;\n  padding-left: 30px;\n}\n.participant-main {\n  height: calc(var(--vh, 1vh) * 100 - 86px);\n}\n[dir] .participant-main .left-panel {\n  background: #283ac4;\n}\n.participant-main .left-panel .think-text {\n  font-weight: bold;\n  text-transform: uppercase;\n  font-size: 5rem;\n}\n[dir] .participant-main .left-panel .think-text {\n  border: 1px solid white;\n  margin: 0 8rem;\n}\n.participant-main .left-panel .left-content {\n  height: 100%;\n}\n[dir] .participant-main .right-panel {\n  background: white !important;\n}\n.participant-main .right-panel input, .participant-main .right-panel textarea {\n  font-size: 0.9rem !important;\n}\n[dir] .participant-main .right-panel input, [dir] .participant-main .right-panel textarea {\n  border-radius: 0 !important;\n  padding: 0.6rem !important;\n}\n.participant-main .right-panel .vs-input--placeholder {\n  font-size: 0.9rem !important;\n}\n.participant-main .right-panel .input-span-placeholder {\n  color: #333 !important;\n}\n[dir] .participant-main .right-panel .input-span-placeholder {\n  padding: 0.6rem !important;\n}\n[dir] .participant-main .right-panel .vs-con-textarea {\n  border-radius: 0 !important;\n}\n.participant-main .right-panel .con-slot-label {\n  font-size: 0.8rem;\n}\n.participant-main .right-panel .register-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .participant-main .right-panel .register-btn {\n  border-radius: 0px !important;\n  background: #67b351 !important;\n  padding: 0.5rem 1rem !important;\n}\n[dir=ltr] .participant-main .right-panel .register-btn {\n  border-top-left-radius: 0.6rem !important;\n}\n[dir=rtl] .participant-main .right-panel .register-btn {\n  border-top-right-radius: 0.6rem !important;\n}", ""]);
+exports.push([module.i, ".watermark {\n  position: fixed;\n  bottom: 20px;\n  width: 100%;\n}[dir] .watermark {\n  margin: auto;\n}[dir=ltr] .watermark {\n  text-align: right;\n  padding-right: 30px;\n}[dir=rtl] .watermark {\n  text-align: left;\n  padding-left: 30px;\n}\n.participant-main {\n  min-height: calc(var(--vh, 1vh) * 100 - 86px);\n}\n[dir] .participant-main .left-panel {\n  background: #283ac4;\n}\n.participant-main .left-panel .think-text {\n  font-weight: bold;\n  text-transform: uppercase;\n  font-size: 5rem;\n}\n[dir] .participant-main .left-panel .think-text {\n  border: 1px solid white;\n  margin: 0 8rem;\n}\n.participant-main .left-panel .left-content {\n  height: 100%;\n}\n[dir] .participant-main .right-panel {\n  background: white !important;\n}\n.participant-main .right-panel input, .participant-main .right-panel textarea {\n  font-size: 0.9rem !important;\n}\n[dir] .participant-main .right-panel input, [dir] .participant-main .right-panel textarea {\n  border-radius: 0 !important;\n  padding: 0.6rem !important;\n}\n.participant-main .right-panel .vs-input--placeholder {\n  font-size: 0.9rem !important;\n}\n.participant-main .right-panel .input-span-placeholder {\n  color: #333 !important;\n}\n[dir] .participant-main .right-panel .input-span-placeholder {\n  padding: 0.6rem !important;\n}\n[dir] .participant-main .right-panel .vs-con-textarea {\n  border-radius: 0 !important;\n}\n.participant-main .right-panel .con-slot-label {\n  font-size: 0.8rem;\n}\n.participant-main .right-panel .register-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .participant-main .right-panel .register-btn {\n  padding: 0.8rem 1rem !important;\n}\n.participant-main .right-panel .attach-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .participant-main .right-panel .attach-btn {\n  padding: 0.8rem 1rem !important;\n}", ""]);
 
 // exports
 
@@ -214,54 +212,41 @@ var render = function() {
           _c(
             "div",
             {
-              staticClass: "vx-col w-full lg:w-1/2 sm:w-1/2 xs:w-1/2 left-panel"
+              staticClass:
+                "vx-col flex flex-col justify-between  w-full lg:w-1/2 sm:w-1/2 xs:w-1/2 left-panel"
             },
             [
+              _c("div", { staticClass: "flex items-center m-4 text-white" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "flex items-center cursor-pointer",
+                    on: {
+                      click: function($event) {
+                        return _vm.$router.back()
+                      }
+                    }
+                  },
+                  [
+                    _c("feather-icon", { attrs: { icon: "ArrowLeftIcon" } }),
+                    _vm._v(" "),
+                    _c("span", { staticClass: "ml-2" }, [_vm._v("VOLVER")])
+                  ],
+                  1
+                )
+              ]),
+              _vm._v(" "),
+              _vm._m(0),
+              _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "flex flex-col justify-between left-content" },
+                {
+                  staticClass:
+                    "flex items-center h6 ml-6 mt-base mb-base text-white"
+                },
                 [
-                  _c(
-                    "div",
-                    { staticClass: "flex items-center m-4 text-white" },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "flex items-center cursor-pointer",
-                          on: {
-                            click: function($event) {
-                              return _vm.$router.back()
-                            }
-                          }
-                        },
-                        [
-                          _c("feather-icon", {
-                            attrs: { icon: "ArrowLeftIcon" }
-                          }),
-                          _vm._v(" "),
-                          _c("span", { staticClass: "ml-2" }, [
-                            _vm._v("VOLVER")
-                          ])
-                        ],
-                        1
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _vm._m(0),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "flex items-center h6 ml-6 mt-base mb-base text-white"
-                    },
-                    [
-                      _vm._v(
-                        "\n                    *ESPACIO PARA LOGO Y BANNER PRINCIPAL DEL EVENTO\n                "
-                      )
-                    ]
+                  _vm._v(
+                    "\n                *ESPACIO PARA LOGO Y BANNER PRINCIPAL DEL EVENTO\n            "
                   )
                 ]
               )
@@ -277,7 +262,7 @@ var render = function() {
             [
               _vm._m(1),
               _vm._v(" "),
-              _c("div", { staticClass: "vx-row px-10" }, [
+              _c("div", { staticClass: "vx-row px-20" }, [
                 _c(
                   "div",
                   {
@@ -442,22 +427,21 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "vx-col w-full" },
+                  { staticClass: "vx-col w-full my-4" },
                   [
-                    _c("vs-textarea", {
-                      staticClass: "w-full",
-                      attrs: {
-                        color: "success",
-                        height: "100px",
-                        placeholder: "Comentarios",
-                        lines: "5"
-                      }
-                    })
+                    _vm._v(
+                      "\n                    Agregar fotograpia o logotipo "
+                    ),
+                    _c(
+                      "vs-button",
+                      { staticClass: "cyan-light ml-2 attach-btn" },
+                      [_vm._v("Adjuntar")]
+                    )
                   ],
                   1
                 ),
                 _vm._v(" "),
-                _c("div", { staticClass: "vx-col w-full mb-4" }, [
+                _c("div", { staticClass: "vx-col w-full mb-2" }, [
                   _vm._v(
                     "\n                    Seleccione un area de interes\n                "
                   )
@@ -690,9 +674,22 @@ var render = function() {
                 _vm._v(" "),
                 _c(
                   "div",
+                  { staticClass: "vx-col w-full mb-4 text-center" },
+                  [
+                    _c("vs-button", { staticClass: "cyan-dark register-btn" }, [
+                      _vm._v(
+                        "\n                        REGISTRARME\n                    "
+                      )
+                    ])
+                  ],
+                  1
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
                   {
                     staticClass:
-                      "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mt-base"
+                      "vx-col flex justify-center w-full text-center mb-4"
                   },
                   [
                     _c(
@@ -711,30 +708,14 @@ var render = function() {
                     )
                   ],
                   1
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mt-base"
-                  },
-                  [
-                    _c("vs-button", { staticClass: "register-btn" }, [
-                      _vm._v(
-                        "\n                        REGISTRARME\n                    "
-                      )
-                    ])
-                  ],
-                  1
                 )
-              ])
+              ]),
+              _vm._v(" "),
+              _vm._m(2)
             ]
           )
         ]
-      ),
-      _vm._v(" "),
-      _vm._m(2)
+      )
     ],
     1
   )
@@ -752,11 +733,11 @@ var staticRenderFns = [
       ]),
       _vm._v(" "),
       _c("div", { staticClass: "text-center text-white think-text" }, [
-        _vm._v("\n                        Think "),
+        _vm._v("\n                    Think "),
         _c("br"),
-        _vm._v("\n                        Outside "),
+        _vm._v("\n                    Outside "),
         _c("br"),
-        _vm._v(" \n                        The Box\n                    ")
+        _vm._v(" \n                    The Box\n                ")
       ])
     ])
   },
@@ -776,11 +757,18 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "watermark text-right" }, [
-      _c("img", {
-        attrs: { src: __webpack_require__(/*! @assets/images/logo/watermark.png */ "./resources/app/assets/images/logo/watermark.png") }
-      })
-    ])
+    return _c(
+      "div",
+      {
+        staticClass: "text-right mr-2",
+        staticStyle: { "margin-top": "-50px" }
+      },
+      [
+        _c("img", {
+          attrs: { src: __webpack_require__(/*! @assets/images/logo/watermark.png */ "./resources/app/assets/images/logo/watermark.png") }
+        })
+      ]
+    )
   }
 ]
 render._withStripped = true

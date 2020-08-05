@@ -39,6 +39,35 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -71,7 +100,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".contact-main {\n  min-height: calc(var(--vh, 1vh) * 100 - 150px);\n}\n[dir] .contact-main .contact-item {\n  border: 1px solid #f2f2f2;\n}\n.contact-main .contact-logo {\n  max-width: 100%;\n  width: auto;\n  height: 10rem;\n}\n.contact-main .contact-btn {\n  font-size: 1rem;\n  text-transform: uppercase;\n}\n[dir] .contact-main .contact-btn {\n  padding: 0.5rem 1.5rem;\n}\n[dir] .contact-main .vx-row {\n  margin: 0 !important;\n}\n[dir] .contact-main .vx-col {\n  padding: 0 !important;\n}", ""]);
+exports.push([module.i, ".watermark {\n  position: absolute;\n  bottom: 20px;\n  width: 50%;\n}[dir] .watermark {\n  margin: auto;\n}[dir=ltr] .watermark {\n  text-align: right;\n  right: 25%;\n  padding-right: 30px;\n}[dir=rtl] .watermark {\n  text-align: left;\n  left: 25%;\n  padding-left: 30px;\n}\n.home-contact-main {\n  min-height: calc(var(--vh, 1vh) * 100 - 150px);\n}\n.home-contact-main .contact-form input, .home-contact-main .contact-form textarea {\n  font-size: 0.9rem !important;\n}\n[dir] .home-contact-main .contact-form input, [dir] .home-contact-main .contact-form textarea {\n  border-radius: 0 !important;\n  padding: 0.6rem !important;\n}\n.home-contact-main .contact-form .vs-input--placeholder {\n  font-size: 0.9rem !important;\n}\n.home-contact-main .contact-form .input-span-placeholder {\n  color: #333 !important;\n}\n[dir] .home-contact-main .contact-form .input-span-placeholder {\n  padding: 0.6rem !important;\n}\n[dir] .home-contact-main .contact-form .vs-con-textarea {\n  border-radius: 0 !important;\n}\n.home-contact-main .contact-form .con-slot-label {\n  font-size: 0.8rem;\n}\n.home-contact-main .contact-form .register-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .home-contact-main .contact-form .register-btn {\n  border-radius: 0px !important;\n  padding: 0.5rem 1rem !important;\n}\n[dir=ltr] .home-contact-main .contact-form .register-btn {\n  border-top-left-radius: 0.6rem !important;\n}\n[dir=rtl] .home-contact-main .contact-form .register-btn {\n  border-top-right-radius: 0.6rem !important;\n}\n.home-contact-main .contact-form .watermark {\n  position: absolute;\n  bottom: 20px;\n  /* width: 100 */\n}\n[dir=ltr] .home-contact-main .contact-form .watermark {\n  text-align: right;\n}\n[dir=rtl] .home-contact-main .contact-form .watermark {\n  text-align: left;\n}\n[dir=ltr] .home-contact-main .vx-row {\n  margin-left: 0 !important;\n  margin-right: 0 !important;\n}\n[dir=rtl] .home-contact-main .vx-row {\n  margin-right: 0 !important;\n  margin-left: 0 !important;\n}\n[dir] .home-contact-main .vx-col {\n  padding: 0 !important;\n}", ""]);
 
 // exports
 
@@ -130,65 +159,197 @@ var render = function() {
       _c("app-header", { attrs: { activeItem: "0" } }),
       _vm._v(" "),
       _c("bread-crumb", {
-        attrs: { icon: "MonitorIcon", text: "patrocinadores" }
+        attrs: { icon: "MonitorIcon", text: "contactenos" }
       }),
       _vm._v(" "),
       _c(
         "div",
         {
           staticClass:
-            "flex w-full flex-col px-8 py-6 bg-white-grey contact-main"
+            "flex w-full justify-center bg-white-grey home-contact-main"
         },
         [
-          _c("div", { staticClass: "bg-white px-4" }, [
-            _c("div", { staticClass: "h3 text-center my-4" }, [
+          _c("div", { staticClass: "bg-white my-4 py-2 w-1/2 contact-form" }, [
+            _c("div", { staticClass: "h1 text-center mt-8" }, [
               _vm._v(
-                "\n                Gracias a la colaboracion de nuestros patrocinadores este evento fue posible\n            "
+                "\n                Dejanos tus datos y te contactenos\n            "
+              )
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "vx-row px-20 mt-8" }, [
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6"
+                },
+                [
+                  _c("vs-input", {
+                    staticClass: "w-4/5",
+                    attrs: { color: "success", placeholder: "Numbre" }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6"
+                },
+                [
+                  _c("vs-input", {
+                    staticClass: "w-4/5",
+                    attrs: { color: "success", placeholder: "Apellido" }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6"
+                },
+                [
+                  _c("vs-input", {
+                    staticClass: "w-4/5",
+                    attrs: { color: "success", placeholder: "Email" }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6"
+                },
+                [
+                  _c("vs-input", {
+                    staticClass: "w-4/5",
+                    attrs: { color: "success", placeholder: "Telefono" }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6"
+                },
+                [
+                  _c("vs-input", {
+                    staticClass: "w-4/5",
+                    attrs: { color: "success", placeholder: "Compania" }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6"
+                },
+                [
+                  _c("vs-input", {
+                    staticClass: "w-4/5",
+                    attrs: { color: "success", placeholder: "Posicion" }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6"
+                },
+                [
+                  _c("vs-input", {
+                    staticClass: "w-4/5",
+                    attrs: {
+                      color: "success",
+                      placeholder: "Seleccione un Pais"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6"
+                },
+                [
+                  _c("vs-input", {
+                    staticClass: "w-4/5",
+                    attrs: {
+                      color: "success",
+                      placeholder: "Seleccione la Region"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "vx-col w-full" },
+                [
+                  _c("vs-textarea", {
+                    staticClass: "w-4/5",
+                    attrs: {
+                      color: "success",
+                      height: "100px",
+                      placeholder: "Comentarios",
+                      lines: "5"
+                    }
+                  })
+                ],
+                1
               )
             ]),
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "vx-row" },
-              _vm._l(_vm.all_contacts, function(item, index) {
-                return _c(
-                  "div",
-                  {
-                    key: "contact-item-" + index,
-                    staticClass: "vx-col lg:w-1/5 md:w-1/5 sm:w-1/5 xs:w-1/5"
-                  },
-                  [
-                    _c("div", { staticClass: "contact-item m-4" }, [
-                      _c("div", { staticClass: "text-center p-2" }, [
-                        _c("img", {
-                          staticClass: "contact-logo",
-                          attrs: {
-                            src:
-                              index % 2 === 0
-                                ? __webpack_require__(/*! @assets/images/pages/maintenance.png */ "./resources/app/assets/images/pages/maintenance.png")
-                                : __webpack_require__(/*! @assets/images/pages/maintenance-2.png */ "./resources/app/assets/images/pages/maintenance-2.png")
-                          }
-                        })
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "text-center my-3" },
-                        [
-                          _c(
-                            "vs-button",
-                            { staticClass: "cyan-dark contact-btn" },
-                            [_vm._v("contactar")]
-                          )
-                        ],
-                        1
-                      )
-                    ])
-                  ]
-                )
-              }),
-              0
-            )
+              { staticClass: "flex items-center justify-center mt-8" },
+              [
+                _c("feather-icon", { attrs: { icon: "FacebookIcon" } }),
+                _vm._v(" "),
+                _c("feather-icon", { attrs: { icon: "InstagramIcon" } }),
+                _vm._v(" "),
+                _c("feather-icon", { attrs: { icon: "LinkedinIcon" } }),
+                _vm._v(" "),
+                _c("feather-icon", { attrs: { icon: "WhatsappIcon" } }),
+                _vm._v(" "),
+                _c("feather-icon", { attrs: { icon: "YoutubeIcon" } })
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "mt-8 text-center" },
+              [
+                _c("vs-button", { staticClass: "cyan-dark register-btn" }, [
+                  _vm._v("CONTACTAR")
+                ])
+              ],
+              1
+            ),
+            _vm._v(" "),
+            _vm._m(0)
           ])
         ]
       )
@@ -196,10 +357,39 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      {
+        staticClass: "text-right mr-2",
+        staticStyle: { "margin-top": "-50px" }
+      },
+      [
+        _c("img", {
+          attrs: { src: __webpack_require__(/*! @assets/images/logo/watermark.png */ "./resources/app/assets/images/logo/watermark.png") }
+        })
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
+
+/***/ }),
+
+/***/ "./resources/app/assets/images/logo/watermark.png":
+/*!********************************************************!*\
+  !*** ./resources/app/assets/images/logo/watermark.png ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "/images/watermark.png?6fb6136310da06fad0c20d8f6c51c47c";
 
 /***/ }),
 

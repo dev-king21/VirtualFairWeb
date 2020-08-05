@@ -2,27 +2,25 @@
     <div class="w-full">
         <app-header activeItem="0" :hideNavbar="true"></app-header>
         <div class="flex w-full justify-between participant-main">
-            <div class="vx-col w-full lg:w-1/2 sm:w-1/2 xs:w-1/2 left-panel">
-                <div class="flex flex-col justify-between left-content">
-                    <div class="flex items-center m-4 text-white">
-                        <div class="flex items-center cursor-pointer" @click="$router.back()">
-                            <feather-icon icon="ArrowLeftIcon"></feather-icon>
-                            <span class="ml-2">VOLVER</span>
-                        </div>
+            <div class="vx-col flex flex-col justify-between  w-full lg:w-1/2 sm:w-1/2 xs:w-1/2 left-panel">
+                <div class="flex items-center m-4 text-white">
+                    <div class="flex items-center cursor-pointer" @click="$router.back()">
+                        <feather-icon icon="ArrowLeftIcon"></feather-icon>
+                        <span class="ml-2">VOLVER</span>
                     </div>
-                    <div class="flex flex-col">
-                        <div class="text-center w-full mb-base">
-                            <img src="@assets/images/logo/fair_logo.jpg">
-                        </div>
-                        <div class="text-center text-white think-text">
-                            Think <br>
-                            Outside <br> 
-                            The Box
-                        </div>
+                </div>
+                <div class="flex flex-col">
+                    <div class="text-center w-full mb-base">
+                        <img src="@assets/images/logo/fair_logo.jpg">
                     </div>
-                    <div class="flex items-center h6 ml-6 mt-base mb-base text-white">
-                        *ESPACIO PARA LOGO Y BANNER PRINCIPAL DEL EVENTO
+                    <div class="text-center text-white think-text">
+                        Think <br>
+                        Outside <br> 
+                        The Box
                     </div>
+                </div>
+                <div class="flex items-center h6 ml-6 mt-base mb-base text-white">
+                    *ESPACIO PARA LOGO Y BANNER PRINCIPAL DEL EVENTO
                 </div>
             </div>
             <div class="vx-col w-full bg-white lg:w-1/2 sm:w-1/2 xs:w-1/2 right-panel">
@@ -30,7 +28,7 @@
                     <h2 class="font-bold mb-4">Bienvenido al Registro de usuario para:</h2>
                     <h2>EXPO ARQUITECTURA MODERNA</h2>
                 </div>
-                <div class="vx-row px-10">
+                <div class="vx-row px-20">
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
                         <vs-input class="w-full" color="success" placeholder="Numbre"></vs-input>
                     </div>
@@ -61,10 +59,10 @@
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
                         <vs-input class="w-full" color="success" placeholder="Seleccione la Region"></vs-input>
                     </div>
-                    <div class="vx-col w-full">
-                        <vs-textarea class="w-full" color="success" height="100px" placeholder="Comentarios" lines="5"></vs-textarea>
+                    <div class="vx-col w-full my-4">
+                        Agregar fotograpia o logotipo <vs-button class="cyan-light ml-2 attach-btn">Adjuntar</vs-button>
                     </div>
-                    <div class="vx-col w-full mb-4">
+                    <div class="vx-col w-full mb-2">
                         Seleccione un area de interes
                     </div>
                     <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
@@ -94,21 +92,21 @@
                     <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
                         <vs-checkbox color="rgb(103, 179, 81) " v-model="checkBox6">Jardines</vs-checkbox>
                     </div>
-                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mt-base">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="checkBox6">Acepto los terminos y condiciones</vs-checkbox>
-                    </div>
-                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mt-base">
-                        <vs-button class="register-btn">
+                    <div class="vx-col w-full mb-4 text-center">
+                        <vs-button class="cyan-dark register-btn">
                             REGISTRARME
                         </vs-button>
                     </div>
-                    
+                    <div class="vx-col flex justify-center w-full text-center mb-4">
+                        <vs-checkbox color="rgb(103, 179, 81) " v-model="checkBox6">Acepto los terminos y condiciones</vs-checkbox>
+                    </div>
+                </div>
+                <div class="text-right mr-2" style="margin-top: -50px;" >
+                    <img src="@assets/images/logo/watermark.png">
                 </div>
             </div>
         </div>
-        <div class="watermark text-right" >
-            <img src="@assets/images/logo/watermark.png">
-        </div>
+        
     </div>
 </template>
 <script>
@@ -136,7 +134,7 @@ export default {
     
 }
 .participant-main {
-    height: calc(var(--vh, 1vh) * 100 - 86px);
+    min-height: calc(var(--vh, 1vh) * 100 - 86px);
     
     .left-panel {
         background: rgb(40, 58, 196);
@@ -174,11 +172,13 @@ export default {
         }
 
         .register-btn {
-            border-radius: 0px !important;
-            border-top-left-radius: 0.6rem !important;
-            background: rgb(103, 179, 81) !important;
             font-size: 0.8rem !important;
-            padding: 0.5rem 1rem !important;
+            padding: 0.8rem 1rem !important;
+        }
+
+        .attach-btn {
+            font-size: 0.8rem !important;
+            padding: 0.8rem 1rem !important;
         }
 
         

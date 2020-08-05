@@ -1,5 +1,5 @@
 <template>
-    <div class="schedule-card" :class="{'card-border': !noborder}">
+    <div class="room-schedule-card" :class="{'card-border': !noborder}">
         <div class="flex reserved">
             <template v-if="reserved">
                 <span class="text-white font-normal">RESERVED</span>
@@ -76,7 +76,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.schedule-card {
+.room-schedule-card {
     background: white;
     margin: 1rem;
     font-size: 1rem;

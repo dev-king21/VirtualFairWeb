@@ -42,7 +42,7 @@ export default {
 </script>
 <style lang="scss">
     .setting-button {
-        width: 44%;
+        width: 46%;
         .icon-span{
             border-top-right-radius: 1rem;
             border-bottom-left-radius: 1rem;
@@ -54,7 +54,7 @@ export default {
             color: white;
         }
         .text-span{
-            width: 16rem;
+            width: 65%;
             height: 5rem;
             margin-left: -0.5rem;
             padding-left: 1.5rem;
@@ -68,14 +68,4 @@ export default {
             font-weight: 600;
         }
     }
-    /* .setting-button:hover {
-        .icon-span{
-            background: white;
-            color: rgb(103, 179, 81);
-        }
-        .text-span{
-            background: rgb(103, 179, 81);
-            color: white;
-        }
-    } */
 </style>

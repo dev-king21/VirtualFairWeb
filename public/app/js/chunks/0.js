@@ -72,6 +72,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     activeItem: {
@@ -110,7 +114,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".vs-navbar {\n  height: 86px;\n}[dir] .vs-navbar {\n  background: #FFFFFFDD !important;\n}\n[dir=ltr] .vs-navbar .vs-button {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n[dir=rtl] .vs-navbar .vs-button {\n  margin-right: 10px;\n  margin-left: 10px;\n}\n[dir=ltr] .vs-navbar .vs-input {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n[dir=rtl] .vs-navbar .vs-input {\n  margin-right: 10px;\n  margin-left: 10px;\n}\n.vs-navbar .logo {\n  position: relative;\n  width: 120px;\n  height: auto;\n}\n[dir] .vs-navbar .logo {\n  margin: 10px 20PX;\n}\n.vs-navbar .vs-con-items {\n  width: 100%;\n  /* margin-right: 100px; */\n  justify-content: flex-end;\n}\n[dir] .vs-navbar .vs-con-items .circleIcon {\n  border-radius: 50%;\n  background: #333;\n}\n.vs-navbar .vs-con-items .is-active-item a {\n  color: white;\n}\n[dir] .vs-navbar .vs-con-items .is-active-item a {\n  background-color: #333;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item {\n  margin: 0;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a {\n  font-size: 0.9rem;\n  text-transform: uppercase;\n  font-weight: 700;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item a {\n  padding: 2.5rem 1.5rem;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a span {\n  text-transform: uppercase;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a:hover {\n  color: white !important;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item a:hover {\n  background-color: #333;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a.mypage-nav {\n  color: white;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item a.mypage-nav {\n  background-color: #123058;\n  padding: 1.5rem;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item .feather-icon {\n  margin: 0 0.2rem;\n}\n[dir] .vs-dropdown--menu {\n  border-radius: 0px !important;\n}\n.vs-dropdown--menu .vs-dropdown--item-link {\n  text-transform: uppercase;\n  font-size: 0.8rem !important;\n}\n.vs-dropdown--menu .vs-dropdown--item-link:hover {\n  color: white !important;\n}\n[dir] .vs-dropdown--menu .vs-dropdown--item-link:hover {\n  background: #333 !important;\n}", ""]);
+exports.push([module.i, ".vs-navbar {\n  height: 86px;\n}[dir] .vs-navbar {\n  background: #FFFFFFDD !important;\n}\n[dir=ltr] .vs-navbar .vs-button {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n[dir=rtl] .vs-navbar .vs-button {\n  margin-right: 10px;\n  margin-left: 10px;\n}\n[dir=ltr] .vs-navbar .vs-input {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n[dir=rtl] .vs-navbar .vs-input {\n  margin-right: 10px;\n  margin-left: 10px;\n}\n.vs-navbar .logo {\n  position: relative;\n  width: 120px;\n  height: auto;\n}\n[dir] .vs-navbar .logo {\n  margin: 10px 20PX;\n}\n.vs-navbar .vs-con-items {\n  width: 100%;\n  /* margin-right: 100px; */\n  justify-content: flex-end;\n}\n[dir] .vs-navbar .vs-con-items .circleIcon {\n  border-radius: 50%;\n  background: #333;\n}\n.vs-navbar .vs-con-items .is-active-item a {\n  color: white;\n}\n[dir] .vs-navbar .vs-con-items .is-active-item a {\n  background-color: #333;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item {\n  margin: 0;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a {\n  font-size: 0.9rem;\n  text-transform: uppercase;\n  font-weight: 700;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item a {\n  padding: 2.5rem 1.5rem;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a span {\n  text-transform: uppercase;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a:hover {\n  color: white !important;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item a:hover {\n  background-color: #333;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a.setting-nav {\n  color: white;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item a.setting-nav {\n  background-color: #123058;\n  padding: 1.5rem;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item .feather-icon {\n  margin: 0 0.2rem;\n}\n[dir] .vs-dropdown--menu {\n  border-radius: 0px !important;\n}\n.vs-dropdown--menu .vs-dropdown--item-link {\n  text-transform: uppercase;\n  font-size: 0.8rem !important;\n}\n.vs-dropdown--menu .vs-dropdown--item-link:hover {\n  color: white !important;\n}\n[dir] .vs-dropdown--menu .vs-dropdown--item-link:hover {\n  background: #333 !important;\n}", ""]);
 
 // exports
 
@@ -267,9 +271,11 @@ var render = function() {
                 attrs: { index: "1" }
               },
               [
-                _c("a", { staticClass: "h3", attrs: { href: "/app/room" } }, [
-                  _vm._v("Webinars")
-                ])
+                _c(
+                  "a",
+                  { staticClass: "h3", attrs: { href: "/app/home/webinar" } },
+                  [_vm._v("Webinars")]
+                )
               ]
             ),
             _vm._v(" "),
@@ -287,9 +293,11 @@ var render = function() {
                 attrs: { index: "2" }
               },
               [
-                _c("a", { staticClass: "h3", attrs: { href: "/app/fair" } }, [
-                  _vm._v("Contacteons")
-                ])
+                _c(
+                  "a",
+                  { staticClass: "h3", attrs: { href: "/app/home/sponsor" } },
+                  [_vm._v("patrocinadores")]
+                )
               ]
             ),
             _vm._v(" "),
@@ -305,6 +313,28 @@ var render = function() {
                   }
                 ],
                 attrs: { index: "3" }
+              },
+              [
+                _c(
+                  "a",
+                  { staticClass: "h3", attrs: { href: "/app/home/contact" } },
+                  [_vm._v("Contacteons")]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "vs-navbar-item",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.hideNavbar,
+                    expression: "!hideNavbar"
+                  }
+                ],
+                attrs: { index: "4" }
               },
               [
                 _c("feather-icon", {
@@ -422,7 +452,7 @@ var render = function() {
                 _c(
                   "a",
                   {
-                    staticClass: "h3 mypage-nav text-center",
+                    staticClass: "h3 setting-nav text-center",
                     attrs: { href: "/app/setting" }
                   },
                   [

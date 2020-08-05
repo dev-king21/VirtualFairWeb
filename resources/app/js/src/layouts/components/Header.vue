@@ -26,14 +26,18 @@
       </vs-navbar-item>
 
       <vs-navbar-item index="1" v-show="!hideNavbar">
-          <a class="h3" href="/app/room">Webinars</a>
+          <a class="h3" href="/app/home/webinar">Webinars</a>
       </vs-navbar-item>
 
       <vs-navbar-item index="2" v-show="!hideNavbar">
-          <a class="h3" href="/app/fair">Contacteons</a>
+          <a class="h3" href="/app/home/sponsor">patrocinadores</a>
       </vs-navbar-item>
 
       <vs-navbar-item index="3" v-show="!hideNavbar">
+          <a class="h3" href="/app/home/contact">Contacteons</a>
+      </vs-navbar-item>
+
+      <vs-navbar-item index="4" v-show="!hideNavbar">
         <feather-icon icon="InstagramIcon" svgClasses="text-white h-4 w-4" class="p-2 circleIcon "></feather-icon>
         <feather-icon icon="FacebookIcon" svgClasses="text-white h-4 w-4" class="p-2 circleIcon"></feather-icon>
         <feather-icon icon="TwitterIcon" svgClasses="text-white h-4 w-4" class="p-2 circleIcon"></feather-icon>
@@ -53,7 +57,7 @@
           </a>
       </vs-navbar-item>
       <vs-navbar-item index="3" v-show="!hideNavbar">
-          <a class="h3 mypage-nav text-center"  href="/app/setting">
+          <a class="h3 setting-nav text-center"  href="/app/setting">
             <feather-icon icon="UsersIcon"/>
             <div>Mi Cuenta</div>
           </a>
@@ -144,7 +148,7 @@ export default {
         color: white !important;
       }
 
-      a.mypage-nav {
+      a.setting-nav {
         background-color:#123058;
         color:white;
         padding: 1.5rem;
