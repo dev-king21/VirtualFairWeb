@@ -1,0 +1,16 @@
+{
+    "/app/js/app.js": "/app/js/app.js",
+    "/app/css/app.css": "/app/css/app.css",
+    "/app/css/main.css": "/app/css/main.css",
+    "/app/css/vuesax.css": "/app/css/vuesax.css",
+    "/app/css/iconfont.css": "/app/css/iconfont.css",
+    "/app/css/material-icons/material-icons.css": "/app/css/material-icons/material-icons.css",
+    "/app/css/prism-tomorrow.css": "/app/css/prism-tomorrow.css",
+    "/admin/js/app.js": "/admin/js/app.js",
+    "/admin/css/app.css": "/admin/css/app.css",
+    "/admin/css/main.css": "/admin/css/main.css",
+    "/admin/css/vuesax.css": "/admin/css/vuesax.css",
+    "/admin/css/iconfont.css": "/admin/css/iconfont.css",
+    "/admin/css/material-icons/material-icons.css": "/admin/css/material-icons/material-icons.css",
+    "/admin/css/prism-tomorrow.css": "/admin/css/prism-tomorrow.css"
+}
