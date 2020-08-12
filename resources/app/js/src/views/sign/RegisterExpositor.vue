@@ -30,7 +30,7 @@
                 </div>
                 <div class="vx-row px-20">
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-full" color="success" placeholder="Numbre"></vs-input>
+                        <vs-input class="w-full" color="success" placeholder="Nombre"></vs-input>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
                         <vs-input class="w-full" color="success" placeholder="Apellido"></vs-input>

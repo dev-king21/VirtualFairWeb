@@ -53,12 +53,9 @@ class StandController extends Controller
         return response()->json($res);
     }
 
-    
-
 //contact
     public function create_contact(Request $request){
         $res = array();
-        // $contact = Contact::create($request->post());
         $contact = new Contact;
         $contact->stand_id = $request->post("stand_id");
         $contact->phone = $request->post("phone");

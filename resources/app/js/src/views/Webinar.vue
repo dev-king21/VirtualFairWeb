@@ -1,6 +1,6 @@
 <template>
   <div class="w-full">
-    <app-header activeItem="1" :loggedIn="loggedIn"></app-header>
+    <app-header activeItem="1"></app-header>
     <div class="flex items-center justify-end home-weinar-bg-img home-webinar-main">
         <div class="w-3/4 p-10">
             <div class="webinar-title text-white font-bold my-6">RESERVE SUS WEBINARS</div>

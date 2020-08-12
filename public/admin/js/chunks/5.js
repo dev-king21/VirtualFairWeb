@@ -428,17 +428,17 @@ __webpack_require__.r(__webpack_exports__);
     var action = "/api/rooms/talks/all/".concat(this.$route.params.room_id);
     console.log(this.$route.name);
 
-    if (this.$route.name === "request_talk") {
+    if (this.$route.name === 'request_talk') {
       this.isPast = false;
-      action = "/api/rooms/talks/request";
-    } else if (this.$route.name === "scheduled_talk") {
+      action = '/api/rooms/talks/request';
+    } else if (this.$route.name === 'scheduled_talk') {
       this.isPast = false;
-      action = "/api/rooms/talks/scheduled";
-    } else if (this.$route.name === "live_talk") {
+      action = '/api/rooms/talks/scheduled';
+    } else if (this.$route.name === 'live_talk') {
       this.isPast = false;
-      action = "/api/rooms/talks/live";
-    } else if (this.$route.name === "past_talk") {
-      action = "/api/rooms/talks/past";
+      action = '/api/rooms/talks/live';
+    } else if (this.$route.name === 'past_talk') {
+      action = '/api/rooms/talks/past';
       this.isPast = true;
     }
 

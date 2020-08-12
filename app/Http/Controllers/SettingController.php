@@ -7,6 +7,7 @@ use App\FairType;
 use App\StandType;
 use App\StandLocation;
 use App\StandTypeItem;
+use App\StandContent;
 use App\Stand;
 use App\Fair;
 use App\Room;
@@ -15,13 +16,10 @@ use App\Appointment;
 use App\Contact;
 use App\Country;
 use App\Gallery;
+use App\BusinessCard;
 use App\File;
 use App\Portfolio;
 use App\User;
-
-
-
-
 use Hash;
 
 class SettingController extends Controller
@@ -257,6 +255,287 @@ class SettingController extends Controller
     public function removeStandTypeItem(Request $request) {
         StandTypeItem::where('id', $request->post("remove_id"))->delete();
         return response()->json(["status"=>"ok"]);
+    }
+
+    public function get_my_stand(Request $request) {
+      $res = array();
+      $user = $request->user();
+      $now = date("y-m-d");
+      $query = [
+          ["start_date", "<=", $now], 
+          ["end_date", ">=", $now]
+      ]; 
+      $query["status"] = 1;
+      $fair = Fair::with('fair_type')->where($query)->first();
+      $country = Country::select('id', 'name', 'code')->where("status", 1)->first();
+      if (!isset($fair) || !isset($country)) {
+        $res["status"] = "error";
+        $res["msg"] = "unknown_fair";
+        return response()->json($res);
+      }
+
+      $qr = ["fair_id" => $fair->id, "country_id" => $country->id, "user_id"=> $user->id];
+      $res["stand"] = Stand::with(['contact', 'stand_contents' => function($query) {
+          $query->with('stand_type_item')->get();
+      }])->where($qr)->first();      
+      $res["stand_type"] = StandLocation::with('stand_type') -> find($res["stand"]->stand_location_id)->stand_type;
+
+      return response()->json($res);
+    }
+
+    public function save_contact(Request $request) {
+      $query = array();
+      if (is_null($request->post("id"))) {
+        return response()->json(["status" => "error"]);
+      }
+      if (!is_null($request->post("facebook"))) $query["facebook"] = $request->post("facebook");
+      if (!is_null($request->post("instagram"))) $query["instagram"] = $request->post("instagram");
+      if (!is_null($request->post("linkedin"))) $query["linkedin"] = $request->post("linkedin");
+      if (!is_null($request->post("whatsapp"))) $query["whatsapp"] = $request->post("whatsapp");
+      if (!is_null($request->post("youtube"))) $query["youtube"] = $request->post("youtube");
+      $contact = Contact::find($request->post('id'));
+      $contact->update($query);
+      return response()->json([ "status" => "ok", "contact"=> $contact]);
+    }
+
+    public function save_content(Request $request) {
+      $query = array();
+      if (is_null($request->post("id"))) {
+        return response()->json(["status" => "unknown_content"]);
+      }
+     
+      if (isset($request->content_file)) {
+          $fileName =  md5(time()).'.'.$request->content_file->extension();  
+          $request->content_file->move(public_path('fair_image'), $fileName);
+          $query['content'] = $fileName;
+      } 
+
+      $stand = StandContent::find($request->post('id'));
+      $stand->update($query);
+      return response()->json(["status"=> "ok"]);
+    }
+
+    public function remove_content(Request $request) {
+      $res = array();
+      if (is_null($request->post("_id")))
+      {
+        return response()->json(["status" => "unknown_content"]);
+      }
+      StandContent::find($request->post("_id"))->update(["content" => null]);
+      return response()->json(["status" => "ok"]);
+    }
+
+    public function get_information(Request $request) {
+      $res = array();
+      $user = $request->user();
+      $now = date("y-m-d");
+      $query = [
+          ["start_date", "<=", $now], 
+          ["end_date", ">=", $now]
+      ]; 
+      $query["status"] = 1;
+      $fair = Fair::with('fair_type')->where($query)->first();
+      $country = Country::select('id', 'name', 'code')->where("status", 1)->first();
+      if (!isset($fair) || !isset($country)) {
+        $res["status"] = "error";
+        $res["msg"] = "unknown_fair";
+        return response()->json($res);
+      }
+
+      $qr = ["fair_id" => $fair->id, "country_id" => $country->id, "user_id"=> $user->id];
+      $res["stand"] = Stand::with(['contact'])->where($qr)->first();      
+      
+      return response()->json($res);
+    }
+
+    public function save_information(Request $request) {
+      $query = array();
+      if (is_null($request->post("id"))) {
+        return response()->json(["status" => "error"]);
+      }
+      
+
+      $request->validate([
+        'logo' => 'mimes:png,gif,jpeg,jpg'
+      ]);
+      
+
+      if (isset($request->logo)) {
+          $fileName =  md5(time()).'.'.$request->logo->extension();  
+          $request->logo->move(public_path('fair_image'), $fileName);
+          $query['logo'] = $fileName;
+      } 
+
+      if (!is_null($request->post("company"))) $query["company"] = trim($request->post("company"));
+      if (!is_null($request->post("description"))) $query["description"] = $request->post("description");
+      $stand = Stand::find($request->post('id'));
+      $stand->update($query);
+      return response()->json(["stand"=> $stand]);
+      
+    }
+
+    public function get_brochures(Request $request) {
+      $res = array();
+      $user = $request->user();
+      $now = date("y-m-d");
+      $query = [
+          ["start_date", "<=", $now], 
+          ["end_date", ">=", $now]
+      ]; 
+      $query["status"] = 1;
+      $fair = Fair::with('fair_type')->where($query)->first();
+      $country = Country::select('id', 'name', 'code')->where("status", 1)->first();
+      if (!isset($fair) || !isset($country)) {
+        $res["status"] = "error";
+        $res["msg"] = "unknown_fair";
+        return response()->json($res);
+      }
+
+      $qr = ["fair_id" => $fair->id, "country_id" => $country->id, "user_id"=> $user->id];
+      $res["stand"] = Stand::with(['portfolios'])->where($qr)->first();      
+      
+      return response()->json($res);
+    }
+
+    public function save_brochure(Request $request) {
+      $query = array();
+      
+      /* $request->validate([
+        'catalog_file' => 'mimes:pdf,jpg'
+      ]); */
+      
+      if (!isset($request->catalog_file) || is_null($request->post("catalog_title")) || is_null($request->post("stand_id")) ) {
+        return response()->json(["status" => "error"]);
+      }
+      
+      $pt = new Portfolio;
+      $pt->stand_id = $request->post("stand_id");
+      $pt->name = trim($request->post("catalog_title"));
+      $fileName =  md5(time()).'.'.$request->catalog_file->extension();  
+      $request->catalog_file->move(public_path('fair_image'), $fileName);
+      $pt->url = $fileName;
+      
+      $pt->save();
+
+      return response()->json(["status" => "ok"]);
+    }
+
+    public function remove_brochure(Request $request) {
+      $query = array();
+      
+      $id = $request->post("_id");
+      if (is_null($id)) {
+        return response()->json(["status" => "error"]);
+      }
+      
+      Portfolio::find($id)->delete();
+      return response()->json(["status" => "ok"]);
+    }
+
+    public function get_videos(Request $request) {
+      $res = array();
+      $user = $request->user();
+      $now = date("y-m-d");
+      $query = [
+          ["start_date", "<=", $now], 
+          ["end_date", ">=", $now]
+      ]; 
+      $query["status"] = 1;
+      $fair = Fair::with('fair_type')->where($query)->first();
+      $country = Country::select('id', 'name', 'code')->where("status", 1)->first();
+      if (!isset($fair) || !isset($country)) {
+        $res["status"] = "error";
+        $res["msg"] = "unknown_fair";
+        return response()->json($res);
+      }
+
+      $qr = ["fair_id" => $fair->id, "country_id" => $country->id, "user_id"=> $user->id];
+      $res["stand"] = Stand::with(['gallerys'])->where($qr)->first();      
+      
+      return response()->json($res);
+    }
+
+    public function save_video(Request $request) {
+      $query = array();
+      
+      if (!isset($request->video_file) || is_null($request->post("video_title")) || is_null($request->post("stand_id")) ) {
+        return response()->json(["status" => "error"]);
+      }
+      
+      $pt = new Gallery;
+      $pt->stand_id = $request->post("stand_id");
+      $pt->name = trim($request->post("video_title"));
+      $fileName =  md5(time()).'.'.$request->video_file->extension();  
+      $request->video_file->move(public_path('fair_image'), $fileName);
+      $pt->url = $fileName;
+      
+      $pt->save();
+
+      return response()->json(["status" => "ok"]);
+    }
+
+    public function remove_video(Request $request) {
+      $query = array();
+      
+      $id = $request->post("_id");
+      if (is_null($id)) {
+        return response()->json(["status" => "error"]);
+      }
+      
+      Gallery::find($id)->delete();
+      return response()->json(["status" => "ok"]);
+    }
+
+    public function get_businesscards(Request $request) {
+      $res = array();
+      $user = $request->user();
+      $now = date("y-m-d");
+      $query = [
+          ["start_date", "<=", $now], 
+          ["end_date", ">=", $now]
+      ]; 
+      $query["status"] = 1;
+      $fair = Fair::with('fair_type')->where($query)->first();
+      $country = Country::select('id', 'name', 'code')->where("status", 1)->first();
+      if (!isset($fair) || !isset($country)) {
+        $res["status"] = "error";
+        $res["msg"] = "unknown_fair";
+        return response()->json($res);
+      }
+      $qr = ["fair_id" => $fair->id, "country_id" => $country->id, "user_id"=> $user->id];
+      $res["stand"] = Stand::with(['business_cards'])->where($qr)->first();      
+      
+      return response()->json($res);
+    }
+
+    public function save_businesscard(Request $request) {
+      $query = array();
+      
+      if (!isset($request->card_file) || is_null($request->post("stand_id")) ) {
+        return response()->json(["status" => "error"]);
+      }
+      
+      $pt = new BusinessCard;
+      $pt->stand_id = $request->post("stand_id");
+      $fileName =  md5(time()).'.'.$request->card_file->extension();  
+      $request->card_file->move(public_path('fair_image'), $fileName);
+      $pt->url = $fileName;
+      
+      $pt->save();
+
+      return response()->json(["status" => "ok"]);
+    }
+
+    public function remove_businesscard(Request $request) {
+      $query = array();
+      
+      $id = $request->post("_id");
+      if (is_null($id)) {
+        return response()->json(["status" => "error"]);
+      }
+      
+      BusinessCard::find($id)->delete();
+      return response()->json(["status" => "ok"]);
     }
 
     public function dummyCreate() {
@@ -982,91 +1261,84 @@ class SettingController extends Controller
 
         $i = 0;
         foreach ($d_country as $item) {
-            $ctry = new Country;
-            $ctry->name = $item["name"];
-            $ctry->phone = $item["phone"];
-            $ctry->continent = $item["continent"];
-            $ctry->capital = $item["capital"];
-            $ctry->currency = $item["currency"];
-            if ($i++ <= 10)
-                $ctry->status = 1;
-            else  
-                $ctry->status = 0;
-            $ctry->code = $item["code"];
-            $ctry->save();
+          $ctry = new Country;
+          $ctry->name = $item["name"];
+          $ctry->phone = $item["phone"];
+          $ctry->continent = $item["continent"];
+          $ctry->capital = $item["capital"];
+          $ctry->currency = $item["currency"];
+          if ($i++ <= 10)
+              $ctry->status = 1;
+          else  
+              $ctry->status = 0;
+          $ctry->code = $item["code"];
+          $ctry->save();
         }
 
-        for ($i = 1; $i<6; $i++) {
-            $fairType = new FairType;
-            $fairType->name = 'fair type - '.$i;
-            $fairType->building = 'fair_building'.$i.'.jpeg';
-            $fairType->interior = 'fair_interior'.$i.'.jpeg';
-            
-            $fairType->save();
+        for ($i = 1; $i<3; $i++) {
+          $fairType = new FairType;
+          $fairType->name = 'fair type - '.$i;
+          $fairType->building = 'fair_building'.$i.'.jpeg';
+          $fairType->interior = 'fair_interior'.$i.'.jpeg';
+          
+          $fairType->save();
         }  
         
-        for ($i = 1; $i<8; $i++) {
-            $standType = new StandType;
-            $standType->name = 'stand type - '.$i;
-            $standType->building = 'stand_building'.$i.'.png';
-            $standType->interior = 'stand_interior'.$i.'.jpeg';
-            
-            $standType->save();
+        for ($i = 1; $i<3; $i++) {
+          $standType = new StandType;
+          $standType->name = 'stand type - '.$i;
+          $standType->building = 'stand_building'.$i.'.png';
+          $standType->interior = 'stand_interior'.$i.'.jpeg';
+          
+          $standType->save();
         }
 
-        for ($i = 1; $i < 6; $i++) {
-            for ($j = 0; $j < 12; $j++) {
-                $standLocation = new StandLocation;
-                $standLocation->fair_type_id = $i;
-                $standLocation->stand_type_id = rand(1, 7);
-                $standLocation->left = ($j % 3) * 0.3 + 0.1;
-                $standLocation->top = ($j - ($j % 3))/3 * 0.3 + 0.1;
-                $standLocation->width = 0.2;
-                $standLocation->height = 0.2;
-                $standLocation->save();
+        for ($i = 1; $i < 3; $i++) {
+          for ($j = 0; $j < 9; $j++) {
+            $standLocation = new StandLocation;
+            $standLocation->fair_type_id = $i;
+            $standLocation->stand_type_id = rand(1, 2);
+            $standLocation->left = ($j % 3) * 0.3 + 0.1;
+            $standLocation->top = ($j - ($j % 3))/3 * 0.3 + 0.1;
+            $standLocation->width = 0.2;
+            $standLocation->height = 0.2;
+            $standLocation->save();
+          }
+        }
+
+        /* $countries = Country::select('id')->where("status", 1)->get();
+        for($i = 1; $i < 3; $i++) {
+          $fair = new Fair;
+          $fair->name = 'Fair - '.$i;
+          $fair->fair_type_id = rand(1, 5);
+          $sd = rand(1, 31);
+          $fair->start_date = '2020-07-'.$sd;
+          $fair->end_date = '2020-07-'.rand($sd, 31);
+          $fair->status = 1;
+          $fair->save(); 
+          
+          for ($c = 1; $c < 3; $c++) {
+            //$stand_counts = 9; //($i==0)? 17 : 12;
+            for($l = 1; $l <= 9; $l++) {
+                $stand = new Stand;
+                $stand->fair_id = $i;
+                $stand->country_id = $c;
+                $stand->stand_location_id = ($i - 1) * 9 + $l;
+                
+                if (rand(1, 10) % 2 == 0) {
+                  $stand->user_id = rand(1, 10);
+                  $stand->site_link = 'http://localhost/site_link'.$i;
+                  $stand->logo = 'logo-'.$i;
+                  $stand->description = 'description-'.$i;
+                  $stand->status = 1;
+                }
+                
+                $stand->save();
             }
-        }
+          }           
+        } */
 
-        $countries = Country::select('id')->where("status", 1)->get();
-        for($i = 1; $i < 10; $i++){
-            $fair = new Fair;
-            $fair->name = 'Fair - '.$i;
-            $fair->fair_type_id = rand(1, 5);
-            $sd = rand(1, 31);
-            $fair->start_date = '2020-07-'.$sd;
-            $fair->end_date = '2020-07-'.rand($sd, 31);
-            $fair->status = 1;
-            $fair->save(); 
-            
-            for ($c = 1; $c < 12; $c++) {
-              $stand_counts = ($i==0)? 17 : 12;
-              for($l = 1; $l <= 12; $l++){
-                  $stand = new Stand;
-                  $stand->fair_id = $i;
-                  $stand->country_id = $c;
-                  $stand->stand_location_id = ($i - 1) * 12 + $l;
-                  
-                  if (rand(1, 10) % 2 == 0)
-                  {
-                    $stand->user_id = rand(1, 10);
-                    $stand->site_link = 'http://localhost/site_link'.$i;
-                    $stand->logo = 'logo-'.$i;
-                    $stand->description = 'description-'.$i;
-                    $stand->status = 1;
-                  }
-                  
-                  $stand->save();
-              }
-            }           
-        }
-
-
-        
-
-       //country
-
-
-       //room
+       /* //room
        for($i = 1; $i < 10; $i++){
             $room = new Room;
             $room->country_id = rand(1, 10);
@@ -1096,20 +1368,25 @@ class SettingController extends Controller
             $talk->talk_date = '2020-07-27';
 
             $talk->save();
-        }
+        } */
 
         //user
-        for($i = 1; $i < 10; $i++){
+        for($i = 1; $i < 4; $i++){
             $user = new User;
-            $user->username = 'username-'.$i;
-            $user->name = 'name - '.$i;
+            $user->first_name = 'first_name-'.$i;
+            $user->last_name = 'first_name-'.$i;
+            $user->company = 'company-'.$i;
+            $user->country = 'Spanish';
+            $user->region = 'Madrid';
+            $user->phone = '(+27) 98598238';
+            $user->address = 'St. Peterburg';
             $user->email = 'email'.$i."@gmail.com";
-            $user->country = 'country - '.$i;
-            $user->password = 'password'.$i;
+            $user->password = bcrypt('123');
             $user->avatar = 'avatar'.$i;
             $user->save();
         }
-
+        
+        /* 
         //files
         for($i = 1; $i < 10; $i++){
             $file = new File;
@@ -1124,6 +1401,7 @@ class SettingController extends Controller
             $gallery = new Gallery;
             $gallery->stand_id = rand(1, 10);
             $gallery->url = 'card-image-5.jpg';
+            $gallery->name = 'video '.$i;
             $gallery->save();
         }
         //portofolio
@@ -1132,8 +1410,6 @@ class SettingController extends Controller
             $portofolio->stand_id = rand(1, 10);
             $portofolio->name = 'name - '.$i;
             $portofolio->url = 'card-image-5.jpg';
-            $portofolio->country = 'country'.$i;
-            $portofolio->description = 'description'.$i;
 
             $portofolio->save();
         }
@@ -1162,7 +1438,7 @@ class SettingController extends Controller
             $contact->youtube = 'youtube'.$i;
             $contact->twitter = 'twitter'.$i;
             $contact->save();
-        }
+        } */
 
         return response()->json(["status" => "ok"]);
     }

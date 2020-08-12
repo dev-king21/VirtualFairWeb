@@ -529,7 +529,6 @@ __webpack_require__.r(__webpack_exports__);
       if (this.name === '' || this.active_idx === 0 || this.startDate === null || this.endDate === null) return;
       var action = '/api/fair/create';
       if (this.isAddOrEdit === 1) action = "/api/fair/update/".concat(this.editId);
-      console.log(action);
       this.startDate = this.formatDate(this.startDate);
       this.endDate = this.formatDate(this.endDate);
       var newData = {
@@ -539,8 +538,8 @@ __webpack_require__.r(__webpack_exports__);
         end_date: this.endDate,
         status: 1
       };
-      console.log(newData);
       this.$http.post(action, newData).then(function (response) {
+        console.log(response.data);
         _this.isAddShow = false;
 
         _this.loadContent();
@@ -570,10 +569,8 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       this.$http.get(action).then(function (response) {
-        console.log(action);
         var res = response.data;
         _this2.fairs = res.fairs;
-        console.log(_this2.fairs);
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -606,9 +603,7 @@ __webpack_require__.r(__webpack_exports__);
     removeAction: function removeAction(id) {
       var _this3 = this;
 
-      console.log(id);
       var action = "/api/fair/update/".concat(id);
-      console.log(action);
       var newData = {
         status: 0
       };

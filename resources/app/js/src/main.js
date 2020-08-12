@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import Vuesax from 'vuesax'
 import axios from './axios.js'
-import acl from './acl/acl'
+//import acl from './acl/acl'
 import router from './router'
 import store from './store/store'
 import i18n from './i18n/i18n'
@@ -17,7 +17,6 @@ import 'prismjs/themes/prism-tomorrow.css'
 import './http/requests'
 import './fake-db/index.js'
 import '../themeConfig.js'
-import '@/firebase/firebaseConfig'
 import './globalComponents.js'
 import './filters/filters'
 
@@ -46,6 +45,6 @@ new Vue({
   router,
   store,
   i18n,
-  acl,
+  //acl,
   render: h => h(App)
 }).$mount('#app')

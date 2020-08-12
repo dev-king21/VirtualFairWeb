@@ -39,8 +39,6 @@ export default {
     return {
       building_image: undefined,
       interior_image: undefined,
-      // upload_building_url: undefined,
-      // upload_interior_url: undefined,
       ftype_name: undefined,
       building_file: null,
       interior_file: null
@@ -82,8 +80,6 @@ export default {
   },
   created () {
     if (this.$route.params.ftype_id) {
-      // this.upload_building_url = `/api/fair_type/upload/building/${this.$route.params.ftype_id}`
-      // this.upload_interior_url = `/api/fair_type/upload/interior/${this.$route.params.ftype_id}`
       this.$http.get(`/api/fair_type/get/${this.$route.params.ftype_id}`)
         .then((response) => { 
           const fair_type = response.data.fair_type 

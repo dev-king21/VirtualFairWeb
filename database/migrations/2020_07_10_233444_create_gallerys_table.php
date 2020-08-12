@@ -17,6 +17,8 @@ class CreateGallerysTable extends Migration
             $table->id();
             $table->integer('stand_id');
             $table->string('url');
+            $table->string('name');
+            $table->integer('readed')->default(0);
             $table->timestamps();
         });
     }

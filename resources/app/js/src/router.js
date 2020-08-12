@@ -92,6 +92,14 @@ const router = new Router({
           }
         },
         {
+          path: '/stand/home',
+          name: 'stand-home',
+          component: () => import('@/views/stand/StandHome.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
           path: '/auth/login',
           name: 'auth-login',
           component: () => import('@/views/auth/Login.vue'),

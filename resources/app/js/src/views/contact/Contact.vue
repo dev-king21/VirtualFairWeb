@@ -1,8 +1,7 @@
 <template>
     <div class="w-full">
-        <app-header activeItem="0"></app-header>
-        <bread-crumb 
-            icon="MonitorIcon" text="contactenos" />
+        <app-header activeItem="3"></app-header>
+        <bread-crumb icon="MonitorIcon" text="contactenos" />
         <div class="flex w-full justify-center bg-white-grey home-contact-main">
             <div class="bg-white my-4 py-2 w-1/2 contact-form">
                 <div class="h1 text-center mt-8">
@@ -38,20 +37,19 @@
                     </div>
                 </div>
                 <div class="flex items-center justify-center mt-8">
-                    <feather-icon icon="FacebookIcon" />
-                    <feather-icon icon="InstagramIcon" />
-                    <feather-icon icon="LinkedinIcon" />
-                    <feather-icon icon="WhatsappIcon" />
-                    <feather-icon icon="YoutubeIcon" />
+                    <svg-icon icon="facebook" size="w-8 h-8 mx-1"></svg-icon>
+                    <svg-icon icon="instagram"  size="w-8 h-8 mx-1"></svg-icon>
+                    <svg-icon icon="linkedin" size="w-8 h-8 mx-1" ></svg-icon>
+                    <svg-icon icon="whatsapp" size="w-8 h-8 mx-1" ></svg-icon>
+                    <svg-icon icon="youtube" size="w-8 h-8 mx-1" ></svg-icon>
                 </div>
                 <div class="mt-8 text-center">
                     <vs-button class="cyan-dark register-btn">CONTACTAR</vs-button>
                 </div>
                 <div class="text-right mr-2" style="margin-top: -50px;" >
-                    <img src="@assets/images/logo/watermark.png">
+                    <svg-icon icon="watermark" size="w-24 h-24" color="text-cyan-dark"/>
                 </div>
             </div>
-            
         </div>
     </div>
 </template>

@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 use App\Fair;
 use App\Stand;
 use App\Country;
+use App\Contact;
 use App\StandLocation;
+use App\StandType;
+use App\StandTypeItem;
+use App\StandContent;
 
 class FairController extends Controller
 {
@@ -36,6 +40,20 @@ class FairController extends Controller
         ]; 
         $query["status"] = 1;
         $res["fairs"] = Fair::where($query)->get();
+        return response()->json($res);
+    }
+
+    public function current_fair(Request $request) {
+        $res = array();
+        $now = date("y-m-d");
+        $query = [
+            ["start_date", "<=", $now], 
+            ["end_date", ">=", $now]
+        ]; 
+        $query["status"] = 1;
+        $res["fair"] = Fair::where($query)->first();
+        $res["country"] = Country::select('id', 'name', 'code')->where("status", 1)->first();
+
         return response()->json($res);
     }
 
@@ -73,17 +91,30 @@ class FairController extends Controller
         $fair->save();
 
         $countries = Country::select('id')->where("status", 1)->get();
-        $stand_locations = StandLocation::select('id')->where("fair_type_id", $fair->fair_type_id)->get();
+        $stand_locations = StandLocation::with(['stand_type' => function($qr) {
+            $qr->with("stand_type_items")->get();
+        }])->select(['id', 'stand_type_id'])->where("fair_type_id", $fair->fair_type_id)->get();
         foreach($countries as $country) {
-            foreach ($stand_location as $location){
+            foreach ($stand_locations as $location) {
                 $stand = new Stand;
                 $stand->fair_id = $fair->id;
                 $stand->country_id = $country->id;
                 $stand->stand_location_id = $location->id;
                 $stand->save();
+
+                $stand_items = $location->stand_type->stand_type_items;
+                foreach($stand_items as $sitem) {
+                    $standContent = new StandContent;
+                    $standContent->stand_id = $stand->id;
+                    $standContent->stand_type_item_id = $sitem->id;
+                    $standContent->save();
+                }
+
+                $contact = new Contact;
+                $contact->stand_id = $stand->id;
+                $contact->save();
             }
         }        
-
 
         $res["status"] = "ok";
         return response()->json($res);
@@ -124,22 +155,28 @@ class FairController extends Controller
 
     }
 
-    public function get_stands(Request $request, $fair_id, $country_id = 0) {
-        if (!isset($fair_id) || $fair_id == 0)
+    public function get_stands(Request $request, $fair_id = 0, $country_id = 0) {
+        $res = array();
+        if ($fair_id == 0)
         {
-            $res["status"] = "error";
-            $res["msg"] = "unknown fair";
-            return response()->json($res);
-        }
-        if (!isset($country_id) || $country_id == 0)
-        {
-            $res["status"] = "error";
-            $res["msg"] = "unknown country";
-            return response()->json($res);
-        }
+            $now = date("y-m-d");
+            $query = [
+                ["start_date", "<=", $now], 
+                ["end_date", ">=", $now]
+            ]; 
+            $query["status"] = 1;
+            $res["fair"] = Fair::with('fair_type')->where($query)->first();
+            $fair_id = $res["fair"]->id;
+        } else 
+            $res["fair"] = Fair::with('fair_type')->find($fair_id);
 
-        $res["fair"] = Fair::with('fair_type')->find($fair_id);
-        $res["country"] = Country::find($country_id);
+        if ($country_id == 0)
+        {
+            $res["country"] = Country::select('id', 'name', 'code')->where("status", 1)->first();
+            $country_id = $res["country"]->id;
+        } else
+            $res["country"] = Country::find($country_id);
+        
         $res["stands"] = Stand::with(['stand_location'=> function($query) {
             $query->with('stand_type')->get();
         }])->where([
@@ -258,5 +295,27 @@ class FairController extends Controller
         $res["stands"] = Stand::with(['fair', 'user', 'country'])->where($query)->get();
         return response()->json($res);
     }
+
+    public function purchase_stand(Request $request) {
+        $res = array();
+        $stand = Stand::find($request->post("stand"));
+        if (!isset($stand)) {
+            $res["status"] = "error";
+            $res["msg"] = "unknown_stand";
+            return response()->json($res);
+        } 
+        if ($stand->user_id != null) {
+            $res["status"] = "error";
+            $res["msg"] = "purchased";
+            return response()->json($res);
+        }
+        
+        $user = $request->user();
+        $stand->user_id = $user->id;
+        $stand->save();
+       
+        $res["status"] = "ok";
+        return response()->json($res);
+    }   
 
 }

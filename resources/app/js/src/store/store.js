@@ -1,10 +1,3 @@
-/*=========================================================================================
-  File Name: store.js
-  Description: Vuex store
-
-==========================================================================================*/
-
-
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -19,7 +12,8 @@ Vue.use(Vuex)
 // import moduleCalendar from './calendar/moduleCalendar.js'
 // import moduleChat from './chat/moduleChat.js'
 // import moduleEmail from './email/moduleEmail.js'
-import moduleAuth from './auth/moduleAuth.js'
+// import moduleAuth from './auth/moduleAuth.js'
+// import moduleAuth_ from './auth_/moduleAuth.js'
 import moduleECommerce from './eCommerce/moduleECommerce.js'
 
 
@@ -33,7 +27,8 @@ export default new Vuex.Store({
     // calendar: moduleCalendar,
     // chat: moduleChat,
     // email: moduleEmail,
-    auth: moduleAuth,
+    // auth: moduleAuth,
+    // auth_: moduleAuth_,
     eCommerce: moduleECommerce
   },
   strict: process.env.NODE_ENV !== 'production'

@@ -18,8 +18,8 @@ class CreatePortfoliosTable extends Migration
             $table->integer('stand_id');
             $table->string('url');
             $table->string('name');
-            $table->string('country');
-            $table->string('description');
+            /* $table->string('country');
+            $table->string('description'); */
             $table->timestamps();
         });
     }

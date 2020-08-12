@@ -265,7 +265,6 @@ export default {
       if (this.name === '' || this.active_idx === 0 || this.startDate === null || this.endDate === null) return
       let action = '/api/fair/create'
       if (this.isAddOrEdit === 1) action = `/api/fair/update/${this.editId}`
-      console.log(action)
 
       this.startDate = this.formatDate(this.startDate)
       this.endDate = this.formatDate(this.endDate)
@@ -277,9 +276,10 @@ export default {
         end_date: this.endDate,
         status: 1
       }
-      console.log(newData)
+
       this.$http.post(action, newData)
         .then((response) => {
+          console.log(response.data)
           this.isAddShow = false
           this.loadContent()
         })
@@ -302,11 +302,9 @@ export default {
       }
       this.$http.get(action)
         .then((response) => {
-          console.log(action)
-
+          
           const res = response.data
           this.fairs = res.fairs
-          console.log(this.fairs)
         })
         .catch((error) => console.log(error))
 
@@ -337,9 +335,7 @@ export default {
       //   .catch(err => { console.error(err)       })
     },
     removeAction (id) {
-      console.log(id)
       const action = `/api/fair/update/${id}`
-      console.log(action)
       const newData = {
         status: 0
       }

@@ -61,6 +61,9 @@ class Stand extends Model
     }
 
 
+    public function business_cards() {
+        return $this->hasMany('App\BusinessCard');
+    }
     
     protected $guarded = ['fair_id', 'user_id'];
     protected $hidden = ['created_at', 'updated_at'];

@@ -4,18 +4,18 @@
             {{title}}
         </div>
         <div class="flex w-full items-center justify-center card-header grey-real">
-            <feather-icon svgClasses="w-12 h-12"  color="black" icon="BookOpenIcon"/>
+            <svg-icon size="w-12 h-12" color="text-black" icon="brochure"/>
         </div>
         <div class="vx-row">
             <div class="vx-col w-1/2">
-                <div class="flex items-center justify-center text-white py-2 cyan-dark w-full cursor-pointer">
-                    <feather-icon svgClasses="w-5 h-5" icon="EyeIcon" />
+                <div @click="showBrochure(id)" class="flex items-center justify-center text-white py-2 cyan-dark w-full cursor-pointer">
+                    <svg-icon size="w-5 h-5" icon="eye" />
                     <div class="ml-2" style="font-size: 0.9rem">VER</div>
                 </div>
             </div>
             <div class="vx-col w-1/2">
-                <div class="flex items-center justify-center text-white py-2 yellow-dark w-full cursor-pointer">
-                    <feather-icon svgClasses="w-5 h-5" icon="Trash2Icon" />
+                <div @click="removeBrochure(id)" class="flex items-center justify-center text-white py-2 yellow-dark w-full cursor-pointer">
+                    <svg-icon size="w-5 h-5" icon="erase" />
                     <div class="ml-2" style="font-size: 0.9rem">BORRAR</div>
                 </div>
             </div>
@@ -32,6 +32,26 @@ export default {
     item: {
       type: String,
       required: true  
+    },
+    remove: {
+      type: Function,
+      required: false  
+    },
+    show: {
+      type: Function,
+      required: false
+    },
+    id: {
+      type: Number,
+      required: true
+    }
+  },
+  methods: {
+    removeBrochure (id) {
+      this.remove(id)  
+    },
+    showBrochure (id) {
+      this.show(id)  
     }
   }
 }

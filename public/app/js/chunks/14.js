@@ -9,8 +9,9 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _layouts_components_Header_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/layouts/components/Header.vue */ "./resources/app/js/src/layouts/components/Header.vue");
-/* harmony import */ var _views_custom_MfcButton_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/views/custom/MfcButton.vue */ "./resources/app/js/src/views/custom/MfcButton.vue");
+/* harmony import */ var _store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/store/auth/moduleAuth.js */ "./resources/app/js/src/store/auth/moduleAuth.js");
+/* harmony import */ var _layouts_components_Header_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/layouts/components/Header.vue */ "./resources/app/js/src/layouts/components/Header.vue");
+/* harmony import */ var _views_custom_MfcButton_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/views/custom/MfcButton.vue */ "./resources/app/js/src/views/custom/MfcButton.vue");
 //
 //
 //
@@ -119,26 +120,50 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    AppHeader: _layouts_components_Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
-    MfcButton: _views_custom_MfcButton_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    AppHeader: _layouts_components_Header_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    MfcButton: _views_custom_MfcButton_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
   },
   data: function data() {
     return {
       contact_phone: '',
       contact_email: '',
       contact_message: '',
-      loggedIn: false,
+      auth: {
+        email: '',
+        password: ''
+      },
       logInClicked: false
     };
   },
+  computed: {
+    validateAuthParam: function validateAuthParam() {
+      return !this.errors.any() && this.auth.email !== '' && this.auth.password !== '';
+    },
+    loggedIn: function loggedIn() {
+      return this.$store.state.auth.loggedIn;
+    }
+  },
   methods: {
     login: function login() {
-      //setTimeout(function () {
-      this.loggedIn = true; //}, 1000)
+      this.$store.dispatch('auth/login', this.auth);
+      this.auth.email = '';
+      this.auth.password = '';
+      this.logInClicked = false;
+    }
+  },
+  created: function created() {
+    if (!_store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__["default"].isRegistered) {
+      this.$store.registerModule('auth', _store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
+      _store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__["default"].isRegistered = true;
     }
   }
 });
@@ -203,7 +228,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".overlay-card {\n  opacity: 0.9;\n}\n.overlay-card .vx-card__collapsible-content {\n  max-height: 300px;\n}\n.home-main {\n  height: calc(var(--vh, 1vh) * 100 - 86px);\n}\n.home-main .login-btn {\n  font-size: 1.1rem !important;\n}\n[dir] .home-main .login-btn {\n  border-radius: 0px !important;\n  background: black;\n  padding: 0.8rem 1.5rem;\n}\n[dir=ltr] .home-main .login-btn {\n  border-bottom-left-radius: 0.6rem !important;\n  float: right;\n}\n[dir=rtl] .home-main .login-btn {\n  border-bottom-right-radius: 0.6rem !important;\n  float: left;\n}\n[dir] .home-main .login-form {\n  border-radius: 0px !important;\n  padding: 3rem 1.5rem;\n  background: #123058;\n}\n[dir=ltr] .home-main .login-form {\n  float: right;\n}\n[dir=rtl] .home-main .login-form {\n  float: left;\n}\n.home-main .login-form input, .home-main .login-form textarea {\n  font-size: 0.8rem !important;\n}\n[dir] .home-main .login-form input, [dir] .home-main .login-form textarea {\n  border-radius: 0 !important;\n  padding: 0.5rem !important;\n}\n.home-main .login-form .vs-input--placeholder {\n  font-size: 0.8rem !important;\n}\n.home-main .login-form .input-span-placeholder {\n  color: #333 !important;\n}\n[dir] .home-main .login-form .input-span-placeholder {\n  padding: 0.5rem !important;\n}\n[dir] .home-main .login-form .login-input {\n  margin-top: 1rem !important;\n}\n.home-main .login-form .sign-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .home-main .login-form .sign-btn {\n  border-radius: 0 !important;\n}\n.home-main .left-panel .think-text {\n  font-weight: bold;\n  text-transform: uppercase;\n  font-size: 1.6rem;\n}\n[dir] .home-main .left-panel .think-text {\n  border: 1px solid white;\n  margin: 0 2rem;\n}\n.home-main .left-panel .fair-logo {\n  width: 30%;\n  height: auto;\n}\n.home-main .left-panel .left-content {\n  height: 100%;\n}\n[dir] .home-main .left-panel .left-content {\n  background: #283ac4;\n}\n.home-main .live-panel {\n  color: white;\n  position: relative;\n  width: 8rem;\n}\n[dir] .home-main .live-panel {\n  padding: 1.5rem;\n  background: #123058;\n}\n[dir=ltr] .home-main .live-panel {\n  float: right;\n}\n[dir=rtl] .home-main .live-panel {\n  float: left;\n}\n.home-main .main-btns {\n  height: 80px;\n  flex-wrap: wrap;\n}\n[dir] .home-main .main-btns {\n  margin-bottom: 0%;\n  background: #123058;\n}\n.home-main .main-btns .main-link {\n  flex: 0 0 auto;\n  text-transform: uppercase;\n  font-size: 1rem;\n  font-weight: 700;\n  color: white;\n}\n[dir] .home-main .main-btns .main-link {\n  padding: 2rem 3rem !important;\n}\n[dir] .home-main .main-btns .main-link:hover, [dir] .home-main .main-btns .main-link.active {\n  background: #164A8B;\n}\n.home-footer {\n  bottom: 0;\n}\n.home-footer .contact-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .home-footer .contact-btn {\n  border-radius: 0px !important;\n  background: #67b351 !important;\n  padding: 0.8rem 1rem !important;\n}\n[dir=ltr] .home-footer .contact-btn {\n  border-top-left-radius: 0.6rem !important;\n}\n[dir=rtl] .home-footer .contact-btn {\n  border-top-right-radius: 0.6rem !important;\n}\n.home-footer .contact-card {\n  font-size: 0.7rem !important;\n  font-weight: bold;\n  color: #333;\n  opacity: 0.95;\n}\n[dir] .home-footer .contact-card {\n  border-radius: 0px !important;\n  background: white !important;\n}\n[dir=ltr] .home-footer .contact-card {\n  border-top-right-radius: 0.6rem !important;\n}\n[dir=rtl] .home-footer .contact-card {\n  border-top-left-radius: 0.6rem !important;\n}\n[dir] .home-footer .contact-card .contact-content {\n  padding: 0 1.4rem !important;\n}\n.home-footer .contact-card input, .home-footer .contact-card textarea {\n  font-size: 0.6rem !important;\n}\n[dir] .home-footer .contact-card input, [dir] .home-footer .contact-card textarea {\n  border-radius: 0 !important;\n  padding: 0.4rem !important;\n}\n.home-footer .contact-card .vs-input--placeholder {\n  font-size: 0.6rem !important;\n}\n.home-footer .contact-card .input-span-placeholder {\n  color: #333 !important;\n}\n[dir] .home-footer .contact-card .input-span-placeholder {\n  padding: 0.4rem !important;\n}\n[dir] .home-footer .contact-card .contact-input {\n  margin-top: 0.8rem !important;\n}\n[dir] .home-footer .contact-card .vs-con-textarea {\n  border-radius: 0 !important;\n}\n[dir] .home-footer .contact-card .vs-con-textarea .vs-textarea:focus {\n  border: 1px solid #46c93a !important;\n}\n.home-footer .contact-card .message-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .home-footer .contact-card .message-btn {\n  border-radius: 0px !important;\n  background: #f30054 !important;\n  padding: 0.6rem 1rem !important;\n}\n[dir=ltr] .home-footer .contact-card .message-btn {\n  border-top-left-radius: 0.6rem !important;\n}\n[dir=rtl] .home-footer .contact-card .message-btn {\n  border-top-right-radius: 0.6rem !important;\n}", ""]);
+exports.push([module.i, ".overlay-card {\n  opacity: 0.9;\n}\n.overlay-card .vx-card__collapsible-content {\n  max-height: 300px;\n}\n.home-main {\n  height: calc(var(--vh, 1vh) * 100 - 86px);\n}\n.home-main .login-btn {\n  font-size: 1rem !important;\n}\n[dir] .home-main .login-btn {\n  border-radius: 0px !important;\n  background: black;\n  padding: 0.8rem 1.5rem;\n}\n[dir=ltr] .home-main .login-btn {\n  border-bottom-left-radius: 0.6rem !important;\n  float: right;\n}\n[dir=rtl] .home-main .login-btn {\n  border-bottom-right-radius: 0.6rem !important;\n  float: left;\n}\n[dir] .home-main .login-form {\n  border-radius: 0px !important;\n  padding: 3rem 1.5rem;\n  background: #123058;\n}\n[dir=ltr] .home-main .login-form {\n  float: right;\n}\n[dir=rtl] .home-main .login-form {\n  float: left;\n}\n.home-main .login-form input, .home-main .login-form textarea {\n  font-size: 0.8rem !important;\n}\n[dir] .home-main .login-form input, [dir] .home-main .login-form textarea {\n  border-radius: 0 !important;\n  padding: 0.5rem !important;\n}\n.home-main .login-form .vs-input--placeholder {\n  font-size: 0.8rem !important;\n}\n.home-main .login-form .input-span-placeholder {\n  color: #333 !important;\n}\n[dir] .home-main .login-form .input-span-placeholder {\n  padding: 0.5rem !important;\n}\n[dir] .home-main .login-form .login-input {\n  margin-top: 1rem !important;\n}\n.home-main .login-form .sign-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .home-main .login-form .sign-btn {\n  border-radius: 0 !important;\n}\n.home-main .left-panel .think-text {\n  font-weight: bold;\n  text-transform: uppercase;\n  font-size: 1.6rem;\n}\n[dir] .home-main .left-panel .think-text {\n  border: 1px solid white;\n  margin: 0 2rem;\n}\n.home-main .left-panel .fair-logo {\n  width: 30%;\n  height: auto;\n}\n.home-main .left-panel .left-content {\n  height: 100%;\n}\n[dir] .home-main .left-panel .left-content {\n  background: #283ac4;\n}\n.home-main .live-panel {\n  color: white;\n  position: relative;\n  width: 8rem;\n}\n[dir] .home-main .live-panel {\n  padding: 1.5rem;\n  background: #123058;\n}\n[dir=ltr] .home-main .live-panel {\n  float: right;\n}\n[dir=rtl] .home-main .live-panel {\n  float: left;\n}\n.home-main .main-btns {\n  height: 80px;\n  flex-wrap: wrap;\n}\n[dir] .home-main .main-btns {\n  margin-bottom: 0%;\n  background: #123058;\n}\n.home-main .main-btns .main-link {\n  flex: 0 0 auto;\n  text-transform: uppercase;\n  font-size: 1rem;\n  font-weight: 700;\n  color: white;\n}\n[dir] .home-main .main-btns .main-link {\n  padding: 2rem 3rem !important;\n}\n[dir] .home-main .main-btns .main-link:hover, [dir] .home-main .main-btns .main-link.active {\n  background: #164A8B;\n}\n.home-footer {\n  bottom: 0;\n}\n.home-footer .contact-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .home-footer .contact-btn {\n  border-radius: 0px !important;\n  padding: 0.8rem 1rem !important;\n}\n[dir=ltr] .home-footer .contact-btn {\n  border-top-left-radius: 0.6rem !important;\n}\n[dir=rtl] .home-footer .contact-btn {\n  border-top-right-radius: 0.6rem !important;\n}\n.home-footer .contact-card {\n  font-size: 0.7rem !important;\n  font-weight: bold;\n  color: #333;\n  opacity: 0.95;\n}\n[dir] .home-footer .contact-card {\n  border-radius: 0px !important;\n  background: white !important;\n}\n[dir=ltr] .home-footer .contact-card {\n  border-top-right-radius: 0.6rem !important;\n}\n[dir=rtl] .home-footer .contact-card {\n  border-top-left-radius: 0.6rem !important;\n}\n[dir] .home-footer .contact-card .contact-content {\n  padding: 0 1.4rem !important;\n}\n.home-footer .contact-card input, .home-footer .contact-card textarea {\n  font-size: 0.6rem !important;\n}\n[dir] .home-footer .contact-card input, [dir] .home-footer .contact-card textarea {\n  border-radius: 0 !important;\n  padding: 0.4rem !important;\n}\n.home-footer .contact-card .vs-input--placeholder {\n  font-size: 0.6rem !important;\n}\n.home-footer .contact-card .input-span-placeholder {\n  color: #333 !important;\n}\n[dir] .home-footer .contact-card .input-span-placeholder {\n  padding: 0.4rem !important;\n}\n[dir] .home-footer .contact-card .contact-input {\n  margin-top: 0.8rem !important;\n}\n[dir] .home-footer .contact-card .vs-con-textarea {\n  border-radius: 0 !important;\n}\n[dir] .home-footer .contact-card .vs-con-textarea .vs-textarea:focus {\n  border: 1px solid #46c93a !important;\n}\n.home-footer .contact-card .message-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .home-footer .contact-card .message-btn {\n  border-radius: 0px !important;\n  background: #f30054 !important;\n  padding: 0.6rem 1rem !important;\n}\n[dir=ltr] .home-footer .contact-card .message-btn {\n  border-top-left-radius: 0.6rem !important;\n}\n[dir=rtl] .home-footer .contact-card .message-btn {\n  border-top-right-radius: 0.6rem !important;\n}", ""]);
 
 // exports
 
@@ -308,7 +333,7 @@ var render = function() {
     "div",
     { staticClass: "w-full" },
     [
-      _c("app-header", { attrs: { activeItem: "0", loggedIn: _vm.loggedIn } }),
+      _c("app-header", { attrs: { activeItem: "0" } }),
       _vm._v(" "),
       _c(
         "div",
@@ -339,7 +364,7 @@ var render = function() {
                             [
                               _c("feather-icon", {
                                 attrs: {
-                                  svgclasses: "w-8 h-8",
+                                  svgclasses: "w-6 h-6",
                                   icon: "LogInIcon"
                                 }
                               }),
@@ -356,7 +381,7 @@ var render = function() {
                             "div",
                             {
                               staticClass:
-                                "login-form w-full lg:w-1/4 md:w-1/4 sm:w-1/3 xs:w-1/2"
+                                "login-form w-full lg:w-1/6 md:w-1/4 sm:w-1/3 xs:w-1/2"
                             },
                             [
                               _c(
@@ -374,19 +399,35 @@ var render = function() {
                                 { staticClass: "login-input" },
                                 [
                                   _c("vs-input", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required|email",
+                                        expression: "'required|email'"
+                                      }
+                                    ],
                                     staticClass: "w-full",
                                     attrs: {
                                       color: "success",
-                                      placeholder: "Ingrese su email"
+                                      placeholder: "Ingrese su email",
+                                      "data-vv-validate-on": "blur",
+                                      name: "email"
                                     },
                                     model: {
-                                      value: _vm.contact_phone,
+                                      value: _vm.auth.email,
                                       callback: function($$v) {
-                                        _vm.contact_phone = $$v
+                                        _vm.$set(_vm.auth, "email", $$v)
                                       },
-                                      expression: "contact_phone"
+                                      expression: "auth.email"
                                     }
-                                  })
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    { staticClass: "text-danger text-sm" },
+                                    [_vm._v(_vm._s(_vm.errors.first("email")))]
+                                  )
                                 ],
                                 1
                               ),
@@ -396,19 +437,39 @@ var render = function() {
                                 { staticClass: "login-input" },
                                 [
                                   _c("vs-input", {
+                                    directives: [
+                                      {
+                                        name: "validate",
+                                        rawName: "v-validate",
+                                        value: "required",
+                                        expression: "'required'"
+                                      }
+                                    ],
                                     staticClass: "w-full",
                                     attrs: {
                                       color: "success",
-                                      placeholder: "Ingrese su contrasena"
+                                      placeholder: "Ingrese su contrasena",
+                                      "data-vv-validate-on": "blur",
+                                      name: "contrasena"
                                     },
                                     model: {
-                                      value: _vm.contact_email,
+                                      value: _vm.auth.password,
                                       callback: function($$v) {
-                                        _vm.contact_email = $$v
+                                        _vm.$set(_vm.auth, "password", $$v)
                                       },
-                                      expression: "contact_email"
+                                      expression: "auth.password"
                                     }
-                                  })
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    { staticClass: "text-danger text-sm" },
+                                    [
+                                      _vm._v(
+                                        _vm._s(_vm.errors.first("contrasena"))
+                                      )
+                                    ]
+                                  )
                                 ],
                                 1
                               ),
@@ -421,7 +482,10 @@ var render = function() {
                                     "vs-button",
                                     {
                                       staticClass: "w-full sign-btn",
-                                      attrs: { color: "#164A8B" },
+                                      attrs: {
+                                        disabled: !_vm.validateAuthParam,
+                                        color: "#164A8B"
+                                      },
                                       on: {
                                         click: function($event) {
                                           return _vm.login()
@@ -551,31 +615,23 @@ var render = function() {
                       ]
                     ),
                     _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "vx-col w-full lg:w-1/4 sm:w-1/4 xs:w-1/4 text-right"
-                      },
-                      [
-                        _c(
-                          "vs-button",
-                          { staticClass: "contact-btn items-center" },
-                          [
-                            _c("feather-icon", {
-                              attrs: {
-                                svgClasses: "w-4 h-4 m-1",
-                                icon: "MessageCircleIcon"
-                              }
-                            }),
-                            _vm._v(" "),
-                            _c("span", [_vm._v("CONTACTA CON NOSOTROS")])
-                          ],
-                          1
-                        )
-                      ],
-                      1
-                    )
+                    _c("div", { staticClass: "vx-col text-right" }, [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "contact-btn cyan-dark flex items-center justify-end cursor-pointer"
+                        },
+                        [
+                          _c("svg-icon", { attrs: { icon: "contact" } }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "text-white ml-2" }, [
+                            _vm._v("CONTACTA CON NOSOTROS")
+                          ])
+                        ],
+                        1
+                      )
+                    ])
                   ]
                 )
               ]
@@ -607,11 +663,8 @@ var render = function() {
                             }
                           },
                           [
-                            _c("feather-icon", {
-                              attrs: {
-                                svgClasses: "w-10 h-10",
-                                icon: "RadioIcon"
-                              }
+                            _c("svg-icon", {
+                              attrs: { size: "w-10 h-10", icon: "live" }
                             }),
                             _vm._v(" "),
                             _c(
@@ -642,7 +695,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "main-link",
-                        attrs: { to: "/fair/country/2/2" }
+                        attrs: { to: "/stand/home" }
                       },
                       [_vm._v("\r\n          stands\r\n        ")]
                     ),
@@ -686,7 +739,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "main-link",
-                        attrs: { to: "/fair/contact" }
+                        attrs: { to: "/home/contact" }
                       },
                       [_vm._v("\r\n          patrocinadores\r\n        ")]
                     )

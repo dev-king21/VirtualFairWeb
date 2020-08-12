@@ -42,6 +42,26 @@ __webpack_require__.r(__webpack_exports__);
     item: {
       type: String,
       required: true
+    },
+    remove: {
+      type: Function,
+      required: false
+    },
+    show: {
+      type: Function,
+      required: false
+    },
+    id: {
+      type: Number,
+      required: true
+    }
+  },
+  methods: {
+    removeBrochure: function removeBrochure(id) {
+      this.remove(id);
+    },
+    showBrochure: function showBrochure(id) {
+      this.show(id);
     }
   }
 });
@@ -87,6 +107,32 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -98,17 +144,151 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      catalog_list: []
+      catalog_list: [],
+      catalog_show: false,
+      catalog_title: '',
+      catalog_file: null,
+      stand_id: null
     };
   },
-  created: function created() {
-    var list = [];
+  methods: {
+    browseBrochure: function browseBrochure() {
+      this.$refs.refBrochureFile.click();
+    },
+    brochureChanged: function brochureChanged(e) {
+      var files = e.target.files;
+      this.validateAndUpload(files);
+    },
+    validateAndUpload: function validateAndUpload(files) {
+      if (files.length !== 1) {
+        this.$vs.notify({
+          title: 'Error - Too Many Files',
+          text: 'Only support uploading one file!',
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        });
+        return;
+      }
 
-    for (var i = 0; i < 3; i++) {
-      list.push(i);
+      var rawFile = files[0]; // only use files[0]
+
+      if (!this.isValidExt(rawFile)) {
+        this.$vs.notify({
+          title: 'File Format Error',
+          text: 'Only supports upload .jpg, .pdf suffix files',
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        });
+        return false;
+      }
+
+      this.catalog_show = true;
+      this.catalog_file = rawFile;
+    },
+    isValidExt: function isValidExt(file) {
+      return /\.(pdf|jpg)$/.test(file.name);
+    },
+    getBrochures: function getBrochures() {
+      var _this = this;
+
+      this.$http.post('/api/setting/my_stand/get_brochures').then(function (response) {
+        var data = response.data;
+
+        if (!data.stand || !data.stand.id) {
+          _this.$vs.notify({
+            title: 'error',
+            text: 'primero debe comprar el soporte.',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle',
+            color: 'danger'
+          });
+
+          setTimeout(function () {
+            _this.$router.push('/setting/home');
+          }, 3000);
+          return;
+        }
+
+        _this.catalog_show = false;
+        _this.stand_id = data.stand.id;
+        _this.catalog_list = data.stand.portfolios;
+      });
+    },
+    saveBrochure: function saveBrochure() {
+      var _this2 = this;
+
+      if (!this.catalog_title && this.catalog_title === '') {
+        this.$vs.notify({
+          title: 'Error de título del catálogo',
+          text: 'Ingrese corregir el mosaico del catálogo',
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        });
+        return;
+      }
+
+      if (!this.catalog_file || this.catalog_title.name === '' || this.catalog_file.size > 1024 * 1024) {
+        this.$vs.notify({
+          title: 'error de formato de archivo',
+          text: 'El tamaño del archivo debe ser inferior a 1 MB y tener el formato pdf, jpg',
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        });
+        return;
+      }
+
+      var formData = new FormData();
+      var headers = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      };
+      formData.append('stand_id', this.stand_id);
+      formData.append('catalog_title', this.catalog_title);
+      formData.append('catalog_file', this.catalog_file);
+      this.$http.post('/api/setting/my_stand/save_brochure', formData, headers).then(function (response) {
+        if (response.data.status === 'ok') {
+          _this2.$vs.notify({
+            title: 'éxito',
+            text: 'Folleto registrado con éxito',
+            iconPack: 'feather',
+            icon: 'icon-info',
+            color: 'success'
+          });
+
+          _this2.getBrochures();
+        }
+      });
+    },
+    removeBrochure: function removeBrochure(id) {
+      var _this3 = this;
+
+      this.$http.post('/api/setting/my_stand/remove_brochure', {
+        _id: id
+      }).then(function (response) {
+        if (response.data.status === 'ok') {
+          _this3.$vs.notify({
+            title: 'éxito',
+            text: 'Folleto registrado con éxito',
+            iconPack: 'feather',
+            icon: 'icon-info',
+            color: 'success'
+          });
+
+          _this3.getBrochures();
+        }
+      });
+    },
+    showBrochure: function showBrochure(id) {
+      console.log(id);
     }
-
-    this.catalog_list = list;
+  },
+  created: function created() {
+    this.getBrochures();
   }
 });
 
@@ -239,12 +419,8 @@ var render = function() {
           "flex w-full items-center justify-center card-header grey-real"
       },
       [
-        _c("feather-icon", {
-          attrs: {
-            svgClasses: "w-12 h-12",
-            color: "black",
-            icon: "BookOpenIcon"
-          }
+        _c("svg-icon", {
+          attrs: { size: "w-12 h-12", color: "text-black", icon: "brochure" }
         })
       ],
       1
@@ -256,12 +432,15 @@ var render = function() {
           "div",
           {
             staticClass:
-              "flex items-center justify-center text-white py-2 cyan-dark w-full cursor-pointer"
+              "flex items-center justify-center text-white py-2 cyan-dark w-full cursor-pointer",
+            on: {
+              click: function($event) {
+                return _vm.showBrochure(_vm.id)
+              }
+            }
           },
           [
-            _c("feather-icon", {
-              attrs: { svgClasses: "w-5 h-5", icon: "EyeIcon" }
-            }),
+            _c("svg-icon", { attrs: { size: "w-5 h-5", icon: "eye" } }),
             _vm._v(" "),
             _c(
               "div",
@@ -278,12 +457,15 @@ var render = function() {
           "div",
           {
             staticClass:
-              "flex items-center justify-center text-white py-2 yellow-dark w-full cursor-pointer"
+              "flex items-center justify-center text-white py-2 yellow-dark w-full cursor-pointer",
+            on: {
+              click: function($event) {
+                return _vm.removeBrochure(_vm.id)
+              }
+            }
           },
           [
-            _c("feather-icon", {
-              attrs: { svgClasses: "w-5 h-5", icon: "Trash2Icon" }
-            }),
+            _c("svg-icon", { attrs: { size: "w-5 h-5", icon: "erase" } }),
             _vm._v(" "),
             _c(
               "div",
@@ -326,7 +508,7 @@ var render = function() {
       _c("app-header", { attrs: { activeItem: "0" } }),
       _vm._v(" "),
       _c("bread-crumb", {
-        attrs: { icon: "BookOpenIcon", text: "catlogos o brochures" }
+        attrs: { icon: "brochure", type: "svg", text: "catlogos o brochures" }
       }),
       _vm._v(" "),
       _c(
@@ -349,7 +531,10 @@ var render = function() {
                       _c("catalog-card", {
                         attrs: {
                           title: "Catalog de Productos Ecologicos",
-                          item: "123"
+                          item: "123",
+                          id: item.id,
+                          remove: _vm.removeBrochure,
+                          show: _vm.showBrochure
                         }
                       })
                     ],
@@ -357,35 +542,124 @@ var render = function() {
                   )
                 }),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass:
-                      "vx-col w-1/4 flex flex-col items-center justify-center"
-                  },
-                  [
-                    _c(
-                      "div",
-                      {
-                        staticClass:
-                          "mt-4 blue-dark flex items-center justify-center text-white",
-                        staticStyle: {
-                          "border-radius": "50%",
-                          width: "4rem",
-                          height: "4rem"
-                        }
-                      },
-                      [
-                        _c("feather-icon", {
-                          attrs: { svgClases: "w-10 h-10", icon: "PlusIcon" }
-                        })
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _vm._m(0)
-                  ]
-                )
+                !_vm.catalog_show
+                  ? [
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "vx-col w-1/4 flex flex-col items-center justify-center"
+                        },
+                        [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "mt-4 blue-dark flex items-center justify-center text-white",
+                              staticStyle: {
+                                "border-radius": "50%",
+                                width: "4rem",
+                                height: "4rem"
+                              }
+                            },
+                            [
+                              _c("feather-icon", {
+                                staticClass: "cursor-pointer",
+                                attrs: {
+                                  svgClases: "w-10 h-10",
+                                  icon: "PlusIcon"
+                                },
+                                on: { click: _vm.browseBrochure }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _vm._m(0)
+                        ]
+                      )
+                    ]
+                  : [
+                      _c("div", { staticClass: "vx-col w-1/4" }, [
+                        _c("div", { staticClass: "catalog-card" }, [
+                          _c(
+                            "div",
+                            { staticClass: "h6 mb-2" },
+                            [
+                              _c("vs-input", {
+                                staticClass: "w-full",
+                                attrs: { placeholder: "título del catálogo" },
+                                model: {
+                                  value: _vm.catalog_title,
+                                  callback: function($$v) {
+                                    _vm.catalog_title = $$v
+                                  },
+                                  expression: "catalog_title"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex w-full items-center justify-center card-header grey-real"
+                            },
+                            [
+                              _c("svg-icon", {
+                                attrs: {
+                                  size: "w-12 h-12",
+                                  color: "text-black",
+                                  icon: "brochure"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "vx-row" }, [
+                            _c("div", { staticClass: "vx-col w-full" }, [
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "flex items-center justify-center text-white py-2 cyan-dark w-full cursor-pointer",
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.saveBrochure()
+                                    }
+                                  }
+                                },
+                                [
+                                  _c("feather-icon", {
+                                    attrs: { size: "w-5 h-5", icon: "SaveIcon" }
+                                  }),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    {
+                                      staticClass: "ml-2",
+                                      staticStyle: { "font-size": "0.9rem" }
+                                    },
+                                    [_vm._v("GUARDAR")]
+                                  )
+                                ],
+                                1
+                              )
+                            ])
+                          ])
+                        ])
+                      ])
+                    ],
+                _vm._v(" "),
+                _c("input", {
+                  ref: "refBrochureFile",
+                  staticClass: "hidden",
+                  attrs: { type: "file", accept: ".jpg, .pdf" },
+                  on: { change: _vm.brochureChanged }
+                })
               ],
               2
             )
@@ -402,10 +676,10 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "mt-4 text-center" }, [
-      _vm._v("\n                        SUBIR PDF O JPG "),
+      _vm._v("\n                            SUBIR PDF O JPG "),
       _c("br"),
       _vm._v(
-        "\n                        (Peso maximo 1mb)\n                    "
+        "\n                            (Peso maximo 1mb)\n                        "
       )
     ])
   }

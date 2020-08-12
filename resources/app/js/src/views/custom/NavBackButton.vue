@@ -10,6 +10,7 @@
         border-radius: 0 !important;
         border-bottom-right-radius: 0.8rem !important;
         padding: 0.3rem 0.8rem !important;
+        height: 3.6rem !important;
         .back-text {
             font-size: 0.6rem !important;
         }

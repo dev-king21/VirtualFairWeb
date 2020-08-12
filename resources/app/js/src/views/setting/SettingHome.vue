@@ -1,19 +1,19 @@
 <template>
     <div class="w-full">
-        <app-header activeItem="0"></app-header>
+        <app-header :hideNavbar="true"></app-header>
         <div class="flex w-full items-start justify-between setting-bg-img setting-home-main">
             <nav-back-button></nav-back-button>
             <div class="flex flex-col setting-wrapper">
                 <div class="flex items-center justify-between bg-blue-dark">
                     <div class="flex items-center text-white mx-6" >
-                        <feather-icon svgClasses="w-10 h-10" icon="BookOpenIcon"/>
+                        <svg-icon size="w-10 h-10" icon="profile"/>
                         <div class="h3 text-white ml-4">MI CUENTA</div>
                     </div>
                     <div class="flex items-center py-3 cursor-pointer" @click="$router.push('/setting/profile')">
                         <div>
                             <div class="user-name text-white">MI PERFIL</div>
                         </div>
-                        <img :src="require(`@assets/images/pages/foto_expositores1.jpg`)" class="user-img responsive mx-4">
+                        <img :src="`/images/pages/${user.avatar}`" class="user-img responsive mx-4">
                     </div>
                 </div>
                 <div class="flex flex-col bg-white text-center py-6" style="opacity: .9">
@@ -49,13 +49,21 @@ export default {
     NavBackButton,
     SettingButton
   },
+  data () {
+    return {
+      user: {}  
+    }    
+  },
   created () {
-    const list = []
-    for (let i = 0; i < 9; i++) {
-      list.push(i)
+    let userInfo = localStorage.getItem('userInfo')
+    if (!userInfo) {
+      return this.$router.push('/home')
     }
-    
-    this.all_contacts = list
+    userInfo = JSON.parse(userInfo)
+    if (!userInfo.id || !userInfo.email || userInfo.email === '') {
+      return this.$router.push('/home')
+    }
+    this.user = userInfo
   }
     
 }

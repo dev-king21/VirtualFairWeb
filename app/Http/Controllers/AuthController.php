@@ -3,14 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
+use Validator;
+use App\User;
+use Carbon\Carbon;
 
 class AuthController extends Controller
 {
     public function register(Request $request)
     {
+        
         $v = Validator::make($request->all(), [
-            'email' => 'required|email|unique:users',
-            'password'  => 'required|min:3|confirmed',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'phone' => 'required|min:8',
+            'company' => 'required',
+            'address' => 'required',
+            'country' => 'required',
+            'region' => 'required',
+            'email' => 'required|email',
+            'password'  => 'required|min:8',
+            'type'  => 'required',
         ]);
         if ($v->fails())
         {
@@ -19,52 +32,98 @@ class AuthController extends Controller
                 'errors' => $v->errors()
             ], 422);
         }
+        
         $user = new User;
-        $user->email = $request->email;
-        $user->password = bcrypt($request->password);
+        $user->first_name = $request->post('first_name');
+        $user->last_name = $request->post('last_name');
+        $user->phone = $request->post('phone');
+        $user->address = $request->post('address');
+        $user->company = $request->post('company');
+        $user->country = $request->post('country');
+        $user->region = $request->post('region');
+        $user->email = $request->post('email');
+        $user->type = $request->post('type');
+        $user->password = bcrypt($request->post('password'));
+        
         $user->save();
+        
         return response()->json(['status' => 'success'], 200);
     }
 
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-        if ($token = $this->guard()->attempt($credentials)) {
-            return response()->json(['status' => 'success'], 200)->header('Authorization', $token);
-        }
-        return response()->json(['error' => 'login_error'], 401);
-    }
-    public function logout()
-    {
-        $this->guard()->logout();
+        if (!Auth::attempt($credentials))
+            return response()->json(['error' => 'Unauthorized'], 401);
+        
+        $user = $request->user();
+        $tokenResult = $user->createToken('Virtual Fair Web Api Token');
+        $token = $tokenResult->token;
+        if ($request->remember_me)
+            $token->expires_at = Carbon::now()->addWeeks(1);
+        
+        $token->save();
         return response()->json([
-            'status' => 'success',
-            'msg' => 'Logged out Successfully.'
-        ], 200);
+            'user' => $user,
+            'access_token' => $tokenResult->accessToken,
+            'token_type' => 'Bearer',
+            'expires_at' => Carbon::parse(
+                $tokenResult->token->expires_at
+            )->toDateTimeString()
+        ]);
+        
     }
 
-    public function user(Request $request)
+    public function logout(Request $request)
     {
-        $user = User::find(Auth::user()->id);
+        $request->user()->token()->revoke();
         return response()->json([
-            'status' => 'success',
-            'data' => $user
+            'message' => 'Successfully logged out'
         ]);
     }
-
-    public function refresh()
+  
+    public function user(Request $request)
     {
-        if ($token = $this->guard()->refresh()) {
-            return response()
-                ->json(['status' => 'successs'], 200)
-                ->header('Authorization', $token);
-        }
-        return response()->json(['error' => 'refresh_token_error'], 401);
+        return response()->json($request->user());
     }
 
-    private function guard()
+    public function save(Request $request)
     {
-        return Auth::guard();
+        $v = Validator::make($request->all(), [
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'phone' => 'required|min:8',
+            'company' => 'required',
+            'address' => 'required',
+            'country' => 'required',
+            'region' => 'required',
+            'email' => 'required|email'
+        ]);
+        if ($v->fails())
+        {
+            return response()->json([
+                'status' => 'error',
+                'errors' => $v->errors()
+            ], 422);
+        }
+        
+        $user = $request->user();
+        $user->first_name = $request->post('first_name');
+        $user->last_name = $request->post('last_name');
+        $user->phone = $request->post('phone');
+        $user->address = $request->post('address');
+        $user->company = $request->post('company');
+        $user->country = $request->post('country');
+        $user->region = $request->post('region');
+        $user->email = $request->post('email');
+        $user->type = $request->post('type');
+        if ($request->post('password') != '')
+            $user->password = bcrypt($request->post('password'));
+        
+        $user->save();
+        unset($user->password);
+        
+        return response()->json(['status' => 'success', 'user'=> $user], 200);
     }
 
 }

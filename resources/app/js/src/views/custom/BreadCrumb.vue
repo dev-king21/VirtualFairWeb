@@ -3,7 +3,12 @@
     <div class="flex flex-row nav-item">
         <nav-back-button v-show="!disableBack"/>
         <div class="flex items-center text-white ml-4" :class="{'justify-between': center}">
-            <feather-icon svgClasses="w-10 h-10" :icon="icon"/>
+            <template v-if="type!=='svg'">
+              <feather-icon svgClasses="w-10 h-10" :icon="icon"/>
+            </template>
+            <template v-else>
+              <svg-icon size="w-10 h-10" :icon="icon"/>
+            </template>
             <div class="ml-4">{{text}}</div>
         </div>
     </div>
@@ -32,6 +37,10 @@ export default {
       required: false
     },
     icon: {
+      type: String,
+      required: false
+    },
+    type: {
       type: String,
       required: false
     },

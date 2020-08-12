@@ -1,6 +1,6 @@
 <template>
     <div class="stand-button cursor-pointer bg-white flex items-center py-2 px-3" @click="gopage">
-        <feather-icon svgClasses="w-8 h-8" class="text-cyan-dark" :icon="icon"></feather-icon>
+        <svg-icon size="w-8 h-8" color="text-cyan-dark" :icon="icon"/>
         <div class="ml-2 font-bold uppercase">
             {{text}}
         </div>
@@ -39,6 +39,7 @@ export default {
       border-top-right-radius: 1rem;
       border-bottom-left-radius: 1rem;
       font-size: 0.8rem !important;
+      color: black !important;
     }
     
 </style>

@@ -2,7 +2,9 @@
 <vs-navbar v-model="activeItem" class="flex flex-end">
     <div slot="title">
       <vs-navbar-title>
-        <img class ="logo cursor-pointer" to="/home" src="@assets/images/logo/logo-color.png">
+        <router-link to="/home" >
+          <img class="logo cursor-pointer" src="@assets/images/logo/logo-color.png">
+        </router-link>
       </vs-navbar-title>
     </div>
     <template v-if="!loggedIn">
@@ -34,13 +36,15 @@
       </vs-navbar-item>
 
       <vs-navbar-item index="3" v-show="!hideNavbar">
-          <a class="h3" href="/app/home/contact">Contacteons</a>
+          <a class="h3" href="/app/home/contact">Contactenos</a>
       </vs-navbar-item>
 
-      <vs-navbar-item index="4" v-show="!hideNavbar">
-        <feather-icon icon="InstagramIcon" svgClasses="text-white h-4 w-4" class="p-2 circleIcon "></feather-icon>
-        <feather-icon icon="FacebookIcon" svgClasses="text-white h-4 w-4" class="p-2 circleIcon"></feather-icon>
-        <feather-icon icon="TwitterIcon" svgClasses="text-white h-4 w-4" class="p-2 circleIcon"></feather-icon>
+      <vs-navbar-item index="4" class="px-4" v-show="!hideNavbar">
+        <svg-icon icon="facebook" size="w-8 h-8"></svg-icon>
+        <svg-icon icon="instagram"  size="w-8 h-8"></svg-icon>
+        <svg-icon icon="linkedin" size="w-8 h-8" ></svg-icon>
+        <svg-icon icon="whatsapp" size="w-8 h-8" ></svg-icon>
+        <svg-icon icon="youtube" size="w-8 h-8" ></svg-icon>
       </vs-navbar-item>
     </template>
     <template v-else>
@@ -51,21 +55,22 @@
           <a class="h3" href="/app/fair">Contacteons</a>
       </vs-navbar-item>
       <vs-navbar-item index="2" v-show="!hideNavbar">
-          <a class="h3 flex items-center" href="/app/fair">
-            <feather-icon icon="LogOutIcon"/>
+          <a class="h3 flex items-center cursor-pointer" href.prevent @click="logout()">
+            <feather-icon svgClasses="w-5 h-5" icon="LogOutIcon"/>
             <span>Cerrar Session</span>
           </a>
       </vs-navbar-item>
       <vs-navbar-item index="3" v-show="!hideNavbar">
           <a class="h3 setting-nav text-center"  href="/app/setting">
-            <feather-icon icon="UsersIcon"/>
-            <div>Mi Cuenta</div>
+            <svg-icon size="w-8 h-8" icon="profile"/>
+            <div class="h6 text-white">Mi Cuenta</div>
           </a>
       </vs-navbar-item>
     </template>
 </vs-navbar>
 </template>
 <script>
+import moduleAuth from '@/store/auth/moduleAuth.js'
 export default {
   props: {
     activeItem: {
@@ -75,22 +80,40 @@ export default {
     hideNavbar: {
       type: Boolean,
       required: false
-    },
-    loggedIn: {
-      type: Boolean,
-      required: false
     }
   },
-  components: {
-    
-  }, 
   data () {
     return {
       search: ''
     }
   },
+  computed: {
+    loggedIn () {
+      return this.$store.state.auth.loggedIn
+      /*let userInfo = localStorage.getItem('userInfo')
+      if (userInfo) {
+        userInfo = JSON.parse(userInfo)
+        if (userInfo.id !== 0 && userInfo.email && userInfo.email !== '') {
+          return true
+        }
+      }
+      return false*/
+    }
+  },
   methods: {
-
+    logout () {
+      if (!moduleAuth.isRegistered) {
+        this.$store.registerModule('auth', moduleAuth)
+        moduleAuth.isRegistered = true
+      }
+      this.$store.dispatch('auth/logout')
+    }
+  },
+  created () {
+    if (!moduleAuth.isRegistered) {
+      this.$store.registerModule('auth', moduleAuth)
+      moduleAuth.isRegistered = true
+    }
   }
 }
 </script>

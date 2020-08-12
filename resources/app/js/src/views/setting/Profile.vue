@@ -22,32 +22,38 @@
                             <h4 class="font-bold mb-6">Datos Personales</h4>
                             <div class="vx-row w-full">
                                 <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-2">
-                                    <vs-input class="w-4/5" color="success"  v-model="input1" label-placeholder="Numbre"></vs-input>
+                                    <vs-input class="w-4/5" color="success" label-placeholder="Nombre" name="Nombre"
+                                        v-validate="'required'" data-vv-validate-on="blur" v-model="user.first_name"/>
                                 </div>
                                 <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-2">
-                                    <vs-input class="w-4/5" color="success"  v-model="input1" label-placeholder="Apellido"></vs-input>
+                                    <vs-input class="w-4/5" color="success" label-placeholder="Apellido" name="Apellido"
+                                        v-validate="'required'" data-vv-validate-on="blur" v-model="user.last_name"/>
                                 </div>
                                 <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-2">
-                                    <vs-input class="w-4/5" color="success"  v-model="input1" label-placeholder="Email"></vs-input>
+                                    <vs-input class="w-4/5" color="success" label-placeholder="Email" name="Email"
+                                        v-validate="'required|email'" data-vv-validate-on="blur" v-model="user.email"/>
                                 </div>
                                 <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-2">
-                                    <vs-input class="w-4/5" color="success"  v-model="input1" label-placeholder="Telefono"></vs-input>
+                                    <vs-input class="w-4/5" color="success" label-placeholder="Telefono" name="Telefono"
+                                        v-validate="'required|min:8'" data-vv-validate-on="blur" v-model="user.phone"/>
                                 </div>
                                 <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-2">
-                                    <vs-input class="w-4/5" color="success"  v-model="input1" label-placeholder="Compania"></vs-input>
+                                    <vs-input class="w-4/5" color="success" label-placeholder="Compania" name="Compania"
+                                        v-validate="'required'" data-vv-validate-on="blur" v-model="user.company"/>
                                 </div>
                                 <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-2">
-                                    <vs-input class="w-4/5" color="success"  v-model="input1" label-placeholder="Posicion"></vs-input>
+                                    <vs-input class="w-4/5" color="success" label-placeholder="Posicion" name="Posicion"
+                                        v-validate="'required'" data-vv-validate-on="blur" v-model="user.address"/>
                                 </div>
                                 <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-2">
-                                    <!-- <vs-input class="w-4/5" color="success"  v-model="input1" label-placeholder="Seleccione un Pais"></vs-input> -->
+                                    <!-- <vs-input class="w-4/5" color="success" label-placeholder="Seleccione un Pais"/> -->
                                     <div class="ml-1">Seleccione un Pais</div>
-                                    <v-select class="w-4/5" label="countryName" v-model="selected"  :options="countries" />
+                                    <v-select class="w-4/5" label="countryName" v-model="selected" :options="countries" />
                                 </div>
                                 <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-2">
-                                    <!-- <vs-input class="w-4/5" color="success"  v-model="input1" label-placeholder="Seleccione la Region"></vs-input> -->
+                                    <!-- <vs-input class="w-4/5" color="success" label-placeholder="Seleccione la Region"/> -->
                                     <div class="ml-1">Seleccione la Region</div>
-                                    <v-select class="w-4/5" label="countryName" v-model="selected"  :options="regions" />
+                                    <v-select class="w-4/5" label="countryName" v-model="selected" :options="regions" />
                                 </div>
                                 <div class="vx-col w-full my-3">
                                     <div class="flex items-center">
@@ -59,16 +65,18 @@
                                     <h4 class="font-bold">Cambiar contrasena</h4>
                                 </div>
                                 <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-2">
-                                    <vs-input class="w-4/5" type="password" color="success"  v-model="input1" label-placeholder="Seleccione una constrasena"></vs-input>
+                                    <vs-input class="w-4/5" type="password" color="success" name="Contrasena"
+                                        v-validate="'required'" data-vv-validate-on="blur" v-model="user.password" label-placeholder="Seleccione una constrasena"/>
                                 </div>
                                 <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-2">
-                                    <vs-input class="w-4/5" type="password" color="success"  v-model="input1" label-placeholder="Repita la contrasena"></vs-input>
+                                    <vs-input class="w-4/5" type="password" color="success"  name="Apellido"
+                                        v-validate="'required'" data-vv-validate-on="blur" v-model="repeat_password" label-placeholder="Repita la contrasena"/>
                                 </div>
                                 <div class="vx-col w-full text-center mt-base">
-                                    <vs-button class="yellow-dark frm-button">
+                                    <vs-button to="/setting/home" class="yellow-dark frm-button">
                                         CANCELAR
                                     </vs-button>
-                                    <vs-button class="cyan-dark frm-button ml-8">
+                                    <vs-button @click="saveProfile()" class="cyan-dark frm-button ml-8">
                                         GUARDAR CAMBIOS
                                     </vs-button>
                                 </div>
@@ -96,15 +104,22 @@ export default {
       input1: '',
       countries: [],
       regions: [],
-      selected: {}
+      selected: {},
+      user: {},
+      repeat_password: ''
     }
   },
+  methods: {
+    saveProfile () {
+      this.$http.post('/api/auth/save', this.user)
+        .then((response) => {
+          localStorage.setItem('userInfo', JSON.stringify(response.data.user))
+          this.$router.push('/setting/profile').catch(() => {})  
+        })  
+    }  
+  },
   created () {
-    const list = []
-    for (let i = 0; i < 9; i++) {
-      list.push(i)
-    }
-
+    
     this.countries = this.regions = [
       {
         countryCode: 'DE',
@@ -120,7 +135,20 @@ export default {
       }
     ]
     
-    this.all_contacts = list
+    let userInfo = localStorage.getItem('userInfo')
+    if (!userInfo) {
+      return this.$router.push('/home')
+    }
+    userInfo = JSON.parse(userInfo)
+    if (!userInfo.id || !userInfo.email || userInfo.email === '') {
+      return this.$router.push('/home')
+    }
+    
+    this.$http.post('/api/auth/profile')
+      .then((response) => {
+        this.user = response.data  
+      })
+      .catch((error) => console.log(error))
   }
     
 }

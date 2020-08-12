@@ -9,6 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/store/auth/moduleAuth.js */ "./resources/app/js/src/store/auth/moduleAuth.js");
 //
 //
 //
@@ -76,6 +77,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     activeItem: {
@@ -85,19 +91,42 @@ __webpack_require__.r(__webpack_exports__);
     hideNavbar: {
       type: Boolean,
       required: false
-    },
-    loggedIn: {
-      type: Boolean,
-      required: false
     }
   },
-  components: {},
   data: function data() {
     return {
       search: ''
     };
   },
-  methods: {}
+  computed: {
+    loggedIn: function loggedIn() {
+      return this.$store.state.auth.loggedIn;
+      /*let userInfo = localStorage.getItem('userInfo')
+      if (userInfo) {
+        userInfo = JSON.parse(userInfo)
+        if (userInfo.id !== 0 && userInfo.email && userInfo.email !== '') {
+          return true
+        }
+      }
+      return false*/
+    }
+  },
+  methods: {
+    logout: function logout() {
+      if (!_store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__["default"].isRegistered) {
+        this.$store.registerModule('auth', _store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
+        _store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__["default"].isRegistered = true;
+      }
+
+      this.$store.dispatch('auth/logout');
+    }
+  },
+  created: function created() {
+    if (!_store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__["default"].isRegistered) {
+      this.$store.registerModule('auth', _store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
+      _store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__["default"].isRegistered = true;
+    }
+  }
 });
 
 /***/ }),
@@ -183,15 +212,18 @@ var render = function() {
         "div",
         { attrs: { slot: "title" }, slot: "title" },
         [
-          _c("vs-navbar-title", [
-            _c("img", {
-              staticClass: "logo cursor-pointer",
-              attrs: {
-                to: "/home",
-                src: __webpack_require__(/*! @assets/images/logo/logo-color.png */ "./resources/app/assets/images/logo/logo-color.png")
-              }
-            })
-          ])
+          _c(
+            "vs-navbar-title",
+            [
+              _c("router-link", { attrs: { to: "/home" } }, [
+                _c("img", {
+                  staticClass: "logo cursor-pointer",
+                  attrs: { src: __webpack_require__(/*! @assets/images/logo/logo-color.png */ "./resources/app/assets/images/logo/logo-color.png") }
+                })
+              ])
+            ],
+            1
+          )
         ],
         1
       ),
@@ -318,7 +350,7 @@ var render = function() {
                 _c(
                   "a",
                   { staticClass: "h3", attrs: { href: "/app/home/contact" } },
-                  [_vm._v("Contacteons")]
+                  [_vm._v("Contactenos")]
                 )
               ]
             ),
@@ -334,32 +366,27 @@ var render = function() {
                     expression: "!hideNavbar"
                   }
                 ],
+                staticClass: "px-4",
                 attrs: { index: "4" }
               },
               [
-                _c("feather-icon", {
-                  staticClass: "p-2 circleIcon ",
-                  attrs: {
-                    icon: "InstagramIcon",
-                    svgClasses: "text-white h-4 w-4"
-                  }
+                _c("svg-icon", {
+                  attrs: { icon: "facebook", size: "w-8 h-8" }
                 }),
                 _vm._v(" "),
-                _c("feather-icon", {
-                  staticClass: "p-2 circleIcon",
-                  attrs: {
-                    icon: "FacebookIcon",
-                    svgClasses: "text-white h-4 w-4"
-                  }
+                _c("svg-icon", {
+                  attrs: { icon: "instagram", size: "w-8 h-8" }
                 }),
                 _vm._v(" "),
-                _c("feather-icon", {
-                  staticClass: "p-2 circleIcon",
-                  attrs: {
-                    icon: "TwitterIcon",
-                    svgClasses: "text-white h-4 w-4"
-                  }
-                })
+                _c("svg-icon", {
+                  attrs: { icon: "linkedin", size: "w-8 h-8" }
+                }),
+                _vm._v(" "),
+                _c("svg-icon", {
+                  attrs: { icon: "whatsapp", size: "w-8 h-8" }
+                }),
+                _vm._v(" "),
+                _c("svg-icon", { attrs: { icon: "youtube", size: "w-8 h-8" } })
               ],
               1
             )
@@ -422,11 +449,18 @@ var render = function() {
                 _c(
                   "a",
                   {
-                    staticClass: "h3 flex items-center",
-                    attrs: { href: "/app/fair" }
+                    staticClass: "h3 flex items-center cursor-pointer",
+                    attrs: { "href.prevent": "" },
+                    on: {
+                      click: function($event) {
+                        return _vm.logout()
+                      }
+                    }
                   },
                   [
-                    _c("feather-icon", { attrs: { icon: "LogOutIcon" } }),
+                    _c("feather-icon", {
+                      attrs: { svgClasses: "w-5 h-5", icon: "LogOutIcon" }
+                    }),
                     _vm._v(" "),
                     _c("span", [_vm._v("Cerrar Session")])
                   ],
@@ -456,9 +490,13 @@ var render = function() {
                     attrs: { href: "/app/setting" }
                   },
                   [
-                    _c("feather-icon", { attrs: { icon: "UsersIcon" } }),
+                    _c("svg-icon", {
+                      attrs: { size: "w-8 h-8", icon: "profile" }
+                    }),
                     _vm._v(" "),
-                    _c("div", [_vm._v("Mi Cuenta")])
+                    _c("div", { staticClass: "h6 text-white" }, [
+                      _vm._v("Mi Cuenta")
+                    ])
                   ],
                   1
                 )
@@ -571,6 +609,166 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_Header_vue_vue_type_template_id_07c95f16___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
 
 
+
+/***/ }),
+
+/***/ "./resources/app/js/src/store/auth/moduleAuth.js":
+/*!*******************************************************!*\
+  !*** ./resources/app/js/src/store/auth/moduleAuth.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _moduleAuthState_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./moduleAuthState.js */ "./resources/app/js/src/store/auth/moduleAuthState.js");
+/* harmony import */ var _moduleAuthMutations_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./moduleAuthMutations.js */ "./resources/app/js/src/store/auth/moduleAuthMutations.js");
+/* harmony import */ var _moduleAuthActions_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./moduleAuthActions.js */ "./resources/app/js/src/store/auth/moduleAuthActions.js");
+/* harmony import */ var _moduleAuthGetters_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./moduleAuthGetters.js */ "./resources/app/js/src/store/auth/moduleAuthGetters.js");
+
+
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  namespaced: true,
+  state: _moduleAuthState_js__WEBPACK_IMPORTED_MODULE_0__["default"],
+  mutations: _moduleAuthMutations_js__WEBPACK_IMPORTED_MODULE_1__["default"],
+  actions: _moduleAuthActions_js__WEBPACK_IMPORTED_MODULE_2__["default"],
+  getters: _moduleAuthGetters_js__WEBPACK_IMPORTED_MODULE_3__["default"]
+});
+
+/***/ }),
+
+/***/ "./resources/app/js/src/store/auth/moduleAuthActions.js":
+/*!**************************************************************!*\
+  !*** ./resources/app/js/src/store/auth/moduleAuthActions.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _http_axios_index_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../http/axios/index.js */ "./resources/app/js/src/http/axios/index.js");
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  login: function login(_ref, payload) {
+    var commit = _ref.commit;
+    return new Promise(function (resolve, reject) {
+      _http_axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/auth/login', JSON.parse(JSON.stringify(payload))).then(function (response) {
+        if (response.data.user) {
+          localStorage.setItem('accessToken', response.data.access_token);
+          commit('UPDATE_USER_INFO', response.data.user);
+          commit('SET_BEARER', response.data.access_token);
+          resolve(response);
+        } else {
+          reject({
+            message: 'Wrong Email or Password'
+          });
+        }
+      })["catch"](function (error) {
+        reject(error);
+      });
+    });
+  },
+  register: function register(_ref2, payload) {
+    var commit = _ref2.commit;
+    return new Promise(function (resolve, reject) {
+      _http_axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/auth/register', JSON.parse(JSON.stringify(payload))).then(function (response) {
+        resolve(response);
+      })["catch"](function (error) {
+        reject(error);
+      });
+    });
+  },
+  logout: function logout(_ref3) {
+    var commit = _ref3.commit;
+    return new Promise(function (resolve, reject) {
+      _http_axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/auth/logout').then(function () {
+        commit('REMOVE_BEARER');
+        localStorage.removeItem('userInfo');
+      })["catch"](function (error) {
+        reject(error);
+      });
+    });
+  },
+  logged: function logged(_ref4) {
+    var commit = _ref4.commit;
+    commit('SET_BEARER');
+  },
+  fetchAccessToken: function fetchAccessToken() {
+    return new Promise(function (resolve) {
+      return _http_axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/auth/refresh-token', {
+        accessToken: localStorage.getItem('accessToKen')
+      }).then(function (response) {
+        resolve(response);
+      });
+    });
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/app/js/src/store/auth/moduleAuthGetters.js":
+/*!**************************************************************!*\
+  !*** ./resources/app/js/src/store/auth/moduleAuthGetters.js ***!
+  \**************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({});
+
+/***/ }),
+
+/***/ "./resources/app/js/src/store/auth/moduleAuthMutations.js":
+/*!****************************************************************!*\
+  !*** ./resources/app/js/src/store/auth/moduleAuthMutations.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  SET_BEARER: function SET_BEARER(state) {
+    state.loggedIn = true;
+  },
+  REMOVE_BEARER: function REMOVE_BEARER(state) {
+    state.loggedIn = false;
+  },
+  UPDATE_USER_INFO: function UPDATE_USER_INFO(state, payload) {
+    // Get Data localStorage
+    //const userInfo = JSON.parse(localStorage.getItem('userInfo')) //|| state.AppActiveUser
+    var userInfo = {};
+
+    for (var _i = 0, _Object$keys = Object.keys(payload); _i < _Object$keys.length; _i++) {
+      var property = _Object$keys[_i];
+
+      if (payload[property] !== null) {
+        userInfo[property] = payload[property];
+      }
+    } // Store data in localStorage
+
+
+    localStorage.setItem('userInfo', JSON.stringify(userInfo));
+  }
+});
+
+/***/ }),
+
+/***/ "./resources/app/js/src/store/auth/moduleAuthState.js":
+/*!************************************************************!*\
+  !*** ./resources/app/js/src/store/auth/moduleAuthState.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ({
+  loggedIn: false
+});
 
 /***/ })
 

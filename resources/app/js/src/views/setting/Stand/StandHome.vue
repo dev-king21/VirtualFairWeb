@@ -1,7 +1,8 @@
 <template>
 <div class="w-full">
-    <app-header activeItem="0"/>  
-    <div class="flex w-full flex-col setting-stand-bg-img items-center justify-between setting-stand-main">
+    <app-header/>  
+    <div class="flex w-full flex-col setting-stand-bg-img items-center justify-between setting-stand-main" 
+        :style="`background-image: url('/fair_image/${stand_type.interior}');`">
         <div class="absolute flex flex-col w-full justify-between stand-header" >
             <div class="flex w-full">
                 <div class="flex flex-row breadcrumb2">
@@ -29,68 +30,68 @@
                 <div class="flex flex-row items-center justify-between stand-social-icons mx-2">
                     <vs-dropdown vs-custom-content vs-trigger-click>
                         <a class="flex items-center" href.prevent>
-                            <feather-icon class="mx-2" icon="FacebookIcon"/>
+                            <svg-icon class="mx-2 cursor-pointer" size="w-8 h-8" icon="facebook"/>
                         </a>
                         <vs-dropdown-menu class="dropdown-userinfo">
                             <div class="mb-1 font-bold">Para agregar su Facebook debe copiar el URL de su pagina</div>
                             <div class="mb-1 font-italic">Ejemplo</div>
-                            <div class="mb-1 font-italic"><vs-input class="w-full"></vs-input></div>
-                            <div class="mb-1 font-italic text-center"><vs-button class="cyan-dark">GUARDAR</vs-button></div>
+                            <div class="mb-1 font-italic"><vs-input placeholder="https://www.facebook.com/..." v-model="contact.facebook" class="w-full"></vs-input></div>
+                            <div class="mb-1 font-italic text-center"><vs-button @click="saveContact()" class="cyan-dark">GUARDAR</vs-button></div>
                         </vs-dropdown-menu>
                     </vs-dropdown>
                     <vs-dropdown vs-custom-content vs-trigger-click>
                         <a class="flex items-center" href.prevent>
-                            <feather-icon class="mx-2" icon="FacebookIcon"/>
+                            <svg-icon class="mx-2 cursor-pointer" size="w-8 h-8" icon="instagram"/>
                         </a>
                         <vs-dropdown-menu class="dropdown-userinfo">
-                            <div class="mb-1 font-bold">Para agregar su Facebook debe copiar el URL de su pagina</div>
+                            <div class="mb-1 font-bold">Para agregar su Instagram debe copiar el URL de su pagina</div>
                             <div class="mb-1 font-italic">Ejemplo</div>
-                            <div class="mb-1 font-italic"><vs-input></vs-input></div>
-                            <div class="mb-1 font-italic text-center"><vs-button>GUARDAR</vs-button></div>
+                            <div class="mb-1 font-italic"><vs-input placeholder="https://www.instagram.com/..." v-model="contact.instagram" class="w-full"></vs-input></div>
+                            <div class="mb-1 font-italic text-center"><vs-button @click="saveContact()" class="cyan-dark">GUARDAR</vs-button></div>
                         </vs-dropdown-menu>
                     </vs-dropdown>
                     <vs-dropdown vs-custom-content vs-trigger-click>
                         <a class="flex items-center" href.prevent>
-                            <feather-icon class="mx-2" icon="InstagramIcon"/>
+                            <svg-icon class="mx-2 cursor-pointer" size="w-8 h-8" icon="linkedin"/>
                         </a>
                         <vs-dropdown-menu class="dropdown-userinfo">
-                            <div class="mb-1 font-bold">Para agregar su Facebook debe copiar el URL de su pagina</div>
+                            <div class="mb-1 font-bold">Para agregar su LinkedIn debe copiar el URL de su pagina</div>
                             <div class="mb-1 font-italic">Ejemplo</div>
-                            <div class="mb-1 font-italic"><vs-input></vs-input></div>
-                            <div class="mb-1 font-italic text-center"><vs-button>GUARDAR</vs-button></div>
+                            <div class="mb-1 font-italic"><vs-input placeholder="https://www.linkedin.com/company/..." v-model="contact.linkedin" class="w-full"></vs-input></div>
+                            <div class="mb-1 font-italic text-center"><vs-button @click="saveContact()" class="cyan-dark">GUARDAR</vs-button></div>
                         </vs-dropdown-menu>
                     </vs-dropdown>
                     <vs-dropdown vs-custom-content vs-trigger-click>
                         <a class="flex items-center" href.prevent>
-                            <feather-icon class="mx-2" icon="LinkedinIcon"/>
+                            <svg-icon class="mx-2 cursor-pointer" size="w-8 h-8" icon="whatsapp"/>
                         </a>
                         <vs-dropdown-menu class="dropdown-userinfo">
-                            <div class="mb-1 font-bold">Para agregar su Facebook debe copiar el URL de su pagina</div>
+                            <div class="mb-1 font-bold">Para agregar su WhatsApp debe copiar el URL de su pagina</div>
                             <div class="mb-1 font-italic">Ejemplo</div>
-                            <div class="mb-1 font-italic"><vs-input></vs-input></div>
-                            <div class="mb-1 font-italic text-center"><vs-button>GUARDAR</vs-button></div>
+                            <div class="mb-1 font-italic"><vs-input v-model="contact.whatsapp" class="w-full"></vs-input></div>
+                            <div class="mb-1 font-italic text-center"><vs-button @click="saveContact()" class="cyan-dark">GUARDAR</vs-button></div>
                         </vs-dropdown-menu>
                     </vs-dropdown>
                     <vs-dropdown vs-custom-content vs-trigger-click>
                         <a class="flex items-center" href.prevent>
-                            <feather-icon class="mx-2" icon="YoutubeIcon"/>
+                            <svg-icon class="mx-2 cursor-pointer" size="w-8 h-8" icon="youtube"/>
                         </a>
                         <vs-dropdown-menu class="dropdown-userinfo">
-                            <div class="mb-1 font-bold">Para agregar su Facebook debe copiar el URL de su pagina</div>
+                            <div class="mb-1 font-bold">Para agregar su Youtube debe copiar el URL de su pagina</div>
                             <div class="mb-1 font-italic">Ejemplo</div>
-                            <div class="mb-1 font-italic"><vs-input></vs-input></div>
-                            <div class="mb-1 font-italic text-center"><vs-button>GUARDAR</vs-button></div>
+                            <div class="mb-1 font-italic"><vs-input placeholder="https://www.youtube.com/channel/..." v-model="contact.youtube" class="w-full"></vs-input></div>
+                            <div class="mb-1 font-italic text-center"><vs-button @click="saveContact()" class="cyan-dark">GUARDAR</vs-button></div>
                         </vs-dropdown-menu>
                     </vs-dropdown>
                 </div>
             </div>
         </div>
         <div class="absolute flex items-center justify-between w-full px-6 py-4 stand-footer">
-            <stand-button class="stand-button" icon="ListIcon" to="/setting/stand/information" text="agregar information de la empresa"/>
-            <stand-button class="stand-button" icon="ListIcon" to="/setting/stand/brochure" text="subir catalogosy brochures"/>
-            <stand-button class="stand-button" icon="ListIcon" to="/setting/stand/video" text="subir fotos y videos"/>
-            <stand-button class="stand-button" icon="ListIcon" to="/setting/stand/schedule" text="ver citas"/>
-            <stand-button class="stand-button" icon="ListIcon" to="/setting/stand/contact" text="subir tarjeta de presentacion"/>
+            <stand-button class="stand-button" icon="list" to="/setting/stand/information" text="agregar information de la empresa"/>
+            <stand-button class="stand-button" icon="brochure" to="/setting/stand/brochure" text="subir catalogosy brochures"/>
+            <stand-button class="stand-button" icon="gallery" to="/setting/stand/video" text="subir fotos y videos"/>
+            <stand-button class="stand-button" icon="schedule-edit" to="/setting/stand/schedule" text="ver citas"/>
+            <stand-button class="stand-button" icon="address-book" to="/setting/stand/contact" text="subir tarjeta de presentacion"/>
         </div>
         <div class="absolute stand-wrapper" style="border: 1px solid red">
             <div class="absolute" style="top: 64px">
@@ -102,18 +103,36 @@
                     </div>
                 </div>
             </div>
-            <div class="absolute stand-item-wrapper flex flex-col items-center justify-center text-white" style="left: 30%; top: 20%; width: 10%; height: 10%; border: 1px solid green">
-                <div class="stand-item text-center bg-blue-dark cursor-pointer">
-                    <div>subir imagen</div>
-                    <div>115*152px</div>
-                </div>
+            <div class="absolute stand-item-wrapper flex flex-col items-center justify-center text-white" 
+                :key="`stand-content-item-${index}`" v-for="(s_content, index) in stand.stand_contents"
+                :style="`left: ${s_content.stand_type_item.left * 100}%; top: ${s_content.stand_type_item.top * 100}%; width: ${s_content.stand_type_item.width * 100}%; height: ${s_content.stand_type_item.height * 100}%; background: #ffffff33; border: 1px solid green`">
+                <template v-if="!s_content.content||s_content.content ===''">
+                    <div class="stand-item text-center bg-blue-dark cursor-pointer">
+                        <div @click="browseStandContent(s_content.stand_type_item.type, s_content.id)">subir {{s_content.stand_type_item.type}}</div>
+                    </div>
+                </template>
+                <template v-else>
+                    <div class="relative text-center" style="width: 100%; height: 100%;">
+                        <template v-if="s_content.stand_type_item.type==='image'">
+                            <img style="width: 100%; height: 100%" :src="`/fair_image/${s_content.content}`"
+                                @click="browseStandContent(s_content.stand_type_item.type, s_content.id)" />
+                        </template>
+                        <template v-else-if="s_content.stand_type_item.type==='video'">
+                            <video style="width: 100%; height: 100%" :src="`/fair_image/${s_content.content}`"/>
+                        </template>
+                        <feather-icon @click="removeStandContent(s_content.id)" 
+                            class="relative bg-yellow-dark p-2 cursor-pointer" 
+                            svgClasses="w-5 h-5" icon="Trash2Icon"/>
+                        <feather-icon @click="browseStandContent(s_content.stand_type_item.type, s_content.id)"
+                            class="relative bg-cyan-dark p-2 ml-2 cursor-pointer" 
+                            svgClasses="w-5 h-5" icon="Edit3Icon"/>
+                    </div>
+                </template>
             </div>
-            <div class="absolute flex flex-col items-center justify-center text-white" style="left: 40%; top: 30%; width: 10%; height: 10%; border: 1px solid green">
-                <div class="stand-item text-center bg-blue-dark cursor-pointer">
-                    <div class="uppercase">subir imagen</div>
-                    <div>115*152px</div>
-                </div>
-            </div>
+            <input class="hidden" type="file" ref="refStandImageFile" 
+                accept=".jpg, .png, .gif, .jpeg" @change="contentChanged" />
+            <input class="hidden" type="file" ref="refStandVideoFile" 
+                accept=".avi, .mp4, .3gp" @change="contentChanged" />
         </div>
     </div>  
 </div>
@@ -123,6 +142,7 @@ import AppHeader from '@/layouts/components/Header.vue'
 import NavBackButton from '@/views/custom/NavBackButton.vue'
 import StandButton from '@/views/custom/StandButton.vue'
 export default {
+  
   components: {
     AppHeader,
     NavBackButton,
@@ -131,7 +151,133 @@ export default {
   data () {
     return {
       user_list: [],  
-      all_schedules: []
+      all_schedules: [],
+      contact: {},
+      stand: {},
+      stand_type: {},
+      content_id: 0,
+      content_type: 'image'
+    }
+  },
+  methods: {
+    saveContact () {
+      this.$http.post('/api/setting/my_stand/save_contact', this.contact)
+        .then((response) => {
+          
+          if (response.data.status !== 'error') {
+            this.$vs.notify({
+              title:'Notificación',
+              text:'Información de contacto guardada correctamente.',
+              color:'danger',
+              iconPack: 'feather',
+              icon:'icon-mail'})
+            this.contact = response.data.contact    
+          }
+        })  
+    },
+    contentChanged (e) {
+      const files = e.target.files
+      this.validateAndUpload(files)  
+    },
+    validateAndUpload (files) {
+      if (files.length !== 1) {
+        this.$vs.notify({
+          title: 'Error - Too Many Files',
+          text: 'Only support uploading one file!',
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        })
+        return
+      }
+      const rawFile = files[0] // only use files[0]
+      if (!this.isValidExt(rawFile)) {
+        this.$vs.notify({
+          title: 'error de formato de archivo',
+          text: `El tamaño del archivo debe ser inferior a 500 KB y tener el formato ${this.content_type}`,
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        })
+        return false
+      }
+      this.saveStandContent(rawFile)
+    },
+    isValidExt (file) {
+      if (this.content_type === 'image') return /\.(jpg|png|gif|jpeg)$/.test(file.name)
+      else if (this.content_type === 'video') return /\.(avi|mp4|3gp)$/.test(file.name)
+    },
+    browseStandContent (type, id) {
+      this.content_type = type
+      this.content_id = id
+      if (this.content_type === 'image') {
+        this.$refs.refStandImageFile.click()  
+      }
+      else if (this.content_type === 'video') {
+        this.$refs.refStandVideoFile.click()    
+      }
+    },
+    saveStandContent (file) {
+      const formData = new FormData()
+      const headers = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
+      formData.append('id', this.content_id)
+      formData.append('content_file', file)
+      
+      this.$http.post('/api/setting/my_stand/save_content', formData, headers)
+        .then((response) => {
+          if (response.data.status === 'ok') {
+            this.refresh()
+          }    
+        })
+    },
+    removeStandContent (id) {
+      this.$http.post('/api/setting/my_stand/remove_content', {_id: id})
+        .then((response) => {
+          if (response.data.status === 'ok') {
+            this.refresh()
+          }
+        })
+    },
+    refresh () {
+      this.$vs.notify({
+        title: 'éxito',
+        text: 'Folleto registrado con éxito',
+        iconPack: 'feather',
+        icon: 'icon-info',
+        color: 'success'
+      })  
+      //setTimeout(() => { 
+      this.getStandContent()
+      //}, 3000)   
+    },  
+    getStandContent () {
+      this.$http.post('/api/setting/my_stand')
+        .then((response) => {
+          const data = response.data
+          if (data.status === 'error') return console.log(data.msg)
+        
+          if (!data.stand || !data.stand.id) {
+            this.$vs.notify({
+              title: 'error',
+              text: 'primero debe comprar el soporte.',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle',
+              color: 'danger'
+            })
+            setTimeout(() => {
+              this.$router.push('/setting/home')    
+            }, 3000)
+            return
+          }
+          console.log(data)
+          this.stand = data.stand  
+          this.stand_type = data.stand_type
+          this.contact = this.stand.contact
+        })  
     }
   },
   created () {
@@ -153,6 +299,8 @@ export default {
     }
     
     this.user_list = list
+
+    this.getStandContent()
   }
 }
 </script>
@@ -185,6 +333,7 @@ export default {
     .stand-wrapper {
         z-index: 88;
         height: calc(var(--vh, 1vh) * 100 - 86px); 
+        width: 100%;
         .stand-item-wrapper {
             z-index: 100;
             .stand-item {
@@ -195,7 +344,7 @@ export default {
     } 
 }
 .setting-stand-bg-img {
-    background-image: url("/app/images/pages/stand1.jpg");
+    //background-image: url("/app/images/pages/stand1.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: 100vw calc(var(--vh, 1vh) * 100 - 86px) !important;
@@ -210,9 +359,14 @@ export default {
         
     }
     .vs-dropdown--menu {
-        width: 250px;
+        width: 320px;
         font-size: 0.8rem;
         padding: 0.5rem 1rem !important;
+        .vs-button {
+            font-size: 0.8rem !important;
+            padding: 0.4rem 1rem !important;
+            margin-top: 0.4rem;
+        }
     }
 }
 

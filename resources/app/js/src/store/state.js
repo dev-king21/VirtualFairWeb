@@ -1,9 +1,3 @@
-/*=========================================================================================
-  File Name: state.js
-  Description: Vuex Store - state
-
-==========================================================================================*/
-
 import navbarSearchAndPinList from '@/layouts/components/navbar/navbarSearchAndPinList'
 import themeConfig, { colors } from '@/../themeConfig.js'
 
@@ -12,7 +6,7 @@ import themeConfig, { colors } from '@/../themeConfig.js'
 // /////////////////////////////////////////////
 
 // *From Auth - Data will be received from auth provider
-const userDefaults = {
+/* const userDefaults = {
   uid         : 0,          // From Auth
   displayName : 'John Doe', // From Auth
   about       : 'Dessert chocolate cake lemon drops jujubes. Biscuit cupcake ice cream bear claw brownie brownie marshmallow.',
@@ -20,7 +14,7 @@ const userDefaults = {
   status      : 'online',
   userRole    : 'admin'
 }
-
+console.log(JSON.stringify(localStorage.getItem('userInfo')))
 const userInfoLocalStorage = JSON.parse(localStorage.getItem('userInfo')) || {}
 
 // Set default values for active-user
@@ -40,7 +34,7 @@ const getUserInfo = () => {
   })
 
   return userInfo
-}
+} */
 
 
 // Check if device is touch device
@@ -68,7 +62,7 @@ const is_touch_device = () => {
 // /////////////////////////////////////////////
 
 const state = {
-  AppActiveUser           : getUserInfo(),
+  //AppActiveUser           : getUserInfo(),
   bodyOverlay             : false,
   isVerticalNavMenuActive : true,
   is_touch_device         : is_touch_device(),

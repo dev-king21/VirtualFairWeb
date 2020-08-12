@@ -25,7 +25,7 @@ const jwtConfig = {
 }
 
 
-mock.onPost('/api/auth/login').reply((request) => {
+mock.onPost('/api/fake-auth/login').reply((request) => {
   const {email, password} = JSON.parse(request.data)
 
   let error = 'Something went wrong'
@@ -61,7 +61,7 @@ mock.onPost('/api/auth/login').reply((request) => {
 
 })
 
-mock.onPost('/api/auth/register').reply((request) => {
+mock.onPost('/api/fake-auth/register').reply((request) => {
   const {displayName, email, password} = JSON.parse(request.data)
   const isEmailAlreadyInUse = data.users.find((user) => user.email === email)
   const error = {
@@ -105,7 +105,7 @@ mock.onPost('/api/auth/register').reply((request) => {
 })
 
 
-mock.onPost('/api/auth/refresh-token').reply((request) => {
+mock.onPost('/api/fake-auth/refresh-token').reply((request) => {
 
   const {accessToken} = JSON.parse(request.data)
 

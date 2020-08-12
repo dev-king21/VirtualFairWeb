@@ -1,11 +1,3 @@
-<!-- =========================================================================================
-    File Name: VxList.vue
-    Description: list Component
-    Component Name: VxList
-
-========================================================================================== -->
-
-
 <template>
     <ul class="list">
         <li class="list__item" v-for="(item, index) in list" :key="index">

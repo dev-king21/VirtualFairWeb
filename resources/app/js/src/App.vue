@@ -1,8 +1,4 @@
-<!-- =========================================================================================
-  File Name: App.vue
-  Description: Main vue file - APP
-========================================================================================= -->
-<template>
+  <template>
   <div id="app" :class="vueAppClasses">
     <router-view @setAppClasses="setAppClasses" />
   </div>

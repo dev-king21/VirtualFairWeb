@@ -25,6 +25,31 @@ Route::any('/init_setting', 'SettingController@dummyCreate');
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('users', 'UserController@index')->middleware('isAdmin');
     Route::get('users/{id}', 'UserController@show')->middleware('isAdminOrSelf');
+
+    Route::get('/fair/get_current_stands', 'FairController@get_stands');
+    Route::post('/stand/purchase', 'FairController@purchase_stand');
+
+    Route::post('/setting/my_stand', 'SettingController@get_my_stand');
+    Route::post('/setting/my_stand/save_content', 'SettingController@save_content');
+    Route::post('/setting/my_stand/remove_content', 'SettingController@remove_content');
+    Route::post('/setting/my_stand/save_contact', 'SettingController@save_contact');
+    
+    Route::post('/setting/my_stand/get_information', 'SettingController@get_information');
+    Route::post('/setting/my_stand/save_information', 'SettingController@save_information');
+    
+    Route::post('/setting/my_stand/get_brochures', 'SettingController@get_brochures');
+    Route::post('/setting/my_stand/save_brochure', 'SettingController@save_brochure');
+    Route::post('/setting/my_stand/remove_brochure', 'SettingController@remove_brochure');
+    
+    Route::post('/setting/my_stand/get_videos', 'SettingController@get_videos');
+    Route::post('/setting/my_stand/save_video', 'SettingController@save_video');
+    Route::post('/setting/my_stand/remove_video', 'SettingController@remove_video');
+
+    Route::post('/setting/my_stand/get_businesscards', 'SettingController@get_businesscards');
+    Route::post('/setting/my_stand/save_businesscard', 'SettingController@save_businesscard');
+    Route::post('/setting/my_stand/remove_businesscard', 'SettingController@remove_businesscard');
+
+
 });
 
 Route::prefix('auth')->group(function () {
@@ -32,7 +57,8 @@ Route::prefix('auth')->group(function () {
     Route::post('login', 'AuthController@login');
     Route::get('refresh', 'AuthController@refresh');
     Route::group(['middleware' => 'auth:api'], function() {
-        Route::get('user', 'AuthController@user');
+        Route::post('profile', 'AuthController@user');
+        Route::post('save', 'AuthController@save');
         Route::post('logout', 'AuthController@logout');
     });
 });
@@ -50,12 +76,16 @@ Route::post('/user/create', 'UserController@createUser');
 Route::get('/fair/all', 'FairController@all_fairs');
 Route::get('/fair/year/{year}', 'FairController@fairs_year');
 Route::get('/fair/current', 'FairController@current_fairs');
+Route::get('/fair/now', 'FairController@current_fair');
 Route::get('/fair/next', 'FairController@next_fairs');
 Route::get('/fair/past', 'FairController@past_fairs');
 Route::get('/fair/show', 'FairController@get_countries');
 Route::get('/fair/show/{fair_id}', 'FairController@get_countries');
 Route::get('/fair/show/{fair_id}/{country_id}', 'FairController@get_stands');
 Route::get('/fair/show/{fair_id}/{country_id}/{stand_id}', 'FairController@get_stand');
+
+///////////////////// get stands of current fair and first country
+
 
 
 Route::post('/fair/create', 'FairController@create_fair');

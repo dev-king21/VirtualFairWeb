@@ -35,6 +35,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -43,6 +48,10 @@ __webpack_require__.r(__webpack_exports__);
       required: false
     },
     icon: {
+      type: String,
+      required: false
+    },
+    type: {
       type: String,
       required: false
     },
@@ -117,7 +126,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, "[dir] .layout--full-page .back-btn {\n  border-radius: 0 !important;\n  padding: 0.3rem 0.8rem !important;\n}[dir=ltr] .layout--full-page .back-btn {\n  border-bottom-right-radius: 0.8rem !important;\n}[dir=rtl] .layout--full-page .back-btn {\n  border-bottom-left-radius: 0.8rem !important;\n}\n.layout--full-page .back-btn .back-text {\n  font-size: 0.6rem !important;\n}", ""]);
+exports.push([module.i, ".layout--full-page .back-btn {\n  height: 3.6rem !important;\n}[dir] .layout--full-page .back-btn {\n  border-radius: 0 !important;\n  padding: 0.3rem 0.8rem !important;\n}[dir=ltr] .layout--full-page .back-btn {\n  border-bottom-right-radius: 0.8rem !important;\n}[dir=rtl] .layout--full-page .back-btn {\n  border-bottom-left-radius: 0.8rem !important;\n}\n.layout--full-page .back-btn .back-text {\n  font-size: 0.6rem !important;\n}", ""]);
 
 // exports
 
@@ -222,13 +231,21 @@ var render = function() {
             class: { "justify-between": _vm.center }
           },
           [
-            _c("feather-icon", {
-              attrs: { svgClasses: "w-10 h-10", icon: _vm.icon }
-            }),
+            _vm.type !== "svg"
+              ? [
+                  _c("feather-icon", {
+                    attrs: { svgClasses: "w-10 h-10", icon: _vm.icon }
+                  })
+                ]
+              : [
+                  _c("svg-icon", {
+                    attrs: { size: "w-10 h-10", icon: _vm.icon }
+                  })
+                ],
             _vm._v(" "),
             _c("div", { staticClass: "ml-4" }, [_vm._v(_vm._s(_vm.text))])
           ],
-          1
+          2
         )
       ],
       1

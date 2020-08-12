@@ -137,7 +137,7 @@ export default {
     },
     editData (data) {
         
-        console.log(data);
+      console.log(data)
     },
     getOrderStatusColor (status) {
       if (status === 'on_hold')   return 'warning'
@@ -155,15 +155,15 @@ export default {
     toggleDataSidebar (val = false) {
       this.addNewDataSidebar = val
     },
-    updateStatus(tr){
-        const action = `/api/room/talk/update/${tr.id}`
-        console.log(action)
-        const param = {
-            status: tr.status
-        }
-        this.$http.post(action, param).then((response) => {
+    updateStatus (tr) {
+      const action = `/api/room/talk/update/${tr.id}`
+      console.log(action)
+      const param = {
+        status: tr.status
+      }
+      this.$http.post(action, param).then((response) => {
 
-        })
+      })
     }
   },
   created () {
@@ -173,36 +173,30 @@ export default {
     }
     this.$store.dispatch('dataList/fetchDataListItems') */
     let action = `/api/rooms/talks/all/${this.$route.params.room_id}`
-    console.log(this.$route.name);
-    if (this.$route.name === "request_talk"){
-        this.isPast = false
-      action = `/api/rooms/talks/request`
-    }
-    else if (this.$route.name === "scheduled_talk")
-    {
-        this.isPast = false
-        action = `/api/rooms/talks/scheduled`
-    }
-    else if (this.$route.name === "live_talk")
-    {
-        this.isPast = false
+    console.log(this.$route.name)
+    if (this.$route.name === 'request_talk') {
+      this.isPast = false
+      action = '/api/rooms/talks/request'
+    } else if (this.$route.name === 'scheduled_talk') {
+      this.isPast = false
+      action = '/api/rooms/talks/scheduled'
+    } else if (this.$route.name === 'live_talk') {
+      this.isPast = false
 
-        action = `/api/rooms/talks/live`
-    }
-    else if (this.$route.name === "past_talk")
-    {
-        action = `/api/rooms/talks/past`
-        this.isPast = true
+      action = '/api/rooms/talks/live'
+    } else if (this.$route.name === 'past_talk') {
+      action = '/api/rooms/talks/past'
+      this.isPast = true
     }
     this.$http.get(action)
-    .then((response) => {
-        console.log(action);
+      .then((response) => {
+        console.log(action)
 
         const res = response.data
         this.talks = res.talks
-        console.log(this.talks);
-    })
-    .catch((error) => console.log(error))
+        console.log(this.talks)
+      })
+      .catch((error) => console.log(error))
   },
   mounted () {
     this.isMounted = true

@@ -1,28 +1,32 @@
 <template>
 <div class="w-full">
-  <app-header activeItem="0" :loggedIn="loggedIn"></app-header>
+  <app-header activeItem="0"></app-header>
   <div class="flex w-full flex-col home-bg-img justify-between home-main">
     <template v-if="!loggedIn">
       <div class="w-full">
         <template v-if="!logInClicked">
           <div class="login-btn flex items-center text-white cursor-pointer" @click="logInClicked = true"> 
-            <feather-icon svgclasses="w-8 h-8" icon="LogInIcon" />
+            <feather-icon svgclasses="w-6 h-6" icon="LogInIcon" />
             <span class="ml-4">INGRESAR</span>
           </div>
         </template>
         <template v-else>
-          <div class="login-form w-full lg:w-1/4 md:w-1/4 sm:w-1/3 xs:w-1/2">
+          <div class="login-form w-full lg:w-1/6 md:w-1/4 sm:w-1/3 xs:w-1/2">
             <div class="h6 font-bold text-white">
               Por favor ingrese sus datos
             </div>
             <div class="login-input">
-              <vs-input color="success" class="w-full" placeholder="Ingrese su email" v-model="contact_phone"/>
+              <vs-input color="success" class="w-full" placeholder="Ingrese su email" 
+                v-validate="'required|email'" data-vv-validate-on="blur" name="email" v-model="auth.email"/>
+              <span class="text-danger text-sm">{{ errors.first('email') }}</span>
             </div>
             <div class="login-input">
-              <vs-input color="success" class="w-full" placeholder="Ingrese su contrasena" v-model="contact_email"/>
+              <vs-input color="success" class="w-full" placeholder="Ingrese su contrasena"
+                v-validate="'required'" data-vv-validate-on="blur" name="contrasena" v-model="auth.password"/>
+              <span class="text-danger text-sm">{{ errors.first('contrasena') }}</span>
             </div>
             <div class="mt-8">
-              <vs-button class="w-full sign-btn" @click="login()" color="#164A8B">INGRESAR</vs-button>
+              <vs-button class="w-full sign-btn" :disabled="!validateAuthParam" @click="login()" color="#164A8B">INGRESAR</vs-button>
             </div>  
           </div>
         </template>
@@ -43,11 +47,11 @@
             </div>
           </div>
         </div>
-        <div class="vx-col w-full lg:w-1/4 sm:w-1/4 xs:w-1/4 text-right">
-          <vs-button class="contact-btn items-center">
-            <feather-icon svgClasses="w-4 h-4 m-1" icon="MessageCircleIcon"></feather-icon>
-            <span>CONTACTA CON NOSOTROS</span>
-          </vs-button>
+        <div class="vx-col text-right">
+          <div class="contact-btn cyan-dark flex items-center justify-end cursor-pointer">
+            <svg-icon icon="contact"></svg-icon>
+            <span class="text-white ml-2">CONTACTA CON NOSOTROS</span>
+          </div>
         </div>
       </div>
     </template>
@@ -74,7 +78,7 @@
             <div class="flex flex-col"> -->
               <div class="text-white">
                 <div class="live-panel text-center cursor-pointer" @click="$router.push('/room/live-video')">
-                  <feather-icon svgClasses="w-10 h-10" icon="RadioIcon"/>
+                  <svg-icon size="w-10 h-10" icon="live"/>
                   <div class="text-center font-bold">
                     EN VIVO
                   </div>
@@ -85,7 +89,7 @@
         </div>
       </div>
       <div class="flex justify-between flex-wrap items-center home-footer main-btns">
-        <router-link class="main-link" to="/fair/country/2/2">
+        <router-link class="main-link" to="/stand/home">
           stands
         </router-link>
         <router-link class="main-link" to="/room/schedule">
@@ -98,7 +102,7 @@
           <span>Networking</span>
           <feather-icon class="ml-2" color="green" icon="" :badge="3" />
         </router-link>
-        <router-link class="main-link" to="/fair/contact">
+        <router-link class="main-link" to="/home/contact">
           patrocinadores
         </router-link>
       </div>  
@@ -107,6 +111,7 @@
 </div>
 </template>
 <script>
+import moduleAuth from '@/store/auth/moduleAuth.js'
 import AppHeader from '@/layouts/components/Header.vue'
 import MfcButton from '@/views/custom/MfcButton.vue'
 export default {
@@ -119,17 +124,35 @@ export default {
       contact_phone: '',
       contact_email: '',
       contact_message: '',
-      loggedIn: false,
+      auth: {
+        email: '',
+        password: ''
+      },
       logInClicked: false
+    }
+  },
+  computed: {
+    validateAuthParam () {
+      return !this.errors.any() && this.auth.email !== '' && this.auth.password !== ''
+    },
+    loggedIn () {
+      return this.$store.state.auth.loggedIn
     }
   },
   methods: {
     login () {
-      //setTimeout(function () {
-      this.loggedIn = true
-      //}, 1000)
-      
+      this.$store.dispatch('auth/login', this.auth)
+      this.auth.email = ''
+      this.auth.password = ''
+      this.logInClicked = false
     }
+  },
+  created () {
+    if (!moduleAuth.isRegistered) {
+      this.$store.registerModule('auth', moduleAuth)
+      moduleAuth.isRegistered = true
+    }
+
   }
 }
 </script>
@@ -148,7 +171,7 @@ export default {
     border-bottom-left-radius: 0.6rem !important;
     background: black;
     padding: 0.8rem 1.5rem;
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
     float: right;
   }
 
@@ -229,7 +252,6 @@ export default {
   .contact-btn {
     border-radius: 0px !important;
     border-top-left-radius: 0.6rem !important;
-    background: rgb(103, 179, 81) !important;
     font-size: 0.8rem !important;
     padding: 0.8rem 1rem !important;
   }

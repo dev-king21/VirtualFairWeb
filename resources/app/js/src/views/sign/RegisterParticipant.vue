@@ -30,34 +30,54 @@
                 </div>
                 <div class="vx-row px-20">
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-full" color="success" placeholder="Numbre"></vs-input>
+                        <vs-input class="w-full" color="success" placeholder="Nombre" name="Nombre"
+                            v-validate="'required'" data-vv-validate-on="blur" v-model="user.first_name"/>
+                        <span class="text-danger text-sm">{{ errors.first('Nombre') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-full" color="success" placeholder="Apellido"></vs-input>
+                        <vs-input class="w-full" color="success" placeholder="Apellido" name="Apellido"
+                            v-validate="'required'" data-vv-validate-on="blur"  v-model="user.last_name"/>
+                        <span class="text-danger text-sm">{{ errors.first('Apellido') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-full" color="success" placeholder="Email"></vs-input>
+                        <vs-input class="w-full" color="success" placeholder="Email" name="Email"
+                        v-validate="'required|email|min:5'" data-vv-validate-on="blur" v-model="user.email"/>
+                        <span class="text-danger text-sm">{{ errors.first('Email') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-full" color="success" placeholder="Telefono"></vs-input>
+                        <vs-input class="w-full" color="success" placeholder="Telefono" name="Telefono" 
+                        v-validate="'required|min:8'" data-vv-validate-on="blur" v-model="user.phone"/>
+                        <span class="text-danger text-sm">{{ errors.first('Telefono') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-full" color="success" placeholder="Compania"></vs-input>
+                        <vs-input class="w-full" color="success" placeholder="Compania" name="Compania" 
+                            v-validate="'required'" data-vv-validate-on="blur" v-model="user.company"/>
+                        <span class="text-danger text-sm">{{ errors.first('Compania') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-full" color="success" placeholder="Posicion"></vs-input>
+                        <vs-input class="w-full" color="success" placeholder="Posicion" name="Posicion" 
+                        v-validate="'required'" data-vv-validate-on="blur" v-model="user.address"/>
+                        <span class="text-danger text-sm">{{ errors.first('Posicion') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-full" color="success" placeholder="Seleccione una constrasena"></vs-input>
+                        <vs-input class="w-full" type="password" color="success" placeholder="Seleccione una constrasena" name="constrasena"
+                        v-validate="'required|min:8'" data-vv-validate-on="blur"  v-model="user.password"/>
+                        <span class="text-danger text-sm">{{ errors.first('constrasena') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-full" color="success" placeholder="Repita la contrasena"></vs-input>
+                        <vs-input class="w-full" type="password" color="success" placeholder="Repita la contrasena" name="contrasena"
+                        v-validate="'required|min:8'" data-vv-validate-on="blur"  v-model="repeat_password"/>
+                        <span class="text-danger text-sm">{{ errors.first('constrasena') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-full" color="success" placeholder="Seleccione un Pais"></vs-input>
+                        <vs-input class="w-full" color="success" placeholder="Seleccione un Pais" name="Pais"
+                        v-validate="'required'" data-vv-validate-on="blur"  v-model="user.country"/>
+                        <span class="text-danger text-sm">{{ errors.first('Pais') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-full" color="success" placeholder="Seleccione la Region"></vs-input>
+                        <vs-input class="w-full" color="success" placeholder="Seleccione la Region" name="Region"
+                        v-validate="'required'" data-vv-validate-on="blur"  v-model="user.region"/>
+                        <span class="text-danger text-sm">{{ errors.first('Region') }}</span>
                     </div>
                     <div class="vx-col w-full my-4">
                         Agregar fotograpia o logotipo <vs-button class="cyan-light ml-2 attach-btn">Adjuntar</vs-button>
@@ -66,39 +86,39 @@
                         Seleccione un area de interes
                     </div>
                     <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="checkBox6">Diseno del Espacio</vs-checkbox>
+                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[0]">Diseno del Espacio</vs-checkbox>
                     </div>
                     <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="checkBox6">Espacios Intelligentes</vs-checkbox>
+                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[1]">Espacios Intelligentes</vs-checkbox>
                     </div>
                     <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="checkBox6">Illuminacion Solar</vs-checkbox>
+                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[2]">Illuminacion Solar</vs-checkbox>
                     </div>
                     <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="checkBox6">Zonas de luz</vs-checkbox>
+                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[3]">Zonas de luz</vs-checkbox>
                     </div>
                     <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="checkBox6">Salas minimalistas</vs-checkbox>
+                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[4]">Salas minimalistas</vs-checkbox>
                     </div>
                     <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="checkBox6">Cuartos infantiles</vs-checkbox>
+                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[5]">Cuartos infantiles</vs-checkbox>
                     </div>
                     <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="checkBox6">Oficinas modernas</vs-checkbox>
+                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[6]">Oficinas modernas</vs-checkbox>
                     </div>
                     <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="checkBox6">Aprovechamiento de Espacios</vs-checkbox>
+                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[7]">Aprovechamiento de Espacios</vs-checkbox>
                     </div>
                     <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="checkBox6">Jardines</vs-checkbox>
+                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[8]">Jardines</vs-checkbox>
                     </div>
                     <div class="vx-col w-full mb-4 text-center">
-                        <vs-button class="cyan-dark register-btn">
+                        <vs-button class="cyan-dark register-btn" :disabled="!validateForm" @click="registerClick()">
                             REGISTRARME
                         </vs-button>
                     </div>
                     <div class="vx-col flex justify-center w-full text-center mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="checkBox6">Acepto los terminos y condiciones</vs-checkbox>
+                        <vs-checkbox color="rgb(103, 179, 81) " v-model="accept_chk">Acepto los terminos y condiciones</vs-checkbox>
                     </div>
                 </div>
                 <div class="text-right mr-2" style="margin-top: -50px;" >
@@ -110,6 +130,7 @@
     </div>
 </template>
 <script>
+import moduleAuth from '@/store/auth/moduleAuth.js'
 import AppHeader from '@/layouts/components/Header.vue'
 export default {
   components: {
@@ -117,8 +138,57 @@ export default {
   },
   data () {
     return {
-      checkBox6: false
-
+      categories: [false, false, false, false, false, false, false, false, false],
+      user: {
+        type: 'user'
+      },
+      repeat_password: '',
+      accept_chk: false  
+    }
+  },
+  computed: {
+    validateForm () {
+      return !this.errors.any() && 
+            this.user.email !== '' && 
+            this.user.password !== '' &&
+            this.repeat_password !== '' && 
+            this.repeat_password === this.user.password && 
+            this.user.first_name !== '' &&
+            this.user.last_name !== '' &&
+            this.user.phone !== '' &&
+            this.user.address !== '' &&
+            this.user.company !== '' &&
+            this.user.country !== '' &&
+            this.user.region !== '' &&
+            this.accept_chk
+    }
+  },
+  methods: {
+    registerClick () {
+      this.$store.dispatch('auth/register', this.user)
+        .then((response) => {
+          console.log(response)
+          if (response.data.status === 'ok') {
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'su cuenta se ha registrado correctamente',
+              iconPack: 'feather',
+              icon: 'icon-info',
+              color: 'success'
+            })    
+          }
+          setTimeout(() => {
+            this.$router.push('/home')  
+          }, 3000)
+          
+        })
+        .catch((error) => console.log(error))
+    }
+  },
+  created () {
+    if (!moduleAuth.isRegistered) {
+      this.$store.registerModule('auth', moduleAuth)
+      moduleAuth.isRegistered = true
     }
   }
 }

@@ -1,6 +1,6 @@
 <template>
     <div class="w-full">
-        <app-header activeItem="0"></app-header>
+        <app-header activeItem="2"></app-header>
         <bread-crumb 
             icon="MonitorIcon" text="patrocinadores" />
         <div class="flex w-full flex-col px-8 py-6 bg-white-grey sponsor-main">

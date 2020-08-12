@@ -45,19 +45,19 @@ export default {
     })
   },
   login (email, pwd) {
-    return axios.post('/api/auth/login', {
+    return axios.post('/api/fake-auth/login', {
       email,
       password: pwd
     })
   },
   registerUser (name, email, pwd) {
-    return axios.post('/api/auth/register', {
+    return axios.post('/api/fake-auth/register', {
       displayName: name,
       email,
       password: pwd
     })
   },
   refreshToken () {
-    return axios.post('/api/auth/refresh-token', {accessToken: localStorage.getItem('accessToKen')})
+    return axios.post('/api/fake-auth/refresh-token', {accessToken: localStorage.getItem('accessToKen')})
   }
 }

@@ -1,0 +1,8 @@
+{
+    "vue-i18n-ally.localesPaths": [
+        "resources/admin/lang",
+        "resources/app/lang",
+        "resources/admin/js/src/i18n",
+        "resources/app/js/src/i18n"
+    ]
+}

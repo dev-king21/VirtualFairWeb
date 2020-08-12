@@ -196,8 +196,6 @@ __webpack_require__.r(__webpack_exports__);
     return {
       building_image: undefined,
       interior_image: undefined,
-      // upload_building_url: undefined,
-      // upload_interior_url: undefined,
       ftype_name: undefined,
       building_file: null,
       interior_file: null
@@ -245,8 +243,6 @@ __webpack_require__.r(__webpack_exports__);
     var _this2 = this;
 
     if (this.$route.params.ftype_id) {
-      // this.upload_building_url = `/api/fair_type/upload/building/${this.$route.params.ftype_id}`
-      // this.upload_interior_url = `/api/fair_type/upload/interior/${this.$route.params.ftype_id}`
       this.$http.get("/api/fair_type/get/".concat(this.$route.params.ftype_id)).then(function (response) {
         var fair_type = response.data.fair_type;
         if (fair_type.building) _this2.building_image = "/fair_image/".concat(fair_type.building);

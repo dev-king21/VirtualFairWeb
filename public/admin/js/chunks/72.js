@@ -978,7 +978,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   SET_USERS: function SET_USERS(state, data) {
-    console.log(data.users);
     state.users = data.users;
   },
   ADD_ITEM: function ADD_ITEM(state, item) {
@@ -1015,11 +1014,6 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/*=========================================================================================
-  File Name: moduleCalendarState.js
-  Description: Calendar Module State
-
-==========================================================================================*/
 /* harmony default export */ __webpack_exports__["default"] = ({
   users: []
 });

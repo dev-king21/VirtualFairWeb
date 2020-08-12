@@ -42,6 +42,26 @@ __webpack_require__.r(__webpack_exports__);
     item: {
       type: String,
       required: true
+    },
+    remove: {
+      type: Function,
+      required: false
+    },
+    show: {
+      type: Function,
+      required: false
+    },
+    id: {
+      type: Number,
+      required: true
+    }
+  },
+  methods: {
+    removeBrochure: function removeBrochure(id) {
+      this.remove(id);
+    },
+    showBrochure: function showBrochure(id) {
+      this.show(id);
     }
   }
 });
@@ -205,13 +225,29 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       required: true
     },
-    item: {
-      type: String,
+    readed: {
+      type: Number,
       required: true
     },
-    readed: {
-      type: String,
+    remove: {
+      type: Function,
+      required: false
+    },
+    show: {
+      type: Function,
+      required: false
+    },
+    id: {
+      type: Number,
       required: true
+    }
+  },
+  methods: {
+    removeVideo: function removeVideo(id) {
+      this.remove(id);
+    },
+    showVideo: function showVideo(id) {
+      this.show(id);
     }
   }
 });
@@ -392,12 +428,8 @@ var render = function() {
           "flex w-full items-center justify-center card-header grey-real"
       },
       [
-        _c("feather-icon", {
-          attrs: {
-            svgClasses: "w-12 h-12",
-            color: "black",
-            icon: "BookOpenIcon"
-          }
+        _c("svg-icon", {
+          attrs: { size: "w-12 h-12", color: "text-black", icon: "brochure" }
         })
       ],
       1
@@ -409,12 +441,15 @@ var render = function() {
           "div",
           {
             staticClass:
-              "flex items-center justify-center text-white py-2 cyan-dark w-full cursor-pointer"
+              "flex items-center justify-center text-white py-2 cyan-dark w-full cursor-pointer",
+            on: {
+              click: function($event) {
+                return _vm.showBrochure(_vm.id)
+              }
+            }
           },
           [
-            _c("feather-icon", {
-              attrs: { svgClasses: "w-5 h-5", icon: "EyeIcon" }
-            }),
+            _c("svg-icon", { attrs: { size: "w-5 h-5", icon: "eye" } }),
             _vm._v(" "),
             _c(
               "div",
@@ -431,12 +466,15 @@ var render = function() {
           "div",
           {
             staticClass:
-              "flex items-center justify-center text-white py-2 yellow-dark w-full cursor-pointer"
+              "flex items-center justify-center text-white py-2 yellow-dark w-full cursor-pointer",
+            on: {
+              click: function($event) {
+                return _vm.removeBrochure(_vm.id)
+              }
+            }
           },
           [
-            _c("feather-icon", {
-              attrs: { svgClasses: "w-5 h-5", icon: "Trash2Icon" }
-            }),
+            _c("svg-icon", { attrs: { size: "w-5 h-5", icon: "erase" } }),
             _vm._v(" "),
             _c(
               "div",
@@ -711,16 +749,19 @@ var render = function() {
           "div",
           {
             staticClass:
-              "flex items-center justify-center text-white py-2 yellow-dark w-full cursor-pointer"
+              "flex items-center justify-center text-white py-2 yellow-dark w-full cursor-pointer",
+            on: {
+              click: function($event) {
+                return _vm.removeVideo(_vm.id)
+              }
+            }
           },
           [
-            _c("feather-icon", {
-              attrs: { svgClasses: "w-5 h-5", icon: "Trash2Icon" }
-            }),
+            _c("svg-icon", { attrs: { size: "w-5 h-5", icon: "erase" } }),
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "ml-1", staticStyle: { "font-size": "0.9rem" } },
+              { staticClass: "ml-2", staticStyle: { "font-size": "0.9rem" } },
               [_vm._v("BORRAR")]
             )
           ],

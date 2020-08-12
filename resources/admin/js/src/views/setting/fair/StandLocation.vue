@@ -157,14 +157,12 @@ export default {
       /* if (width && this.img_width) {
                 return parseInt(this.img_width * width)
             } */
-      console.log(width)
       return 150
     },
     calcH (height) {
       /* if (height && this.img_height) {
                 return parseInt(this.img_height * height)
             }  */
-      console.log(height)  
       return 170
     },
     onImgLoad () {

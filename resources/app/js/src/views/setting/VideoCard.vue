@@ -4,16 +4,16 @@
             {{title}}
         </div>
         <div class="flex w-full items-center justify-center card-header grey-real">
-            <vs-icon size="4rem" class="play-icon" color="red" icon-pack="material-icons" icon="play_circle_filled" />
+          <vs-icon size="4rem" class="play-icon" color="red" icon-pack="material-icons" icon="play_circle_filled" />
         </div>
         <div class="vx-row">
             <div class="vx-col flex items-center justify-center text-white w-3/5 bg-dark">
               {{readed}} vistars
             </div>
             <div class="vx-col w-2/5">
-                <div class="flex items-center justify-center text-white py-2 yellow-dark w-full cursor-pointer">
-                    <feather-icon svgClasses="w-5 h-5" icon="Trash2Icon" />
-                    <div class="ml-1" style="font-size: 0.9rem">BORRAR</div>
+                <div @click="removeVideo(id)" class="flex items-center justify-center text-white py-2 yellow-dark w-full cursor-pointer">
+                    <svg-icon size="w-5 h-5" icon="erase" />
+                    <div class="ml-2" style="font-size: 0.9rem">BORRAR</div>
                 </div>
             </div>
         </div>
@@ -26,13 +26,29 @@ export default {
       type: String,
       required: true
     },
-    item: {
-      type: String,
-      required: true  
-    },
     readed: {
-      type: String,
+      type: Number,
       required: true
+    }, 
+    remove: {
+      type: Function,
+      required: false  
+    },
+    show: {
+      type: Function,
+      required: false
+    },
+    id: {
+      type: Number,
+      required: true
+    }
+  },
+  methods: {
+    removeVideo (id) {
+      this.remove(id)  
+    },
+    showVideo (id) {
+      this.show(id)  
     }
   }
 }

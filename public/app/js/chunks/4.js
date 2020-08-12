@@ -127,7 +127,7 @@ var render = function() {
     "div",
     { staticClass: "w-full" },
     [
-      _c("app-header", { attrs: { activeItem: "0" } }),
+      _c("app-header", { attrs: { activeItem: "2" } }),
       _vm._v(" "),
       _c("bread-crumb", {
         attrs: { icon: "MonitorIcon", text: "patrocinadores" }
