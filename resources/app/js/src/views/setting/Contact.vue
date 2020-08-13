@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <app-header activeItem="0"></app-header>
-        <bread-crumb icon="BookOpenIcon" text="mis contactors" 
+        <bread-crumb icon="address-book" type="svg" text="mis contactors" 
                     :second="true" second_icon="DownloadIcon" second_text="Descargar todos los contactos"/>
         <div class="flex w-full flex-col bg-white-grey setting-contact-main">
             <div class="bg-white">
@@ -19,32 +19,32 @@
                     <template slot-scope="{data}">
                         <vs-tr :key="indextr" v-for="(tr, indextr) in data">
 
-                            <vs-td :data="data[indextr].name">
-                            {{ data[indextr].name }}
+                            <vs-td>
+                            {{ data[indextr].requestor.first_name }} {{ data[indextr].requestor.last_name }}
                             </vs-td>
 
-                            <vs-td :data="data[indextr].email">
-                            {{ data[indextr].email }}
+                            <vs-td>
+                            {{ data[indextr].requestor.email }}
                             </vs-td>
 
-                            <vs-td :data="data[indextr].phone">
-                            {{ data[indextr].phone }}
+                            <vs-td>
+                            {{ data[indextr].requestor.phone }}
                             </vs-td>
 
-                            <vs-td :data="data[indextr].profession">
-                            {{ data[indextr].profession }}
+                            <vs-td>
+                            {{ data[indextr].requestor.address }}
                             </vs-td>
 
-                            <vs-td :data="data[indextr].company">
-                            {{ data[indextr].company }}
+                            <vs-td>
+                            {{ data[indextr].requestor.company }}
                             </vs-td>
 
-                            <vs-td :data="data[indextr].country">
-                            {{ data[indextr].country }}
+                            <vs-td>
+                            {{ data[indextr].requestor.country }}
                             </vs-td>
 
-                            <vs-td :data="data[indextr].id">
-                            <vs-button type="filled" class="link-btn" @click="openDetail(data[indextr].id)" :class="(data[indextr].active)? 'cyan-dark' : 'grey-real'">
+                            <vs-td>
+                            <vs-button type="filled" class="link-btn" @click="openDetail(data[indextr].id)" :class="(!data[indextr].active)? 'cyan-dark' : 'grey-real'">
                                 VER MAS
                             </vs-button>
                             </vs-td>
@@ -59,14 +59,14 @@
                         <div class="bg-cyan-dark" style="padding: 10px 24px">CONTACTOR POR TELEFONO</div>
                     </div>
                     <div class="px-20 mt-8" v-if="active_item">
-                        <div class="mb-3 font-italic">Nombre: {{active_item.name}}</div>
-                        <div class="mb-3 font-italic">Email: {{active_item.email}}</div>
-                        <div class="mb-3 font-italic">Telefono: {{active_item.phone}}</div>
-                        <div class="mb-3 font-italic">Posicion: {{active_item.profession}}</div>
-                        <div class="mb-3 font-italic">Compania: {{active_item.company}}</div>
-                        <div class="mb-3 font-italic">Pais: {{active_item.country}}</div>
-                        <div class="mb-3 font-italic">Region: {{active_item.region}}</div>
-                        <div class="mb-16 font-italic">Area de interes: {{active_item.concern}}</div>
+                        <div class="mb-3 font-italic">Nombre: {{active_item.requestor.first_name}} {{active_item.requestor.last_name}}</div>
+                        <div class="mb-3 font-italic">Email: {{active_item.requestor.email}}</div>
+                        <div class="mb-3 font-italic">Telefono: {{active_item.requestor.phone}}</div>
+                        <div class="mb-3 font-italic">Posicion: {{active_item.requestor.address}}</div>
+                        <div class="mb-3 font-italic">Compania: {{active_item.requestor.company}}</div>
+                        <div class="mb-3 font-italic">Pais: {{active_item.requestor.country}}</div>
+                        <div class="mb-3 font-italic">Region: {{active_item.requestor.region}}</div>
+                        <div class="mb-16 font-italic">Area de interes: {{active_item.requestor.concern}}</div>
                         <div>
                             Mensaje de contacto
                         </div>
@@ -119,6 +119,12 @@ export default {
     }
     
     this.contacts = list
+    this.$http.post('/api/setting/contact_request')
+      .then((response) => {
+        const data = response.data
+        console.log(data)
+        this.contacts = data.requests
+      })
   }
     
 }

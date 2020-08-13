@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <app-header activeItem="0"></app-header>
-        <bread-crumb icon="brochure" type="svg" text="catlogos o brochures" />
+        <bread-crumb icon="brochure" type="svg" text="CATÁLOGOS O BROCHURES" />
         <div class="w-full setting-stand-brochure bg-white-grey">
             <div class="w-full px-10 pb-4 mt-4">
                 <div class="vx-row w-full">

@@ -130,6 +130,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -147,21 +154,32 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      today_schedules: [],
-      all_schedules: []
+      me: {},
+      appointments_dates: [],
+      appointments: [],
+      webinars_dates: [],
+      webinars: []
     };
   },
-  created: function created() {
-    var list = [];
-
-    for (var i = 0; i < 9; i++) {
-      list.push(i);
+  methods: {
+    period: function period(start_time, end_time) {
+      var sd = this.$date.timeFormat(start_time);
+      var ed = this.$date.timeFormat(end_time);
+      return "".concat(sd, " - ").concat(ed);
     }
+  },
+  created: function created() {
+    var _this = this;
 
-    this.today_schedules = list.filter(function (it) {
-      return it < 3;
+    this.me = JSON.parse(localStorage.getItem('userInfo'));
+    this.$http.post('/api/setting/schedule').then(function (response) {
+      console.log(response.data);
+      var data = response.data;
+      _this.appointments_dates = data.appointments_dates;
+      _this.appointments = data.appointments;
+      _this.webinars_dates = data.webinars_dates;
+      _this.webinars = data.webinars;
     });
-    this.all_schedules = list;
   }
 });
 
@@ -226,7 +244,7 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       required: true
     },
-    expositor_company: {
+    expositor_name: {
       type: String,
       required: true
     },
@@ -263,7 +281,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".dating-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .dating-card {\n  background: white;\n  border: 1px solid #F2F2F2;\n  margin: 1rem;\n}\n.dating-card .logo-img {\n  width: 90% !important;\n  height: auto;\n}\n[dir] .dating-card .logo-img {\n  margin: 5%;\n}\n.dating-card .event-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .dating-card .event-btn {\n  padding: 0.8rem 0.6rem !important;\n}", ""]);
+exports.push([module.i, ".dating-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .dating-card {\n  background: white;\n  border: 1px solid #F2F2F2;\n  margin: 1rem;\n}\n.dating-card .logo-img {\n  width: 90% !important;\n  height: auto;\n}\n[dir] .dating-card .logo-img {\n  margin: 5%;\n}\n.dating-card .event-btn {\n  font-size: 1rem !important;\n}\n[dir] .dating-card .event-btn {\n  padding: 1rem 1.8rem !important;\n}", ""]);
 
 // exports
 
@@ -301,7 +319,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".schedule-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .schedule-card {\n  background: white;\n  margin: 1rem;\n}\n.schedule-card .reserved {\n  height: 1.6rem;\n}\n.schedule-card .reserved span {\n  font-size: 0.6rem;\n}\n[dir] .schedule-card .reserved span {\n  padding: 0.5rem;\n  background: #FFC700;\n}\n.schedule-card .user-img {\n  height: 4rem !important;\n  width: auto;\n}\n[dir] .schedule-card .user-img {\n  border-radius: 50%;\n  background-color: #33333355;\n}\n.schedule-card .event-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .schedule-card .event-btn {\n  padding: 0.8rem 0.6rem !important;\n}\n[dir] .schedule-card .event-btn.p-big {\n  padding: 0.8rem 1.2rem !important;\n}\n.schedule-card .desc-info {\n  font-size: 0.9rem;\n  font-style: italic;\n}\n[dir] .schedule-card .desc-info {\n  padding: 0 1rem;\n}\n.schedule-card .user-info {\n  font-size: 0.9rem;\n}\n[dir] .card-border {\n  border: 1px solid #E2E2E2;\n}", ""]);
+exports.push([module.i, ".schedule-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .schedule-card {\n  background: white;\n  margin: 1rem;\n}\n.schedule-card .reserved {\n  height: 1.6rem;\n}\n.schedule-card .reserved span {\n  font-size: 0.6rem;\n}\n[dir] .schedule-card .reserved span {\n  padding: 0.5rem;\n  background: #FFC700;\n}\n.schedule-card .user-img {\n  height: 4rem !important;\n  width: auto;\n}\n[dir] .schedule-card .user-img {\n  border-radius: 50%;\n  background-color: #33333355;\n}\n.schedule-card .event-btn {\n  font-size: 1rem !important;\n}\n[dir] .schedule-card .event-btn {\n  padding: 0.8rem 0.6rem !important;\n}\n[dir] .schedule-card .event-btn.p-big {\n  padding: 0.8rem 2rem !important;\n}\n.schedule-card .desc-info {\n  font-size: 0.9rem;\n  font-style: italic;\n}\n[dir] .schedule-card .desc-info {\n  padding: 0 1rem;\n}\n.schedule-card .user-info {\n  font-size: 0.9rem;\n}\n[dir] .card-border {\n  border: 1px solid #E2E2E2;\n}", ""]);
 
 // exports
 
@@ -415,10 +433,10 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "dating-card" }, [
     _c("div", { staticClass: "vx-row mt-2" }, [
-      _c("div", { staticClass: "vx-col flex items-center w-1/3" }, [
+      _c("div", { staticClass: "vx-col flex items-center w-1/4" }, [
         _c("img", {
           staticClass: "logo-img",
-          attrs: { src: __webpack_require__("./resources/app/assets/images/pages sync recursive ^\\.\\/.*$")("./" + _vm.logo) }
+          attrs: { src: "/fair_image/" + _vm.logo }
         })
       ]),
       _vm._v(" "),
@@ -430,11 +448,11 @@ var render = function() {
         [
           _c(
             "div",
-            { staticClass: "flex items-start w-full mt-1 mx-2" },
+            { staticClass: "flex items-start w-full mt-3 px-4" },
             [
               _c("feather-icon", {
                 staticClass: "text-yellow-light",
-                attrs: { svgClasses: "w-5 h-5", icon: "ClockIcon" }
+                attrs: { svgClasses: "w-6 h-6", icon: "ClockIcon" }
               }),
               _vm._v(" "),
               _c("span", { staticClass: "ml-4" }, [_vm._v(_vm._s(_vm.time))])
@@ -444,11 +462,11 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "flex items-start w-full mt-1 mx-2" },
+            { staticClass: "flex items-start w-full mt-4 px-4" },
             [
-              _c("feather-icon", {
+              _c("svg-icon", {
                 staticClass: "text-yellow-light",
-                attrs: { svgClasses: "w-5 h-5", icon: "ClockIcon" }
+                attrs: { size: "w-6 h-6", icon: "stand" }
               }),
               _vm._v(" "),
               _c("span", { staticClass: "ml-4" }, [
@@ -460,11 +478,11 @@ var render = function() {
           _vm._v(" "),
           _c(
             "div",
-            { staticClass: "flex items-start w-full mt-1 mx-2" },
+            { staticClass: "flex items-start w-full mt-3 px-4" },
             [
-              _c("feather-icon", {
+              _c("svg-icon", {
                 staticClass: "text-yellow-light",
-                attrs: { svgClasses: "w-5 h-5", icon: "ClockIcon" }
+                attrs: { size: "w-6 h-6", icon: "profession" }
               }),
               _vm._v(" "),
               _c("span", { staticClass: "ml-4" }, [
@@ -478,7 +496,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "vx-col flex items-end justify-end w-1/6" },
+        { staticClass: "vx-col flex items-end justify-end w-1/4" },
         [
           _c("vs-button", { staticClass: "blue-light event-btn p-big" }, [
             _vm._v("\n                IR LA CITA\n            ")
@@ -521,7 +539,9 @@ var render = function() {
         "div",
         { staticClass: "w-full setting-schedule-main" },
         [
-          _c("bread-crumb", { attrs: { icon: "BookIcon", text: "mi agenda" } }),
+          _c("bread-crumb", {
+            attrs: { icon: "topic", type: "svg", text: "mi agenda" }
+          }),
           _vm._v(" "),
           _c("div", { staticClass: "w-full" }, [
             _c("div", { staticClass: "vx-row page-content" }, [
@@ -534,26 +554,45 @@ var render = function() {
                 [
                   _vm._m(0),
                   _vm._v(" "),
-                  _c("div", { staticClass: "mt-8 ml-6 h6 font-bold" }, [
-                    _vm._v(
-                      "\n                        JUEVES 04 de AGOSTO\n                    "
+                  _vm._l(_vm.webinars_dates, function(wdate, index) {
+                    return _c(
+                      "div",
+                      { key: "webinar-date-" + index },
+                      [
+                        _c("div", { staticClass: "mt-8 ml-6 h6 font-bold" }, [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(wdate.talk_date) +
+                              "\n                            "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(
+                          _vm.webinars.filter(function(it) {
+                            return it.talk_date === wdate.talk_date
+                          }),
+                          function(wnar, index) {
+                            return _c("schedule-card", {
+                              key: "webinar-date-" + index,
+                              attrs: {
+                                reserved: true,
+                                noborder: true,
+                                time: _vm.period(
+                                  wnar.start_time,
+                                  wnar.end_time
+                                ),
+                                title: wnar.title,
+                                expositor_name:
+                                  _vm.me.first_name + " " + _vm.me.last_name,
+                                expositor_profession: "" + _vm.me.address,
+                                user_img: "" + _vm.me.avatar
+                              }
+                            })
+                          }
+                        )
+                      ],
+                      2
                     )
-                  ]),
-                  _vm._v(" "),
-                  _vm._l(_vm.today_schedules, function(item, index) {
-                    return _c("schedule-card", {
-                      key: "today-schedule-" + index,
-                      attrs: {
-                        reserved: true,
-                        noborder: true,
-                        time: "5 pm - 6:00 pm",
-                        title:
-                          "Desarrollo de estrategias virtuales para desarrollo de marcas.",
-                        expositor_company: "Felipe Alenso Guererro",
-                        expositor_profession: "Design Furniture",
-                        user_img: "maintenance-2.png"
-                      }
-                    })
                   })
                 ],
                 2
@@ -565,28 +604,47 @@ var render = function() {
                 [
                   _vm._m(1),
                   _vm._v(" "),
-                  _c("div", { staticClass: "mt-8 ml-6 h6 font-bold" }, [
-                    _vm._v(
-                      "\n                        JUEVES 04 de AGOSTO\n                    "
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _vm._l(_vm.all_schedules, function(item, index) {
+                  _vm._l(_vm.appointments_dates, function(apo_date, index) {
                     return _c(
                       "div",
-                      { key: "all-schedule-" + index },
+                      { key: "dating-item-" + index },
                       [
-                        _c("dating-card", {
-                          attrs: {
-                            time: "5 pm - 6:00 pm",
-                            stand_no: "043",
-                            expositor_profession:
-                              "Especilista en estrategias de marcas",
-                            logo: "maintenance-2.png"
+                        _c("div", { staticClass: "mt-8 ml-6 h6 font-bold" }, [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(apo_date.schedule_date) +
+                              "\n                        "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _vm._l(
+                          _vm.appointments.filter(function(it) {
+                            return it.schedule_date === apo_date.schedule_date
+                          }),
+                          function(apo, index) {
+                            return _c(
+                              "div",
+                              { key: "dating-schedule-" + index },
+                              [
+                                _c("dating-card", {
+                                  attrs: {
+                                    time: _vm.period(
+                                      apo.start_time,
+                                      apo.end_time
+                                    ),
+                                    stand_no: "" + apo.stand.id,
+                                    expositor_profession:
+                                      apo.stand.user.address,
+                                    logo: "" + apo.stand.logo
+                                  }
+                                })
+                              ],
+                              1
+                            )
                           }
-                        })
+                        )
                       ],
-                      1
+                      2
                     )
                   })
                 ],
@@ -691,9 +749,11 @@ var render = function() {
         [
           _vm.reserved
             ? [
-                _c("span", { staticClass: "text-white font-normal" }, [
-                  _vm._v("RESERVED")
-                ])
+                _c(
+                  "span",
+                  { staticClass: "text-white font-normal uppercase" },
+                  [_vm._v("reservado")]
+                )
               ]
             : _vm._e()
         ],
@@ -743,11 +803,11 @@ var render = function() {
       _c("div", { staticClass: "flex flex-row items-center mt-2 px-4" }, [
         _c("img", {
           staticClass: "user-img",
-          attrs: { src: __webpack_require__("./resources/app/assets/images/pages sync recursive ^\\.\\/.*$")("./" + _vm.user_img) }
+          attrs: { src: "/fair_image/" + _vm.user_img }
         }),
         _vm._v(" "),
         _c("div", { staticClass: "ml-4 user-info" }, [
-          _vm._v("\n            Lic. " + _vm._s(_vm.expositor_company)),
+          _vm._v("\n            Lic. " + _vm._s(_vm.expositor_name)),
           _c("br"),
           _vm._v(
             "\n            " + _vm._s(_vm.expositor_profession) + "\n        "

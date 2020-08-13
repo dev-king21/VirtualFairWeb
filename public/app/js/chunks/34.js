@@ -80,6 +80,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 
@@ -95,21 +98,28 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      today_schedules: [],
-      all_schedules: []
+      me: {},
+      reserved_webinars: [],
+      past_webinars: []
     };
   },
-  created: function created() {
-    var list = [];
-
-    for (var i = 0; i < 9; i++) {
-      list.push(i);
+  methods: {
+    period: function period(start_time, end_time) {
+      var sd = this.$date.timeFormat(start_time);
+      var ed = this.$date.timeFormat(end_time);
+      return "".concat(sd, " - ").concat(ed);
     }
+  },
+  created: function created() {
+    var _this = this;
 
-    this.today_schedules = list.filter(function (it) {
-      return it < 3;
+    this.me = JSON.parse(localStorage.getItem('userInfo'));
+    this.$http.post('/api/setting/webinar').then(function (response) {
+      console.log(response.data);
+      var data = response.data;
+      _this.reserved_webinars = data.reserved_webinars;
+      _this.past_webinars = data.past_webinars;
     });
-    this.all_schedules = list;
   }
 });
 
@@ -190,7 +200,7 @@ var render = function() {
         { staticClass: "w-full setting-webinar-main" },
         [
           _c("bread-crumb", {
-            attrs: { icon: "MonitorIcon", text: "webinar" }
+            attrs: { icon: "webinar", type: "svg", text: "webinar" }
           }),
           _vm._v(" "),
           _c("div", { staticClass: "w-full bg-white-grey" }, [
@@ -271,7 +281,7 @@ var render = function() {
                   _c(
                     "div",
                     { staticClass: "vx-row" },
-                    _vm._l(_vm.all_schedules, function(item, index) {
+                    _vm._l(_vm.reserved_webinars, function(item, index) {
                       return _c(
                         "div",
                         {
@@ -286,14 +296,17 @@ var render = function() {
                               _c("webinar-card", {
                                 attrs: {
                                   reserved: true,
-                                  workdate: "01 DE AGOSTO",
-                                  time: "5 pm - 6:00 pm",
-                                  title:
-                                    "Desarrollo de estrategias virtuales para desarrollo de marcas.",
-                                  expositor_company: "Felipe Alenso Guererro",
-                                  expositor_profession:
-                                    "Especilista en estrategias de marcas",
-                                  user_img: "maintenance-2.png"
+                                  workdate: item.talk_date,
+                                  time: _vm.period(
+                                    item.start_time,
+                                    item.end_time
+                                  ),
+                                  title: item.title,
+                                  expositor_name:
+                                    _vm.me.first_name + " " + _vm.me.last_name,
+                                  expositor_profession: "" + _vm.me.address,
+                                  user_img: "" + _vm.me.avatar,
+                                  live: item.live === 1
                                 }
                               })
                             ],
@@ -310,7 +323,7 @@ var render = function() {
                   _c(
                     "div",
                     { staticClass: "vx-row" },
-                    _vm._l(_vm.all_schedules, function(item, index) {
+                    _vm._l(_vm.past_webinars, function(item, index) {
                       return _c(
                         "div",
                         {
@@ -324,14 +337,17 @@ var render = function() {
                             [
                               _c("webinar-card", {
                                 attrs: {
-                                  workdate: "01 DE AGOSTO",
-                                  time: "5 pm - 6:00 pm",
-                                  title:
-                                    "Desarrollo de estrategias virtuales para desarrollo de marcas.",
-                                  expositor_company: "Felipe Alenso Guererro",
-                                  expositor_profession:
-                                    "Especilista en estrategias de marcas",
-                                  user_img: "maintenance-2.png"
+                                  workdate: item.talk_date,
+                                  time: _vm.period(
+                                    item.start_time,
+                                    item.end_time
+                                  ),
+                                  title: item.title,
+                                  expositor_name:
+                                    _vm.me.first_name + " " + _vm.me.last_name,
+                                  expositor_profession: "" + _vm.me.address,
+                                  user_img: "" + _vm.me.avatar,
+                                  live: item.live === 1
                                 }
                               })
                             ],

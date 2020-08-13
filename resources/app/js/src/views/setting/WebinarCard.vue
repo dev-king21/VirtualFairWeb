@@ -1,15 +1,21 @@
 <template>
     <div class="setting-webinar-card card-border" :class="{'card-border': !noborder}">
         <div class="relative card-img">
-            <img class="relative responsive" :src="require(`@assets/images/pages/${user_img}`)">
+            <img class="relative responsive" :src="`/fair_image/${user_img}`">
             <div class="card-over text-white flex flex-col justify-between" >
                 <div>
                     <span class="text-white absolute p-3 bg-cyan-light" style="font-size: 0.8rem">{{workdate}}</span> 
                 </div>
                 <div class="card-title">
                     <div class="flex flex-row items-center">
-                        <feather-icon svgClasses="w-8 h-8" icon="RadioIcon"/>
-                        <div class="ml-2 text-white" style="font-size: 0.8rem">EN VIVO</div>
+                        <template v-if="live">
+                            <svg-icon size="w-8 h-8" icon="live"/>
+                            <div class="ml-2 text-white" style="font-size: 0.8rem">EN VIVO</div>
+                        </template>
+                        <template v-else>
+                            <svg-icon size="w-8 h-8" icon="video"/>
+                            <div class="ml-2 text-white" style="font-size: 0.8rem">GRABADO</div>
+                        </template>
                     </div>
                     <div style="font-style: italic">{{title}}</div>
                 </div>
@@ -22,9 +28,9 @@
             </span>
         </div>
         <div class="flex flex-row items-center mt-2 px-4">
-            <img class="user-img" :src="require(`@assets/images/pages/${user_img}`)"/>
+            <img class="user-img" :src="`/fair_image/${user_img}`"/>
             <div class="ml-4 user-info">
-                <div class="h6 font-bold">Lic. {{expositor_company}}</div>
+                <div class="h6 font-bold">Lic. {{expositor_name}}</div>
                 <div>{{expositor_profession}}</div>
             </div>
         </div>
@@ -50,7 +56,7 @@ export default {
       type: String,
       required: true
     },
-    expositor_company: {
+    expositor_name: {
       type: String,
       required: true
     },
@@ -73,6 +79,10 @@ export default {
     reserved: {
       type: Boolean,
       required: false
+    },
+    live: {
+      type: Boolean,
+      required: false
     }
   }
 }
@@ -92,7 +102,7 @@ export default {
     }
 
     .event-btn {
-        font-size: 0.8rem !important;
+        font-size: 1rem !important;
         padding: 0.8rem 0.6rem !important;
         min-width: 9rem !important;
         margin-top: 0.8rem !important;

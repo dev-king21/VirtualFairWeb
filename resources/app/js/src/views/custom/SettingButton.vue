@@ -1,7 +1,7 @@
 <template>
     <div class="setting-button cursor-pointer flex items-end"  @click="gopage">
         <div class="flex icon-span items-center justify-center" :class="cls">
-          <feather-icon class="w-20 h-20" :icon="icon"></feather-icon>
+          <svg-icon size="w-12 h-12" :icon="icon"/>
         </div>
         <div class="flex text-span h5 items-center">
             {{text}}
@@ -60,7 +60,7 @@ export default {
             padding-left: 1.5rem;
             padding-right: 1.5rem;
             border-top-right-radius: 1rem;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.85);
             padding: 0.6rem;
             text-transform: uppercase;
             z-index: 19;

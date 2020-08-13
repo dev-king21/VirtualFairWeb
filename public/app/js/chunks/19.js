@@ -65,6 +65,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -76,12 +89,28 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      video_list: [],
-      video_show: false,
-      video_title: '',
-      video_file: null,
+      gallery_list: [],
+      gallery_show: false,
+      gallery_title: '',
+      gallery_file: null,
       stand_id: null
     };
+  },
+  computed: {
+    hasImage: function hasImage() {
+      var _this = this;
+
+      return this.gallery_list.filter(function (it) {
+        return _this.isImage(it.url);
+      }).length !== 0;
+    },
+    hasVideo: function hasVideo() {
+      var _this2 = this;
+
+      return this.gallery_list.filter(function (it) {
+        return _this2.isVideo(it.url);
+      }).length !== 0;
+    }
   },
   methods: {
     browseVideo: function browseVideo() {
@@ -108,7 +137,7 @@ __webpack_require__.r(__webpack_exports__);
       if (!this.isValidExt(rawFile)) {
         this.$vs.notify({
           title: 'error de formato de archivo',
-          text: 'El tamaño del archivo debe ser inferior a 100 MB y tener el formato avi, mp4, 3gp',
+          text: 'El tamaño del archivo debe ser inferior a 100 MB y tener el formato .avi, .mp4, .3gp, .jpg, .png, .gif, .jpeg',
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -116,20 +145,28 @@ __webpack_require__.r(__webpack_exports__);
         return false;
       }
 
-      this.video_show = true;
-      this.video_file = rawFile;
+      this.gallery_show = true;
+      this.gallery_file = rawFile;
+      this.$refs.refVideoFile.value = null;
+      if (this.isImage(this.gallery_file.name)) this.saveGallery();
+    },
+    isImage: function isImage(file) {
+      return /\.(jpeg|jpg|png|gif)$/.test(file);
+    },
+    isVideo: function isVideo(file) {
+      return /\.(avi|mp4|3gp)$/.test(file);
     },
     isValidExt: function isValidExt(file) {
-      return /\.(avi|mp4|3gp)$/.test(file.name);
+      return /\.(avi|mp4|3gp|jpeg|jpg|png|gif)$/.test(file.name);
     },
-    getVideos: function getVideos() {
-      var _this = this;
+    getGalleryItems: function getGalleryItems() {
+      var _this3 = this;
 
-      this.$http.post('/api/setting/my_stand/get_videos').then(function (response) {
+      this.$http.post('/api/setting/my_stand/get_gallery').then(function (response) {
         var data = response.data;
 
         if (!data.stand || !data.stand.id) {
-          _this.$vs.notify({
+          _this3.$vs.notify({
             title: 'error',
             text: 'primero debe comprar el soporte.',
             iconPack: 'feather',
@@ -138,23 +175,23 @@ __webpack_require__.r(__webpack_exports__);
           });
 
           setTimeout(function () {
-            _this.$router.push('/setting/home');
+            _this3.$router.push('/setting/home');
           }, 3000);
           return;
         }
 
-        _this.video_show = false;
-        _this.stand_id = data.stand.id;
-        _this.video_list = data.stand.gallerys;
+        _this3.gallery_show = false;
+        _this3.stand_id = data.stand.id;
+        _this3.gallery_list = data.stand.gallerys;
       });
     },
-    saveVideo: function saveVideo() {
-      var _this2 = this;
+    saveGallery: function saveGallery() {
+      var _this4 = this;
 
-      if (!this.video_title && this.video_title === '') {
+      if (!this.gallery_file || this.gallery_file.size > 100 * 1024 * 1024) {
         this.$vs.notify({
-          title: 'Error de título del catálogo',
-          text: 'Ingrese corregir el mosaico del catálogo',
+          title: 'error de formato de archivo',
+          text: 'El tamaño del archivo debe ser inferior a 100 MB y tener el formato .avi, .mp4, .3gp, .jpg, .png, .gif, .jpeg',
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -162,10 +199,10 @@ __webpack_require__.r(__webpack_exports__);
         return;
       }
 
-      if (!this.video_file || this.video_title.name === '' || this.video_file.size > 100 * 1024 * 1024) {
+      if (this.isVideo(this.gallery_file.name) && (!this.gallery_title || this.gallery_title === '')) {
         this.$vs.notify({
-          title: 'error de formato de archivo',
-          text: 'El tamaño del archivo debe ser inferior a 100 MB y tener el formato avi, mp4, 3gp',
+          title: 'Error de título del catálogo',
+          text: 'Ingrese corregir el mosaico del catálogo',
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -180,11 +217,17 @@ __webpack_require__.r(__webpack_exports__);
         }
       };
       formData.append('stand_id', this.stand_id);
-      formData.append('video_title', this.video_title);
-      formData.append('video_file', this.video_file);
-      this.$http.post('/api/setting/my_stand/save_video', formData, headers).then(function (response) {
+      formData.append('gallery_file', this.gallery_file);
+
+      if (this.isVideo(this.gallery_file.name)) {
+        console.log(this.gallery_title);
+        formData.append('gallery_title', this.gallery_title);
+      }
+
+      console.log('save_gallery');
+      this.$http.post('/api/setting/my_stand/save_gallery', formData, headers).then(function (response) {
         if (response.data.status === 'ok') {
-          _this2.$vs.notify({
+          _this4.$vs.notify({
             title: 'éxito',
             text: 'Folleto registrado con éxito',
             iconPack: 'feather',
@@ -192,18 +235,18 @@ __webpack_require__.r(__webpack_exports__);
             color: 'success'
           });
 
-          _this2.getVideos();
+          _this4.getGalleryItems();
         }
       });
     },
-    removeVideo: function removeVideo(id) {
-      var _this3 = this;
+    removeGallery: function removeGallery(id) {
+      var _this5 = this;
 
-      this.$http.post('/api/setting/my_stand/remove_video', {
+      this.$http.post('/api/setting/my_stand/remove_gallery', {
         _id: id
       }).then(function (response) {
         if (response.data.status === 'ok') {
-          _this3.$vs.notify({
+          _this5.$vs.notify({
             title: 'éxito',
             text: 'Folleto registrado con éxito',
             iconPack: 'feather',
@@ -211,7 +254,7 @@ __webpack_require__.r(__webpack_exports__);
             color: 'success'
           });
 
-          _this3.getVideos();
+          _this5.getGalleryItems();
         }
       });
     },
@@ -220,7 +263,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
-    this.getVideos();
+    this.getGalleryItems();
   }
 });
 
@@ -411,35 +454,111 @@ var render = function() {
       _c("app-header", { attrs: { activeItem: "0" } }),
       _vm._v(" "),
       _c("bread-crumb", {
-        attrs: { icon: "video", type: "svg", text: "videos" }
+        attrs: { icon: "gallery", type: "svg", text: "GALERÍA" }
       }),
       _vm._v(" "),
       _c("div", { staticClass: "w-full setting-stand-video bg-white-grey" }, [
         _c("div", { staticClass: "w-full px-10 pb-4 mt-4" }, [
           _c(
             "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.hasImage,
+                  expression: "hasImage"
+                }
+              ],
+              staticClass: "h3 m-2 font-bold"
+            },
+            [_vm._v("\n              Image\n            ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
             { staticClass: "vx-row w-full" },
-            [
-              _vm._l(_vm.video_list, function(item, index) {
+            _vm._l(
+              _vm.gallery_list.filter(function(it) {
+                return _vm.isImage(it.url)
+              }),
+              function(item, index) {
                 return _c(
                   "div",
-                  { key: "video-item-" + index, staticClass: "vx-col w-1/4" },
+                  { key: "photo-item-" + index, staticClass: "vx-col w-1/6" },
                   [
-                    _c("video-card", {
-                      attrs: {
-                        title: item.name,
-                        readed: item.readed,
-                        id: item.id,
-                        remove: _vm.removeVideo,
-                        show: _vm.showVideo
-                      }
-                    })
-                  ],
-                  1
+                    _c(
+                      "div",
+                      {
+                        staticClass: "bg-grey-real m-4 p-2",
+                        staticStyle: {
+                          "border-radius": "10px",
+                          height: "200px"
+                        }
+                      },
+                      [
+                        _c("img", {
+                          staticStyle: {
+                            height: "100%",
+                            width: "auto",
+                            "max-width": "100%"
+                          },
+                          attrs: { src: "/fair_image/" + item.url }
+                        })
+                      ]
+                    )
+                  ]
                 )
-              }),
+              }
+            ),
+            0
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.hasVideo,
+                  expression: "hasVideo"
+                }
+              ],
+              staticClass: "h3 m-2 font-bold"
+            },
+            [_vm._v("\n              Video\n            ")]
+          ),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "vx-row w-full mt-4" },
+            [
+              _vm._l(
+                _vm.gallery_list.filter(function(it) {
+                  return _vm.isVideo(it.url)
+                }),
+                function(item, index) {
+                  return _c(
+                    "div",
+                    { key: "video-item-" + index, staticClass: "vx-col w-1/4" },
+                    [
+                      _c("video-card", {
+                        attrs: {
+                          title: item.name,
+                          readed: item.readed,
+                          id: item.id,
+                          remove: _vm.removeGallery,
+                          show: _vm.showVideo
+                        }
+                      })
+                    ],
+                    1
+                  )
+                }
+              ),
               _vm._v(" "),
-              !_vm.video_show
+              !_vm.gallery_show
                 ? [
                     _c(
                       "div",
@@ -480,7 +599,10 @@ var render = function() {
                       ]
                     )
                   ]
-                : [
+                : _vm._e(),
+              _vm._v(" "),
+              _vm.gallery_show && _vm.isVideo(_vm.gallery_file.name)
+                ? [
                     _c("div", { staticClass: "vx-col w-1/4" }, [
                       _c("div", { staticClass: "video-card" }, [
                         _c(
@@ -491,11 +613,11 @@ var render = function() {
                               staticClass: "w-full",
                               attrs: { placeholder: "título del catálogo" },
                               model: {
-                                value: _vm.video_title,
+                                value: _vm.gallery_title,
                                 callback: function($$v) {
-                                  _vm.video_title = $$v
+                                  _vm.gallery_title = $$v
                                 },
-                                expression: "video_title"
+                                expression: "gallery_title"
                               }
                             })
                           ],
@@ -531,7 +653,7 @@ var render = function() {
                                   "flex items-center justify-center text-white py-2 cyan-dark w-full cursor-pointer",
                                 on: {
                                   click: function($event) {
-                                    return _vm.saveVideo()
+                                    return _vm.saveGallery()
                                   }
                                 }
                               },
@@ -555,12 +677,16 @@ var render = function() {
                         ])
                       ])
                     ])
-                  ],
+                  ]
+                : _vm._e(),
               _vm._v(" "),
               _c("input", {
                 ref: "refVideoFile",
                 staticClass: "hidden",
-                attrs: { type: "file", accept: ".avi, .mp4, .3gp" },
+                attrs: {
+                  type: "file",
+                  accept: ".avi, .mp4, .3gp, .jpg, .png, .gif, .jpeg"
+                },
                 on: { change: _vm.videoChanged }
               })
             ],
@@ -578,7 +704,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("div", { staticClass: "mt-4 text-center" }, [
-      _vm._v("\n                          SUBIR VIDEO "),
+      _vm._v("\n                          SUBIR FOTO O VIDEO "),
       _c("br"),
       _vm._v(
         "\n                          (Peso maximo 100mb)\n                      "

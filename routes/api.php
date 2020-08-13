@@ -41,13 +41,19 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('/setting/my_stand/save_brochure', 'SettingController@save_brochure');
     Route::post('/setting/my_stand/remove_brochure', 'SettingController@remove_brochure');
     
-    Route::post('/setting/my_stand/get_videos', 'SettingController@get_videos');
-    Route::post('/setting/my_stand/save_video', 'SettingController@save_video');
-    Route::post('/setting/my_stand/remove_video', 'SettingController@remove_video');
+    Route::post('/setting/my_stand/get_gallery', 'SettingController@get_gallery');
+    Route::post('/setting/my_stand/save_gallery', 'SettingController@save_gallery');
+    Route::post('/setting/my_stand/remove_gallery', 'SettingController@remove_gallery');
 
     Route::post('/setting/my_stand/get_businesscards', 'SettingController@get_businesscards');
     Route::post('/setting/my_stand/save_businesscard', 'SettingController@save_businesscard');
     Route::post('/setting/my_stand/remove_businesscard', 'SettingController@remove_businesscard');
+    Route::post('/setting/my_stand/schedule', 'SettingController@get_stand_schedule'); 
+
+    Route::post('/setting/schedule', 'SettingController@get_schedule');
+    Route::post('/setting/download', 'SettingController@get_download');
+    Route::post('/setting/contact_request', 'SettingController@get_contact_request');
+    Route::post('/setting/webinar', 'SettingController@get_my_webinars');
 
 
 });

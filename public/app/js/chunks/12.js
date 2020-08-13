@@ -167,7 +167,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".setting-button {\n  width: 46%;\n}\n.setting-button .icon-span {\n  height: 6rem;\n  width: 6rem;\n  z-index: 20;\n  color: white;\n}\n[dir] .setting-button .icon-span {\n  background: #67b351;\n  padding: 0.8rem;\n}\n[dir=ltr] .setting-button .icon-span {\n  border-top-right-radius: 1rem;\n  border-bottom-left-radius: 1rem;\n}\n[dir=rtl] .setting-button .icon-span {\n  border-top-left-radius: 1rem;\n  border-bottom-right-radius: 1rem;\n}\n.setting-button .text-span {\n  width: 65%;\n  height: 5rem;\n  text-transform: uppercase;\n  z-index: 19;\n  color: #333;\n  font-weight: 600;\n}\n[dir] .setting-button .text-span {\n  background: rgba(255, 255, 255, 0.7);\n  padding: 0.6rem;\n}\n[dir=ltr] .setting-button .text-span {\n  margin-left: -0.5rem;\n  padding-left: 1.5rem;\n  padding-right: 1.5rem;\n  border-top-right-radius: 1rem;\n}\n[dir=rtl] .setting-button .text-span {\n  margin-right: -0.5rem;\n  padding-right: 1.5rem;\n  padding-left: 1.5rem;\n  border-top-left-radius: 1rem;\n}", ""]);
+exports.push([module.i, ".setting-button {\n  width: 46%;\n}\n.setting-button .icon-span {\n  height: 6rem;\n  width: 6rem;\n  z-index: 20;\n  color: white;\n}\n[dir] .setting-button .icon-span {\n  background: #67b351;\n  padding: 0.8rem;\n}\n[dir=ltr] .setting-button .icon-span {\n  border-top-right-radius: 1rem;\n  border-bottom-left-radius: 1rem;\n}\n[dir=rtl] .setting-button .icon-span {\n  border-top-left-radius: 1rem;\n  border-bottom-right-radius: 1rem;\n}\n.setting-button .text-span {\n  width: 65%;\n  height: 5rem;\n  text-transform: uppercase;\n  z-index: 19;\n  color: #333;\n  font-weight: 600;\n}\n[dir] .setting-button .text-span {\n  background: rgba(255, 255, 255, 0.85);\n  padding: 0.6rem;\n}\n[dir=ltr] .setting-button .text-span {\n  margin-left: -0.5rem;\n  padding-left: 1.5rem;\n  padding-right: 1.5rem;\n  border-top-right-radius: 1rem;\n}\n[dir=rtl] .setting-button .text-span {\n  margin-right: -0.5rem;\n  padding-right: 1.5rem;\n  padding-left: 1.5rem;\n  border-top-left-radius: 1rem;\n}", ""]);
 
 // exports
 
@@ -354,12 +354,7 @@ var render = function() {
           staticClass: "flex icon-span items-center justify-center",
           class: _vm.cls
         },
-        [
-          _c("feather-icon", {
-            staticClass: "w-20 h-20",
-            attrs: { icon: _vm.icon }
-          })
-        ],
+        [_c("svg-icon", { attrs: { size: "w-12 h-12", icon: _vm.icon } })],
         1
       ),
       _vm._v(" "),
@@ -448,7 +443,26 @@ var render = function() {
               ]
             ),
             _vm._v(" "),
-            _vm._m(1),
+            _c(
+              "div",
+              {
+                staticClass: "flex flex-col bg-white text-center py-6",
+                staticStyle: { opacity: ".9" }
+              },
+              [
+                _c("h3", [
+                  _vm._v(
+                    "¡Hola! " +
+                      _vm._s(_vm.user.first_name) +
+                      " " +
+                      _vm._s(_vm.user.last_name) +
+                      " "
+                  )
+                ]),
+                _vm._v(" "),
+                _c("h4", { staticClass: "mt-2" }, [_vm._v("Que deseas hacer?")])
+              ]
+            ),
             _vm._v(" "),
             _c(
               "div",
@@ -469,7 +483,7 @@ var render = function() {
                         attrs: {
                           cls: "bg-cyan-dark",
                           to: "/setting/stand",
-                          icon: "ListIcon",
+                          icon: "stand",
                           text: "mi stand"
                         }
                       }),
@@ -478,7 +492,7 @@ var render = function() {
                         attrs: {
                           cls: "bg-blue-dark",
                           to: "/setting/schedule",
-                          icon: "ListIcon",
+                          icon: "topic",
                           text: "ver mi agenda"
                         }
                       })
@@ -497,7 +511,7 @@ var render = function() {
                         attrs: {
                           cls: "bg-grey-real",
                           to: "/setting/webinar",
-                          icon: "MonitorIcon",
+                          icon: "webinar",
                           text: "mis webinars"
                         }
                       }),
@@ -506,7 +520,7 @@ var render = function() {
                         attrs: {
                           cls: "bg-blue-light",
                           to: "/setting/download",
-                          icon: "DownloadIcon",
+                          icon: "download",
                           text: "mis descargasy archivos guardados"
                         }
                       })
@@ -525,7 +539,7 @@ var render = function() {
                         attrs: {
                           cls: "bg-cyan-light",
                           to: "/setting/contact",
-                          icon: "BookIcon",
+                          icon: "address-book",
                           text: "mis contactos"
                         }
                       })
@@ -551,23 +565,6 @@ var staticRenderFns = [
     return _c("div", [
       _c("div", { staticClass: "user-name text-white" }, [_vm._v("MI PERFIL")])
     ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "flex flex-col bg-white text-center py-6",
-        staticStyle: { opacity: ".9" }
-      },
-      [
-        _c("h3", [_vm._v("iHola! Felipe Alonso Guerrero")]),
-        _vm._v(" "),
-        _c("h4", { staticClass: "mt-2" }, [_vm._v("Que deseas hacer?")])
-      ]
-    )
   }
 ]
 render._withStripped = true

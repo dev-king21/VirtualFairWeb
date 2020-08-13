@@ -12,14 +12,14 @@
                 </div>
                 <div class="w-full mb-8 pb-4 bg-white">
                     <div class="m-2 p-4 flex items-center w-full mt-1 mx-2 mb-4">
-                        <feather-icon svgClasses="w-8 h-8" icon="BookIcon" />
+                        <svg-icon size="w-8 h-8 text-black" icon="brochure" />
                         <span class="h4 font-bold ml-4">CATALOGOS O BROCHURES</span>
                     </div>
                     <div class="vx-row w-full">
                         <div class="vx-col w-1/4" :key="`catalog-item-${index}`" v-for="(item, index) in catalog_list">
                             <catalog-card
-                                title="Catalog de Productos Ecologicos"
-                                item="123"
+                                :title="item.portfolio.name"
+                                :id="item.id"
                             />
                         </div>
                     </div>
@@ -32,27 +32,29 @@
                     <div class="vx-row w-full">
                         <div class="vx-col w-1/4" :key="`video-item-${index}`" v-for="(item, index) in video_list">
                             <video-card
-                                title="Titulo del Video"
-                                item="123"
-                                readed="12323"
+                                :title="item.gallery.name"
+                                :readed="item.gallery.readed"
+                                :id="item.id"
                             />
                         </div>
                     </div>
                 </div>
                 <div class="w-full mb-8 pb-4 bg-white">
                     <div class="m-2 p-4 flex items-center w-full mt-1 mx-2">
-                        <feather-icon svgClasses="w-8 h-8" icon="MonitorIcon" />
+                        <svg-icon size="w-8 h-8 text-black" icon="webinar" />
                         <span class="h4 font-bold ml-4">WEBINAR</span>
                     </div>
                     <div class="vx-row w-full">
                         <div class="vx-col w-1/4" :key="`webinar-item-${index}`" v-for="(item, index) in webinar_list">
                             <webinar-card 
-                                workdate = "01 DE AGOSTO"
-                                time="5 pm - 6:00 pm"
-                                title="Desarrollo de estrategias virtuales para desarrollo de marcas."
-                                expositor_company="Felipe Alenso Guererro"
-                                expositor_profession="Especilista en estrategias de marcas"
-                                user_img="maintenance-2.png" />
+                                :workdate="item.talk.talk_date"
+                                :time="period(item.talk.start_time, item.talk.end_time)"
+                                :title="item.talk.title"
+                                :expositor_name="`${item.talk.user.first_name} ${item.talk.user.last_name}`"
+                                :expositor_profession="`${item.talk.user.address}`"
+                                :user_img="`${item.talk.user.avatar}`"
+                                :live="item.talk.live===1"
+                                    />
                         </div>
                     </div>
                 </div>
@@ -86,14 +88,23 @@ export default {
       webinar_list: []
     }
   },
+  methods: {
+    period (start_time, end_time) {
+      const sd = this.$date.timeFormat(start_time)
+      const ed = this.$date.timeFormat(end_time)  
+      return `${sd} - ${ed}`  
+    }  
+  },
   created () {
-    const list = []
-    for (let i = 0; i < 3; i++) {
-      list.push(i)
-    }
-    this.catalog_list = list
-    this.video_list = list.filter((it) => it < 2)
-    this.webinar_list =  list.filter((it) => it < 1)
+
+    this.$http.post('/api/setting/download')
+      .then((response) => {
+        const data = response.data
+        this.catalog_list = data.catalog_list
+        this.video_list = data.video_list
+        this.webinar_list = data.webinar_list  
+        console.log(data)
+      })
     
   }
 }

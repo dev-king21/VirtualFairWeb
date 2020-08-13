@@ -26,7 +26,7 @@
         <div class="flex flex-row items-center mt-2 px-4">
             <img class="user-img" :src="require(`@assets/images/pages/${user_img}`)"/>
             <div class="ml-4 user-info">
-                Lic. {{expositor_company}}<br>
+                Lic. {{expositor_name}}<br>
                 {{expositor_profession}}
             </div>
         </div>
@@ -52,7 +52,7 @@ export default {
       type: String,
       required: true
     },
-    expositor_company: {
+    expositor_name: {
       type: String,
       required: true
     },

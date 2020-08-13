@@ -5,6 +5,7 @@ import axios from './axios.js'
 //import acl from './acl/acl'
 import router from './router'
 import store from './store/store'
+import date_helper from './helper/date_helper'
 import i18n from './i18n/i18n'
 import VueClipboard from 'vue-clipboard2'
 import VueTour from 'vue-tour'
@@ -25,6 +26,7 @@ require('@assets/css/iconfont.css')
 
 Vue.use(Vuesax)
 Vue.prototype.$http = axios
+Vue.prototype.$date = date_helper
 Vue.use(VueClipboard)
 Vue.use(VueTour)
 Vue.use(VeeValidate)

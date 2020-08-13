@@ -55,6 +55,9 @@ class Stand extends Model
         return $this->belongsTo('App\StandLocation');
     }
 
+    public function contact_requests() {
+        return $this->hasMany("App\ContactRequest");
+    }
 
     public function stand_contents() {
         return $this->hasMany('App\StandContent');

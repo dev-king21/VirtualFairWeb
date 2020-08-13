@@ -17,21 +17,21 @@
                     </div>
                 </div>
                 <div class="flex flex-col bg-white text-center py-6" style="opacity: .9">
-                    <h3>iHola! Felipe Alonso Guerrero</h3>
+                    <h3>¡Hola! {{user.first_name}} {{user.last_name}} </h3>
                     <h4 class="mt-2">Que deseas hacer?</h4>
                 </div>
                 <div class="flex px-12" style="background: #ffffff44; height: 100%;">
                     <div class="flex flex-col py-12 w-full">
                         <div class="flex items-center justify-between buttons-row">
-                            <setting-button cls="bg-cyan-dark" to="/setting/stand" icon="ListIcon" text="mi stand"></setting-button>
-                            <setting-button cls="bg-blue-dark" to="/setting/schedule" icon="ListIcon" text="ver mi agenda"></setting-button>
+                            <setting-button cls="bg-cyan-dark" to="/setting/stand" icon="stand" text="mi stand"></setting-button>
+                            <setting-button cls="bg-blue-dark" to="/setting/schedule" icon="topic" text="ver mi agenda"></setting-button>
                         </div>
                         <div class="flex items-center justify-between buttons-row">
-                            <setting-button cls="bg-grey-real" to="/setting/webinar" icon="MonitorIcon" text="mis webinars"></setting-button>
-                            <setting-button cls="bg-blue-light" to="/setting/download" icon="DownloadIcon" text="mis descargasy archivos guardados"></setting-button>
+                            <setting-button cls="bg-grey-real" to="/setting/webinar" icon="webinar" text="mis webinars"></setting-button>
+                            <setting-button cls="bg-blue-light" to="/setting/download" icon="download" text="mis descargasy archivos guardados"></setting-button>
                         </div>
                         <div class="flex items-center justify-between buttons-row">
-                            <setting-button cls="bg-cyan-light" to="/setting/contact" icon="BookIcon" text="mis contactos"></setting-button>
+                            <setting-button cls="bg-cyan-light" to="/setting/contact" icon="address-book" text="mis contactos"></setting-button>
                         </div>
                     </div>
                 </div>

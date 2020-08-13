@@ -1,24 +1,24 @@
 <template>
     <div class="dating-card">
         <div class="vx-row mt-2">
-            <div class="vx-col flex items-center w-1/3">
-                <img :src="require(`@assets/images/pages/${logo}`)" class="logo-img">
+            <div class="vx-col flex items-center w-1/4">
+                <img :src="`/fair_image/${logo}`" class="logo-img">
             </div>
             <div class="vx-col flex flex-col items-center justify-center w-1/2">
-                <div class="flex items-start w-full mt-1 mx-2">
-                    <feather-icon svgClasses="w-5 h-5" icon="ClockIcon" class="text-yellow-light"/>
+                <div class="flex items-start w-full mt-3 px-4">
+                    <feather-icon svgClasses="w-6 h-6" icon="ClockIcon" class="text-yellow-light"/>
                     <span class="ml-4">{{time}}</span>
                 </div>
-                <div class="flex items-start w-full mt-1 mx-2">
-                    <feather-icon svgClasses="w-5 h-5" icon="ClockIcon" class="text-yellow-light"/>
+                <div class="flex items-start w-full mt-4 px-4">
+                    <svg-icon size="w-6 h-6" icon="stand" class="text-yellow-light"/>
                     <span class="ml-4">Stand: {{stand_no}}</span>
                 </div>
-                <div class="flex items-start w-full mt-1 mx-2">
-                    <feather-icon svgClasses="w-5 h-5" icon="ClockIcon" class="text-yellow-light"/>
+                <div class="flex items-start w-full mt-3 px-4">
+                    <svg-icon size="w-6 h-6" icon="profession" class="text-yellow-light"/>
                     <span class="ml-4">Expositor: {{expositor_profession}}</span>
                 </div>
             </div>
-            <div class="vx-col flex items-end justify-end w-1/6">
+            <div class="vx-col flex items-end justify-end w-1/4">
                 <vs-button class="blue-light event-btn p-big">
                     IR LA CITA
                 </vs-button>
@@ -63,8 +63,8 @@ export default {
     }
 
     .event-btn {
-        font-size: 0.8rem !important;
-        padding: 0.8rem 0.6rem !important;
+        font-size: 1rem !important;
+        padding: 1rem 1.8rem !important;
     }
 
 }

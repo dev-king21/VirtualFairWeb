@@ -2,7 +2,7 @@
     <div class="w-full">
         <app-header activeItem="0"></app-header>
         <div class="w-full setting-webinar-main">
-            <bread-crumb icon="MonitorIcon" text="webinar" />
+            <bread-crumb icon="webinar" type="svg" text="webinar" />
             <div class="w-full bg-white-grey">
                 <div class="vx-row page-content">
                     <div class="vx-col lg:w-3/4 md:w-3/4 sm:w-3/4 xs:w-3/4 px-4 event-panel bg-white">
@@ -22,16 +22,18 @@
                             <h2 class="font-bold my-4">RESERVADOS O AGREGADOS</h2>
                         </div>
                         <div class="vx-row" >
-                            <div class="vx-col w-1/3" :key="`all-schedule-${index}`" v-for="(item, index) in all_schedules" >
+                            <div class="vx-col w-1/3" :key="`all-schedule-${index}`" v-for="(item, index) in reserved_webinars" >
                                 <div class="px-2">
                                     <webinar-card 
                                         :reserved="true"
-                                        workdate = "01 DE AGOSTO"
-                                        time="5 pm - 6:00 pm"
-                                        title="Desarrollo de estrategias virtuales para desarrollo de marcas."
-                                        expositor_company="Felipe Alenso Guererro"
-                                        expositor_profession="Especilista en estrategias de marcas"
-                                        user_img="maintenance-2.png" />
+                                        :workdate="item.talk_date"
+                                        :time="period(item.start_time, item.end_time)"
+                                        :title="item.title"
+                                        :expositor_name="`${me.first_name} ${me.last_name}`"
+                                        :expositor_profession="`${me.address}`"
+                                        :user_img="`${me.avatar}`"
+                                        :live="item.live===1"
+                                        />
                                 </div>
                             </div>    
                         </div>
@@ -39,15 +41,16 @@
                             <h2 class="font-bold my-4">VISTOS</h2>
                         </div>
                         <div class="vx-row" >
-                            <div class="vx-col w-1/3" :key="`all-schedule-${index}`" v-for="(item, index) in all_schedules" >
+                            <div class="vx-col w-1/3" :key="`all-schedule-${index}`" v-for="(item, index) in past_webinars" >
                                 <div class="px-2">
                                     <webinar-card 
-                                        workdate = "01 DE AGOSTO"
-                                        time="5 pm - 6:00 pm"
-                                        title="Desarrollo de estrategias virtuales para desarrollo de marcas."
-                                        expositor_company="Felipe Alenso Guererro"
-                                        expositor_profession="Especilista en estrategias de marcas"
-                                        user_img="maintenance-2.png" />
+                                        :workdate="item.talk_date"
+                                        :time="period(item.start_time, item.end_time)"
+                                        :title="item.title"
+                                        :expositor_name="`${me.first_name} ${me.last_name}`"
+                                        :expositor_profession="`${me.address}`"
+                                        :user_img="`${me.avatar}`"
+                                        :live="item.live===1" />
                                 </div>
                             </div>    
                         </div>
@@ -80,17 +83,28 @@ export default {
   },
   data () {
     return {
-      today_schedules: [],  
-      all_schedules: []
+      me: {},
+      reserved_webinars: [],
+      past_webinars: []
     }
   },
+  methods: {
+    period (start_time, end_time) {
+      const sd = this.$date.timeFormat(start_time)
+      const ed = this.$date.timeFormat(end_time)  
+      return `${sd} - ${ed}`  
+    }  
+  },
   created () {
-    const list = []
-    for (let i = 0; i < 9; i++) {
-      list.push(i)
-    }
-    this.today_schedules = list.filter((it) => it < 3)   
-    this.all_schedules = list
+    this.me = JSON.parse(localStorage.getItem('userInfo'))
+    this.$http.post('/api/setting/webinar')
+      .then((response) => {
+        console.log(response.data)
+        const data = response.data
+        this.reserved_webinars = data.reserved_webinars
+        this.past_webinars = data.past_webinars
+        
+      })
   }
 }
 </script>

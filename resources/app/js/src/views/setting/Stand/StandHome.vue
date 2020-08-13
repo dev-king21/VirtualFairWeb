@@ -7,22 +7,22 @@
             <div class="flex w-full">
                 <div class="flex flex-row breadcrumb2">
                     <nav-back-button/>
-                    <div class="flex items-center ml-4" :key="`stand-user-${index}`" v-for="(item, index) in user_list">
+                    <div class="flex items-center ml-4" :key="`stand-user-${index}`" v-for="(item, index) in contact_requests">
                         <vs-dropdown vs-custom-content vs-trigger-click>
                             <a class="flex items-center" href.prevent>
                                 <div class="flex flex-col items-center justify-center ml-2 cursor-pointer" >
-                                    <img :src="require(`@assets/images/pages/foto_expositores1.jpg`)" class="user-img responsive mx-4">
-                                    <div class="text-black user-text">kuran Garbadono</div>
+                                    <img :src="`/fair_image/${item.requestor.avatar}`" class="user-img responsive mx-4">
+                                    <div class="text-black user-text">{{item.requestor.first_name}} {{item.requestor.last_name}}</div>
                                 </div>
                             </a>
                             <vs-dropdown-menu class="dropdown-userinfo">
-                                <div class="mb-1 font-italic">Nombre: {{item.name}}</div>
-                                <div class="mb-1 font-italic">Email: {{item.email}}</div>
-                                <div class="mb-1 font-italic">Telefono: {{item.phone}}</div>
-                                <div class="mb-1 font-italic">Posicion: {{item.profession}}</div>
-                                <div class="mb-1 font-italic">Compania: {{item.company}}</div>
-                                <div class="mb-1 font-italic">Pais: {{item.country}}</div>
-                                <div class="mb-1 font-italic">Region: {{item.region}}</div>
+                                <div class="mb-1 font-italic">Nombre: {{item.requestor.first_name}} {{item.requestor.last_name}} </div>
+                                <div class="mb-1 font-italic">Email: {{item.requestor.email}}</div>
+                                <div class="mb-1 font-italic">Telefono: {{item.requestor.phone}}</div>
+                                <div class="mb-1 font-italic">Posicion: {{item.requestor.address}}</div>
+                                <div class="mb-1 font-italic">Compania: {{item.requestor.company}}</div>
+                                <div class="mb-1 font-italic">Pais: {{item.requestor.country}}</div>
+                                <div class="mb-1 font-italic">Region: {{item.requestor.region}}</div>
                             </vs-dropdown-menu>
                         </vs-dropdown>
                     </div>
@@ -103,6 +103,12 @@
                     </div>
                 </div>
             </div>
+            <div class="absolute" style="bottom: 74px; right: 0">
+                <div class="flex flex-col items-center justify-center text-white relative px-2 py-4 bg-blue-dark chatting-btn">
+                  <svg-icon size="w-6 h-6" icon="contact"/>
+                  <div class="ml-2 text-center btn-text">CHATEAR CON UN USEARIO</div>
+                </div>
+            </div>
             <div class="absolute stand-item-wrapper flex flex-col items-center justify-center text-white" 
                 :key="`stand-content-item-${index}`" v-for="(s_content, index) in stand.stand_contents"
                 :style="`left: ${s_content.stand_type_item.left * 100}%; top: ${s_content.stand_type_item.top * 100}%; width: ${s_content.stand_type_item.width * 100}%; height: ${s_content.stand_type_item.height * 100}%; background: #ffffff33; border: 1px solid green`">
@@ -118,7 +124,7 @@
                                 @click="browseStandContent(s_content.stand_type_item.type, s_content.id)" />
                         </template>
                         <template v-else-if="s_content.stand_type_item.type==='video'">
-                            <video style="width: 100%; height: 100%" :src="`/fair_image/${s_content.content}`"/>
+                            <video controls style="width: 100%; height: 100%" :src="`/fair_image/${s_content.content}`"/>
                         </template>
                         <feather-icon @click="removeStandContent(s_content.id)" 
                             class="relative bg-yellow-dark p-2 cursor-pointer" 
@@ -150,13 +156,12 @@ export default {
   },
   data () {
     return {
-      user_list: [],  
-      all_schedules: [],
       contact: {},
       stand: {},
       stand_type: {},
       content_id: 0,
-      content_type: 'image'
+      content_type: 'image',
+      contact_requests: []
     }
   },
   methods: {
@@ -212,8 +217,7 @@ export default {
       this.content_id = id
       if (this.content_type === 'image') {
         this.$refs.refStandImageFile.click()  
-      }
-      else if (this.content_type === 'video') {
+      } else if (this.content_type === 'video') {
         this.$refs.refStandVideoFile.click()    
       }
     },
@@ -226,7 +230,8 @@ export default {
       }
       formData.append('id', this.content_id)
       formData.append('content_file', file)
-      
+      this.$refs.refStandImageFile.value = null
+      this.$refs.refStandVideoFile.value = null
       this.$http.post('/api/setting/my_stand/save_content', formData, headers)
         .then((response) => {
           if (response.data.status === 'ok') {
@@ -277,11 +282,12 @@ export default {
           this.stand = data.stand  
           this.stand_type = data.stand_type
           this.contact = this.stand.contact
+          this.contact_requests = this.stand.contact_requests
         })  
     }
   },
   created () {
-    const list = []
+    /* const list = []
     for (let i = 0; i < 9; i++) {
       const item = {
         name:  'Karla Loazia Brenes',
@@ -298,7 +304,7 @@ export default {
       list.push(item)
     }
     
-    this.user_list = list
+    this.user_list = list */
 
     this.getStandContent()
   }
@@ -336,10 +342,20 @@ export default {
         width: 100%;
         .stand-item-wrapper {
             z-index: 100;
-            .stand-item {
+            .tand-item {
                 border-radius: 0.3rem;
                 padding: 0.3rem 1rem !important; 
             }
+        }
+        .chatting-btn {
+          height: 3rem; 
+          border-top-left-radius: 1.5rem;
+          padding: 5px;
+          width: 110px;
+          height: 80px;
+          .btn-text {
+            font-size: 0.8rem;
+          }
         }
     } 
 }

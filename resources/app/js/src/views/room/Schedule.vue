@@ -15,7 +15,7 @@
                             :noborder="true"
                             time="5 pm - 6:00 pm"
                             title="Desarrollo de estrategias virtuales para desarrollo de marcas."
-                            expositor_company="Felipe Alenso Guererro"
+                            expositor_name="Felipe Alenso Guererro"
                             expositor_profession="Especilista en estrategias de marcas"
                             user_img="maintenance-2.png" :key="`today-schedule-${index}`" v-for="(item, index) in today_schedules"/>                        
                     </div>
@@ -38,7 +38,7 @@
                                     :reserved="true"
                                     time="5 pm - 6:00 pm"
                                     title="Desarrollo de estrategias virtuales para desarrollo de marcas."
-                                    expositor_company="Felipe Alenso Guererro"
+                                    expositor_name="Felipe Alenso Guererro"
                                     expositor_profession="Especilista en estrategias de marcas"
                                     user_img="maintenance-2.png" />
                             </div>    

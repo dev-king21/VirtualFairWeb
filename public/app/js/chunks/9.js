@@ -39,10 +39,6 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       required: true
     },
-    item: {
-      type: String,
-      required: true
-    },
     remove: {
       type: Function,
       required: false
@@ -146,6 +142,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -170,19 +168,22 @@ __webpack_require__.r(__webpack_exports__);
       webinar_list: []
     };
   },
-  created: function created() {
-    var list = [];
-
-    for (var i = 0; i < 3; i++) {
-      list.push(i);
+  methods: {
+    period: function period(start_time, end_time) {
+      var sd = this.$date.timeFormat(start_time);
+      var ed = this.$date.timeFormat(end_time);
+      return "".concat(sd, " - ").concat(ed);
     }
+  },
+  created: function created() {
+    var _this = this;
 
-    this.catalog_list = list;
-    this.video_list = list.filter(function (it) {
-      return it < 2;
-    });
-    this.webinar_list = list.filter(function (it) {
-      return it < 1;
+    this.$http.post('/api/setting/download').then(function (response) {
+      var data = response.data;
+      _this.catalog_list = data.catalog_list;
+      _this.video_list = data.video_list;
+      _this.webinar_list = data.webinar_list;
+      console.log(data);
     });
   }
 });
@@ -556,8 +557,8 @@ var render = function() {
                   staticClass: "m-2 p-4 flex items-center w-full mt-1 mx-2 mb-4"
                 },
                 [
-                  _c("feather-icon", {
-                    attrs: { svgClasses: "w-8 h-8", icon: "BookIcon" }
+                  _c("svg-icon", {
+                    attrs: { size: "w-8 h-8 text-black", icon: "brochure" }
                   }),
                   _vm._v(" "),
                   _c("span", { staticClass: "h4 font-bold ml-4" }, [
@@ -579,10 +580,7 @@ var render = function() {
                     },
                     [
                       _c("catalog-card", {
-                        attrs: {
-                          title: "Catalog de Productos Ecologicos",
-                          item: "123"
-                        }
+                        attrs: { title: item.portfolio.name, id: item.id }
                       })
                     ],
                     1
@@ -620,9 +618,9 @@ var render = function() {
                     [
                       _c("video-card", {
                         attrs: {
-                          title: "Titulo del Video",
-                          item: "123",
-                          readed: "12323"
+                          title: item.gallery.name,
+                          readed: item.gallery.readed,
+                          id: item.id
                         }
                       })
                     ],
@@ -638,8 +636,8 @@ var render = function() {
                 "div",
                 { staticClass: "m-2 p-4 flex items-center w-full mt-1 mx-2" },
                 [
-                  _c("feather-icon", {
-                    attrs: { svgClasses: "w-8 h-8", icon: "MonitorIcon" }
+                  _c("svg-icon", {
+                    attrs: { size: "w-8 h-8 text-black", icon: "webinar" }
                   }),
                   _vm._v(" "),
                   _c("span", { staticClass: "h4 font-bold ml-4" }, [
@@ -662,14 +660,19 @@ var render = function() {
                     [
                       _c("webinar-card", {
                         attrs: {
-                          workdate: "01 DE AGOSTO",
-                          time: "5 pm - 6:00 pm",
-                          title:
-                            "Desarrollo de estrategias virtuales para desarrollo de marcas.",
-                          expositor_company: "Felipe Alenso Guererro",
-                          expositor_profession:
-                            "Especilista en estrategias de marcas",
-                          user_img: "maintenance-2.png"
+                          workdate: item.talk.talk_date,
+                          time: _vm.period(
+                            item.talk.start_time,
+                            item.talk.end_time
+                          ),
+                          title: item.talk.title,
+                          expositor_name:
+                            item.talk.user.first_name +
+                            " " +
+                            item.talk.user.last_name,
+                          expositor_profession: "" + item.talk.user.address,
+                          user_img: "" + item.talk.user.avatar,
+                          live: item.talk.live === 1
                         }
                       })
                     ],

@@ -24,13 +24,14 @@ class CreateTalksTable extends Migration
             $table->boolean('limited')->default(true);
             $table->integer('peoples')->nullable();
 
-            $table->string('exhibitor_profession');
-            $table->string('exhibitor_company');
+            /* $table->string('exhibitor_profession');
+            $table->string('exhibitor_company'); */
 
-            $table->datetime("start_time");
-            $table->datetime("end_time");
+            $table->time("start_time");
+            $table->time("end_time");
 
             $table->date("talk_date");
+            $table->integer("live")->default(1);
             $table->string("video")->nullable();
             $table->timestamps();
         });

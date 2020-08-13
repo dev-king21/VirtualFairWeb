@@ -162,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       required: true
     },
-    expositor_company: {
+    expositor_name: {
       type: String,
       required: true
     },
@@ -334,7 +334,7 @@ var render = function() {
                         time: "5 pm - 6:00 pm",
                         title:
                           "Desarrollo de estrategias virtuales para desarrollo de marcas.",
-                        expositor_company: "Felipe Alenso Guererro",
+                        expositor_name: "Felipe Alenso Guererro",
                         expositor_profession:
                           "Especilista en estrategias de marcas",
                         user_img: "maintenance-2.png"
@@ -397,7 +397,7 @@ var render = function() {
                               time: "5 pm - 6:00 pm",
                               title:
                                 "Desarrollo de estrategias virtuales para desarrollo de marcas.",
-                              expositor_company: "Felipe Alenso Guererro",
+                              expositor_name: "Felipe Alenso Guererro",
                               expositor_profession:
                                 "Especilista en estrategias de marcas",
                               user_img: "maintenance-2.png"
@@ -540,7 +540,7 @@ var render = function() {
         }),
         _vm._v(" "),
         _c("div", { staticClass: "ml-4 user-info" }, [
-          _vm._v("\n            Lic. " + _vm._s(_vm.expositor_company)),
+          _vm._v("\n            Lic. " + _vm._s(_vm.expositor_name)),
           _c("br"),
           _vm._v(
             "\n            " + _vm._s(_vm.expositor_profession) + "\n        "

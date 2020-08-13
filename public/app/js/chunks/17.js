@@ -39,10 +39,6 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       required: true
     },
-    item: {
-      type: String,
-      required: true
-    },
     remove: {
       type: Function,
       required: false
@@ -508,7 +504,7 @@ var render = function() {
       _c("app-header", { attrs: { activeItem: "0" } }),
       _vm._v(" "),
       _c("bread-crumb", {
-        attrs: { icon: "brochure", type: "svg", text: "catlogos o brochures" }
+        attrs: { icon: "brochure", type: "svg", text: "CATÁLOGOS O BROCHURES" }
       }),
       _vm._v(" "),
       _c(

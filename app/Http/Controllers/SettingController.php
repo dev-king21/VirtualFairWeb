@@ -14,6 +14,7 @@ use App\Room;
 use App\Talk;
 use App\Appointment;
 use App\Contact;
+use App\ContactRequest;
 use App\Country;
 use App\Gallery;
 use App\BusinessCard;
@@ -275,7 +276,9 @@ class SettingController extends Controller
       }
 
       $qr = ["fair_id" => $fair->id, "country_id" => $country->id, "user_id"=> $user->id];
-      $res["stand"] = Stand::with(['contact', 'stand_contents' => function($query) {
+      $res["stand"] = Stand::with(['contact', 'contact_requests'=> function($query) {
+          $query->with('requestor')->get();
+      }, 'stand_contents' => function($query) {
           $query->with('stand_type_item')->get();
       }])->where($qr)->first();      
       $res["stand_type"] = StandLocation::with('stand_type') -> find($res["stand"]->stand_location_id)->stand_type;
@@ -432,7 +435,7 @@ class SettingController extends Controller
       return response()->json(["status" => "ok"]);
     }
 
-    public function get_videos(Request $request) {
+    public function get_gallery(Request $request) {
       $res = array();
       $user = $request->user();
       $now = date("y-m-d");
@@ -455,18 +458,19 @@ class SettingController extends Controller
       return response()->json($res);
     }
 
-    public function save_video(Request $request) {
+    public function save_gallery(Request $request) {
       $query = array();
       
-      if (!isset($request->video_file) || is_null($request->post("video_title")) || is_null($request->post("stand_id")) ) {
+      if (!isset($request->gallery_file) || /* is_null($request->post("video_title")) || */ is_null($request->post("stand_id")) ) {
         return response()->json(["status" => "error"]);
       }
       
       $pt = new Gallery;
       $pt->stand_id = $request->post("stand_id");
-      $pt->name = trim($request->post("video_title"));
-      $fileName =  md5(time()).'.'.$request->video_file->extension();  
-      $request->video_file->move(public_path('fair_image'), $fileName);
+      if (!is_null($request->post("gallery_title")))
+        $pt->name = trim($request->post("gallery_title"));
+      $fileName =  md5(time()).'.'.$request->gallery_file->extension();  
+      $request->gallery_file->move(public_path('fair_image'), $fileName);
       $pt->url = $fileName;
       
       $pt->save();
@@ -474,7 +478,7 @@ class SettingController extends Controller
       return response()->json(["status" => "ok"]);
     }
 
-    public function remove_video(Request $request) {
+    public function remove_gallery(Request $request) {
       $query = array();
       
       $id = $request->post("_id");
@@ -536,6 +540,110 @@ class SettingController extends Controller
       
       BusinessCard::find($id)->delete();
       return response()->json(["status" => "ok"]);
+    }
+
+    public function get_stand_schedule(Request $request) {
+      $res = array();
+      $user = $request->user();
+      $now = date("y-m-d");
+      $query = [
+          ["start_date", "<=", $now], 
+          ["end_date", ">=", $now]
+      ]; 
+      $query["status"] = 1;
+      $fair = Fair::with('fair_type')->where($query)->first();
+      $country = Country::select('id', 'name', 'code')->where("status", 1)->first();
+      if (!isset($fair) || !isset($country)) {
+        $res["status"] = "error";
+        $res["msg"] = "unknown_fair";
+        return response()->json($res);
+      }
+      $qr = ["fair_id" => $fair->id, "country_id" => $country->id, "user_id"=> $user->id];
+      $res["appointments_dates"] = Stand::with(['appointments' => function($query){
+        $query->select(['id', 'stand_id', 'schedule_date'])
+              ->where([["schedule_date", ">=", date("y-m-d")]])
+              ->groupBy("schedule_date")
+              ->orderBy("schedule_date", "asc")->get();
+      }])->where($qr)->first()->appointments;   
+      $res["appointments"] = Stand::with(['appointments'=> function($query){
+        $query->with("requestor")->where([["schedule_date", ">=", date("y-m-d")]])->get();
+      }])->where($qr)->first()->appointments;   
+
+      return response()->json($res);
+    }
+
+    public function get_schedule(Request $request) {
+      $res = array();
+      $user = $request->user();
+      $now = date("y-m-d");
+      $query = [
+          ["start_date", "<=", $now], 
+          ["end_date", ">=", $now]
+      ]; 
+      $query["status"] = 1;
+      $fair = Fair::where($query)->first();
+      if (!isset($fair)) {
+        $res["status"] = "error";
+        $res["msg"] = "unknown_fair";
+        return response()->json($res);
+      }
+      $fair_id =$fair->id;
+      $res["appointments_dates"] = Appointment::whereHas('stand', function($qr) use($fair_id){
+        $qr->where("fair_id", $fair_id);
+      })->where([["user_id", "=", $user->id], ["schedule_date", ">=", $now]])
+      ->groupBy("schedule_date")->orderBy("schedule_date")->get();
+
+      $res["appointments"] = Appointment::whereHas('stand', function($qr) use($fair_id){
+        $qr->where("fair_id", $fair_id);
+      })->with(["stand"=> function($qr){
+        $qr->with("user")->get();
+      }])->where([["user_id", "=", $user->id], ["schedule_date", ">=", $now]])->get();
+
+      $res["webinars_dates"] = Talk::where([["user_id", "=", $user->id], ["talk_date", ">=", $now]])
+                                        ->groupBy("talk_date")->orderBy("talk_date", "asc")->get();
+      $res["webinars"] = Talk::where([["user_id", "=", $user->id], ["talk_date", ">=", $now]])->get();
+
+      return response()->json($res);
+    }
+
+    public function get_my_webinars(Request $request) {
+      $res = array();
+      $now = date("Y-m-d");
+      $user = $request->user();
+      $res["reserved_webinars"] = Talk::where([["user_id", "=", $user->id], ["talk_date", ">=", $now]])->get();
+      $res["past_webinars"] = Talk::where([["user_id", "=", $user->id], ["talk_date", "<", $now]])->get();
+      
+      return response()->json($res);
+    }
+
+    public function get_download(Request $request) {
+      $res = array();
+      $user = $request->user();
+      $me = User::with(['portfolio_downloads' => function($qr){
+        $qr->with("portfolio")->get();
+      }, 'gallery_downloads'=> function($qr){
+        $qr->with("gallery")->get();
+      }, 'webinar_downloads'=> function($qr){
+        $qr->with(["talk" => function($qq){
+          $qq->with("user")->get();  
+        }])->get();
+      }])->select("id")->find($user->id);
+
+      $res["catalog_list"] = $me->portfolio_downloads;
+      $res["video_list"] = $me->gallery_downloads;
+      $res["webinar_list"] = $me->webinar_downloads;
+
+      return response()->json($res);
+    }
+
+    public function get_contact_request(Request $request) {
+      $res = array();
+      $uid = $request->user()->id;
+      $res["requests"] = ContactRequest::with("requestor")->whereHas("stand", function($qr) use($uid) {
+        $qr->where("user_id", $uid);
+      })->get();
+
+      return response()->json($res);
     }
 
     public function dummyCreate() {

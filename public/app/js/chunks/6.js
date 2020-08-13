@@ -50,6 +50,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     time: {
@@ -60,7 +66,7 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       required: true
     },
-    expositor_company: {
+    expositor_name: {
       type: String,
       required: true
     },
@@ -83,6 +89,10 @@ __webpack_require__.r(__webpack_exports__);
     reserved: {
       type: Boolean,
       required: false
+    },
+    live: {
+      type: Boolean,
+      required: false
     }
   }
 });
@@ -101,7 +111,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".setting-webinar-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .setting-webinar-card {\n  background: white;\n  margin: 1rem;\n}\n.setting-webinar-card .user-img {\n  height: 4rem !important;\n  width: auto;\n}\n[dir] .setting-webinar-card .user-img {\n  border-radius: 50%;\n  background-color: #33333355;\n}\n.setting-webinar-card .event-btn {\n  font-size: 0.8rem !important;\n  min-width: 9rem !important;\n}\n[dir] .setting-webinar-card .event-btn {\n  padding: 0.8rem 0.6rem !important;\n  margin-top: 0.8rem !important;\n}\n[dir] .setting-webinar-card .event-btn.p-big {\n  padding: 0.8rem 1.2rem !important;\n}\n.setting-webinar-card .desc-info {\n  font-size: 0.9rem;\n  font-style: italic;\n}\n[dir] .setting-webinar-card .desc-info {\n  padding: 0 1rem;\n}\n.setting-webinar-card .user-info {\n  font-size: 0.9rem;\n}\n.setting-webinar-card .card-over {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  bottom: 0;\n}\n[dir=ltr] .setting-webinar-card .card-over {\n  left: 0;\n}\n[dir=rtl] .setting-webinar-card .card-over {\n  right: 0;\n}\n[dir] .setting-webinar-card .card-over .card-title {\n  background: #33333355;\n  padding: 0.6rem;\n}\n[dir] .setting-webinar-card .card-img {\n  background: #000000AA;\n}\n[dir] .card-border {\n  border: 1px solid #F2F2F2;\n}", ""]);
+exports.push([module.i, ".setting-webinar-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .setting-webinar-card {\n  background: white;\n  margin: 1rem;\n}\n.setting-webinar-card .user-img {\n  height: 4rem !important;\n  width: auto;\n}\n[dir] .setting-webinar-card .user-img {\n  border-radius: 50%;\n  background-color: #33333355;\n}\n.setting-webinar-card .event-btn {\n  font-size: 1rem !important;\n  min-width: 9rem !important;\n}\n[dir] .setting-webinar-card .event-btn {\n  padding: 0.8rem 0.6rem !important;\n  margin-top: 0.8rem !important;\n}\n[dir] .setting-webinar-card .event-btn.p-big {\n  padding: 0.8rem 1.2rem !important;\n}\n.setting-webinar-card .desc-info {\n  font-size: 0.9rem;\n  font-style: italic;\n}\n[dir] .setting-webinar-card .desc-info {\n  padding: 0 1rem;\n}\n.setting-webinar-card .user-info {\n  font-size: 0.9rem;\n}\n.setting-webinar-card .card-over {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  bottom: 0;\n}\n[dir=ltr] .setting-webinar-card .card-over {\n  left: 0;\n}\n[dir=rtl] .setting-webinar-card .card-over {\n  right: 0;\n}\n[dir] .setting-webinar-card .card-over .card-title {\n  background: #33333355;\n  padding: 0.6rem;\n}\n[dir] .setting-webinar-card .card-img {\n  background: #000000AA;\n}\n[dir] .card-border {\n  border: 1px solid #F2F2F2;\n}", ""]);
 
 // exports
 
@@ -163,7 +173,7 @@ var render = function() {
       _c("div", { staticClass: "relative card-img" }, [
         _c("img", {
           staticClass: "relative responsive",
-          attrs: { src: __webpack_require__("./resources/app/assets/images/pages sync recursive ^\\.\\/.*$")("./" + _vm.user_img) }
+          attrs: { src: "/fair_image/" + _vm.user_img }
         }),
         _vm._v(" "),
         _c(
@@ -186,20 +196,37 @@ var render = function() {
                 "div",
                 { staticClass: "flex flex-row items-center" },
                 [
-                  _c("feather-icon", {
-                    attrs: { svgClasses: "w-8 h-8", icon: "RadioIcon" }
-                  }),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "ml-2 text-white",
-                      staticStyle: { "font-size": "0.8rem" }
-                    },
-                    [_vm._v("EN VIVO")]
-                  )
+                  _vm.live
+                    ? [
+                        _c("svg-icon", {
+                          attrs: { size: "w-8 h-8", icon: "live" }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "ml-2 text-white",
+                            staticStyle: { "font-size": "0.8rem" }
+                          },
+                          [_vm._v("EN VIVO")]
+                        )
+                      ]
+                    : [
+                        _c("svg-icon", {
+                          attrs: { size: "w-8 h-8", icon: "video" }
+                        }),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          {
+                            staticClass: "ml-2 text-white",
+                            staticStyle: { "font-size": "0.8rem" }
+                          },
+                          [_vm._v("GRABADO")]
+                        )
+                      ]
                 ],
-                1
+                2
               ),
               _vm._v(" "),
               _c("div", { staticStyle: { "font-style": "italic" } }, [
@@ -229,12 +256,12 @@ var render = function() {
       _c("div", { staticClass: "flex flex-row items-center mt-2 px-4" }, [
         _c("img", {
           staticClass: "user-img",
-          attrs: { src: __webpack_require__("./resources/app/assets/images/pages sync recursive ^\\.\\/.*$")("./" + _vm.user_img) }
+          attrs: { src: "/fair_image/" + _vm.user_img }
         }),
         _vm._v(" "),
         _c("div", { staticClass: "ml-4 user-info" }, [
           _c("div", { staticClass: "h6 font-bold" }, [
-            _vm._v("Lic. " + _vm._s(_vm.expositor_company))
+            _vm._v("Lic. " + _vm._s(_vm.expositor_name))
           ]),
           _vm._v(" "),
           _c("div", [_vm._v(_vm._s(_vm.expositor_profession))])

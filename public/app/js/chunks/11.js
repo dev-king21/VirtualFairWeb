@@ -195,6 +195,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -206,13 +212,12 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      user_list: [],
-      all_schedules: [],
       contact: {},
       stand: {},
       stand_type: {},
       content_id: 0,
-      content_type: 'image'
+      content_type: 'image',
+      contact_requests: []
     };
   },
   methods: {
@@ -288,6 +293,8 @@ __webpack_require__.r(__webpack_exports__);
       };
       formData.append('id', this.content_id);
       formData.append('content_file', file);
+      this.$refs.refStandImageFile.value = null;
+      this.$refs.refStandVideoFile.value = null;
       this.$http.post('/api/setting/my_stand/save_content', formData, headers).then(function (response) {
         if (response.data.status === 'ok') {
           _this2.refresh();
@@ -342,15 +349,15 @@ __webpack_require__.r(__webpack_exports__);
         _this4.stand = data.stand;
         _this4.stand_type = data.stand_type;
         _this4.contact = _this4.stand.contact;
+        _this4.contact_requests = _this4.stand.contact_requests;
       });
     }
   },
   created: function created() {
-    var list = [];
-
-    for (var i = 0; i < 9; i++) {
-      var item = {
-        name: 'Karla Loazia Brenes',
+    /* const list = []
+    for (let i = 0; i < 9; i++) {
+      const item = {
+        name:  'Karla Loazia Brenes',
         email: 'kibrenes@gropohouse.com',
         phone: '5064567-6789',
         profession: 'Jefa de Proyectors',
@@ -359,12 +366,12 @@ __webpack_require__.r(__webpack_exports__);
         resion: 'San Jose',
         concern: 'Diseno del Espacio',
         active: i === 0,
-        id: i
-      };
-      list.push(item);
+        id: i 
+      }  
+      list.push(item)
     }
-
-    this.user_list = list;
+    
+    this.user_list = list */
     this.getStandContent();
   }
 });
@@ -421,7 +428,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../../node_mod
 
 
 // module
-exports.push([module.i, ".setting-stand-main {\n  height: calc(var(--vh, 1vh) * 100 - 86px);\n}\n.setting-stand-main .stand-header {\n  z-index: 90;\n}\n.setting-stand-main .stand-header .breadcrumb2 {\n  width: 100%;\n}\n[dir] .setting-stand-main .stand-header .breadcrumb2 {\n  background: #ffffffee;\n}\n.setting-stand-main .stand-header .breadcrumb2 .user-img {\n  width: 2.6rem;\n  height: 2.6rem;\n}\n[dir] .setting-stand-main .stand-header .breadcrumb2 .user-img {\n  border-radius: 50%;\n  border: 1px solid silver;\n}\n.setting-stand-main .stand-header .breadcrumb2 .user-text {\n  font-size: 0.6rem !important;\n  color: #333;\n}\n.setting-stand-main .stand-footer {\n  bottom: 0;\n  z-index: 90;\n}\n[dir] .setting-stand-main .stand-footer {\n  background: #ffffff66;\n}\n.setting-stand-main .stand-wrapper {\n  z-index: 88;\n  height: calc(var(--vh, 1vh) * 100 - 86px);\n  width: 100%;\n}\n.setting-stand-main .stand-wrapper .stand-item-wrapper {\n  z-index: 100;\n}\n[dir] .setting-stand-main .stand-wrapper .stand-item-wrapper .stand-item {\n  border-radius: 0.3rem;\n  padding: 0.3rem 1rem !important;\n}\n[dir] .setting-stand-bg-img {\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: 100vw calc(var(--vh, 1vh) * 100 - 86px) !important;\n}\n[dir] .stand-social-icons {\n  background: transparent;\n}\n.dropdown-userinfo .vs-dropdown--menu {\n  width: 320px;\n  font-size: 0.8rem;\n}\n[dir] .dropdown-userinfo .vs-dropdown--menu {\n  padding: 0.5rem 1rem !important;\n}\n.dropdown-userinfo .vs-dropdown--menu .vs-button {\n  font-size: 0.8rem !important;\n}\n[dir] .dropdown-userinfo .vs-dropdown--menu .vs-button {\n  padding: 0.4rem 1rem !important;\n  margin-top: 0.4rem;\n}", ""]);
+exports.push([module.i, ".setting-stand-main {\n  height: calc(var(--vh, 1vh) * 100 - 86px);\n}\n.setting-stand-main .stand-header {\n  z-index: 90;\n}\n.setting-stand-main .stand-header .breadcrumb2 {\n  width: 100%;\n}\n[dir] .setting-stand-main .stand-header .breadcrumb2 {\n  background: #ffffffee;\n}\n.setting-stand-main .stand-header .breadcrumb2 .user-img {\n  width: 2.6rem;\n  height: 2.6rem;\n}\n[dir] .setting-stand-main .stand-header .breadcrumb2 .user-img {\n  border-radius: 50%;\n  border: 1px solid silver;\n}\n.setting-stand-main .stand-header .breadcrumb2 .user-text {\n  font-size: 0.6rem !important;\n  color: #333;\n}\n.setting-stand-main .stand-footer {\n  bottom: 0;\n  z-index: 90;\n}\n[dir] .setting-stand-main .stand-footer {\n  background: #ffffff66;\n}\n.setting-stand-main .stand-wrapper {\n  z-index: 88;\n  height: calc(var(--vh, 1vh) * 100 - 86px);\n  width: 100%;\n}\n.setting-stand-main .stand-wrapper .stand-item-wrapper {\n  z-index: 100;\n}\n[dir] .setting-stand-main .stand-wrapper .stand-item-wrapper .tand-item {\n  border-radius: 0.3rem;\n  padding: 0.3rem 1rem !important;\n}\n.setting-stand-main .stand-wrapper .chatting-btn {\n  height: 3rem;\n  width: 110px;\n  height: 80px;\n}\n[dir] .setting-stand-main .stand-wrapper .chatting-btn {\n  padding: 5px;\n}\n[dir=ltr] .setting-stand-main .stand-wrapper .chatting-btn {\n  border-top-left-radius: 1.5rem;\n}\n[dir=rtl] .setting-stand-main .stand-wrapper .chatting-btn {\n  border-top-right-radius: 1.5rem;\n}\n.setting-stand-main .stand-wrapper .chatting-btn .btn-text {\n  font-size: 0.8rem;\n}\n[dir] .setting-stand-bg-img {\n  background-position: center;\n  background-repeat: no-repeat;\n  background-size: 100vw calc(var(--vh, 1vh) * 100 - 86px) !important;\n}\n[dir] .stand-social-icons {\n  background: transparent;\n}\n.dropdown-userinfo .vs-dropdown--menu {\n  width: 320px;\n  font-size: 0.8rem;\n}\n[dir] .dropdown-userinfo .vs-dropdown--menu {\n  padding: 0.5rem 1rem !important;\n}\n.dropdown-userinfo .vs-dropdown--menu .vs-button {\n  font-size: 0.8rem !important;\n}\n[dir] .dropdown-userinfo .vs-dropdown--menu .vs-button {\n  padding: 0.4rem 1rem !important;\n  margin-top: 0.4rem;\n}", ""]);
 
 // exports
 
@@ -648,7 +655,7 @@ var render = function() {
                   [
                     _c("nav-back-button"),
                     _vm._v(" "),
-                    _vm._l(_vm.user_list, function(item, index) {
+                    _vm._l(_vm.contact_requests, function(item, index) {
                       return _c(
                         "div",
                         {
@@ -682,14 +689,22 @@ var render = function() {
                                       _c("img", {
                                         staticClass: "user-img responsive mx-4",
                                         attrs: {
-                                          src: __webpack_require__(/*! @assets/images/pages/foto_expositores1.jpg */ "./resources/app/assets/images/pages/foto_expositores1.jpg")
+                                          src:
+                                            "/fair_image/" +
+                                            item.requestor.avatar
                                         }
                                       }),
                                       _vm._v(" "),
                                       _c(
                                         "div",
                                         { staticClass: "text-black user-text" },
-                                        [_vm._v("kuran Garbadono")]
+                                        [
+                                          _vm._v(
+                                            _vm._s(item.requestor.first_name) +
+                                              " " +
+                                              _vm._s(item.requestor.last_name)
+                                          )
+                                        ]
                                       )
                                     ]
                                   )
@@ -703,27 +718,13 @@ var render = function() {
                                   _c(
                                     "div",
                                     { staticClass: "mb-1 font-italic" },
-                                    [_vm._v("Nombre: " + _vm._s(item.name))]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "mb-1 font-italic" },
-                                    [_vm._v("Email: " + _vm._s(item.email))]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "mb-1 font-italic" },
-                                    [_vm._v("Telefono: " + _vm._s(item.phone))]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "div",
-                                    { staticClass: "mb-1 font-italic" },
                                     [
                                       _vm._v(
-                                        "Posicion: " + _vm._s(item.profession)
+                                        "Nombre: " +
+                                          _vm._s(item.requestor.first_name) +
+                                          " " +
+                                          _vm._s(item.requestor.last_name) +
+                                          " "
                                       )
                                     ]
                                   ),
@@ -733,7 +734,7 @@ var render = function() {
                                     { staticClass: "mb-1 font-italic" },
                                     [
                                       _vm._v(
-                                        "Compania: " + _vm._s(item.company)
+                                        "Email: " + _vm._s(item.requestor.email)
                                       )
                                     ]
                                   ),
@@ -741,13 +742,56 @@ var render = function() {
                                   _c(
                                     "div",
                                     { staticClass: "mb-1 font-italic" },
-                                    [_vm._v("Pais: " + _vm._s(item.country))]
+                                    [
+                                      _vm._v(
+                                        "Telefono: " +
+                                          _vm._s(item.requestor.phone)
+                                      )
+                                    ]
                                   ),
                                   _vm._v(" "),
                                   _c(
                                     "div",
                                     { staticClass: "mb-1 font-italic" },
-                                    [_vm._v("Region: " + _vm._s(item.region))]
+                                    [
+                                      _vm._v(
+                                        "Posicion: " +
+                                          _vm._s(item.requestor.address)
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "mb-1 font-italic" },
+                                    [
+                                      _vm._v(
+                                        "Compania: " +
+                                          _vm._s(item.requestor.company)
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "mb-1 font-italic" },
+                                    [
+                                      _vm._v(
+                                        "Pais: " +
+                                          _vm._s(item.requestor.country)
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "div",
+                                    { staticClass: "mb-1 font-italic" },
+                                    [
+                                      _vm._v(
+                                        "Region: " +
+                                          _vm._s(item.requestor.region)
+                                      )
+                                    ]
                                   )
                                 ]
                               )
@@ -1289,6 +1333,33 @@ var render = function() {
                 ]
               ),
               _vm._v(" "),
+              _c(
+                "div",
+                {
+                  staticClass: "absolute",
+                  staticStyle: { bottom: "74px", right: "0" }
+                },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass:
+                        "flex flex-col items-center justify-center text-white relative px-2 py-4 bg-blue-dark chatting-btn"
+                    },
+                    [
+                      _c("svg-icon", {
+                        attrs: { size: "w-6 h-6", icon: "contact" }
+                      }),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "ml-2 text-center btn-text" }, [
+                        _vm._v("CHATEAR CON UN USEARIO")
+                      ])
+                    ],
+                    1
+                  )
+                ]
+              ),
+              _vm._v(" "),
               _vm._l(_vm.stand.stand_contents, function(s_content, index) {
                 return _c(
                   "div",
@@ -1375,6 +1446,7 @@ var render = function() {
                                         height: "100%"
                                       },
                                       attrs: {
+                                        controls: "",
                                         src: "/fair_image/" + s_content.content
                                       }
                                     })
@@ -1446,17 +1518,6 @@ var staticRenderFns = []
 render._withStripped = true
 
 
-
-/***/ }),
-
-/***/ "./resources/app/assets/images/pages/foto_expositores1.jpg":
-/*!*****************************************************************!*\
-  !*** ./resources/app/assets/images/pages/foto_expositores1.jpg ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/foto_expositores1.jpg?56e7cc859a4536a3d69babdd0779d7fd";
 
 /***/ }),
 

@@ -29,10 +29,6 @@ export default {
       type: String,
       required: true
     },
-    item: {
-      type: String,
-      required: true  
-    },
     remove: {
       type: Function,
       required: false  

@@ -46,24 +46,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -75,10 +57,21 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      video_list: []
+      video_list: [],
+      appointments_dates: [],
+      appointments: []
     };
   },
+  methods: {
+    period: function period(start_time, end_time) {
+      var sd = this.$date.timeFormat(start_time);
+      var ed = this.$date.timeFormat(end_time);
+      return "".concat(sd, " - ").concat(ed);
+    }
+  },
   created: function created() {
+    var _this = this;
+
     var list = [];
 
     for (var i = 0; i < 3; i++) {
@@ -86,6 +79,12 @@ __webpack_require__.r(__webpack_exports__);
     }
 
     this.video_list = list;
+    this.$http.post('/api/setting/my_stand/schedule').then(function (response) {
+      console.log(response.data);
+      var data = response.data;
+      _this.appointments_dates = data.appointments_dates;
+      _this.appointments = data.appointments;
+    });
   }
 });
 
@@ -275,149 +274,121 @@ var render = function() {
     [
       _c("app-header", { attrs: { activeItem: "0" } }),
       _vm._v(" "),
-      _c("bread-crumb", { attrs: { icon: "CalendarIcon", text: "mis citas" } }),
+      _c("bread-crumb", {
+        attrs: { icon: "schedule-edit", type: "svg", text: "mis citas" }
+      }),
       _vm._v(" "),
       _c("div", { staticClass: "w-full setting-stand-video bg-white-grey" }, [
-        _c("div", { staticClass: "w-full px-10 mt-4" }, [
-          _c("div", { staticClass: "h5 mt-8 ml-6 font-bold" }, [
-            _vm._v("\n                JUEVES 04 de AGOSTO\n            ")
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "vx-row w-full" },
-            _vm._l(_vm.video_list, function(item, index) {
-              return _c(
+        _c(
+          "div",
+          { staticClass: "w-full px-10 mt-4" },
+          _vm._l(_vm.appointments_dates, function(apo_date, index) {
+            return _c("div", { key: "schedule-item-" + index }, [
+              _c("div", { staticClass: "h4 pt-6 ml-6 font-bold" }, [
+                _vm._v(
+                  "\n                    " +
+                    _vm._s(apo_date.schedule_date) +
+                    "\n                    "
+                )
+              ]),
+              _vm._v(" "),
+              _c(
                 "div",
-                { key: "catalog-item-" + index, staticClass: "vx-col w-1/3" },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "flex flex-col justify-between mx-3 my-3 bg-white",
-                      staticStyle: { border: "1px solid #f0f0f0" }
-                    },
-                    [
-                      _c(
-                        "div",
-                        { staticClass: "flex items-start w-full px-3 mt-8" },
-                        [
-                          _c("feather-icon", {
-                            staticClass: "ml-2 text-cyan-dark",
-                            attrs: { icon: "ClockIcon" }
-                          }),
-                          _vm._v(" "),
-                          _vm._m(0, true)
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "flex mt-6 justify-end" },
-                        [
-                          _c("vs-button", { staticClass: "cyan-dark" }, [
-                            _vm._v("IR A LA CITA")
-                          ])
-                        ],
-                        1
-                      )
-                    ]
-                  )
-                ]
+                { staticClass: "vx-row w-full" },
+                _vm._l(
+                  _vm.appointments.filter(function(it) {
+                    return it.schedule_date == apo_date.schedule_date
+                  }),
+                  function(apo, index) {
+                    return _c(
+                      "div",
+                      {
+                        key: "catalog-item-" + index,
+                        staticClass: "vx-col w-1/4"
+                      },
+                      [
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "flex flex-col justify-between mx-3 my-3 bg-white",
+                            staticStyle: { border: "1px solid #f0f0f0" }
+                          },
+                          [
+                            _c(
+                              "div",
+                              {
+                                staticClass: "flex items-start w-full px-3 mt-8"
+                              },
+                              [
+                                _c("feather-icon", {
+                                  staticClass: "ml-2 text-cyan-dark",
+                                  attrs: { icon: "ClockIcon" }
+                                }),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "mx-4" }, [
+                                  _c("div", [
+                                    _vm._v(
+                                      _vm._s(
+                                        _vm.period(apo.start_time, apo.end_time)
+                                      )
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", [
+                                    _vm._v(
+                                      "Nombre: " +
+                                        _vm._s(apo.requestor.first_name) +
+                                        " " +
+                                        _vm._s(apo.requestor.last_name)
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", [
+                                    _vm._v(
+                                      "Compania: " +
+                                        _vm._s(apo.requestor.company)
+                                    )
+                                  ]),
+                                  _vm._v(" "),
+                                  _c("div", [
+                                    _vm._v(
+                                      "Pais: " + _vm._s(apo.requestor.country)
+                                    )
+                                  ])
+                                ])
+                              ],
+                              1
+                            ),
+                            _vm._v(" "),
+                            _c(
+                              "div",
+                              { staticClass: "flex mt-6 justify-end" },
+                              [
+                                _c("vs-button", { staticClass: "cyan-dark" }, [
+                                  _vm._v("IR A LA CITA")
+                                ])
+                              ],
+                              1
+                            )
+                          ]
+                        )
+                      ]
+                    )
+                  }
+                ),
+                0
               )
-            }),
-            0
-          ),
-          _vm._v(" "),
-          _c("div", { staticClass: "h5 mt-8 ml-6 font-bold" }, [
-            _vm._v("\n                JUEVES 05 de AGOSTO\n            ")
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "vx-row w-full" },
-            _vm._l(_vm.video_list, function(item, index) {
-              return _c(
-                "div",
-                { key: "catalog-item-" + index, staticClass: "vx-col w-1/3" },
-                [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "flex flex-col justify-between mx-3 my-3 bg-white",
-                      staticStyle: { border: "1px solid #f0f0f0" }
-                    },
-                    [
-                      _c(
-                        "div",
-                        { staticClass: "flex items-start w-full px-3 mt-8" },
-                        [
-                          _c("feather-icon", {
-                            staticClass: "ml-2 text-cyan-dark",
-                            attrs: { icon: "ClockIcon" }
-                          }),
-                          _vm._v(" "),
-                          _vm._m(1, true)
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        { staticClass: "flex mt-6 justify-end" },
-                        [
-                          _c("vs-button", { staticClass: "cyan-dark" }, [
-                            _vm._v("IR A LA CITA")
-                          ])
-                        ],
-                        1
-                      )
-                    ]
-                  )
-                ]
-              )
-            }),
-            0
-          )
-        ])
+            ])
+          }),
+          0
+        )
       ])
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mx-4" }, [
-      _c("div", [_vm._v("11:00 am - 11:30 pm")]),
-      _vm._v(" "),
-      _c("div", [_vm._v("Nombre: Karla Loazia Brenes")]),
-      _vm._v(" "),
-      _c("div", [_vm._v("Compania: Grupo House")]),
-      _vm._v(" "),
-      _c("div", [_vm._v("Pais: Costa Rica")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mx-4" }, [
-      _c("div", [_vm._v("12:00 am - 12:30 pm")]),
-      _vm._v(" "),
-      _c("div", [_vm._v("Nombre: Karla Loazia Brenes")]),
-      _vm._v(" "),
-      _c("div", [_vm._v("Compania: Grupo House")]),
-      _vm._v(" "),
-      _c("div", [_vm._v("Pais: Costa Rica")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

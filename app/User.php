@@ -48,6 +48,18 @@ class User extends Authenticatable
         return $this->hasMany("App\Talk");
     }
 
+    public function portfolio_downloads() {
+        return $this->hasMany("App\PortfolioDownload");
+    }
+
+    public function gallery_downloads() {
+        return $this->hasMany("App\GalleryDownload");
+    }
+
+    public function webinar_downloads() {
+        return $this->hasMany("App\WebinarDownload");
+    }
+
     public function getRoleAttribute() {
         $is_owner = 
             $this->stands()

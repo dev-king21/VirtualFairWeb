@@ -15,7 +15,7 @@ class Appointment extends Model
 
     public function requestor()
     {
-        return $this->belongsTo('App\User');
+        return $this->belongsTo('App\User', 'user_id');
     }
 
     protected $guarded = [];

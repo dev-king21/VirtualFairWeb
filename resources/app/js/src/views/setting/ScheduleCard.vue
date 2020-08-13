@@ -2,7 +2,7 @@
     <div class="schedule-card" :class="{'card-border': !noborder}">
         <div class="flex reserved">
             <template v-if="reserved">
-                <span class="text-white font-normal">RESERVED</span>
+                <span class="text-white font-normal uppercase">reservado</span>
             </template>
         </div>
         <div class="flex flex-row justify-between items-center mt-2">
@@ -24,9 +24,9 @@
             {{title}}
         </div>
         <div class="flex flex-row items-center mt-2 px-4">
-            <img class="user-img" :src="require(`@assets/images/pages/${user_img}`)"/>
+            <img class="user-img" :src="`/fair_image/${user_img}`"/>
             <div class="ml-4 user-info">
-                Lic. {{expositor_company}}<br>
+                Lic. {{expositor_name}}<br>
                 {{expositor_profession}}
             </div>
         </div>
@@ -49,7 +49,7 @@ export default {
       type: String,
       required: true
     },
-    expositor_company: {
+    expositor_name: {
       type: String,
       required: true
     },
@@ -95,12 +95,12 @@ export default {
     }
 
     .event-btn {
-        font-size: 0.8rem !important;
+        font-size: 1rem !important;
         padding: 0.8rem 0.6rem !important;
     }
 
     .event-btn.p-big {
-        padding: 0.8rem 1.2rem !important;
+        padding: 0.8rem 2rem !important;
     }
 
     .desc-info {
