@@ -33,7 +33,7 @@ export default {
       for (const key in user) {
         formData.append(key, user[key])
       }
-      formData.append('avatar_file', payload.avatar_file)
+      if (payload.avatar_file) formData.append('avatar_file', payload.avatar_file)
       axios.post('/api/auth/register', formData, headers)
         .then(response => {
           resolve(response)

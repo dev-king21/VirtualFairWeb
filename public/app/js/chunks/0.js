@@ -692,7 +692,7 @@ __webpack_require__.r(__webpack_exports__);
         formData.append(key, user[key]);
       }
 
-      formData.append('avatar_file', payload.avatar_file);
+      if (payload.avatar_file) formData.append('avatar_file', payload.avatar_file);
       _http_axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/auth/register', formData, headers).then(function (response) {
         resolve(response);
       })["catch"](function (error) {
