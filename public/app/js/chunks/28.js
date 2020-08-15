@@ -156,9 +156,7 @@ var render = function() {
     [
       _c("app-header", { attrs: { activeItem: "3" } }),
       _vm._v(" "),
-      _c("bread-crumb", {
-        attrs: { icon: "MonitorIcon", text: "contactenos" }
-      }),
+      _c("bread-crumb", { attrs: { text: "contactenos" } }),
       _vm._v(" "),
       _c(
         "div",

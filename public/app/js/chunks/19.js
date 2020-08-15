@@ -162,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
     getGalleryItems: function getGalleryItems() {
       var _this3 = this;
 
-      this.$http.post('/api/setting/my_stand/get_gallery').then(function (response) {
+      this.$http.post('/api/setting/my_stand/gallery').then(function (response) {
         var data = response.data;
 
         if (!data.stand || !data.stand.id) {
@@ -225,7 +225,7 @@ __webpack_require__.r(__webpack_exports__);
       }
 
       console.log('save_gallery');
-      this.$http.post('/api/setting/my_stand/save_gallery', formData, headers).then(function (response) {
+      this.$http.post('/api/setting/my_stand/gallery/save', formData, headers).then(function (response) {
         if (response.data.status === 'ok') {
           _this4.$vs.notify({
             title: 'éxito',
@@ -242,7 +242,7 @@ __webpack_require__.r(__webpack_exports__);
     removeGallery: function removeGallery(id) {
       var _this5 = this;
 
-      this.$http.post('/api/setting/my_stand/remove_gallery', {
+      this.$http.post('/api/setting/my_stand/gallery/remove', {
         _id: id
       }).then(function (response) {
         if (response.data.status === 'ok') {

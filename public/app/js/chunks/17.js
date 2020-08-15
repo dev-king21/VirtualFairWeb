@@ -189,7 +189,7 @@ __webpack_require__.r(__webpack_exports__);
     getBrochures: function getBrochures() {
       var _this = this;
 
-      this.$http.post('/api/setting/my_stand/get_brochures').then(function (response) {
+      this.$http.post('/api/setting/my_stand/brochure').then(function (response) {
         var data = response.data;
 
         if (!data.stand || !data.stand.id) {
@@ -246,7 +246,7 @@ __webpack_require__.r(__webpack_exports__);
       formData.append('stand_id', this.stand_id);
       formData.append('catalog_title', this.catalog_title);
       formData.append('catalog_file', this.catalog_file);
-      this.$http.post('/api/setting/my_stand/save_brochure', formData, headers).then(function (response) {
+      this.$http.post('/api/setting/my_stand/brochure/save', formData, headers).then(function (response) {
         if (response.data.status === 'ok') {
           _this2.$vs.notify({
             title: 'éxito',
@@ -263,7 +263,7 @@ __webpack_require__.r(__webpack_exports__);
     removeBrochure: function removeBrochure(id) {
       var _this3 = this;
 
-      this.$http.post('/api/setting/my_stand/remove_brochure', {
+      this.$http.post('/api/setting/my_stand/brochure/remove', {
         _id: id
       }).then(function (response) {
         if (response.data.status === 'ok') {

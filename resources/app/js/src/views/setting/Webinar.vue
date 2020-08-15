@@ -2,7 +2,7 @@
     <div class="w-full">
         <app-header activeItem="0"></app-header>
         <div class="w-full setting-webinar-main">
-            <bread-crumb icon="webinar" type="svg" text="webinar" />
+            <bread-crumb icon="webinar" type="svg" text="mis webinar" />
             <div class="w-full bg-white-grey">
                 <div class="vx-row page-content">
                     <div class="vx-col lg:w-3/4 md:w-3/4 sm:w-3/4 xs:w-3/4 px-4 event-panel bg-white">
@@ -26,13 +26,13 @@
                                 <div class="px-2">
                                     <webinar-card 
                                         :reserved="true"
-                                        :workdate="item.talk_date"
-                                        :time="period(item.start_time, item.end_time)"
-                                        :title="item.title"
+                                        :workdate="item.talk.talk_date"
+                                        :time="period(item.talk.start_time, item.talk.end_time)"
+                                        :title="item.talk.title"
                                         :expositor_name="`${me.first_name} ${me.last_name}`"
                                         :expositor_profession="`${me.address}`"
                                         :user_img="`${me.avatar}`"
-                                        :live="item.live===1"
+                                        :live="item.talk.live===1"
                                         />
                                 </div>
                             </div>    
@@ -44,13 +44,13 @@
                             <div class="vx-col w-1/3" :key="`all-schedule-${index}`" v-for="(item, index) in past_webinars" >
                                 <div class="px-2">
                                     <webinar-card 
-                                        :workdate="item.talk_date"
-                                        :time="period(item.start_time, item.end_time)"
-                                        :title="item.title"
+                                        :workdate="item.talk.talk_date"
+                                        :time="period(item.talk.start_time, item.talk.end_time)"
+                                        :title="item.talk.title"
                                         :expositor_name="`${me.first_name} ${me.last_name}`"
                                         :expositor_profession="`${me.address}`"
                                         :user_img="`${me.avatar}`"
-                                        :live="item.live===1" />
+                                        :live="item.talk.live===1" />
                                 </div>
                             </div>    
                         </div>

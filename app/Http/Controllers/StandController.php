@@ -4,15 +4,142 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Stand;
-use Session;
+use App\StandLocation;
 use App\File;
 use App\Contact;
 use App\Gallery;
 use App\Portfolio;
+use App\GalleryDownload;
+use App\PortfolioDownload;
 use App\Appointment;
 
 class StandController extends Controller
 {
+    public function get_stand(Request $request) {
+        $id = $request->post('_id');
+        if (!isset($id))
+            return response()->json(["status" => "unknown_stand"]);
+
+        $res["stand"] = Stand::with(['contact', 'stand_contents' => function($query) {
+            $query->with('stand_type_item')->get();
+        }])->find($id);      
+        $res["stand_type"] = StandLocation::with('stand_type') -> find($res["stand"]->stand_location_id)->stand_type;
+  
+        return response()->json($res);
+    }
+    
+    public function get_information(Request $request) {
+        $res = array();
+        $id = $request->post('_id');
+        if (!isset($id))
+            return response()->json(["status" => "unknown_stand"]);
+
+        $res["stand"] = Stand::with(['contact'])->find($id);      
+        return response()->json($res);
+    }
+
+    public function get_brochures(Request $request) {
+        $res = array();
+        $id = $request->post('_id');
+        if (!isset($id))
+            return response()->json(["status" => "unknown_stand"]);
+        
+        $res["stand"] = Stand::with(['portfolios'])->find($id);      
+        return response()->json($res);
+    }
+
+    public function download_brochure(Request $request) {
+        $res = array();
+        $id = $request->post("_id");
+        $user = $request->user();
+        if (!isset($id) && !isset($user)) 
+            return response()->json(["status" => "unknown_webinar"]);
+        
+        $count = PortfolioDownload::where(["user_id"=> $user->id, "portfolio_id" => $id])->count();    
+        if ($count !== 0) {
+            return response()->json(["status" => "already_downloaded"]);
+        }
+
+        $download = new PortfolioDownload;
+        $download->user_id = $user->id;
+        $download->portfolio_id = $id;
+        $download->save();
+
+        $res["status"] = "ok";
+        
+        return response()->json($res);
+    }
+
+    public function get_gallery(Request $request) {
+        $res = array();
+        $id = $request->post('_id');
+        if (!isset($id))
+            return response()->json(["status" => "unknown_portfolio"]);
+    
+        $res["stand"] = Stand::with(['gallerys'])->find($id);      
+        return response()->json($res);
+    }
+
+    public function download_gallery(Request $request) {
+        $res = array();
+        $id = $request->post("_id");
+        $user = $request->user();
+        if (!isset($id) && !isset($user)) 
+            return response()->json(["status" => "unknown_gallery"]);
+        
+        $count = GalleryDownload::where(["user_id"=> $user->id, "gallery_id" => $id])->count();    
+        if ($count !== 0) {
+            return response()->json(["status" => "already_downloaded"]);
+        }
+
+        $download = new GalleryDownload;
+        $download->user_id = $user->id;
+        $download->gallery_id = $id;
+        $download->save();
+
+        $res["status"] = "ok";
+        
+        return response()->json($res);
+    }
+
+    public function get_businesscards(Request $request) {
+        $res = array();
+        $id = $request->post('_id');
+        if (!isset($id))
+            return response()->json(["status" => "unknown_stand"]);
+    
+        $res["stand"] = Stand::with(['business_cards'])->find($id);      
+        return response()->json($res);
+    }
+
+    public function get_available_times(Request $request) {
+        $res = array();
+        $id = $request->post('_id');
+        if (!isset($id))
+            return response()->json(["status" => "unknown_stand"]);
+    
+        $res["time_table"] = Stand::find($id)->time_table;      
+        return response()->json($res);
+    }
+
+    public function save_appointment(Request $request) {
+        $res = array();
+        $id = $request->post('_id');
+        $uid = $request->user()->id;
+        if (!isset($id) || !isset($uid))
+            return response()->json(["status" => "unknown_stand"]);
+
+        $app = new Appointment;
+        $app->stand_id = $id;
+        $app->user_id = $uid;
+        $app->schedule_date = $request->post('schedule_date');
+        $app->start_time = $request->post('start_time');
+        $app->end_time = $request->post('end_time');
+        $app->save();
+        $res["status"] = "ok";    
+        return response()->json($res);
+    }
+     
     // all stands
     public function all_stands(Request $request, $fair_id = 0) {
         $res = array();

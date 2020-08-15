@@ -2,6 +2,12 @@
 <div class="w-full">
   <app-header activeItem="0"></app-header>
   <div class="flex w-full flex-col home-bg-img justify-between home-main">
+    <div class="absolute font-bold text-white"  style="z-index: 1; right: 10rem; top: 8rem;">
+      <div class="text-center"><svg-icon size="w-32 h-32 text-cyan-dark" icon="watermark"/></div>
+      <div class="fs-36" style="margin-top: -2rem">CONFERENCIAS</div>
+      <div class="fs-52" style="margin-top: -2rem">VIRTUALES</div> 
+      <div class="fs-16 font-normal gradient-bar" style="margin-top: -1rem">The new way of making business</div>
+    </div>
     <template v-if="!loggedIn">
       <div class="w-full">
         <template v-if="!logInClicked">
@@ -11,7 +17,7 @@
           </div>
         </template>
         <template v-else>
-          <div class="login-form w-full lg:w-1/6 md:w-1/4 sm:w-1/3 xs:w-1/2">
+          <div class="login-form w-full lg:w-1/6 md:w-1/4 sm:w-1/3 xs:w-1/2 absolute"  style="z-index: 3; right: 0; top: 86px">
             <div class="h6 font-bold text-white">
               Por favor ingrese sus datos
             </div>
@@ -21,7 +27,7 @@
               <span class="text-danger text-sm">{{ errors.first('email') }}</span>
             </div>
             <div class="login-input">
-              <vs-input color="success" class="w-full" placeholder="Ingrese su contrasena"
+              <vs-input color="success" class="w-full" placeholder="Ingrese su contrasena" type="password"
                 v-validate="'required'" data-vv-validate-on="blur" name="contrasena" v-model="auth.password"/>
               <span class="text-danger text-sm">{{ errors.first('contrasena') }}</span>
             </div>
@@ -102,7 +108,7 @@
           <span>Networking</span>
           <feather-icon class="ml-2" color="green" icon="" :badge="3" />
         </router-link>
-        <router-link class="main-link" to="/home/contact">
+        <router-link class="main-link" to="/home/sponsor">
           patrocinadores
         </router-link>
       </div>  
@@ -174,6 +180,17 @@ export default {
     font-size: 1rem !important;
     float: right;
   }
+
+  .gradient-bar {
+    border-top-width: 0;
+    border-bottom: 10px solid red;
+    border-left-width: 0;
+    border-right-width: 0;
+    border-image: linear-gradient(to right, 
+      rgba(44, 91, 231, 1) 0%,
+      rgba(201, 62, 128, 1) 50%,
+      rgba(249, 109, 46, 1) 100%) 1 stretch;
+   }
 
   .login-form {
     border-radius: 0px !important;

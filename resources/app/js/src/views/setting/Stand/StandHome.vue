@@ -287,25 +287,6 @@ export default {
     }
   },
   created () {
-    /* const list = []
-    for (let i = 0; i < 9; i++) {
-      const item = {
-        name:  'Karla Loazia Brenes',
-        email: 'kibrenes@gropohouse.com',
-        phone: '5064567-6789',
-        profession: 'Jefa de Proyectors',
-        company: 'Grupo House',
-        country: 'Costa Rica',
-        resion: 'San Jose',
-        concern: 'Diseno del Espacio',
-        active: i === 0,
-        id: i 
-      }  
-      list.push(item)
-    }
-    
-    this.user_list = list */
-
     this.getStandContent()
   }
 }

@@ -73,7 +73,7 @@ export default {
       if (!user_id) {
         return this.purchaseStand(stand_id)
       }
-      return this.$router.push('/fair/stand/2/2/3')  
+      return this.$router.push(`/fair/stand/2/2/${stand_id}`)  
     },
     purchaseStand (stand_id) {
       this.$http.post('/api/stand/purchase', {stand: stand_id})

@@ -38,7 +38,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -46,14 +45,17 @@ __webpack_require__.r(__webpack_exports__);
     AppHeader: _layouts_components_Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
     BreadCrumb: _views_custom_BreadCrumb_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
+  data: function data() {
+    return {
+      stands: []
+    };
+  },
   created: function created() {
-    var list = [];
+    var _this = this;
 
-    for (var i = 0; i < 9; i++) {
-      list.push(i);
-    }
-
-    this.all_contacts = list;
+    this.$http.get('/api/fair/sponsor').then(function (response) {
+      _this.stands = response.data.stands;
+    });
   }
 });
 
@@ -150,7 +152,7 @@ var render = function() {
             _c(
               "div",
               { staticClass: "vx-row" },
-              _vm._l(_vm.all_contacts, function(item, index) {
+              _vm._l(_vm.stands, function(item, index) {
                 return _c(
                   "div",
                   {
@@ -162,12 +164,7 @@ var render = function() {
                       _c("div", { staticClass: "text-center p-2" }, [
                         _c("img", {
                           staticClass: "contact-logo",
-                          attrs: {
-                            src:
-                              index % 2 === 0
-                                ? __webpack_require__(/*! @assets/images/pages/maintenance.png */ "./resources/app/assets/images/pages/maintenance.png")
-                                : __webpack_require__(/*! @assets/images/pages/maintenance-2.png */ "./resources/app/assets/images/pages/maintenance-2.png")
-                          }
+                          attrs: { src: "/fair_image/" + item.logo }
                         })
                       ]),
                       _vm._v(" "),
@@ -177,7 +174,10 @@ var render = function() {
                         [
                           _c(
                             "vs-button",
-                            { staticClass: "cyan-dark contact-btn" },
+                            {
+                              staticClass: "cyan-dark contact-btn",
+                              attrs: { to: "/fair/contact/" + item.id }
+                            },
                             [_vm._v("contactar")]
                           )
                         ],

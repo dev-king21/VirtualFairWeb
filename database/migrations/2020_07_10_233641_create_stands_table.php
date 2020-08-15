@@ -19,6 +19,7 @@ class CreateStandsTable extends Migration
             $table->integer("country_id");
             $table->integer("user_id")->nullable();
             $table->integer("stand_location_id");
+            $table->string("time_table")->nullable();
             $table->string("company")->nullable();
             $table->string("site_link")->nullable();
             $table->string("logo")->nullable();

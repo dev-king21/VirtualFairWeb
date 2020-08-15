@@ -80,7 +80,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
@@ -322,28 +321,6 @@ var render = function() {
                     expression: "!hideNavbar"
                   }
                 ],
-                attrs: { index: "2" }
-              },
-              [
-                _c(
-                  "a",
-                  { staticClass: "h3", attrs: { href: "/app/home/sponsor" } },
-                  [_vm._v("patrocinadores")]
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "vs-navbar-item",
-              {
-                directives: [
-                  {
-                    name: "show",
-                    rawName: "v-show",
-                    value: !_vm.hideNavbar,
-                    expression: "!hideNavbar"
-                  }
-                ],
                 attrs: { index: "3" }
               },
               [
@@ -406,9 +383,14 @@ var render = function() {
                 attrs: { index: "0" }
               },
               [
-                _c("a", { staticClass: "h3", attrs: { href: "/app/room" } }, [
-                  _vm._v("sostenibilidad")
-                ])
+                _c(
+                  "a",
+                  {
+                    staticClass: "h3",
+                    attrs: { href: "/app/home/sustainability" }
+                  },
+                  [_vm._v("sostenibilidad")]
+                )
               ]
             ),
             _vm._v(" "),
@@ -426,9 +408,11 @@ var render = function() {
                 attrs: { index: "1" }
               },
               [
-                _c("a", { staticClass: "h3", attrs: { href: "/app/fair" } }, [
-                  _vm._v("Contacteons")
-                ])
+                _c(
+                  "a",
+                  { staticClass: "h3", attrs: { href: "/app/home/sponsor" } },
+                  [_vm._v("patrocinadores")]
+                )
               ]
             ),
             _vm._v(" "),
@@ -444,6 +428,28 @@ var render = function() {
                   }
                 ],
                 attrs: { index: "2" }
+              },
+              [
+                _c(
+                  "a",
+                  { staticClass: "h3", attrs: { href: "/app/home/contact" } },
+                  [_vm._v("Contacteons")]
+                )
+              ]
+            ),
+            _vm._v(" "),
+            _c(
+              "vs-navbar-item",
+              {
+                directives: [
+                  {
+                    name: "show",
+                    rawName: "v-show",
+                    value: !_vm.hideNavbar,
+                    expression: "!hideNavbar"
+                  }
+                ],
+                attrs: { index: "3" }
               },
               [
                 _c(
@@ -480,7 +486,7 @@ var render = function() {
                     expression: "!hideNavbar"
                   }
                 ],
-                attrs: { index: "3" }
+                attrs: { index: "4" }
               },
               [
                 _c(
@@ -673,7 +679,21 @@ __webpack_require__.r(__webpack_exports__);
   register: function register(_ref2, payload) {
     var commit = _ref2.commit;
     return new Promise(function (resolve, reject) {
-      _http_axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/auth/register', JSON.parse(JSON.stringify(payload))).then(function (response) {
+      var user = JSON.parse(JSON.stringify(payload));
+      var headers = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      };
+      console.log(user);
+      var formData = new FormData();
+
+      for (var key in user) {
+        formData.append(key, user[key]);
+      }
+
+      formData.append('avatar_file', payload.avatar_file);
+      _http_axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/auth/register', formData, headers).then(function (response) {
         resolve(response);
       })["catch"](function (error) {
         reject(error);

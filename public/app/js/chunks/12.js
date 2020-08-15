@@ -103,6 +103,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -436,7 +448,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("img", {
                       staticClass: "user-img responsive mx-4",
-                      attrs: { src: "/images/pages/" + _vm.user.avatar }
+                      attrs: { src: "/fair_image/" + _vm.user.avatar }
                     })
                   ]
                 )
@@ -471,82 +483,147 @@ var render = function() {
                 staticStyle: { background: "#ffffff44", height: "100%" }
               },
               [
-                _c("div", { staticClass: "flex flex-col py-12 w-full" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "flex items-center justify-between buttons-row"
-                    },
-                    [
-                      _c("setting-button", {
-                        attrs: {
-                          cls: "bg-cyan-dark",
-                          to: "/setting/stand",
-                          icon: "stand",
-                          text: "mi stand"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("setting-button", {
-                        attrs: {
-                          cls: "bg-blue-dark",
-                          to: "/setting/schedule",
-                          icon: "topic",
-                          text: "ver mi agenda"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "flex items-center justify-between buttons-row"
-                    },
-                    [
-                      _c("setting-button", {
-                        attrs: {
-                          cls: "bg-grey-real",
-                          to: "/setting/webinar",
-                          icon: "webinar",
-                          text: "mis webinars"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("setting-button", {
-                        attrs: {
-                          cls: "bg-blue-light",
-                          to: "/setting/download",
-                          icon: "download",
-                          text: "mis descargasy archivos guardados"
-                        }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass:
-                        "flex items-center justify-between buttons-row"
-                    },
-                    [
-                      _c("setting-button", {
-                        attrs: {
-                          cls: "bg-cyan-light",
-                          to: "/setting/contact",
-                          icon: "address-book",
-                          text: "mis contactos"
-                        }
-                      })
-                    ],
-                    1
-                  )
-                ])
+                _c(
+                  "div",
+                  { staticClass: "flex flex-col py-12 w-full justify-center" },
+                  [
+                    _vm.user.type === "user"
+                      ? [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex items-center justify-between buttons-row2"
+                            },
+                            [
+                              _c("setting-button", {
+                                attrs: {
+                                  cls: "bg-blue-dark",
+                                  to: "/setting/schedule",
+                                  icon: "topic",
+                                  text: "ver mi agenda"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("setting-button", {
+                                attrs: {
+                                  cls: "bg-grey-real",
+                                  to: "/setting/webinar",
+                                  icon: "webinar",
+                                  text: "mis webinars"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex items-center justify-between mt-12 buttons-row2"
+                            },
+                            [
+                              _c("setting-button", {
+                                attrs: {
+                                  cls: "bg-blue-light",
+                                  to: "/setting/download",
+                                  icon: "download",
+                                  text: "mis descargasy archivos guardados"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("setting-button", {
+                                attrs: {
+                                  cls: "bg-cyan-light",
+                                  to: "/setting/contact",
+                                  icon: "address-book",
+                                  text: "mis contactos"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ]
+                      : [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex items-center justify-between buttons-row2"
+                            },
+                            [
+                              _c("setting-button", {
+                                attrs: {
+                                  cls: "bg-cyan-dark",
+                                  to: "/setting/stand",
+                                  icon: "stand",
+                                  text: "mi stand"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("setting-button", {
+                                attrs: {
+                                  cls: "bg-blue-dark",
+                                  to: "/setting/schedule",
+                                  icon: "topic",
+                                  text: "ver mi agenda"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex items-center justify-between mt-12 buttons-row2"
+                            },
+                            [
+                              _c("setting-button", {
+                                attrs: {
+                                  cls: "bg-grey-real",
+                                  to: "/setting/webinar",
+                                  icon: "webinar",
+                                  text: "mis webinars"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("setting-button", {
+                                attrs: {
+                                  cls: "bg-blue-light",
+                                  to: "/setting/download",
+                                  icon: "download",
+                                  text: "mis descargasy archivos guardados"
+                                }
+                              })
+                            ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex items-center justify-between mt-12 buttons-row2"
+                            },
+                            [
+                              _c("setting-button", {
+                                attrs: {
+                                  cls: "bg-cyan-light",
+                                  to: "/setting/contact",
+                                  icon: "address-book",
+                                  text: "mis contactos"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ]
+                  ],
+                  2
+                )
               ]
             )
           ])

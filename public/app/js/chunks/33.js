@@ -128,7 +128,7 @@ __webpack_require__.r(__webpack_exports__);
     getBusinessCards: function getBusinessCards() {
       var _this = this;
 
-      this.$http.post('/api/setting/my_stand/get_businesscards').then(function (response) {
+      this.$http.post('/api/setting/my_stand/businesscard').then(function (response) {
         var data = response.data;
 
         if (!data.stand || !data.stand.id) {
@@ -173,7 +173,7 @@ __webpack_require__.r(__webpack_exports__);
       };
       formData.append('stand_id', this.stand_id);
       formData.append('card_file', this.card_file);
-      this.$http.post('/api/setting/my_stand/save_businesscard', formData, headers).then(function (response) {
+      this.$http.post('/api/setting/my_stand/businesscard/save', formData, headers).then(function (response) {
         if (response.data.status === 'ok') {
           _this2.$vs.notify({
             title: 'éxito',
@@ -190,7 +190,7 @@ __webpack_require__.r(__webpack_exports__);
     removeBusinessCard: function removeBusinessCard(id) {
       var _this3 = this;
 
-      this.$http.post('/api/setting/my_stand/remove_businesscard', {
+      this.$http.post('/api/setting/my_stand/businesscard/remove', {
         _id: id
       }).then(function (response) {
         if (response.data.status === 'ok') {

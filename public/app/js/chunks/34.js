@@ -200,7 +200,7 @@ var render = function() {
         { staticClass: "w-full setting-webinar-main" },
         [
           _c("bread-crumb", {
-            attrs: { icon: "webinar", type: "svg", text: "webinar" }
+            attrs: { icon: "webinar", type: "svg", text: "mis webinar" }
           }),
           _vm._v(" "),
           _c("div", { staticClass: "w-full bg-white-grey" }, [
@@ -296,17 +296,17 @@ var render = function() {
                               _c("webinar-card", {
                                 attrs: {
                                   reserved: true,
-                                  workdate: item.talk_date,
+                                  workdate: item.talk.talk_date,
                                   time: _vm.period(
-                                    item.start_time,
-                                    item.end_time
+                                    item.talk.start_time,
+                                    item.talk.end_time
                                   ),
-                                  title: item.title,
+                                  title: item.talk.title,
                                   expositor_name:
                                     _vm.me.first_name + " " + _vm.me.last_name,
                                   expositor_profession: "" + _vm.me.address,
                                   user_img: "" + _vm.me.avatar,
-                                  live: item.live === 1
+                                  live: item.talk.live === 1
                                 }
                               })
                             ],
@@ -337,17 +337,17 @@ var render = function() {
                             [
                               _c("webinar-card", {
                                 attrs: {
-                                  workdate: item.talk_date,
+                                  workdate: item.talk.talk_date,
                                   time: _vm.period(
-                                    item.start_time,
-                                    item.end_time
+                                    item.talk.start_time,
+                                    item.talk.end_time
                                   ),
-                                  title: item.title,
+                                  title: item.talk.title,
                                   expositor_name:
                                     _vm.me.first_name + " " + _vm.me.last_name,
                                   expositor_profession: "" + _vm.me.address,
                                   user_img: "" + _vm.me.avatar,
-                                  live: item.live === 1
+                                  live: item.talk.live === 1
                                 }
                               })
                             ],

@@ -60,6 +60,14 @@ const router = new Router({
           }
         },
         {
+          path: '/home/sustainability',
+          name: 'home-sustainability',
+          component: () => import('@/views/Sustainability.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
           path: '/fair',
           name: 'fair-home',
           component: () => import('@/views/fair/FairCountry.vue'),
@@ -86,7 +94,7 @@ const router = new Router({
         {
           path: '/fair/stand/:fair_id/:country_id/:stand_id',
           name: 'fair-stands',
-          component: () => import('@/views/fair/FairStandContent.vue'),
+          component: () => import('@/views/stand/Stand.vue'),
           meta: {
             rule: 'editor'
           }
@@ -95,6 +103,46 @@ const router = new Router({
           path: '/stand/home',
           name: 'stand-home',
           component: () => import('@/views/stand/StandHome.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/stand/information/:stand_id',
+          name: 'stand-info',
+          component: () => import('@/views/Stand/StandInformation.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/stand/brochure/:stand_id',
+          name: 'stand-brochure',
+          component: () => import('@/views/Stand/StandBrochure.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/stand/gallery/:stand_id',
+          name: 'stand-video',
+          component: () => import('@/views/Stand/StandGallery.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/stand/schedule/:stand_id',
+          name: 'stand-schedule',
+          component: () => import('@/views/Stand/StandSchedule.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/stand/contact/:stand_id',
+          name: 'stand-contact',
+          component: () => import('@/views/Stand/StandContact.vue'),
           meta: {
             rule: 'editor'
           }
@@ -126,7 +174,7 @@ const router = new Router({
         {
           path: '/auth/register/expositor',
           name: 'register-expositor',
-          component: () => import('@/views/sign/RegisterExpositor.vue'),
+          component: () => import('@/views/sign/RegisterParticipant.vue'),
           meta: {
             rule: 'editor'
           }
@@ -220,6 +268,14 @@ const router = new Router({
           }
         },
         {
+          path: '/room/webinar/:webinar_id',
+          name: 'room-webinar-show',
+          component: () => import('@/views/room/LiveVideo.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
           path: '/fair/chatting',
           name: 'fair-chatting',
           component: () => import('@/views/chat/Chatting.vue'),
@@ -231,6 +287,14 @@ const router = new Router({
           path: '/fair/sponsor',
           name: 'fair-sponsor',
           component: () => import('@/views/contact/Sponsor.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/fair/contact/:stand_id',
+          name: 'fair-sponsor-contact',
+          component: () => import('@/views/contact/StandContact.vue'),
           meta: {
             rule: 'editor'
           }

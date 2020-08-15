@@ -80,7 +80,11 @@
                         <span class="text-danger text-sm">{{ errors.first('Region') }}</span>
                     </div>
                     <div class="vx-col w-full my-4">
-                        Agregar fotograpia o logotipo <vs-button class="cyan-light ml-2 attach-btn">Adjuntar</vs-button>
+                        <div class="flex items-center">
+                            <div v-show="!avatar_show">Agregar fotograpia o logotipo</div>
+                            <div><img ref="avatarPreview" v-show="avatar_show" style="width: 150px; height: 150px; border-radius: 100%;" /></div>
+                            <vs-button @click="browseAvatarImg" class="cyan-light ml-2 attach-btn">Adjuntar</vs-button>
+                        </div>
                     </div>
                     <div class="vx-col w-full mb-2">
                         Seleccione un area de interes
@@ -126,7 +130,7 @@
                 </div>
             </div>
         </div>
-        
+        <input class="hidden" type="file" ref="refAvatarFile" accept=".png, .gif, .jpg, .jpeg" @change="avatarChanged">
     </div>
 </template>
 <script>
@@ -143,7 +147,9 @@ export default {
         type: 'user'
       },
       repeat_password: '',
-      accept_chk: false  
+      accept_chk: false,
+      avatar_show: false,
+      avatar_file: null
     }
   },
   computed: {
@@ -165,9 +171,9 @@ export default {
   },
   methods: {
     registerClick () {
+      if (this.avatar_file) this.user.avatar_file = this.avatar_file
       this.$store.dispatch('auth/register', this.user)
         .then((response) => {
-          console.log(response)
           if (response.data.status === 'ok') {
             this.$vs.notify({
               title: 'éxito',
@@ -183,7 +189,58 @@ export default {
           
         })
         .catch((error) => console.log(error))
-    }
+    },
+    browseAvatarImg () {
+      this.$refs.refAvatarFile.click()
+    },
+    readerData (rawFile) {
+      return new Promise((resolve) => {
+        const reader = new FileReader()
+        reader.onload = e => {
+          this.$refs.avatarPreview.src = e.target.result
+          this.avatar_file = rawFile
+          //this.onSuccess(sendData)
+          resolve()
+        }
+        this.avatar_show = true
+        reader.readAsDataURL(rawFile)
+      })
+    },
+    avatarChanged (e) {
+      const files = e.target.files
+      this.validateAndUpload(files)  
+    },
+    validateAndUpload (files) {
+      if (files.length !== 1) {
+        this.$vs.notify({
+          title: 'Error - Too Many Files',
+          text: 'Only support uploading one file!',
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        })
+        return
+      }
+      const rawFile = files[0] // only use files[0]
+      if (!this.isImage(rawFile)) {
+        this.$vs.notify({
+          title: 'File Format Error',
+          text: 'Only supports upload .png, .gif, .jpg, .jpeg suffix files',
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        })
+        return false
+      }
+      this.previewAvatar(rawFile)
+    },
+    isImage (file) {
+      return /\.(jpeg|png|gif|jpg)$/.test(file.name)
+    },
+    previewAvatar (file) {
+      this.$refs.refAvatarFile.value = null // fix can't select the same excel
+      this.readerData(file)
+    } 
   },
   created () {
     if (!moduleAuth.isRegistered) {

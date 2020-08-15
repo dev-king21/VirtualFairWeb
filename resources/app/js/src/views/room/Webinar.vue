@@ -2,7 +2,7 @@
     <div class="w-full">
         <app-header activeItem="0"></app-header>
         <div class="w-full room-webinar-main">
-            <bread-crumb icon="MonitorIcon" text="webinar" />
+            <bread-crumb icon="webinar" type="svg" text="webinar" />
             <div class="w-full bg-white-grey">
                 <div class="vx-row page-content">
                     <div class="vx-col lg:w-3/4 md:w-3/4 sm:w-3/4 xs:w-3/4 px-4 event-panel bg-white">
@@ -19,16 +19,18 @@
                             </span>
                         </div>
                         <div class="vx-row" >
-                            <div class="vx-col w-1/3" :key="`all-schedule-${index}`" v-for="(item, index) in all_schedules" >
+                            <div class="vx-col w-1/3" :key="`all-schedule-${index}`" v-for="(item, index) in webinars" >
                                 <div class="px-2">
                                     <webinar-card 
-                                        :reserved="true"
-                                        workdate = "01 DE AGOSTO"
-                                        time="5 pm - 6:00 pm"
-                                        title="Desarrollo de estrategias virtuales para desarrollo de marcas."
-                                        expositor_company="Felipe Alenso Guererro"
-                                        expositor_profession="Especilista en estrategias de marcas"
-                                        user_img="maintenance-2.png" />
+                                        :workdate="item.talk_date"
+                                        :time="period(item.start_time, item.end_time)"
+                                        :title="item.title"
+                                        :expositor_name="`${item.user.first_name} ${item.user.last_name}`"
+                                        :expositor_profession="`${item.user.address}`"
+                                        :user_img="`${item.user.avatar}`"
+                                        :id="item.id" 
+                                        :show="show"
+                                        :add="addToBoard"/>
                                 </div>
                             </div>    
                         </div>
@@ -61,52 +63,66 @@ export default {
   },
   data () {
     return {
-      today_schedules: [],  
-      all_schedules: []
+      webinars: []
+    }
+  },
+  methods: {
+    period (start_time, end_time) {
+      const sd = this.$date.timeFormat(start_time)
+      const ed = this.$date.timeFormat(end_time)  
+      return `${sd} - ${ed}`  
+    },
+    show (id) {
+      this.$router.push(`/room/webinar/${id}`)
+    },
+    addToBoard (id) {
+      this.$http.post('/api/room/webinar/add_to_board', {_id: id})
+        .then((response) => {
+          if (response.data.status === 'ok') {
+            console.log('ok')
+          }
+        })  
     }
   },
   created () {
-    const list = []
-    for (let i = 0; i < 9; i++) {
-      list.push(i)
-    }
-    this.today_schedules = list.filter((it) => it < 3)   
-    this.all_schedules = list
+    this.$http.post('/api/room/webinar')
+      .then((response) => {
+        console.log(response.data)
+        const data = response.data
+        this.webinars = data.webinars
+      })
   }
 }
 </script>
 <style lang="scss">
 
 .room-webinar-main {
-  .page-content{
-      background: white;
-
-      .event-panel {
-        padding: 0 !important;        
-        font-size: 0.8rem;
-        font-weight: 900;
-        color: #555;
+    
+    .page-content{
+        background: white;
         
-        .chevron-border {
-           border: 1px solid #f2f2f2;
-           border-radius: 0.5rem;
-           padding: 0.4rem; 
+        .event-panel {
+            padding: 0 !important;        
+            font-size: 0.8rem;
+            font-weight: 900;
+            color: #555;
+            min-height: calc(var(--vh, 1vh) * 100 - 150px);
+                    
+            .chevron-border {
+            border: 1px solid #f2f2f2;
+            border-radius: 0.5rem;
+            padding: 0.4rem; 
+            }
         }
-      }
 
-       .event-los-panel {
-        padding: 0 !important;
-        font-size: 0.8rem;
-        font-weight: 900;
-        color: #555;
-        
-        .stroke-text {
-            color: transparent;
-            -webkit-text-fill-color: transparent; 
-            -webkit-text-stroke-width: 1px;
-            -webkit-text-stroke-color: #EEEEEEEE;
+        .event-los-panel {
+            padding: 0 !important;
+            font-size: 0.8rem;
+            font-weight: 900;
+            color: #555;
+            min-height: calc(var(--vh, 1vh) * 100 - 150px);
+            
         }
-      }
 
   }
   .vx-row {

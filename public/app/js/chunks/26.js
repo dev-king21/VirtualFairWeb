@@ -142,6 +142,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -155,7 +159,9 @@ __webpack_require__.r(__webpack_exports__);
         type: 'user'
       },
       repeat_password: '',
-      accept_chk: false
+      accept_chk: false,
+      avatar_show: false,
+      avatar_file: null
     };
   },
   computed: {
@@ -167,9 +173,8 @@ __webpack_require__.r(__webpack_exports__);
     registerClick: function registerClick() {
       var _this = this;
 
+      if (this.avatar_file) this.user.avatar_file = this.avatar_file;
       this.$store.dispatch('auth/register', this.user).then(function (response) {
-        console.log(response);
-
         if (response.data.status === 'ok') {
           _this.$vs.notify({
             title: 'éxito',
@@ -186,6 +191,65 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         return console.log(error);
       });
+    },
+    browseAvatarImg: function browseAvatarImg() {
+      this.$refs.refAvatarFile.click();
+    },
+    readerData: function readerData(rawFile) {
+      var _this2 = this;
+
+      return new Promise(function (resolve) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          _this2.$refs.avatarPreview.src = e.target.result;
+          _this2.avatar_file = rawFile; //this.onSuccess(sendData)
+
+          resolve();
+        };
+
+        _this2.avatar_show = true;
+        reader.readAsDataURL(rawFile);
+      });
+    },
+    avatarChanged: function avatarChanged(e) {
+      var files = e.target.files;
+      this.validateAndUpload(files);
+    },
+    validateAndUpload: function validateAndUpload(files) {
+      if (files.length !== 1) {
+        this.$vs.notify({
+          title: 'Error - Too Many Files',
+          text: 'Only support uploading one file!',
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        });
+        return;
+      }
+
+      var rawFile = files[0]; // only use files[0]
+
+      if (!this.isImage(rawFile)) {
+        this.$vs.notify({
+          title: 'File Format Error',
+          text: 'Only supports upload .png, .gif, .jpg, .jpeg suffix files',
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        });
+        return false;
+      }
+
+      this.previewAvatar(rawFile);
+    },
+    isImage: function isImage(file) {
+      return /\.(jpeg|png|gif|jpg)$/.test(file.name);
+    },
+    previewAvatar: function previewAvatar(file) {
+      this.$refs.refAvatarFile.value = null; // fix can't select the same excel
+
+      this.readerData(file);
     }
   },
   created: function created() {
@@ -718,21 +782,57 @@ var render = function() {
                   1
                 ),
                 _vm._v(" "),
-                _c(
-                  "div",
-                  { staticClass: "vx-col w-full my-4" },
-                  [
-                    _vm._v(
-                      "\n                    Agregar fotograpia o logotipo "
-                    ),
-                    _c(
-                      "vs-button",
-                      { staticClass: "cyan-light ml-2 attach-btn" },
-                      [_vm._v("Adjuntar")]
-                    )
-                  ],
-                  1
-                ),
+                _c("div", { staticClass: "vx-col w-full my-4" }, [
+                  _c(
+                    "div",
+                    { staticClass: "flex items-center" },
+                    [
+                      _c(
+                        "div",
+                        {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: !_vm.avatar_show,
+                              expression: "!avatar_show"
+                            }
+                          ]
+                        },
+                        [_vm._v("Agregar fotograpia o logotipo")]
+                      ),
+                      _vm._v(" "),
+                      _c("div", [
+                        _c("img", {
+                          directives: [
+                            {
+                              name: "show",
+                              rawName: "v-show",
+                              value: _vm.avatar_show,
+                              expression: "avatar_show"
+                            }
+                          ],
+                          ref: "avatarPreview",
+                          staticStyle: {
+                            width: "150px",
+                            height: "150px",
+                            "border-radius": "100%"
+                          }
+                        })
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "vs-button",
+                        {
+                          staticClass: "cyan-light ml-2 attach-btn",
+                          on: { click: _vm.browseAvatarImg }
+                        },
+                        [_vm._v("Adjuntar")]
+                      )
+                    ],
+                    1
+                  )
+                ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "vx-col w-full mb-2" }, [
                   _vm._v(
@@ -1020,7 +1120,14 @@ var render = function() {
             ]
           )
         ]
-      )
+      ),
+      _vm._v(" "),
+      _c("input", {
+        ref: "refAvatarFile",
+        staticClass: "hidden",
+        attrs: { type: "file", accept: ".png, .gif, .jpg, .jpeg" },
+        on: { change: _vm.avatarChanged }
+      })
     ],
     1
   )

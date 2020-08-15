@@ -86,7 +86,7 @@ __webpack_require__.r(__webpack_exports__);
         return this.purchaseStand(stand_id);
       }
 
-      return this.$router.push('/fair/stand/2/2/3');
+      return this.$router.push("/fair/stand/2/2/".concat(stand_id));
     },
     purchaseStand: function purchaseStand(stand_id) {
       var _this = this;

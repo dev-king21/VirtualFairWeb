@@ -24,17 +24,17 @@
             {{title}}
         </div>
         <div class="flex flex-row items-center mt-2 px-4">
-            <img class="user-img" :src="require(`@assets/images/pages/${user_img}`)"/>
+            <img class="user-img" :src="`/fair_image/${user_img}`"/>
             <div class="ml-4 user-info">
                 Lic. {{expositor_name}}<br>
                 {{expositor_profession}}
             </div>
         </div>
-        <div class="flex flex-row justify-between items-center mt-2">
-            <vs-button class="cyan-light event-btn">
-                AGREGAR A MI AGENDA 
+        <div class="flex flex-row justify-between items-center mt-4">
+            <vs-button class="cyan-light event-btn" @click="addToBoard">
+                AGREGAR A MI TABLEO 
             </vs-button>
-            <vs-button class="blue-light event-btn p-big">
+            <vs-button class="blue-light event-btn p-big" @click="showOrReserve">
                 INICIAR
             </vs-button>
         </div>
@@ -71,7 +71,27 @@ export default {
     noborder: {
       type: Boolean,
       required: false
+    },
+    id: {
+      type: Number,
+      required: true  
+    },
+    show: {
+      type: Function,
+      required: false  
+    },
+    add: {
+      type: Function,
+      required: false  
     }
+  },
+  methods: {
+    showOrReserve () {
+      if (this.show && this.id) this.show(this.id)  
+    },
+    addToBoard () {
+      if (this.add && this.id) this.add(this.id)  
+    }  
   }
 }
 </script>
@@ -99,11 +119,11 @@ export default {
 
     .event-btn {
         font-size: 0.8rem !important;
-        padding: 0.8rem 0.6rem !important;
+        padding: 0.9rem 1.2rem !important;
     }
 
     .event-btn.p-big {
-        padding: 0.8rem 1.2rem !important;
+        padding: 0.9rem 2rem !important;
     }
 
     .desc-info {

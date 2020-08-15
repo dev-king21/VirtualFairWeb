@@ -85,7 +85,7 @@ export default {
       formData.append('description', this.stand.description)
       if (this.logo_file) formData.append('logo', this.logo_file)
       
-      this.$http.post('/api/setting/my_stand/save_information', formData, headers)
+      this.$http.post('/api/setting/my_stand/information/save', formData, headers)
         .then((response) => {
           const data = response.data
           if (data.status === 'error') return console.log(data.msg)  
@@ -109,7 +109,7 @@ export default {
         })  
     },
     getInformation () { 
-      this.$http.post('/api/setting/my_stand/get_information')
+      this.$http.post('/api/setting/my_stand/information')
         .then((response) => {
           const data = response.data
           if (data.status === 'error') return console.log(data.msg)

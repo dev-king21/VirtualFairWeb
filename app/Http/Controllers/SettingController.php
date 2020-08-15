@@ -21,6 +21,7 @@ use App\BusinessCard;
 use App\File;
 use App\Portfolio;
 use App\User;
+use App\WebinarTicket;
 use Hash;
 
 class SettingController extends Controller
@@ -610,8 +611,16 @@ class SettingController extends Controller
       $res = array();
       $now = date("Y-m-d");
       $user = $request->user();
-      $res["reserved_webinars"] = Talk::where([["user_id", "=", $user->id], ["talk_date", ">=", $now]])->get();
-      $res["past_webinars"] = Talk::where([["user_id", "=", $user->id], ["talk_date", "<", $now]])->get();
+      $res["reserved_webinars"] = WebinarTicket::with(["talk"=> function($qr) {
+                                      $qr->with("user")->get(); 
+                                  }])->whereHas("talk", function($qr) use($now) { 
+                                      $qr->where("talk_date", ">=", $now); 
+                                  })->where("user_id", $user->id)->get();
+      $res["past_webinars"] = WebinarTicket::with(["talk"=> function($qr) { 
+                                      $qr->with("user")->get(); 
+                                  }])->whereHas("talk", function($qr) use($now) {
+                                      $qr->where("talk_date", "<", $now); 
+                                  })->where("user_id", $user->id)->get();
       
       return response()->json($res);
     }
@@ -636,7 +645,17 @@ class SettingController extends Controller
       return response()->json($res);
     }
 
-    public function get_contact_request(Request $request) {
+    public function get_my_contacts(Request $request) {
+      $res = array();
+      $uid = $request->user()->id;
+      $res["requests"] = ContactRequest::with(["stand" => function($qr){
+        $qr->with(["business_cards" => function($qr){ $qr->first();}])->select("id", "logo")->get();
+      }])->select("user_id", "stand_id")->where("user_id", $uid)->get();
+
+      return response()->json($res);  
+    }
+
+    public function get_contact_requests(Request $request) {
       $res = array();
       $uid = $request->user()->id;
       $res["requests"] = ContactRequest::with("requestor")->whereHas("stand", function($qr) use($uid) {

@@ -2,7 +2,7 @@
     <div class="w-full">
       <app-header activeItem="0"></app-header>
       <bread-crumb 
-          icon="MonitorIcon" text="networking" 
+          text="networking" 
           :avartar="true" 
           user_img="maintenance-2.png" 
           user_name="Felipe Alenso Guererro"/>

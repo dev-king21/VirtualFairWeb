@@ -310,7 +310,6 @@ var render = function() {
       _vm._v(" "),
       _c("bread-crumb", {
         attrs: {
-          icon: "MonitorIcon",
           text: "networking",
           avartar: true,
           user_img: "maintenance-2.png",

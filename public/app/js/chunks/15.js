@@ -65,6 +65,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -80,21 +87,38 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      today_schedules: [],
-      all_schedules: []
+      webinars: [],
+      today: ''
     };
   },
-  created: function created() {
-    var list = [];
-
-    for (var i = 0; i < 9; i++) {
-      list.push(i);
+  methods: {
+    period: function period(start_time, end_time) {
+      var sd = this.$date.timeFormat(start_time);
+      var ed = this.$date.timeFormat(end_time);
+      return "".concat(sd, " - ").concat(ed);
+    },
+    show: function show(id) {
+      console.log(id);
+    },
+    addToBoard: function addToBoard(id) {
+      this.$http.post('/api/room/webinar/add_to_board', {
+        _id: id
+      }).then(function (response) {
+        if (response.data.status === 'ok') {
+          console.log('ok');
+        }
+      });
     }
+  },
+  created: function created() {
+    var _this = this;
 
-    this.today_schedules = list.filter(function (it) {
-      return it < 3;
+    this.$http.post('/api/room/schedule').then(function (response) {
+      console.log(response.data);
+      var data = response.data;
+      _this.today = data.today;
+      _this.webinars = data.webinars;
     });
-    this.all_schedules = list;
   }
 });
 
@@ -181,6 +205,26 @@ __webpack_require__.r(__webpack_exports__);
     noborder: {
       type: Boolean,
       required: false
+    },
+    id: {
+      type: Number,
+      required: true
+    },
+    show: {
+      type: Function,
+      required: false
+    },
+    add: {
+      type: Function,
+      required: false
+    }
+  },
+  methods: {
+    showOrReserve: function showOrReserve() {
+      if (this.show && this.id) this.show(this.id);
+    },
+    addToBoard: function addToBoard() {
+      if (this.add && this.id) this.add(this.id);
     }
   }
 });
@@ -199,7 +243,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, "[dir] .room-schedule-main .page-content {\n  background: white;\n}\n.room-schedule-main .page-content .event-panel {\n  font-size: 0.8rem;\n  font-weight: 900;\n  color: #555;\n}\n[dir] .room-schedule-main .page-content .event-panel {\n  padding: 0 !important;\n}\n[dir=ltr] .room-schedule-main .page-content .event-panel {\n  border-right: 1px solid silver;\n}\n[dir=rtl] .room-schedule-main .page-content .event-panel {\n  border-left: 1px solid silver;\n}\n.room-schedule-main .page-content .event-panel .stroke-text {\n  color: transparent;\n  -webkit-text-fill-color: transparent;\n  -webkit-text-stroke-width: 1px;\n  -webkit-text-stroke-color: #EEEEEEEE;\n}\n.room-schedule-main .page-content .event-los-panel {\n  font-size: 0.8rem;\n  font-weight: 900;\n  color: #555;\n}\n[dir] .room-schedule-main .page-content .event-los-panel {\n  padding: 0 !important;\n}\n.room-schedule-main .page-content .event-los-panel .stroke-text {\n  color: transparent;\n  -webkit-text-fill-color: transparent;\n  -webkit-text-stroke-width: 1px;\n  -webkit-text-stroke-color: #EEEEEEEE;\n}\n[dir] .room-schedule-main .vx-row {\n  margin: 0 !important;\n}\n[dir] .room-schedule-main .vx-col {\n  padding: 0 !important;\n}", ""]);
+exports.push([module.i, "[dir] .room-schedule-main .page-content {\n  background: white;\n}\n.room-schedule-main .page-content .event-panel {\n  font-size: 0.8rem;\n  font-weight: 900;\n  color: #555;\n  min-height: calc(var(--vh, 1vh) * 100 - 162px);\n}\n[dir] .room-schedule-main .page-content .event-panel {\n  padding: 0 !important;\n}\n[dir=ltr] .room-schedule-main .page-content .event-panel {\n  border-right: 1px solid silver;\n}\n[dir=rtl] .room-schedule-main .page-content .event-panel {\n  border-left: 1px solid silver;\n}\n.room-schedule-main .page-content .event-panel .stroke-text {\n  color: transparent;\n  -webkit-text-fill-color: transparent;\n  -webkit-text-stroke-width: 1px;\n  -webkit-text-stroke-color: #EEEEEEEE;\n}\n.room-schedule-main .page-content .event-los-panel {\n  font-size: 0.8rem;\n  font-weight: 900;\n  color: #555;\n  min-height: calc(var(--vh, 1vh) * 100 - 162px);\n}\n[dir] .room-schedule-main .page-content .event-los-panel {\n  padding: 0 !important;\n}\n.room-schedule-main .page-content .event-los-panel .stroke-text {\n  color: transparent;\n  -webkit-text-fill-color: transparent;\n  -webkit-text-stroke-width: 1px;\n  -webkit-text-stroke-color: #EEEEEEEE;\n}\n[dir] .room-schedule-main .vx-row {\n  margin: 0 !important;\n}\n[dir] .room-schedule-main .vx-col {\n  padding: 0 !important;\n}", ""]);
 
 // exports
 
@@ -218,7 +262,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".room-schedule-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .room-schedule-card {\n  background: white;\n  margin: 1rem;\n}\n.room-schedule-card .reserved {\n  height: 1.6rem;\n}\n.room-schedule-card .reserved span {\n  font-size: 0.6rem;\n}\n[dir] .room-schedule-card .reserved span {\n  padding: 0.5rem;\n  background: #FFC700;\n}\n.room-schedule-card .user-img {\n  height: 4rem !important;\n  width: auto;\n}\n[dir] .room-schedule-card .user-img {\n  border-radius: 50%;\n  background-color: #33333355;\n}\n.room-schedule-card .event-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .room-schedule-card .event-btn {\n  padding: 0.8rem 0.6rem !important;\n}\n[dir] .room-schedule-card .event-btn.p-big {\n  padding: 0.8rem 1.2rem !important;\n}\n.room-schedule-card .desc-info {\n  font-size: 0.9rem;\n  font-style: italic;\n}\n[dir] .room-schedule-card .desc-info {\n  padding: 0 1rem;\n}\n.room-schedule-card .user-info {\n  font-size: 0.9rem;\n}\n[dir] .card-border {\n  border: 1px solid #E2E2E2;\n}", ""]);
+exports.push([module.i, ".room-schedule-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .room-schedule-card {\n  background: white;\n  margin: 1rem;\n}\n.room-schedule-card .reserved {\n  height: 1.6rem;\n}\n.room-schedule-card .reserved span {\n  font-size: 0.6rem;\n}\n[dir] .room-schedule-card .reserved span {\n  padding: 0.5rem;\n  background: #FFC700;\n}\n.room-schedule-card .user-img {\n  height: 4rem !important;\n  width: auto;\n}\n[dir] .room-schedule-card .user-img {\n  border-radius: 50%;\n  background-color: #33333355;\n}\n.room-schedule-card .event-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .room-schedule-card .event-btn {\n  padding: 0.9rem 1.2rem !important;\n}\n[dir] .room-schedule-card .event-btn.p-big {\n  padding: 0.9rem 2rem !important;\n}\n.room-schedule-card .desc-info {\n  font-size: 0.9rem;\n  font-style: italic;\n}\n[dir] .room-schedule-card .desc-info {\n  padding: 0 1rem;\n}\n.room-schedule-card .user-info {\n  font-size: 0.9rem;\n}\n[dir] .card-border {\n  border: 1px solid #E2E2E2;\n}", ""]);
 
 // exports
 
@@ -311,10 +355,10 @@ var render = function() {
         { staticClass: "w-full room-schedule-main" },
         [
           _c("bread-crumb", {
-            attrs: { icon: "BookIcon", text: "agenda del congreso" }
+            attrs: { icon: "topic", type: "svg", text: "agenda del congreso" }
           }),
           _vm._v(" "),
-          _c("div", { staticClass: "w-full" }, [
+          _c("div", { staticClass: "w-full h-full" }, [
             _c("div", { staticClass: "vx-row page-content" }, [
               _c(
                 "div",
@@ -325,22 +369,29 @@ var render = function() {
                 [
                   _vm._m(0),
                   _vm._v(" "),
-                  _vm._l(_vm.today_schedules, function(item, index) {
-                    return _c("schedule-card", {
-                      key: "today-schedule-" + index,
-                      attrs: {
-                        reserved: true,
-                        noborder: true,
-                        time: "5 pm - 6:00 pm",
-                        title:
-                          "Desarrollo de estrategias virtuales para desarrollo de marcas.",
-                        expositor_name: "Felipe Alenso Guererro",
-                        expositor_profession:
-                          "Especilista en estrategias de marcas",
-                        user_img: "maintenance-2.png"
-                      }
-                    })
-                  })
+                  _vm._l(
+                    _vm.webinars.filter(function(it) {
+                      return it.talk_date === _vm.today
+                    }),
+                    function(item, index) {
+                      return _c("schedule-card", {
+                        key: "today-schedule-" + index,
+                        attrs: {
+                          reserved: true,
+                          noborder: true,
+                          time: _vm.period(item.start_time, item.end_time),
+                          title: item.title,
+                          expositor_name:
+                            item.user.first_name + " " + item.user.last_name,
+                          expositor_profession: "" + item.user.address,
+                          user_img: "" + item.user.avatar,
+                          id: item.id,
+                          add: _vm.addToBoard,
+                          show: _vm.show
+                        }
+                      })
+                    }
+                  )
                 ],
                 2
               ),
@@ -383,7 +434,7 @@ var render = function() {
                   _c(
                     "div",
                     { staticClass: "vx-row" },
-                    _vm._l(_vm.all_schedules, function(item, index) {
+                    _vm._l(_vm.webinars, function(item, index) {
                       return _c(
                         "div",
                         {
@@ -393,14 +444,18 @@ var render = function() {
                         [
                           _c("schedule-card", {
                             attrs: {
-                              reserved: true,
-                              time: "5 pm - 6:00 pm",
-                              title:
-                                "Desarrollo de estrategias virtuales para desarrollo de marcas.",
-                              expositor_name: "Felipe Alenso Guererro",
-                              expositor_profession:
-                                "Especilista en estrategias de marcas",
-                              user_img: "maintenance-2.png"
+                              reserved: item.talk_date === _vm.today,
+                              time: _vm.period(item.start_time, item.end_time),
+                              title: item.title,
+                              expositor_name:
+                                item.user.first_name +
+                                " " +
+                                item.user.last_name,
+                              expositor_profession: "" + item.user.address,
+                              user_img: "" + item.user.avatar,
+                              id: item.id,
+                              add: _vm.addToBoard,
+                              show: _vm.show
                             }
                           })
                         ],
@@ -536,7 +591,7 @@ var render = function() {
       _c("div", { staticClass: "flex flex-row items-center mt-2 px-4" }, [
         _c("img", {
           staticClass: "user-img",
-          attrs: { src: __webpack_require__("./resources/app/assets/images/pages sync recursive ^\\.\\/.*$")("./" + _vm.user_img) }
+          attrs: { src: "/fair_image/" + _vm.user_img }
         }),
         _vm._v(" "),
         _c("div", { staticClass: "ml-4 user-info" }, [
@@ -550,15 +605,25 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "flex flex-row justify-between items-center mt-2" },
+        { staticClass: "flex flex-row justify-between items-center mt-4" },
         [
-          _c("vs-button", { staticClass: "cyan-light event-btn" }, [
-            _vm._v("\n            AGREGAR A MI AGENDA \n        ")
-          ]),
+          _c(
+            "vs-button",
+            {
+              staticClass: "cyan-light event-btn",
+              on: { click: _vm.addToBoard }
+            },
+            [_vm._v("\n            AGREGAR A MI TABLEO \n        ")]
+          ),
           _vm._v(" "),
-          _c("vs-button", { staticClass: "blue-light event-btn p-big" }, [
-            _vm._v("\n            INICIAR\n        ")
-          ])
+          _c(
+            "vs-button",
+            {
+              staticClass: "blue-light event-btn p-big",
+              on: { click: _vm.showOrReserve }
+            },
+            [_vm._v("\n            INICIAR\n        ")]
+          )
         ],
         1
       )

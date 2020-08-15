@@ -112,7 +112,7 @@ export default {
       return /\.(jpg|pdf)$/.test(file.name)
     },
     getBusinessCards () {
-      this.$http.post('/api/setting/my_stand/get_businesscards')
+      this.$http.post('/api/setting/my_stand/businesscard')
         .then((response) => {
             
           const data = response.data
@@ -156,7 +156,7 @@ export default {
       formData.append('stand_id', this.stand_id)
       formData.append('card_file', this.card_file)
       
-      this.$http.post('/api/setting/my_stand/save_businesscard', formData, headers)
+      this.$http.post('/api/setting/my_stand/businesscard/save', formData, headers)
         .then((response) => {
           if (response.data.status === 'ok') {
             this.$vs.notify({
@@ -171,7 +171,7 @@ export default {
         })
     },
     removeBusinessCard (id) {
-      this.$http.post('/api/setting/my_stand/remove_businesscard', {_id: id})
+      this.$http.post('/api/setting/my_stand/businesscard/remove', {_id: id})
         .then((response) => {
           if (response.data.status === 'ok') {
             this.$vs.notify({

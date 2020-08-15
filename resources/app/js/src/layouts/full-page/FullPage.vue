@@ -99,4 +99,35 @@ export default {
   font-size: 1.4rem !important;
 }
 
+.fs-16 {
+  font-size: 1.6rem !important;
+}
+
+.fs-20 {
+  font-size: 2rem !important;
+}
+
+.fs-24 {
+  font-size: 2.4rem !important;
+}
+
+.fs-28 {
+  font-size: 2.8rem !important;
+}
+
+.fs-32 {
+  font-size: 3.2rem !important;
+}
+
+.fs-36 {
+  font-size: 3.6rem !important;
+}
+
+.fs-40 {
+  font-size: 4rem !important;
+}
+
+.fs-52 {
+  font-size: 5.2rem !important;
+}
 </style>

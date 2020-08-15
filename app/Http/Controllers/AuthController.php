@@ -32,6 +32,8 @@ class AuthController extends Controller
                 'errors' => $v->errors()
             ], 422);
         }
+
+        
         
         $user = new User;
         $user->first_name = $request->post('first_name');
@@ -44,7 +46,11 @@ class AuthController extends Controller
         $user->email = $request->post('email');
         $user->type = $request->post('type');
         $user->password = bcrypt($request->post('password'));
-        
+        if (isset($request->avatar_file)) {
+            $b_fileName =  md5(time()).'.'.$request->avatar_file->extension();  
+            $request->avatar_file->move(public_path('fair_image'), $b_fileName);
+            $user->avatar = $b_fileName;
+        }
         $user->save();
         
         return response()->json(['status' => 'success'], 200);

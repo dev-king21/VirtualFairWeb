@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <app-header activeItem="3"></app-header>
-        <bread-crumb icon="MonitorIcon" text="contactenos" />
+        <bread-crumb text="contactenos" />
         <div class="flex w-full justify-center bg-white-grey home-contact-main">
             <div class="bg-white my-4 py-2 w-1/2 contact-form">
                 <div class="h1 text-center mt-8">

@@ -61,6 +61,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 
 
@@ -76,21 +78,36 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      today_schedules: [],
-      all_schedules: []
+      webinars: []
     };
   },
-  created: function created() {
-    var list = [];
-
-    for (var i = 0; i < 9; i++) {
-      list.push(i);
+  methods: {
+    period: function period(start_time, end_time) {
+      var sd = this.$date.timeFormat(start_time);
+      var ed = this.$date.timeFormat(end_time);
+      return "".concat(sd, " - ").concat(ed);
+    },
+    show: function show(id) {
+      this.$router.push("/room/webinar/".concat(id));
+    },
+    addToBoard: function addToBoard(id) {
+      this.$http.post('/api/room/webinar/add_to_board', {
+        _id: id
+      }).then(function (response) {
+        if (response.data.status === 'ok') {
+          console.log('ok');
+        }
+      });
     }
+  },
+  created: function created() {
+    var _this = this;
 
-    this.today_schedules = list.filter(function (it) {
-      return it < 3;
+    this.$http.post('/api/room/webinar').then(function (response) {
+      console.log(response.data);
+      var data = response.data;
+      _this.webinars = data.webinars;
     });
-    this.all_schedules = list;
   }
 });
 
@@ -156,17 +173,13 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       required: true
     },
-    expositor_company: {
+    expositor_name: {
       type: String,
       required: true
     },
     expositor_profession: {
       type: String,
       required: true
-    },
-    reserved: {
-      type: Boolean,
-      required: false
     },
     user_img: {
       type: String,
@@ -179,6 +192,26 @@ __webpack_require__.r(__webpack_exports__);
     workdate: {
       type: String,
       required: true
+    },
+    id: {
+      type: Number,
+      required: true
+    },
+    show: {
+      type: Function,
+      required: false
+    },
+    add: {
+      type: Function,
+      required: false
+    }
+  },
+  methods: {
+    showWebinar: function showWebinar() {
+      if (this.show && this.id) this.show(this.id);
+    },
+    addToBoard: function addToBoard() {
+      if (this.add && this.id) this.add(this.id);
     }
   }
 });
@@ -197,7 +230,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, "[dir] .room-webinar-main .page-content {\n  background: white;\n}\n.room-webinar-main .page-content .event-panel {\n  font-size: 0.8rem;\n  font-weight: 900;\n  color: #555;\n}\n[dir] .room-webinar-main .page-content .event-panel {\n  padding: 0 !important;\n}\n[dir] .room-webinar-main .page-content .event-panel .chevron-border {\n  border: 1px solid #f2f2f2;\n  border-radius: 0.5rem;\n  padding: 0.4rem;\n}\n.room-webinar-main .page-content .event-los-panel {\n  font-size: 0.8rem;\n  font-weight: 900;\n  color: #555;\n}\n[dir] .room-webinar-main .page-content .event-los-panel {\n  padding: 0 !important;\n}\n.room-webinar-main .page-content .event-los-panel .stroke-text {\n  color: transparent;\n  -webkit-text-fill-color: transparent;\n  -webkit-text-stroke-width: 1px;\n  -webkit-text-stroke-color: #EEEEEEEE;\n}\n[dir] .room-webinar-main .vx-row {\n  margin: 0 !important;\n}\n[dir] .room-webinar-main .vx-col {\n  padding: 0 !important;\n}", ""]);
+exports.push([module.i, "[dir] .room-webinar-main .page-content {\n  background: white;\n}\n.room-webinar-main .page-content .event-panel {\n  font-size: 0.8rem;\n  font-weight: 900;\n  color: #555;\n  min-height: calc(var(--vh, 1vh) * 100 - 150px);\n}\n[dir] .room-webinar-main .page-content .event-panel {\n  padding: 0 !important;\n}\n[dir] .room-webinar-main .page-content .event-panel .chevron-border {\n  border: 1px solid #f2f2f2;\n  border-radius: 0.5rem;\n  padding: 0.4rem;\n}\n.room-webinar-main .page-content .event-los-panel {\n  font-size: 0.8rem;\n  font-weight: 900;\n  color: #555;\n  min-height: calc(var(--vh, 1vh) * 100 - 150px);\n}\n[dir] .room-webinar-main .page-content .event-los-panel {\n  padding: 0 !important;\n}\n[dir] .room-webinar-main .vx-row {\n  margin: 0 !important;\n}\n[dir] .room-webinar-main .vx-col {\n  padding: 0 !important;\n}", ""]);
 
 // exports
 
@@ -216,7 +249,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".room-webinar-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .room-webinar-card {\n  background: white;\n  margin: 1rem;\n}\n.room-webinar-card .reserved {\n  height: 1.6rem;\n}\n.room-webinar-card .reserved span {\n  font-size: 0.6rem;\n}\n[dir] .room-webinar-card .reserved span {\n  padding: 0.5rem;\n  background: #FFC700;\n}\n.room-webinar-card .user-img {\n  height: 4rem !important;\n  width: auto;\n}\n[dir] .room-webinar-card .user-img {\n  border-radius: 50%;\n  background-color: #33333355;\n}\n.room-webinar-card .event-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .room-webinar-card .event-btn {\n  padding: 0.8rem 0.6rem !important;\n}\n[dir] .room-webinar-card .event-btn.p-big {\n  padding: 0.8rem 1.2rem !important;\n}\n.room-webinar-card .desc-info {\n  font-size: 0.9rem;\n  font-style: italic;\n}\n[dir] .room-webinar-card .desc-info {\n  padding: 0 1rem;\n}\n.room-webinar-card .user-info {\n  font-size: 0.9rem;\n}\n.room-webinar-card .card-over {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  bottom: 0;\n}\n[dir=ltr] .room-webinar-card .card-over {\n  left: 0;\n}\n[dir=rtl] .room-webinar-card .card-over {\n  right: 0;\n}\n[dir] .room-webinar-card .card-over .card-title {\n  background: #33333355;\n  padding: 0.6rem;\n}\n[dir] .room-webinar-card .card-img {\n  background: #000000AA;\n}\n[dir] .card-border {\n  border: 1px solid #F2F2F2;\n}", ""]);
+exports.push([module.i, ".room-webinar-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .room-webinar-card {\n  background: white;\n  margin: 1rem;\n}\n.room-webinar-card .user-img {\n  height: 4rem !important;\n  width: auto;\n}\n[dir] .room-webinar-card .user-img {\n  border-radius: 50%;\n  background-color: #33333355;\n}\n.room-webinar-card .event-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .room-webinar-card .event-btn {\n  padding: 1rem 1.2rem !important;\n}\n[dir] .room-webinar-card .event-btn.p-big {\n  padding: 1rem 2rem !important;\n}\n.room-webinar-card .desc-info {\n  font-size: 0.9rem;\n  font-style: italic;\n}\n[dir] .room-webinar-card .desc-info {\n  padding: 0 1rem;\n}\n.room-webinar-card .user-info {\n  font-size: 0.9rem;\n}\n.room-webinar-card .card-over {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  bottom: 0;\n}\n[dir=ltr] .room-webinar-card .card-over {\n  left: 0;\n}\n[dir=rtl] .room-webinar-card .card-over {\n  right: 0;\n}\n[dir] .room-webinar-card .card-over .card-title {\n  background: #33333355;\n  padding: 0.6rem;\n}\n[dir] .room-webinar-card .card-img {\n  background: #000000AA;\n}\n[dir] .card-border {\n  border: 1px solid #F2F2F2;\n}", ""]);
 
 // exports
 
@@ -309,7 +342,7 @@ var render = function() {
         { staticClass: "w-full room-webinar-main" },
         [
           _c("bread-crumb", {
-            attrs: { icon: "MonitorIcon", text: "webinar" }
+            attrs: { icon: "webinar", type: "svg", text: "webinar" }
           }),
           _vm._v(" "),
           _c("div", { staticClass: "w-full bg-white-grey" }, [
@@ -388,7 +421,7 @@ var render = function() {
                   _c(
                     "div",
                     { staticClass: "vx-row" },
-                    _vm._l(_vm.all_schedules, function(item, index) {
+                    _vm._l(_vm.webinars, function(item, index) {
                       return _c(
                         "div",
                         {
@@ -402,15 +435,21 @@ var render = function() {
                             [
                               _c("webinar-card", {
                                 attrs: {
-                                  reserved: true,
-                                  workdate: "01 DE AGOSTO",
-                                  time: "5 pm - 6:00 pm",
-                                  title:
-                                    "Desarrollo de estrategias virtuales para desarrollo de marcas.",
-                                  expositor_company: "Felipe Alenso Guererro",
-                                  expositor_profession:
-                                    "Especilista en estrategias de marcas",
-                                  user_img: "maintenance-2.png"
+                                  workdate: item.talk_date,
+                                  time: _vm.period(
+                                    item.start_time,
+                                    item.end_time
+                                  ),
+                                  title: item.title,
+                                  expositor_name:
+                                    item.user.first_name +
+                                    " " +
+                                    item.user.last_name,
+                                  expositor_profession: "" + item.user.address,
+                                  user_img: "" + item.user.avatar,
+                                  id: item.id,
+                                  show: _vm.show,
+                                  add: _vm.addToBoard
                                 }
                               })
                             ],
@@ -553,12 +592,12 @@ var render = function() {
       _c("div", { staticClass: "flex flex-row items-center mt-2 px-4" }, [
         _c("img", {
           staticClass: "user-img",
-          attrs: { src: __webpack_require__("./resources/app/assets/images/pages sync recursive ^\\.\\/.*$")("./" + _vm.user_img) }
+          attrs: { src: "/fair_image/" + _vm.user_img }
         }),
         _vm._v(" "),
         _c("div", { staticClass: "ml-4 user-info" }, [
           _c("div", { staticClass: "h6 font-bold" }, [
-            _vm._v("Lic. " + _vm._s(_vm.expositor_company))
+            _vm._v("Lic. " + _vm._s(_vm.expositor_name))
           ]),
           _vm._v(" "),
           _c("div", [_vm._v(_vm._s(_vm.expositor_profession))])
@@ -567,15 +606,33 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "flex flex-row justify-between items-center mt-2" },
+        { staticClass: "flex flex-row justify-between items-center mt-6" },
         [
-          _c("vs-button", { staticClass: "cyan-dark event-btn" }, [
-            _vm._v("\n            AGREGAR A MI AGENDA \n        ")
-          ]),
+          _c(
+            "vs-button",
+            {
+              staticClass: "cyan-dark event-btn",
+              on: {
+                click: function($event) {
+                  return _vm.addToBoard()
+                }
+              }
+            },
+            [_vm._v("\n            AGREGAR A MI TABLEO \n        ")]
+          ),
           _vm._v(" "),
-          _c("vs-button", { staticClass: "blue-dark event-btn p-big" }, [
-            _vm._v("\n            INICIAR\n        ")
-          ])
+          _c(
+            "vs-button",
+            {
+              staticClass: "blue-dark event-btn p-big",
+              on: {
+                click: function($event) {
+                  return _vm.showWebinar()
+                }
+              }
+            },
+            [_vm._v("\n            VER\n        ")]
+          )
         ],
         1
       )

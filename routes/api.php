@@ -25,36 +25,54 @@ Route::any('/init_setting', 'SettingController@dummyCreate');
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('users', 'UserController@index')->middleware('isAdmin');
     Route::get('users/{id}', 'UserController@show')->middleware('isAdminOrSelf');
-
+    
     Route::get('/fair/get_current_stands', 'FairController@get_stands');
+    Route::get('/fair/sponsor', 'FairController@get_sponsors');
+    Route::post('/fair/sponsor/request', 'FairController@sponsor_request');
     Route::post('/stand/purchase', 'FairController@purchase_stand');
+    Route::post('/stand/home', 'StandController@get_stand');
+    Route::post('/stand/information', 'StandController@get_information');
+    Route::post('/stand/brochure', 'StandController@get_brochures');
+    Route::post('/stand/brochure/download', 'StandController@download_brochure');
+    Route::post('/stand/gallery', 'StandController@get_gallery');
+    Route::post('/stand/gallery/download', 'StandController@download_gallery');
+    Route::post('/stand/businesscard', 'StandController@get_businesscards');
+    Route::post('/stand/appointment', 'StandController@get_available_times'); 
+    Route::post('/stand/appointment/save', 'StandController@save_appointment'); 
 
     Route::post('/setting/my_stand', 'SettingController@get_my_stand');
     Route::post('/setting/my_stand/save_content', 'SettingController@save_content');
     Route::post('/setting/my_stand/remove_content', 'SettingController@remove_content');
     Route::post('/setting/my_stand/save_contact', 'SettingController@save_contact');
     
-    Route::post('/setting/my_stand/get_information', 'SettingController@get_information');
-    Route::post('/setting/my_stand/save_information', 'SettingController@save_information');
+    Route::post('/setting/my_stand/information', 'SettingController@get_information');
+    Route::post('/setting/my_stand/information/save', 'SettingController@save_information');
     
-    Route::post('/setting/my_stand/get_brochures', 'SettingController@get_brochures');
-    Route::post('/setting/my_stand/save_brochure', 'SettingController@save_brochure');
-    Route::post('/setting/my_stand/remove_brochure', 'SettingController@remove_brochure');
+    Route::post('/setting/my_stand/brochure', 'SettingController@get_brochures');
+    Route::post('/setting/my_stand/brochure/save', 'SettingController@save_brochure');
+    Route::post('/setting/my_stand/brochure/remove', 'SettingController@remove_brochure');
     
-    Route::post('/setting/my_stand/get_gallery', 'SettingController@get_gallery');
-    Route::post('/setting/my_stand/save_gallery', 'SettingController@save_gallery');
-    Route::post('/setting/my_stand/remove_gallery', 'SettingController@remove_gallery');
+    Route::post('/setting/my_stand/gallery', 'SettingController@get_gallery');
+    Route::post('/setting/my_stand/gallery/save', 'SettingController@save_gallery');
+    Route::post('/setting/my_stand/gallery/remove', 'SettingController@remove_gallery');
 
-    Route::post('/setting/my_stand/get_businesscards', 'SettingController@get_businesscards');
-    Route::post('/setting/my_stand/save_businesscard', 'SettingController@save_businesscard');
-    Route::post('/setting/my_stand/remove_businesscard', 'SettingController@remove_businesscard');
+    Route::post('/setting/my_stand/businesscard', 'SettingController@get_businesscards');
+    Route::post('/setting/my_stand/businesscard/save', 'SettingController@save_businesscard');
+    Route::post('/setting/my_stand/businesscard/remove', 'SettingController@remove_businesscard');
     Route::post('/setting/my_stand/schedule', 'SettingController@get_stand_schedule'); 
 
     Route::post('/setting/schedule', 'SettingController@get_schedule');
     Route::post('/setting/download', 'SettingController@get_download');
-    Route::post('/setting/contact_request', 'SettingController@get_contact_request');
+    Route::post('/setting/contacts', 'SettingController@get_my_contacts');
+    Route::post('/setting/contact_request', 'SettingController@get_contact_requests');
     Route::post('/setting/webinar', 'SettingController@get_my_webinars');
 
+    Route::post('/room/schedule', 'TalkController@get_schedule');
+    Route::post('/room/webinar', 'TalkController@get_webinars');
+
+    Route::post('/room/webinar/show', 'TalkController@get_webinar');
+    Route::post('/room/webinar/download', 'TalkController@download_webinar');
+    Route::post('/room/webinar/add_to_board', 'TalkController@add_to_board_webinar');
 
 });
 

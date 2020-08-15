@@ -50,7 +50,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, "[dir] .layout--full-page .vs-button {\n  border-radius: 0 !important;\n}\n[dir] .cyan-light {\n  background: #8BAFB6 !important;\n}\n[dir] .cyan-dark {\n  background: #00818D !important;\n}\n[dir] .blue-light {\n  background: #164A8B !important;\n}\n[dir] .blue-dark {\n  background: #123058 !important;\n}\n[dir] .yellow-light {\n  background: #FFC700 !important;\n}\n[dir] .yellow-dark {\n  background: #FA712A !important;\n}\n[dir] .green-light {\n  background: #009D00 !important;\n}\n[dir] .grey-real {\n  background: #AEB4C2 !important;\n}\n.font-italic {\n  font-style: italic;\n}\n.uppercase {\n  text-transform: uppercase;\n}\n.fs-4 {\n  font-size: 0.4rem !important;\n}\n.fs-6 {\n  font-size: 0.6rem !important;\n}\n.fs-7 {\n  font-size: 0.7rem !important;\n}\n.fs-8 {\n  font-size: 0.8rem !important;\n}\n.fs-10 {\n  font-size: 1rem !important;\n}\n.fs-12 {\n  font-size: 1.2rem !important;\n}\n.fs-14 {\n  font-size: 1.4rem !important;\n}", ""]);
+exports.push([module.i, "[dir] .layout--full-page .vs-button {\n  border-radius: 0 !important;\n}\n[dir] .cyan-light {\n  background: #8BAFB6 !important;\n}\n[dir] .cyan-dark {\n  background: #00818D !important;\n}\n[dir] .blue-light {\n  background: #164A8B !important;\n}\n[dir] .blue-dark {\n  background: #123058 !important;\n}\n[dir] .yellow-light {\n  background: #FFC700 !important;\n}\n[dir] .yellow-dark {\n  background: #FA712A !important;\n}\n[dir] .green-light {\n  background: #009D00 !important;\n}\n[dir] .grey-real {\n  background: #AEB4C2 !important;\n}\n.font-italic {\n  font-style: italic;\n}\n.uppercase {\n  text-transform: uppercase;\n}\n.fs-4 {\n  font-size: 0.4rem !important;\n}\n.fs-6 {\n  font-size: 0.6rem !important;\n}\n.fs-7 {\n  font-size: 0.7rem !important;\n}\n.fs-8 {\n  font-size: 0.8rem !important;\n}\n.fs-10 {\n  font-size: 1rem !important;\n}\n.fs-12 {\n  font-size: 1.2rem !important;\n}\n.fs-14 {\n  font-size: 1.4rem !important;\n}\n.fs-16 {\n  font-size: 1.6rem !important;\n}\n.fs-20 {\n  font-size: 2rem !important;\n}\n.fs-24 {\n  font-size: 2.4rem !important;\n}\n.fs-28 {\n  font-size: 2.8rem !important;\n}\n.fs-32 {\n  font-size: 3.2rem !important;\n}\n.fs-36 {\n  font-size: 3.6rem !important;\n}\n.fs-40 {\n  font-size: 4rem !important;\n}\n.fs-52 {\n  font-size: 5.2rem !important;\n}", ""]);
 
 // exports
 
@@ -259,7 +259,21 @@ __webpack_require__.r(__webpack_exports__);
   register: function register(_ref2, payload) {
     var commit = _ref2.commit;
     return new Promise(function (resolve, reject) {
-      _http_axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/auth/register', JSON.parse(JSON.stringify(payload))).then(function (response) {
+      var user = JSON.parse(JSON.stringify(payload));
+      var headers = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      };
+      console.log(user);
+      var formData = new FormData();
+
+      for (var key in user) {
+        formData.append(key, user[key]);
+      }
+
+      formData.append('avatar_file', payload.avatar_file);
+      _http_axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/auth/register', formData, headers).then(function (response) {
         resolve(response);
       })["catch"](function (error) {
         reject(error);

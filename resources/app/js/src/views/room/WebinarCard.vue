@@ -22,18 +22,18 @@
             </span>
         </div>
         <div class="flex flex-row items-center mt-2 px-4">
-            <img class="user-img" :src="require(`@assets/images/pages/${user_img}`)"/>
+            <img class="user-img" :src="`/fair_image/${user_img}`"/>
             <div class="ml-4 user-info">
-                <div class="h6 font-bold">Lic. {{expositor_company}}</div>
+                <div class="h6 font-bold">Lic. {{expositor_name}}</div>
                 <div>{{expositor_profession}}</div>
             </div>
         </div>
-        <div class="flex flex-row justify-between items-center mt-2">
-            <vs-button class="cyan-dark event-btn">
-                AGREGAR A MI AGENDA 
+        <div class="flex flex-row justify-between items-center mt-6">
+            <vs-button @click="addToBoard()" class="cyan-dark event-btn">
+                AGREGAR A MI TABLEO 
             </vs-button>
-            <vs-button class="blue-dark event-btn p-big">
-                INICIAR
+            <vs-button class="blue-dark event-btn p-big" @click="showWebinar()">
+                VER
             </vs-button>
         </div>
         <!-- <vs-divider class="px-2" /> -->
@@ -50,17 +50,13 @@ export default {
       type: String,
       required: true
     },
-    expositor_company: {
+    expositor_name: {
       type: String,
       required: true
     },
     expositor_profession: {
       type: String,
       required: true
-    },
-    reserved: {
-      type: Boolean,
-      required: false
     },
     user_img: {
       type: String,
@@ -73,6 +69,26 @@ export default {
     workdate: {
       type: String,
       required: true  
+    },
+    id: {
+      type: Number,
+      required: true
+    },
+    show: {
+      type: Function,
+      required: false  
+    },
+    add: {
+      type: Function,
+      required: false  
+    }
+  },
+  methods: {
+    showWebinar () {
+      if (this.show && this.id) this.show(this.id)  
+    },
+    addToBoard () {
+      if (this.add && this.id) this.add(this.id)  
     }
   }
 }
@@ -83,15 +99,7 @@ export default {
     margin: 1rem;
     font-size: 1rem;
     font-weight: normal;
-    .reserved {
-        height: 1.6rem;
-        span {
-            font-size: 0.6rem;
-            padding: 0.5rem;
-            background: #FFC700
-        }
-    }
-
+    
     .user-img {
         border-radius: 50%;
         background-color: #33333355;
@@ -101,13 +109,13 @@ export default {
 
     .event-btn {
         font-size: 0.8rem !important;
-        padding: 0.8rem 0.6rem !important;
+        padding: 1rem 1.2rem !important;
     }
-
+    
     .event-btn.p-big {
-        padding: 0.8rem 1.2rem !important;
-    }
-
+        padding: 1rem 2rem !important;
+    } 
+    
     .desc-info {
         font-size: 0.9rem;
         padding: 0 1rem;

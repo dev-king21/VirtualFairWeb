@@ -33,65 +33,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -101,42 +42,14 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      contacts: [],
-      detailShow: false,
-      active_item: null
+      contacts: []
     };
   },
-  methods: {
-    openDetail: function openDetail(idx) {
-      this.active_item = this.contacts.find(function (it) {
-        return it.id === idx;
-      });
-      this.detailShow = true;
-    }
-  },
+  methods: {},
   created: function created() {
     var _this = this;
 
-    var list = [];
-
-    for (var i = 0; i < 9; i++) {
-      var item = {
-        name: 'Karla Loazia Brenes',
-        email: 'kibrenes@gropohouse.com',
-        phone: '5064567-6789',
-        profession: 'Jefa de Proyectors',
-        company: 'Grupo House',
-        country: 'Costa Rica',
-        resion: 'San Jose',
-        concern: 'Diseno del Espacio',
-        active: i === 0,
-        id: i
-      };
-      list.push(item);
-    }
-
-    this.contacts = list;
-    this.$http.post('/api/setting/contact_request').then(function (response) {
+    this.$http.post('/api/setting/contacts').then(function (response) {
       var data = response.data;
       console.log(data);
       _this.contacts = data.requests;
@@ -158,7 +71,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".setting-contact-main {\n  min-height: calc(var(--vh, 1vh) * 100 - 150px);\n}\n.setting-contact-main .link-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .setting-contact-main .link-btn {\n  padding: 0.4rem 0.6rem !important;\n  border-radius: 0.9rem !important;\n}\n[dir] .setting-contact-main .vs-con-table {\n  background: #8BAFB6;\n}\n[dir] .setting-contact-main .vs-con-table .vs-con-tbody {\n  border: 0 !important;\n}\n.setting-contact-main .vs-con-table .vs-con-tbody .vs-table--thead tr {\n  color: white;\n}\n[dir] .setting-contact-main .vs-con-table .vs-con-tbody .vs-table--thead tr {\n  background: #164A8B !important;\n}\n.setting-contact-main .vs-con-table .vs-con-tbody .vs-table--thead tr .vs-table-text {\n  justify-content: center;\n  font-size: 1rem !important;\n}\n[dir] .setting-contact-main .vs-con-table .vs-con-tbody .vs-table--thead tr .vs-table-text {\n  text-align: center;\n  padding: 0.6rem !important;\n}\n.setting-contact-main .vs-con-table .vs-con-tbody .tr-values {\n  /* border: 1px solid silver; */\n}\n[dir] .setting-contact-main .vs-con-table .vs-con-tbody .tr-values {\n  background: none !important;\n}\n[dir] .setting-contact-main .vs-con-table .vs-con-tbody .tr-values td {\n  text-align: center;\n  padding: 15px !important;\n}\n.contact-popup .vs-popup--header {\n  display: none !important;\n}\n.contact-popup .vs-popup--content {\n  width: 100% !important;\n}\n[dir] .contact-popup .vs-popup--content {\n  padding: 0 !important;\n  margin-top: 0 !important;\n}", ""]);
+exports.push([module.i, ".setting-stand-brochure {\n  min-height: calc(var(--vh, 1vh) * 100 - 152px);\n}\n[dir] .setting-stand-brochure .vx-row {\n  margin: 0 !important;\n}\n[dir] .setting-stand-brochure .vx-col {\n  padding: 0 !important;\n}", ""]);
 
 // exports
 
@@ -217,270 +130,52 @@ var render = function() {
       _c("app-header", { attrs: { activeItem: "0" } }),
       _vm._v(" "),
       _c("bread-crumb", {
-        attrs: {
-          icon: "address-book",
-          type: "svg",
-          text: "mis contactors",
-          second: true,
-          second_icon: "DownloadIcon",
-          second_text: "Descargar todos los contactos"
-        }
+        attrs: { icon: "address-book", type: "svg", text: "MIS CONTACTOS" }
       }),
       _vm._v(" "),
       _c(
         "div",
-        {
-          staticClass: "flex w-full flex-col bg-white-grey setting-contact-main"
-        },
+        { staticClass: "w-full setting-stand-brochure bg-white-grey" },
         [
-          _c(
-            "div",
-            { staticClass: "bg-white" },
-            [
-              _c(
-                "div",
-                [
-                  _c(
-                    "vs-table",
-                    {
-                      attrs: { data: _vm.contacts },
-                      scopedSlots: _vm._u([
-                        {
-                          key: "default",
-                          fn: function(ref) {
-                            var data = ref.data
-                            return _vm._l(data, function(tr, indextr) {
-                              return _c(
-                                "vs-tr",
-                                { key: indextr },
-                                [
-                                  _c("vs-td", [
-                                    _vm._v(
-                                      "\n                        " +
-                                        _vm._s(
-                                          data[indextr].requestor.first_name
-                                        ) +
-                                        " " +
-                                        _vm._s(
-                                          data[indextr].requestor.last_name
-                                        ) +
-                                        "\n                        "
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("vs-td", [
-                                    _vm._v(
-                                      "\n                        " +
-                                        _vm._s(data[indextr].requestor.email) +
-                                        "\n                        "
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("vs-td", [
-                                    _vm._v(
-                                      "\n                        " +
-                                        _vm._s(data[indextr].requestor.phone) +
-                                        "\n                        "
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("vs-td", [
-                                    _vm._v(
-                                      "\n                        " +
-                                        _vm._s(
-                                          data[indextr].requestor.address
-                                        ) +
-                                        "\n                        "
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("vs-td", [
-                                    _vm._v(
-                                      "\n                        " +
-                                        _vm._s(
-                                          data[indextr].requestor.company
-                                        ) +
-                                        "\n                        "
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("vs-td", [
-                                    _vm._v(
-                                      "\n                        " +
-                                        _vm._s(
-                                          data[indextr].requestor.country
-                                        ) +
-                                        "\n                        "
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c(
-                                    "vs-td",
-                                    [
-                                      _c(
-                                        "vs-button",
-                                        {
-                                          staticClass: "link-btn",
-                                          class: !data[indextr].active
-                                            ? "cyan-dark"
-                                            : "grey-real",
-                                          attrs: { type: "filled" },
-                                          on: {
-                                            click: function($event) {
-                                              return _vm.openDetail(
-                                                data[indextr].id
-                                              )
-                                            }
-                                          }
-                                        },
-                                        [
-                                          _vm._v(
-                                            "\n                            VER MAS\n                        "
-                                          )
-                                        ]
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            })
-                          }
-                        }
-                      ])
-                    },
-                    [
-                      _c(
-                        "template",
-                        { slot: "thead" },
-                        [
-                          _c("vs-th", [_vm._v("NOMBRE")]),
-                          _vm._v(" "),
-                          _c("vs-th", [_vm._v("EMAIL")]),
-                          _vm._v(" "),
-                          _c("vs-th", [_vm._v("TEL")]),
-                          _vm._v(" "),
-                          _c("vs-th", [_vm._v("PUESTO")]),
-                          _vm._v(" "),
-                          _c("vs-th", [_vm._v("COMPANIA")]),
-                          _vm._v(" "),
-                          _c("vs-th", [_vm._v("PAIS")]),
-                          _vm._v(" "),
-                          _c("vs-th")
-                        ],
-                        1
-                      )
-                    ],
-                    2
-                  )
-                ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "vs-popup",
-                {
-                  staticClass: "contact-popup",
-                  attrs: { title: "", active: _vm.detailShow },
-                  on: {
-                    "update:active": function($event) {
-                      _vm.detailShow = $event
-                    }
-                  }
-                },
-                [
-                  _c(
-                    "div",
-                    { staticClass: "flex justify-end text-white text-right" },
-                    [
-                      _c(
-                        "div",
-                        {
-                          staticClass: "bg-cyan-dark",
-                          staticStyle: { padding: "10px 24px" }
-                        },
-                        [_vm._v("CONTACTOR POR TELEFONO")]
-                      )
-                    ]
-                  ),
-                  _vm._v(" "),
-                  _vm.active_item
-                    ? _c("div", { staticClass: "px-20 mt-8" }, [
-                        _c("div", { staticClass: "mb-3 font-italic" }, [
-                          _vm._v(
-                            "Nombre: " +
-                              _vm._s(_vm.active_item.requestor.first_name) +
-                              " " +
-                              _vm._s(_vm.active_item.requestor.last_name)
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mb-3 font-italic" }, [
-                          _vm._v(
-                            "Email: " + _vm._s(_vm.active_item.requestor.email)
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mb-3 font-italic" }, [
-                          _vm._v(
-                            "Telefono: " +
-                              _vm._s(_vm.active_item.requestor.phone)
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mb-3 font-italic" }, [
-                          _vm._v(
-                            "Posicion: " +
-                              _vm._s(_vm.active_item.requestor.address)
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mb-3 font-italic" }, [
-                          _vm._v(
-                            "Compania: " +
-                              _vm._s(_vm.active_item.requestor.company)
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mb-3 font-italic" }, [
-                          _vm._v(
-                            "Pais: " + _vm._s(_vm.active_item.requestor.country)
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mb-3 font-italic" }, [
-                          _vm._v(
-                            "Region: " +
-                              _vm._s(_vm.active_item.requestor.region)
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "mb-16 font-italic" }, [
-                          _vm._v(
-                            "Area de interes: " +
-                              _vm._s(_vm.active_item.requestor.concern)
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", [
-                          _vm._v(
-                            "\n                        Mensaje de contacto\n                    "
-                          )
-                        ]),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "m-10" }, [
-                          _vm._v(
-                            "\n                        Me gustaria que me contacten para que me den mas detalles del proyector que estan desarrollando en Moravia    \n                    "
-                          )
-                        ])
-                      ])
-                    : _vm._e()
-                ]
-              )
-            ],
-            1
-          )
+          _c("div", { staticClass: "w-full px-20 pb-4 mt-4" }, [
+            _c(
+              "div",
+              { staticClass: "vx-row w-full" },
+              _vm._l(_vm.contacts, function(item, index) {
+                return _c(
+                  "div",
+                  { key: "catalog-item-" + index, staticClass: "vx-col w-1/3" },
+                  [
+                    _c(
+                      "div",
+                      { staticClass: "mx-8 my-4" },
+                      [
+                        item.stand.business_cards.length
+                          ? [
+                              _c("img", {
+                                staticClass: "responsive",
+                                attrs: {
+                                  src:
+                                    "/fair_image/" +
+                                    item.stand.business_cards[0].url
+                                }
+                              })
+                            ]
+                          : [
+                              _c("img", {
+                                staticClass: "responsive",
+                                attrs: { src: "/fair_image/" + item.stand.logo }
+                              })
+                            ]
+                      ],
+                      2
+                    )
+                  ]
+                )
+              }),
+              0
+            )
+          ])
         ]
       )
     ],

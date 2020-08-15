@@ -22,7 +22,19 @@ export default {
   },
   register ({commit}, payload) {
     return new Promise((resolve, reject) => {
-      axios.post('/api/auth/register', JSON.parse(JSON.stringify(payload)))
+      const user = JSON.parse(JSON.stringify(payload))
+      const headers = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
+      console.log(user)
+      const formData = new FormData()
+      for (const key in user) {
+        formData.append(key, user[key])
+      }
+      formData.append('avatar_file', payload.avatar_file)
+      axios.post('/api/auth/register', formData, headers)
         .then(response => {
           resolve(response)
         })

@@ -10,14 +10,13 @@
                 </div>
                 <div class="vx-row">
                     <div class="vx-col lg:w-1/5 md:w-1/5 sm:w-1/5 xs:w-1/5"
-                        :key="`contact-item-${index}`" v-for="(item, index) in all_contacts">
+                        :key="`contact-item-${index}`" v-for="(item, index) in stands">
                         <div class="contact-item m-4">
                             <div class="text-center p-2">
-                                <img class="contact-logo" 
-                                :src="(index % 2 === 0)? require('@assets/images/pages/maintenance.png') : require('@assets/images/pages/maintenance-2.png')"/>
+                                <img class="contact-logo" :src="`/fair_image/${item.logo}`"/>
                             </div>
                             <div class="text-center my-3">
-                                <vs-button class="cyan-dark contact-btn">contactar</vs-button>
+                                <vs-button :to="`/fair/contact/${item.id}`" class="cyan-dark contact-btn">contactar</vs-button>
                             </div>
                         </div>
                     </div>
@@ -34,13 +33,17 @@ export default {
     AppHeader,
     BreadCrumb
   },
+  data () {
+    return {
+      stands: []  
+    }  
+  },
   created () {
-    const list = []
-    for (let i = 0; i < 9; i++) {
-      list.push(i)
-    }
     
-    this.all_contacts = list
+    this.$http.get('/api/fair/sponsor')
+      .then((response) => {
+        this.stands = response.data.stands  
+      })
   }
     
 }

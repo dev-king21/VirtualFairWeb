@@ -31,10 +31,6 @@
           <a class="h3" href="/app/home/webinar">Webinars</a>
       </vs-navbar-item>
 
-      <vs-navbar-item index="2" v-show="!hideNavbar">
-          <a class="h3" href="/app/home/sponsor">patrocinadores</a>
-      </vs-navbar-item>
-
       <vs-navbar-item index="3" v-show="!hideNavbar">
           <a class="h3" href="/app/home/contact">Contactenos</a>
       </vs-navbar-item>
@@ -49,18 +45,21 @@
     </template>
     <template v-else>
       <vs-navbar-item index="0" v-show="!hideNavbar">
-          <a class="h3" href="/app/room">sostenibilidad</a>
+          <a class="h3" href="/app/home/sustainability">sostenibilidad</a>
       </vs-navbar-item>
-      <vs-navbar-item index="1" v-show="!hideNavbar">
-          <a class="h3" href="/app/fair">Contacteons</a>
+       <vs-navbar-item index="1" v-show="!hideNavbar">
+          <a class="h3" href="/app/home/sponsor">patrocinadores</a>
       </vs-navbar-item>
       <vs-navbar-item index="2" v-show="!hideNavbar">
+          <a class="h3" href="/app/home/contact">Contacteons</a>
+      </vs-navbar-item>
+      <vs-navbar-item index="3" v-show="!hideNavbar">
           <a class="h3 flex items-center cursor-pointer" href.prevent @click="logout()">
             <feather-icon svgClasses="w-5 h-5" icon="LogOutIcon"/>
             <span>Cerrar Session</span>
           </a>
       </vs-navbar-item>
-      <vs-navbar-item index="3" v-show="!hideNavbar">
+      <vs-navbar-item index="4" v-show="!hideNavbar">
           <a class="h3 setting-nav text-center"  href="/app/setting">
             <svg-icon size="w-8 h-8" icon="profile"/>
             <div class="h6 text-white">Mi Cuenta</div>

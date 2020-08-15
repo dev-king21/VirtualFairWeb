@@ -24,7 +24,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token', 'created_at', 'updated_at', 'type' , 'email_verified_at'
+        'password', 'remember_token', 'created_at', 'updated_at', 'email_verified_at'
     ];
 
     /**
@@ -54,6 +54,10 @@ class User extends Authenticatable
 
     public function gallery_downloads() {
         return $this->hasMany("App\GalleryDownload");
+    }
+
+    public function webinar_tickets() {
+        return $this->hasMany("App\WebinarTicket");
     }
 
     public function webinar_downloads() {

@@ -17,6 +17,9 @@ class CreateContactRequestsTable extends Migration
             $table->id();
             $table->integer("stand_id");
             $table->integer("user_id");
+            $table->integer("mail_request");
+            $table->text("phone_request");
+            $table->integer("contact_text");
             $table->timestamps();
         });
     }

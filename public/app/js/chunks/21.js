@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
       formData.append('company', this.stand.company);
       formData.append('description', this.stand.description);
       if (this.logo_file) formData.append('logo', this.logo_file);
-      this.$http.post('/api/setting/my_stand/save_information', formData, headers).then(function (response) {
+      this.$http.post('/api/setting/my_stand/information/save', formData, headers).then(function (response) {
         var data = response.data;
         if (data.status === 'error') return console.log(data.msg);
 
@@ -124,7 +124,7 @@ __webpack_require__.r(__webpack_exports__);
     getInformation: function getInformation() {
       var _this2 = this;
 
-      this.$http.post('/api/setting/my_stand/get_information').then(function (response) {
+      this.$http.post('/api/setting/my_stand/information').then(function (response) {
         var data = response.data;
         if (data.status === 'error') return console.log(data.msg);
 

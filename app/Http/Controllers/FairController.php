@@ -11,6 +11,7 @@ use App\StandLocation;
 use App\StandType;
 use App\StandTypeItem;
 use App\StandContent;
+use App\ContactRequest;
 
 class FairController extends Controller
 {
@@ -211,6 +212,52 @@ class FairController extends Controller
         $res["stand_type"] = StandLocation::with('stand_type') -> find($res["stand"]->stand_location_id)->stand_type;
         return response()->json($res);
 
+    }
+
+    public function get_sponsors(Request $request, $fair_id = 0, $country_id = 0) {
+        $res = array();
+        if ($fair_id == 0)
+        {
+            $now = date("y-m-d");
+            $query = [
+                ["start_date", "<=", $now], 
+                ["end_date", ">=", $now]
+            ]; 
+            $query["status"] = 1;
+            $res["fair"] = Fair::with('fair_type')->where($query)->first();
+            $fair_id = $res["fair"]->id;
+        } else 
+            $res["fair"] = Fair::with('fair_type')->find($fair_id);
+
+        if ($country_id == 0)
+        {
+            $res["country"] = Country::select('id', 'name', 'code')->where("status", 1)->first();
+            $country_id = $res["country"]->id;
+        } else
+            $res["country"] = Country::find($country_id);
+        
+        $res["stands"] = Stand::select(['id', 'logo', 'company'])->where([
+            "fair_id"=> $fair_id,
+            "country_id"=> $country_id,
+        ])->whereNotNull('user_id')->whereNotNull('logo')->whereNotNull('company')->get();
+
+        return response()->json($res); 
+    }
+
+    public function sponsor_request(Request $request) {
+        $res = array();
+
+        $user = $request->user();
+        $contactRequest = new ContactRequest;
+        $contactRequest->stand_id = $request->post("stand_id");
+        $contactRequest->user_id = $user->id;
+        $contactRequest->phone_request = $request->post("phone");
+        $contactRequest->mail_request = $request->post("mail");
+        $contactRequest->contact_text = $request->post("contact_text");
+        $contactRequest->save();
+
+        $res["status"] = "ok";
+        return response()->json($res); 
     }
 
     public function requestFair(Request $request) {
