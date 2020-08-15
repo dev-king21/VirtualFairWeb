@@ -487,7 +487,7 @@ var render = function() {
                   "div",
                   { staticClass: "flex flex-col py-12 w-full justify-center" },
                   [
-                    _vm.user.type === "user"
+                    _vm.user.type !== "user"
                       ? [
                           _c(
                             "div",
