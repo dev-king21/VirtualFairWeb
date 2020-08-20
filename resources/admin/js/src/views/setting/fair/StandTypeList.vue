@@ -58,9 +58,11 @@ export default{
     
   },
   created () {
+    this.$loading.show(this);
     this.$http.get('/api/stand_type/all')
       .then((response) => { 
         this.stand_types = response.data.stand_types 
+        this.$loading.hide(this)
       })
       .catch((error)   => { console.log(error) })
   }

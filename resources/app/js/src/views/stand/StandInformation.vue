@@ -53,8 +53,10 @@ export default {
       if (!this.$route.params.stand_id) {
         return this.$route.push('/stand/home')
       }
+      this.$loading.show(this)
       this.$http.post('/api/stand/information', {_id: this.$route.params.stand_id})
         .then((response) => {
+          this.$loading.hide(this)
           const data = response.data
           if (data.status === 'error') return console.log(data.msg)
           if (!data.stand || !data.stand.id) {

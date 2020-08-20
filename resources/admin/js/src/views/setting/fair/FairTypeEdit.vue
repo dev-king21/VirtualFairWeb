@@ -69,23 +69,46 @@ export default {
       formData.append('name', this.ftype_name)
       if (this.building_file) formData.append('building_file', this.building_file)
       if (this.interior_file) formData.append('interior_file', this.interior_file)
-      
+      this.$loading.show(this);
       this.$http.post(action, formData, headers)
         .then((response) => {
+          this.$loading.hide(this);
           const res = response.data
           if (res.status === 'ok' && res.id) this.$router.push({ path: `/settings/fair-type/edit/${res.id}` })
+          if(response.data.status === 'ok')
+          {
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Te has registrado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          }
+          else
+          {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          }  
         })
         .catch((error) => { console.log(error) })
     }
   },
   created () {
     if (this.$route.params.ftype_id) {
+      this.$loading.show(this)
       this.$http.get(`/api/fair_type/get/${this.$route.params.ftype_id}`)
         .then((response) => { 
           const fair_type = response.data.fair_type 
           if (fair_type.building) this.building_image = `/fair_image/${  fair_type.building}` 
           if (fair_type.interior) this.interior_image = `/fair_image/${  fair_type.interior}` 
           if (fair_type.name) this.ftype_name = fair_type.name
+          this.$loading.hide(this)
         })
         .catch((error)   => { console.log(error) })
     }  

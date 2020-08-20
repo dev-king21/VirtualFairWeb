@@ -84,9 +84,10 @@ export default {
       formData.append('company', this.stand.company)
       formData.append('description', this.stand.description)
       if (this.logo_file) formData.append('logo', this.logo_file)
-      
+      this.$loading.show(this);
       this.$http.post('/api/setting/my_stand/information/save', formData, headers)
         .then((response) => {
+          this.$loading.hide(this);
           const data = response.data
           if (data.status === 'error') return console.log(data.msg)  
           if (response.data.status === 'ok') {
@@ -109,8 +110,10 @@ export default {
         })  
     },
     getInformation () { 
+      this.$loading.show(this)
       this.$http.post('/api/setting/my_stand/information')
         .then((response) => {
+          this.$loading.hide(this)
           const data = response.data
           if (data.status === 'error') return console.log(data.msg)
           if (!data.stand || !data.stand.id) {
@@ -178,7 +181,6 @@ export default {
       this.previewLogo(rawFile)
     },
     isImage (file) {
-      console.log(file, /\.(jpeg|png|gif|jpg)$/.test(file.name))
       return /\.(jpeg|png|gif|jpg)$/.test(file.name)
     },
     previewLogo (file) {

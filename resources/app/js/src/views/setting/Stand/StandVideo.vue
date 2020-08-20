@@ -136,8 +136,10 @@ export default {
       return /\.(avi|mp4|3gp|jpeg|jpg|png|gif)$/.test(file.name)
     },
     getGalleryItems () {
+      this.$loading.show(this);
       this.$http.post('/api/setting/my_stand/gallery')
         .then((response) => {
+          this.$loading.hide(this);
           const data = response.data
           if (!data.stand || !data.stand.id) {
             this.$vs.notify({
@@ -194,8 +196,10 @@ export default {
         formData.append('gallery_title', this.gallery_title)
       }
       console.log('save_gallery')
+      this.$loading.show(this)
       this.$http.post('/api/setting/my_stand/gallery/save', formData, headers)
         .then((response) => {
+          this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
               title: 'éxito',
@@ -209,8 +213,10 @@ export default {
         })
     },
     removeGallery (id) {
+      this.$loading.show(this)
       this.$http.post('/api/setting/my_stand/gallery/remove', {_id: id})
         .then((response) => {
+          this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
               title: 'éxito',

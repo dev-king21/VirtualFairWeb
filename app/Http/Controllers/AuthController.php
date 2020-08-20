@@ -30,10 +30,8 @@ class AuthController extends Controller
             return response()->json([
                 'status' => 'error',
                 'errors' => $v->errors()
-            ], 422);
+            ]);
         }
-
-        
         
         $user = new User;
         $user->first_name = $request->post('first_name');
@@ -53,14 +51,14 @@ class AuthController extends Controller
         }
         $user->save();
         
-        return response()->json(['status' => 'success'], 200);
+        return response()->json(['status' => 'ok'], 200);
     }
 
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
         if (!Auth::attempt($credentials))
-            return response()->json(['error' => 'Unauthorized'], 401);
+            return response()->json(['error' => 'Unauthorized']);
         
         $user = $request->user();
         $tokenResult = $user->createToken('Virtual Fair Web Api Token');
@@ -129,7 +127,7 @@ class AuthController extends Controller
         $user->save();
         unset($user->password);
         
-        return response()->json(['status' => 'success', 'user'=> $user], 200);
+        return response()->json(['status' => 'ok', 'user'=> $user], 200);
     }
 
 }

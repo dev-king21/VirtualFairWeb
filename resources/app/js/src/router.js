@@ -67,6 +67,23 @@ const router = new Router({
             rule: 'editor'
           }
         },
+        
+        {
+          path: '/contact/query',
+          name: 'contact-query',
+          component: () => import('@/views/fair/FairCountry.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/contact/contact_message',
+          name: 'contact-message',
+          component: () => import('@/views/fair/FairCountry.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
         {
           path: '/fair',
           name: 'fair-home',
@@ -100,6 +117,14 @@ const router = new Router({
           }
         },
         {
+          path: '/stand/purchase/:stand_id',
+          name: 'stand-purchase',
+          component: () => import('@/views/stand/StandPurchase.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
           path: '/stand/home',
           name: 'stand-home',
           component: () => import('@/views/stand/StandHome.vue'),
@@ -125,7 +150,7 @@ const router = new Router({
         },
         {
           path: '/stand/gallery/:stand_id',
-          name: 'stand-video',
+          name: 'stand-gallery',
           component: () => import('@/views/Stand/StandGallery.vue'),
           meta: {
             rule: 'editor'
@@ -135,6 +160,14 @@ const router = new Router({
           path: '/stand/schedule/:stand_id',
           name: 'stand-schedule',
           component: () => import('@/views/Stand/StandSchedule.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/stand/video/:type/:video_id',
+          name: 'stand-video',
+          component: () => import('@/views/Stand/StandVideo.vue'),
           meta: {
             rule: 'editor'
           }
@@ -164,21 +197,21 @@ const router = new Router({
           }
         },
         {
-          path: '/auth/register/participant',
-          name: 'register-participant',
-          component: () => import('@/views/sign/RegisterParticipant.vue'),
+          path: '/auth/register/:type',
+          name: 'register-user',
+          component: () => import('@/views/sign/RegisterUser.vue'),
           meta: {
             rule: 'editor'
           }
         },
-        {
+        /* {
           path: '/auth/register/expositor',
           name: 'register-expositor',
           component: () => import('@/views/sign/RegisterParticipant.vue'),
           meta: {
             rule: 'editor'
           }
-        },
+        }, */
         {
           path: '/auth/forgot-password',
           name: 'auth-forgot-password',
@@ -378,7 +411,7 @@ const router = new Router({
         {
           path: '/setting/contact',
           name: 'setting-contact',
-          component: () => import('@/views/setting/Contact.vue'),
+          component: () => import('@/views/setting/ContactRequest.vue'),
           meta: {
             rule: 'editor'
           }

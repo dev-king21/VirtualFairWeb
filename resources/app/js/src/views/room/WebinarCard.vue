@@ -4,27 +4,27 @@
             <img class="relative responsive" :src="require(`@assets/images/pages/${user_img}`)">
             <div class="card-over text-white flex flex-col justify-between" >
                 <div>
-                    <span class="text-white absolute p-3 bg-cyan-light" style="font-size: 0.8rem">{{workdate}}</span> 
+                    <span class="text-white absolute py-4 px-6 bg-cyan-light" style="font-size: .9rem">{{$date.dateFormatWithoutYear(workdate)}}</span> 
                 </div>
                 <div class="card-title">
                     <div class="flex flex-row items-center">
-                        <feather-icon svgClasses="w-8 h-8" icon="RadioIcon"/>
-                        <div class="ml-2 text-white" style="font-size: 0.8rem">EN VIVO</div>
+                        <svg-icon size="w-8 h-8" icon="live"/>
+                        <div class="ml-2 text-white">EN VIVO</div>
                     </div>
                     <div style="font-style: italic">{{title}}</div>
                 </div>
             </div>
         </div>
-        <div class="mt-2 center">
+        <div class="mt-3 center">
             <span class="flex items-center justify-center ml-4">
-                <feather-icon svgClasses="w-5 h-5" icon="ClockIcon" class="text-cyan-dark"/>
-                <span class="ml-2">{{time}}</span>
+                <feather-icon svgClasses="w-6 h-6" icon="ClockIcon" class="text-cyan-dark"/>
+                <span class="ml-4">{{time}}</span>
             </span>
         </div>
-        <div class="flex flex-row items-center mt-2 px-4">
+        <div class="flex flex-row items-center mt-3 px-4">
             <img class="user-img" :src="`/fair_image/${user_img}`"/>
             <div class="ml-4 user-info">
-                <div class="h6 font-bold">Lic. {{expositor_name}}</div>
+                <div class="fs-12 font-bold">Lic. {{expositor_name}}</div>
                 <div>{{expositor_profession}}</div>
             </div>
         </div>
@@ -108,7 +108,7 @@ export default {
     }
 
     .event-btn {
-        font-size: 0.8rem !important;
+        font-size: 0.85rem !important;
         padding: 1rem 1.2rem !important;
     }
     

@@ -16,6 +16,8 @@ class CreateFairsTable extends Migration
         Schema::create('fairs', function (Blueprint $table) {
             $table->id();
             $table->string("name");
+            $table->string("logo");
+
             $table->string("fair_type_id");
             $table->date("start_date");
             $table->date("end_date");

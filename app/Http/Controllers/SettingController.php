@@ -281,7 +281,11 @@ class SettingController extends Controller
           $query->with('requestor')->get();
       }, 'stand_contents' => function($query) {
           $query->with('stand_type_item')->get();
-      }])->where($qr)->first();      
+      }])->where($qr)->first();   
+      if (!isset($res["stand"])) 
+      {
+        return response()->json(["status" => "error", "msg"=> "unknown_stand"]);
+      }   
       $res["stand_type"] = StandLocation::with('stand_type') -> find($res["stand"]->stand_location_id)->stand_type;
 
       return response()->json($res);
@@ -661,6 +665,14 @@ class SettingController extends Controller
       $res["requests"] = ContactRequest::with("requestor")->whereHas("stand", function($qr) use($uid) {
         $qr->where("user_id", $uid);
       })->get();
+
+      return response()->json($res);
+    }
+
+    public function get_reserved_webinars(Request $request) {
+      $res = array();
+      $now = date("Y-m-d");
+      $res["webinars"] = Talk::with('user')->where([["talk_date", ">=", $now]])->get();
 
       return response()->json($res);
     }

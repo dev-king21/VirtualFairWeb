@@ -48,11 +48,21 @@
                         </div>
                     </div>
                     <div class="vx-col lg:w-1/4 md:w-1/4 sm:w-1/4 xs:w-1/4 event-panel bg-white">
-                        <div class="m-8">
-                            PUBLICIDAD
-                        </div>
-                        <div class="p-3">
-
+                        <div class="uppercase fs-11 mt-8 ml-4 font-bold mb-4">PUBLICIDAD</div>
+                        <div class="ml-4 mr-8">
+                          <swiper :options="swiperOption">
+                            <swiper-slide :key="`swiper-item-${index}`" v-for="(item, index) in ads_list">
+                              <img class="responsive" :src="`/fair_image/${item.url}`" alt="">
+                              <!-- @assets/images/pages/carousel/banner-16.jpg-->
+                            </swiper-slide>
+                            <div class="swiper-pagination" slot="pagination"></div>
+                            <div class="swiper-button-prev" slot="button-prev">
+                                <feather-icon svgClasses="w-6 h-6 mt-3 ml-3" style="color: black" icon="ChevronLeftIcon"/>
+                            </div>
+                            <div class="swiper-button-next" slot="button-next">
+                                <feather-icon svgClasses="w-6 h-6 mt-3 ml-3" style="color: black" icon="ChevronRightIcon"/>
+                            </div>
+                          </swiper>
                         </div>
                     </div>
                 </div>
@@ -67,6 +77,8 @@ import Datepicker from 'vuejs-datepicker'
 import BreadCrumb from '@/views/custom/BreadCrumb.vue'
 import ScheduleCard from './ScheduleCard.vue'
 import DatingCard from './DatingCard.vue'
+import 'swiper/dist/css/swiper.min.css'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   components: {
     AppHeader,
@@ -74,7 +86,9 @@ export default {
     BreadCrumb,
     Datepicker,
     ScheduleCard,
-    DatingCard
+    DatingCard,
+    swiper,
+    swiperSlide
   },
   data () {
     return {
@@ -82,7 +96,25 @@ export default {
       appointments_dates: [],
       appointments: [],
       webinars_dates: [],
-      webinars: []
+      webinars: [],
+      ads_list: [],
+      swiperOption: {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false
+        },
+        effect: 'fade',
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
     }
   },
   methods: {
@@ -94,14 +126,20 @@ export default {
   },
   created () {
     this.me = JSON.parse(localStorage.getItem('userInfo'))
+    this.$loading.show(this)
     this.$http.post('/api/setting/schedule')
       .then((response) => {
+        this.$loading.hide(this)
         console.log(response.data)
         const data = response.data
         this.appointments_dates = data.appointments_dates
         this.appointments = data.appointments
         this.webinars_dates = data.webinars_dates
         this.webinars = data.webinars
+      })
+    this.$http.post('/api/stand/ads/get')
+      .then((res) => {
+        this.ads_list = res.data.ads
       })
   }
 }

@@ -6,13 +6,13 @@
             <div class="flex flex-col setting-wrapper">
                 <div class="flex items-center bg-blue-dark pt-4 pb-2">
                     <div class="flex items-center ml-8 cursor-pointer" @click="$router.push('/setting/profile')">
-                        <img :src="require(`@assets/images/pages/foto_expositores1.jpg`)" class="user-img responsive mx-4">
+                        <img :src="`/fair_image/${user.avatar}`" class="user-img responsive mx-4">
                         <div>
                             <div class="user-name h4 text-white">MI PERFIL</div>
                         </div>
                     </div>
                     <div class="flex flex-col items-center mx-24" style="backgound">
-                        <h3 class="text-center text-white ">iHola! Felipe Alonso Guerrero</h3>
+                        <h3 class="text-center text-white ">iHola! {{user.first_name}} {{user.last_name}}</h3>
                         <h4 class="text-center text-white mt-2">Que deseas hacer?</h4>
                     </div>
                 </div>
@@ -111,10 +111,29 @@ export default {
   },
   methods: {
     saveProfile () {
+      this.$loading.show(this)
       this.$http.post('/api/auth/save', this.user)
         .then((response) => {
+          this.$loading.hide(this)
           localStorage.setItem('userInfo', JSON.stringify(response.data.user))
           this.$router.push('/setting/profile').catch(() => {})  
+          if (response.data.status === 'ok') {
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Te has registrado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } else {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } 
         })  
     }  
   },
@@ -143,9 +162,27 @@ export default {
     if (!userInfo.id || !userInfo.email || userInfo.email === '') {
       return this.$router.push('/home')
     }
-    
+    this.$loading.show(this)
     this.$http.post('/api/auth/profile')
       .then((response) => {
+        this.$loading.hide(this)
+        if (response.data.status === 'ok') {
+          this.$vs.notify({
+            title: 'éxito',
+            text: 'Te has registrado con éxito.',
+            color: 'success',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } else {
+          this.$vs.notify({
+            title: 'Oyu',
+            text: 'Operación fallida',
+            color: 'error',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } 
         this.user = response.data  
       })
       .catch((error) => console.log(error))

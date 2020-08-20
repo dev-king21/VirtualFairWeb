@@ -112,10 +112,12 @@ export default {
       this.stype_active = !this.stype_active
     },
     stypeSelected (idx) {
+      this.$loading.show(this)
       this.$http.get(`/api/stand_type_item/all/${idx}`)
         .then((response) => {
           this.stand_type = response.data.stype
           this.stand_type_items = response.data.stand_type_items
+          this.$loading.hide(this)
         })
         .catch((error) => { console.log(error) }) 
     },
@@ -188,10 +190,29 @@ export default {
     saveLocations () {
       const param = {
         locations: JSON.parse(JSON.stringify(this.stand_type_items))
-      } 
+      }
+      this.$loading.show(this) 
       this.$http.post('/api/stand_type_item/save', param)
         .then((response) => {
-          if (response.data.status === 'success') console.log('success')
+          this.$loading.hide(this) 
+          if (response.data.status === 'ok') {
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Te has registrado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } else {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } 
+
         })
         .catch((error) => console.log(error))
     },
@@ -199,26 +220,52 @@ export default {
       const item = this.stand_type_items[idx]
       this.stand_type_items.splice(idx, 1)
       if (idx === -1) return
-      if (item.id) this.$http.post('/api/stand_type_item/remove', {remove_id: item.id})
-        .then((response) => {
-          console.log(response.data)
-        }) 
+      if (item.id) { 
+        this.$loading.show(this)
+        this.$http.post('/api/stand_type_item/remove', {remove_id: item.id})
+          .then((response) => {
+            this.$loading.hide(this)
+          
+            console.log(response.data)
+            if (response.data.status === 'ok') {
+              this.$vs.notify({
+                title: 'éxito',
+                text: 'Se ha eliminado con éxito.',
+                color: 'success',
+                iconPack: 'feather',
+                icon: 'icon-alert-circle'
+              })
+            } else {
+              this.$vs.notify({
+                title: 'Oyu',
+                text: 'Operación fallida',
+                color: 'error',
+                iconPack: 'feather',
+                icon: 'icon-alert-circle'
+              })
+            } 
+          }) 
+      }
     }
   },
   created () {
+    this.$loading.show(this)
     this.$http.get('/api/stand_type/all')
       .then((response) => {
         this.stypes = response.data.stand_types
+        this.$loading.hide(this)
       })
       .catch((error) => { console.log(error) })
 
     let action = '/api/stand_type_item/all'
     if (this.$route.params.stype_id) action = `/api/stand_type_item/all/${this.$route.params.stype_id}`
+    this.$loading.show(this)
     this.$http.get(action)
       .then((response) => {
         this.stand_type = response.data.stype
         this.stand_type_items = response.data.stand_type_items
         console.log(response.data)
+        this.$loading.hide(this)
       })
       .catch((error) => { console.log(error) })
   },
@@ -250,7 +297,7 @@ export default {
 
 .vdr {
     border: none;
-    background-color: #333333CC !important;
+    background-color: #151515CC !important;
     text-align: center;
     background-repeat: no-repeat !important;
     background-position: center center !important;

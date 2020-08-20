@@ -39,10 +39,11 @@ export default {
     }  
   },
   created () {
-    
+    this.$loading.show(this)
     this.$http.get('/api/fair/sponsor')
       .then((response) => {
         this.stands = response.data.stands  
+        this.$loading.hide(this)
       })
   }
     

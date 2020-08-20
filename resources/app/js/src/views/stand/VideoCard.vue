@@ -1,17 +1,17 @@
 <template>
     <div class="video-card">
-        <div class="h6 mb-2 mx-8 text-center">
+        <div class="fs-14 font-bold mb-2 mx-8 text-center">
             {{title}}
         </div>
-        <div class="flex w-full items-center justify-center card-header grey-real">
-          <vs-icon size="4rem" class="play-icon" color="red" icon-pack="material-icons" icon="play_circle_filled" />
+        <div class="flex w-full items-center justify-center card-header card-grey">
+          <vs-icon @click="showVideo" size="4rem" class="play-icon cursor-pointer" color="red" icon-pack="material-icons" icon="play_circle_filled" />
         </div>
         <div class="vx-row">
           <div class="vx-col flex items-center justify-center text-white w-3/5 bg-dark" style="padding: 0.5rem 0 !important">
             {{readed}} vistars
           </div>
           <div class="vx-col w-2/5">
-              <div @click="downloadVideo(id)" class="flex items-center justify-center text-white py-2 yellow-dark w-full cursor-pointer">
+              <div @click="downloadVideo" class="flex items-center justify-center text-white py-2 cyan-dark w-full cursor-pointer">
                   <feather-icon size="w-6 h-6" icon="DownloadIcon" />
                   <div class="ml-2 uppercase" style="font-size: 0.9rem">Descargar</div>
               </div>
@@ -44,11 +44,11 @@ export default {
     }
   },
   methods: {
-    showVideo (id) {
-      this.show(id)  
+    showVideo () {
+      this.show(this.id)  
     },
-    downloadVideo (id) {
-      this.download(id)
+    downloadVideo () {
+      this.download(this.id)
     }
 
 

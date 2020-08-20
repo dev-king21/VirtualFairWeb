@@ -89,12 +89,18 @@ class FairController extends Controller
         $fair->start_date = $request->post("start_date");
         $fair->end_date = $request->post("end_date");
         $fair->status = $request->post("status");
+        if (isset($request->logo)) {
+            $b_fileName = md5(time()).'.'.$request->logo->extension();  
+            $request->logo->move(public_path('fair_image'), $b_fileName);
+            $fair->logo = $b_fileName;
+        } 
         $fair->save();
 
         $countries = Country::select('id')->where("status", 1)->get();
         $stand_locations = StandLocation::with(['stand_type' => function($qr) {
             $qr->with("stand_type_items")->get();
         }])->select(['id', 'stand_type_id'])->where("fair_type_id", $fair->fair_type_id)->get();
+
         foreach($countries as $country) {
             foreach ($stand_locations as $location) {
                 $stand = new Stand;
@@ -123,8 +129,28 @@ class FairController extends Controller
 
     public function update_fair(Request $request, $id) {
         $res = array();
-        $fair = Fair::whereId($id)->update($request->post());
-        $res["status"] = "ok";
+       
+        $query = array();
+        
+        $query['name'] = $request->post("name");
+        $query['fair_type_id'] = $request->post("fair_type_id");
+        $query['start_date'] = $request->post("start_date");
+        $query['end_date'] = $request->post("end_date");
+        $query['status'] = $request->post("status");
+
+        $request->validate([
+            'logo' => 'mimes:png,gif,jpeg,jpg',
+        ]);
+  
+        if (isset($request->logo)) {
+            $b_fileName =  md5(time()).'.'.$request->logo->extension();  
+            $request->logo->move(public_path('fair_image'), $b_fileName);
+            $query['logo'] = $b_fileName;
+        } 
+       
+        Fair::whereId($id)->update($query);
+        $res['status'] = 'ok';        
+        $res['id'] = $id;
         return response()->json($res);
     }
 

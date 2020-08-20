@@ -64,7 +64,7 @@ export default {
             padding: 0.6rem;
             text-transform: uppercase;
             z-index: 19;
-            color: #333;
+            color: #151515;
             font-weight: 600;
         }
     }

@@ -57,11 +57,13 @@ export default {
   created () {
     let action = '/api/fair/show'
     if (this.$route.params.fair_id) action = `/api/fair/show/${this.$route.params.fair_id}`  
+    this.$loading.show(this)
     this.$http.get(action)
       .then((response) => {
         const data = response.data
         this.fair = data.fair
         this.countries = data.countries
+        this.$loading.hide(this)
       })
   }
 }
@@ -74,7 +76,7 @@ export default {
     .card-img-wrapper:hover{
         border-top-left-radius: 0.5rem;
         border-top-right-radius: 0.5rem;
-        background: #333;
+        background: #151515;
     }
     .card-img-top {
         transition: all 0.4s ease-in-out;

@@ -26,7 +26,7 @@
             </swiper>
             <!-- Sostenibilidad -->
         </div>
-        <div class="mt-8">
+        <div class="my-8">
             <h1 class="font-bold text-center mb-8 fs-40" >Titular Lorem ipsum</h1>
             <div class="mx-32 fs-14 text-black">
                 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
@@ -85,34 +85,6 @@ export default {
 }
 </script>
 <style lang="scss">
-.swiper-pagination-bullet {
-    border-radius: 3px !important;
-    width: 40px !important;
-    height: 6px !important;
-    background: transparent !important;
-    border: 1px solid white !important;
-    opacity: 0.8 !important;
-}
-.swiper-pagination-bullet-active {
-    background: white !important
-}
 
-.swiper-button-prev, [dir] .swiper-container-rtl .swiper-button-next {
-    border-radius: 100%;
-    width: 45px;
-    height: 45px;
-    background: #ffffff;
-    opacity: 0.6 !important;    
-    background-image: none !important;
-}
-
-.swiper-button-next, [dir] .swiper-container-rtl .swiper-button-prev {
-    border-radius: 100%;
-    width: 45px;
-    height: 45px;
-    background: #ffffff;
-    opacity: 0.6 !important;
-    background-image: none !important;
-}
 
 </style>

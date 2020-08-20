@@ -27,7 +27,7 @@
                 </div>
             </div>
         </div>
-        <div class="absolute flex items-center justify-between w-full px-6 py-4 stand-footer">
+        <div class="absolute flex items-center justify-between w-full px-12 py-8 stand-footer">
             <stand-button class="stand-button" icon="list" :to="`/stand/information/${$route.params.stand_id}`" text="SOBRE NOSOTROS"/>
             <stand-button class="stand-button" icon="brochure" :to="`/stand/brochure/${$route.params.stand_id}`" text="CATÁLOGOS Y BROCHURES"/>
             <stand-button class="stand-button" icon="gallery" :to="`/stand/gallery/${$route.params.stand_id}`" text="GALERÍA"/>
@@ -35,10 +35,10 @@
             <stand-button class="stand-button" icon="address-book" :to="`/stand/contact/${$route.params.stand_id}`" text="CONTACTO"/>
         </div>
         <div class="absolute stand-wrapper" style="border: 1px solid red">
-            <div class="absolute" style="bottom: 74px; right: 0">
+            <div class="absolute" style="bottom: 7.3rem; right: 0">
                 <div class="flex flex-col items-center justify-center text-white relative px-2 py-4 bg-blue-dark chatting-btn">
-                  <svg-icon size="w-6 h-6" icon="contact"/>
-                  <div class="ml-2 text-center btn-text">CHATEAR CON UN USEARIO</div>
+                  <svg-icon size="w-8 h-8" icon="contact"/>
+                  <div class="ml-2 text-center btn-text">CHATEAR CON UN USEARIO DEL STAND</div>
                 </div>
             </div>
             <div class="absolute stand-item-wrapper flex flex-col items-center justify-center text-white" 
@@ -57,7 +57,7 @@
               <div class="absolute stand-item-wrapper flex flex-col items-center justify-center text-white cursor-pointer" 
                   :key="`stand-video-item-${index}`" v-for="(s_content, index) in stand.stand_contents.filter((it) => it.stand_type_item.type === 'video')"
                   :style="`left: ${s_content.stand_type_item.left * 100}%; top: ${s_content.stand_type_item.top * 100}%; width: ${s_content.stand_type_item.width * 100}%; height: ${s_content.stand_type_item.height * 100}%; background: #ffffff33; z-index: 99999`"> 
-                <vs-icon size="5rem" class="play-icon" color="red" icon-pack="material-icons" icon="play_circle_filled" />
+                <vs-icon @click="showVideo(s_content.id)" size="5rem" class="play-icon" color="red" icon-pack="material-icons" icon="play_circle_filled" />
               </div>
             </template>
         </div>
@@ -87,8 +87,10 @@ export default {
       if (!this.$route.params.stand_id) {
         return this.$router.push('/stand/home')
       }
+      this.$loading.show(this)
       this.$http.post('/api/stand/home', {_id: this.$route.params.stand_id})
         .then((response) => {
+          this.$loading.hide(this)
           const data = response.data
           if (data.status === 'error') return console.log(data.msg)
         
@@ -110,7 +112,10 @@ export default {
           this.stand_type = data.stand_type
           this.contact = this.stand.contact
         })  
-    }
+    },
+    showVideo (id) {
+      this.$router.push(`/stand/video/stand_content/${id}`)
+    }  
   },
   created () {
     this.getStandContent()
@@ -133,7 +138,7 @@ export default {
 
             .user-text {
                 font-size: 0.6rem !important;
-                color: #333;
+                color: #151515;
             }            
         }
     }
@@ -154,11 +159,10 @@ export default {
             }
         }
         .chatting-btn {
-          height: 3rem; 
           border-top-left-radius: 1.5rem;
           padding: 5px;
-          width: 110px;
-          height: 80px;
+          width: 120px;
+          height: 100px;
           .btn-text {
             font-size: 0.8rem;
           }

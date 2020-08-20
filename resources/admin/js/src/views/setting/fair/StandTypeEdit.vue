@@ -72,10 +72,30 @@ export default {
       if (this.building_file) formData.append('building_file', this.building_file)
       if (this.interior_file) formData.append('interior_file', this.interior_file)
       
+      this.$loading.show(this)
       this.$http.post(action, formData, headers)
         .then((response) => {
+          this.$loading.hide(this)
           const res = response.data
+          if (response.data.status === 'ok') {
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Te has registrado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } else {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } 
           if (res.status === 'ok' && res.id) this.$router.push({ path: `/settings/stand-type/edit/${res.id}` }, () => {})
+
         })
         .catch((error) => { console.log(error) })
     }
@@ -84,12 +104,14 @@ export default {
     if (this.$route.params.stype_id) {
       // this.upload_building_url = `/api/fair_type/upload/building/${this.$route.params.stype_id}`
       // this.upload_interior_url = `/api/fair_type/upload/interior/${this.$route.params.stype_id}`
+      this.$loading.show(this)
       this.$http.get(`/api/stand_type/get/${this.$route.params.stype_id}`)
         .then((response) => { 
           const stand_type = response.data.stand_type 
           if (stand_type.building) this.building_image = `/fair_image/${  stand_type.building}` 
           if (stand_type.interior) this.interior_image = `/fair_image/${  stand_type.interior}` 
           if (stand_type.name) this.stype_name = stand_type.name
+          this.$loading.hide(this)
         })
         .catch((error)   => { console.log(error) })
     }  

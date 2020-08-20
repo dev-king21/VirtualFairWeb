@@ -37,11 +37,30 @@ export default {
 
   },
   created () {
+    this.$loading.show(this)
     this.$http.post('/api/setting/contacts')
       .then((response) => {
+        this.$loading.hide(this)
         const data = response.data
         console.log(data)
         this.contacts = data.requests
+        if (response.data.status === 'ok') {
+          this.$vs.notify({
+            title: 'éxito',
+            text: 'Te has registrado con éxito.',
+            color: 'success',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } else {
+          this.$vs.notify({
+            title: 'Oyu',
+            text: 'Operación fallida',
+            color: 'error',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } 
       })
   }
 }

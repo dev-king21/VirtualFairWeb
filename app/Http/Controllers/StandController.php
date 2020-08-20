@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Stand;
+use App\StandContent;
 use App\StandLocation;
 use App\File;
 use App\Contact;
@@ -15,6 +16,31 @@ use App\Appointment;
 
 class StandController extends Controller
 {
+    public function get_stripe_pubkey(Request $request) {
+        return response()->json(['key' => env('STRIPE_KEY')]);
+    }
+
+    public function save_transaction(Request $request) {
+        $user = $request->user();
+        $paymentMethodID = $request->get('payment_method');
+
+        if( $user->stripe_id == null ){
+            $user->createAsStripeCustomer();
+        }
+
+        $user->addPaymentMethod( $paymentMethodID );
+        $user->updateDefaultPaymentMethod( $paymentMethodID );
+        $stand = Stand::find($request->post('stand_id'));
+        $stand->user_id = $request->user()->id;
+        $stand->save();
+        
+        return response()->json( null, 204 );        
+    }
+
+    public function purchase_intent(Request $request) {
+        return $request->user()->createSetupIntent();
+    }
+
     public function get_stand(Request $request) {
         $id = $request->post('_id');
         if (!isset($id))
@@ -98,6 +124,21 @@ class StandController extends Controller
         $download->save();
 
         $res["status"] = "ok";
+        
+        return response()->json($res);
+    }
+
+    public function get_video(Request $request) {
+        $res = array();
+        $id = $request->post("_id");
+        $type = $request->post("type");
+        if (!isset($id) || !isset($type)){
+            return response()->json(["status"=>"unknown_video"]);
+        }
+        if ($type=="gallery")
+            $res["video"] = Gallery::find($id);
+        else if ($type=="stand_content")
+            $res["video"] = StandContent::find($id);
         
         return response()->json($res);
     }
@@ -389,7 +430,7 @@ class StandController extends Controller
     public function standDetail(){
         $id = request('id');
         $res = array();
-        $res["stands"] = Stand::with(['user', 'stand_location', 'gallerys', 'files','appointments','contact','portfolios', 'standType', 'stand_contents'])
+        $res["stands"] = Stand::with(['user', 'stand_location', 'gallerys', 'files','appointments','contact','portfolios', 'stand_type', 'stand_contents'])
         ->where("id", $id)->get();
         return response()->json($res);
     }

@@ -6,32 +6,17 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
+use Laravel\Cashier\Billable;
 
 class User extends Authenticatable
 {
-    use Notifiable, HasApiTokens;
+    use Notifiable, HasApiTokens, Billable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $guarded = ['created_at', 'updated_at', 'type', 'role'];
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
         'password', 'remember_token', 'created_at', 'updated_at', 'email_verified_at'
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
@@ -63,6 +48,15 @@ class User extends Authenticatable
     public function webinar_downloads() {
         return $this->hasMany("App\WebinarDownload");
     }
+
+    public function send_unread_messages() {
+        return $this->hasMany('App\Chat', 'sender_id')->where(['chats.read'=> 0]);        
+    }
+
+    public function received_messages_count() {
+        return $this->hasMany('App\Chat', 'receiver_id')->where('chats.read', 0)->count();        
+    }
+
 
     public function getRoleAttribute() {
         $is_owner = 

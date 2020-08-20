@@ -1,6 +1,6 @@
 <template>
 <div class="w-full">
-  <app-header activeItem="0"></app-header>
+  <app-header></app-header>
   <div class="flex w-full flex-col home-bg-img justify-between home-main">
     <div class="absolute font-bold text-white"  style="z-index: 1; right: 10rem; top: 8rem;">
       <div class="text-center"><svg-icon size="w-32 h-32 text-cyan-dark" icon="watermark"/></div>
@@ -12,7 +12,7 @@
       <div class="w-full">
         <template v-if="!logInClicked">
           <div class="login-btn flex items-center text-white cursor-pointer" @click="logInClicked = true"> 
-            <feather-icon svgclasses="w-6 h-6" icon="LogInIcon" />
+            <feather-icon svgClasses="w-6 h-6" icon="LogInIcon" />
             <span class="ml-4">INGRESAR</span>
           </div>
         </template>
@@ -28,7 +28,7 @@
             </div>
             <div class="login-input">
               <vs-input color="success" class="w-full" placeholder="Ingrese su contrasena" type="password"
-                v-validate="'required'" data-vv-validate-on="blur" name="contrasena" v-model="auth.password"/>
+                v-validate="'required'" data-vv-validate-on="blur" name="contrasena" @keypress="goEnter" v-model="auth.password"/>
               <span class="text-danger text-sm">{{ errors.first('contrasena') }}</span>
             </div>
             <div class="mt-8">
@@ -40,15 +40,25 @@
       <div class="flex w-full justify-between items-end home-footer" v-show="!loggedIn">
         <div class="vx-col w-full lg:w-1/4 sm:w-1/3 xs:w-1/2">
           <div class="contact-card">
-            <div class="text-center pt-5 mb-3">
+            <div class="text-center pt-5 mb-3 font-bold">
               TIENES DUDAS? DEJANOS SABERLAS
             </div>
             <div class="contact-content">
-              <div class="contact-input"><vs-input color="success" class="w-full" placeholder="Nombre" v-model="contact_phone"/></div>
-              <div class="contact-input"><vs-input color="success" class="w-full" placeholder="Email" v-model="contact_email"/></div>
-              <div class="contact-input"><vs-textarea color="success" height="100px" class="w-full" placeholder="Consulta" v-model="contact_message"/></div>
+              <div class="contact-input">
+                <vs-input color="success" class="w-full" placeholder="Nombre" 
+                  v-validate="'required'" data-vv-validate-on="blur" name="contact_name" v-model="contact_name"/>
+                <span class="text-danger text-sm">{{ errors.first('contact_name') }}</span>
+              </div>
+              <div class="contact-input">
+                <vs-input color="success" class="w-full" placeholder="Email"
+                  v-validate="'required|email'" data-vv-validate-on="blur" name="contact_email" v-model="contact_email"/></div>
+                  <span class="text-danger text-sm">{{ errors.first('contact_email') }}</span>
+              <div class="contact-input">
+                <vs-textarea color="success" height="100px" class="w-full" placeholder="Consulta" 
+                  data-vv-validate-on="blur" name="contact_message" v-model="contact_message"/>
+              </div>
             </div>
-            <div class="contact-input text-right">
+            <div @click="send_message" class="contact-input text-right">
               <vs-button class="message-btn" >Enviar</vs-button>
             </div>
           </div>
@@ -104,9 +114,9 @@
         <router-link class="main-link" to="/room/webinar">
           webinars
         </router-link>
-        <router-link class="main-link" to="/fair/chatting">
+        <router-link class="main-link flex" to="/fair/chatting">
           <span>Networking</span>
-          <feather-icon class="ml-2" color="green" icon="" :badge="3" />
+          <feather-icon class="ml-2 networking-badge" style="margin-top: 0px; background: #ff0000; margin-left: 2px;" :badge="3" />
         </router-link>
         <router-link class="main-link" to="/home/sponsor">
           patrocinadores
@@ -127,7 +137,7 @@ export default {
   },
   data () {
     return {
-      contact_phone: '',
+      contact_name: '',
       contact_email: '',
       contact_message: '',
       auth: {
@@ -147,10 +157,51 @@ export default {
   },
   methods: {
     login () {
+      this.$loading.show(this)
       this.$store.dispatch('auth/login', this.auth)
+        .then(() => {
+          this.$loading.hide(this)
+        })
+        .catch(() => {
+          this.$loading.hide(this)
+          this.$vs.notify({
+            title: 'Error',
+            text: 'Correo electrónico o la contraseña son incorrectos.',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle',
+            color: 'danger'
+          })
+        })
       this.auth.email = ''
       this.auth.password = ''
       this.logInClicked = false
+    },
+    goEnter (event) {
+      if (event.keyCode === 13) {
+        this.login()
+      }
+    },
+    send_message () {
+      const param = {
+        name: this.contact_name,
+        email: this.contact_email,
+        message: this.contact_message
+      }
+      this.$loading.show(this)
+      this.$http.post('/api/query', param)
+        .then((res) => {
+          if (res.data.status === 'ok') {
+            this.$loading.hide(this)
+            this.$vs.notify({
+              title:'Notificación',
+              text:'Hemos recibido su petición. \n Por favor espera.',
+              color:'success',
+              iconPack: 'feather',
+              icon:'icon-mail'
+            })
+          }
+          
+        })
     }
   },
   created () {
@@ -158,7 +209,7 @@ export default {
       this.$store.registerModule('auth', moduleAuth)
       moduleAuth.isRegistered = true
     }
-
+    
   }
 }
 </script>
@@ -204,16 +255,16 @@ export default {
     }
     .vs-input--placeholder {
       font-size: 0.8rem !important;
+      font-weight: 900 !important;
     }
     .input-span-placeholder {
       padding: 0.5rem !important;
-      color: #333 !important;
+      color: #151515 !important;
     }
     .login-input {
       margin-top: 1rem !important;
     }
     .sign-btn {
-      border-radius: 0 !important;
       font-size: 0.8rem !important;
     }
   }
@@ -248,18 +299,24 @@ export default {
   .main-btns {
     margin-bottom: 0%;
     background: #123058;
-    height: 80px;
+    height: 7rem;
     flex-wrap: wrap;
     .main-link {
-      padding: 2rem 3rem !important;
+      padding: 2.5rem 3rem !important;
       flex: 0 0 auto;
       text-transform: uppercase;
-      font-size: 1rem;
-      font-weight: 700;
+      font-size: 1.2rem;
+      font-weight: 900;
       color: white; 
     }
     .main-link:hover, .main-link.active{
       background: #164A8B;
+    }
+
+    .networking-badge {
+      .feather-icon-badge {
+        background: #ee0000 !important;
+      }
     }
   }
 }
@@ -278,22 +335,22 @@ export default {
     background: white !important;
     font-size: 0.7rem !important;
     font-weight: bold;
-    color: #333;
+    color: #151515;
     opacity: .95;
     .contact-content {
       padding: 0 1.4rem !important;
     }
     input, textarea {
       border-radius: 0 !important;
-      font-size: 0.6rem !important;
+      font-size: 0.8rem !important;
       padding: 0.4rem !important;
     }
     .vs-input--placeholder {
-      font-size: 0.6rem !important;
+      font-size: 0.8rem !important;
     }
     .input-span-placeholder {
       padding: 0.4rem !important;
-      color: #333 !important;
+      color: #151515 !important;
     }
     .contact-input {
       margin-top: 0.8rem !important;

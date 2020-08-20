@@ -59,6 +59,17 @@
                   </div>
                 </div>
 
+                <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/4 w-full">
+                    <span>logo</span>
+                  </div>
+                  <div class="vx-col sm:w-3/4 text-center mt-0">
+                      <img :src="`/fair_image/${make_logo(logo)}`" alt="content-img" ref="logoPreview" 
+                          @click="browseLogoImg" class="cursor-pointer" style="height: 120px; width: auto">
+                      <input class="hidden" type="file" ref="refLogoFile" accept=".png, .gif, .jpg, .jpeg" @change="logoChanged">
+                  </div>
+                </div>
+
                 <div class="vx-row">
                   <div class="vx-col sm:w-2/3 w-full ml-auto">
                     <vs-button class="mr-3 mb-2" @click="addEditFair()">OK</vs-button>
@@ -102,6 +113,7 @@
         <vs-th sort-key="name">Name</vs-th>
         <vs-th sort-key="start_date">Start Date</vs-th>
         <vs-th sort-key="end_date">End Date</vs-th>
+        <vs-th sort-key="logo">logo</vs-th>
         <vs-th>Action</vs-th>
       </template>
 
@@ -125,6 +137,10 @@
               <vs-td>
                 <p>{{ tr.end_date }}</p>
               </vs-td>
+
+              <vs-td>
+                  <img :src="`/fair_image/${tr.logo}`" alt="content-img" class="fair_logo">
+              </vs-td>
              
               <vs-td class="whitespace-no-wrap">
                 <feather-icon icon="EditIcon" svgClasses="w-5 h-5 hover:text-primary stroke-current" @click.stop="editData(tr.id)" />
@@ -143,6 +159,7 @@ import FairViewSidebar from '../FairViewSidebar.vue'
 import moduleFairList from '@/store/fair/moduleFairList.js'
 import Datepicker from 'vuejs-datepicker'
 
+
 export default {
   components: {
     FairViewSidebar,
@@ -150,7 +167,7 @@ export default {
   },
   data () {
     return {
-
+      logo_file: null,
       format: 'yyyy-MM-dd',
       formatOptions:[
         {text: 'd MMM yyyy - e.g 12 Feb 2016', value: 'd MMM yyyy' },
@@ -175,6 +192,7 @@ export default {
       isAddShow: false,
       popupTitle: 'Add Fair',
       name:'',
+      logo:'',
       fairs: [],
       fair_types:[],
       active_idx: 0,
@@ -197,10 +215,67 @@ export default {
     }
   },
   methods: {
+    make_logo (logo) {
+      if (logo) return logo
+      else return 'placeholder.png'
+    },
+    browseLogoImg () {
+      this.$refs.refLogoFile.click()
+    },
+    readerData (rawFile) {
+      //console.log(this.$refs.logoPreview)
+      return new Promise((resolve) => {
+        const reader = new FileReader()
+        reader.onload = e => {
+          this.$refs.logoPreview.src = e.target.result
+          this.logo_file = rawFile
+          //this.onSuccess(sendData)
+          resolve()
+        }
+        this.logo_show = true
+        reader.readAsDataURL(rawFile)
+      })
+    },
+    logoChanged (e) {
+      const files = e.target.files
+      this.validateAndUpload(files)  
+    },
+    validateAndUpload (files) {
+      if (files.length !== 1) {
+        this.$vs.notify({
+          title: 'Error - Too Many Files',
+          text: 'Only support uploading one file!',
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        })
+        return
+      }
+      const rawFile = files[0] // only use files[0]
+      if (!this.isImage(rawFile)) {
+        this.$vs.notify({
+          title: 'File Format Error',
+          text: 'Only supports upload .png, .gif, .jpg, .jpeg suffix files',
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        })
+        return false
+      }
+      this.previewLogo(rawFile)
+    },
+    isImage (file) {
+      return /\.(jpeg|png|gif|jpg)$/.test(file.name)
+    },
+    previewLogo (file) {
+      this.$refs.refLogoFile.value = null // fix can't select the same excel
+      this.readerData(file)
+    },  
     addNewData () {
       /* this.sidebarData = {}
       this.toggleDataSidebar(true)   */
       this.name = ''
+      this.logo = ''
       this.active_idx = 0
       this.startDate = null
       this.endDate = null
@@ -220,7 +295,7 @@ export default {
 
       const fair = this.fairs.find((item) => item.id === id)
       this.name = fair.name
-      
+      this.logo = fair.logo
       this.active_idx = fair.fair_type_id
       this.startDate = fair.start_date 
       this.endDate = fair.end_date
@@ -262,30 +337,61 @@ export default {
       return [year, month, day].join('-')
     },
     addEditFair () {
-      if (this.name === '' || this.active_idx === 0 || this.startDate === null || this.endDate === null) return
+      if (this.name === '' || this.active_idx === 0 || this.startDate === null || this.endDate === null ) return
       let action = '/api/fair/create'
       if (this.isAddOrEdit === 1) action = `/api/fair/update/${this.editId}`
 
       this.startDate = this.formatDate(this.startDate)
       this.endDate = this.formatDate(this.endDate)
 
-      const newData = {
-        name: this.name,
-        fair_type_id: this.active_idx,
-        start_date: this.startDate,
-        end_date: this.endDate,
-        status: 1
+      const formData = new FormData()
+      const headers = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
       }
+      
+      formData.append('name', this.name)
+      formData.append('fair_type_id', this.active_idx)
+      formData.append('start_date', this.startDate)
+      formData.append('end_date', this.endDate)
+      formData.append('status', 1)
 
-      this.$http.post(action, newData)
+      if (this.logo_file) formData.append('logo', this.logo_file)
+      
+      this.$loading.show(this)
+
+      this.$http.post(action, formData)
         .then((response) => {
-          console.log(response.data)
+          this.$loading.hide(this)
+
+         // console.log(response.data)
+          if(response.data.status === 'ok')
+          {
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Te has registrado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          }
+          else
+          {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          }
           this.isAddShow = false
           this.loadContent()
         })
     },
     loadContent () {
-      let action = '/apifair/all'
+      let action = '/api/fair/all'
       switch (this.$route.name) {
       case 'fair-all':
         action = '/api/fair/all'
@@ -300,16 +406,21 @@ export default {
         action = '/api/fair/past'
         break
       }
+      this.$loading.show(this)
       this.$http.get(action)
         .then((response) => {
           
           const res = response.data
           this.fairs = res.fairs
+          this.$loading.hide(this)
         })
         .catch((error) => console.log(error))
-
+      this.$loading.show(this)
       this.$http.get('/api/fair_type/all')
-        .then((response) => { this.fair_types = response.data.fair_types })
+        .then((response) => { 
+          this.$loading.hide(this);
+          this.fair_types = response.data.fair_types 
+        })
         .catch((error)   => { console.log(error) })
     },
     confirmDeleteRecord (id) {
@@ -339,9 +450,30 @@ export default {
       const newData = {
         status: 0
       }
-
+      this.$loading.show(this);
       this.$http.post(action, newData)
         .then((response) => {
+          this.$loading.hide(this);
+          if(response.data.status === 'ok')
+          {
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Se ha eliminado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          }
+          else
+          {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          }
           this.loadContent()
         })
     },
@@ -436,6 +568,11 @@ export default {
           }
         }
       }
+    }
+
+    .fair_logo{
+      height: 50px;
+      width: auto;
     }
 
     .vs-table {

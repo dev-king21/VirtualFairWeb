@@ -236,7 +236,8 @@ export default {
     if (!this.$route.params.fair_id || !this.$route.params.country_id || !this.$route.params.stand_id) {
       return this.$router.push('/pages/error-404')
     }
-      
+    
+    this.$loading.show(this)
     this.$http.get(`/api/fair/show/${this.$route.params.fair_id}/${this.$route.params.country_id}/${this.$route.params.stand_id}`)
       .then((response) => {
         const data = response.data
@@ -289,6 +290,8 @@ export default {
           }
         ]
         this.stand.files = this.stand.portfolios
+        this.$loading.hide(this)
+
         this.stand.portfolios.forEach(element => {
           this.media.push({
             thumb: `/fair_image/${element.url}`, src: `/fair_image/${element.url}`, caption: element.name
@@ -340,7 +343,7 @@ export default {
     .card-img-wrapper:hover{
         border-top-left-radius: 0.5rem;
         border-top-right-radius: 0.5rem;
-        background: #333;
+        background: #151515;
     }
     .card-img-top {
         transition: all 0.4s ease-in-out;

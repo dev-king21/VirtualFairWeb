@@ -22,6 +22,7 @@ Route::post('/register_country', 'CountryController@dummyCreate');
 Route::any('/init_setting', 'SettingController@dummyCreate');
 
 
+
 Route::group(['middleware' => 'auth:api'], function(){
     Route::get('users', 'UserController@index')->middleware('isAdmin');
     Route::get('users/{id}', 'UserController@show')->middleware('isAdminOrSelf');
@@ -29,6 +30,10 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::get('/fair/get_current_stands', 'FairController@get_stands');
     Route::get('/fair/sponsor', 'FairController@get_sponsors');
     Route::post('/fair/sponsor/request', 'FairController@sponsor_request');
+    Route::post('/fair/chat/contacts', 'ChatController@get_contacts');
+    Route::post('/fair/chat/messages', 'ChatController@get_messages');
+    Route::post('/fair/chat/send_message', 'ChatController@send_message');
+
     Route::post('/stand/purchase', 'FairController@purchase_stand');
     Route::post('/stand/home', 'StandController@get_stand');
     Route::post('/stand/information', 'StandController@get_information');
@@ -39,6 +44,11 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('/stand/businesscard', 'StandController@get_businesscards');
     Route::post('/stand/appointment', 'StandController@get_available_times'); 
     Route::post('/stand/appointment/save', 'StandController@save_appointment'); 
+    Route::post('/stand/payment_key', 'StandController@get_stripe_pubkey');
+    Route::post('/stand/purchase/save_transaction', 'StandController@save_transaction');
+    Route::post('/stand/purchase/setup-intent', 'StandController@purchase_intent'); 
+    Route::post('/stand/video', 'StandController@get_video'); 
+    Route::post('/stand/ads/get', 'AdsController@getAds');
 
     Route::post('/setting/my_stand', 'SettingController@get_my_stand');
     Route::post('/setting/my_stand/save_content', 'SettingController@save_content');
@@ -86,6 +96,24 @@ Route::prefix('auth')->group(function () {
         Route::post('logout', 'AuthController@logout');
     });
 });
+
+//QueryContact and ContactMessge\
+Route::post('/query', 'ContactController@addQueryContact');
+Route::post('/contact_message', 'ContactController@addContactMessage');
+Route::get('/query/all', 'ContactController@getQueryContact');
+Route::get('/contact_message/all', 'ContactController@getContactMessage');
+
+
+//advertisement
+Route::post('/setting/ads/create', 'AdsController@createAds');
+Route::post('/setting/ads/update/{id}', 'AdsController@updateAds');
+
+Route::get('/setting/ads/get', 'AdsController@getAds');
+
+//home webinar
+Route::post('/home/webinar', 'SettingController@get_reserved_webinars');
+
+
 
 //user
 Route::get('/user/all', 'UserController@allUser');

@@ -24,6 +24,21 @@ export default {
     const date = (dt.getDate() < 10) ? `0${dt.getDate()}` : dt.getDate()
 
     return `${year}-${month}-${date}`
+  },
+
+  dateFormatWithYear (dateString) {
+    const dt = new Date(dateString)
+    const dayStr = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    const monthStr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Agosto', 'September', 'Octubre', 'November', 'December']
+
+    return `${dayStr[dt.getDay()]} ${dt.getDate()} de ${monthStr[dt.getMonth()]}, ${dt.getFullYear()}` 
+  },
+
+  dateFormatWithoutYear (dateString) {
+    const dt = new Date(dateString)
+    const monthStr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Agosto', 'September', 'Octubre', 'November', 'December']
+
+    return `${dt.getDate() > 9 ? dt.getDate() : `0${dt.getDate()}`} DE ${monthStr[dt.getMonth()].toUpperCase()}` 
   }
 
 }

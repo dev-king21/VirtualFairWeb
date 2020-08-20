@@ -166,9 +166,10 @@ export default {
   },
   methods: {
     saveContact () {
+      this.$loading.show(this)
       this.$http.post('/api/setting/my_stand/save_contact', this.contact)
         .then((response) => {
-          
+          this.$loading.hide(this)
           if (response.data.status !== 'error') {
             this.$vs.notify({
               title:'Notificación',
@@ -232,38 +233,89 @@ export default {
       formData.append('content_file', file)
       this.$refs.refStandImageFile.value = null
       this.$refs.refStandVideoFile.value = null
+      this.$loading.show(this)
       this.$http.post('/api/setting/my_stand/save_content', formData, headers)
         .then((response) => {
+          this.$loading.hide(this)
+          if (response.data.status === 'ok') {
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Te has registrado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } else {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } 
           if (response.data.status === 'ok') {
             this.refresh()
           }    
         })
     },
     removeStandContent (id) {
+      this.$loading.show(this)
       this.$http.post('/api/setting/my_stand/remove_content', {_id: id})
         .then((response) => {
+          this.$loading.hide(this)
+          if (response.data.status === 'ok') {
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Se ha eliminado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } else {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } 
           if (response.data.status === 'ok') {
             this.refresh()
           }
         })
     },
     refresh () {
-      this.$vs.notify({
-        title: 'éxito',
-        text: 'Folleto registrado con éxito',
-        iconPack: 'feather',
-        icon: 'icon-info',
-        color: 'success'
-      })  
-      //setTimeout(() => { 
       this.getStandContent()
-      //}, 3000)   
     },  
     getStandContent () {
+      this.$loading.show(this)
       this.$http.post('/api/setting/my_stand')
         .then((response) => {
+          this.$loading.hide(this)
           const data = response.data
-          if (data.status === 'error') return console.log(data.msg)
+          if (data.status === 'error') {
+            if (data.msg === 'unknown_fair') {
+              this.$vs.notify({
+                title: 'Error',
+                text: 'Actualmente no hay ferias en curso.',
+                iconPack: 'feather',
+                icon: 'icon-alert-circle',
+                color: 'danger'
+              })
+              this.$router.back()
+            } else {
+              this.$vs.notify({
+                title: 'Error',
+                text: 'Tienes que comprar un stand en la feria actual.',
+                iconPack: 'feather',
+                icon: 'icon-alert-circle',
+                color: 'danger'
+              })
+              this.$router.back()
+            }
+          }
         
           if (!data.stand || !data.stand.id) {
             this.$vs.notify({
@@ -283,6 +335,9 @@ export default {
           this.stand_type = data.stand_type
           this.contact = this.stand.contact
           this.contact_requests = this.stand.contact_requests
+        })
+        .catch(() => {
+          
         })  
     }
   },
@@ -308,7 +363,7 @@ export default {
 
             .user-text {
                 font-size: 0.6rem !important;
-                color: #333;
+                color: #151515;
             }            
         }
     }

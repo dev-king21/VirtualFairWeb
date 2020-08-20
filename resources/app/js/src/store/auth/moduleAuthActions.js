@@ -12,12 +12,14 @@ export default {
             localStorage.setItem('accessToken', response.data.access_token)
             commit('UPDATE_USER_INFO', response.data.user)
             commit('SET_BEARER', response.data.access_token)
-            resolve(response)
+            resolve()
           } else {
             reject({message: 'Wrong Email or Password'})
           }
         })
-        .catch(error => { reject(error) })
+        .catch(() => {
+          reject({message: 'Wrong Email or Password'})
+        })
     })
   },
   register ({commit}, payload) {
@@ -28,7 +30,7 @@ export default {
           'Content-Type': 'multipart/form-data'
         }
       }
-      console.log(user)
+      
       const formData = new FormData()
       for (const key in user) {
         formData.append(key, user[key])
@@ -48,6 +50,7 @@ export default {
         .then(() => {
           commit('REMOVE_BEARER')
           localStorage.removeItem('userInfo')
+          resolve()
         })
         .catch(error => { reject(error) })
       

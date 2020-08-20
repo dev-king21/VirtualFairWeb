@@ -62,9 +62,27 @@ export default {
       list.push(i)
     }
     this.video_list = list    
-
+    this.$loading.show(this)
     this.$http.post('/api/setting/my_stand/schedule')
       .then((response) => {
+        this.$loading.hide(this)
+        if (response.data.status === 'ok') {
+          this.$vs.notify({
+            title: 'éxito',
+            text: 'Te has registrado con éxito.',
+            color: 'success',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } else {
+          this.$vs.notify({
+            title: 'Oyu',
+            text: 'Operación fallida',
+            color: 'error',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } 
         console.log(response.data)
         const data = response.data
         this.appointments_dates = data.appointments_dates

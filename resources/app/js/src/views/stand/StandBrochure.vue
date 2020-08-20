@@ -40,8 +40,10 @@ export default {
       if (!this.$route.params.stand_id) {
         return this.$route.push('/stand/home')
       }
+      this.$loading.show(this)
       this.$http.post('/api/stand/brochure', {_id: this.$route.params.stand_id})
         .then((response) => {
+          this.$loading.hide(this)
           const data = response.data
           if (!data.stand || !data.stand.id) {
             this.$vs.notify({
@@ -61,11 +63,27 @@ export default {
         })  
     },
     downloadBrochure (id) {
+      this.$loading.show(this)
       this.$http.post('/api/stand/brochure/download', {_id: id})
         .then((response) => {
+          this.$loading.hide(this)
           if (response.data.status === 'ok') {
-            console.log('ok')
-          }
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Se ha descargado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } else {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } 
         })
     },    
     showBrochure (id) {

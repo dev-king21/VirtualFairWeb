@@ -16,23 +16,23 @@
         </div>
 
         <!-- COL AREA -->
-        <div class="vx-row">
-            <!-- COL 1 -->
+        <div class="vx-row" v-if="stand !== null"> 
+          
             <div class="vx-col w-full">
                 <!-- ABOUT CARD -->
                 <vx-card title="User Information" >
                   <div class="vx-row">
                     <div class="vx-col xs:1 sm:w-1/2 md:w-1/2 xl:1/2">
                       <div  class="mt-0 ml-4">
-                        <h5 class="mb-2">UserName: {{ stand.user.username }}</h5>
-                        <h5 class="mb-2">Name: {{ stand.user.name }}</h5>
+                        <h5 class="mb-2">UserName: {{ stand.user.last_name}} {{stand.user.last_name}}</h5>
+                        <h5 class="mb-2">Name: {{ stand.user.last_name}} {{stand.user.last_name}}</h5>
                         <h5 class="mb-2">Email: {{ stand.user.email }}</h5>
                         <h5 class="mb-2">Country: {{ stand.user.country }}</h5>
                       </div>  
                       <div class="vx-row mt-base">
                         <div class="vx-col xs:1 sm:w-1 md:w-1/3 xl:1"></div>
                         <div class="text-center vx-col xs:1 sm:w-1 md:w-1/3 xl:1">
-                          <img :src="`/images/${stand.logo}`" alt="content-img" class="rounded mb-4 responsive">
+                          <img :src="`/fair_image/${stand.logo}`" alt="content-img" class="rounded mb-4 responsive">
                         </div>
                         <div class="vx-col xs:1 sm:w-1 md:w-1/3 xl:1"></div>
                       </div>
@@ -55,10 +55,6 @@
                 </vx-card>               
             </div>
 
-                <!-- 
-                    
-                </vx-card> -->
-            <!-- COL 2 -->
             <div class="vx-col w-full lg:w-2/3">
                 <vx-card title="Portfolios" class="mt-base" v-for="(portfolio, index) in stand.portfolios" :key="index">
                     <div>
@@ -75,7 +71,7 @@
 
                         <div class="vx-row pt-2" >
                             <div class="vx-col w-1/2 sm:w-1/2 md:w-1/3 xl:1/4">
-                                <img :src="`/images/${portfolio.url}`" alt="content-img" class="rounded mb-4 user-latest-image responsive">
+                                <img :src="`/fair_image/${portfolio.url}`" alt="content-img" class="rounded mb-4 user-latest-image responsive">
                             </div>
                         </div>
                         
@@ -85,15 +81,14 @@
                     </div>
                 </vx-card>
             </div>
-            </div>
-            <!-- COL 3 -->
+            
             <div class="vx-col w-full lg:w-1/3">
 
                 <!-- LATEST PHOTOS -->
                 <vx-card title="Gallery" class="mt-base">
                     <div class="vx-row pt-2">
                         <div class="vx-col w-1/2 sm:w-1/2 md:w-1/3 xl:1/4" v-for="(gallery, index) in stand.gallerys" :key="index">
-                            <img :src="`/images/${gallery.url}`" alt="latest-upload" class="rounded mb-4 user-latest-image responsive">
+                            <img :src="`/fair_image/${gallery.url}`" alt="latest-upload" class="rounded mb-4 user-latest-image responsive">
                         </div>
                     </div>
                 </vx-card>
@@ -123,21 +118,14 @@
                 <vx-card title="Stand Contents" class="mt-base">
                     <div class="vx-row pt-2">
                         <div class="vx-col w-1/2 sm:w-1/2 md:w-1/3 xl:1/4" v-for="(stand_content, index) in stand.stand_contents" :key="index">
-                            <img :src="`/images/${stand_content.content}`" alt="latest-upload" class="rounded mb-4 user-latest-image responsive">
+                            <img :src="`/fair_image/${stand_content.content}`" alt="latest-upload" class="rounded mb-4 user-latest-image responsive">
                         </div>
                     </div>
                 </vx-card>
                 
             </div>
         </div>
-
-        <!-- <div class="vx-row">
-            <div class="vx-col w-full">
-                <div class="flex justify-center mt-base">
-                    <vs-button id="button-load-more-posts" class="vs-con-loading__container" @click="loadContent">Load More</vs-button>
-                </div>
-            </div>
-        </div> -->
+    </div>  
     
 </template>
 
@@ -148,19 +136,18 @@ import 'video.js/dist/video-js.css'
 export default {
   data () {
     return {
-      stands:[],
+      stand: null,
       isNavOpen: false,
-     
     }
   },
   computed: {
    
-    stand () {
+    /* stand () {
       if (this.stands.length !== 0)
         return this.stands[0]
       else
-        return {}
-    }
+        return {user:{}}
+    } */
   },
   methods: {
     forceFileDownload(response){
@@ -192,11 +179,14 @@ export default {
   created(){
     if (this.$route.params.id) {
       const action = `/api/stand/stand-detail/${this.$route.params.id}`
+      this.$loading.show(this)
       this.$http.get(action)
         .then((response) => {
           const res = response.data
-          this.stands = res.stands
-          console.log(this.stands);
+          if (res.stands && res.stands.length) {
+            this.stand = res.stands[0]
+          }
+          this.$loading.hide(this)
         })
         .catch((error) => console.log(error))
     }

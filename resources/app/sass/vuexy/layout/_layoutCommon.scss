@@ -5,7 +5,12 @@
   ========================================================================================= -->
   
 ==========================================================================================*/
-
+@font-face {
+  font-family: $font-family-sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  src: url("/app/fonts/Lato/Lato-Regular.ttf"); /* For IE6-8 */
+}
 
 html {
   font-size: $font-size-base;

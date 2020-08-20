@@ -107,8 +107,10 @@ export default {
       return /\.(pdf|jpg)$/.test(file.name)
     },
     getBrochures () {
+      this.$loading.show(this);
       this.$http.post('/api/setting/my_stand/brochure')
         .then((response) => {
+          this.$loading.hide(this);
           const data = response.data
           if (!data.stand || !data.stand.id) {
             this.$vs.notify({
@@ -159,9 +161,10 @@ export default {
       formData.append('stand_id', this.stand_id)
       formData.append('catalog_title', this.catalog_title)
       formData.append('catalog_file', this.catalog_file)
-      
+      this.$loading.show(this)
       this.$http.post('/api/setting/my_stand/brochure/save', formData, headers)
         .then((response) => {
+          this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
               title: 'éxito',
@@ -175,8 +178,10 @@ export default {
         })
     },
     removeBrochure (id) {
+      this.$loading.show(this)
       this.$http.post('/api/setting/my_stand/brochure/remove', {_id: id})
         .then((response) => {
+          this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
               title: 'éxito',

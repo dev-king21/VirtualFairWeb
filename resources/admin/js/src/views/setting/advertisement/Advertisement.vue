@@ -1,0 +1,155 @@
+<template>
+  <div>
+    <div class="flex justify-between flex-wrap mb-4">
+        <vs-button class="mt-4" type="filled" icon-pack="feather" icon="icon-save" color="success"
+            @click="saveAction">
+            Add Image
+        </vs-button> 
+    </div>
+    <div class="vx-row">
+      <div class="vx-col w-full lg:w-1/4 sm:w-1 mb-base">
+        <vx-card class="overlay-card overflow-hidden">
+            <h3 class="mb-2 text-warning font-bold">Advertisement Image</h3>
+            <div class="mb-8">
+              <file-upload :preview="ads_image" :upload_key="'advertisement'" :onSuccess="changeUploadFile" />
+            </div>
+        </vx-card>
+      </div>
+     <div class="vx-col sm:w-3/4 w-full">
+        <div class="vx-row">
+            <div class="vx-col w-full sm:w-1/2 lg:w-1/3 mb-base" v-for="(ad, index) in ads" :key="index">
+            <vx-card>
+                <div slot="no-body">
+                    <img :src="`/fair_image/${ad.url}`" alt="content-img" class="responsive card-img-top">
+                    <div class="flex items-center justify-between px-4 pb-4">
+                        <vs-button class="mt-4" type="filled" icon-pack="feather" icon="icon-save" color="success">
+                            Delete
+                        </vs-button> 
+                        <vs-switch color="success" v-model="ad.show" @change="updateStatus(ad)">
+                            <span slot="on">Show</span>
+                            <span slot="off">Cancel</span>
+                        </vs-switch>
+                    </div>
+                </div>
+            </vx-card>
+            </div>
+        </div>
+    </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import FileUpload from '@/views/components/extra-components/upload/ImageFileUpload.vue'
+
+export default {
+  components: {
+    FileUpload
+  },
+  data () {
+    return {
+      ads: [],
+      ads_image: undefined,
+      ads_file: null,
+      isShow : false,
+      sent: false
+    }
+  },
+  methods: {
+    changeUploadFile ({ action, name, file}) {
+      if (action === 'remove') {
+        this.ads_file = null
+      } else this.ads_file = file
+
+    },
+
+    saveAction () {
+      const action = '/api/setting/ads/create'
+      const formData = new FormData()
+      const headers = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      }
+      if (this.ads_file) formData.append('ads_file', this.ads_file)
+      formData.append('show', 1)
+      this.$loading.show(this)
+      this.$http.post(action, formData, headers)
+        .then((response) => {
+          this.$loading.hide(this);
+          const res = response.data
+          this.isShow = true
+          if (res.status === 'ok' && res.id) this.$router.push({ path: `/settings/advertisement` }).catch(()=>{})
+          if(response.data.status === 'ok')
+          {
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Te has registrado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          }
+          else
+          {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          }  
+        })
+        .catch((error) => { console.log(error) })
+    },
+    updateStatus (ad) {
+      if (this.sent === true) {
+        this.sent = false
+        return  
+      }
+      this.sent = true
+      const action = `/api/setting/ads/update/${ad.id}`
+      const param = {
+        show: ad.show
+      }
+      this.$loading.show(this)
+      console.log('111')
+
+      this.$http.post(action, param).then((response) => {
+        this.$loading.hide(this)  
+        
+        if (response.data.status === 'ok') {
+          this.$vs.notify({
+            title: 'éxito',
+            text: 'Ha sido cambiado exitosamente.',
+            color: 'success',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+          
+        } else {
+          this.$vs.notify({
+            title: 'Oyu',
+            text: 'Operación fallida',
+            color: 'error',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        }      
+      })
+    }
+  },
+  created () {
+    
+    this.$loading.show(this)
+    this.$http.get(`/api/setting/ads/get`)
+    .then((response) => { 
+        this.ads = response.data.ads
+        console.log(response.data);
+        this.$loading.hide(this)
+    })
+    .catch((error)   => { console.log(error) })
+  }
+}
+</script>

@@ -159,7 +159,7 @@ export default {
         }
         .input-span-placeholder {
             padding: 0.6rem !important;
-            color: #333 !important;
+            color: #151515 !important;
         }
 
         .vs-con-textarea {

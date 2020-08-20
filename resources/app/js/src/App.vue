@@ -68,7 +68,7 @@ export default {
     window.addEventListener('scroll', this.handleScroll)
 
     // Auth0
-    try       { await this.$auth.renewTokens() } catch (e) { console.error(e) }
+    //try       { await this.$auth.renewTokens() } catch (e) { console.error(e) }
 
   },
   destroyed () {

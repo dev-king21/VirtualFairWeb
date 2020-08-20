@@ -96,14 +96,32 @@ export default {
     }  
   },
   created () {
-
+    this.$loading.show(this)
     this.$http.post('/api/setting/download')
       .then((response) => {
+        this.$loading.hide(this)
         const data = response.data
         this.catalog_list = data.catalog_list
         this.video_list = data.video_list
         this.webinar_list = data.webinar_list  
         console.log(data)
+        if (response.data.status === 'ok') {
+          this.$vs.notify({
+            title: 'éxito',
+            text: 'Te has registrado con éxito.',
+            color: 'success',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } else {
+          this.$vs.notify({
+            title: 'Oyu',
+            text: 'Operación fallida',
+            color: 'error',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } 
       })
     
   }

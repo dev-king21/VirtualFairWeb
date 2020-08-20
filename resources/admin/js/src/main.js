@@ -7,6 +7,8 @@ import router from './router'
 import store from './store/store'
 import i18n from './i18n/i18n'
 import VueClipboard from 'vue-clipboard2'
+import date from './helper/date_helper'
+import loading from './helper/loading_helper'
 import VueTour from 'vue-tour'
 import VeeValidate from 'vee-validate'
 import * as VueGoogleMaps from 'vue2-google-maps'
@@ -25,6 +27,8 @@ require('@assets/css/iconfont.css')
 
 Vue.use(Vuesax)
 Vue.prototype.$http = axios
+Vue.prototype.$date = date
+Vue.prototype.$loading = loading
 Vue.use(VueClipboard)
 Vue.use(VueTour)
 Vue.use(VeeValidate)

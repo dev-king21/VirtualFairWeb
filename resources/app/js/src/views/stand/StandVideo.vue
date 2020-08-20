@@ -1,7 +1,7 @@
 <template>
 <div class="w-full">
     <app-header activeItem="-1"/>  
-    <bread-crumb :center="true" text="video title" />
+    <bread-crumb second second_center :second_text="video.name" />
     <div class="flex w-full flex-col live-bg-img items-center justify-center live-main">
       <!-- <div class="play-icon text-white"> -->
         <vs-icon size="5rem" class="play-icon" color="red" icon-pack="material-icons" icon="play_circle_filled" />
@@ -16,6 +16,22 @@ export default {
   components: {
     AppHeader,
     BreadCrumb
+  },
+  data () {
+    return {
+      video: {}
+    }
+  },
+  created () {
+    if (!this.$route.params.video_id) this.$router.back()
+    if (!this.$route.params.type) this.$router.back()
+    this.$http.post('/api/stand/video', {_id: this.$route.params.video_id, type: this.$route.params.type})
+      .then((res) => {
+        this.video = res.data.video
+        if (!this.video) {
+          return this.$router.back()
+        }
+      })
   }
 }
 </script>

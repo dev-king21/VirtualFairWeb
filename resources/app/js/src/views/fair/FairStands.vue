@@ -89,7 +89,8 @@ export default {
     if (!this.$route.params.country_id) {
       return this.$router.push('/pages/error-404')
     }
-      
+    
+    this.$loading.show(this)
     this.$http.get(`/api/fair/show/${this.$route.params.fair_id}/${this.$route.params.country_id}`)
       .then((response) => {
         const data = response.data
@@ -98,6 +99,7 @@ export default {
         this.country = data.country
         this.stands = data.stands
         console.log(this.stands)
+        this.$loading.hide(this)
       })
   }
 }

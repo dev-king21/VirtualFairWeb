@@ -37,8 +37,23 @@
                     </div>
                     <div class="vx-col w-1/4 event-los-panel bg-white-grey">
                         <div class="ml-8 bg-white" style="height: 100%">
-                            <div class="p-6 font-bold">
-                                <span class="h6">PUBLICIDAD</span>
+                            <div class="p-6 fs-11 font-bold">
+                              PUBLICIDAD
+                            </div>
+                            <div class="px-4">
+                              <swiper :options="swiperOption">
+                                <swiper-slide :key="`swiper-item-${index}`" v-for="(item, index) in ads_list">
+                                  <img class="responsive" :src="`/fair_image/${item.url}`" alt="">
+                                  <!-- @assets/images/pages/carousel/banner-16.jpg-->
+                                </swiper-slide>
+                                <div class="swiper-pagination" slot="pagination"></div>
+                                <div class="swiper-button-prev" slot="button-prev">
+                                    <feather-icon svgClasses="w-6 h-6 mt-3 ml-3" style="color: black" icon="ChevronLeftIcon"/>
+                                </div>
+                                <div class="swiper-button-next" slot="button-next">
+                                    <feather-icon svgClasses="w-6 h-6 mt-3 ml-3" style="color: black" icon="ChevronRightIcon"/>
+                                </div>
+                              </swiper>
                             </div>
                         </div>
                     </div>
@@ -53,17 +68,39 @@ import NavBackButton from '@/views/custom/NavBackButton.vue'
 import Datepicker from 'vuejs-datepicker'
 import BreadCrumb from '@/views/custom/BreadCrumb.vue'
 import WebinarCard from './WebinarCard.vue'
+import 'swiper/dist/css/swiper.min.css'
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
 export default {
   components: {
     AppHeader,
     NavBackButton,
     BreadCrumb,
     Datepicker,
-    WebinarCard
+    WebinarCard,
+    swiper, 
+    swiperSlide
   },
   data () {
     return {
-      webinars: []
+      webinars: [],
+      ads_list: [],
+      swiperOption: {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false
+        },
+        effect: 'fade',
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
     }
   },
   methods: {
@@ -76,21 +113,61 @@ export default {
       this.$router.push(`/room/webinar/${id}`)
     },
     addToBoard (id) {
+      this.$loading.show(this)
       this.$http.post('/api/room/webinar/add_to_board', {_id: id})
         .then((response) => {
+          this.$loading.hide(this)
           if (response.data.status === 'ok') {
-            console.log('ok')
-          }
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Te has registrado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } else {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } 
         })  
     }
   },
   created () {
+    this.$loading.show(this)
     this.$http.post('/api/room/webinar')
       .then((response) => {
+        this.$loading.hide(this)
         console.log(response.data)
         const data = response.data
         this.webinars = data.webinars
+        if (response.data.status === 'ok') {
+          this.$vs.notify({
+            title: 'éxito',
+            text: 'Te has registrado con éxito.',
+            color: 'success',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } else {
+          this.$vs.notify({
+            title: 'Oyu',
+            text: 'Operación fallida',
+            color: 'error',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } 
       })
+    this.$http.post('/api/stand/ads/get')
+      .then((res) => {
+        this.ads_list = res.data.ads
+      })
+    
   }
 }
 </script>
@@ -105,7 +182,6 @@ export default {
             padding: 0 !important;        
             font-size: 0.8rem;
             font-weight: 900;
-            color: #555;
             min-height: calc(var(--vh, 1vh) * 100 - 150px);
                     
             .chevron-border {
@@ -119,7 +195,6 @@ export default {
             padding: 0 !important;
             font-size: 0.8rem;
             font-weight: 900;
-            color: #555;
             min-height: calc(var(--vh, 1vh) * 100 - 150px);
             
         }

@@ -97,13 +97,31 @@ export default {
   },
   created () {
     this.me = JSON.parse(localStorage.getItem('userInfo'))
+    this.$loading.show(this)
     this.$http.post('/api/setting/webinar')
       .then((response) => {
+        this.$loading.hide(this)
         console.log(response.data)
         const data = response.data
         this.reserved_webinars = data.reserved_webinars
         this.past_webinars = data.past_webinars
-        
+        if (response.data.status === 'ok') {
+          this.$vs.notify({
+            title: 'éxito',
+            text: 'Te has registrado con éxito.',
+            color: 'success',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } else {
+          this.$vs.notify({
+            title: 'Oyu',
+            text: 'Operación fallida',
+            color: 'error',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } 
       })
   }
 }

@@ -4,25 +4,30 @@
         <nav-back-button v-show="!disableBack"/>
         <div class="flex items-center text-white ml-4" :class="{'justify-between': center}">
             <template v-if="type!=='svg'">
-              <feather-icon svgClasses="w-10 h-10" :icon="icon"/>
+              <feather-icon svgClasses="w-12 h-12" :icon="icon"/>
             </template>
             <template v-else>
-              <svg-icon size="w-10 h-10" :icon="icon"/>
+              <svg-icon size="w-12 h-12" :icon="icon"/>
             </template>
-            <div class="ml-4">{{text}}</div>
+            <div class="ml-4 fs-16 font-bold">{{text}}</div>
         </div>
     </div>
-    <div class="flex flex-row text-white items-center py-3">
+    <div v-if="avatar||second" class="flex flex-row w-full text-white items-center py-3" :class="{'justify-center': second_center, 'justify-end': !second_center}">
       <template v-if="avartar">
-        <img :src="require(`@assets/images/pages/${user_img}`)" class="user-img responsive mx-4">
+        <img :src="user_img" class="user-img responsive mx-4">
         <div class="mr-4">
           <div class="user-name text-white">{{user_name}}</div>
         </div>
       </template>
       <template v-if="second">
-        <feather-icon :icon="second_icon"/>
+        <template v-if="second_type!=='svg'">
+          <feather-icon svgClasses="w-8 h-8" :icon="second_icon"/>
+        </template>
+        <template v-else>
+          <svg-icon size="w-8 h-8" :icon="second_icon"/>
+        </template>
         <div class="mx-4">
-          <div class="user-name h6 text-white">{{second_text}}</div>
+          <div class="user-name fs-16 text-white">{{second_text}}</div>
         </div>
       </template>
     </div>
@@ -72,8 +77,16 @@ export default {
       type: String,
       required: false
     },
+    second_type: {
+      type: String,
+      required: false
+    },
     second_text: {
       type: String,
+      required: false
+    },
+    second_center: {
+      type: Boolean,
       required: false
     }
   },
@@ -98,7 +111,7 @@ export default {
       border: 1px solid silver
     }
     .user-name {
-      font-size: 0.8rem !important;
+      font-size: 1.2rem !important;
     }
 }
 </style>

@@ -231,8 +231,30 @@ __webpack_require__.r(__webpack_exports__);
       formData.append('name', this.stype_name);
       if (this.building_file) formData.append('building_file', this.building_file);
       if (this.interior_file) formData.append('interior_file', this.interior_file);
+      this.$loading.show(this);
       this.$http.post(action, formData, headers).then(function (response) {
+        _this.$loading.hide(_this);
+
         var res = response.data;
+
+        if (response.data.status === 'ok') {
+          _this.$vs.notify({
+            title: 'éxito',
+            text: 'Te has registrado con éxito.',
+            color: 'success',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          });
+        } else {
+          _this.$vs.notify({
+            title: 'Oyu',
+            text: 'Operación fallida',
+            color: 'error',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          });
+        }
+
         if (res.status === 'ok' && res.id) _this.$router.push({
           path: "/settings/stand-type/edit/".concat(res.id)
         }, function () {});
@@ -247,11 +269,14 @@ __webpack_require__.r(__webpack_exports__);
     if (this.$route.params.stype_id) {
       // this.upload_building_url = `/api/fair_type/upload/building/${this.$route.params.stype_id}`
       // this.upload_interior_url = `/api/fair_type/upload/interior/${this.$route.params.stype_id}`
+      this.$loading.show(this);
       this.$http.get("/api/stand_type/get/".concat(this.$route.params.stype_id)).then(function (response) {
         var stand_type = response.data.stand_type;
         if (stand_type.building) _this2.building_image = "/fair_image/".concat(stand_type.building);
         if (stand_type.interior) _this2.interior_image = "/fair_image/".concat(stand_type.interior);
         if (stand_type.name) _this2.stype_name = stand_type.name;
+
+        _this2.$loading.hide(_this2);
       })["catch"](function (error) {
         console.log(error);
       });

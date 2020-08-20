@@ -1,7 +1,9 @@
 <template>
     <div class="w-full">
         <app-header activeItem="0"></app-header>
-        <bread-crumb icon="schedule-edit" type="svg" text="citas" />
+        <bread-crumb icon="schedule-edit" type="svg" 
+            second second_center second_icon="video" second_type="svg"
+            text="citas" second_text="Las citas se realizarán mediante videoconferencia" />
         <div class="w-full stand-schedule-edit bg-white-grey">
           <div class="flex flex-col items-center justify-center">
             <div class="w-2/3 mt-2">
@@ -164,10 +166,30 @@ export default {
         start_time: this.convert_time(st),
         end_time: this.convert_time(et)
       }
-      
+      this.$loading.show(this)
       this.$http.post('/api/stand/appointment/save', param)
         .then((response) => {
+          this.$loading.hide(this)
           console.log(response.data.status)
+          if (response.data.status === 'ok') {
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Te has registrado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } else {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Error de registro',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          }
+        }).catch(() => {
+          
         })
     }  
   },
@@ -177,6 +199,7 @@ export default {
     if (!this.$route.params.stand_id) {
       return this.$route.push('/stand/home')
     }
+    this.$loading.show(this)
     this.$http.post('/api/stand/appointment', {_id: this.$route.params.stand_id})
       .then((response) => {
         const data = response.data
@@ -185,7 +208,7 @@ export default {
           this.make_availables(tt.split(','))
         }
         this.schedule_date = this.$date.today()
-        
+        this.$loading.hide(this)
       })
   }
 }
@@ -225,7 +248,7 @@ export default {
     }
 
     .time-table.can_contact_time {
-      color: #333 !important;
+      color: #151515 !important;
       font-weight: bold;
       cursor: pointer
     }

@@ -65,28 +65,79 @@ export default {
   },
   methods: {
     downloadWebinar () {
+      this.$loading.show(this)
       this.$http.post('/api/room/webinar/download', {_id: this.$route.params.webinar_id})
         .then((response) => {
+          this.$loading.hide(this)
           if (response.data.status === 'ok') {
-            console.log('ok')
-          }
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Se ha descargado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } else {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } 
         })
     },
     addToBoard () {
+      this.$loading.show(this)
       this.$http.post('/api/room/webinar/add_to_board', {_id: this.$route.params.webinar_id})
         .then((response) => {
+          this.$loading.hide(this)
           if (response.data.status === 'ok') {
-            console.log('ok')
-          }
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Te has registrado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } else {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } 
         })
     }
   },
   created () {
+    this.$loading.show(this)
     this.$http.post('/api/room/webinar/show', {_id: this.$route.params.webinar_id})
       .then((response) => {
+        this.$loading.hide(this)
         const data = response.data
         this.webinar = data.webinar
         this.user = data.webinar.user
+        if (response.data.status === 'ok') {
+          this.$vs.notify({
+            title: 'éxito',
+            text: 'Te has registrado con éxito.',
+            color: 'success',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } else {
+          this.$vs.notify({
+            title: 'Oyu',
+            text: 'Operación fallida',
+            color: 'error',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } 
         console.log(data.webinar.user)
       })
   }

@@ -56,7 +56,7 @@
               <p class="product-name font-medium truncate">{{ tr.id }}</p>
             </vs-td>
             <vs-td class="img-container">
-              <img :src="`/images/${tr.video}`" class="product-img" />
+              <img :src="`/fair_image/${tr.video}`" class="product-img" />
             </vs-td>
 
             <vs-td>
@@ -161,8 +161,26 @@ export default {
       const param = {
         status: tr.status
       }
+      this.$loading.show(this)
       this.$http.post(action, param).then((response) => {
-
+        this.$loading.hide(this)  
+        if (response.data.status === 'ok') {
+          this.$vs.notify({
+            title: 'éxito',
+            text: 'Ha sido cambiado exitosamente.',
+            color: 'success',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } else {
+          this.$vs.notify({
+            title: 'Oyu',
+            text: 'Operación fallida',
+            color: 'error',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        }      
       })
     }
   },
@@ -188,6 +206,7 @@ export default {
       action = '/api/rooms/talks/past'
       this.isPast = true
     }
+    this.$loading.show(this)
     this.$http.get(action)
       .then((response) => {
         console.log(action)
@@ -195,6 +214,7 @@ export default {
         const res = response.data
         this.talks = res.talks
         console.log(this.talks)
+        this.$loading.hide(this)
       })
       .catch((error) => console.log(error))
   },

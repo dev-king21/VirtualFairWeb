@@ -38,9 +38,10 @@ export default {
       if (!this.$route.params.stand_id) {
         return this.$route.push('/stand/home')
       }
+      this.$loading.show(this)
       this.$http.post('/api/stand/businesscard', {_id: this.$route.params.stand_id})
         .then((response) => {
-            
+          this.$loading.hide(this)
           const data = response.data
           if (!data.stand || !data.stand.id) {
             this.$vs.notify({

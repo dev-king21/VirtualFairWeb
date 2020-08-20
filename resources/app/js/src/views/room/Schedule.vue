@@ -6,9 +6,9 @@
             <div class="w-full h-full">
                 <div class="vx-row page-content">
                     <div class="vx-col lg:w-1/4 md:w-1/4 sm:w-1/4 xs:w-1/4 event-panel bg-white-grey">
-                        <div class="p-4 bg-cyan-dark">
-                            <span class="h2 text-white font-bold">Evantos</span>
-                            <span class="h2 text-white font-bold stroke-text">del dia</span>
+                        <div class="p-5 bg-cyan-dark">
+                            <span class="fs-20 text-white" style="font-weight: 900">Evantos</span>
+                            <span class="fs-20 text-white stroke-text ml-2" style="font-weight: 100">del dia</span>
                         </div>
                         <schedule-card 
                             :reserved="true"
@@ -25,11 +25,11 @@
                     </div>
                     <div class="vx-col w-3/4 event-los-panel bg-white-grey">
                         <div class="flex flex-row justify-between items-center bg-blue-light">
-                            <div class="p-4 ml-8">
-                                <span class="h2 text-white font-bold stroke-text">Todos</span>
-                                <span class="h2 text-white font-bold">los Evantos</span>
+                            <div class="p-5 ml-8">
+                                <span class="fs-20 text-white stroke-text" style="font-weight: 100">Todos</span>
+                                <span class="fs-20 text-white font-bold ml-2" style="font-weight: 900">los Evantos</span>
                             </div>
-                            <div class="text-white h6 bg-blue-dark cursor-pointer font-normal px-2 py-6" @click="$router.push('/room/webinar')">
+                            <div class="text-white fs-10 bg-blue-dark cursor-pointer font-normal p-8" @click="$router.push('/room/webinar')">
                                 VER TODOS LOS WEBINARS
                             </div>
                         </div>
@@ -86,21 +86,56 @@ export default {
       console.log(id)
     },
     addToBoard (id) {
+      this.$loading.show(this)
       this.$http.post('/api/room/webinar/add_to_board', {_id: id})
         .then((response) => {
+          this.$loading.hide(this)
           if (response.data.status === 'ok') {
-            console.log('ok')
-          }
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Te has registrado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } else {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } 
         })
     }  
   },
   created () {
+    this.$loading.show(this)
     this.$http.post('/api/room/schedule')
       .then((response) => {
+        this.$loading.hide(this)
         console.log(response.data)
         const data = response.data
         this.today = data.today
         this.webinars = data.webinars
+        if (response.data.status === 'ok') {
+          this.$vs.notify({
+            title: 'éxito',
+            text: 'Te has registrado con éxito.',
+            color: 'success',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } else {
+          this.$vs.notify({
+            title: 'Oyu',
+            text: 'Operación fallida',
+            color: 'error',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          })
+        } 
       })
   }
 }
@@ -117,7 +152,6 @@ export default {
             border-right: 1px solid silver;
             font-size: 0.8rem;
             font-weight: 900;
-            color: #555;
             min-height: calc(var(--vh, 1vh) * 100 - 162px);
 
             .stroke-text {
@@ -132,7 +166,6 @@ export default {
             padding: 0 !important;
             font-size: 0.8rem;
             font-weight: 900;
-            color: #555;
             min-height: calc(var(--vh, 1vh) * 100 - 162px);
             .stroke-text {
                 color: transparent;

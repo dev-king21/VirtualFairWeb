@@ -1,10 +1,16 @@
 <template>
-<vs-navbar v-model="activeItem" class="flex flex-end">
+<vs-navbar v-model="active_item" class="flex flex-end">
     <div slot="title">
-      <vs-navbar-title>
+      <vs-navbar-title class="flex items-center">
         <router-link to="/home" >
           <img class="logo cursor-pointer" src="@assets/images/logo/logo-color.png">
         </router-link>
+        <template>
+          <div class="flex items-center ml-8">
+            <img class="h-responsive" :src="`/fair_image/${fair_logo}`" v-show="fair_logo">
+            <div class="h2 ml-4 uppercase">{{fair_title}}</div>
+          </div>
+        </template>
       </vs-navbar-title>
     </div>
     <template v-if="!loggedIn">
@@ -44,10 +50,10 @@
       </vs-navbar-item>
     </template>
     <template v-else>
-      <vs-navbar-item index="0" v-show="!hideNavbar">
+      <vs-navbar-item index="0" v-show="!hideNavbar&&loggedIn">
           <a class="h3" href="/app/home/sustainability">sostenibilidad</a>
       </vs-navbar-item>
-       <vs-navbar-item index="1" v-show="!hideNavbar">
+       <vs-navbar-item index="1" v-show="!hideNavbar&&!loggedIn">
           <a class="h3" href="/app/home/sponsor">patrocinadores</a>
       </vs-navbar-item>
       <vs-navbar-item index="2" v-show="!hideNavbar">
@@ -60,9 +66,9 @@
           </a>
       </vs-navbar-item>
       <vs-navbar-item index="4" v-show="!hideNavbar">
-          <a class="h3 setting-nav text-center"  href="/app/setting">
+          <a class="setting-nav text-center"  href="/app/setting">
             <svg-icon size="w-8 h-8" icon="profile"/>
-            <div class="h6 text-white">Mi Cuenta</div>
+            <div class="fs-10 text-white">Mi Cuenta</div>
           </a>
       </vs-navbar-item>
     </template>
@@ -83,20 +89,15 @@ export default {
   },
   data () {
     return {
-      search: ''
+      search: '',
+      active_item: 0,
+      fair_logo: null,
+      fair_title: ''
     }
   },
   computed: {
     loggedIn () {
       return this.$store.state.auth.loggedIn
-      /*let userInfo = localStorage.getItem('userInfo')
-      if (userInfo) {
-        userInfo = JSON.parse(userInfo)
-        if (userInfo.id !== 0 && userInfo.email && userInfo.email !== '') {
-          return true
-        }
-      }
-      return false*/
     }
   },
   methods: {
@@ -105,7 +106,15 @@ export default {
         this.$store.registerModule('auth', moduleAuth)
         moduleAuth.isRegistered = true
       }
+      this.$loading.show(this)
       this.$store.dispatch('auth/logout')
+        .then(() => {
+          this.$loading.hide(this)
+          this.$router.push('/home')
+        })
+        .catch((error) => {
+          console.log('error', error)
+        })
     }
   },
   created () {
@@ -113,6 +122,15 @@ export default {
       this.$store.registerModule('auth', moduleAuth)
       moduleAuth.isRegistered = true
     }
+    this.active_item = this.activeItem
+    this.$http.get('/api/fair/now')
+      .then((res) => {
+        if (res.data.fair) {
+          this.fair_logo = res.data.fair.logo
+          this.fair_title = res.data.fair.name
+        }
+        
+      })
   }
 }
 </script>
@@ -131,24 +149,24 @@ export default {
 
   .logo{
     position: relative;
-    margin: 10px 20PX;
+    margin: 10px 40PX;
     width: 120px;
     height: auto;
   }
 
   .vs-con-items {
-    width: 100%;
+    /*width: 100%;*/
     /* margin-right: 100px; */
     justify-content: flex-end;
 
     .circleIcon {
       border-radius: 50%;
-      background: #333;
+      background: #151515;
     }
     
     .is-active-item {
       a {
-        background-color:#333;
+        background-color:#151515;
         color: white;
       }  
     }
@@ -166,14 +184,14 @@ export default {
       }
 
       a:hover {
-        background-color:#333;
+        background-color:#151515;
         color: white !important;
       }
 
       a.setting-nav {
         background-color:#123058;
         color:white;
-        padding: 1.5rem;
+        padding: 1.2rem;
       }
 
       .feather-icon {
@@ -195,7 +213,7 @@ export default {
   }
 
   .vs-dropdown--item-link:hover {
-    background: #333 !important;
+    background:  !important;
     color: white !important;
   }
 }

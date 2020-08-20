@@ -135,8 +135,6 @@ import CellRendererStatus from './cell-renderer/CellRendererStatus.vue'
 import CellRendererActions from './cell-renderer/CellRendererActions.vue'
 
 
-
-
 export default {
   components: {
     AgGridVue,
@@ -170,7 +168,7 @@ export default {
           headerName: 'ID',
           field: 'id',
           width: 80,
-          filter: true,
+          filter: true
         },
         {
           headerName: 'Country Name',
@@ -185,8 +183,7 @@ export default {
           filter: true,
           width: 240,
           cellRendererFramework: 'CellRendererLink'
-        }
-        ,
+        },        
         {
           headerName: 'Description',
           field: 'description',
@@ -218,7 +215,7 @@ export default {
       },
       clickNotClose        : true,
       isChatSidebarActive  : true,
-      isLoggedInUserProfileView: false ,
+      isLoggedInUserProfileView: false,
       isChatSidebarActive  : true,
       countries:[],
       searchedCountries: [],
@@ -233,7 +230,7 @@ export default {
   },
   
   computed: {
-  paginationPageSize () {
+    paginationPageSize () {
       if (this.gridApi) return this.gridApi.paginationGetPageSize()
       else return 10
     },
@@ -259,8 +256,8 @@ export default {
       return this.$store.state.windowWidth
     }
   }, 
-   methods: {
-     setColumnFilter (column, val) {
+  methods: {
+    setColumnFilter (column, val) {
       const filter = this.gridApi.getFilterInstance(column)
       let modelObj = null
 
@@ -282,19 +279,19 @@ export default {
     updateSearchQuery (val) {
       this.gridApi.setQuickFilter(val)
     },  
-    addNewData(){
+    addNewData () {
       this.name = ''
       this.country_id = 0
       this.description = ''
       this.isAddOrEdit = 0
-      this.popupTitle="Add Room"
+      this.popupTitle = 'Add Room'
       this.isAddShow = true
     },
-    editRecord(id) {
+    editRecord (id) {
       console.log(id)
       this.editId = id
       this.isAddOrEdit = 1
-      this.popupTitle="Edit Room"
+      this.popupTitle = 'Edit Room'
 
       const room = this.rooms.find((item) => item.id === id)
       this.name = room.name
@@ -302,44 +299,61 @@ export default {
       this.description = room.description 
       this.isAddShow = true
     },
-    RemoveRecord(id){
+    RemoveRecord (id) {
       const action = `/api/room/update/${id}`
       console.log(action)
       const newData = {
         status: 0
       }
-
+      this.$loading.show(this)
+      
       this.$http.post(action, newData)
         .then((response) => {
+          this.$loading.hide(this)
+          if (response.data.status === 'ok') {
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Se ha eliminado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } else {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          }
           this.loadContent()
         })
     },
-    searchList() {
+    searchList () {
       
-      if (this.searchQuery === '')
-        this.searchedCountries = this.countries;
-      else 
-        this.searchedCountries = this.countries.filter((item) => item.name.toLowerCase().lastIndexOf(this.searchQuery.toLowerCase())!== -1);
+      if (this.searchQuery === '') this.searchedCountries = this.countries
+      else this.searchedCountries = this.countries.filter((item) => item.name.toLowerCase().lastIndexOf(this.searchQuery.toLowerCase()) !== -1)
     },
     
     showTalks (country_id) {
-      let action = `/api/rooms/all`
-      if(country_id !== 0)
-        action = `/api/rooms/all/${country_id}`
+      let action = '/api/rooms/all'
+      if (country_id !== 0) action = `/api/rooms/all/${country_id}`
+      this.$loading.show(this)
       this.$http.get(action)
         .then((response) => {
           const res = response.data
           this.rooms = res.rooms
-          console.log(this.rooms);
+          console.log(this.rooms)
+          this.$loading.hide(this)
         })
         .catch((error) => console.log(error))
     
     },
-    addEditRoom(){
-      let action = `/api/room/create`
-      if(this.isAddOrEdit === 1)
-        action = `/api/room/update/${this.editId}`
-       console.log(action)
+    addEditRoom () {
+      let action = '/api/room/create'
+      if (this.isAddOrEdit === 1) action = `/api/room/update/${this.editId}`
+      console.log(action)
 
       const newData = {
         name: this.name,
@@ -349,16 +363,36 @@ export default {
       }
       console.log(newData)
 
-      if(this.name === "" || this.country_id === 0 || this.description === "")
-        return
+      if (this.name === '' || this.country_id === 0 || this.description === '') return
+
+      this.$loading.show(this)
       this.$http.post(action, newData)
         .then((response) => {
           this.isAddShow = false
+          this.$loading.hide(this)
+          if (response.data.status === 'ok') {
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Te has registrado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } else {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          }
           this.loadContent()
         })
     },
     loadContent () {
-      const action = `/api/rooms/all`
+      const action = '/api/rooms/all'
+      this.$loading.show(this)
       this.$http.get(action)
         .then((response) => {
           const res = response.data
@@ -366,19 +400,19 @@ export default {
           this.searchedCountries = this.countries
           this.rooms = res.rooms
 
-          for(let i = 0; i < this.countries.length; i++)
-          {
-              this.countryOptions.push ({
-                value: this.countries[i].id, 
-                label: this.countries[i].name
-              })
+          for (let i = 0; i < this.countries.length; i++) {
+            this.countryOptions.push({
+              value: this.countries[i].id, 
+              label: this.countries[i].name
+            })
           }
           console.log(this.countryOptions)
+          this.$loading.hide(this)
         })
         .catch((error) => console.log(error))
     },
-    cancelAction(){
-      this.isAddShow = false;
+    cancelAction () {
+      this.isAddShow = false
     }
   }, 
   mounted () {
@@ -392,11 +426,7 @@ export default {
   created () {
       
     this.loadContent()
-  },
-  
-  /* beforeDestroy () {
-    this.$store.unregisterModule('chat')
-  },*/
+  }
   
 }
 

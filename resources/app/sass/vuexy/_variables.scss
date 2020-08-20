@@ -35,7 +35,8 @@ $black: #22292f;
         TYPOGRAPHY
 =========================================================*/
 
-$font-family-sans-serif:  /* "Montserrat", */ Helvetica, Arial, sans-serif !default;
+//$font-family-sans-serif:  /* "Montserrat", */ Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  'Lato' !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
@@ -69,7 +70,7 @@ $font-weight-bold:            700;
 $font-weight-base:            $font-weight-normal;
 $line-height-base:            1.45;
 
-$content-color: #626262;
+$content-color: #151515;
 $theme-background: #f8f8f8;
 
 

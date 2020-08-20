@@ -569,7 +569,7 @@ body {
 }
 
 .vx-navbar-wrapper .vx-navbar .vs-con-items .vx-auto-suggest {
-  color: #626262;
+  color: #151515;
 }
 
 @media (min-width: 1201px) {
@@ -866,7 +866,7 @@ body {
 ==========================================================================================*/
 
 body {
-  color: #626262;
+  color: #151515;
 }
 
 h1,
@@ -1103,7 +1103,7 @@ i.feather {
 }
 
 .vue-form-wizard.md .wizard-navigation .wizard-nav .stepTitle {
-  color: #626262;
+  color: #151515;
 }
 
 i.wizard-icon {
@@ -1161,11 +1161,11 @@ i.wizard-icon {
 }
 
 .v-select .vs__dropdown-toggle .vs__search {
-  color: #626262;
+  color: #151515;
 }
 
 .v-select .vs__dropdown-toggle .vs__deselect svg {
-  stroke: #626262;
+  stroke: #151515;
   opacity: 0.5;
 }
 
@@ -1174,7 +1174,7 @@ i.wizard-icon {
 }
 
 .v-select .vs__dropdown-toggle .vs__actions .vs__clear {
-  color: #626262;
+  color: #151515;
 }
 
 .v-select .vs__dropdown-menu .vs__dropdown-option--highlight {
@@ -1182,11 +1182,11 @@ i.wizard-icon {
 }
 
 .v-select .vs__dropdown-menu .vs__dropdown-option {
-  color: #626262;
+  color: #151515;
 }
 
 .v-select .vs__selected {
-  color: #626262;
+  color: #151515;
 }
 
 [dir] .theme-dark .v-select .vs__dropdown-toggle {
@@ -1872,7 +1872,7 @@ i.wizard-icon {
 
 .vdp-datepicker input {
   font-size: 1rem;
-  color: #626262;
+  color: #151515;
   width: 100%;
 }
 
@@ -2032,7 +2032,7 @@ i.wizard-icon {
 
 .flatpickr-calendar .numInputWrapper .numInput.cur-year {
   font-weight: 600 !important;
-  color: #626262;
+  color: #151515;
 }
 
 [dir] .flatpickr-calendar .numInputWrapper:hover {
@@ -2053,7 +2053,7 @@ i.wizard-icon {
 }
 
 .flatpickr-calendar .flatpickr-monthDropdown-months {
-  color: #626262;
+  color: #151515;
   font-size: 1rem !important;
   font-weight: 500 !important;
   height: 27px;
@@ -2149,7 +2149,7 @@ i.wizard-icon {
 .flatpickr-input,
 .flatpickr-input[type=hidden] + input {
   font-size: 1rem;
-  color: #626262;
+  color: #151515;
 }
 
 [dir] .flatpickr-input, [dir] .flatpickr-input[type=hidden] + input {
@@ -4126,7 +4126,7 @@ i.wizard-icon {
 }
 
 .theme-dark .d-theme-text-inverse {
-  color: #626262;
+  color: #151515;
 }
 
 [dir] .theme-dark .d-theme-border-grey-light, [dir] .theme-dark .d-theme-dark-border {
@@ -4148,7 +4148,7 @@ i.wizard-icon {
 }
 
 .text-color-base {
-  color: #626262;
+  color: #151515;
 }
 
 .user-list {
@@ -4652,7 +4652,7 @@ i.wizard-icon {
 }
 
 .vs-select--options span {
-  color: #626262;
+  color: #151515;
   font-size: 1rem;
 }
 

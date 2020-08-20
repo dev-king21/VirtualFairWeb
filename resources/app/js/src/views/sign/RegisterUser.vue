@@ -41,7 +41,7 @@
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
                         <vs-input class="w-full" color="success" placeholder="Email" name="Email"
-                        v-validate="'required|email|min:5'" data-vv-validate-on="blur" v-model="user.email"/>
+                        v-validate="'required|email'" data-vv-validate-on="blur" v-model="user.email"/>
                         <span class="text-danger text-sm">{{ errors.first('Email') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
@@ -171,9 +171,12 @@ export default {
   },
   methods: {
     registerClick () {
+      this.$loading.show(this)
       if (this.avatar_file) this.user.avatar_file = this.avatar_file
       this.$store.dispatch('auth/register', this.user)
         .then((response) => {
+          console.log(response)
+          this.$loading.hide(this)  
           if (response.data.status === 'ok') {
             this.$vs.notify({
               title: 'éxito',
@@ -247,6 +250,7 @@ export default {
       this.$store.registerModule('auth', moduleAuth)
       moduleAuth.isRegistered = true
     }
+    if (this.$route.params.type === 'expositor') this.user.type = 'lecturer'
   }
 }
 </script>
@@ -288,7 +292,7 @@ export default {
         }
         .input-span-placeholder {
             padding: 0.6rem !important;
-            color: #333 !important;
+            color: #151515 !important;
         }
 
         .vs-con-textarea {

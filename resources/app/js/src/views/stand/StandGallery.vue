@@ -6,12 +6,12 @@
             <div class="w-full px-10 pb-4 mt-4">
                 <div class="vx-row w-full">
                   <div class="vx-col w-1/6" :key="`photo-item-${index}`" v-for="(item, index) in gallery_list.filter((it) => isImage(it.url))">
-                    <div class="bg-grey-real m-4 p-2" style="border-radius: 10px; height: 200px;">
+                    <div class="card-grey m-4 p-2 cursor-pointer" @click="showGallery(index)" style="border-radius: 10px; height: 200px;">
                       <img :src="`/fair_image/${item.url}`" style="height: 100%; width: auto; max-width: 100%;">
                     </div>
                   </div>
                 </div>
-                <div class="vx-row w-full mt-4">
+                <div class="vx-row w-full bottom">
                   <div class="vx-col w-1/4" :key="`video-item-${index}`" v-for="(item, index) in gallery_list.filter((it) => isVideo(it.url))">
                     <video-card
                         :title="item.name"
@@ -22,6 +22,7 @@
                     />
                   </div>
                 </div>
+                <LightBox ref="lightbox" :media="images" :show-caption="true" :show-light-box="false" />
             </div>    
         </div>
     </div>
@@ -30,15 +31,19 @@
 import AppHeader from '@/layouts/components/Header.vue'
 import BreadCrumb from '@/views/custom/BreadCrumb.vue'
 import VideoCard from './VideoCard.vue'
+import 'vue-image-lightbox/dist/vue-image-lightbox.min.css'
+import LightBox from 'vue-image-lightbox'
 export default {
   components: {
     AppHeader,
     BreadCrumb,
-    VideoCard
+    VideoCard,
+    LightBox
   },
   data () {
     return {
       gallery_list: [],
+      images: [],
       stand_id: null
     }
   },
@@ -53,8 +58,10 @@ export default {
       if (!this.$route.params.stand_id) {
         return this.$route.push('/stand/home')
       }
+      this.$loading.show(this)
       this.$http.post('/api/stand/gallery', {_id: this.$route.params.stand_id})
         .then((response) => {
+          this.$loading.hide(this)
           const data = response.data
           if (!data.stand || !data.stand.id) {
             this.$vs.notify({
@@ -72,18 +79,44 @@ export default {
           this.gallery_show = false
           this.stand_id = data.stand.id
           this.gallery_list = data.stand.gallerys
+          this.gallery_list.forEach(element => {
+            if (this.isImage(element.url)) {
+              this.images.push({
+                thumb: `/fair_image/${element.url}`, src: `/fair_image/${element.url}`, caption: element.name
+              })
+            }
+          })
         })  
     },
+    showGallery (idx) {
+      this.$refs.lightbox.showImage(idx)
+    },
     downloadGallery (id) {
+      this.$loading.show(this)
       this.$http.post('/api/stand/gallery/download', {_id: id})
         .then((response) => {
+          this.$loading.hide(this)
           if (response.data.status === 'ok') {
-            console.log('ok')
-          }
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Se ha descargado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } else {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } 
         })
     },
     showVideo (id) {
-      console.log(id)  
+      this.$router.push(`/stand/video/gallery/${id}`)
     }    
   },
   created () {
@@ -99,8 +132,19 @@ export default {
         margin: 0 !important;
     }
 
+    .vx-row.bottom {
+      margin-top: 2rem !important;
+    }
+
     .vx-col {
         padding: 0 !important;
+    }
+
+    .vue-lb-container {
+      z-index: 10001 !important;
+      .vue-lb-info {
+        display: none !important;
+      }
     }
 }
 </style>

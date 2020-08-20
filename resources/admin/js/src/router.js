@@ -28,6 +28,30 @@ const router = new Router({
             rule: 'editor'
           }
         },
+
+        {
+          path: '/contact',
+          redirect: '/contact/query'
+        },
+
+        {
+          path: '/contact/query',
+          name: 'contact-query',
+          component: () => import('@/views/contacts/QueryContact.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+
+
+        {
+          path: '/contact/contact_message',
+          name: 'contact-message',
+          component: () => import('@/views/contacts/ContactMessage.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
         {
           path: '/room',
           redirect: '/room/all'
@@ -229,6 +253,14 @@ const router = new Router({
           path: '/settings/stand-location/:ftype_id',
           name: 'stand-location',
           component: () => import('@/views/setting/fair/StandLocation.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
+          path: '/settings/advertisement',
+          name: 'advertisement',
+          component: () => import('@/views/setting/advertisement/Advertisement.vue'),
           meta: {
             rule: 'editor'
           }

@@ -121,10 +121,12 @@ export default {
       this.stype_active = !this.stype_active
     },
     ftypeSelected (idx) {
+      this.$loading.show(this)
       this.$http.get(`/api/stand_location/all/${idx}`)
         .then((response) => {
           this.fair_type = response.data.ftype
           this.stand_locations = response.data.stand_locations
+          this.$loading.hide(this)
         })
         .catch((error) => { console.log(error) })
     },
@@ -185,9 +187,27 @@ export default {
       const param = {
         locations: JSON.parse(JSON.stringify(this.stand_locations))
       }
+      this.$loading.show(this)
       this.$http.post('/api/stand_location/save', param)
         .then((response) => {
-          if (response.data.status === 'success') console.log('success')
+          this.$loading.hide(this)
+          if (response.data.status === 'ok') {
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Te has registrado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } else {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } 
         })
         .catch((error) => console.log(error))
     },
@@ -195,28 +215,52 @@ export default {
       const item = this.stand_locations[idx]
       this.stand_locations.splice(idx, 1)
       if (idx === -1) return
-      if (item.id) this.$http.post('/api/stand_location/remove', {remove_id: item.id})
-        .then((response) => {
-          console.log(response.data)
-        }) 
+      if (item.id) {
+        this.$loading.show(this)
+        this.$http.post('/api/stand_location/remove', {remove_id: item.id})
+          .then((response) => {
+            this.$loading.hide(this)
+            if (response.data.status === 'ok') {
+              this.$vs.notify({
+                title: 'éxito',
+                text: 'Se ha eliminado con éxito.',
+                color: 'success',
+                iconPack: 'feather',
+                icon: 'icon-alert-circle'
+              })
+            } else {
+              this.$vs.notify({
+                title: 'Oyu',
+                text: 'Operación fallida',
+                color: 'error',
+                iconPack: 'feather',
+                icon: 'icon-alert-circle'
+              })
+            } 
+            console.log(response.data)
+          }) 
+      }
     }
         
   },
   created () {
+    this.$loading.show(this)
     this.$http.get('/api/stand_location/allTypes')
       .then((response) => {
         this.ftypes = response.data.fair_types
         this.stypes = response.data.stand_types
+        this.$loading.hide(this)
       })
       .catch((error) => { console.log(error) })
 
     let action = '/api/stand_location/all'
     if (this.$route.params.ftype_id) action = `/api/stand_location/all/${this.$route.params.ftype_id}`
-    
+    this.$loading.show(this)
     this.$http.get(action)
       .then((response) => {
         this.fair_type = response.data.ftype
         this.stand_locations = response.data.stand_locations
+        this.$loading.hide(this)
       })
       .catch((error) => { console.log(error) })
   },

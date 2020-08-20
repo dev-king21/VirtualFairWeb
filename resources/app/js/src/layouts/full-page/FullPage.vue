@@ -32,36 +32,40 @@ export default {
 }
 
 .cyan-light {
-    background: #8BAFB6 !important
-  }
+  background: #8BAFB6 !important
+}
 
-  .cyan-dark {
-    background: #00818D !important
-  }
+.cyan-dark {
+  background: #00818D !important
+}
 
-  .blue-light {
-    background: #164A8B !important
-  }
+.blue-light {
+  background: #164A8B !important
+}
 
-  .blue-dark {
-    background: #123058 !important
-  }
+.blue-dark {
+  background: #123058 !important
+}
 
-  .yellow-light {
-    background: #FFC700 !important
-  }
+.yellow-light {
+  background: #FFC700 !important
+}
 
-  .yellow-dark {
-    background: #FA712A !important
-  }
+.yellow-dark {
+  background: #FA712A !important
+}
 
-  .green-light {
-    background: #009D00 !important
-  }  
+.green-light {
+  background: #009D00 !important
+}  
 
-  .grey-real {
-    background: #AEB4C2 !important
-  }
+.grey-real {
+  background: #AEB4C2 !important
+}
+
+.card-grey {
+  background: #EAEFF0 !important
+}
 
 .font-italic {
   font-style: italic;
@@ -89,6 +93,10 @@ export default {
 
 .fs-10 {
   font-size: 1rem !important;
+}
+
+.fs-11 {
+  font-size: 1.1rem !important;
 }
 
 .fs-12 {
@@ -129,5 +137,35 @@ export default {
 
 .fs-52 {
   font-size: 5.2rem !important;
+}
+
+.swiper-pagination-bullet {
+    border-radius: 3px !important;
+    width: 40px !important;
+    height: 6px !important;
+    background: transparent !important;
+    border: 1px solid white !important;
+    opacity: 0.8 !important;
+}
+.swiper-pagination-bullet-active {
+    background: white !important
+}
+
+.swiper-button-prev, [dir] .swiper-container-rtl .swiper-button-next {
+    border-radius: 100%;
+    width: 40px !important;
+    height: 40px !important;
+    background: #ffffff;
+    opacity: 0.6 !important;    
+    background-image: none !important;
+}
+
+.swiper-button-next, [dir] .swiper-container-rtl .swiper-button-prev {
+    border-radius: 100%;
+    width: 40px !important;
+    height: 40px !important;
+    background: #ffffff;
+    opacity: 0.6 !important;
+    background-image: none !important;
 }
 </style>

@@ -299,43 +299,80 @@ export default {
   },
   created () {
     //  User Reward Card
+    this.$loading.show(this)
     this.$http.get('/api/user/checkpoint-reward')
-      .then((response) => { this.checkpointReward = response.data })
+      .then((response) => { 
+        this.$loading.hide(this) 
+        this.checkpointReward = response.data })
       .catch((error)   => { console.log(error) })
 
       // Subscribers gained - Statistics
+    this.$loading.show(this);
     this.$http.get('/api/card/card-statistics/subscribers')
-      .then((response) => { this.subscribersGained = response.data })
+      .then((response) => { 
+        this.$loading.hide(this);
+        this.subscribersGained = response.data 
+      })
       .catch((error)   => { console.log(error) })
 
       // Orders - Statistics
+    this.$loading.show(this);
+
     this.$http.get('/api/card/card-statistics/orders')
-      .then((response) => { this.ordersRecevied = response.data })
+      .then((response) => { 
+        this.$loading.hide(this);
+        this.ordersRecevied = response.data 
+      })
       .catch((error)   => { console.log(error) })
 
       // Sales bar - Analytics
+    this.$loading.show(this);
+
     this.$http.get('/api/card/card-analytics/sales/bar')
-      .then((response) => { this.salesBarSession = response.data })
+      .then((response) => { 
+        this.$loading.hide(this);
+        this.salesBarSession = response.data 
+      })
       .catch((error)   => { console.log(error) })
 
       // Support Tracker
+    this.$loading.show(this);
+
     this.$http.get('/api/card/card-analytics/support-tracker')
-      .then((response) => { this.supportTracker = response.data })
+      .then((response) => { 
+        this.$loading.hide(this);
+        this.supportTracker = response.data 
+      })
       .catch((error)   => { console.log(error) })
 
       // Products Order
+    this.$loading.show(this);
+
     this.$http.get('/api/card/card-analytics/products-orders')
-      .then((response) => { this.productsOrder = response.data })
+      .then((response) => { 
+        this.$loading.hide(this);
+        this.productsOrder = response.data 
+      })
       .catch((error)   => { console.log(error) })
 
       // Sales Radar
+    this.$loading.show(this);
+
     this.$http.get('/api/card/card-analytics/sales/radar')
-      .then((response) => { this.salesRadar = response.data })
-      .catch((error)   => { console.log(error) })
+      .then((response) => { 
+        this.$loading.hide(this);
+        this.salesRadar = response.data })
+      .catch((error)   => { console.log(error) 
+    })
 
       // Dispatched Orders
+    this.$loading.show(this);
+
     this.$http.get('/api/table/dispatched-orders')
-      .then((response) => { this.dispatchedOrders = response.data })
+      .then((response) => { 
+        this.$loading.hide(this);
+        this.dispatchedOrders = response.data 
+      })
       .catch((error)   => { console.log(error) })
   }
 }

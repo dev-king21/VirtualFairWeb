@@ -61,7 +61,7 @@ export default {
             font-size: 0.8rem;
             text-transform: uppercase;
             z-index: 19;
-            color: #333;
+            color: #151515;
             font-weight: 900;
         }
     }

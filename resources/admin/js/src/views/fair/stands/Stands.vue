@@ -211,11 +211,13 @@ export default {
       let action = `/api/fair/stands/${this.$route.params.fair_id}`
       if (this.$route.params.fair_id) {
         action = `/api/fair/stands/${this.$route.params.fair_id}/${country_id}`
+        this.$loading.show(this)
         this.$http.get(action)
           .then((response) => {
             const res = response.data
             this.stands = res.stands
             console.log(this.stands)
+            this.$loading.hide(this)
           })
           .catch((error) => console.log(error))
       }
@@ -238,6 +240,7 @@ export default {
 
     if (this.$route.params.fair_id) {
       const action = `/api/fair/stands/${this.$route.params.fair_id}`
+      this.$loading.show(this)
       this.$http.get(action)
         .then((response) => {
           const res = response.data
@@ -246,6 +249,7 @@ export default {
 
           this.stands = res.stands
           console.log(this.stands)
+          this.$loading.hide(this)
 
         })
         .catch((error) => console.log(error))

@@ -4,46 +4,50 @@
       <bread-crumb 
           text="networking" 
           :avartar="true" 
-          user_img="maintenance-2.png" 
-          user_name="Felipe Alenso Guererro"/>
+          :user_img="`/fair_image/${me.avatar}`" 
+          :user_name="`${me.first_name} ${me.last_name}`"/>
       <div class="flex w-full flex-col px-8 bg-white-grey chatting-main">
           <div class="pl-8 pt-6">
               <h2>CHAT</h2>
           </div>
           <div class="vx-row page-content">
-              <div class="vx-col lg:w-1/3 md:w-1/3 sm:w-1/3 xs:w-1/3 contact-panel">
+              <div class="vx-col lg:w-1/4 md:w-1/4 sm:w-1/3 xs:w-1/3 contact-panel">
                   <div class="contact-wrapper">
                     <component :is="scrollbarTag" ref="contactScrollPs" class="scroll-area-v-nav-menu pt-2" :settings="settings" @ps-scroll-y="psContactSectionScroll" @scroll="psContactSectionScroll" >
                       <contact-item 
-                          :active="(index === 1)? true : false"
-                          expositor_name="Felipe Alenso Guererro"
-                          expositor_company="MFC"
-                          expositor_profession="Especilista en estrategias de marcas"
-                          expositor_country="Costa Rica"
-                          user_img="maintenance-2.png" 
+                          class="cursor-pointer"
+                          :idx="item.requestor.id"
+                          :select="chatTo"
+                          :active_index="active_index"
+                          :expositor_name="`${item.requestor.first_name} ${item.requestor.last_name}`"
+                          :expositor_company="`${item.requestor.company}`"
+                          :expositor_profession="`${item.requestor.address}`"
+                          :expositor_country="`${item.requestor.country}`"
+                          :user_img="`/fair_image/${item.requestor.avatar}`" 
                           :key="`message-item-${index}`"
-                          v-for="(item, index) in all_schedules"/>
+                          :count="item.requestor.send_unread_messages? item.requestor.send_unread_messages.length : 0"
+                          v-for="(item, index) in contacts"/>
                     </component>
                   </div>
               </div>
-              <div class="vx-col w-2/3 content-panel">
+              <div class="vx-col lg:w-3/4 md:w-3/4 sm:w-2/3 xs:w-2/3 content-panel">
                   <div class="ml-12 my-3" style="height: 100%">
                       <div class="flex flex-row w-full items-center bg-white py-3">
-                          <img src="@assets/images/pages/maintenance-2.png" class="user-img responsive mx-4">
+                          <img :src="`/fair_image/${active_user.avatar}`" class="user-img responsive mx-4">
                           <div class="ml-2">
-                              <div class="font-bold">Felipe Alenso Guererro</div>
-                              <div>Online</div>
+                              <div class="font-bold">{{active_user.first_name}} {{active_user.last_name}}</div>
+                              <div>{{online_users.lastIndexOf((item) => item.user_id === active_user.id) === -1? 'offline': 'online'}}</div>
                           </div>
                       </div>
                       <div class="mt-4">
                         <div class="message-wrapper">
                           <component :is="scrollbarTag" ref="messageScrollPs" class="scroll-area-v-nav-menu pt-2" :settings="settings" @ps-scroll-y="psMessageSectionScroll" @scroll="psMessageSectionScroll" >
                             <message-item
-                                :received="(index % 2 === 0)? true: false" 
-                                content="Lerem ipsum dolor sit amet, consectetuer adipiscing edit, sed diam nonum"
-                                user_img="maintenance-2.png" 
+                                :received="item.sender_id === active_user.id" 
+                                :content="item.message"
+                                :user_img="`${item.sender_id === active_user.id ? `/fair_image/${active_user.avatar}` : `/fair_image/${me.avatar}` }`" 
                                 :key="`message-item-${index}`"
-                                v-for="(item, index) in all_schedules"/>
+                                v-for="(item, index) in messages"/>
                           </component>
                         </div>
                       </div>
@@ -51,7 +55,7 @@
                           <div class="w-full flex flex-row px-4 py-3 items-center justify-between bg-white msg-input">
                             <vs-input class="w-full inputx" placeholder="Enviar mensaje..." v-model="chat_text" size="large"/>
                             <div class="ml-6">
-                              <vs-button type="filled" class="send-btn cyan-dark">
+                              <vs-button @click="sendMessage" type="filled" class="send-btn cyan-dark">
                                 <feather-icon svgClasses="w-6 h-6" icon="SendIcon"/>
                               </vs-button>
                             </div>
@@ -81,7 +85,12 @@ export default {
     return {
       chat_text: '',
       today_schedules: [],  
-      all_schedules: [],
+      active_index: 0,
+      active_user: {},
+      me: null,
+      contacts: [],
+      online_users: [],
+      messages:[],
       settings: {      // perfectScrollbar settings
         maxScrollbarLength: 60,
         wheelSpeed        : 1,
@@ -90,7 +99,7 @@ export default {
     }
   },
   computed: {
-    scrollbarTag ()             { return this.$store.getters.scrollbarTag          }
+    scrollbarTag ()             { return this.$store.getters.scrollbarTag }
   },
   methods: {
     psContactSectionScroll () {
@@ -100,26 +109,123 @@ export default {
     psMessageSectionScroll () {
       const scroll_el = this.$refs.messageScrollPs.$el || this.$refs.messageScrollPs
       this.showShadowBottom = scroll_el.scrollTop > 0
+    },
+    chatTo (index) {
+      this.$loading.show(this)
+      this.active_index = index
+      this.getMessages()
+    },
+    getMessages () {
+      this.active_user = this.contacts.find((it) => it.requestor.id === this.active_index).requestor
+      this.$http.post('/api/fair/chat/messages', {other: this.active_index})
+        .then((res) => {
+          this.messages = res.data.messages
+          this.active_user.send_unread_messages = []
+          this.$loading.hide(this)
+          setTimeout(() => {
+            const scroll_el = this.$refs.messageScrollPs.$el || this.$refs.messageScrollPs
+            scroll_el.scrollTop = scroll_el.scrollHeight
+          })
+        })
+        .catch(() => {
+          this.$loading.hide(this)
+        })
+    },
+    sendMessage () {
+      if (this.chat_text === '') return
+      this.$loading.show(this)
+      this.$http.post('/api/fair/chat/send_message', {other: this.active_index, message: this.chat_text})
+        .then(() => {
+          this.messages.push({
+            sender_id: this.me.id,
+            receiver_id: this.active_index,
+            message: this.chat_text
+          })
+          this.$loading.hide(this)
+          this.chat_text = ''
+          setTimeout(() => {
+            const scroll_el = this.$refs.messageScrollPs.$el || this.$refs.messageScrollPs
+            scroll_el.scrollTop = scroll_el.scrollHeight
+          })
+        })
+        .catch(() => {
+          this.$loading.hide(this)
+        })
     }
   },
   created () {
-    const list = []
-    for (let i = 0; i < 9; i++) {
-      list.push(i)
+    this.$loading.show(this)
+    let userInfo = localStorage.getItem('userInfo')
+    if (!userInfo) {
+      return this.$router.push('/home')
     }
-    this.today_schedules = list.filter((it) => it < 3)   
-    this.all_schedules = list
+    userInfo = JSON.parse(userInfo)
+    if (!userInfo.id || !userInfo.email || userInfo.email === '') {
+      return this.$router.push('/home')
+    }
+    this.me = userInfo
+    this.$http.post('/api/fair/chat/contacts')
+      .then((res) => {
+        this.contacts = res.data.contacts
+        if (this.contacts.length !== 0) {
+          this.active_index = this.contacts[0].requestor.id //res.data.active_index
+          this.getMessages()
+        }
+        
+      })
+    
+    Echo.join('chat')
+      .here(users => {
+        this.online_users = users
+      })
+      .joining(user => {
+        this.online_users.push(user)
+      })
+      .leaving(user => {
+        this.online_users = this.online_users.filter(u => u.id !== user.id)
+      })
+      .listen('ChatEvent', (event) => {
+        console.log(event)
+        if (event.chat.receiver_id === this.me.id) {
+          if (this.active_index === event.chat.sender_id) {
+            this.messages.push(event.chat)
+            setTimeout(() => {
+              const scroll_el = this.$refs.messageScrollPs.$el || this.$refs.messageScrollPs
+              scroll_el.scrollTop = scroll_el.scrollHeight
+            })
+          } else {
+            const senderIdx = this.contacts.lastIndexOf((item) => item.requestor.id === event.chat.sender_id)
+            this.contacts[senderIdx].requestor.send_unread_messages.push(event.chat)
+            //this.contacts.splice(index, 1, )
+            /* this.contacts.map((item) => {
+              if (item.user_id === event.chat.sender_id) {
+                
+              }
+
+            }) */
+          }
+        }        
+      })
+      .listenForWhisper('typing', user => {
+        this.activeUser = user
+        if (this.typingTimer) {
+          clearTimeout(this.typingTimer)
+        }
+        this.typingTimer = setTimeout(() => {
+          this.activeUser = false
+        }, 1000)
+      })
   }
 }
 </script>
 <style lang="scss">
 .chatting-main {
-  height: calc(var(--vh, 1vh) * 100 - 150px);
+  height: calc(var(--vh, 1vh) * 100 - 162px);
   .page-content{
       .contact-panel {
         padding: 0 !important;        
         font-size: 0.8rem;
-        font-weight: 900;
+        //font-weight: 900;
         color: #555;
         
         .chevron-border {
@@ -143,7 +249,6 @@ export default {
       .message-item {
         font-size: 1.1rem;
         margin-top: 2rem;
-        color: #333;
         .receive-item {
             border-top-right-radius: 1rem;
             border-bottom-right-radius: 1rem;
@@ -179,12 +284,12 @@ export default {
 
     .contact-wrapper section.ps-container {
       padding-right: 2rem !important;
-      height: calc(var(--vh, 1vh) * 100 - 200px);
+      height: calc(var(--vh, 1vh) * 100 - 212px);
     }
 
     .message-wrapper section.ps-container {
       padding-right: 2rem !important;
-      height: calc(var(--vh, 1vh) * 100 - 390px);
+      height: calc(var(--vh, 1vh) * 100 - 402px);
     }
   }
   .vx-row {

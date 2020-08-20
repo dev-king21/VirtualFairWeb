@@ -5,10 +5,9 @@ import axios from './axios.js'
 //import acl from './acl/acl'
 import router from './router'
 import store from './store/store'
-import date_helper from './helper/date_helper'
 import i18n from './i18n/i18n'
 import VueClipboard from 'vue-clipboard2'
-import VueTour from 'vue-tour'
+// import VueTour from 'vue-tour'
 import VeeValidate from 'vee-validate'
 import * as VueGoogleMaps from 'vue2-google-maps'
 import { VueHammer } from 'vue2-hammer'
@@ -20,15 +19,19 @@ import './fake-db/index.js'
 import '../themeConfig.js'
 import './globalComponents.js'
 import './filters/filters'
+import './pusher/bootstrap.js'
+import date from './helper/date_helper'
+import loading from './helper/loading_helper'
 
 require('vue-tour/dist/vue-tour.css')
 require('@assets/css/iconfont.css')
 
 Vue.use(Vuesax)
 Vue.prototype.$http = axios
-Vue.prototype.$date = date_helper
+Vue.prototype.$date = date
+Vue.prototype.$loading = loading
 Vue.use(VueClipboard)
-Vue.use(VueTour)
+// Vue.use(VueTour)
 Vue.use(VeeValidate)
 Vue.use(VueLazyLoad)
 Vue.use(VueGoogleMaps, {

@@ -38,7 +38,7 @@ export default {
     .stand-button {
       border-top-right-radius: 1rem;
       border-bottom-left-radius: 1rem;
-      font-size: 0.8rem !important;
+      font-size: 1rem !important;
       color: black !important;
     }
     

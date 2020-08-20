@@ -62,9 +62,11 @@ export default{
     
   },
   created () {
+    this.$loading.show(this)
     this.$http.get('/api/fair_type/all')
       .then((response) => { 
         this.fair_types = response.data.fair_types 
+        this.$loading.hide(this)
       })
       .catch((error)   => { console.log(error) })
   }

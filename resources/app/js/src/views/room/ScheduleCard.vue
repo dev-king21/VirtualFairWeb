@@ -118,8 +118,8 @@ export default {
     }
 
     .event-btn {
-        font-size: 0.8rem !important;
-        padding: 0.9rem 1.2rem !important;
+      font-size: 0.85rem !important;
+      padding: 0.9rem 1.2rem !important;
     }
 
     .event-btn.p-big {

@@ -3,7 +3,7 @@
         <div class="h5 font-bold mb-2 mx-8 text-center">
             {{title}}
         </div>
-        <div class="flex w-full items-center justify-center card-header grey-real">
+        <div class="flex w-full items-center justify-center card-header card-grey">
             <svg-icon size="w-12 h-12" color="text-black" icon="brochure"/>
         </div>
         <div class="vx-row">
@@ -15,7 +15,7 @@
           </div>
           <div class="vx-col w-1/2">
             <div @click="downloadBrochure(id)" class="flex items-center justify-center text-white py-2 yellow-dark w-full cursor-pointer">
-                <feather-icon size="w-6 h-6" icon="DownloadIcon" />
+                <feather-icon size="w-5 h-5" icon="DownloadIcon" />
                 <div class="ml-2 uppercase" style="font-size: 0.9rem">descargar</div>
             </div>
           </div>

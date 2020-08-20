@@ -29,44 +29,32 @@ export default [
     ]
   },
   {
+    url:null,
+    name:'Contact',
+    icon:'MailIcon',
+    i18n:'Contact',
+    submenu: [
+      {
+        url: '/contact/query',
+        name: 'Query Contacts',
+        slug: 'email',
+        icon: 'MailIcon'/* ,
+        i18n: 'AllUsers' */
+      },
+      {
+        url: '/contact/contact_message',
+        name: 'Contact Message',
+        slug: 'chat',
+        icon: 'MessageSquareIcon'/* ,
+        i18n: 'Chat' */
+      }
+    ]
+  },
+  {
     url: '/user',
     name: 'User',
     icon: 'UserIcon',
-    i18n: 'User'/* ,
-    submenu: [
-      {
-        url: '/user/all',
-        name: 'All Users',
-        slug: 'email',
-        icon: 'MailIcon'
-      },
-      {
-        url: '/user/request',
-        name: 'Request User',
-        slug: 'chat',
-        icon: 'MessageSquareIcon'
-      },
-      {
-        url: '/user/book',
-        name: 'Booked User',
-        slug: 'todo',
-        icon: 'CheckSquareIcon'
-      },
-      {
-        url: '/user/active',
-        name: 'Active Owner',
-        slug: 'calendar-simple-calendar',
-        icon: 'CalendarIcon',
-        tagColor: 'success'
-      },
-      {
-        url: '/user/past',
-        name: 'Past Owner',
-        slug: 'calendar-simple-calendar',
-        icon: 'CalendarIcon',
-        tagColor: 'success'
-      }
-    ] */
+    i18n: 'User'
   },
   {
     url: null,
@@ -157,6 +145,7 @@ export default [
     icon: 'PackageIcon',
     i18n: 'Payment'
   },
+  
   {
     url: null,
     name: 'Settings',
@@ -196,6 +185,12 @@ export default [
         slug: 'stand-type-item',
         icon: 'MailIcon'/* ,
         i18n: 'AllUsers' */
+      },
+      {
+        url: '/settings/advertisement',
+        name: 'Advertisement',
+        slug: 'advertisement',
+        icon: 'MailIcon',
       }
     ]
   },
