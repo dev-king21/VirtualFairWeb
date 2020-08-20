@@ -191,6 +191,12 @@ export default [
         name: 'Advertisement',
         slug: 'advertisement',
         icon: 'MailIcon',
+      },
+      {
+        url: '/settings/sustainability',
+        name: 'Sustainability',
+        slug: 'sustainability',
+        icon: 'MailIcon',
       }
     ]
   },

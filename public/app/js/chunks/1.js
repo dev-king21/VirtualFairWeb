@@ -266,7 +266,7 @@ var render = function() {
       1
     ),
     _vm._v(" "),
-    _vm.avatar || _vm.second
+    _vm.avartar || _vm.second
       ? _c(
           "div",
           {

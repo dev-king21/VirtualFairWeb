@@ -6,7 +6,7 @@
             <div class="w-full px-10">
                 <div class="vx-row w-full pt-8">
                     <div class="vx-col w-1/4" :key="`catalog-item-${index}`" v-for="(item, index) in card_list">
-                       <div class="flex flex-col justify-between mx-3 my-3 bg-white" style="border: 1px solid #e2e2e2; border-radius: 0.8rem;">
+                        <div class="flex flex-col justify-between mx-3 my-3 bg-white" style="border: 1px solid #e2e2e2; border-radius: 0.8rem;">
                            <div class="flex flex-col items-center w-full px-3 my-4" >
                                 <img :src="`/fair_image/${item.url}`" class="responsive" />
                                 <div @click="removeBusinessCard(item.id)" class="flex items-center justify-center text-white mt-2 py-2 yellow-dark w-full cursor-pointer">
@@ -14,11 +14,7 @@
                                     <div class="ml-2" style="font-size: 0.9rem">BORRAR</div>
                                 </div>
                             </div>
-                            
-                            <!-- <div class="flex mt-6 justify-start">
-                                <div class="w-4/5 ml-4 mb-4" style="border-bottom: 10px solid #123058"> </div>
-                            </div> -->
-                       </div>
+                        </div>
                     </div>
                     <template v-if="!card_show">
                         <div class="vx-col w-1/4 flex flex-col items-center justify-center">
@@ -176,7 +172,7 @@ export default {
       this.$loading.show(this)
       this.$http.post('/api/setting/my_stand/businesscard/remove', {_id: id})
         .then((response) => {
-          this.loading.hide(this)
+          this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
               title: 'éxito',

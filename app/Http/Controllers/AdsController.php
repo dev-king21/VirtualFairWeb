@@ -46,4 +46,11 @@ class AdsController extends Controller
         $res['ads'] = Advertisement::where('show', 1)->get();
         return response()->json($res);
     }
+
+    public function deleteAds(Request $request, $id){
+        $res = array();
+        $res['ads'] = Advertisement::where('id', $id)->delete();
+        $res["status"] = "ok";
+        return response()->json($res);
+    }
 }

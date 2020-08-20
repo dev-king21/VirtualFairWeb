@@ -116,7 +116,7 @@
         </router-link>
         <router-link class="main-link flex" to="/fair/chatting">
           <span>Networking</span>
-          <feather-icon class="ml-2 networking-badge" style="margin-top: 0px; background: #ff0000; margin-left: 2px;" :badge="3" />
+          <feather-icon class="ml-2 networking-badge" icon="" style="margin-top: 0px; background: #ff0000; margin-left: 2px;" :badge="3" />
         </router-link>
         <router-link class="main-link" to="/home/sponsor">
           patrocinadores

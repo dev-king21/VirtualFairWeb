@@ -43,26 +43,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -71,155 +51,65 @@ __webpack_require__.r(__webpack_exports__);
     BreadCrumb: _views_custom_BreadCrumb_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
   },
   data: function data() {
-    return {
-      load_contented: false,
-      configured: false,
-      addPaymentStatus: 0,
-      addPaymentStatusError: '',
-      holder_focus: false,
-      holder_name: '',
-      stripeAPIToken: 'pk_test_51HHAb0JtUQ0xzKqWtCePfZBFPkZE6aJdHXFln5m42zuFO7BSzXLGlFBWAsUviSq3t3Tq2AhR2IHLhX6aLQ5kz0RY0013CwKdIq',
-      stripe: '',
-      elements: '',
-      cardNumberElement: '',
-      cardExpiryElement: '',
-      cardCvcElement: '',
-      intentToken: ''
-    };
+    return {};
   },
-  methods: {
-    cvvChanged: function cvvChanged(evt) {
-      if (48 > evt.keyCode || evt.keyCode > 58) {
-        return false;
-      }
-
-      return true;
-    },
-    includeStripe: function includeStripe(URL, callback) {
-      var documentTag = document;
-      var tag = 'script',
-          object = documentTag.createElement(tag),
-          scriptTag = documentTag.getElementsByTagName(tag)[0];
-      object.src = "//".concat(URL);
-
-      if (callback) {
-        object.addEventListener('load', function (e) {
-          callback(null, e);
-        }, false);
-      }
-
-      scriptTag.parentNode.insertBefore(object, scriptTag);
-    },
-    configureStripe: function configureStripe() {
-      var style = {
-        base: {
-          'iconColor': '#666EE8',
-          'color': '#151515',
-          'lineHeight': '40px',
-          'fontWeight': 300,
-          'fontFamily': 'Arial',
-          'fontSize': '18px',
-          '::placeholder': {
-            color: '#b2b2b2'
-          }
-        }
-      };
-      this.stripe = Stripe(this.stripeAPIToken);
-      this.elements = this.stripe.elements();
-      this.cardNumberElement = this.elements.create('cardNumber', {
-        style: style,
-        showIcon: true,
-        placeholder: 'Numero del tarjeta'
-      });
-      this.cardExpiryElement = this.elements.create('cardExpiry', {
-        style: style,
-        placeholder: 'MM/AA'
-      });
-      this.cardCvcElement = this.elements.create('cardCvc', {
-        style: style,
-        placeholder: 'CVC'
-      });
-      this.cardNumberElement.mount('#card-number-element');
-      this.cardExpiryElement.mount('#card-expiry-element');
-      this.cardCvcElement.mount('#card-cvc-element');
-      this.$loading.hide(this);
-    },
-    checkoutStand: function checkoutStand() {
-      var _this = this;
-
-      this.$loading.show(this);
-      this.addPaymentStatus = 1;
-      this.stripe.confirmCardSetup(this.intentToken.client_secret, {
-        payment_method: {
-          card: this.cardNumberElement,
-          billing_details: {
-            name: this.holder_name
-          }
-        }
-      }).then(function (result) {
-        if (result.error) {
-          _this.addPaymentStatus = 3;
-          _this.addPaymentStatusError = result.error.message;
-        } else {
-          _this.savePaymentMethod(result.setupIntent.payment_method);
-
-          console.log(result.setupIntent.payment_method);
-          _this.addPaymentStatus = 2;
-
-          _this.cardNumberElement.clear();
-
-          _this.cardExpiryElement.clear();
-
-          _this.cardCvcElement.clear();
-
-          _this.holder_name = '';
-        }
-      });
-    },
-    savePaymentMethod: function savePaymentMethod(method) {
-      var _this2 = this;
-
-      this.$http.post('/api/stand/purchase/save_transaction', {
-        payment_method: method,
-        stand_id: this.$route.params.stand_id
-      }).then(function () {
-        //this.loadPaymentMethods()
-        _this2.$loading.hide(_this2);
-
-        _this2.$vs.notify({
-          title: 'éxito',
-          text: 'Gracias por comprar.<br> El pago se realizó correctamente.',
-          color: 'success',
-          iconPack: 'feather',
-          icon: 'icon-alert-circle'
-        });
-
-        setTimeout(function () {
-          _this2.$router.push('/setting/stand')["catch"](function () {});
-        }, 1000);
-      });
-    },
-    loadIntent: function loadIntent() {
-      var _this3 = this;
-
-      this.$http.post('/api/stand/purchase/setup-intent').then(function (response) {
-        _this3.intentToken = response.data;
-      });
-    }
-  },
+  methods: {},
   created: function created() {
     if (!this.$route.params.stand_id) {
       this.$router.back();
     }
   },
   mounted: function mounted() {
-    var _this4 = this;
+    console.log(this.$route);
+    paypal.Button.render({
+      env: 'sandbox',
+      // Optional: specify 'sandbox' environment
+      client: {
+        sandbox: 'xxxx',
+        production: 'xxxx'
+      },
+      locale: 'en_US',
+      style: {
+        size: 'large',
+        color: 'gold',
+        shape: 'pill',
+        label: 'checkout',
+        tagline: 'true'
+      },
+      commit: true,
+      // Optional: show a 'Pay Now' button in the checkout flow
+      payment: function payment() {
+        var _this = this;
 
-    this.$loading.show(this);
-    this.includeStripe('js.stripe.com/v3/', function () {
-      _this4.configureStripe();
-    });
-    this.loadIntent();
+        var returnUrl = this.$route.path; //'_YOUR_RETURN_URL'
+
+        return new Promise(function (resolve, reject) {
+          _this.$http.post('/stand/create-payment', {
+            return_url: returnUrl
+          }).then(function (res) {
+            resolve(res.data.id);
+          })["catch"](function (error) {
+            reject(error);
+          });
+        });
+      },
+      onAuthorize: function onAuthorize(data) {
+        var _this2 = this;
+
+        // Execute the payment here, when the buyer approves the transaction
+        return new Promise(function (resolve, reject) {
+          _this2.$http.post('/stand/execute-payment', {
+            payer_id: data.payerID,
+            payment_id: data.paymentID,
+            stand_id: _id
+          }).then(function (res) {
+            resolve(res);
+          })["catch"](function (error) {
+            reject(error);
+          });
+        });
+      }
+    }, '#paypal-button');
   }
 });
 
@@ -343,44 +233,6 @@ var render = function() {
                       staticStyle: { "border-bottom": "1px solid #c2c2c2" }
                     }),
                     _vm._v(" "),
-                    _vm._m(0),
-                    _vm._v(" "),
-                    _vm._m(1),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "mt-6" }, [
-                      _c("div", [_vm._v("Numero del tarjeta")]),
-                      _vm._v(" "),
-                      _c(
-                        "div",
-                        {
-                          staticClass: "field",
-                          class: { "StripeElement--focus": _vm.holder_focus }
-                        },
-                        [
-                          _c("vs-input", {
-                            staticClass: "w-full",
-                            attrs: { placeholder: "Numero del tarjeta" },
-                            on: {
-                              focus: function($event) {
-                                _vm.holder_focus = true
-                              },
-                              blur: function($event) {
-                                _vm.holder_focus = false
-                              }
-                            },
-                            model: {
-                              value: _vm.holder_name,
-                              callback: function($$v) {
-                                _vm.holder_name = $$v
-                              },
-                              expression: "holder_name"
-                            }
-                          })
-                        ],
-                        1
-                      )
-                    ]),
-                    _vm._v(" "),
                     _c(
                       "div",
                       {
@@ -391,12 +243,12 @@ var render = function() {
                           "vs-button",
                           {
                             staticClass: "w-1/2 bg-danger py-4 fs-12",
-                            on: { click: _vm.checkoutStand }
+                            attrs: { id: "paypal-button" }
                           },
                           [_vm._v("Realizer Pago")]
                         ),
                         _vm._v(" "),
-                        _vm._m(2)
+                        _vm._m(0)
                       ],
                       1
                     )
@@ -417,43 +269,12 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-6" }, [
-      _c("div", [_vm._v("Numero del tarjeta")]),
-      _vm._v(" "),
-      _c("div", { staticClass: "field", attrs: { id: "card-number-element" } })
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-6 flex justify-between" }, [
-      _c("div", { staticClass: "w-1/2" }, [
-        _c("div", [_vm._v("MM/AAAA")]),
-        _vm._v(" "),
-        _c("div", {
-          staticClass: "field",
-          attrs: { id: "card-expiry-element" }
-        })
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "w-1/2" }, [
-        _c("div", [_vm._v("CVC")]),
-        _vm._v(" "),
-        _c("div", { staticClass: "field", attrs: { id: "card-cvc-element" } })
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
     return _c("div", [
       _c("div", [_vm._v("AI completar la compra, aceptas estas")]),
       _vm._v(" "),
       _c("div", { staticClass: "text-cyan-dark font-bold" }, [
         _vm._v(
-          "\n                                Condiciones de uso\n                            "
+          "\n                              Condiciones de uso\n                          "
         )
       ])
     ])

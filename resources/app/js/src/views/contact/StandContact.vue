@@ -15,17 +15,15 @@
               <div class="flex">
                 <div>Área de interés: </div>
                 <div>
-                  <!-- <div :key="`interest-item-${index}`" v-for="(item, index) in interest">
-                    
-                  </div> -->
                 </div>
               </div>
             </div>
           </div>
           <div class="ml-4 mt-8" style="width: 500px">
             <h3>Mensaje para contacto</h3>
-            <div>
+            <div class="mb-4">
               <vs-textarea class="mt-2" placeholder="Escriba el mensaje aquí" style="height: 120px;" v-model="contact_text"/>
+              <div class="ml-4" style="color: #ee0000" v-show="error_contact_text">El mensaje no puede ser nulo. Por favor ingrese el mensaje</div>
             </div>
             <div>
               <vs-checkbox color="rgb(103, 179, 81)" class="mb-4" v-model="accept">Acepto los términos y condiciones</vs-checkbox>
@@ -54,13 +52,20 @@ export default {
       contact_text: '',
       accept: false,
       mail_available: false,
-      phone_available: false  
+      phone_available: false,
+      error_contact_text: false 
     }  
   },
   methods: {
     contactRequest () {
       if (!this.accept) {
         return 
+      }
+      if (!this.contact_text) {
+        this.error_contact_text = true
+        return 
+      } else {
+        this.error_contact_text = false
       }
       const param = {
         stand_id: this.$route.params.stand_id,

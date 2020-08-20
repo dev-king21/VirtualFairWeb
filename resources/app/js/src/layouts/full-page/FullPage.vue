@@ -139,16 +139,32 @@ export default {
   font-size: 5.2rem !important;
 }
 
-.swiper-pagination-bullet {
-    border-radius: 3px !important;
-    width: 40px !important;
-    height: 6px !important;
-    background: transparent !important;
-    border: 1px solid white !important;
-    opacity: 0.8 !important;
+.swiper-pagination {
+  .swiper-pagination-bullet {
+      border-radius: 3px !important;
+      width: 40px !important;
+      height: 6px !important;
+      background: transparent !important;
+      border: 1px solid white !important;
+      opacity: 0.8 !important;
+  }
+  .swiper-pagination-bullet-active {
+      background: white !important
+  }
 }
-.swiper-pagination-bullet-active {
-    background: white !important
+
+.swiper-pagination2 {
+  .swiper-pagination-bullet {
+      border-radius: 3px !important;
+      width: 28px !important;
+      height: 4px !important;
+      background: transparent !important;
+      border: 1px solid white !important;
+      opacity: 0.8 !important;
+  }
+  .swiper-pagination-bullet-active {
+      background: white !important
+  }
 }
 
 .swiper-button-prev, [dir] .swiper-container-rtl .swiper-button-next {

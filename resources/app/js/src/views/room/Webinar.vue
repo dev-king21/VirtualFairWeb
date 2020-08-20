@@ -46,7 +46,7 @@
                                   <img class="responsive" :src="`/fair_image/${item.url}`" alt="">
                                   <!-- @assets/images/pages/carousel/banner-16.jpg-->
                                 </swiper-slide>
-                                <div class="swiper-pagination" slot="pagination"></div>
+                                <div class="swiper-pagination swiper-pagination2" slot="pagination"></div>
                                 <div class="swiper-button-prev" slot="button-prev">
                                     <feather-icon svgClasses="w-6 h-6 mt-3 ml-3" style="color: black" icon="ChevronLeftIcon"/>
                                 </div>
@@ -93,7 +93,7 @@ export default {
         },
         effect: 'fade',
         pagination: {
-          el: '.swiper-pagination',
+          el: '.swiper-pagination2',
           clickable: true
         },
         navigation: {

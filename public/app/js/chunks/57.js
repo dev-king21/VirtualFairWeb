@@ -112,7 +112,7 @@ __webpack_require__.r(__webpack_exports__);
         },
         effect: 'fade',
         pagination: {
-          el: '.swiper-pagination',
+          el: '.swiper-pagination2',
           clickable: true
         },
         navigation: {
@@ -589,7 +589,8 @@ var render = function() {
                               }),
                               _vm._v(" "),
                               _c("div", {
-                                staticClass: "swiper-pagination",
+                                staticClass:
+                                  "swiper-pagination swiper-pagination2",
                                 attrs: { slot: "pagination" },
                                 slot: "pagination"
                               }),

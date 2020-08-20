@@ -47,7 +47,7 @@
                       <img class="responsive" :src="`/fair_image/${item.url}`" alt="">
                       <!-- @assets/images/pages/carousel/banner-16.jpg-->
                     </swiper-slide>
-                    <div class="swiper-pagination" slot="pagination"></div>
+                    <div class="swiper-pagination swiper-pagination2" slot="pagination"></div>
                     <div class="swiper-button-prev" slot="button-prev">
                         <feather-icon svgClasses="w-6 h-6 mt-3 ml-3" style="color: black" icon="ChevronLeftIcon"/>
                     </div>
@@ -78,6 +78,7 @@ export default {
       fair_type: {},
       country: {},
       stands: [],
+      ads_list: [],
       loading: false,
       img_width: 0,
       img_height: 0,
@@ -90,7 +91,7 @@ export default {
         },
         effect: 'fade',
         pagination: {
-          el: '.swiper-pagination',
+          el: '.swiper-pagination2',
           clickable: true
         },
         navigation: {
@@ -112,6 +113,7 @@ export default {
       return this.$router.push(`/fair/stand/2/2/${stand_id}`)  
     },
     purchaseStand (stand_id) {
+      
       this.$router.push(`/stand/purchase/${stand_id}`)
       /* this.$loading.show(this)
       this.$http.post('/api/stand/purchase', {stand: stand_id})

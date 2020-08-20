@@ -3,18 +3,9 @@
         <app-header activeItem="0"></app-header>
         <div>
             <nav-back-button class="absolute" style="z-index: 2000"/>
-            <swiper :options="swiperOption" :dir="$vs.rtl ? 'rtl' : 'ltr'" :key="$vs.rtl">
-                <swiper-slide>
-                <img class="responsive" src="@assets/images/pages/carousel/banner-16.jpg" alt="banner">
-                </swiper-slide>
-                <swiper-slide>
-                <img class="responsive" src="@assets/images/pages/carousel/banner-13.jpg" alt="banner">
-                </swiper-slide>
-                <swiper-slide>
-                <img class="responsive" src="@assets/images/pages/carousel/banner-4.jpg" alt="banner">
-                </swiper-slide>
-                <swiper-slide>
-                <img class="responsive" src="@assets/images/pages/carousel/banner-2.jpg" alt="banner">
+            <swiper :options="swiperOption">
+                <swiper-slide :key="`sus-swiper-item-${index}`" v-for="(item, index) in sus_imgs">
+                  <img class="responsive" :src="`/fair_image/${item.url}`" alt="banner">
                 </swiper-slide>
                 <div class="swiper-pagination" slot="pagination"></div>
                 <div class="swiper-button-prev" slot="button-prev">
@@ -57,6 +48,7 @@ import AppHeader from '@/layouts/components/Header.vue'
 export default {
   data () {
     return {
+      sus_imgs: [],
       swiperOption: {
         spaceBetween: 30,
         centeredSlides: true,
@@ -81,6 +73,15 @@ export default {
     swiperSlide,
     NavBackButton,
     AppHeader
+  },
+  methods: {
+    
+  },
+  created () {
+    this.$http.post('/api/fair/sustainability/get')
+      .then((res) => {
+        this.sus_imgs = res.data.sustainabilities
+      })
   }
 }
 </script>

@@ -66,10 +66,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -200,7 +196,7 @@ __webpack_require__.r(__webpack_exports__);
       this.$http.post('/api/setting/my_stand/businesscard/remove', {
         _id: id
       }).then(function (response) {
-        _this3.loading.hide(_this3);
+        _this3.$loading.hide(_this3);
 
         if (response.data.status === 'ok') {
           _this3.$vs.notify({

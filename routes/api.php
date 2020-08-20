@@ -33,6 +33,7 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('/fair/chat/contacts', 'ChatController@get_contacts');
     Route::post('/fair/chat/messages', 'ChatController@get_messages');
     Route::post('/fair/chat/send_message', 'ChatController@send_message');
+    Route::post('/fair/sustainability/get', 'SustainabilityController@getActiveSusImg');
 
     Route::post('/stand/purchase', 'FairController@purchase_stand');
     Route::post('/stand/home', 'StandController@get_stand');
@@ -47,8 +48,10 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('/stand/payment_key', 'StandController@get_stripe_pubkey');
     Route::post('/stand/purchase/save_transaction', 'StandController@save_transaction');
     Route::post('/stand/purchase/setup-intent', 'StandController@purchase_intent'); 
+    Route::post('/stand/create-payment', 'PaypalController@createPayment');
+    Route::post('/stand/execute-payment', 'PaypalController@executePayment');
     Route::post('/stand/video', 'StandController@get_video'); 
-    Route::post('/stand/ads/get', 'AdsController@getAds');
+    Route::post('/stand/ads/get', 'AdsController@getActiveAds');
 
     Route::post('/setting/my_stand', 'SettingController@get_my_stand');
     Route::post('/setting/my_stand/save_content', 'SettingController@save_content');
@@ -107,8 +110,14 @@ Route::get('/contact_message/all', 'ContactController@getContactMessage');
 //advertisement
 Route::post('/setting/ads/create', 'AdsController@createAds');
 Route::post('/setting/ads/update/{id}', 'AdsController@updateAds');
-
 Route::get('/setting/ads/get', 'AdsController@getAds');
+Route::post('/setting/ads/remove/{id}', 'AdsController@deleteAds');
+
+//sustainability
+Route::post('/setting/sustainability/create', 'SustainabilityController@createSustainabilityImag');
+Route::post('/setting/sustainability/update/{id}', 'SustainabilityController@updateSusImg');
+Route::get('/setting/sustainability/get', 'SustainabilityController@getSusImg');
+Route::post('/setting/sustainability/remove/{id}', 'SustainabilityController@deleteSusImg');
 
 //home webinar
 Route::post('/home/webinar', 'SettingController@get_reserved_webinars');

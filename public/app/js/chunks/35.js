@@ -50,8 +50,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -66,7 +64,8 @@ __webpack_require__.r(__webpack_exports__);
       contact_text: '',
       accept: false,
       mail_available: false,
-      phone_available: false
+      phone_available: false,
+      error_contact_text: false
     };
   },
   methods: {
@@ -75,6 +74,13 @@ __webpack_require__.r(__webpack_exports__);
 
       if (!this.accept) {
         return;
+      }
+
+      if (!this.contact_text) {
+        this.error_contact_text = true;
+        return;
+      } else {
+        this.error_contact_text = false;
       }
 
       var param = {
@@ -253,6 +259,7 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "div",
+                { staticClass: "mb-4" },
                 [
                   _c("vs-textarea", {
                     staticClass: "mt-2",
@@ -265,7 +272,28 @@ var render = function() {
                       },
                       expression: "contact_text"
                     }
-                  })
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      directives: [
+                        {
+                          name: "show",
+                          rawName: "v-show",
+                          value: _vm.error_contact_text,
+                          expression: "error_contact_text"
+                        }
+                      ],
+                      staticClass: "ml-4",
+                      staticStyle: { color: "#ee0000" }
+                    },
+                    [
+                      _vm._v(
+                        "El mensaje no puede ser nulo. Por favor ingrese el mensaje"
+                      )
+                    ]
+                  )
                 ],
                 1
               ),

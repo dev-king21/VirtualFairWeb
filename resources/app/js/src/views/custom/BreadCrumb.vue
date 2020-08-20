@@ -12,7 +12,7 @@
             <div class="ml-4 fs-16 font-bold">{{text}}</div>
         </div>
     </div>
-    <div v-if="avatar||second" class="flex flex-row w-full text-white items-center py-3" :class="{'justify-center': second_center, 'justify-end': !second_center}">
+    <div v-if="avartar||second" class="flex flex-row w-full text-white items-center py-3" :class="{'justify-center': second_center, 'justify-end': !second_center}">
       <template v-if="avartar">
         <img :src="user_img" class="user-img responsive mx-4">
         <div class="mr-4">
@@ -99,10 +99,10 @@ export default {
 .breadcrumb {
     background: #123058;
     .nav-item {
-        div {
-          text-transform: uppercase;
-          font-size: 1.3rem;
-        }
+      div {
+        text-transform: uppercase;
+        font-size: 1.3rem;
+      }
     }
     .user-img {
       border-radius: 50%;

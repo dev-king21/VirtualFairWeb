@@ -156,6 +156,11 @@ __webpack_require__.r(__webpack_exports__);
         _this.$loading.hide(_this);
       });
     },
+    goEnter: function goEnter(event) {
+      if (event.keyCode === 13) {
+        this.sendMessage();
+      }
+    },
     sendMessage: function sendMessage() {
       var _this2 = this;
 
@@ -229,18 +234,20 @@ __webpack_require__.r(__webpack_exports__);
             scroll_el.scrollTop = scroll_el.scrollHeight;
           });
         } else {
-          var senderIdx = _this3.contacts.lastIndexOf(function (item) {
+          var sender = _this3.contacts.find(function (item) {
             return item.requestor.id === event.chat.sender_id;
           });
 
-          _this3.contacts[senderIdx].requestor.send_unread_messages.push(event.chat); //this.contacts.splice(index, 1, )
+          console.log(sender); //const senderIndex = this.contacts.indexOf(sender)
+
+          sender.requestor.send_unread_messages.push(event.chat); //this.items.$set(senderIndex, sender)
+          //this.contacts.splice(index, 1, )
 
           /* this.contacts.map((item) => {
             if (item.user_id === event.chat.sender_id) {
               
             }
             }) */
-
         }
       }
     }).listenForWhisper('typing', function (user) {
@@ -394,7 +401,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".chatting-main {\n  height: calc(var(--vh, 1vh) * 100 - 162px);\n}\n.chatting-main .page-content .contact-panel {\n  font-size: 0.8rem;\n  color: #555;\n}\n[dir] .chatting-main .page-content .contact-panel {\n  padding: 0 !important;\n}\n[dir] .chatting-main .page-content .contact-panel .chevron-border {\n  border: 1px solid #f2f2f2;\n  border-radius: 0.5rem;\n  padding: 0.4rem;\n}\n.chatting-main .page-content .user-img {\n  width: 4rem;\n  height: 4rem;\n}\n[dir] .chatting-main .page-content .user-img {\n  border-radius: 50%;\n  border: 1px solid silver;\n}\n[dir=ltr] .chatting-main .page-content .border-contact {\n  border-left: 3px solid #123058;\n}\n[dir=rtl] .chatting-main .page-content .border-contact {\n  border-right: 3px solid #123058;\n}\n.chatting-main .page-content .message-item {\n  font-size: 1.1rem;\n}\n[dir] .chatting-main .page-content .message-item {\n  margin-top: 2rem;\n}\n[dir] .chatting-main .page-content .message-item .receive-item {\n  padding: 1.2rem 2rem;\n}\n[dir=ltr] .chatting-main .page-content .message-item .receive-item {\n  border-top-right-radius: 1rem;\n  border-bottom-right-radius: 1rem;\n}\n[dir=rtl] .chatting-main .page-content .message-item .receive-item {\n  border-top-left-radius: 1rem;\n  border-bottom-left-radius: 1rem;\n}\n[dir] .chatting-main .page-content .message-item .send-item {\n  padding: 1.2rem 2rem;\n}\n[dir=ltr] .chatting-main .page-content .message-item .send-item {\n  border-top-left-radius: 1rem;\n  border-bottom-left-radius: 1rem;\n}\n[dir=rtl] .chatting-main .page-content .message-item .send-item {\n  border-top-right-radius: 1rem;\n  border-bottom-right-radius: 1rem;\n}\n[dir] .chatting-main .page-content .msg-input {\n  border: 1px solid #efefef;\n}\n[dir] .chatting-main .page-content .msg-input .vs-input--input {\n  border: none !important;\n}\n[dir=ltr] .chatting-main .page-content .msg-input .vs-input--input {\n  padding-left: 0 !important;\n}\n[dir=rtl] .chatting-main .page-content .msg-input .vs-input--input {\n  padding-right: 0 !important;\n}\n[dir] .chatting-main .page-content .msg-input .vs-input--input:focus {\n  box-shadow: none !important;\n}\n[dir=ltr] .chatting-main .page-content .msg-input .vs-input--placeholder {\n  padding-left: 0 !important;\n}\n[dir=rtl] .chatting-main .page-content .msg-input .vs-input--placeholder {\n  padding-right: 0 !important;\n}\n.chatting-main .page-content .msg-input .send-btn {\n  width: 3.5rem !important;\n  height: 3.5rem !important;\n}\n[dir] .chatting-main .page-content .msg-input .send-btn {\n  border-radius: 50% !important;\n  padding: 1rem !important;\n}\n.chatting-main .page-content .contact-wrapper section.ps-container {\n  height: calc(var(--vh, 1vh) * 100 - 212px);\n}\n[dir=ltr] .chatting-main .page-content .contact-wrapper section.ps-container {\n  padding-right: 2rem !important;\n}\n[dir=rtl] .chatting-main .page-content .contact-wrapper section.ps-container {\n  padding-left: 2rem !important;\n}\n.chatting-main .page-content .message-wrapper section.ps-container {\n  height: calc(var(--vh, 1vh) * 100 - 402px);\n}\n[dir=ltr] .chatting-main .page-content .message-wrapper section.ps-container {\n  padding-right: 2rem !important;\n}\n[dir=rtl] .chatting-main .page-content .message-wrapper section.ps-container {\n  padding-left: 2rem !important;\n}\n[dir] .chatting-main .vx-row {\n  margin: 0 !important;\n}\n[dir] .chatting-main .vx-col {\n  padding: 0 !important;\n}", ""]);
+exports.push([module.i, ".chatting-main {\n  height: calc(var(--vh, 1vh) * 100 - 162px);\n}\n.chatting-main .page-content .contact-panel {\n  font-size: 0.9rem;\n  font-weight: 500;\n  color: #151515;\n}\n[dir] .chatting-main .page-content .contact-panel {\n  padding: 0 !important;\n}\n[dir] .chatting-main .page-content .contact-panel .chevron-border {\n  border: 1px solid #f2f2f2;\n  border-radius: 0.5rem;\n  padding: 0.4rem;\n}\n.chatting-main .page-content .user-img {\n  width: 4rem;\n  height: 4rem;\n}\n[dir] .chatting-main .page-content .user-img {\n  border-radius: 50%;\n  border: 1px solid silver;\n}\n[dir=ltr] .chatting-main .page-content .border-contact {\n  border-left: 3px solid #123058;\n}\n[dir=rtl] .chatting-main .page-content .border-contact {\n  border-right: 3px solid #123058;\n}\n.chatting-main .page-content .message-item {\n  font-size: 1.1rem;\n}\n[dir] .chatting-main .page-content .message-item {\n  margin-top: 2rem;\n}\n[dir] .chatting-main .page-content .message-item .receive-item {\n  padding: 1.2rem 2rem;\n}\n[dir=ltr] .chatting-main .page-content .message-item .receive-item {\n  border-top-right-radius: 1rem;\n  border-bottom-right-radius: 1rem;\n}\n[dir=rtl] .chatting-main .page-content .message-item .receive-item {\n  border-top-left-radius: 1rem;\n  border-bottom-left-radius: 1rem;\n}\n[dir] .chatting-main .page-content .message-item .send-item {\n  padding: 1.2rem 2rem;\n}\n[dir=ltr] .chatting-main .page-content .message-item .send-item {\n  border-top-left-radius: 1rem;\n  border-bottom-left-radius: 1rem;\n}\n[dir=rtl] .chatting-main .page-content .message-item .send-item {\n  border-top-right-radius: 1rem;\n  border-bottom-right-radius: 1rem;\n}\n[dir] .chatting-main .page-content .msg-input {\n  border: 1px solid #efefef;\n}\n[dir] .chatting-main .page-content .msg-input .vs-input--input {\n  border: none !important;\n}\n[dir=ltr] .chatting-main .page-content .msg-input .vs-input--input {\n  padding-left: 0 !important;\n}\n[dir=rtl] .chatting-main .page-content .msg-input .vs-input--input {\n  padding-right: 0 !important;\n}\n[dir] .chatting-main .page-content .msg-input .vs-input--input:focus {\n  box-shadow: none !important;\n}\n[dir=ltr] .chatting-main .page-content .msg-input .vs-input--placeholder {\n  padding-left: 0 !important;\n}\n[dir=rtl] .chatting-main .page-content .msg-input .vs-input--placeholder {\n  padding-right: 0 !important;\n}\n.chatting-main .page-content .msg-input .send-btn {\n  width: 3.5rem !important;\n  height: 3.5rem !important;\n}\n[dir] .chatting-main .page-content .msg-input .send-btn {\n  border-radius: 50% !important;\n  padding: 1rem !important;\n}\n.chatting-main .page-content .contact-wrapper section.ps-container {\n  height: calc(var(--vh, 1vh) * 100 - 212px);\n}\n[dir=ltr] .chatting-main .page-content .contact-wrapper section.ps-container {\n  padding-right: 2rem !important;\n}\n[dir=rtl] .chatting-main .page-content .contact-wrapper section.ps-container {\n  padding-left: 2rem !important;\n}\n.chatting-main .page-content .message-wrapper section.ps-container {\n  height: calc(var(--vh, 1vh) * 100 - 402px);\n}\n[dir=ltr] .chatting-main .page-content .message-wrapper section.ps-container {\n  padding-right: 2rem !important;\n}\n[dir=rtl] .chatting-main .page-content .message-wrapper section.ps-container {\n  padding-left: 2rem !important;\n}\n[dir] .chatting-main .vx-row {\n  margin: 0 !important;\n}\n[dir] .chatting-main .vx-col {\n  padding: 0 !important;\n}", ""]);
 
 // exports
 
@@ -581,10 +588,7 @@ var render = function() {
               [
                 _c(
                   "div",
-                  {
-                    staticClass: "ml-12 my-3",
-                    staticStyle: { height: "100%" }
-                  },
+                  { staticClass: "ml-4 my-3", staticStyle: { height: "100%" } },
                   [
                     _c(
                       "div",
@@ -612,11 +616,11 @@ var render = function() {
                           _c("div", [
                             _vm._v(
                               _vm._s(
-                                _vm.online_users.lastIndexOf(function(item) {
-                                  return item.user_id === _vm.active_user.id
-                                }) === -1
-                                  ? "offline"
-                                  : "online"
+                                _vm.online_users.find(function(user) {
+                                  return user.id === _vm.active_user.id
+                                })
+                                  ? "online"
+                                  : "offline"
                               )
                             )
                           ])
@@ -677,6 +681,7 @@ var render = function() {
                               placeholder: "Enviar mensaje...",
                               size: "large"
                             },
+                            on: { keypress: _vm.goEnter },
                             model: {
                               value: _vm.chat_text,
                               callback: function($$v) {

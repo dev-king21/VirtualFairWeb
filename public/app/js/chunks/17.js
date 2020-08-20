@@ -893,7 +893,7 @@ var render = function() {
                             background: "#ff0000",
                             "margin-left": "2px"
                           },
-                          attrs: { badge: 3 }
+                          attrs: { icon: "", badge: 3 }
                         })
                       ],
                       1

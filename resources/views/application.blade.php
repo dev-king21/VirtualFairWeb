@@ -26,5 +26,6 @@
     <!-- <script src="js/app.js"></script> -->
     <script src="{{ asset(mix('app/js/app.js')) }}"></script>
     <script src="https://js.stripe.com/v3/"></script>
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
   </body>
 </html>

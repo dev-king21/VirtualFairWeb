@@ -15,34 +15,14 @@
                         <div style="border-bottom: 1px solid #c2c2c2;">
 
                         </div>
-                        <div class="mt-6">
-                            <div>Numero del tarjeta</div>
-                            <div id="card-number-element" class="field"></div>
-                        </div>
-                        <div class="mt-6 flex justify-between">
-                            <div class="w-1/2">
-                                <div>MM/AAAA</div>
-                                <div id="card-expiry-element" class="field"></div>
-                            </div>
-                            <div class="w-1/2">
-                                <div>CVC</div>
-                                <div id="card-cvc-element" class="field"></div>
-                            </div>
-                        </div>
-                        <div class="mt-6">
-                            <div>Numero del tarjeta</div>
-                            <div class="field" :class="{'StripeElement--focus': holder_focus}">
-                                <vs-input @focus="holder_focus=true" @blur="holder_focus=false" class="w-full" placeholder="Numero del tarjeta" v-model="holder_name"  />
-                            </div>
-                        </div>
                         <div class="mt-12 flex items-center justify-between">
-                            <vs-button class="w-1/2 bg-danger py-4 fs-12" @click="checkoutStand" >Realizer Pago</vs-button>
-                            <div>
-                                <div>AI completar la compra, aceptas estas</div>
-                                <div class="text-cyan-dark font-bold">
-                                    Condiciones de uso
-                                </div>
-                            </div>
+                          <vs-button class="w-1/2 bg-danger py-4 fs-12" id="paypal-button">Realizer Pago</vs-button>
+                          <div>
+                              <div>AI completar la compra, aceptas estas</div>
+                              <div class="text-cyan-dark font-bold">
+                                  Condiciones de uso
+                              </div>
+                          </div>
                         </div>
                     </div>
                 </div>
@@ -61,118 +41,11 @@ export default {
   },
   data () {
     return {
-      load_contented: false,
-      configured: false,
-      addPaymentStatus: 0,
-      addPaymentStatusError: '',
-      holder_focus: false,
-      holder_name:'', 
-      stripeAPIToken: 'pk_test_51HHAb0JtUQ0xzKqWtCePfZBFPkZE6aJdHXFln5m42zuFO7BSzXLGlFBWAsUviSq3t3Tq2AhR2IHLhX6aLQ5kz0RY0013CwKdIq',
-      stripe: '',
-      elements: '',
-      cardNumberElement: '',
-      cardExpiryElement: '',
-      cardCvcElement: '',
-      intentToken: ''
+      
     }
   },
   methods: {
-    cvvChanged (evt) {
-      if (48 > evt.keyCode || evt.keyCode > 58) {
-        return false
-      }
-      return true
-
-    },
-    includeStripe (URL, callback) {
-      const documentTag = document
-      const tag = 'script',
-        object = documentTag.createElement(tag),
-        scriptTag = documentTag.getElementsByTagName(tag)[0]
-      object.src = `//${URL}`
-      if (callback) { object.addEventListener('load', function (e) { callback(null, e) }, false) }
-      scriptTag.parentNode.insertBefore(object, scriptTag)
-    },
-    configureStripe () {
-      const style = {
-        base: {
-          'iconColor': '#666EE8',
-          'color': '#151515',
-          'lineHeight': '40px',
-          'fontWeight': 300,
-          'fontFamily': 'Arial',
-          'fontSize': '18px',
-
-          '::placeholder': {
-            color: '#b2b2b2'
-          }
-        }
-      }
-      this.stripe = Stripe(this.stripeAPIToken)
-
-      this.elements = this.stripe.elements()
-      this.cardNumberElement = this.elements.create('cardNumber', {style, showIcon: true, placeholder: 'Numero del tarjeta'})
-      this.cardExpiryElement = this.elements.create('cardExpiry', {style, placeholder: 'MM/AA'})
-      this.cardCvcElement = this.elements.create('cardCvc', {style, placeholder: 'CVC'})
-      
-      this.cardNumberElement.mount('#card-number-element')
-      this.cardExpiryElement.mount('#card-expiry-element')
-      this.cardCvcElement.mount('#card-cvc-element')
-      this.$loading.hide(this)
-    },
-    checkoutStand () {
-      this.$loading.show(this)
-      this.addPaymentStatus = 1
-
-      this.stripe.confirmCardSetup(
-        this.intentToken.client_secret, {
-          payment_method: {
-            card: this.cardNumberElement,
-            billing_details: {
-              name: this.holder_name
-            }
-          }
-        }
-      ).then((result) => {
-        if (result.error) {
-          this.addPaymentStatus = 3
-          this.addPaymentStatusError = result.error.message
-        } else {
-          this.savePaymentMethod(result.setupIntent.payment_method)
-          console.log(result.setupIntent.payment_method)
-          this.addPaymentStatus = 2
-          this.cardNumberElement.clear()
-          this.cardExpiryElement.clear()
-          this.cardCvcElement.clear()
-          this.holder_name = ''
-        }
-      })
-    },
-    savePaymentMethod (method) {
-      this.$http.post('/api/stand/purchase/save_transaction', {
-        payment_method: method,
-        stand_id: this.$route.params.stand_id
-      }).then(() => {
-        //this.loadPaymentMethods()
-        this.$loading.hide(this)
-        this.$vs.notify({
-          title: 'éxito',
-          text: 'Gracias por comprar.<br> El pago se realizó correctamente.',
-          color: 'success',
-          iconPack: 'feather',
-          icon: 'icon-alert-circle'
-        })
-        setTimeout(() => {
-          this.$router.push('/setting/stand').catch(() => {})  
-        }, 1000)
-      })
-    },
-    loadIntent () {
-      this.$http.post('/api/stand/purchase/setup-intent')
-        .then((response) => {
-          this.intentToken = response.data
-        })
-    }
+    
   },
   created () {
     if (!this.$route.params.stand_id) {
@@ -180,11 +53,48 @@ export default {
     }
   },
   mounted () {
-    this.$loading.show(this)
-    this.includeStripe('js.stripe.com/v3/', () => {
-      this.configureStripe()
-    })
-    this.loadIntent()
+    console.log(this.$route)
+    paypal.Button.render({
+      env: 'sandbox', // Optional: specify 'sandbox' environment
+      client: {
+        sandbox:    'xxxx',
+        production: 'xxxx'
+      },
+      locale: 'en_US',
+      style: {
+        size: 'large',
+        color: 'gold',
+        shape: 'pill',
+        label: 'checkout',
+        tagline: 'true'
+      },
+      commit: true, // Optional: show a 'Pay Now' button in the checkout flow
+      payment () {
+        const returnUrl = this.$route.path//'_YOUR_RETURN_URL'
+        return new Promise((resolve, reject) => {
+          this.$http.post('/stand/create-payment', {return_url: returnUrl})
+            .then(res => {
+              resolve(res.data.id)
+            })
+            .catch(error => {
+              reject(error)
+            })
+        })
+      },
+
+      onAuthorize (data) {
+        // Execute the payment here, when the buyer approves the transaction
+        return new Promise((resolve, reject) => {
+          this.$http.post('/stand/execute-payment',  {payer_id: data.payerID, payment_id: data.paymentID, stand_id: _id})
+            .then(res => {
+              resolve(res)
+            })
+            .catch(error => {
+              reject(error)
+            })
+        })
+      }
+    }, '#paypal-button')
   }
 }
 </script>

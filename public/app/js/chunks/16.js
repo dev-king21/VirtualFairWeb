@@ -56,15 +56,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -72,6 +63,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
+      sus_imgs: [],
       swiperOption: {
         spaceBetween: 30,
         centeredSlides: true,
@@ -96,6 +88,14 @@ __webpack_require__.r(__webpack_exports__);
     swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_1__["swiperSlide"],
     NavBackButton: _views_custom_NavBackButton_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     AppHeader: _layouts_components_Header_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
+  },
+  methods: {},
+  created: function created() {
+    var _this = this;
+
+    this.$http.post('/api/fair/sustainability/get').then(function (res) {
+      _this.sus_imgs = res.data.sustainabilities;
+    });
   }
 });
 
@@ -181,53 +181,16 @@ var render = function() {
           _vm._v(" "),
           _c(
             "swiper",
-            {
-              key: _vm.$vs.rtl,
-              attrs: {
-                options: _vm.swiperOption,
-                dir: _vm.$vs.rtl ? "rtl" : "ltr"
-              }
-            },
+            { attrs: { options: _vm.swiperOption } },
             [
-              _c("swiper-slide", [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: {
-                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-16.jpg */ "./resources/app/assets/images/pages/carousel/banner-16.jpg"),
-                    alt: "banner"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("swiper-slide", [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: {
-                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-13.jpg */ "./resources/app/assets/images/pages/carousel/banner-13.jpg"),
-                    alt: "banner"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("swiper-slide", [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: {
-                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-4.jpg */ "./resources/app/assets/images/pages/carousel/banner-4.jpg"),
-                    alt: "banner"
-                  }
-                })
-              ]),
-              _vm._v(" "),
-              _c("swiper-slide", [
-                _c("img", {
-                  staticClass: "responsive",
-                  attrs: {
-                    src: __webpack_require__(/*! @assets/images/pages/carousel/banner-2.jpg */ "./resources/app/assets/images/pages/carousel/banner-2.jpg"),
-                    alt: "banner"
-                  }
-                })
-              ]),
+              _vm._l(_vm.sus_imgs, function(item, index) {
+                return _c("swiper-slide", { key: "sus-swiper-item-" + index }, [
+                  _c("img", {
+                    staticClass: "responsive",
+                    attrs: { src: "/fair_image/" + item.url, alt: "banner" }
+                  })
+                ])
+              }),
               _vm._v(" "),
               _c("div", {
                 staticClass: "swiper-pagination",
@@ -273,7 +236,7 @@ var render = function() {
                 1
               )
             ],
-            1
+            2
           )
         ],
         1
@@ -368,50 +331,6 @@ var staticRenderFns = []
 render._withStripped = true
 
 
-
-/***/ }),
-
-/***/ "./resources/app/assets/images/pages/carousel/banner-13.jpg":
-/*!******************************************************************!*\
-  !*** ./resources/app/assets/images/pages/carousel/banner-13.jpg ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/banner-13.jpg?04939c53cf03053710410aae330a20dd";
-
-/***/ }),
-
-/***/ "./resources/app/assets/images/pages/carousel/banner-16.jpg":
-/*!******************************************************************!*\
-  !*** ./resources/app/assets/images/pages/carousel/banner-16.jpg ***!
-  \******************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/banner-16.jpg?494b2830711b92086bda4ef504fbe2cb";
-
-/***/ }),
-
-/***/ "./resources/app/assets/images/pages/carousel/banner-2.jpg":
-/*!*****************************************************************!*\
-  !*** ./resources/app/assets/images/pages/carousel/banner-2.jpg ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/banner-2.jpg?4177aa4225d0496574b3ae3cab2e58a0";
-
-/***/ }),
-
-/***/ "./resources/app/assets/images/pages/carousel/banner-4.jpg":
-/*!*****************************************************************!*\
-  !*** ./resources/app/assets/images/pages/carousel/banner-4.jpg ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/banner-4.jpg?385cda2253c959636b31240ddc5bec4d";
 
 /***/ }),
 

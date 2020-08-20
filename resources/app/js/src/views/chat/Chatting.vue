@@ -31,12 +31,12 @@
                   </div>
               </div>
               <div class="vx-col lg:w-3/4 md:w-3/4 sm:w-2/3 xs:w-2/3 content-panel">
-                  <div class="ml-12 my-3" style="height: 100%">
+                  <div class="ml-4 my-3" style="height: 100%">
                       <div class="flex flex-row w-full items-center bg-white py-3">
                           <img :src="`/fair_image/${active_user.avatar}`" class="user-img responsive mx-4">
                           <div class="ml-2">
                               <div class="font-bold">{{active_user.first_name}} {{active_user.last_name}}</div>
-                              <div>{{online_users.lastIndexOf((item) => item.user_id === active_user.id) === -1? 'offline': 'online'}}</div>
+                              <div>{{online_users.find((user) => user.id === active_user.id) ? 'online': 'offline'}}</div>
                           </div>
                       </div>
                       <div class="mt-4">
@@ -53,7 +53,7 @@
                       </div>
                       <div>
                           <div class="w-full flex flex-row px-4 py-3 items-center justify-between bg-white msg-input">
-                            <vs-input class="w-full inputx" placeholder="Enviar mensaje..." v-model="chat_text" size="large"/>
+                            <vs-input class="w-full inputx" placeholder="Enviar mensaje..." @keypress="goEnter" v-model="chat_text" size="large"/>
                             <div class="ml-6">
                               <vs-button @click="sendMessage" type="filled" class="send-btn cyan-dark">
                                 <feather-icon svgClasses="w-6 h-6" icon="SendIcon"/>
@@ -131,6 +131,11 @@ export default {
           this.$loading.hide(this)
         })
     },
+    goEnter (event) {
+      if (event.keyCode === 13) {
+        this.sendMessage()
+      }
+    },
     sendMessage () {
       if (this.chat_text === '') return
       this.$loading.show(this)
@@ -194,8 +199,11 @@ export default {
               scroll_el.scrollTop = scroll_el.scrollHeight
             })
           } else {
-            const senderIdx = this.contacts.lastIndexOf((item) => item.requestor.id === event.chat.sender_id)
-            this.contacts[senderIdx].requestor.send_unread_messages.push(event.chat)
+            const sender = this.contacts.find((item) => item.requestor.id === event.chat.sender_id)
+            console.log(sender)
+            //const senderIndex = this.contacts.indexOf(sender)
+            sender.requestor.send_unread_messages.push(event.chat)
+            //this.items.$set(senderIndex, sender)
             //this.contacts.splice(index, 1, )
             /* this.contacts.map((item) => {
               if (item.user_id === event.chat.sender_id) {
@@ -224,9 +232,9 @@ export default {
   .page-content{
       .contact-panel {
         padding: 0 !important;        
-        font-size: 0.8rem;
-        //font-weight: 900;
-        color: #555;
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: #151515;
         
         .chevron-border {
            border: 1px solid #f2f2f2;

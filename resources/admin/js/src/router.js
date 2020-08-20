@@ -266,6 +266,14 @@ const router = new Router({
           }
         },
         {
+          path: '/settings/sustainability',
+          name: 'advertisement',
+          component: () => import('@/views/setting/sustainability/Sustainability.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
           path: '/dashboard/analytics',
           name: 'dashboard-analytics',
           component: () => import('@/views/DashboardAnalytics.vue'),
