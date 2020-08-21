@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Validator;
 use App\User;
+use App\CategoryInterest;
 use Carbon\Carbon;
 
 class AuthController extends Controller
@@ -49,9 +50,19 @@ class AuthController extends Controller
             $request->avatar_file->move(public_path('fair_image'), $b_fileName);
             $user->avatar = $b_fileName;
         }
+
         $user->save();
+        $cat_interests = $request->post('category_interest');
+        if (isset($cat_interests)) {
+            foreach ($cat_interests as $cat) {
+                $cat_int = new CategoryInterest;
+                $cat_int->user_id = $user->id;
+                $cat_int->category_id = $cat;
+                $cat_int->save();
+            }
+        }
         
-        return response()->json(['status' => 'ok'], 200);
+        return response()->json(['status' => 'ok', 'interest' => $cat_interests], 200);
     }
 
     public function login(Request $request)
@@ -61,6 +72,9 @@ class AuthController extends Controller
             return response()->json(['error' => 'Unauthorized']);
         
         $user = $request->user();
+        $user->load(['category_interests' => function($qr){
+            $qr->with('category')->get();
+        }]);
         $tokenResult = $user->createToken('Virtual Fair Web Api Token');
         $token = $tokenResult->token;
         if ($request->remember_me)

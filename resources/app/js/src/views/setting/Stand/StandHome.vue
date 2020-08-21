@@ -106,7 +106,7 @@
             <div class="absolute" style="bottom: 74px; right: 0">
                 <div class="flex flex-col items-center justify-center text-white relative px-2 py-4 bg-blue-dark chatting-btn">
                   <svg-icon size="w-6 h-6" icon="contact"/>
-                  <div class="ml-2 text-center btn-text">CHATEAR CON UN USEARIO</div>
+                  <div class="ml-2 text-center cursor-pointer btn-text" @click="$router.push('/fair/chatting')">CHATEAR CON UN USEARIO</div>
                 </div>
             </div>
             <div class="absolute stand-item-wrapper flex flex-col items-center justify-center text-white" 

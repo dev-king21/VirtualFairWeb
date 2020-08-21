@@ -57,6 +57,9 @@ class User extends Authenticatable
         return $this->hasMany('App\Chat', 'receiver_id')->where('chats.read', 0)->count();        
     }
 
+    public function category_interests() {
+        return $this->hasMany('App\CategoryInterest');
+    }
 
     public function getRoleAttribute() {
         $is_owner = 

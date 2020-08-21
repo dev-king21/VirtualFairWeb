@@ -32,6 +32,7 @@ Route::group(['middleware' => 'auth:api'], function(){
     Route::post('/fair/sponsor/request', 'FairController@sponsor_request');
     Route::post('/fair/chat/contacts', 'ChatController@get_contacts');
     Route::post('/fair/chat/messages', 'ChatController@get_messages');
+    Route::post('/fair/chat/create', 'ChatController@create');
     Route::post('/fair/chat/send_message', 'ChatController@send_message');
     Route::post('/fair/sustainability/get', 'SustainabilityController@getActiveSusImg');
 
@@ -114,10 +115,12 @@ Route::get('/setting/ads/get', 'AdsController@getAds');
 Route::post('/setting/ads/remove/{id}', 'AdsController@deleteAds');
 
 //sustainability
-Route::post('/setting/sustainability/create', 'SustainabilityController@createSustainabilityImag');
-Route::post('/setting/sustainability/update/{id}', 'SustainabilityController@updateSusImg');
-Route::get('/setting/sustainability/get', 'SustainabilityController@getSusImg');
-Route::post('/setting/sustainability/remove/{id}', 'SustainabilityController@deleteSusImg');
+Route::post('/fair/sustainability/save', 'SustainabilityController@saveSustainability');
+Route::post('/fair/sustainability_image/create', 'SustainabilityController@createSustainabilityImag');
+
+Route::post('/fair/sustainability/update/{id}', 'SustainabilityController@updateSusImg');
+Route::get('/fair/sustainability/get', 'FairController@getSustainabilityInfo');
+Route::post('/fair/sustainability/remove/{id}', 'SustainabilityController@deleteSusImg');
 
 //home webinar
 Route::post('/home/webinar', 'SettingController@get_reserved_webinars');
@@ -145,6 +148,7 @@ Route::get('/fair/show/{fair_id}', 'FairController@get_countries');
 Route::get('/fair/show/{fair_id}/{country_id}', 'FairController@get_stands');
 Route::get('/fair/show/{fair_id}/{country_id}/{stand_id}', 'FairController@get_stand');
 
+Route::get('/fair/now/category', 'FairController@current_fair_category');
 ///////////////////// get stands of current fair and first country
 
 

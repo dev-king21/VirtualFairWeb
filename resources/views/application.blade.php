@@ -22,10 +22,8 @@
   <body>
     <div id="app">
     </div>
-
-    <!-- <script src="js/app.js"></script> -->
     <script src="{{ asset(mix('app/js/app.js')) }}"></script>
-    <script src="https://js.stripe.com/v3/"></script>
-    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    <!-- <script src="https://js.stripe.com/v3/"></script> -->
+    <script src="https://www.paypal.com/sdk/js?client-id=ATijwtGLo7ySldj1ufH-wZiP1TEOiFMv86XwvHZxdNEmFj_WJu0GEkvYR1IrRJLAoNP5E_GfGDVMIdqh&currency=EUR"></script>
   </body>
 </html>

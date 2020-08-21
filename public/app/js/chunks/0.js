@@ -162,7 +162,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".vs-navbar {\n  height: 86px;\n}[dir] .vs-navbar {\n  background: #FFFFFFDD !important;\n}\n[dir=ltr] .vs-navbar .vs-button {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n[dir=rtl] .vs-navbar .vs-button {\n  margin-right: 10px;\n  margin-left: 10px;\n}\n[dir=ltr] .vs-navbar .vs-input {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n[dir=rtl] .vs-navbar .vs-input {\n  margin-right: 10px;\n  margin-left: 10px;\n}\n.vs-navbar .logo {\n  position: relative;\n  width: 120px;\n  height: auto;\n}\n[dir] .vs-navbar .logo {\n  margin: 10px 40PX;\n}\n.vs-navbar .vs-con-items {\n  /*width: 100%;*/\n  /* margin-right: 100px; */\n  justify-content: flex-end;\n}\n[dir] .vs-navbar .vs-con-items .circleIcon {\n  border-radius: 50%;\n  background: #151515;\n}\n.vs-navbar .vs-con-items .is-active-item a {\n  color: white;\n}\n[dir] .vs-navbar .vs-con-items .is-active-item a {\n  background-color: #151515;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item {\n  margin: 0;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a {\n  font-size: 0.9rem;\n  text-transform: uppercase;\n  font-weight: 700;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item a {\n  padding: 2.5rem 1.5rem;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a span {\n  text-transform: uppercase;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a:hover {\n  color: white !important;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item a:hover {\n  background-color: #151515;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a.setting-nav {\n  color: white;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item a.setting-nav {\n  background-color: #123058;\n  padding: 1.2rem;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item .feather-icon {\n  margin: 0 0.2rem;\n}\n[dir] .vs-dropdown--menu {\n  border-radius: 0px !important;\n}\n.vs-dropdown--menu .vs-dropdown--item-link {\n  text-transform: uppercase;\n  font-size: 0.8rem !important;\n}\n.vs-dropdown--menu .vs-dropdown--item-link:hover {\n  color: white !important;\n}\n[dir] .vs-dropdown--menu .vs-dropdown--item-link:hover {\n  background: !important;\n}", ""]);
+exports.push([module.i, ".vs-navbar {\n  height: 86px;\n}[dir] .vs-navbar {\n  background: #FFFFFFDD !important;\n}\n[dir=ltr] .vs-navbar .vs-button {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n[dir=rtl] .vs-navbar .vs-button {\n  margin-right: 10px;\n  margin-left: 10px;\n}\n[dir=ltr] .vs-navbar .vs-input {\n  margin-left: 10px;\n  margin-right: 10px;\n}\n[dir=rtl] .vs-navbar .vs-input {\n  margin-right: 10px;\n  margin-left: 10px;\n}\n.vs-navbar .logo {\n  position: relative;\n  width: 120px;\n  height: auto;\n}\n[dir] .vs-navbar .logo {\n  margin: 10px 40PX;\n}\n.vs-navbar .fair_logo {\n  height: 60px;\n  width: auto;\n}\n[dir] .vs-navbar .fair_logo {\n  border-radius: 10% !important;\n}\n[dir=ltr] .vs-navbar .fair_logo {\n  box-shadow: 1px 5px 5px #33333322;\n}\n[dir=rtl] .vs-navbar .fair_logo {\n  box-shadow: -1px 5px 5px #33333322;\n}\n.vs-navbar .vs-con-items {\n  /*width: 100%;*/\n  /* margin-right: 100px; */\n  justify-content: flex-end;\n}\n[dir] .vs-navbar .vs-con-items .circleIcon {\n  border-radius: 50%;\n  background: #151515;\n}\n.vs-navbar .vs-con-items .is-active-item a {\n  color: white;\n}\n[dir] .vs-navbar .vs-con-items .is-active-item a {\n  background-color: #151515;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item {\n  margin: 0;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a {\n  font-size: 0.9rem;\n  text-transform: uppercase;\n  font-weight: 700;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item a {\n  padding: 2.5rem 1.5rem;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a span {\n  text-transform: uppercase;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a:hover {\n  color: white !important;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item a:hover {\n  background-color: #151515;\n}\n.vs-navbar .vs-con-items .vs-navbar--item a.setting-nav {\n  color: white;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item a.setting-nav {\n  background-color: #123058;\n  padding: 1.2rem;\n}\n[dir] .vs-navbar .vs-con-items .vs-navbar--item .feather-icon {\n  margin: 0 0.2rem;\n}\n[dir] .vs-dropdown--menu {\n  border-radius: 0px !important;\n}\n.vs-dropdown--menu .vs-dropdown--item-link {\n  text-transform: uppercase;\n  font-size: 0.8rem !important;\n}\n.vs-dropdown--menu .vs-dropdown--item-link:hover {\n  color: white !important;\n}\n[dir] .vs-dropdown--menu .vs-dropdown--item-link:hover {\n  background: !important;\n}", ""]);
 
 // exports
 
@@ -253,7 +253,7 @@ var render = function() {
                         expression: "fair_logo"
                       }
                     ],
-                    staticClass: "h-responsive",
+                    staticClass: "fair_logo",
                     attrs: { src: "/fair_image/" + _vm.fair_logo }
                   }),
                   _vm._v(" "),
@@ -705,6 +705,7 @@ __webpack_require__.r(__webpack_exports__);
       _http_axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/auth/login', JSON.parse(JSON.stringify(payload))).then(function (response) {
         if (response.data.user) {
           localStorage.setItem('accessToken', response.data.access_token);
+          console.log(response.data.user);
           commit('UPDATE_USER_INFO', response.data.user);
           commit('SET_BEARER', response.data.access_token);
           resolve();
@@ -732,7 +733,15 @@ __webpack_require__.r(__webpack_exports__);
       var formData = new FormData();
 
       for (var key in user) {
-        formData.append(key, user[key]);
+        if (key === 'category_interest') {
+          if (user[key].length > 0) {
+            for (var i = 0; i < user[key].length; i++) {
+              formData.append("".concat(key, "[").concat(i, "]"), user[key][i]);
+            }
+          }
+        } else {
+          formData.append(key, user[key]);
+        }
       }
 
       if (payload.avatar_file) formData.append('avatar_file', payload.avatar_file);

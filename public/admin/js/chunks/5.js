@@ -355,6 +355,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -370,7 +411,10 @@ __webpack_require__.r(__webpack_exports__);
       sidebarData: {},
       talks: [],
       isPast: false,
-      switch1: false
+      switch1: false,
+      isAddShow: false,
+      popupTitle: '',
+      isAddOrEdit: 0
     };
   },
   computed: {
@@ -390,6 +434,14 @@ __webpack_require__.r(__webpack_exports__);
     },
     editData: function editData(data) {
       console.log(data);
+    },
+    addNewData: function addNewData() {
+      /* this.name = ''
+      this.country_id = 0
+      this.description = '' */
+      this.isAddOrEdit = 0;
+      this.popupTitle = 'Add Webinar';
+      this.isAddShow = true;
     },
     getOrderStatusColor: function getOrderStatusColor(status) {
       if (status === 'on_hold') return 'warning';
@@ -1118,7 +1170,38 @@ var render = function() {
               slot: "header"
             },
             [
-              _c("div", { staticClass: "flex flex-wrap-reverse items-center" }),
+              _c(
+                "div",
+                {
+                  staticClass:
+                    "btn-add-new p-3 mb-4 mr-4 rounded-lg cursor-pointer flex items-center justify-center text-lg font-medium text-base text-primary border border-solid border-primary",
+                  on: { click: _vm.addNewData }
+                },
+                [
+                  _c("feather-icon", {
+                    attrs: { icon: "PlusIcon", svgClasses: "h-4 w-4" }
+                  }),
+                  _vm._v(" "),
+                  _c("span", { staticClass: "ml-2 text-base text-primary" }, [
+                    _vm._v("Add New")
+                  ])
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "vs-popup",
+                {
+                  staticClass: "w-full mb-base items-center",
+                  attrs: { title: _vm.popupTitle, active: _vm.isAddShow },
+                  on: {
+                    "update:active": function($event) {
+                      _vm.isAddShow = $event
+                    }
+                  }
+                },
+                [_c("div", { staticClass: " w-full mb-base" })]
+              ),
               _vm._v(" "),
               _c(
                 "vs-dropdown",

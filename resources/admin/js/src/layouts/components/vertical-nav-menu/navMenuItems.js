@@ -66,34 +66,30 @@ export default [
         url: '/room/all',
         name: 'All Rooms',
         slug: 'email',
-        icon: 'MailIcon'/* ,
-        i18n: 'AllUsers' */
+        icon: 'MailIcon'
       },
       {
         url: '/room/request_talk',
-        name: 'Request Talk',
+        name: 'Request Webinars',
         slug: 'chat',
-        icon: 'MessageSquareIcon'/* ,
-        i18n: 'Chat' */
+        icon: 'MessageSquareIcon'
       },
       {
         url: '/room/scheduled_talk',
-        name: 'Scheduled Talk',
+        name: 'Reservados Webinars',
         slug: 'todo',
-        icon: 'CheckSquareIcon'/* ,
-        i18n: 'Todo' */
+        icon: 'CheckSquareIcon'
       },
       {
         url: '/room/live_talk',
-        name: 'Live Talk',
+        name: 'Live Webinars',
         slug: 'calendar-simple-calendar',
         icon: 'CalendarIcon',
-        tagColor: 'success'/* ,
-        i18n: 'Calendar' */
+        tagColor: 'success'
       },
       {
         url: '/room/past_talk',
-        name: 'Past Talk',
+        name: 'VISTOS Webinars',
         slug: 'calendar-simple-calendar',
         icon: 'CalendarIcon',
         tagColor: 'success'/* ,
@@ -136,6 +132,12 @@ export default [
         icon: 'CalendarIcon',
         tagColor: 'success'/* ,
         i18n: 'Calendar' */
+      },
+      {
+        url: '/fair/sustainability',
+        name: 'Sustainability',
+        slug: 'sustainability',
+        icon: 'MailIcon'
       }
     ]
   },
@@ -190,13 +192,7 @@ export default [
         url: '/settings/advertisement',
         name: 'Advertisement',
         slug: 'advertisement',
-        icon: 'MailIcon',
-      },
-      {
-        url: '/settings/sustainability',
-        name: 'Sustainability',
-        slug: 'sustainability',
-        icon: 'MailIcon',
+        icon: 'MailIcon'
       }
     ]
   },

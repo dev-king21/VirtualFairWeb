@@ -38,7 +38,7 @@
             <div class="absolute" style="bottom: 7.3rem; right: 0">
                 <div class="flex flex-col items-center justify-center text-white relative px-2 py-4 bg-blue-dark chatting-btn">
                   <svg-icon size="w-8 h-8" icon="contact"/>
-                  <div class="ml-2 text-center btn-text">CHATEAR CON UN USEARIO DEL STAND</div>
+                  <div class="ml-2 text-center cursor-pointer btn-text" @click="goChatting">CHATEAR CON UN USEARIO DEL STAND</div>
                 </div>
             </div>
             <div class="absolute stand-item-wrapper flex flex-col items-center justify-center text-white" 
@@ -115,6 +115,14 @@ export default {
     },
     showVideo (id) {
       this.$router.push(`/stand/video/stand_content/${id}`)
+    },
+    goChatting () {
+      if (this.stand.user_id) {
+        this.$http.post('/api/fair/chat/create/', {_id: this.stand.user_id})
+          .then(res => {
+            if (res.data && res.data.status === 'ok') this.$router.push('/fair/chatting')
+          })
+      }
     }  
   },
   created () {

@@ -243,6 +243,7 @@ __webpack_require__.r(__webpack_exports__);
       _http_axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/auth/login', JSON.parse(JSON.stringify(payload))).then(function (response) {
         if (response.data.user) {
           localStorage.setItem('accessToken', response.data.access_token);
+          console.log(response.data.user);
           commit('UPDATE_USER_INFO', response.data.user);
           commit('SET_BEARER', response.data.access_token);
           resolve();
@@ -270,7 +271,15 @@ __webpack_require__.r(__webpack_exports__);
       var formData = new FormData();
 
       for (var key in user) {
-        formData.append(key, user[key]);
+        if (key === 'category_interest') {
+          if (user[key].length > 0) {
+            for (var i = 0; i < user[key].length; i++) {
+              formData.append("".concat(key, "[").concat(i, "]"), user[key][i]);
+            }
+          }
+        } else {
+          formData.append(key, user[key]);
+        }
       }
 
       if (payload.avatar_file) formData.append('avatar_file', payload.avatar_file);

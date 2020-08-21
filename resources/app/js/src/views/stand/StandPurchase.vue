@@ -15,14 +15,8 @@
                         <div style="border-bottom: 1px solid #c2c2c2;">
 
                         </div>
-                        <div class="mt-12 flex items-center justify-between">
-                          <vs-button class="w-1/2 bg-danger py-4 fs-12" id="paypal-button">Realizer Pago</vs-button>
-                          <div>
-                              <div>AI completar la compra, aceptas estas</div>
-                              <div class="text-cyan-dark font-bold">
-                                  Condiciones de uso
-                              </div>
-                          </div>
+                        <div class="mt-12 flex items-center justify-center w-full">
+                          <div id="paypal-button" class="w-4/5"></div>
                         </div>
                     </div>
                 </div>
@@ -54,47 +48,27 @@ export default {
   },
   mounted () {
     console.log(this.$route)
-    paypal.Button.render({
-      env: 'sandbox', // Optional: specify 'sandbox' environment
-      client: {
-        sandbox:    'xxxx',
-        production: 'xxxx'
-      },
-      locale: 'en_US',
-      style: {
-        size: 'large',
-        color: 'gold',
-        shape: 'pill',
-        label: 'checkout',
-        tagline: 'true'
-      },
-      commit: true, // Optional: show a 'Pay Now' button in the checkout flow
-      payment () {
-        const returnUrl = this.$route.path//'_YOUR_RETURN_URL'
-        return new Promise((resolve, reject) => {
-          this.$http.post('/stand/create-payment', {return_url: returnUrl})
-            .then(res => {
-              resolve(res.data.id)
-            })
-            .catch(error => {
-              reject(error)
-            })
+    paypal.Buttons({
+      createOrder (data, actions) {
+      // This function sets up the details of the transaction, including the amount and line item details.
+        return actions.order.create({
+          purchase_units: [
+            {
+              amount: {
+                value: '250.00'
+              }
+            }
+          ]
         })
       },
-
-      onAuthorize (data) {
-        // Execute the payment here, when the buyer approves the transaction
-        return new Promise((resolve, reject) => {
-          this.$http.post('/stand/execute-payment',  {payer_id: data.payerID, payment_id: data.paymentID, stand_id: _id})
-            .then(res => {
-              resolve(res)
-            })
-            .catch(error => {
-              reject(error)
-            })
+      onApprove (data, actions) {
+      // This function captures the funds from the transaction.
+        return actions.order.capture().then(function (details) {
+        // This function shows a transaction success message to your buyer.
+          alert(`Transaction completed by ${  details.payer.name.given_name}`)
         })
       }
-    }, '#paypal-button')
+    }).render('#paypal-button')
   }
 }
 </script>

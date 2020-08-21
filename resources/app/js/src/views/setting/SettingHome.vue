@@ -22,7 +22,7 @@
                 </div>
                 <div class="flex px-12" style="background: #ffffff44; height: 100%;">
                     <div class="flex flex-col py-12 w-full justify-center">
-                        <template v-if="user.type !== 'user'">
+                        <template v-if="user.type === 'user'">
                             <div class="flex items-center justify-between buttons-row2">
                                 <setting-button cls="bg-blue-dark" to="/setting/schedule" icon="topic" text="ver mi agenda"></setting-button>
                                 <setting-button cls="bg-grey-real" to="/setting/webinar" icon="webinar" text="mis webinars"></setting-button>

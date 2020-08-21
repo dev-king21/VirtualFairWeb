@@ -7,7 +7,7 @@
         </router-link>
         <template>
           <div class="flex items-center ml-8">
-            <img class="h-responsive" :src="`/fair_image/${fair_logo}`" v-show="fair_logo">
+            <img class="fair_logo" :src="`/fair_image/${fair_logo}`" v-show="fair_logo">
             <div class="h2 ml-4 uppercase">{{fair_title}}</div>
           </div>
         </template>
@@ -152,6 +152,13 @@ export default {
     margin: 10px 40PX;
     width: 120px;
     height: auto;
+  }
+
+  .fair_logo {
+    height: 60px;
+    width: auto;
+    border-radius: 10% !important;
+    box-shadow: 1px 5px 5px #33333322;
   }
 
   .vs-con-items {

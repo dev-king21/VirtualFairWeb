@@ -453,7 +453,7 @@ var render = function() {
                         "div",
                         {
                           staticClass:
-                            "text-white fs-10 bg-blue-dark cursor-pointer font-normal p-8",
+                            "text-white fs-12 bg-blue-dark cursor-pointer font-normal p-6",
                           on: {
                             click: function($event) {
                               return _vm.$router.push("/room/webinar")
@@ -520,11 +520,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "p-5 bg-cyan-dark" }, [
+    return _c("div", { staticClass: "p-3 bg-cyan-dark" }, [
       _c(
         "span",
         {
-          staticClass: "fs-20 text-white",
+          staticClass: "fs-24 text-white ml-4",
           staticStyle: { "font-weight": "900" }
         },
         [_vm._v("Evantos")]
@@ -533,10 +533,10 @@ var staticRenderFns = [
       _c(
         "span",
         {
-          staticClass: "fs-20 text-white stroke-text ml-2",
+          staticClass: "fs-24 text-white stroke-text ml-2",
           staticStyle: { "font-weight": "100" }
         },
-        [_vm._v("del dia")]
+        [_vm._v("del día")]
       )
     ])
   },
@@ -544,11 +544,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "p-5 ml-8" }, [
+    return _c("div", { staticClass: "p-3 ml-8" }, [
       _c(
         "span",
         {
-          staticClass: "fs-20 text-white stroke-text",
+          staticClass: "fs-24 text-white stroke-text",
           staticStyle: { "font-weight": "100" }
         },
         [_vm._v("Todos")]
@@ -557,7 +557,7 @@ var staticRenderFns = [
       _c(
         "span",
         {
-          staticClass: "fs-20 text-white font-bold ml-2",
+          staticClass: "fs-24 text-white font-bold ml-2",
           staticStyle: { "font-weight": "900" }
         },
         [_vm._v("los Evantos")]

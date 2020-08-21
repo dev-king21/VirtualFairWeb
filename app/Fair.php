@@ -15,6 +15,14 @@ class Fair extends Model
         return $this->belongsTo('App\FairType');
     }
 
+    public function categories() {
+        return $this->hasMany('App\Category');
+    }
+
+    public function sustainability() {
+        return $this->hasOne('App\Sustainability');
+    }
+
 
     protected $guarded = [];
     protected $attributes = ["status" => 0];

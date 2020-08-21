@@ -5,9 +5,9 @@
 <template>
 <div class="h-screen flex w-full" id="home">
   <div class="fixed w-full justify-center" id="topBar"> 
-    <img id ="logo" src="/images/logo/logo-color.png">
-    <vs-button id ="login-btn" class="fixed" color="success" type="border" to="/auth/login" icon-pack="feather" icon="icon-user">Login</vs-button>
-    <vs-button id ="register-btn" class="fixed" color="warning" type="border" to="/auth/register" icon-pack="feather" icon="icon-user-plus">Register</vs-button>
+    <img id="logo" src="/images/logo/logo-color.png">
+    <vs-button id="login-btn" class="fixed" color="success" type="border" to="/auth/login" icon-pack="feather" icon="icon-user">Login</vs-button>
+    <vs-button id="register-btn" class="fixed" color="warning" type="border" to="/auth/register" icon-pack="feather" icon="icon-user-plus">Register</vs-button>
   </div>
   <div class="h-screen flex w-full home-bg-img items-center justify-center" id="home">
     <div class="vx-col w-full lg:w-1/4 sm:w-1/4 xs:w-1/4 mb-base">

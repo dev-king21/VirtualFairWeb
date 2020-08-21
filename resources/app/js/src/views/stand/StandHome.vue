@@ -150,7 +150,8 @@ export default {
         this.fair_type = data.fair.fair_type
         this.country = data.country
         this.stands = data.stands
-        this.$loading.hide(this)        
+        this.$loading.hide(this)  
+        console.log(this.stands)      
       })
       .catch(() => {})
     this.$http.post('/api/stand/ads/get')

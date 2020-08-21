@@ -61,6 +61,17 @@
 
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/4 w-full">
+                    <span>Area de Interes</span>
+                  </div>
+                  <div class="vx-col sm:w-3/4 mt-0">
+                    <vs-chips class="w-full" color="rgb(115,103,240)" placeholder="Nueva categoría" v-model="categories">
+                      <vs-chip @click="removeCategory(index)" v-for="(category, index) in categories" :key="`interest-item-${index}`" closable> {{ category }} </vs-chip>
+                    </vs-chips>
+                  </div>
+                </div>
+
+                <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/4 w-full">
                     <span>logo</span>
                   </div>
                   <div class="vx-col sm:w-3/4 text-center mt-0">
@@ -179,6 +190,7 @@ export default {
 
       startDate: null,
       endDate: null,
+      categories: [],
       selected: [],
       // fairs: [],
       itemsPerPage: 4,
@@ -218,6 +230,9 @@ export default {
     make_logo (logo) {
       if (logo) return logo
       else return 'placeholder.png'
+    },
+    removeCategory (index) {
+      this.categories.splice(index, 1)
     },
     browseLogoImg () {
       this.$refs.refLogoFile.click()
@@ -299,6 +314,9 @@ export default {
       this.active_idx = fair.fair_type_id
       this.startDate = fair.start_date 
       this.endDate = fair.end_date
+      this.categories = []
+      fair.categories.map((cat) => this.categories.push(cat.name))
+      //this.categories = fair.categories
       this.status = 1
       this.isAddShow = true
       
@@ -326,18 +344,16 @@ export default {
       this.isAddShow = false
     },
     formatDate (date) {
-      let d = new Date(date),
-        month = `${  d.getMonth() + 1}`,
-        day = `${  d.getDate()}`,
-        year = d.getFullYear()
-
+      const d = new Date(date), year = d.getFullYear()
+      let month = `${  d.getMonth() + 1}`, day = `${  d.getDate()}`
+      
       if (month.length < 2) month = `0${  month}`
       if (day.length < 2) day = `0${  day}`
 
       return [year, month, day].join('-')
     },
     addEditFair () {
-      if (this.name === '' || this.active_idx === 0 || this.startDate === null || this.endDate === null ) return
+      if (this.name === '' || this.active_idx === 0 || this.startDate === null || this.endDate === null) return
       let action = '/api/fair/create'
       if (this.isAddOrEdit === 1) action = `/api/fair/update/${this.editId}`
 
@@ -356,18 +372,24 @@ export default {
       formData.append('start_date', this.startDate)
       formData.append('end_date', this.endDate)
       formData.append('status', 1)
-
+      console.log(this.categories)
+      if (this.categories && this.categories.length) {
+        this.categories = [...new Set(this.categories)]
+        console.log(this.categories)
+        for (let i = 0; i < this.categories.length; i++) {
+          formData.append(`categories[${i}]`, this.categories[i])
+        }
+      }
       if (this.logo_file) formData.append('logo', this.logo_file)
       
       this.$loading.show(this)
 
-      this.$http.post(action, formData)
+      this.$http.post(action, formData, headers)
         .then((response) => {
           this.$loading.hide(this)
 
-         // console.log(response.data)
-          if(response.data.status === 'ok')
-          {
+          // console.log(response.data)
+          if (response.data.status === 'ok') {
             this.$vs.notify({
               title: 'éxito',
               text: 'Te has registrado con éxito.',
@@ -375,9 +397,7 @@ export default {
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
-          }
-          else
-          {
+          } else {
             this.$vs.notify({
               title: 'Oyu',
               text: 'Operación fallida',
@@ -389,6 +409,7 @@ export default {
           this.isAddShow = false
           this.loadContent()
         })
+      this.categories = []
     },
     loadContent () {
       let action = '/api/fair/all'
@@ -418,7 +439,7 @@ export default {
       this.$loading.show(this)
       this.$http.get('/api/fair_type/all')
         .then((response) => { 
-          this.$loading.hide(this);
+          this.$loading.hide(this)
           this.fair_types = response.data.fair_types 
         })
         .catch((error)   => { console.log(error) })
@@ -450,12 +471,11 @@ export default {
       const newData = {
         status: 0
       }
-      this.$loading.show(this);
+      this.$loading.show(this)
       this.$http.post(action, newData)
         .then((response) => {
-          this.$loading.hide(this);
-          if(response.data.status === 'ok')
-          {
+          this.$loading.hide(this)
+          if (response.data.status === 'ok') {
             this.$vs.notify({
               title: 'éxito',
               text: 'Se ha eliminado con éxito.',
@@ -463,9 +483,7 @@ export default {
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
-          }
-          else
-          {
+          } else {
             this.$vs.notify({
               title: 'Oyu',
               text: 'Operación fallida',

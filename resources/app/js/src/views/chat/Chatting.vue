@@ -16,16 +16,16 @@
                     <component :is="scrollbarTag" ref="contactScrollPs" class="scroll-area-v-nav-menu pt-2" :settings="settings" @ps-scroll-y="psContactSectionScroll" @scroll="psContactSectionScroll" >
                       <contact-item 
                           class="cursor-pointer"
-                          :idx="item.requestor.id"
+                          :idx="item.id"
                           :select="chatTo"
                           :active_index="active_index"
-                          :expositor_name="`${item.requestor.first_name} ${item.requestor.last_name}`"
-                          :expositor_company="`${item.requestor.company}`"
-                          :expositor_profession="`${item.requestor.address}`"
-                          :expositor_country="`${item.requestor.country}`"
-                          :user_img="`/fair_image/${item.requestor.avatar}`" 
+                          :expositor_name="`${item.first_name} ${item.last_name}`"
+                          :expositor_company="`${item.company}`"
+                          :expositor_profession="`${item.address}`"
+                          :expositor_country="`${item.country}`"
+                          :user_img="`/fair_image/${item.avatar}`" 
                           :key="`message-item-${index}`"
-                          :count="item.requestor.send_unread_messages? item.requestor.send_unread_messages.length : 0"
+                          :count="item.send_unread_messages? item.send_unread_messages.length : 0"
                           v-for="(item, index) in contacts"/>
                     </component>
                   </div>
@@ -116,7 +116,7 @@ export default {
       this.getMessages()
     },
     getMessages () {
-      this.active_user = this.contacts.find((it) => it.requestor.id === this.active_index).requestor
+      this.active_user = this.contacts.find((it) => it.id === this.active_index)
       this.$http.post('/api/fair/chat/messages', {other: this.active_index})
         .then((res) => {
           this.messages = res.data.messages
@@ -172,11 +172,11 @@ export default {
     this.$http.post('/api/fair/chat/contacts')
       .then((res) => {
         this.contacts = res.data.contacts
+        console.log(res.data)
         if (this.contacts.length !== 0) {
-          this.active_index = this.contacts[0].requestor.id //res.data.active_index
+          this.active_index = this.contacts[0].id //res.data.active_index
           this.getMessages()
         }
-        
       })
     
     Echo.join('chat')
@@ -199,10 +199,10 @@ export default {
               scroll_el.scrollTop = scroll_el.scrollHeight
             })
           } else {
-            const sender = this.contacts.find((item) => item.requestor.id === event.chat.sender_id)
+            const sender = this.contacts.find((item) => item.id === event.chat.sender_id)
             console.log(sender)
             //const senderIndex = this.contacts.indexOf(sender)
-            sender.requestor.send_unread_messages.push(event.chat)
+            sender.send_unread_messages.push(event.chat)
             //this.items.$set(senderIndex, sender)
             //this.contacts.splice(index, 1, )
             /* this.contacts.map((item) => {

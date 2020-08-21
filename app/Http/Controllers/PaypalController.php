@@ -78,7 +78,7 @@ class PaypalController extends Controller
 
                 /** Here is where you would do your own stuff like add a record for the payment, trigger a hasPayed event, etc.*/
                 // Do something to signify we succeeded
-
+                    
                     return response()->json(['status' => "success"], 200);
                 }
         }

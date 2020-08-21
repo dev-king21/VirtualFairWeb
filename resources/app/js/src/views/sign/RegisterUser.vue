@@ -89,32 +89,8 @@
                     <div class="vx-col w-full mb-2">
                         Seleccione un area de interes
                     </div>
-                    <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[0]">Diseno del Espacio</vs-checkbox>
-                    </div>
-                    <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[1]">Espacios Intelligentes</vs-checkbox>
-                    </div>
-                    <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[2]">Illuminacion Solar</vs-checkbox>
-                    </div>
-                    <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[3]">Zonas de luz</vs-checkbox>
-                    </div>
-                    <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[4]">Salas minimalistas</vs-checkbox>
-                    </div>
-                    <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[5]">Cuartos infantiles</vs-checkbox>
-                    </div>
-                    <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[6]">Oficinas modernas</vs-checkbox>
-                    </div>
-                    <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[7]">Aprovechamiento de Espacios</vs-checkbox>
-                    </div>
-                    <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-checkbox color="rgb(103, 179, 81) " v-model="categories[8]">Jardines</vs-checkbox>
+                    <div class="vx-col w-full lg:w-1/3 md:w-1/2 sm:w-full xs:w-full mb-4" :key="`cat-item-${index}`" v-for="(cat, index) in categories">
+                        <vs-checkbox color="rgb(103, 179, 81) " v-model="cat_checked[index]">{{cat.name}}</vs-checkbox>
                     </div>
                     <div class="vx-col w-full mb-4 text-center">
                         <vs-button class="cyan-dark register-btn" :disabled="!validateForm" @click="registerClick()">
@@ -142,7 +118,8 @@ export default {
   },
   data () {
     return {
-      categories: [false, false, false, false, false, false, false, false, false],
+      categories: [],
+      cat_checked: [],
       user: {
         type: 'user'
       },
@@ -173,6 +150,14 @@ export default {
     registerClick () {
       this.$loading.show(this)
       if (this.avatar_file) this.user.avatar_file = this.avatar_file
+      //this.user.interest
+      const category_interest = []
+      for (let i = 0; i < this.cat_checked.length; i++) {
+        if (this.cat_checked[i]) {
+          category_interest.push(this.categories[i].id)  
+        }
+      }
+      this.user.category_interest = category_interest
       this.$store.dispatch('auth/register', this.user)
         .then((response) => {
           console.log(response)
@@ -251,6 +236,15 @@ export default {
       moduleAuth.isRegistered = true
     }
     if (this.$route.params.type === 'expositor') this.user.type = 'lecturer'
+    this.$http.get('/api/fair/now/category')
+      .then((res) => {
+        if (res.data.categories) {
+          this.categories = res.data.categories
+          for (let i = 0; i < this.categories.length; i++) {
+            this.cat_checked.push(false)  
+          }
+        }
+      })
   }
 }
 </script>

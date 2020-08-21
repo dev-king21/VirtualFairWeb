@@ -12,6 +12,8 @@ use App\StandType;
 use App\StandTypeItem;
 use App\StandContent;
 use App\ContactRequest;
+use App\Category;
+use App\Sustainability;
 
 class FairController extends Controller
 {
@@ -19,7 +21,7 @@ class FairController extends Controller
 
     public function all_fairs() {
         $res = array();
-        $res["fairs"] = Fair::where("status", 1)->get();
+        $res["fairs"] = Fair::with('categories')->where("status", 1)->get();
         return response()->json($res);
     }
 
@@ -28,7 +30,7 @@ class FairController extends Controller
         if (!isset($year)) 
             $year = date("y");
         $res["year"] = $year;
-        $res["fairs"] = Fair::where("opened_year",  $year)->get();
+        $res["fairs"] = Fair::with('categories')->where("opened_year",  $year)->get();
         return response()->json($res);
     }
 
@@ -40,7 +42,7 @@ class FairController extends Controller
             ["end_date", ">=", $now]
         ]; 
         $query["status"] = 1;
-        $res["fairs"] = Fair::where($query)->get();
+        $res["fairs"] = Fair::with('categories')->where($query)->get();
         return response()->json($res);
     }
 
@@ -52,9 +54,24 @@ class FairController extends Controller
             ["end_date", ">=", $now]
         ]; 
         $query["status"] = 1;
-        $res["fair"] = Fair::where($query)->first();
+        $res["fair"] = Fair::with('categories')->where($query)->first();
         $res["country"] = Country::select('id', 'name', 'code')->where("status", 1)->first();
 
+        return response()->json($res);
+    }
+
+    public function current_fair_category(Request $request) {
+        $res = array();
+        $now = date("y-m-d");
+        $query = [
+            ["start_date", "<=", $now], 
+            ["end_date", ">=", $now]
+        ]; 
+        $query["status"] = 1;
+        $fair = Fair::with('categories')->where($query)->first();
+        if (isset($fair))
+            $res["categories"] = $fair->categories;
+        
         return response()->json($res);
     }
 
@@ -65,7 +82,7 @@ class FairController extends Controller
             ["start_date", ">", $now] 
         ]; 
         $query["status"] = 1;
-        $res["fairs"] = Fair::where($query)->get();
+        $res["fairs"] = Fair::with('categories')->where($query)->get();
         return response()->json($res);
     }
 
@@ -76,7 +93,7 @@ class FairController extends Controller
             ["end_date", "<", $now] 
         ]; 
         $query["status"] = 1;
-        $res["fairs"] = Fair::where($query)->get();
+        $res["fairs"] = Fair::with('categories')->where($query)->get();
         return response()->json($res);
     }
 
@@ -95,6 +112,18 @@ class FairController extends Controller
             $fair->logo = $b_fileName;
         } 
         $fair->save();
+
+        $sustain = new Sustainability;
+        $sustain->fair_id = $fair->id;
+        $sustain->description = "";
+        $sustain->save();
+
+        foreach ($request->post('categories') as $category) {
+            $cat = new Category;
+            $cat->name = $category;
+            $cat->fair_id = $fair->id;
+            $cat->save();
+        }
 
         $countries = Country::select('id')->where("status", 1)->get();
         $stand_locations = StandLocation::with(['stand_type' => function($qr) {
@@ -147,6 +176,24 @@ class FairController extends Controller
             $request->logo->move(public_path('fair_image'), $b_fileName);
             $query['logo'] = $b_fileName;
         } 
+
+        $sus_exist = Sustainability::find($id);
+        if (!isset($sus_exist)) {
+            $sustain = new Sustainability;
+            $sustain->fair_id = $id;
+            $sustain->description = "";
+            $sustain->save();
+        }
+
+        Category::where('fair_id', $id)->delete();
+        $categories = $request->post('categories');
+        if (isset($categories))
+            foreach ($categories as $category) {
+                $cat = new Category;
+                $cat->name = $category;
+                $cat->fair_id = $id;
+                $cat->save();
+            }
        
         Fair::whereId($id)->update($query);
         $res['status'] = 'ok';        
@@ -390,5 +437,16 @@ class FairController extends Controller
         $res["status"] = "ok";
         return response()->json($res);
     }   
+
+    //sustainability information according to fair
+    public function getSustainabilityInfo(Request $request) {
+        $res = array();
+        $fairs = Fair::with(['sustainability'=> function($qr){
+            $qr->with('sustainability_images')->get();
+        }])->get();
+        $res["status"] = "ok";
+        $res["fairs"] = $fairs;
+        return response()->json($res);
+    }
 
 }

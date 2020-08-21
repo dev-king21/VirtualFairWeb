@@ -3261,7 +3261,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var VxTour = function VxTour() {
-  return __webpack_require__.e(/*! import() */ 103).then(__webpack_require__.bind(null, /*! @/components/VxTour.vue */ "./resources/admin/js/src/components/VxTour.vue"));
+  return __webpack_require__.e(/*! import() */ 104).then(__webpack_require__.bind(null, /*! @/components/VxTour.vue */ "./resources/admin/js/src/components/VxTour.vue"));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -9601,37 +9601,25 @@ __webpack_require__.r(__webpack_exports__);
     name: 'All Rooms',
     slug: 'email',
     icon: 'MailIcon'
-    /* ,
-    i18n: 'AllUsers' */
-
   }, {
     url: '/room/request_talk',
-    name: 'Request Talk',
+    name: 'Request Webinars',
     slug: 'chat',
     icon: 'MessageSquareIcon'
-    /* ,
-    i18n: 'Chat' */
-
   }, {
     url: '/room/scheduled_talk',
-    name: 'Scheduled Talk',
+    name: 'Reservados Webinars',
     slug: 'todo',
     icon: 'CheckSquareIcon'
-    /* ,
-    i18n: 'Todo' */
-
   }, {
     url: '/room/live_talk',
-    name: 'Live Talk',
+    name: 'Live Webinars',
     slug: 'calendar-simple-calendar',
     icon: 'CalendarIcon',
     tagColor: 'success'
-    /* ,
-    i18n: 'Calendar' */
-
   }, {
     url: '/room/past_talk',
-    name: 'Past Talk',
+    name: 'VISTOS Webinars',
     slug: 'calendar-simple-calendar',
     icon: 'CalendarIcon',
     tagColor: 'success'
@@ -9678,6 +9666,11 @@ __webpack_require__.r(__webpack_exports__);
     /* ,
     i18n: 'Calendar' */
 
+  }, {
+    url: '/fair/sustainability',
+    name: 'Sustainability',
+    slug: 'sustainability',
+    icon: 'MailIcon'
   }]
 }, {
   url: '/payment',
@@ -9732,11 +9725,6 @@ __webpack_require__.r(__webpack_exports__);
     url: '/settings/advertisement',
     name: 'Advertisement',
     slug: 'advertisement',
-    icon: 'MailIcon'
-  }, {
-    url: '/settings/sustainability',
-    name: 'Sustainability',
-    slug: 'sustainability',
     icon: 'MailIcon'
   }]
 }, {

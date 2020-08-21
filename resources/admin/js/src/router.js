@@ -141,6 +141,14 @@ const router = new Router({
           }
         },
         {
+          path: '/fair/sustainability',
+          name: 'advertisement',
+          component: () => import('@/views/fair/sustainability/Sustainability.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
           path: '/fair/stands/:fair_id',
           name: 'fair-stands',
           component: () => import('@/views/fair/stands/Stands.vue'),
@@ -261,14 +269,6 @@ const router = new Router({
           path: '/settings/advertisement',
           name: 'advertisement',
           component: () => import('@/views/setting/advertisement/Advertisement.vue'),
-          meta: {
-            rule: 'editor'
-          }
-        },
-        {
-          path: '/settings/sustainability',
-          name: 'advertisement',
-          component: () => import('@/views/setting/sustainability/Sustainability.vue'),
           meta: {
             rule: 'editor'
           }

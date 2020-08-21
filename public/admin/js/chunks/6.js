@@ -257,6 +257,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FairViewSidebar_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../FairViewSidebar.vue */ "./resources/admin/js/src/views/fair/FairViewSidebar.vue");
 /* harmony import */ var _store_fair_moduleFairList_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/store/fair/moduleFairList.js */ "./resources/admin/js/src/store/fair/moduleFairList.js");
 /* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -443,6 +466,7 @@ __webpack_require__.r(__webpack_exports__);
       }],
       startDate: null,
       endDate: null,
+      categories: [],
       selected: [],
       // fairs: [],
       itemsPerPage: 4,
@@ -479,6 +503,9 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     make_logo: function make_logo(logo) {
       if (logo) return logo;else return 'placeholder.png';
+    },
+    removeCategory: function removeCategory(index) {
+      this.categories.splice(index, 1);
     },
     browseLogoImg: function browseLogoImg() {
       this.$refs.refLogoFile.click();
@@ -559,6 +586,8 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     editData: function editData(id) {
+      var _this2 = this;
+
       // this.sidebarData = JSON.parse(JSON.stringify(this.blankData))
       this.editId = id;
       this.isAddOrEdit = 1;
@@ -571,6 +600,11 @@ __webpack_require__.r(__webpack_exports__);
       this.active_idx = fair.fair_type_id;
       this.startDate = fair.start_date;
       this.endDate = fair.end_date;
+      this.categories = [];
+      fair.categories.map(function (cat) {
+        return _this2.categories.push(cat.name);
+      }); //this.categories = fair.categories
+
       this.status = 1;
       this.isAddShow = true;
     },
@@ -599,15 +633,15 @@ __webpack_require__.r(__webpack_exports__);
     },
     formatDate: function formatDate(date) {
       var d = new Date(date),
-          month = "".concat(d.getMonth() + 1),
-          day = "".concat(d.getDate()),
           year = d.getFullYear();
+      var month = "".concat(d.getMonth() + 1),
+          day = "".concat(d.getDate());
       if (month.length < 2) month = "0".concat(month);
       if (day.length < 2) day = "0".concat(day);
       return [year, month, day].join('-');
     },
     addEditFair: function addEditFair() {
-      var _this2 = this;
+      var _this3 = this;
 
       if (this.name === '' || this.active_idx === 0 || this.startDate === null || this.endDate === null) return;
       var action = '/api/fair/create';
@@ -625,14 +659,25 @@ __webpack_require__.r(__webpack_exports__);
       formData.append('start_date', this.startDate);
       formData.append('end_date', this.endDate);
       formData.append('status', 1);
+      console.log(this.categories);
+
+      if (this.categories && this.categories.length) {
+        this.categories = _toConsumableArray(new Set(this.categories));
+        console.log(this.categories);
+
+        for (var i = 0; i < this.categories.length; i++) {
+          formData.append("categories[".concat(i, "]"), this.categories[i]);
+        }
+      }
+
       if (this.logo_file) formData.append('logo', this.logo_file);
       this.$loading.show(this);
-      this.$http.post(action, formData).then(function (response) {
-        _this2.$loading.hide(_this2); // console.log(response.data)
+      this.$http.post(action, formData, headers).then(function (response) {
+        _this3.$loading.hide(_this3); // console.log(response.data)
 
 
         if (response.data.status === 'ok') {
-          _this2.$vs.notify({
+          _this3.$vs.notify({
             title: 'éxito',
             text: 'Te has registrado con éxito.',
             color: 'success',
@@ -640,7 +685,7 @@ __webpack_require__.r(__webpack_exports__);
             icon: 'icon-alert-circle'
           });
         } else {
-          _this2.$vs.notify({
+          _this3.$vs.notify({
             title: 'Oyu',
             text: 'Operación fallida',
             color: 'error',
@@ -649,13 +694,14 @@ __webpack_require__.r(__webpack_exports__);
           });
         }
 
-        _this2.isAddShow = false;
+        _this3.isAddShow = false;
 
-        _this2.loadContent();
+        _this3.loadContent();
       });
+      this.categories = [];
     },
     loadContent: function loadContent() {
-      var _this3 = this;
+      var _this4 = this;
 
       var action = '/api/fair/all';
 
@@ -680,17 +726,17 @@ __webpack_require__.r(__webpack_exports__);
       this.$loading.show(this);
       this.$http.get(action).then(function (response) {
         var res = response.data;
-        _this3.fairs = res.fairs;
+        _this4.fairs = res.fairs;
 
-        _this3.$loading.hide(_this3);
+        _this4.$loading.hide(_this4);
       })["catch"](function (error) {
         return console.log(error);
       });
       this.$loading.show(this);
       this.$http.get('/api/fair_type/all').then(function (response) {
-        _this3.$loading.hide(_this3);
+        _this4.$loading.hide(_this4);
 
-        _this3.fair_types = response.data.fair_types;
+        _this4.fair_types = response.data.fair_types;
       })["catch"](function (error) {
         console.log(error);
       });
@@ -716,7 +762,7 @@ __webpack_require__.r(__webpack_exports__);
       //   .catch(err => { console.error(err)       })
     },
     removeAction: function removeAction(id) {
-      var _this4 = this;
+      var _this5 = this;
 
       var action = "/api/fair/update/".concat(id);
       var newData = {
@@ -724,10 +770,10 @@ __webpack_require__.r(__webpack_exports__);
       };
       this.$loading.show(this);
       this.$http.post(action, newData).then(function (response) {
-        _this4.$loading.hide(_this4);
+        _this5.$loading.hide(_this5);
 
         if (response.data.status === 'ok') {
-          _this4.$vs.notify({
+          _this5.$vs.notify({
             title: 'éxito',
             text: 'Se ha eliminado con éxito.',
             color: 'success',
@@ -735,7 +781,7 @@ __webpack_require__.r(__webpack_exports__);
             icon: 'icon-alert-circle'
           });
         } else {
-          _this4.$vs.notify({
+          _this5.$vs.notify({
             title: 'Oyu',
             text: 'Operación fallida',
             color: 'error',
@@ -744,7 +790,7 @@ __webpack_require__.r(__webpack_exports__);
           });
         }
 
-        _this4.loadContent();
+        _this5.loadContent();
       });
     },
     showDeleteSuccess: function showDeleteSuccess() {
@@ -1552,6 +1598,53 @@ var render = function() {
                           ]
                         ],
                         2
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "vx-row mb-6" }, [
+                      _c("div", { staticClass: "vx-col sm:w-1/4 w-full" }, [
+                        _c("span", [_vm._v("Area de Interes")])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "vx-col sm:w-3/4 mt-0" },
+                        [
+                          _c(
+                            "vs-chips",
+                            {
+                              staticClass: "w-full",
+                              attrs: {
+                                color: "rgb(115,103,240)",
+                                placeholder: "Nueva categoría"
+                              },
+                              model: {
+                                value: _vm.categories,
+                                callback: function($$v) {
+                                  _vm.categories = $$v
+                                },
+                                expression: "categories"
+                              }
+                            },
+                            _vm._l(_vm.categories, function(category, index) {
+                              return _c(
+                                "vs-chip",
+                                {
+                                  key: "interest-item-" + index,
+                                  attrs: { closable: "" },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.removeCategory(index)
+                                    }
+                                  }
+                                },
+                                [_vm._v(" " + _vm._s(category) + " ")]
+                              )
+                            }),
+                            1
+                          )
+                        ],
+                        1
                       )
                     ]),
                     _vm._v(" "),

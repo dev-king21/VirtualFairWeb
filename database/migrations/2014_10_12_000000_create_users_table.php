@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('region');
             $table->enum('type', ['user', 'lecturer', 'admin', 'super']);
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('email')->unique();
+            $table->string('email');
             $table->string('password');
             $table->string('avatar');
 

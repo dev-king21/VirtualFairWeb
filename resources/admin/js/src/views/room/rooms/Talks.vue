@@ -7,8 +7,49 @@
 
       <div slot="header" class="flex flex-wrap-reverse items-center flex-grow justify-between">
 
-        <div class="flex flex-wrap-reverse items-center">
+        <div class="btn-add-new p-3 mb-4 mr-4 rounded-lg cursor-pointer flex items-center justify-center text-lg font-medium text-base text-primary border border-solid border-primary" @click="addNewData">
+              <feather-icon icon="PlusIcon" svgClasses="h-4 w-4" />
+              <span class="ml-2 text-base text-primary">Add New</span>
         </div>
+        <vs-popup class="w-full mb-base items-center" :title="popupTitle" :active.sync="isAddShow">
+            <div class=" w-full mb-base">
+              <!-- <vx-card>
+                <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/3 w-full">
+                    <span>Room Name</span>
+                  </div>
+                  <div class="vx-col sm:w-2/3 w-full">
+                    <vs-input class="w-full" v-model="name"/>
+                  </div>
+                </div>
+                <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/3 w-full">
+                    <span>Country</span>
+                  </div>
+                  <div class="vx-col sm:w-2/3 w-full">
+                     <v-select v-model="country_id"  :clearable="false" :options="countryOptions" v-validate="'required'" name="role" :dir="$vs.rtl ? 'rtl' : 'ltr'" />
+                      <span class="text-danger text-sm"  v-show="errors.has('role')">{{ errors.first('role') }}</span>
+                  </div>
+                </div>
+                <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/3 w-full">
+                    <span>Description</span>
+                  </div>
+                  <div class="vx-col sm:w-2/3 w-full">
+                    <vs-input class="w-full" v-model="description" />
+                  </div>
+                </div>
+                
+                <div class="vx-row">
+                  <div class="vx-col sm:w-2/3 w-full ml-auto">
+                    <vs-button class="mr-3 mb-2" @click="addEditRoom()">OK</vs-button>
+                    <vs-button color="warning" type="border" class="mb-2" @click="cancelAction()" >Cancel</vs-button>
+                  </div>
+                </div>
+              </vx-card> -->
+            </div>
+
+          </vs-popup>
         <!-- ITEMS PER PAGE -->
         <vs-dropdown vs-trigger-click class="cursor-pointer mb-4 mr-4">
           <div class="p-4 border border-solid d-theme-border-grey-light rounded-full d-theme-dark-bg cursor-pointer flex items-center justify-between font-medium">
@@ -116,7 +157,10 @@ export default {
 
       talks:[],
       isPast: false,
-      switch1: false
+      switch1: false,
+      isAddShow: false,
+      popupTitle: '',
+      isAddOrEdit: 0
     }
   },
   computed: {
@@ -138,6 +182,14 @@ export default {
     editData (data) {
         
       console.log(data)
+    },
+    addNewData () {
+      /* this.name = ''
+      this.country_id = 0
+      this.description = '' */
+      this.isAddOrEdit = 0
+      this.popupTitle = 'Add Webinar'
+      this.isAddShow = true
     },
     getOrderStatusColor (status) {
       if (status === 'on_hold')   return 'warning'

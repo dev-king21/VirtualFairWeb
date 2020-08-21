@@ -10,6 +10,7 @@ export default {
         .then(response => {
           if (response.data.user) {
             localStorage.setItem('accessToken', response.data.access_token)
+            console.log(response.data.user)
             commit('UPDATE_USER_INFO', response.data.user)
             commit('SET_BEARER', response.data.access_token)
             resolve()
@@ -33,7 +34,15 @@ export default {
       
       const formData = new FormData()
       for (const key in user) {
-        formData.append(key, user[key])
+        if (key === 'category_interest') {
+          if (user[key].length > 0) {
+            for (let i = 0; i < user[key].length; i++) {
+              formData.append(`${key}[${i}]`, user[key][i])
+            }
+          }
+        } else {
+          formData.append(key, user[key])
+        }        
       }
       if (payload.avatar_file) formData.append('avatar_file', payload.avatar_file)
       axios.post('/api/auth/register', formData, headers)
