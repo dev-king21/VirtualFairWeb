@@ -84,7 +84,7 @@ export default {
   },
   data () {
     return {
-     queries: [],
+      queries: [],
       // fairs: [],
       itemsPerPage: 4,
       isMounted: false,
@@ -130,15 +130,14 @@ export default {
     toggleDataSidebar (val = false) {
       this.addNewDataSidebar = val
     },
-   loadContent(){
+    loadContent () {
       const action = '/api/contact_message/all'
       this.$loading.show(this)
       this.$http.get(action)
         .then((response) => {
           const res = response.data
-          console.log(res) 
           this.queries = res.messages
-        //   this.searchedQueries = this.queries
+          //   this.searchedQueries = this.queries
           this.$loading.hide(this)
         })
         .catch((error) => { console.log(error) })
@@ -167,12 +166,11 @@ export default {
     },
     removeAction (id) {
       const action = `/api/query/remove/${id}`
-      this.$loading.show(this);
+      this.$loading.show(this)
       this.$http.post(action, newData)
         .then((response) => {
-          this.$loading.hide(this);
-          if(response.data.status === 'ok')
-          {
+          this.$loading.hide(this)
+          if (response.data.status === 'ok') {
             this.$vs.notify({
               title: 'éxito',
               text: 'Se ha eliminado con éxito.',
@@ -180,9 +178,7 @@ export default {
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
-          }
-          else
-          {
+          } else {
             this.$vs.notify({
               title: 'Oyu',
               text: 'Operación fallida',

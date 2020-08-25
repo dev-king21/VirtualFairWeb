@@ -1,16 +1,16 @@
 <template>
   <div>
     <vs-input
-        v-validate="'required|email|min:3'"
+        v-validate="'required|min:5'"
         data-vv-validate-on="blur"
-        name="email"
+        name="key"
         icon-no-border
         icon="icon icon-user"
         icon-pack="feather"
-        label-placeholder="Email"
-        v-model="email"
+        label-placeholder="Activation Key"
+        v-model="key"
         class="w-full"/>
-    <span class="text-danger text-sm">{{ errors.first('email') }}</span>
+    <span class="text-danger text-sm">{{ errors.first('key') }}</span>
 
     <vs-input
         data-vv-validate-on="blur"
@@ -22,7 +22,8 @@
         icon-pack="feather"
         label-placeholder="Password"
         v-model="password"
-        class="w-full mt-6" />
+        @keypress="goLogin"
+        class="w-full mt-12" />
     <span class="text-danger text-sm">{{ errors.first('password') }}</span>
 
     <div class="flex flex-wrap justify-between my-5">
@@ -30,8 +31,8 @@
         <router-link to="/auth/forgot-password">Forgot Password?</router-link>
     </div>
     <div class="flex flex-wrap justify-between mb-3"> 
-      <vs-button  type="border" @click="registerUser">Register</vs-button>
-      <vs-button :disabled="!validateForm" @click="loginJWT">Login</vs-button>
+      <!-- <vs-button  type="border" @click="registerUser">Register</vs-button> -->
+      <vs-button class="w-full cyan-dark" :disabled="!validateForm" @click="login">Login</vs-button>
     </div>
   </div>
 </template>
@@ -40,8 +41,8 @@
 export default {
   data () {
     return {
-      email: 'admin@admin.com',
-      password: 'adminadmin',
+      key: '',
+      password: '',
       checkbox_remember_me: false
     }
   },
@@ -53,10 +54,7 @@ export default {
   methods: {
     checkLogin () {
       // If user is already logged in notify
-      if (this.$store.state.auth.isUserLoggedIn()) {
-
-        // Close animation if passed as payload
-        // this.$vs.loading.close()
+      if (this.$store.state.auth.loggedIn) {
 
         this.$vs.notify({
           title: 'Login Attempt',
@@ -70,23 +68,28 @@ export default {
       }
       return true
     },
-    loginJWT () {
+    login () {
 
-      if (!this.checkLogin()) return
+      if (!this.checkLogin()) {
+        return setTimeout(() => {
+          this.goHome()
+        }, 300)
+      }
 
       // Loading
       this.$vs.loading()
 
       const payload = {
         checkbox_remember_me: this.checkbox_remember_me,
-        userDetails: {
-          email: this.email,
-          password: this.password
-        }
+        key: this.key,
+        password: this.password
       }
 
-      this.$store.dispatch('auth/loginJWT', payload)
-        .then(() => { this.$vs.loading.close() })
+      this.$store.dispatch('auth/login', payload)
+        .then(() => { 
+          this.$vs.loading.close() 
+          this.goHome()
+        })
         .catch(error => {
           this.$vs.loading.close()
           this.$vs.notify({
@@ -98,9 +101,19 @@ export default {
           })
         })
     },
-    registerUser () {
-      if (!this.checkLogin()) return
-      this.$router.push('/auth/register').catch(() => {})
+    goHome () {
+      const key = localStorage.getItem('activateKey')
+      if (!key) return
+      if (key && key === 'admin') this.$router.push('/user')
+      else this.$router.push('/exhibitor')
+    },
+    goLogin (event) {
+      if (event.keyCode === 13) this.login()
+    }
+  },
+  created () {
+    if (!this.checkLogin()) {
+      this.goHome()
     }
   }
 }

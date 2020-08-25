@@ -126,7 +126,6 @@ __webpack_require__.r(__webpack_exports__);
           return;
         }
 
-        console.log(data);
         _this.stand = data.stand;
         _this.stand_type = data.stand_type;
         _this.contact = _this.stand.contact;

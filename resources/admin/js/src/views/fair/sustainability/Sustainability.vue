@@ -11,6 +11,14 @@
     </div>
     <div class="vx-row">
       <div class="vx-col sm:w-1/3 w-full">
+        <h4>Sustainability Title</h4>
+      </div>
+      <div class="vx-col sm:w-2/3 w-full">
+        <vs-textarea class="w-full" v-model="sustainability_title"/>
+      </div>
+    </div>
+    <div class="vx-row">
+      <div class="vx-col sm:w-1/3 w-full">
         <h4>Sustainability Content</h4>
       </div>
       <div class="vx-col sm:w-2/3 w-full">
@@ -76,6 +84,7 @@ export default {
   data () {
     return {
       sustainability: [],
+      sustainability_title:'',
       sustainability_content: '',
       sustainability_images: [],
       sustainability_image: undefined,
@@ -94,34 +103,39 @@ export default {
       } else this.image_file = file
 
     },
-    showSustainability(){
-      let index = 0;
-      if(!this.fair_id.value || this.fair_id.value === 0) return
-      for(let i = 0; i < this.fairs.length; i++)
-      {
-        if(this.fairs[i].id === this.fair_id.value)
-          index = i;
+    showSustainability () {
+      let index = 0
+      if (!this.fair_id.value || this.fair_id.value === 0) return
+      for (let i = 0; i < this.fairs.length; i++) {
+        if (this.fairs[i].id === this.fair_id.value) index = i
       }
       this.sustainability = this.fairs[index].sustainability
-      if(this.sustainability === null) return
-      this.sustainability_content = this.sustainability.description
-      this.sustainability_images = this.sustainability.sustainability_images
+      if (this.sustainability === null) {
+        this.sustainability_title = ''
+        this.sustainability_content = ''
+        this.sustainability_images = null
+      } else {
+        this.sustainability_title = this.sustainability.title
+        this.sustainability_content = this.sustainability.description
+        this.sustainability_images = this.sustainability.sustainability_images
+      }
     },
-    saveSustainability(){
-      if(!this.fair_id.value) return
-      console.log("fair id", this.fair_id.value)
-      if(this.fair_id.value === 0) return
+    saveSustainability () {
+      if (!this.fair_id.value) return
+      if (this.fair_id.value === 0) return
       const action = '/api/fair/sustainability/save'
       const newData = {
         fair_id: this.fair_id.value,
+        title: this.sustainability_title,
         description: this.sustainability_content
       }
 
       this.$loading.show(this)
       this.$http.post(action, newData)
-      .then((response) => {
-        this.$loading.hide(this)
-        if (response.data.status === 'ok') {
+        .then((response) => {
+          this.$loading.hide(this)
+          this.loadContent()
+          if (response.data.status === 'ok') {
             this.$vs.notify({
               title: 'éxito',
               text: 'Te has registrado con éxito.',
@@ -138,13 +152,12 @@ export default {
               icon: 'icon-alert-circle'
             })
           }
-      })
+        })
      
     },
     saveAction () {
       this.sustainability_id = this.sustainability.id
-      console.log("sustainability_id", this.sustainability_id)
-      if(this.image_file === null || !this.sustainability_id) return
+      if (this.image_file === null || !this.sustainability_id) return
       const action = '/api/fair/sustainability_image/create'
       const formData = new FormData()
       const headers = {
@@ -158,15 +171,14 @@ export default {
       this.$loading.show(this)
       this.$http.post(action, formData, headers)
         .then((response) => {
-          this.$loading.hide(this);
+          this.$loading.hide(this)
           const res = response.data
           this.isShow = true
           if (response.data.status === 'ok') {
             this.loadContent()
             // this.$router.push({ path: `/settings/advertisement` }).catch(()=>{})
           }
-          if(response.data.status === 'ok')
-          {
+          if (response.data.status === 'ok') {
             this.$vs.notify({
               title: 'éxito',
               text: 'Te has registrado con éxito.',
@@ -175,9 +187,7 @@ export default {
               icon: 'icon-alert-circle'
             })
            
-          }
-          else
-          {
+          } else {
             this.$vs.notify({
               title: 'Oyu',
               text: 'Operación fallida',
@@ -223,15 +233,15 @@ export default {
         }      
       })
     },
-    remove(ad){
+    remove (ad) {
       const action = `/api/fair/sustainability/remove/${ad.id}`
       this.$loading.show(this)
-     this.$http.post(action).then((response) => {
-       this.$loading.hide(this)  
+      this.$http.post(action).then((response) => {
+        this.$loading.hide(this)  
         if (response.data.status === 'ok') {
-            this.loadContent()
-            // this.$router.push({ path: `/settings/advertisement` }).catch(()=>{})
-          }
+          this.loadContent()
+          // this.$router.push({ path: `/settings/advertisement` }).catch(()=>{})
+        }
         if (response.data.status === 'ok') {
           this.$vs.notify({
             title: 'éxito',
@@ -250,15 +260,18 @@ export default {
             icon: 'icon-alert-circle'
           })
         }    
-     })
+      })
     },
-    loadContent(){
+    loadContent () {
+      this.fairs = []
+      this.fairOptions = []
       this.$loading.show(this)
-      this.$http.get(`/api/fair/sustainability/get`)
-      .then((response) => { 
+      this.$http.get('/api/fair/sustainability/get')
+        .then((response) => { 
           this.fairs = response.data.fairs
           // this.sustainability = response.data.fairs.sustainability
-          for(let i = 0; i < this.fairs.length; i++){
+          
+          for (let i = 0; i < this.fairs.length; i++) {
             this.fairOptions.push({
               value: this.fairs[i].id,
               label: this.fairs[i].name
@@ -266,13 +279,13 @@ export default {
           }
           this.$loading.hide(this)
           this.showSustainability()
-      })
-      .catch((error)   => { console.log(error) })
+        })
+        .catch((error)   => { console.log(error) })
     
     }
   },
   created () {
-    this.loadContent();
+    this.loadContent()
   }
     
 }

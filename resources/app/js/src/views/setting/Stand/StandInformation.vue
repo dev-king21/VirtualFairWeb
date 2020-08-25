@@ -106,7 +106,6 @@ export default {
           this.stand.description  = data.stand.description
           this.stand.logo = data.stand.logo
           if (this.stand.logo) this.logo_show = true
-          console.log(this.stand)
         })  
     },
     getInformation () { 

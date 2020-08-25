@@ -36,13 +36,6 @@ class ChatController extends Controller
         $res["contacts"] = array();
         $contacts = array();
         $uid = $request->user()->id;
-        /* $res["contacts"] = ContactRequest::with(["requestor"=> function($query) use($uid) {
-            $query->with(['send_unread_messages'=>function($qr) use($uid){
-                $qr->where('receiver_id', $uid)->get();
-            }])->select(['id', 'first_name', 'last_name', 'company', 'country', 'address', 'avatar'])->get();
-        }])->whereHas("stand", function($qr) use($uid) {
-            $qr->where("user_id", $uid);
-        })->select(['id', 'stand_id', 'user_id'])->get(); */
         
         $contacts1 = Chat::with(['receiver' => function($query){
             $query->select(['id', 'first_name', 'last_name', 'company', 'country', 'address', 'avatar'])->get();
@@ -58,15 +51,21 @@ class ChatController extends Controller
             array_push($contacts, $cont->sender);
             array_push($res["contacts"], $cont->sender);
         }
-        $res["contacts1"] = $contacts1;
+        /* $res["contacts1"] = $contacts1;
         $res["contacts2"] = $contacts2;
 
-        $res["compare"] = [];
+        $res["compare"] = []; */
         foreach($contacts1 as $cont1) {
+            $exist = false;
             foreach($contacts as $cont2) {
-                if ($cont2->id === $cont1->receiver_id) continue;
-                array_push($res["contacts"], $cont1->receiver);
+                if ($cont2->id === $cont1->receiver_id) {
+                    $exist = true;
+                    break;
+                }
+                //array_push($res["compare"], [$cont2->id, $cont1->receiver_id, $cont2->id === $cont1->receiver_id]);
             }
+            if (!$exist) 
+            array_push($res["contacts"], $cont1->receiver);
         }
 
         return response()->json($res);
@@ -100,6 +99,16 @@ class ChatController extends Controller
         Chat::where(["sender_id" => $other, 'receiver_id' => $uid])->update(['read' => 1]);
         
         return response()->json($res);        
+    }
+
+    public function unread_count(Request $request) {
+        $uid = request()->user()->id;
+        if (!isset($uid)) {
+            return response()->json(["status" => "unknown_user"]);
+        }
+        $res["msg_count"] = Chat::where(["receiver_id" => $uid, "read" => 0])->count();
+
+        return response()->json($res);
     }
 
     public function send_message(Request $request) {

@@ -364,7 +364,6 @@ __webpack_require__.r(__webpack_exports__);
           return;
         }
 
-        console.log(data);
         _this4.stand = data.stand;
         _this4.stand_type = data.stand_type;
         _this4.contact = _this4.stand.contact;

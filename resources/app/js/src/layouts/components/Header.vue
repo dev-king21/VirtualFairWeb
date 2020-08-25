@@ -112,9 +112,7 @@ export default {
           this.$loading.hide(this)
           this.$router.push('/home')
         })
-        .catch((error) => {
-          console.log('error', error)
-        })
+        .catch(() => { })
     }
   },
   created () {

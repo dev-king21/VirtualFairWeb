@@ -27,7 +27,7 @@
         </vx-card>
     </div> -->
     <div class="vx-row" style="margin: 0; padding: 0">
-        <div class="relative mt-base">
+        <div class="relative mt-base" v-if="fair">
             <template v-if="fair.fair_type !== undefined">
               <img class="relative responsive" @load="onLoadImg()" :src="`/fair_image/${fair.fair_type.interior}`">
             </template>
@@ -98,7 +98,6 @@ export default {
         this.fair_type = data.fair.fair_type
         this.country = data.country
         this.stands = data.stands
-        console.log(this.stands)
         this.$loading.hide(this)
       })
   }

@@ -74,7 +74,7 @@ export default {
     selectAllIcon () {
       // return this.selectedMails.length === this.mails.length ? 'icon-check' : 'icon-minus'
     },
-    scrollbarTag () { return this.$store.getters.scrollbarTag },
+    scrollbarTag () { return this.$store.getters.scrollbarTag }
     
   },
   methods: {
@@ -88,17 +88,16 @@ export default {
     },
     
     searchList () {
-      if(this.searchQuery === '' ) this.searchedQueries = this.queries
-      else this.searchedQueries = this.queries.filter((item) => item.name.toLowerCase().includes(this.searchQuery.toLowerCase()) || item.email.toLowerCase().includes(this.searchQuery.toLowerCase()) || item.message.toLowerCase().includes(this.searchQuery.toLowerCase()) )
+      if (this.searchQuery === '') this.searchedQueries = this.queries
+      else this.searchedQueries = this.queries.filter((item) => item.name.toLowerCase().includes(this.searchQuery.toLowerCase()) || item.email.toLowerCase().includes(this.searchQuery.toLowerCase()) || item.message.toLowerCase().includes(this.searchQuery.toLowerCase()))
     },
     
-    loadContent(){
+    loadContent () {
       const action = '/api/query/all'
       this.$loading.show(this)
       this.$http.get(action)
         .then((response) => {
           const res = response.data
-          console.log(res) 
           this.queries = res.queries
           this.searchedQueries = this.queries
           this.$loading.hide(this)
@@ -110,7 +109,7 @@ export default {
     VuePerfectScrollbar
   },
   created () {
-    this.loadContent();                                        // Fetch Mail Tags
+    this.loadContent()                                        // Fetch Mail Tags
   },
   beforeDestroy () {
     this.$store.unregisterModule('email')

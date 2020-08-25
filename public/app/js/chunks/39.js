@@ -122,7 +122,6 @@ __webpack_require__.r(__webpack_exports__);
       _this.$loading.hide(_this);
 
       var data = response.data;
-      console.log(data);
       _this.contacts = data.requests;
 
       if (response.data.status === 'ok') {

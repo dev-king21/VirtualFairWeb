@@ -172,7 +172,6 @@ export default {
     this.$http.post('/api/fair/chat/contacts')
       .then((res) => {
         this.contacts = res.data.contacts
-        console.log(res.data)
         if (this.contacts.length !== 0) {
           this.active_index = this.contacts[0].id //res.data.active_index
           this.getMessages()
@@ -190,7 +189,6 @@ export default {
         this.online_users = this.online_users.filter(u => u.id !== user.id)
       })
       .listen('ChatEvent', (event) => {
-        console.log(event)
         if (event.chat.receiver_id === this.me.id) {
           if (this.active_index === event.chat.sender_id) {
             this.messages.push(event.chat)
@@ -200,17 +198,7 @@ export default {
             })
           } else {
             const sender = this.contacts.find((item) => item.id === event.chat.sender_id)
-            console.log(sender)
-            //const senderIndex = this.contacts.indexOf(sender)
             sender.send_unread_messages.push(event.chat)
-            //this.items.$set(senderIndex, sender)
-            //this.contacts.splice(index, 1, )
-            /* this.contacts.map((item) => {
-              if (item.user_id === event.chat.sender_id) {
-                
-              }
-
-            }) */
           }
         }        
       })

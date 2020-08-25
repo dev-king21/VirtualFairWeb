@@ -136,7 +136,6 @@ __webpack_require__.r(__webpack_exports__);
     this.$http.post('/api/room/schedule').then(function (response) {
       _this2.$loading.hide(_this2);
 
-      console.log(response.data);
       var data = response.data;
       _this2.today = data.today;
       _this2.webinars = data.webinars;

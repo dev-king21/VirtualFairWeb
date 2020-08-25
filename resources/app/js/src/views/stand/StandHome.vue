@@ -151,7 +151,6 @@ export default {
         this.country = data.country
         this.stands = data.stands
         this.$loading.hide(this)  
-        console.log(this.stands)      
       })
       .catch(() => {})
     this.$http.post('/api/stand/ads/get')

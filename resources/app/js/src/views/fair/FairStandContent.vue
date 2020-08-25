@@ -32,7 +32,7 @@
         </vx-card>
     </div> -->
     <div class="vx-row" style="margin: 0; padding: 0">
-        <div class="relative mt-base">
+        <div class="relative mt-base" v-if="fair">
             <template v-if="stand_type !== undefined">
               <img class="relative responsive" ref="refStandImg" @load="onImgLoad" :src="`/fair_image/${stand_type.interior}`">
             </template>
@@ -228,7 +228,6 @@ export default {
     },
     goto (refName) {
       const element = this.$refs[refName]
-      console.log(element.offsetTop)
       window.scrollTo(0, element.offsetTop)
     }
   },
@@ -297,7 +296,6 @@ export default {
             thumb: `/fair_image/${element.url}`, src: `/fair_image/${element.url}`, caption: element.name
           })
         })
-        console.log(data)
       })
   },
   mounted () {

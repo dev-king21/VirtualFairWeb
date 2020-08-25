@@ -15,6 +15,8 @@ class CreateSustainabilityImagesTable extends Migration
     {
         Schema::create('sustainability_images', function (Blueprint $table) {
             $table->id();
+            $table->integer('sustainability_id');
+
             $table->string('url');
             $table->integer('show')->default(0);
             $table->timestamps();

@@ -15,7 +15,7 @@ require('dotenv').config();
  |
  */
 
-    mix.js('resources/admin/js/app.js', 'public/admin/js')
+    mix.js('resources/admin/js/app.js', 'public/admin-app/js')
     .webpackConfig({
         resolve: {
             alias: {
@@ -25,23 +25,23 @@ require('dotenv').config();
             }
         }
     })
-    .sass('resources/admin/sass/app.scss', 'public/admin/css').options({
+    .sass('resources/admin/sass/app.scss', 'public/admin-app/css').options({
         postCss:[require('autoprefixer'), require('postcss-rtl')]
     })
-    .postCss('resources/admin/assets/css/main.css', 'public/admin/css', [
+    .postCss('resources/admin/assets/css/main.css', 'public/admin-app/css', [
         tailwindcss('tailwind.js'), require('postcss-rtl')()
     ])
-    .copy('node_modules/vuesax/dist/vuesax.css', 'public/admin/css/vuesax.css') // Vuesax framework css
-    .copy('resources/admin/assets/css/iconfont.css', 'public/admin/css/iconfont.css') // Feather Icon Font css
-    .copyDirectory('resources/admin/assets/fonts', 'public/admin/fonts') // Feather Icon fonts
-    .copyDirectory('node_modules/material-icons/iconfont', 'public/admin/css/material-icons') // Material Icon fonts
-    .copyDirectory('node_modules/material-icons/iconfont/material-icons.css', 'public/admin/css/material-icons/material-icons.css') // Material Icon fonts css
-    .copy('node_modules/prismjs/themes/prism-tomorrow.css', 'public/admin/css/prism-tomorrow.css') // Prism Tomorrow theme css
-    .copyDirectory('resources/admin/assets/images', 'public/admin/images'); // Copy all images from resources to public folder
+    .copy('node_modules/vuesax/dist/vuesax.css', 'public/admin-app/css/vuesax.css') // Vuesax framework css
+    .copy('resources/admin/assets/css/iconfont.css', 'public/admin-app/css/iconfont.css') // Feather Icon Font css
+    .copyDirectory('resources/admin/assets/fonts', 'public/admin-app/fonts') // Feather Icon fonts
+    .copyDirectory('node_modules/material-icons/iconfont', 'public/admin-app/css/material-icons') // Material Icon fonts
+    .copyDirectory('node_modules/material-icons/iconfont/material-icons.css', 'public/admin-app/css/material-icons/material-icons.css') // Material Icon fonts css
+    .copy('node_modules/prismjs/themes/prism-tomorrow.css', 'public/admin-app/css/prism-tomorrow.css') // Prism Tomorrow theme css
+    .copyDirectory('resources/admin/assets/images', 'public/admin-app/images'); // Copy all images from resources to public folder
 
 mix.webpackConfig({
     output: {
-        chunkFilename: 'admin/js/chunks/[name].js',
+        chunkFilename: 'admin-app/js/chunks/[name].js',
     }
 });
 //mix.browserSync({ proxy: 'localhost:8000' });

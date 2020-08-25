@@ -106,7 +106,6 @@ export default {
       .then((response) => {
         this.$loading.hide(this)
         const data = response.data
-        console.log(data)
         this.contacts = data.requests
         if (response.data.status === 'ok') {
           this.$vs.notify({

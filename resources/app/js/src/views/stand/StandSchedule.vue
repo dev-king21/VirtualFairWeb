@@ -14,9 +14,9 @@
                       <div class="flex items-center justify-center">
                         <div>
                           <svg-icon size="w-24 h-24 dt-color" icon="date-select"/>
-                          <div class="relative text-center" style="margin-top: -60px;">
-                            <div class="h5 text-cyan-dark font-bold">JUE</div>
-                            <div class="h2 text-black font-bold">04</div>
+                          <div class="relative text-center" style="margin-top: -55px;">
+                            <div class="h5 text-cyan-dark font-bold">{{day_for_schedule.toUpperCase()}}</div>
+                            <div class="h3 text-black font-bold">{{date_for_schedule}}</div>
                           </div>
                         </div>
                         <div class="ml-4">
@@ -24,7 +24,7 @@
                             SELECCIONE EL DÍA
                           </div>
                           <div class="text-cyan-dark h1 font-bold uppercase mt-4">
-                            AGOSTO  2020
+                            {{month_for_schedule.toUpperCase()}}  {{year_for_schedule}}
                           </div>
                         </div>
                       </div>
@@ -102,6 +102,20 @@ export default {
       es
     }
   },
+  computed: {
+    day_for_schedule () {
+      return this.$date.dayStringFromDate(this.schedule_date)
+    },
+    date_for_schedule () {
+      return this.$date.dateStringFromDate(this.schedule_date)
+    },
+    month_for_schedule () {
+      return this.$date.monthStringFromDate(this.schedule_date)
+    },
+    year_for_schedule () {
+      return this.$date.yearStringFromDate(this.schedule_date)
+    }
+  },
   methods: {
     period (start_time, end_time) {
       const sd = this.$date.timeFormat(start_time)
@@ -170,7 +184,6 @@ export default {
       this.$http.post('/api/stand/appointment/save', param)
         .then((response) => {
           this.$loading.hide(this)
-          console.log(response.data.status)
           if (response.data.status === 'ok') {
             this.$vs.notify({
               title: 'éxito',

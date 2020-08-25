@@ -226,7 +226,6 @@ export default {
           .then((response) => {
             this.$loading.hide(this)
           
-            console.log(response.data)
             if (response.data.status === 'ok') {
               this.$vs.notify({
                 title: 'éxito',
@@ -264,7 +263,6 @@ export default {
       .then((response) => {
         this.stand_type = response.data.stype
         this.stand_type_items = response.data.stand_type_items
-        console.log(response.data)
         this.$loading.hide(this)
       })
       .catch((error) => { console.log(error) })

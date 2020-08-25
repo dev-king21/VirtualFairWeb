@@ -1,7 +1,3 @@
-<!-- =========================================================================================
-    File Name: Home.vue
-    Description: Home Page
-========================================================================================== -->
 <template>
 <div class="h-screen flex w-full" id="home">
   <div class="fixed w-full justify-center" id="topBar"> 

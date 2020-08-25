@@ -212,7 +212,6 @@ __webpack_require__.r(__webpack_exports__);
     this.$http.post('/api/setting/schedule').then(function (response) {
       _this.$loading.hide(_this);
 
-      console.log(response.data);
       var data = response.data;
       _this.appointments_dates = data.appointments_dates;
       _this.appointments = data.appointments;

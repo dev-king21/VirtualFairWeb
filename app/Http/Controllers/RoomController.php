@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Room;
 use App\Talk;
 use App\Country;
+use App\User;
+use App\AdminUser;
 
 class RoomController extends Controller
 {
@@ -42,12 +44,32 @@ class RoomController extends Controller
         $res = array();
         $talk = new Talk;
         $talk->room_id = $request->post("room_id");
+        $talk->user_id = $request->post("user_id");
+        $talk->status = 1;
+        $talk->title = $request->post("title");
+        $talk->exhibitor_name = $request->post("exhibitor_name");
+        $talk->exhibitor_profession = $request->post("exhibitor_profession");
+        $talk->exhibitor_company = $request->post("exhibitor_company");
+        $talk->description = $request->post("description");
+        $talk->key = $request->post("key");
+        $talk->password = $request->post("password");
         $talk->talk_date = $request->post("talk_date");
-        $talk->video = $request->post("video");
-       
+        $talk->start_time = $request->post("start_time");
+        $talk->end_time = $request->post("end_time");
+
         $talk->save();
+       
+        $admin_user = new AdminUser;
+        $admin_user->user_id = $request->post("user_id");
+        $admin_user->email = $request->post("key");
+        $admin_user->password = bcrypt($request->post("password"));
+        $admin_user->password_key = $request->post("password");
+        $admin_user->save();
+
         $res["status"] = "ok";
         return response()->json($res);
+
+
     }
 
     public function update_talk(Request $request, $id){
@@ -138,6 +160,9 @@ class RoomController extends Controller
         $res = array();
         $res["talks"] = Talk::with(['user', 'room'])
         ->where("room_id", $id)->get();
+        $res["rooms"] = Room::all();
+        $res["users"] = User::where("type", "lecturer")->get();
+        $res["status"] = "ok";
         return response()->json($res);
     }
 
@@ -155,23 +180,24 @@ class RoomController extends Controller
 
         $res["talks"] = Talk::with(['user', 'room'])
         ->where($query)->get();
+        $res["rooms"] = Room::all();
+        $res["users"] = User::where("type", "lecturer")->get();
         return response()->json($res);
     }
 
     public function ScheduledTalks(Request $request){
         $res["status"] = "ok";
-
         $res = array();
-        $now = date("y-m-d h:i:s");
-
-        $res["now"] = $now;
+        $today = date("y-m-d");
         $query = [
-            ["start_time", ">", $now],
+            ["talk_date", ">=", $today],
             ["status", "=", 1]
         ];
 
         $res["talks"] = Talk::with(['user', 'room'])
         ->where($query)->get();
+        $res["rooms"] = Room::all();
+        $res["users"] = User::where("type", "lecturer")->get();
         return response()->json($res);
     }
 
@@ -190,21 +216,50 @@ class RoomController extends Controller
 
         $res["talks"] = Talk::with(['user', 'room'])
         ->where($query)->get();
+        $res["rooms"] = Room::all();
+        $res["users"] = User::where("type", "lecturer")->get();
         return response()->json($res);
     }
     public function PastTalks(Request $request){
         $res["status"] = "ok";
 
         $res = array();
-        $now = date("y-m-d h:i:s");
+        $today = date("y-m-d");
 
-        $res["now"] = $now;
         $query = [
-            ["end_time","<", $now] 
+            ["talk_date","<", $today] 
         ];
 
         $res["talks"] = Talk::with(['user', 'room'])
         ->where($query)->get();
+        $res["rooms"] = Room::all();
+        $res["users"] = User::where("type", "lecturer")->get();
+        return response()->json($res);
+    }
+
+    //exhibitor webinar
+    public function exhibitorWebinar(Request $request){
+        $res = array();
+        $user_id = $request->user()->user_id;
+        $today = date("y-m-d");
+        $query = [
+            ["talk_date", ">=", $today],
+            ["status", "=", 1],
+            ["user_id", "=", $user_id]
+        ];
+
+        $res["talks"] = Talk::with(['user', 'room'])
+        ->where($query)->get();
+        $res["rooms"] = Room::all();
+        $res["users"] = User::where("type", "lecturer")->get();
+        $res["user"] = $request->user();
+        return response()->json($res);
+    }
+
+    public function updateWebinar(Request $request, $talk_id){
+        $res = array();
+        Talk::whereId($talk_id)->update($request->post());
+        $res["status"] = "ok";
         return response()->json($res);
     }
 

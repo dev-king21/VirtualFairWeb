@@ -1,13 +1,19 @@
-/*=========================================================================================
-  File Name: moduleAuthMutations.js
-  Description: Auth Module Mutations
-
-==========================================================================================*/
-
-import axios from '../../http/axios/index.js'
-
 export default {
-  SET_BEARER (state, accessToken) {
-    axios.defaults.headers.common['Authorization'] = `Bearer ${accessToken}`
+  SET_BEARER (state) {
+    state.loggedIn = true
+  },
+
+  REMOVE_BEARER (state) {
+    state.loggedIn = false
+    state.admin = false
+  },
+
+  UPDATE_USER_INFO (state, payload) {
+    localStorage.setItem('activateKey', payload)
+    state.admin = payload === 'admin'
+  },
+
+  SET_ROLE (state, payload) {
+    state.admin = payload
   }
 }

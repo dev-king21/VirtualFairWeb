@@ -14,10 +14,11 @@
         "guzzlehttp/guzzle": "^6.3",
         "laravel/cashier": "^12.2",
         "laravel/framework": "^7.0",
-        "laravel/passport": "^9.3",
+        "laravel/passport": "^8.0",
         "laravel/tinker": "^2.0",
         "paypal/rest-api-sdk-php": "*",
-        "pusher/pusher-php-server": "~4.0"
+        "pusher/pusher-php-server": "~4.0",
+        "smartins/passport-multiauth": "^7.0"
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
@@ -35,7 +36,9 @@
     },
     "extra": {
         "laravel": {
-            "dont-discover": []
+            "dont-discover": [
+                "laravel/passport"
+            ]
         }
     },
     "autoload": {

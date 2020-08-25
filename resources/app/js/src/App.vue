@@ -6,7 +6,6 @@
 
 <script>
 import themeConfig from '@/../themeConfig.js'
-import jwt         from '@/http/requests/auth/jwt/index.js'
 
 export default {
   data () {
@@ -58,18 +57,11 @@ export default {
   },
   async created () {
 
-    // jwt
-    jwt.init()
-
     const dir = this.$vs.rtl ? 'rtl' : 'ltr'
     document.documentElement.setAttribute('dir', dir)
 
     window.addEventListener('resize', this.handleWindowResize)
     window.addEventListener('scroll', this.handleScroll)
-
-    // Auth0
-    //try       { await this.$auth.renewTokens() } catch (e) { console.error(e) }
-
   },
   destroyed () {
     window.removeEventListener('resize', this.handleWindowResize)

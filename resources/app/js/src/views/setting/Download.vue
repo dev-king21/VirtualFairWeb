@@ -104,7 +104,6 @@ export default {
         this.catalog_list = data.catalog_list
         this.video_list = data.video_list
         this.webinar_list = data.webinar_list  
-        console.log(data)
         if (response.data.status === 'ok') {
           this.$vs.notify({
             title: 'éxito',

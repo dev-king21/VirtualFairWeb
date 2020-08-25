@@ -101,7 +101,6 @@ export default {
     this.$http.post('/api/setting/webinar')
       .then((response) => {
         this.$loading.hide(this)
-        console.log(response.data)
         const data = response.data
         this.reserved_webinars = data.reserved_webinars
         this.past_webinars = data.past_webinars

@@ -5,12 +5,12 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Laravel\Passport\HasApiTokens;
+use SMartins\PassportMultiauth\HasMultiAuthApiTokens;
 use Laravel\Cashier\Billable;
 
 class User extends Authenticatable
 {
-    use Notifiable, HasApiTokens, Billable;
+    use Notifiable, HasMultiAuthApiTokens, Billable;
 
     protected $guarded = ['created_at', 'updated_at', 'type', 'role'];
     protected $hidden = [

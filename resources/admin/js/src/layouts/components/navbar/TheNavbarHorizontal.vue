@@ -1,11 +1,3 @@
-<!-- =========================================================================================
-  File Name: TheNavbar.vue
-  Description: Navbar component
-  Component Name: TheNavbar
-
-========================================================================================== -->
-
-
 <template>
 <div class="relative">
   <div class="vx-navbar-wrapper navbar-full p-0">

@@ -7,24 +7,23 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
 
-    <title>Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template</title>
+    <title>MFC Administration</title>
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset(mix('admin/css/main.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('admin/css/iconfont.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('admin/css/material-icons/material-icons.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('admin/css/vuesax.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('admin/css/prism-tomorrow.css')) }}">
-    <link rel="stylesheet" href="{{ asset(mix('admin/css/app.css')) }}">
+    <link rel="stylesheet" href="{{ asset(mix('admin-app/css/main.css')) }}">
+    <link rel="stylesheet" href="{{ asset(mix('admin-app/css/iconfont.css')) }}">
+    <link rel="stylesheet" href="{{ asset(mix('admin-app/css/material-icons/material-icons.css')) }}">
+    <link rel="stylesheet" href="{{ asset(mix('admin-app/css/vuesax.css')) }}">
+    <link rel="stylesheet" href="{{ asset(mix('admin-app/css/prism-tomorrow.css')) }}">
+    <link rel="stylesheet" href="{{ asset(mix('admin-app/css/app.css')) }}">
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="{{ asset('admin/images/logo/favicon.png') }}">
+    <link rel="shortcut icon" href="{{ asset('admin-app/images/logo/favicon.png') }}">
   </head>
   <body>
     <div id="app">
     </div>
 
-    <!-- <script src="js/app.js"></script> -->
-    <script src="{{ asset(mix('admin/js/app.js')) }}"></script>
+    <script src="{{ asset(mix('admin-app/js/app.js')) }}"></script>
 
   </body>
 </html>

@@ -118,11 +118,13 @@ class FairController extends Controller
         $sustain->description = "";
         $sustain->save();
 
-        foreach ($request->post('categories') as $category) {
-            $cat = new Category;
-            $cat->name = $category;
-            $cat->fair_id = $fair->id;
-            $cat->save();
+        if($request->post('categories') != null) {
+            foreach ($request->post('categories') as $category) {
+                $cat = new Category;
+                $cat->name = $category;
+                $cat->fair_id = $fair->id;
+                $cat->save();
+            }
         }
 
         $countries = Country::select('id')->where("status", 1)->get();
@@ -284,7 +286,23 @@ class FairController extends Controller
         
         $res["stand_type"] = StandLocation::with('stand_type') -> find($res["stand"]->stand_location_id)->stand_type;
         return response()->json($res);
+    }
 
+    public function get_sustainability(Request $request) {
+        $res = array();
+        $now = date("y-m-d");
+        $query = [
+            ["start_date", "<=", $now], 
+            ["end_date", ">=", $now]
+        ]; 
+        $query["status"] = 1;
+        $fair = Fair::where($query)->first();
+        if (!isset($fair)) {
+            return response()->json(["status" => "unknown_fair"]);
+        }
+        $res["sustainability"] = Sustainability::with("sustainability_images")->find($fair->id);
+
+        return response()->json($res);
     }
 
     public function get_sponsors(Request $request, $fair_id = 0, $country_id = 0) {

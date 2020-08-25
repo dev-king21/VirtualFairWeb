@@ -40,22 +40,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -63,7 +47,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      sus_imgs: [],
+      sustain: {},
+      sustainability_images: [],
+      sustain_title: '',
       swiperOption: {
         spaceBetween: 30,
         centeredSlides: true,
@@ -89,12 +75,27 @@ __webpack_require__.r(__webpack_exports__);
     NavBackButton: _views_custom_NavBackButton_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     AppHeader: _layouts_components_Header_vue__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
+  computed: {
+    sustainability_text: function sustainability_text() {
+      if (!this.sustain || !this.sustain.description) return '';
+      return this.sustain.description.replace(/\n/g, '<br>');
+    }
+  },
   methods: {},
   created: function created() {
     var _this = this;
 
-    this.$http.post('/api/fair/sustainability/get').then(function (res) {
-      _this.sus_imgs = res.data.sustainabilities;
+    this.$http.post('/api/fair/sustainability').then(function (res) {
+      _this.sustain = res.data.sustainability;
+
+      if (_this.sustain) {
+        _this.sustainability_images = _this.sustain.sustainability_images;
+        _this.sustain_title = _this.sustain.title;
+      }
+
+      if (!_this.sustain) {
+        _this.$router.push('/home');
+      }
     });
   }
 });
@@ -167,124 +168,105 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "div",
-    { staticClass: "w-full" },
+    { staticClass: "w-full bg-white" },
     [
       _c("app-header", { attrs: { activeItem: "0" } }),
       _vm._v(" "),
-      _c(
-        "div",
-        [
-          _c("nav-back-button", {
-            staticClass: "absolute",
-            staticStyle: { "z-index": "2000" }
-          }),
-          _vm._v(" "),
-          _c(
-            "swiper",
-            { attrs: { options: _vm.swiperOption } },
+      _vm.sustain
+        ? _c(
+            "div",
             [
-              _vm._l(_vm.sus_imgs, function(item, index) {
-                return _c("swiper-slide", { key: "sus-swiper-item-" + index }, [
-                  _c("img", {
-                    staticClass: "responsive",
-                    attrs: { src: "/fair_image/" + item.url, alt: "banner" }
-                  })
-                ])
-              }),
-              _vm._v(" "),
-              _c("div", {
-                staticClass: "swiper-pagination",
-                attrs: { slot: "pagination" },
-                slot: "pagination"
+              _c("nav-back-button", {
+                staticClass: "absolute",
+                staticStyle: { "z-index": "2000" }
               }),
               _vm._v(" "),
               _c(
-                "div",
-                {
-                  staticClass: "swiper-button-prev",
-                  attrs: { slot: "button-prev" },
-                  slot: "button-prev"
-                },
+                "swiper",
+                { attrs: { options: _vm.swiperOption } },
                 [
-                  _c("feather-icon", {
-                    staticStyle: { color: "black" },
-                    attrs: {
-                      svgClasses: "w-6 h-6 mt-3 ml-3",
-                      icon: "ChevronLeftIcon"
-                    }
-                  })
+                  _vm._l(_vm.sustainability_images, function(item, index) {
+                    return _c(
+                      "swiper-slide",
+                      { key: "sus-swiper-item-" + index },
+                      [
+                        _c("img", {
+                          staticClass: "responsive",
+                          attrs: {
+                            src: "/fair_image/" + item.url,
+                            alt: "banner"
+                          }
+                        })
+                      ]
+                    )
+                  }),
+                  _vm._v(" "),
+                  _c("div", {
+                    staticClass: "swiper-pagination",
+                    attrs: { slot: "pagination" },
+                    slot: "pagination"
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "swiper-button-prev",
+                      attrs: { slot: "button-prev" },
+                      slot: "button-prev"
+                    },
+                    [
+                      _c("feather-icon", {
+                        staticStyle: { color: "black" },
+                        attrs: {
+                          svgClasses: "w-6 h-6 mt-3 ml-3",
+                          icon: "ChevronLeftIcon"
+                        }
+                      })
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "swiper-button-next",
+                      attrs: { slot: "button-next" },
+                      slot: "button-next"
+                    },
+                    [
+                      _c("feather-icon", {
+                        staticStyle: { color: "black" },
+                        attrs: {
+                          svgClasses: "w-6 h-6 mt-3 ml-3",
+                          icon: "ChevronRightIcon"
+                        }
+                      })
+                    ],
+                    1
+                  )
                 ],
-                1
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "swiper-button-next",
-                  attrs: { slot: "button-next" },
-                  slot: "button-next"
-                },
-                [
-                  _c("feather-icon", {
-                    staticStyle: { color: "black" },
-                    attrs: {
-                      svgClasses: "w-6 h-6 mt-3 ml-3",
-                      icon: "ChevronRightIcon"
-                    }
-                  })
-                ],
-                1
+                2
               )
             ],
-            2
+            1
           )
-        ],
-        1
-      ),
+        : _vm._e(),
       _vm._v(" "),
-      _vm._m(0)
+      _c("div", { staticClass: "my-8" }, [
+        _c("h1", { staticClass: "font-bold text-center mb-8 fs-40" }, [
+          _vm._v(_vm._s(_vm.sustain_title))
+        ]),
+        _vm._v(" "),
+        _c("div", {
+          staticClass: "mx-32 fs-14 text-black",
+          domProps: { innerHTML: _vm._s(_vm.sustainability_text) }
+        })
+      ])
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "my-8" }, [
-      _c("h1", { staticClass: "font-bold text-center mb-8 fs-40" }, [
-        _vm._v("Titular Lorem ipsum")
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "mx-32 fs-14 text-black" }, [
-        _vm._v(
-          "\n            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut\n            wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure\n            dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui\n            blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
-        ),
-        _c("br"),
-        _c("br"),
-        _vm._v(
-          "\n            Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut\n            wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
-        ),
-        _c("br"),
-        _c("br"),
-        _vm._v(
-          "\n            Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut\n            wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure\n            dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui\n            blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi."
-        ),
-        _c("br"),
-        _c("br"),
-        _vm._v(
-          "\n            Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut\n            wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat."
-        ),
-        _c("br"),
-        _c("br"),
-        _vm._v(
-          "\n            Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut\n            wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.\n\n        "
-        )
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

@@ -330,7 +330,7 @@ export default {
             }, 3000)
             return
           }
-          console.log(data)
+          
           this.stand = data.stand  
           this.stand_type = data.stand_type
           this.contact = this.stand.contact

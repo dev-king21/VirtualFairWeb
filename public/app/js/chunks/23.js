@@ -223,11 +223,9 @@ __webpack_require__.r(__webpack_exports__);
       formData.append('gallery_file', this.gallery_file);
 
       if (this.isVideo(this.gallery_file.name)) {
-        console.log(this.gallery_title);
         formData.append('gallery_title', this.gallery_title);
       }
 
-      console.log('save_gallery');
       this.$loading.show(this);
       this.$http.post('/api/setting/my_stand/gallery/save', formData, headers).then(function (response) {
         _this4.$loading.hide(_this4);

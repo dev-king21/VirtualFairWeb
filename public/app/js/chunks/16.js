@@ -207,7 +207,6 @@ __webpack_require__.r(__webpack_exports__);
     this.me = userInfo;
     this.$http.post('/api/fair/chat/contacts').then(function (res) {
       _this3.contacts = res.data.contacts;
-      console.log(res.data);
 
       if (_this3.contacts.length !== 0) {
         _this3.active_index = _this3.contacts[0].id; //res.data.active_index
@@ -224,8 +223,6 @@ __webpack_require__.r(__webpack_exports__);
         return u.id !== user.id;
       });
     }).listen('ChatEvent', function (event) {
-      console.log(event);
-
       if (event.chat.receiver_id === _this3.me.id) {
         if (_this3.active_index === event.chat.sender_id) {
           _this3.messages.push(event.chat);
@@ -239,16 +236,7 @@ __webpack_require__.r(__webpack_exports__);
             return item.id === event.chat.sender_id;
           });
 
-          console.log(sender); //const senderIndex = this.contacts.indexOf(sender)
-
-          sender.send_unread_messages.push(event.chat); //this.items.$set(senderIndex, sender)
-          //this.contacts.splice(index, 1, )
-
-          /* this.contacts.map((item) => {
-            if (item.user_id === event.chat.sender_id) {
-              
-            }
-            }) */
+          sender.send_unread_messages.push(event.chat);
         }
       }
     }).listenForWhisper('typing', function (user) {

@@ -139,7 +139,6 @@ export default {
           this.addPaymentStatusError = result.error.message
         } else {
           this.savePaymentMethod(result.setupIntent.payment_method)
-          console.log(result.setupIntent.payment_method)
           this.addPaymentStatus = 2
           this.cardNumberElement.clear()
           this.cardExpiryElement.clear()

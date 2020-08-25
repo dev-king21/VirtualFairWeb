@@ -160,7 +160,6 @@ export default {
       this.user.category_interest = category_interest
       this.$store.dispatch('auth/register', this.user)
         .then((response) => {
-          console.log(response)
           this.$loading.hide(this)  
           if (response.data.status === 'ok') {
             this.$vs.notify({

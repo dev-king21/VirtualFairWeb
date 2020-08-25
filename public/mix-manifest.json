@@ -12,5 +12,13 @@
     "/admin/css/vuesax.css": "/admin/css/vuesax.css",
     "/admin/css/iconfont.css": "/admin/css/iconfont.css",
     "/admin/css/material-icons/material-icons.css": "/admin/css/material-icons/material-icons.css",
-    "/admin/css/prism-tomorrow.css": "/admin/css/prism-tomorrow.css"
+    "/admin/css/prism-tomorrow.css": "/admin/css/prism-tomorrow.css",
+    "/admin-app/js/app.js": "/admin-app/js/app.js",
+    "/admin/-appcss/app.css": "/admin/-appcss/app.css",
+    "/admin-app/css/main.css": "/admin-app/css/main.css",
+    "/admin-app/css/vuesax.css": "/admin-app/css/vuesax.css",
+    "/admin-app/css/iconfont.css": "/admin-app/css/iconfont.css",
+    "/admin-app/css/material-icons/material-icons.css": "/admin-app/css/material-icons/material-icons.css",
+    "/admin-app/css/prism-tomorrow.css": "/admin-app/css/prism-tomorrow.css",
+    "/admin-app/css/app.css": "/admin-app/css/app.css"
 }

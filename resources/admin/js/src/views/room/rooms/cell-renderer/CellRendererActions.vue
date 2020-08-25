@@ -99,14 +99,13 @@ export default {
     }
   }, 
   created () {
-    if(this.isEditShow)
+    if (this.isEditShow)
     {
       this.country_id = this.params.data.country_id
       this.name = this.params.data.name
       this.description = this.params.data.description
       this.countries = this.params.data.country
       this.countryOptions = this.params.data.countryOptions
-      console.log("adfa ", this.params.data)
     }
     
   }

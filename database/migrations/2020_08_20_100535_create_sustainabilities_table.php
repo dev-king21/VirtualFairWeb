@@ -15,7 +15,9 @@ class CreateSustainabilitiesTable extends Migration
     {
         Schema::create('sustainabilities', function (Blueprint $table) {
             $table->id();
+            $table->string('title');
             $table->string('description');
+
             $table->integer('fair_id')->default(0);
             $table->timestamps();
         });

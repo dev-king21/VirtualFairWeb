@@ -171,6 +171,7 @@ import moduleFairList from '@/store/fair/moduleFairList.js'
 import Datepicker from 'vuejs-datepicker'
 
 
+
 export default {
   components: {
     FairViewSidebar,
@@ -238,7 +239,6 @@ export default {
       this.$refs.refLogoFile.click()
     },
     readerData (rawFile) {
-      //console.log(this.$refs.logoPreview)
       return new Promise((resolve) => {
         const reader = new FileReader()
         reader.onload = e => {
@@ -290,14 +290,17 @@ export default {
       /* this.sidebarData = {}
       this.toggleDataSidebar(true)   */
       this.name = ''
-      this.logo = ''
       this.active_idx = 0
       this.startDate = null
       this.endDate = null
       this.status = 1
       this.isAddOrEdit = 0
+      this.categories = []
+      this.logo = ''
       this.popupTitle = 'Add Fair'
       this.isAddShow = true
+      
+
     },
     deleteData (id) {
       this.$store.dispatch('dataList/removeItem', id).catch(err => { console.error(err) })
@@ -372,10 +375,8 @@ export default {
       formData.append('start_date', this.startDate)
       formData.append('end_date', this.endDate)
       formData.append('status', 1)
-      console.log(this.categories)
       if (this.categories && this.categories.length) {
         this.categories = [...new Set(this.categories)]
-        console.log(this.categories)
         for (let i = 0; i < this.categories.length; i++) {
           formData.append(`categories[${i}]`, this.categories[i])
         }
@@ -388,7 +389,6 @@ export default {
         .then((response) => {
           this.$loading.hide(this)
 
-          // console.log(response.data)
           if (response.data.status === 'ok') {
             this.$vs.notify({
               title: 'éxito',

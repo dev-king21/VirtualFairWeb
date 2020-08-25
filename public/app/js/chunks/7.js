@@ -163,8 +163,6 @@ __webpack_require__.r(__webpack_exports__);
           icon: 'icon-alert-circle'
         });
       }
-
-      console.log(data.webinar.user);
     });
   }
 });

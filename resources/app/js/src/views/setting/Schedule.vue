@@ -130,7 +130,6 @@ export default {
     this.$http.post('/api/setting/schedule')
       .then((response) => {
         this.$loading.hide(this)
-        console.log(response.data)
         const data = response.data
         this.appointments_dates = data.appointments_dates
         this.appointments = data.appointments

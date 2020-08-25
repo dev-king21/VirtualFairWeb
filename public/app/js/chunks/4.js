@@ -155,78 +155,82 @@ var render = function() {
       _c("app-header", { attrs: { activeItem: "2" } }),
       _vm._v(" "),
       _c("div", { staticClass: "w-full" }, [
-        _c(
-          "div",
-          { staticClass: "vx-row" },
-          _vm._l(_vm.countries, function(country_item, index) {
-            return _c(
+        _vm.fair
+          ? _c(
               "div",
-              {
-                key: index,
-                staticClass: "vx-col w-full sm:w-1/2 lg:w-1/3 mb-base"
-              },
-              [
-                _c("vx-card", { staticClass: "hover-card" }, [
-                  _c(
-                    "div",
-                    {
-                      staticClass: "card-img-wrapper",
-                      attrs: { slot: "no-body" },
-                      slot: "no-body"
-                    },
-                    [
+              { staticClass: "vx-row" },
+              _vm._l(_vm.countries, function(country_item, index) {
+                return _c(
+                  "div",
+                  {
+                    key: index,
+                    staticClass: "vx-col w-full sm:w-1/2 lg:w-1/3 mb-base"
+                  },
+                  [
+                    _c("vx-card", { staticClass: "hover-card" }, [
                       _c(
-                        "router-link",
+                        "div",
                         {
-                          attrs: {
-                            to:
-                              "/fair/country/" +
-                              _vm.fair.id +
-                              "/" +
-                              country_item.country.id
-                          }
+                          staticClass: "card-img-wrapper",
+                          attrs: { slot: "no-body" },
+                          slot: "no-body"
                         },
                         [
+                          _c(
+                            "router-link",
+                            {
+                              attrs: {
+                                to:
+                                  "/fair/country/" +
+                                  _vm.fair.id +
+                                  "/" +
+                                  country_item.country.id
+                              }
+                            },
+                            [
+                              _c("img", {
+                                staticClass: "responsive card-img-top",
+                                attrs: {
+                                  src:
+                                    "/fair_image/" + _vm.fair.fair_type.building
+                                }
+                              })
+                            ]
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass:
+                            "flex justify-between items-center flex-wrap"
+                        },
+                        [
+                          _c("span", { staticClass: "text-warning h3" }, [
+                            _vm._v(_vm._s(country_item.country.name))
+                          ]),
+                          _vm._v(" "),
                           _c("img", {
-                            staticClass: "responsive card-img-top",
+                            staticClass: "country_flag",
                             attrs: {
-                              src: "/fair_image/" + _vm.fair.fair_type.building
+                              src:
+                                "https://www.countryflags.io/" +
+                                country_item.country.code +
+                                "/shiny/48.png"
                             }
                           })
                         ]
                       )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "flex justify-between items-center flex-wrap"
-                    },
-                    [
-                      _c("span", { staticClass: "text-warning h3" }, [
-                        _vm._v(_vm._s(country_item.country.name))
-                      ]),
-                      _vm._v(" "),
-                      _c("img", {
-                        staticClass: "country_flag",
-                        attrs: {
-                          src:
-                            "https://www.countryflags.io/" +
-                            country_item.country.code +
-                            "/shiny/48.png"
-                        }
-                      })
-                    ]
-                  )
-                ])
-              ],
-              1
+                    ])
+                  ],
+                  1
+                )
+              }),
+              0
             )
-          }),
-          0
-        )
+          : _vm._e()
       ])
     ],
     1

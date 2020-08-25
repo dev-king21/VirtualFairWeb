@@ -4,33 +4,18 @@
       <vx-card>
         <div slot="no-body" class="full-page-bg-color">
           <div class="vx-row no-gutter justify-center items-center">
-
             <div class="vx-col hidden lg:block lg:w-1/2">
               <img src="@assets/images/pages/login.png" alt="login" class="mx-auto">
             </div>
-
             <div class="vx-col sm:w-full md:w-full lg:w-1/2 d-theme-dark-bg">
               <div class="px-8 pt-8 login-tabs-container">
-
-                <div class="vx-card__title mb-4">
-                  <h4 class="mb-4">Login</h4>
+                <div class="vx-card__title mt-8 mb-4">
+                  <h4 class="mb-4 h1 text-center text-cyan-dark">Login</h4>
                   <p>Welcome back, please login to your account.</p>
                 </div>
-
-                <vs-tabs>
-                  <vs-tab label="JWT">
-                    <login-jwt></login-jwt>
-                  </vs-tab>
-
-                  <vs-tab label="Firebase">
-                    <login-firebase></login-firebase>
-                  </vs-tab>
-
-                  <vs-tab label="Auth0">
-                    <login-auth0></login-auth0>
-                  </vs-tab>
-                </vs-tabs>
-
+                <div class="flex items-center h-full w-full justify-center mt-8">
+                  <login-jwt class="w-full"></login-jwt>
+                </div>
               </div>
             </div>
           </div>
@@ -43,14 +28,12 @@
 
 <script>
 import LoginJwt from './LoginJWT.vue'
-import LoginFirebase from './LoginFirebase.vue'
-import LoginAuth0 from './LoginAuth0.vue'
 
 export default {
+  props: {
+  },
   components: {
-    LoginJwt,
-    LoginFirebase,
-    LoginAuth0
+    LoginJwt
   }
 }
 </script>

@@ -7,7 +7,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- <link rel="icon" href="<%= BASE_URL %>favicon.ico"> -->
 
-    <title>Vuexy  - Vuejs, HTML & Laravel Admin Dashboard Template</title>
+    <title>MFC Virtual Ferias</title>
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset(mix('app/css/main.css')) }}">
     <link rel="stylesheet" href="{{ asset(mix('app/css/iconfont.css')) }}">

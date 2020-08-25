@@ -13,6 +13,7 @@ export default [
     tagColor: 'warning',
     icon: 'HomeIcon',
     i18n: 'Dashboard',
+    role: 'admin',
     submenu: [
       {
         url: '/dashboard/analytics',
@@ -33,6 +34,7 @@ export default [
     name:'Contact',
     icon:'MailIcon',
     i18n:'Contact',
+    role: 'admin',
     submenu: [
       {
         url: '/contact/query',
@@ -54,13 +56,15 @@ export default [
     url: '/user',
     name: 'User',
     icon: 'UserIcon',
-    i18n: 'User'
+    i18n: 'User',
+    role: 'admin'
   },
   {
     url: null,
     name: 'Room',
     icon: 'PackageIcon',
     i18n: 'Room',
+    role: 'admin',
     submenu: [
       {
         url: '/room/all',
@@ -68,25 +72,25 @@ export default [
         slug: 'email',
         icon: 'MailIcon'
       },
-      {
+      /* {
         url: '/room/request_talk',
         name: 'Request Webinars',
         slug: 'chat',
         icon: 'MessageSquareIcon'
-      },
+      }, */
       {
         url: '/room/scheduled_talk',
         name: 'Reservados Webinars',
         slug: 'todo',
         icon: 'CheckSquareIcon'
       },
-      {
+      /*  {
         url: '/room/live_talk',
         name: 'Live Webinars',
         slug: 'calendar-simple-calendar',
         icon: 'CalendarIcon',
         tagColor: 'success'
-      },
+      }, */
       {
         url: '/room/past_talk',
         name: 'VISTOS Webinars',
@@ -102,6 +106,7 @@ export default [
     name: 'Fair',
     icon: 'PackageIcon',
     i18n: 'Fair',
+    role: 'admin',
     submenu: [
       {
         url: '/fair/all',
@@ -145,13 +150,15 @@ export default [
     url: '/payment',
     name: 'Payment',
     icon: 'PackageIcon',
-    i18n: 'Payment'
+    i18n: 'Payment',
+    role: 'admin'
   },
   
   {
     url: null,
     name: 'Settings',
     icon: 'SettingsIcon',
+    role: 'admin',
     submenu: [
       {
         url: '/settings/country',
@@ -195,6 +202,12 @@ export default [
         icon: 'MailIcon'
       }
     ]
+  },
+  {
+    url: '/exhibitor',
+    name: 'Exhibitor Webinar',
+    icon: 'PackageIcon',
+    i18n: 'Exhibitor Webinar'
   },
   {
     header: 'Apps',

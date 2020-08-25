@@ -288,7 +288,6 @@ export default {
       this.isAddShow = true
     },
     editRecord (id) {
-      console.log(id)
       this.editId = id
       this.isAddOrEdit = 1
       this.popupTitle = 'Edit Room'
@@ -301,7 +300,6 @@ export default {
     },
     RemoveRecord (id) {
       const action = `/api/room/update/${id}`
-      console.log(action)
       const newData = {
         status: 0
       }
@@ -344,7 +342,6 @@ export default {
         .then((response) => {
           const res = response.data
           this.rooms = res.rooms
-          console.log(this.rooms)
           this.$loading.hide(this)
         })
         .catch((error) => console.log(error))
@@ -353,7 +350,6 @@ export default {
     addEditRoom () {
       let action = '/api/room/create'
       if (this.isAddOrEdit === 1) action = `/api/room/update/${this.editId}`
-      console.log(action)
 
       const newData = {
         name: this.name,
@@ -361,7 +357,6 @@ export default {
         description: this.description,
         status: 1
       }
-      console.log(newData)
 
       if (this.name === '' || this.country_id === 0 || this.description === '') return
 
@@ -406,7 +401,7 @@ export default {
               label: this.countries[i].name
             })
           }
-          console.log(this.countryOptions)
+          
           this.$loading.hide(this)
         })
         .catch((error) => console.log(error))

@@ -34,6 +34,7 @@ class SustainabilityController extends Controller
         $sustainability->save();    
         return response()->json($res);        
     }
+    
     public function saveSustainability(Request $request){
         /* $id = $request->post("_id");
         if (!isset($id))
@@ -48,9 +49,32 @@ class SustainabilityController extends Controller
         }
         // $sustainability->fair_id = $request->post("fair_id");
         // $sustainability->description = $request->post("description");
-        $res["status"] = "ok";
-        Sustainability::where('fair_id', $request->fair_id)->update($request->post());    
+        $sustainability = Sustainability::find($request->post('fair_id'));
+        if($sustainability != null)
+        {
+            Sustainability::where('fair_id', $request->fair_id)->update($request->post());   
+            $res["status"] = "ok";
+        }
+        else{
+            $susCreate = new Sustainability;
+            $susCreate->fair_id = $request->post("fair_id");
+            $susCreate->title = $request->post("title");
+            $susCreate->description = $request->post("description");
+            $susCreate->save();
+            $res["status"] = "ok";
+        }
         return response()->json($res);        
+    }
+    public function createSustainability(Request $request){
+        $sustainability = new Sustainability;
+        $res = array();
+        if (!isset($request->fair_id)) {
+            $res["status"] = "error";
+            $res["msg"] = "fair is not selected";
+            return response()->json($res);
+        }
+       
+        return response()->json($res);   
     }
 
     public function updateSusImg(Request $request, $id){

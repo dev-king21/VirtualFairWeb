@@ -5,7 +5,6 @@ const baseURL = ''
 
 const instance = axios.create({
   baseURL
-  // You can add your headers here
 })
 
 instance.interceptors.request.use(function (config) {

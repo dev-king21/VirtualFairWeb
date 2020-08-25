@@ -125,9 +125,7 @@ __webpack_require__.r(__webpack_exports__);
         _this.$loading.hide(_this);
 
         _this.$router.push('/home');
-      })["catch"](function (error) {
-        console.log('error', error);
-      });
+      })["catch"](function () {});
     }
   },
   created: function created() {
@@ -570,6 +568,21 @@ render._withStripped = true
 /***/ (function(module, exports) {
 
 module.exports = "/images/logo-color.png?aa8ad8b3a558848b927a8a1b26d2bba1";
+
+/***/ }),
+
+/***/ "./resources/app/js/src/http/axios/index.js":
+/*!**************************************************!*\
+  !*** ./resources/app/js/src/http/axios/index.js ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _axios_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../axios.js */ "./resources/app/js/src/axios.js");
+
+/* harmony default export */ __webpack_exports__["default"] = (_axios_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 

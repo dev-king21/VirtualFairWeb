@@ -129,6 +129,20 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       es: vuejs_datepicker_dist_locale__WEBPACK_IMPORTED_MODULE_3__["es"]
     };
   },
+  computed: {
+    day_for_schedule: function day_for_schedule() {
+      return this.$date.dayStringFromDate(this.schedule_date);
+    },
+    date_for_schedule: function date_for_schedule() {
+      return this.$date.dateStringFromDate(this.schedule_date);
+    },
+    month_for_schedule: function month_for_schedule() {
+      return this.$date.monthStringFromDate(this.schedule_date);
+    },
+    year_for_schedule: function year_for_schedule() {
+      return this.$date.yearStringFromDate(this.schedule_date);
+    }
+  },
   methods: {
     period: function period(start_time, end_time) {
       var sd = this.$date.timeFormat(start_time);
@@ -204,8 +218,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
       this.$loading.show(this);
       this.$http.post('/api/stand/appointment/save', param).then(function (response) {
         _this.$loading.hide(_this);
-
-        console.log(response.data.status);
 
         if (response.data.status === 'ok') {
           _this.$vs.notify({
@@ -371,12 +383,71 @@ var render = function() {
                                   }
                                 }),
                                 _vm._v(" "),
-                                _vm._m(0)
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass: "relative text-center",
+                                    staticStyle: { "margin-top": "-55px" }
+                                  },
+                                  [
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass:
+                                          "h5 text-cyan-dark font-bold"
+                                      },
+                                      [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.day_for_schedule.toUpperCase()
+                                          )
+                                        )
+                                      ]
+                                    ),
+                                    _vm._v(" "),
+                                    _c(
+                                      "div",
+                                      {
+                                        staticClass: "h3 text-black font-bold"
+                                      },
+                                      [_vm._v(_vm._s(_vm.date_for_schedule))]
+                                    )
+                                  ]
+                                )
                               ],
                               1
                             ),
                             _vm._v(" "),
-                            _vm._m(1)
+                            _c("div", { staticClass: "ml-4" }, [
+                              _c(
+                                "div",
+                                { staticClass: "uppercase h5 font-bold" },
+                                [
+                                  _vm._v(
+                                    "\n                        SELECCIONE EL DÍA\n                      "
+                                  )
+                                ]
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass:
+                                    "text-cyan-dark h1 font-bold uppercase mt-4"
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                        " +
+                                      _vm._s(
+                                        _vm.month_for_schedule.toUpperCase()
+                                      ) +
+                                      "  " +
+                                      _vm._s(_vm.year_for_schedule) +
+                                      "\n                      "
+                                  )
+                                ]
+                              )
+                            ])
                           ]
                         ),
                         _vm._v(" "),
@@ -534,43 +605,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      {
-        staticClass: "relative text-center",
-        staticStyle: { "margin-top": "-60px" }
-      },
-      [
-        _c("div", { staticClass: "h5 text-cyan-dark font-bold" }, [
-          _vm._v("JUE")
-        ]),
-        _vm._v(" "),
-        _c("div", { staticClass: "h2 text-black font-bold" }, [_vm._v("04")])
-      ]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "ml-4" }, [
-      _c("div", { staticClass: "uppercase h5 font-bold" }, [
-        _vm._v(
-          "\n                        SELECCIONE EL DÍA\n                      "
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "text-cyan-dark h1 font-bold uppercase mt-4" }, [
-        _vm._v("\n                        AGOSTO  2020\n                      ")
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

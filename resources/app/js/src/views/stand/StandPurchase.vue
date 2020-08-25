@@ -47,7 +47,6 @@ export default {
     }
   },
   mounted () {
-    console.log(this.$route)
     paypal.Buttons({
       createOrder (data, actions) {
       // This function sets up the details of the transaction, including the amount and line item details.
@@ -55,7 +54,8 @@ export default {
           purchase_units: [
             {
               amount: {
-                value: '250.00'
+                value: '250.00',
+                currency: 'USD'
               }
             }
           ]
@@ -65,7 +65,28 @@ export default {
       // This function captures the funds from the transaction.
         return actions.order.capture().then(function (details) {
         // This function shows a transaction success message to your buyer.
-          alert(`Transaction completed by ${  details.payer.name.given_name}`)
+          const param = {
+            link: details.links[0].href,
+            payer_id: details.payer.payer_id,
+            payer_country: details.payer.address.country_code,
+            payer_name: `${details.payer.name.given_name} ${details.payer.name.surname}`,
+            payer_email: details.email,
+            payment_amount: `${details.purchase_units[0].amount.value} ${details.purchase_units[0].amount.currency_code}`,
+            payment_status: details.purchase_units[0].payments.captures[0].status,
+            payment_capture_id:  details.purchase_units[0].payments.captures[0].id,
+            update_time: details.update_time,
+            status: details.status
+          }
+          this.$http.post('/api/stand/payment/save_transaction', param)
+            .then(() => {
+              alert(`Transaction completed by ${  details.payer.name.given_name}`)
+            })
+          /* this.$http.post('/api/stand/payment/', param)
+            .then(res => {
+              
+
+            }) */
+          
         })
       }
     }).render('#paypal-button')

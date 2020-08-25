@@ -1,10 +1,10 @@
 <template>
-    <div class="w-full">
+    <div class="w-full bg-white">
         <app-header activeItem="0"></app-header>
-        <div>
+        <div v-if="sustain">
             <nav-back-button class="absolute" style="z-index: 2000"/>
             <swiper :options="swiperOption">
-                <swiper-slide :key="`sus-swiper-item-${index}`" v-for="(item, index) in sus_imgs">
+                <swiper-slide :key="`sus-swiper-item-${index}`" v-for="(item, index) in sustainability_images">
                   <img class="responsive" :src="`/fair_image/${item.url}`" alt="banner">
                 </swiper-slide>
                 <div class="swiper-pagination" slot="pagination"></div>
@@ -15,26 +15,10 @@
                     <feather-icon svgClasses="w-6 h-6 mt-3 ml-3" style="color: black" icon="ChevronRightIcon"/>
                 </div>
             </swiper>
-            <!-- Sostenibilidad -->
         </div>
         <div class="my-8">
-            <h1 class="font-bold text-center mb-8 fs-40" >Titular Lorem ipsum</h1>
-            <div class="mx-32 fs-14 text-black">
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
-                wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-                dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
-                blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.<br><br>
-                Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
-                wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.<br><br>
-                Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
-                wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure
-                dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui
-                blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.<br><br>
-                Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
-                wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.<br><br>
-                Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut
-                wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
-
+            <h1 class="font-bold text-center mb-8 fs-40" >{{sustain_title}}</h1>
+            <div class="mx-32 fs-14 text-black" v-html="sustainability_text">
             </div>
         </div>
     </div>
@@ -48,7 +32,9 @@ import AppHeader from '@/layouts/components/Header.vue'
 export default {
   data () {
     return {
-      sus_imgs: [],
+      sustain: {},
+      sustainability_images: [],
+      sustain_title: '',
       swiperOption: {
         spaceBetween: 30,
         centeredSlides: true,
@@ -74,13 +60,27 @@ export default {
     NavBackButton,
     AppHeader
   },
+  computed: {
+    sustainability_text () {
+      if (!this.sustain || !this.sustain.description) return ''
+      return this.sustain.description.replace(/\n/g, '<br>')
+    }
+  },
   methods: {
     
   },
   created () {
-    this.$http.post('/api/fair/sustainability/get')
+    this.$http.post('/api/fair/sustainability')
       .then((res) => {
-        this.sus_imgs = res.data.sustainabilities
+        this.sustain = res.data.sustainability
+        if (this.sustain){
+          this.sustainability_images = this.sustain.sustainability_images
+          this.sustain_title = this.sustain.title
+        }
+          
+        if (!this.sustain) {
+          this.$router.push('/home')
+        }
       })
   }
 }

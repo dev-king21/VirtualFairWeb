@@ -140,6 +140,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -157,7 +158,8 @@ __webpack_require__.r(__webpack_exports__);
         email: '',
         password: ''
       },
-      logInClicked: false
+      logInClicked: false,
+      msg_count: 0
     };
   },
   computed: {
@@ -220,9 +222,23 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
+    var _this3 = this;
+
     if (!_store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__["default"].isRegistered) {
       this.$store.registerModule('auth', _store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__["default"]);
       _store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__["default"].isRegistered = true;
+    }
+
+    if (this.$store.state.auth.loggedIn) {
+      this.$http.post('/api/fair/chat/unread_count').then(function (res) {
+        var data = res.data;
+
+        if (res.data.status === 'unknown_user') {
+          return;
+        }
+
+        _this3.msg_count = data.msg_count;
+      });
     }
   }
 });
@@ -893,7 +909,7 @@ var render = function() {
                             background: "#ff0000",
                             "margin-left": "2px"
                           },
-                          attrs: { icon: "", badge: 3 }
+                          attrs: { icon: "", badge: _vm.msg_count }
                         })
                       ],
                       1

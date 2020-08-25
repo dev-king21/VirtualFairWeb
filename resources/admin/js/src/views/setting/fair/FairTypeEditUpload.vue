@@ -108,7 +108,6 @@ export default {
       this.uploadFile(rawFile)
     },
     isImage (file) {
-      console.log(file, /\.(jpeg|png|gif|jpg)$/.test(file.name))
       return /\.(jpeg|png|gif|jpg)$/.test(file.name)
     },
     uploadFile (file) {

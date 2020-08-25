@@ -54,14 +54,14 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   mounted: function mounted() {
-    console.log(this.$route);
     paypal.Buttons({
       createOrder: function createOrder(data, actions) {
         // This function sets up the details of the transaction, including the amount and line item details.
         return actions.order.create({
           purchase_units: [{
             amount: {
-              value: '250.00'
+              value: '250.00',
+              currency: 'USD'
             }
           }]
         });
@@ -70,7 +70,25 @@ __webpack_require__.r(__webpack_exports__);
         // This function captures the funds from the transaction.
         return actions.order.capture().then(function (details) {
           // This function shows a transaction success message to your buyer.
-          alert("Transaction completed by ".concat(details.payer.name.given_name));
+          var param = {
+            link: details.links[0].href,
+            payer_id: details.payer.payer_id,
+            payer_country: details.payer.address.country_code,
+            payer_name: "".concat(details.payer.name.given_name, " ").concat(details.payer.name.surname),
+            payer_email: details.email,
+            payment_amount: "".concat(details.purchase_units[0].amount.value, " ").concat(details.purchase_units[0].amount.currency_code),
+            payment_status: details.purchase_units[0].payments.captures[0].status,
+            payment_capture_id: details.purchase_units[0].payments.captures[0].id,
+            update_time: details.update_time,
+            status: details.status
+          };
+          this.$http.post('/api/stand/payment/save_transaction', param).then(function () {
+            alert("Transaction completed by ".concat(details.payer.name.given_name));
+          });
+          /* this.$http.post('/api/stand/payment/', param)
+            .then(res => {
+              
+              }) */
         });
       }
     }).render('#paypal-button');

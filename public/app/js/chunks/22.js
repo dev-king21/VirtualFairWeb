@@ -12,6 +12,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _layouts_components_Header_vue__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/layouts/components/Header.vue */ "./resources/app/js/src/layouts/components/Header.vue");
 /* harmony import */ var _views_custom_BreadCrumb_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/views/custom/BreadCrumb.vue */ "./resources/app/js/src/views/custom/BreadCrumb.vue");
 /* harmony import */ var _VideoCard_vue__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../VideoCard.vue */ "./resources/app/js/src/views/setting/VideoCard.vue");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -59,7 +97,13 @@ __webpack_require__.r(__webpack_exports__);
     return {
       video_list: [],
       appointments_dates: [],
-      appointments: []
+      appointments: [],
+      time_table: [],
+      end_time_table: [],
+      availables: [],
+      can_contact: [],
+      selected_index: null,
+      stand_id: null
     };
   },
   methods: {
@@ -67,24 +111,160 @@ __webpack_require__.r(__webpack_exports__);
       var sd = this.$date.timeFormat(start_time);
       var ed = this.$date.timeFormat(end_time);
       return "".concat(sd, " - ").concat(ed);
+    },
+    make_time_table: function make_time_table() {
+      var list = [];
+
+      for (var i = 0; i < 27; i++) {
+        var idx = parseInt(i / 3) + i % 3 * 9;
+        var hour = 9 + parseInt(idx / 2);
+        var minute = idx % 2 === 0 ? '00' : '30';
+        list.push(this.$date.timeFormat("".concat(hour, ":").concat(minute)));
+      }
+
+      this.time_table = list;
+    },
+    make_end_time_table: function make_end_time_table() {
+      var list = [];
+
+      for (var i = 0; i < 27; i++) {
+        var idx = parseInt(i / 3) + i % 3 * 9;
+        var hour = 9 + parseInt((idx + 1) / 2);
+        var minute = idx % 2 === 1 ? '00' : '30';
+        list.push(this.$date.timeFormat("".concat(hour, ":").concat(minute)));
+      }
+
+      this.end_time_table = list;
+    },
+    make_availables: function make_availables(tt) {
+      var list = [];
+
+      for (var i = 0; i < tt.length; i++) {
+        var idx = parseInt(tt[i]); //const idx = parseInt(ii / 9) + ((ii % 9) * 9)  
+
+        var hour = 9 + parseInt(idx / 2);
+        var minute = idx % 2 === 0 ? '00' : '30';
+        list.push(this.$date.timeFormat("".concat(hour, ":").concat(minute)));
+      }
+
+      this.availables = list;
+    },
+    convert_time: function convert_time(ts) {
+      var _ts$split = ts.split(' '),
+          _ts$split2 = _slicedToArray(_ts$split, 2),
+          time = _ts$split2[0],
+          ap = _ts$split2[1];
+
+      var _time$split = time.split(':'),
+          _time$split2 = _slicedToArray(_time$split, 2),
+          hour = _time$split2[0],
+          minute = _time$split2[1];
+
+      if (ap.toLowerCase() === 'am') return "".concat(time, ":00");
+      return "".concat(parseInt(hour) + 12, ":").concat(minute, ":00");
+    },
+    available: function available(time) {
+      return this.availables.lastIndexOf(time) !== -1;
+    },
+    set_available: function set_available(time) {
+      var ind = this.availables.lastIndexOf(time);
+
+      if (ind === -1) {
+        this.availables.push(time);
+      } else {
+        this.availables.splice(ind, 1);
+      }
+    },
+    saveTimetable: function saveTimetable() {
+      var _this = this;
+
+      var tts = [];
+
+      for (var i = 0; i < this.availables.length; i++) {
+        var ind = this.time_table.lastIndexOf(this.availables[i]);
+        ind = parseInt(ind / 3) + ind % 3 * 9;
+        tts.push(ind);
+      }
+
+      this.$loading.show(this);
+      this.$http.post('/api/setting/my_stand/save_time_table', {
+        _id: this.stand_id,
+        tt: tts.join(',')
+      }).then(function (response) {
+        _this.$loading.hide(_this);
+
+        if (response.data.status === 'ok') {
+          _this.$vs.notify({
+            title: 'éxito',
+            text: 'Te has registrado con éxito.',
+            color: 'success',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          });
+
+          if (response.data.time_table) {
+            var tt = response.data.time_table.replace(/\s/g, '');
+
+            _this.make_availables(tt.split(','));
+          }
+        } else {
+          _this.$vs.notify({
+            title: 'Oyu',
+            text: 'Error de registro',
+            color: 'error',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          });
+        }
+      });
+    },
+    request_schedule: function request_schedule() {
+      var _this2 = this;
+
+      if (!this.schedule_date || !this.selected_index) return;
+      var st = this.time_table[this.selected_index];
+      var et = this.end_time_table[this.selected_index];
+      var param = {
+        _id: this.$route.params.stand_id,
+        schedule_date: this.schedule_date,
+        start_time: this.convert_time(st),
+        end_time: this.convert_time(et)
+      };
+      this.$loading.show(this);
+      this.$http.post('/api/stand/appointment/save', param).then(function (response) {
+        _this2.$loading.hide(_this2);
+
+        if (response.data.status === 'ok') {
+          _this2.$vs.notify({
+            title: 'éxito',
+            text: 'Te has registrado con éxito.',
+            color: 'success',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          });
+        } else {
+          _this2.$vs.notify({
+            title: 'Oyu',
+            text: 'Error de registro',
+            color: 'error',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          });
+        }
+      })["catch"](function () {});
     }
   },
   created: function created() {
-    var _this = this;
+    var _this3 = this;
 
-    var list = [];
-
-    for (var i = 0; i < 3; i++) {
-      list.push(i);
-    }
-
-    this.video_list = list;
     this.$loading.show(this);
+    this.make_time_table();
+    this.make_end_time_table();
     this.$http.post('/api/setting/my_stand/schedule').then(function (response) {
-      _this.$loading.hide(_this);
+      _this3.$loading.hide(_this3);
 
       if (response.data.status === 'ok') {
-        _this.$vs.notify({
+        _this3.$vs.notify({
           title: 'éxito',
           text: 'Te has registrado con éxito.',
           color: 'success',
@@ -92,7 +272,7 @@ __webpack_require__.r(__webpack_exports__);
           icon: 'icon-alert-circle'
         });
       } else {
-        _this.$vs.notify({
+        _this3.$vs.notify({
           title: 'Oyu',
           text: 'Operación fallida',
           color: 'error',
@@ -101,10 +281,16 @@ __webpack_require__.r(__webpack_exports__);
         });
       }
 
-      console.log(response.data);
       var data = response.data;
-      _this.appointments_dates = data.appointments_dates;
-      _this.appointments = data.appointments;
+      _this3.appointments_dates = data.appointments_dates;
+      _this3.appointments = data.appointments;
+      _this3.stand_id = data.stand_id;
+
+      if (data.time_table) {
+        var tt = data.time_table.replace(/\s/g, '');
+
+        _this3.make_availables(tt.split(','));
+      }
     });
   }
 });
@@ -188,7 +374,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../../node_mod
 
 
 // module
-exports.push([module.i, ".setting-stand-video {\n  min-height: calc(var(--vh, 1vh) * 100 - 152px);\n}\n[dir] .setting-stand-video .vx-row {\n  margin: 0 !important;\n}\n[dir] .setting-stand-video .vx-col {\n  padding: 0 !important;\n}", ""]);
+exports.push([module.i, ".setting-stand-schedule {\n  min-height: calc(var(--vh, 1vh) * 100 - 152px);\n}\n[dir] .setting-stand-schedule .vx-row {\n  margin: 0 !important;\n}\n[dir] .setting-stand-schedule .vx-col {\n  padding: 0 !important;\n}\n.setting-stand-schedule .time-table {\n  color: #666 !important;\n  font-weight: bold;\n}\n[dir] .setting-stand-schedule .time-table {\n  padding: 0.4rem 0.6rem;\n  cursor: pointer;\n}\n.setting-stand-schedule .time-table.selected_time {\n  color: #FFC700 !important;\n}\n[dir] .setting-stand-schedule .time-table.selected_time {\n  cursor: pointer;\n}", ""]);
 
 // exports
 
@@ -299,112 +485,214 @@ var render = function() {
         attrs: { icon: "schedule-edit", type: "svg", text: "mis citas" }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "w-full setting-stand-video bg-white-grey" }, [
-        _c(
-          "div",
-          { staticClass: "w-full px-10 mt-4" },
-          _vm._l(_vm.appointments_dates, function(apo_date, index) {
-            return _c("div", { key: "schedule-item-" + index }, [
-              _c("div", { staticClass: "h4 pt-6 ml-6 font-bold" }, [
-                _vm._v(
-                  "\n                    " +
-                    _vm._s(apo_date.schedule_date) +
-                    "\n                    "
-                )
-              ]),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "vx-row w-full" },
-                _vm._l(
-                  _vm.appointments.filter(function(it) {
-                    return it.schedule_date == apo_date.schedule_date
-                  }),
-                  function(apo, index) {
-                    return _c(
+      _c(
+        "div",
+        { staticClass: "w-full setting-stand-schedule bg-white-grey" },
+        [
+          _c("div", { staticClass: "vx-row mt-4" }, [
+            _c("div", { staticClass: "vx-col w-1/3" }, [
+              _c("div", { staticClass: "m-3 p-4 bg-white" }, [
+                _c(
+                  "div",
+                  {
+                    staticClass: "p-6",
+                    staticStyle: { border: "1px solid #e2e2e2" }
+                  },
+                  [
+                    _c(
                       "div",
-                      {
-                        key: "catalog-item-" + index,
-                        staticClass: "vx-col w-1/4"
-                      },
+                      { staticClass: "flex items-center justify-center mb-4" },
                       [
+                        _c("feather-icon", {
+                          staticClass: "text-yellow-light",
+                          attrs: { size: "w-8 h-8", icon: "ClockIcon" }
+                        }),
+                        _vm._v(" "),
                         _c(
                           "div",
+                          { staticClass: "uppercase h5 font-bold ml-4" },
+                          [_vm._v("SELECCIONE LA HORA")]
+                        )
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "vx-row" },
+                      _vm._l(_vm.time_table, function(item, index) {
+                        return _c(
+                          "div",
                           {
+                            key: "timetable-" + index,
+                            staticClass: "vx-col w-1/3 timetable text-center"
+                          },
+                          [
+                            _c("div", { staticClass: "p-3 mb-2" }, [
+                              _c(
+                                "span",
+                                {
+                                  staticClass: "time-table",
+                                  class: {
+                                    selected_time:
+                                      _vm.availables.lastIndexOf(item) !== -1
+                                  },
+                                  on: {
+                                    click: function($event) {
+                                      return _vm.set_available(item)
+                                    }
+                                  }
+                                },
+                                [
+                                  _vm._v(
+                                    "\n                          " +
+                                      _vm._s(item) +
+                                      "\n                      "
+                                  )
+                                ]
+                              )
+                            ])
+                          ]
+                        )
+                      }),
+                      0
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "text-center" },
+                      [
+                        _c(
+                          "vs-button",
+                          {
+                            staticClass: "cyan-dark",
+                            on: { click: _vm.saveTimetable }
+                          },
+                          [_vm._v("AGREGAR")]
+                        )
+                      ],
+                      1
+                    )
+                  ]
+                )
+              ])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "vx-col w-2/3" },
+              _vm._l(_vm.appointments_dates, function(apo_date, index) {
+                return _c("div", { key: "schedule-item-" + index }, [
+                  _c("div", { staticClass: "h4 pt-6 ml-6 font-bold" }, [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(apo_date.schedule_date) +
+                        "\n                    "
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "vx-row w-full" },
+                    _vm._l(
+                      _vm.appointments.filter(function(it) {
+                        return it.schedule_date == apo_date.schedule_date
+                      }),
+                      function(apo, index) {
+                        return _c(
+                          "div",
+                          {
+                            key: "catalog-item-" + index,
                             staticClass:
-                              "flex flex-col justify-between mx-3 my-3 bg-white",
-                            staticStyle: { border: "1px solid #f0f0f0" }
+                              "vx-col lg:w-1/3 md:w-1/3 sm:w-1/2 xs:w-full"
                           },
                           [
                             _c(
                               "div",
                               {
-                                staticClass: "flex items-start w-full px-3 mt-8"
+                                staticClass:
+                                  "flex flex-col justify-between mx-3 my-3 bg-white",
+                                staticStyle: { border: "1px solid #f0f0f0" }
                               },
                               [
-                                _c("feather-icon", {
-                                  staticClass: "ml-2 text-cyan-dark",
-                                  attrs: { icon: "ClockIcon" }
-                                }),
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "flex items-start w-full px-3 mt-8"
+                                  },
+                                  [
+                                    _c("feather-icon", {
+                                      staticClass: "ml-2 text-cyan-dark",
+                                      attrs: { icon: "ClockIcon" }
+                                    }),
+                                    _vm._v(" "),
+                                    _c("div", { staticClass: "mx-4" }, [
+                                      _c("div", [
+                                        _vm._v(
+                                          _vm._s(
+                                            _vm.period(
+                                              apo.start_time,
+                                              apo.end_time
+                                            )
+                                          )
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", [
+                                        _vm._v(
+                                          "Nombre: " +
+                                            _vm._s(apo.requestor.first_name) +
+                                            " " +
+                                            _vm._s(apo.requestor.last_name)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", [
+                                        _vm._v(
+                                          "Compania: " +
+                                            _vm._s(apo.requestor.company)
+                                        )
+                                      ]),
+                                      _vm._v(" "),
+                                      _c("div", [
+                                        _vm._v(
+                                          "Pais: " +
+                                            _vm._s(apo.requestor.country)
+                                        )
+                                      ])
+                                    ])
+                                  ],
+                                  1
+                                ),
                                 _vm._v(" "),
-                                _c("div", { staticClass: "mx-4" }, [
-                                  _c("div", [
-                                    _vm._v(
-                                      _vm._s(
-                                        _vm.period(apo.start_time, apo.end_time)
-                                      )
+                                _c(
+                                  "div",
+                                  { staticClass: "flex mt-6 justify-end" },
+                                  [
+                                    _c(
+                                      "vs-button",
+                                      { staticClass: "cyan-dark" },
+                                      [_vm._v("IR A LA CITA")]
                                     )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("div", [
-                                    _vm._v(
-                                      "Nombre: " +
-                                        _vm._s(apo.requestor.first_name) +
-                                        " " +
-                                        _vm._s(apo.requestor.last_name)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("div", [
-                                    _vm._v(
-                                      "Compania: " +
-                                        _vm._s(apo.requestor.company)
-                                    )
-                                  ]),
-                                  _vm._v(" "),
-                                  _c("div", [
-                                    _vm._v(
-                                      "Pais: " + _vm._s(apo.requestor.country)
-                                    )
-                                  ])
-                                ])
-                              ],
-                              1
-                            ),
-                            _vm._v(" "),
-                            _c(
-                              "div",
-                              { staticClass: "flex mt-6 justify-end" },
-                              [
-                                _c("vs-button", { staticClass: "cyan-dark" }, [
-                                  _vm._v("IR A LA CITA")
-                                ])
-                              ],
-                              1
+                                  ],
+                                  1
+                                )
+                              ]
                             )
                           ]
                         )
-                      ]
-                    )
-                  }
-                ),
-                0
-              )
-            ])
-          }),
-          0
-        )
-      ])
+                      }
+                    ),
+                    0
+                  )
+                ])
+              }),
+              0
+            )
+          ])
+        ]
+      )
     ],
     1
   )

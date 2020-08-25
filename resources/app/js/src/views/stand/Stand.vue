@@ -1,7 +1,7 @@
 <template>
 <div class="w-full">
     <app-header/>  
-    <div class="flex w-full flex-col setting-stand-bg-img items-center justify-between setting-stand-main" 
+    <div class="flex w-full flex-col setting-stand-bg-img items-center justify-between setting-stand-main"
         :style="`background-image: url('/fair_image/${stand_type.interior}');`">
         <div class="absolute flex flex-col w-full justify-between stand-header" >
             <div class="flex w-full">
@@ -107,7 +107,6 @@ export default {
             }, 3000)
             return
           }
-          console.log(data)
           this.stand = data.stand  
           this.stand_type = data.stand_type
           this.contact = this.stand.contact

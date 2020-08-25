@@ -63,7 +63,7 @@
 
               <!-- Nav-Item -->
               <v-nav-menu-item
-                v-if="!item.submenu"
+                v-if="!item.submenu && (item.role&&item.role==='admin'&&isAdmin)||!item.role"
                 :key="`item-${index}`"
                 :index="index"
                 :to="item.slug !== 'external' ? item.url : null"
@@ -76,7 +76,7 @@
               </v-nav-menu-item>
 
               <!-- Nav-Group -->
-              <template v-else>
+              <template v-else-if="(item.role&&item.role==='admin'&&isAdmin)||!item.role">
                 <v-nav-menu-group
                   :key="`group-${index}`"
                   :openHover="openGroupHover"
@@ -138,6 +138,9 @@ export default {
     showShadowBottom    : false
   }),
   computed: {
+    isAdmin () {
+      return this.$store.state.auth.admin
+    },
     isGroupActive () {
       return (item) => {
         const path        = this.$route.fullPath

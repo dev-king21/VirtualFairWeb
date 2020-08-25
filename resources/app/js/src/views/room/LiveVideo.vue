@@ -138,7 +138,6 @@ export default {
             icon: 'icon-alert-circle'
           })
         } 
-        console.log(data.webinar.user)
       })
   }
 }

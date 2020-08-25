@@ -24,7 +24,7 @@ class StandController extends Controller
         $user = $request->user();
         $paymentMethodID = $request->get('payment_method');
 
-        if( $user->stripe_id == null ){
+        if( $user->stripe_id == null ) {
             $user->createAsStripeCustomer();
         }
 
@@ -35,6 +35,27 @@ class StandController extends Controller
         $stand->save();
         
         return response()->json( null, 204 );        
+    }
+
+    public function save_transaction_paypal(Request $request) {
+
+        $user = $request->user();
+        $payment = new Payment;
+        $payment->link = $request->post('link');
+        $payment->payer_id = $request->post('link');
+        $payment->payer_country = $request->post('link');
+        $payment->payer_name = $request->post('link');
+        $payment->payer_email = $request->post('link');
+        $payment->payment_amount = $request->post('link');
+        $payment->payment_status = $request->post('link');
+        $payment->payment_capture_id = $request->post('link');
+        $payment->update_time = $request->post('link');
+        $payment->status = $request->post('link');
+        $payment->user_id = $user->id;
+
+        $payment->save();
+
+        return response()->json(["status" => "ok"]);
     }
 
     public function purchase_intent(Request $request) {

@@ -142,7 +142,6 @@ export default {
     this.$http.post('/api/room/webinar')
       .then((response) => {
         this.$loading.hide(this)
-        console.log(response.data)
         const data = response.data
         this.webinars = data.webinars
         if (response.data.status === 'ok') {

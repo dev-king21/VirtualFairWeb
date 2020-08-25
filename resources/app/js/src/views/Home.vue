@@ -116,7 +116,8 @@
         </router-link>
         <router-link class="main-link flex" to="/fair/chatting">
           <span>Networking</span>
-          <feather-icon class="ml-2 networking-badge" icon="" style="margin-top: 0px; background: #ff0000; margin-left: 2px;" :badge="3" />
+          <feather-icon class="ml-2 networking-badge" icon=""
+             style="margin-top: 0px; background: #ff0000; margin-left: 2px;" :badge="msg_count" />
         </router-link>
         <router-link class="main-link" to="/home/sponsor">
           patrocinadores
@@ -144,7 +145,8 @@ export default {
         email: '',
         password: ''
       },
-      logInClicked: false
+      logInClicked: false,
+      msg_count: 0
     }
   },
   computed: {
@@ -209,6 +211,18 @@ export default {
       this.$store.registerModule('auth', moduleAuth)
       moduleAuth.isRegistered = true
     }
+
+    if (this.$store.state.auth.loggedIn) {
+      this.$http.post('/api/fair/chat/unread_count')
+        .then((res) => {
+          const data = res.data
+          if (res.data.status === 'unknown_user') {
+            return 
+          }
+          this.msg_count = data.msg_count
+        })
+    }
+
     
   }
 }

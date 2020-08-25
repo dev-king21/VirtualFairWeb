@@ -16,16 +16,16 @@
         </div>
 
         <!-- COL AREA -->
-        <div class="vx-row" v-if="stand !== null"> 
+        <div class="vx-row" v-if="(stand !== null && stand.user !== null)"> 
           
             <div class="vx-col w-full">
                 <!-- ABOUT CARD -->
                 <vx-card title="User Information" >
                   <div class="vx-row">
-                    <div class="vx-col xs:1 sm:w-1/2 md:w-1/2 xl:1/2">
-                      <div  class="mt-0 ml-4">
-                        <h5 class="mb-2">UserName: {{ stand.user.last_name}} {{stand.user.last_name}}</h5>
-                        <h5 class="mb-2">Name: {{ stand.user.last_name}} {{stand.user.last_name}}</h5>
+                    <div class="vx-col xs:1 sm:w-1/2 md:w-1/2 xl:1/2" >
+                      <div  class="mt-0 ml-4" >
+                        <h5 class="mb-2">UserName: {{ stand.user.first_name}} {{stand.user.last_name}}</h5>
+                        <h5 class="mb-2">Name: {{ stand.user.first_name}} {{stand.user.last_name}}</h5>
                         <h5 class="mb-2">Email: {{ stand.user.email }}</h5>
                         <h5 class="mb-2">Country: {{ stand.user.country }}</h5>
                       </div>  
@@ -137,7 +137,7 @@ export default {
   data () {
     return {
       stand: null,
-      isNavOpen: false,
+      isNavOpen: false
     }
   },
   computed: {
@@ -150,7 +150,7 @@ export default {
     } */
   },
   methods: {
-    forceFileDownload(response){
+    forceFileDownload (response) {
       const url = window.URL.createObjectURL(new Blob([response.data]))
       const link = document.createElement('a')
       link.href = url
@@ -158,25 +158,25 @@ export default {
       document.body.appendChild(link)
       link.click()
     },
-    downloadFile(url){
+    downloadFile (url) {
       this.$http({
         method: 'get',
-        url: url,
+        url,
         responseType: 'arraybuffer'
       })
-      .then(response => {
+        .then(response => {
         
-        this.forceFileDownload(response)
+          this.forceFileDownload(response)
         
-      })
-      .catch(() => console.log('error occured'))
+        })
+        .catch(() => console.log('error occured'))
     }
   },
   components: {
     videoPlayer
   },
   
-  created(){
+  created () {
     if (this.$route.params.id) {
       const action = `/api/stand/stand-detail/${this.$route.params.id}`
       this.$loading.show(this)
@@ -186,6 +186,7 @@ export default {
           if (res.stands && res.stands.length) {
             this.stand = res.stands[0]
           }
+          
           this.$loading.hide(this)
         })
         .catch((error) => console.log(error))

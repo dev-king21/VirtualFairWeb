@@ -118,7 +118,6 @@ __webpack_require__.r(__webpack_exports__);
     this.$http.post('/api/setting/webinar').then(function (response) {
       _this.$loading.hide(_this);
 
-      console.log(response.data);
       var data = response.data;
       _this.reserved_webinars = data.reserved_webinars;
       _this.past_webinars = data.past_webinars;

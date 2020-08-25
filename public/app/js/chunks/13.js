@@ -186,7 +186,6 @@ __webpack_require__.r(__webpack_exports__);
       _this.catalog_list = data.catalog_list;
       _this.video_list = data.video_list;
       _this.webinar_list = data.webinar_list;
-      console.log(data);
 
       if (response.data.status === 'ok') {
         _this.$vs.notify({

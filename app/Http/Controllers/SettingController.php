@@ -563,6 +563,7 @@ class SettingController extends Controller
         $res["msg"] = "unknown_fair";
         return response()->json($res);
       }
+      
       $qr = ["fair_id" => $fair->id, "country_id" => $country->id, "user_id"=> $user->id];
       $res["appointments_dates"] = Stand::with(['appointments' => function($query){
         $query->select(['id', 'stand_id', 'schedule_date'])
@@ -570,9 +571,29 @@ class SettingController extends Controller
               ->groupBy("schedule_date")
               ->orderBy("schedule_date", "asc")->get();
       }])->where($qr)->first()->appointments;   
-      $res["appointments"] = Stand::with(['appointments'=> function($query){
+
+      $stand = Stand::with(['appointments'=> function($query){
         $query->with("requestor")->where([["schedule_date", ">=", date("y-m-d")]])->get();
-      }])->where($qr)->first()->appointments;   
+      }])->where($qr)->first();
+      
+      $res["appointments"] = $stand->appointments;   
+      $res["stand_id"] = $stand->id;
+      $res["time_table"] = $stand->time_table;
+
+      return response()->json($res);
+    }
+
+    public function save_time_table(Request $request) {
+      $res = array();
+      $id = $request->post("_id");
+      $tt = $request->post("tt");
+      if (!isset($id) || !isset($tt)) {
+        return response()->json(["status" => "unknown_timetable"]);
+      }
+      $stand = Stand::find($id);
+      $stand->update(["time_table" => $tt]);
+      $res["time_table"] = $stand->time_table;
+      $res["status"] = "ok";
 
       return response()->json($res);
     }

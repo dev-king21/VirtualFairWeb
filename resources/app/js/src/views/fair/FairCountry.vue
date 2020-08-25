@@ -15,7 +15,7 @@
             </div>
         </vx-card>
     </div> -->
-    <div class="vx-row">
+    <div class="vx-row" v-if="fair">
         <div class="vx-col w-full sm:w-1/2 lg:w-1/3 mb-base" v-for="(country_item, index) in countries" :key="index">
             <vx-card class="hover-card">
                 <div slot="no-body" class="card-img-wrapper">

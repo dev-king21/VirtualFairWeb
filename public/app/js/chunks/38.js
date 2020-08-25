@@ -111,7 +111,6 @@ __webpack_require__.r(__webpack_exports__);
       _this.fair_type = data.fair.fair_type;
       _this.country = data.country;
       _this.stands = data.stands;
-      console.log(_this.stands);
 
       _this.$loading.hide(_this);
     });
@@ -195,81 +194,83 @@ var render = function() {
           "div",
           { staticClass: "vx-row", staticStyle: { margin: "0", padding: "0" } },
           [
-            _c(
-              "div",
-              { staticClass: "relative mt-base" },
-              [
-                _vm.fair.fair_type !== undefined
-                  ? [
-                      _c("img", {
-                        staticClass: "relative responsive",
-                        attrs: {
-                          src: "/fair_image/" + _vm.fair.fair_type.interior
-                        },
-                        on: {
-                          load: function($event) {
-                            return _vm.onLoadImg()
-                          }
-                        }
-                      })
-                    ]
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm._l(
-                  _vm.stands.filter(function(st) {
-                    return st.country_id === _vm.country.id
-                  }),
-                  function(item, index) {
-                    return [
-                      _c("img", {
-                        key: "stand-" + index,
-                        staticClass: "stand_img absolute",
-                        style:
-                          "cursor: pointer; top: " +
-                          item.stand_location.top * 100 +
-                          "%; left: " +
-                          item.stand_location.left * 100 +
-                          "%",
-                        attrs: {
-                          src:
-                            "/fair_image/" +
-                            item.stand_location.stand_type.building
-                        },
-                        on: {
-                          click: function($event) {
-                            return _vm.goStandPage(
-                              item.id,
-                              item.user_id === null
-                            )
-                          }
-                        }
+            _vm.fair
+              ? _c(
+                  "div",
+                  { staticClass: "relative mt-base" },
+                  [
+                    _vm.fair.fair_type !== undefined
+                      ? [
+                          _c("img", {
+                            staticClass: "relative responsive",
+                            attrs: {
+                              src: "/fair_image/" + _vm.fair.fair_type.interior
+                            },
+                            on: {
+                              load: function($event) {
+                                return _vm.onLoadImg()
+                              }
+                            }
+                          })
+                        ]
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm._l(
+                      _vm.stands.filter(function(st) {
+                        return st.country_id === _vm.country.id
                       }),
-                      _vm._v(" "),
-                      _c("img", {
-                        key: "logo-" + index,
-                        staticClass: "logo_img rounded absolute",
-                        style:
-                          "cursor: pointer; top: " +
-                          item.stand_location.top * 100 +
-                          "%; left: " +
-                          item.stand_location.left * 100 +
-                          "%",
-                        attrs: { src: _vm.logoImage(item.logo) },
-                        on: {
-                          click: function($event) {
-                            return _vm.goStandPage(
-                              item.id,
-                              item.user_id === null
-                            )
-                          }
-                        }
-                      })
-                    ]
-                  }
+                      function(item, index) {
+                        return [
+                          _c("img", {
+                            key: "stand-" + index,
+                            staticClass: "stand_img absolute",
+                            style:
+                              "cursor: pointer; top: " +
+                              item.stand_location.top * 100 +
+                              "%; left: " +
+                              item.stand_location.left * 100 +
+                              "%",
+                            attrs: {
+                              src:
+                                "/fair_image/" +
+                                item.stand_location.stand_type.building
+                            },
+                            on: {
+                              click: function($event) {
+                                return _vm.goStandPage(
+                                  item.id,
+                                  item.user_id === null
+                                )
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("img", {
+                            key: "logo-" + index,
+                            staticClass: "logo_img rounded absolute",
+                            style:
+                              "cursor: pointer; top: " +
+                              item.stand_location.top * 100 +
+                              "%; left: " +
+                              item.stand_location.left * 100 +
+                              "%",
+                            attrs: { src: _vm.logoImage(item.logo) },
+                            on: {
+                              click: function($event) {
+                                return _vm.goStandPage(
+                                  item.id,
+                                  item.user_id === null
+                                )
+                              }
+                            }
+                          })
+                        ]
+                      }
+                    )
+                  ],
+                  2
                 )
-              ],
-              2
-            )
+              : _vm._e()
           ]
         )
       ])

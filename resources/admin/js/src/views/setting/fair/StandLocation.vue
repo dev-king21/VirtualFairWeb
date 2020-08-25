@@ -237,7 +237,6 @@ export default {
                 icon: 'icon-alert-circle'
               })
             } 
-            console.log(response.data)
           }) 
       }
     }

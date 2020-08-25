@@ -1,3 +1,6 @@
+const dayStr = ['DOM', 'LUN', 'MAR', 'MIÉ', 'JUE', 'VIE', 'SÁB']
+const monthStr = ['Enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+
 export default {
   timeFormat (timeString) {
     const timeArr = timeString.split(':')  
@@ -28,18 +31,36 @@ export default {
 
   dateFormatWithYear (dateString) {
     const dt = new Date(dateString)
-    const dayStr = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-    const monthStr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Agosto', 'September', 'Octubre', 'November', 'December']
-
     return `${dayStr[dt.getDay()]} ${dt.getDate()} de ${monthStr[dt.getMonth()]}, ${dt.getFullYear()}` 
   },
 
   dateFormatWithoutYear (dateString) {
     const dt = new Date(dateString)
-    const monthStr = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'Agosto', 'September', 'Octubre', 'November', 'December']
+    
 
     return `${dt.getDate() > 9 ? dt.getDate() : `0${dt.getDate()}`} DE ${monthStr[dt.getMonth()].toUpperCase()}` 
+  },
+
+  dayStringFromDate (dateString) {
+    const date = new Date(dateString)
+    return dayStr[date.getDay()]
+  },
+
+  dateStringFromDate (dateString) {
+    const date = new Date(dateString)
+    return `${date.getDate() > 9 ? date.getDate() : `0${date.getDate()}`}`
+  },
+
+  monthStringFromDate (dateString) {
+    const date = new Date(dateString)
+    return monthStr[date.getMonth()]
+  },
+
+  yearStringFromDate (dateString) {
+    const date = new Date(dateString)
+    return date.getFullYear()
   }
+
 
 }
 

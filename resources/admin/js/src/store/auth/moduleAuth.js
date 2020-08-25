@@ -1,10 +1,3 @@
-/*=========================================================================================
-  File Name: moduleAuth.js
-  Description: Auth Module
-
-==========================================================================================*/
-
-
 import state from './moduleAuthState.js'
 import mutations from './moduleAuthMutations.js'
 import actions from './moduleAuthActions.js'

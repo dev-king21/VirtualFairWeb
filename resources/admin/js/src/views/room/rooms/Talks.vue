@@ -1,7 +1,6 @@
 <template>
   <div id="data-list-thumb-view" class="data-list-container">
 
-    <data-view-sidebar :isSidebarActive="addNewDataSidebar" @closeSidebar="toggleDataSidebar" :data="sidebarData" />
 
     <vs-table ref="table"  pagination :max-items="itemsPerPage" search :data="this.talks">
 
@@ -13,22 +12,41 @@
         </div>
         <vs-popup class="w-full mb-base items-center" :title="popupTitle" :active.sync="isAddShow">
             <div class=" w-full mb-base">
-              <!-- <vx-card>
+              <vx-card>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/3 w-full">
-                    <span>Room Name</span>
+                    <span>Place</span>
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
-                    <vs-input class="w-full" v-model="name"/>
+                     <v-select v-model="room_id"  :clearable="false" :options="roomOptions" v-validate="'required'" name="role" :dir="$vs.rtl ? 'rtl' : 'ltr'" />
+                      <span class="text-danger text-sm"  v-show="errors.has('role')">{{ errors.first('role') }}</span>
                   </div>
                 </div>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/3 w-full">
-                    <span>Country</span>
+                    <span>Exhibitor</span>
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
-                     <v-select v-model="country_id"  :clearable="false" :options="countryOptions" v-validate="'required'" name="role" :dir="$vs.rtl ? 'rtl' : 'ltr'" />
+                     <v-select v-model="user_id"  :clearable="false" :options="userOptions" v-validate="'required'" name="role" :dir="$vs.rtl ? 'rtl' : 'ltr'" />
                       <span class="text-danger text-sm"  v-show="errors.has('role')">{{ errors.first('role') }}</span>
+                  </div>
+                </div>
+                <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/3 w-full">
+                    <span>Webinar title</span>
+                  </div>
+                  <div class="vx-col sm:w-2/3 w-full">
+                    <vs-input class="w-full" v-model="title"/>
+                  </div>
+                </div>
+                <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/3 w-full">
+                    <span>Webinar Date</span>
+                  </div>
+                  <div class="vx-col sm:w-2/3  mt-0">
+                     <template>
+                        <datepicker placeholder="Webinar Date" :format="format" v-model="webinarDate"></datepicker>
+                    </template> 
                   </div>
                 </div>
                 <div class="vx-row mb-6">
@@ -36,17 +54,56 @@
                     <span>Description</span>
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
-                    <vs-input class="w-full" v-model="description" />
+                    <vs-textarea class="w-full" v-model="description" />
                   </div>
                 </div>
-                
+                <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/3 w-full">
+                    <span>Exhibitor Name</span>
+                  </div>
+                  <div class="vx-col sm:w-2/3 w-full">
+                    <vs-input class="w-full" v-model="exhibitor_name" />
+                  </div>
+                </div>
+                <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/3 w-full">
+                    <span>Exhibitor Profession</span>
+                  </div>
+                  <div class="vx-col sm:w-2/3 w-full">
+                    <vs-input class="w-full" v-model="exhibitor_profession" />
+                  </div>
+                </div>
+                <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/3 w-full">
+                    <span>Exhibitor Company</span>
+                  </div>
+                  <div class="vx-col sm:w-2/3 w-full">
+                    <vs-input class="w-full" v-model="exhibitor_company" />
+                  </div>
+                </div>
+                <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/3 w-full">
+                    <span>Key</span>
+                  </div>
+                  <div class="vx-col sm:w-2/3 w-full">
+                    <vs-input class="w-full" v-model="key" />
+                  </div>
+                </div>
+                <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/3 w-full">
+                    <span>Password</span>
+                  </div>
+                  <div class="vx-col sm:w-2/3 w-full">
+                    <vs-input class="w-full" type="password" v-model="password" />
+                  </div>
+                </div>
                 <div class="vx-row">
                   <div class="vx-col sm:w-2/3 w-full ml-auto">
-                    <vs-button class="mr-3 mb-2" @click="addEditRoom()">OK</vs-button>
+                    <vs-button class="mr-3 mb-2" @click="addEditTalk()">OK</vs-button>
                     <vs-button color="warning" type="border" class="mb-2" @click="cancelAction()" >Cancel</vs-button>
                   </div>
                 </div>
-              </vx-card> -->
+              </vx-card>
             </div>
 
           </vs-popup>
@@ -77,12 +134,17 @@
 
       <template slot="thead">
         <vs-th>ID</vs-th>
-        <vs-th>Video</vs-th>
+        <vs-th sort-key="title">Place</vs-th>
         <vs-th sort-key="title">Title</vs-th>
-        <vs-th sort-key="title">Exhibitor Name</vs-th>
-        <vs-th sort-key="title">Exhibitor Profession</vs-th>
-        <vs-th sort-key="title">Exhibitor Company</vs-th>
+        <vs-th sort-key="title">Description</vs-th>
+        <vs-th sort-key="title">User</vs-th>
+
+        <vs-th sort-key="title">Exhibitor Name/Profession/Company</vs-th>
+        <vs-th sort-key="title">Key</vs-th>
+        <vs-th sort-key="title">Password</vs-th>
         <vs-th sort-key="title">Number of People</vs-th>
+        <vs-th sort-key="title">Webinar Date</vs-th>
+
         <vs-th sort-key="title">Start Time</vs-th>
         <vs-th sort-key="title">End Time</vs-th>
 
@@ -96,28 +158,45 @@
             <vs-td class="img-container">
               <p class="product-name font-medium truncate">{{ tr.id }}</p>
             </vs-td>
-            <vs-td class="img-container">
+            <!-- <vs-td class="img-container">
               <img :src="`/fair_image/${tr.video}`" class="product-img" />
             </vs-td>
-
+ -->
+            <vs-td>
+              <p class="product-name font-medium truncate">{{ tr.room.name }}</p>
+            </vs-td>
+           
             <vs-td>
               <p class="product-name font-medium truncate">{{ tr.title }}</p>
             </vs-td>
+            
 
             <vs-td>
-              <p class="product-category">{{ tr.user.name }}</p>
+              <p class="product-category">{{ tr.description }}</p>
+            </vs-td>
+
+             <vs-td>
+              <p class="product-category">{{ tr.user.first_name }} {{ tr.user.last_name }}</p>
             </vs-td>
 
             <vs-td>
+              <p class="product-category">{{ tr.exhibitor_name}}</p>
               <p class="product-category">{{ tr.exhibitor_profession }}</p>
+              <p class="product-category">{{ tr.exhibitor_company }}</p>            
             </vs-td>
 
             <vs-td>
-              <p class="product-category">{{ tr.exhibitor_company }}</p>
+              <p class="product-category">{{tr.key}}</p>
+            </vs-td>
+            <vs-td>
+              <p class="product-category">{{tr.password_key}}</p>
             </vs-td>
 
             <vs-td>
               <p class="product-price">{{ tr.peoples }}</p>
+            </vs-td>
+             <vs-td>
+              <p class="product-name font-medium truncate">{{ tr.talk_date }}</p>
             </vs-td>
              <vs-td>
               <p class="product-price">{{ tr.start_time }}</p>
@@ -141,13 +220,27 @@
 
 <script>
 import DataViewSidebar from './DataViewSidebar.vue'
+import flatPickr from 'vue-flatpickr-component'
+import 'flatpickr/dist/flatpickr.css'
+import Datepicker from 'vuejs-datepicker'
+import vSelect from 'vue-select'
 
 export default {
   components: {
-    DataViewSidebar
+    DataViewSidebar,
+    flatPickr,
+    Datepicker,
+    vSelect
   },
   data () {
     return {
+      format: 'yyyy-MM-dd',
+      time: null,
+      configdateTimePicker: {
+        enableTime: true,
+        enableSeconds: true,
+        noCalendar: true
+      },
       selected: [],
       // products: [],
       itemsPerPage: 4,
@@ -160,7 +253,25 @@ export default {
       switch1: false,
       isAddShow: false,
       popupTitle: '',
-      isAddOrEdit: 0
+      isAddOrEdit: 0,
+      title: '',
+      description: '',
+      exhibitor_name: '',
+      exhibitor_profession: '',
+      exhibitor_company: '',
+      key: '',
+      password:'',
+      password_key:'',
+      startTime:null,
+      endTime: null,
+      webinarDate:null,
+      room_id: 0,
+      roomOptions: [],
+      rooms: [],
+      user_id: 0,
+      userOptions:[],
+      users:[],
+      sent: false
     }
   },
   computed: {
@@ -179,9 +290,67 @@ export default {
     deleteData (id) {
     //   this.$store.dispatch('dataList/removeItem', id).catch(err => { console.error(err) })
     },
+    formatDate (date) {
+      const d = new Date(date), year = d.getFullYear()
+      let month = `${  d.getMonth() + 1}`, day = `${  d.getDate()}`
+      
+      if (month.length < 2) month = `0${  month}`
+      if (day.length < 2) day = `0${  day}`
+
+      return [year, month, day].join('-')
+    },
+    addEditTalk () {
+      if (this.title === null || !this.room_id || !this.user_id || this.description === null || this.exhibitor_name === null 
+      || this.exhibitor_profession === null || this.exhibitor_company === null || this.key === null || this.password === null
+      || this.talk_date === null) return
+      const action = '/api/room/talk/create'
+      this.webinarDate = this.formatDate(this.webinarDate)
+      const newData = {
+        title: this.title,
+        room_id: this.room_id.value,
+        user_id: this.user_id.value,
+        description: this.description,
+        exhibitor_name: this.exhibitor_name,
+        exhibitor_profession: this.exhibitor_profession,
+        exhibitor_company: this.exhibitor_company,
+        key: this.key,
+        password: this.password,
+        // password_key: this.password_key,
+        talk_date: this.webinarDate
+      }
+      
+      if (this.name === '' || this.country_id === 0 || this.description === '') return
+
+      this.$loading.show(this)
+      this.$http.post(action, newData)
+        .then((response) => {
+          this.isAddShow = false
+          this.$loading.hide(this)
+          if (response.data.status === 'ok') {
+            this.$vs.notify({
+              title: 'éxito',
+              text: 'Te has registrado con éxito.',
+              color: 'success',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          } else {
+            this.$vs.notify({
+              title: 'Oyu',
+              text: 'Operación fallida',
+              color: 'error',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+          }
+          this.loadContent()
+        })
+    },
     editData (data) {
-        
       console.log(data)
+    },
+    cancelAction () {
+      this.isAddShow = false
     },
     addNewData () {
       /* this.name = ''
@@ -208,8 +377,12 @@ export default {
       this.addNewDataSidebar = val
     },
     updateStatus (tr) {
+      if (this.sent === true) {
+        this.sent = false
+        return  
+      }
+      this.sent = true
       const action = `/api/room/talk/update/${tr.id}`
-      console.log(action)
       const param = {
         status: tr.status
       }
@@ -234,7 +407,51 @@ export default {
           })
         }      
       })
+    },
+    loadContent () {
+      let action = `/api/rooms/talks/all/${this.$route.params.room_id}`
+      if (this.$route.name === 'request_talk') {
+        this.isPast = false
+        action = '/api/rooms/talks/request'
+      } else if (this.$route.name === 'scheduled_talk') {
+        this.isPast = false
+        action = '/api/rooms/talks/scheduled'
+      } else if (this.$route.name === 'live_talk') {
+        this.isPast = false
+
+        action = '/api/rooms/talks/live'
+      } else if (this.$route.name === 'past_talk') {
+        action = '/api/rooms/talks/past'
+        this.isPast = true
+      }
+      this.$loading.show(this)
+      this.$http.get(action)
+        .then((response) => {
+
+          const res = response.data
+          this.talks = res.talks
+          this.rooms = res.rooms
+          for (let i = 0; i < this.rooms.length; i++) {
+            this.roomOptions.push({
+              value: this.rooms[i].id,
+              label: this.rooms[i].name
+            })
+          }
+
+          this.users = res.users
+
+          for (let i = 0; i < this.users.length; i++) {
+            this.userOptions.push({
+              value: this.users[i].id,
+              label: `${this.users[i].first_name} ${this.users[i].last_name}`
+            })
+          }
+          
+          this.$loading.hide(this)
+        })
+        .catch((error) => console.log(error))
     }
+   
   },
   created () {
     /* if (!moduleDataList.isRegistered) {
@@ -242,33 +459,7 @@ export default {
       moduleDataList.isRegistered = true
     }
     this.$store.dispatch('dataList/fetchDataListItems') */
-    let action = `/api/rooms/talks/all/${this.$route.params.room_id}`
-    console.log(this.$route.name)
-    if (this.$route.name === 'request_talk') {
-      this.isPast = false
-      action = '/api/rooms/talks/request'
-    } else if (this.$route.name === 'scheduled_talk') {
-      this.isPast = false
-      action = '/api/rooms/talks/scheduled'
-    } else if (this.$route.name === 'live_talk') {
-      this.isPast = false
-
-      action = '/api/rooms/talks/live'
-    } else if (this.$route.name === 'past_talk') {
-      action = '/api/rooms/talks/past'
-      this.isPast = true
-    }
-    this.$loading.show(this)
-    this.$http.get(action)
-      .then((response) => {
-        console.log(action)
-
-        const res = response.data
-        this.talks = res.talks
-        console.log(this.talks)
-        this.$loading.hide(this)
-      })
-      .catch((error) => console.log(error))
+    this.loadContent()
   },
   mounted () {
     this.isMounted = true

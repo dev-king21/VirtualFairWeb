@@ -163,8 +163,6 @@ __webpack_require__.r(__webpack_exports__);
 
       this.user.category_interest = category_interest;
       this.$store.dispatch('auth/register', this.user).then(function (response) {
-        console.log(response);
-
         _this.$loading.hide(_this);
 
         if (response.data.status === 'ok') {

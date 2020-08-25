@@ -115,7 +115,6 @@ export default {
     this.$http.post('/api/room/schedule')
       .then((response) => {
         this.$loading.hide(this)
-        console.log(response.data)
         const data = response.data
         this.today = data.today
         this.webinars = data.webinars

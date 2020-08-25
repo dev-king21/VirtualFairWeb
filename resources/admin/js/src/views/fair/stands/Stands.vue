@@ -216,7 +216,6 @@ export default {
           .then((response) => {
             const res = response.data
             this.stands = res.stands
-            console.log(this.stands)
             this.$loading.hide(this)
           })
           .catch((error) => console.log(error))
@@ -248,7 +247,6 @@ export default {
           this.searchedCountries = this.countries
 
           this.stands = res.stands
-          console.log(this.stands)
           this.$loading.hide(this)
 
         })
