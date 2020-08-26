@@ -10,7 +10,7 @@ export default {
         .then(response => {
           if (response.data.key) {
             const data = response.data
-            localStorage.setItem('accessToken', data.access_token)
+            localStorage.setItem('adminAccessToken', data.access_token)
             localStorage.setItem('activateKey', data.key)
             if (data.key !== 'admin') {
               localStorage.setItem('userInfo', JSON.stringify(data.user))
@@ -53,7 +53,7 @@ export default {
   },
   fetchAccessToken () {
     return new Promise((resolve) => {
-      return axios.post('/api/auth/refresh-token', {accessToken: localStorage.getItem('accessToKen')})
+      return axios.post('/api/auth/refresh-token', {accessToken: localStorage.getItem('adminAccessToken')})
         .then(response => { resolve(response) })
     })
   }
