@@ -149,7 +149,6 @@ Route::group(['middleware' => ['auth:admin']], function() {
     Route::get('/fair/show/{fair_id}/{country_id}', 'FairController@get_stands');
     Route::get('/fair/show/{fair_id}/{country_id}/{stand_id}', 'FairController@get_stand');
 
-    Route::get('/fair/now/category', 'FairController@current_fair_category');
     ///////////////////// get stands of current fair and first country
 
 
@@ -278,4 +277,5 @@ Route::group(['middleware' => []], function() {
     Route::post('/home/webinar', 'SettingController@get_reserved_webinars');
     Route::post('/query', 'ContactController@addQueryContact');
     Route::post('/contact_message', 'ContactController@addContactMessage');
+    Route::get('/fair/now/category', 'FairController@current_fair_category');
 });

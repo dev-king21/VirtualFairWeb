@@ -19,7 +19,6 @@ instance.interceptors.response.use(response => response,
   error => {
     console.log(error.message)
     if (error.message.lastIndexOf('status code 401') !== -1) {
-      console.log('token not exist')
       localStorage.removeItem('userInfo')
       location.href = '/app/home'
     }

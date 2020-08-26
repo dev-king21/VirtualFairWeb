@@ -14,7 +14,6 @@
         .back-text {
             font-size: 0.6rem !important;
         }
-        
     }
 }
 </style>
