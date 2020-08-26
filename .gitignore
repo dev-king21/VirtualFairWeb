@@ -1,8 +1,8 @@
 /node_modules
 /storage/*.key
 /vendor
-/resorces/admin
-/resorces/app
+/resources/admin
+/resources/app
 .env.backup
 .phpunit.result.cache
 Homestead.json
