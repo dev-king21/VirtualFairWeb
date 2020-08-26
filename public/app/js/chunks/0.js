@@ -124,7 +124,7 @@ __webpack_require__.r(__webpack_exports__);
       this.$store.dispatch('auth/logout').then(function () {
         _this.$loading.hide(_this);
 
-        _this.$router.push('/home');
+        _this.$router.push('/home')["catch"](function () {});
       })["catch"](function () {});
     }
   },
@@ -718,7 +718,6 @@ __webpack_require__.r(__webpack_exports__);
       _http_axios_index_js__WEBPACK_IMPORTED_MODULE_0__["default"].post('/api/auth/login', JSON.parse(JSON.stringify(payload))).then(function (response) {
         if (response.data.user) {
           localStorage.setItem('accessToken', response.data.access_token);
-          console.log(response.data.user);
           commit('UPDATE_USER_INFO', response.data.user);
           commit('SET_BEARER', response.data.access_token);
           resolve();

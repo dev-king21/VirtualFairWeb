@@ -110,7 +110,7 @@ export default {
       this.$store.dispatch('auth/logout')
         .then(() => {
           this.$loading.hide(this)
-          this.$router.push('/home')
+          this.$router.push('/home').catch(() => {})
         })
         .catch(() => { })
     }

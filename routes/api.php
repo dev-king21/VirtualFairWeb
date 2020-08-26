@@ -32,7 +32,6 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::post('/fair/chat/messages', 'ChatController@get_messages');
     Route::post('/fair/chat/create', 'ChatController@create');
     Route::post('/fair/chat/send_message', 'ChatController@send_message');
-    Route::post('/fair/chat/unread_count', 'ChatController@unread_count');
     
     Route::post('/stand/purchase', 'FairController@purchase_stand');
     Route::post('/stand/home', 'StandController@get_stand');
@@ -278,4 +277,5 @@ Route::group(['middleware' => []], function() {
     Route::post('/home/webinar', 'SettingController@get_reserved_webinars');
     Route::post('/query', 'ContactController@addQueryContact');
     Route::post('/contact_message', 'ContactController@addContactMessage');
+    Route::post('/fair/chat/unread_count', 'ChatController@unread_count');
 });

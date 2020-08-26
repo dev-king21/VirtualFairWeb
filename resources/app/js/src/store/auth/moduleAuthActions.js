@@ -10,7 +10,6 @@ export default {
         .then(response => {
           if (response.data.user) {
             localStorage.setItem('accessToken', response.data.access_token)
-            console.log(response.data.user)
             commit('UPDATE_USER_INFO', response.data.user)
             commit('SET_BEARER', response.data.access_token)
             resolve()
