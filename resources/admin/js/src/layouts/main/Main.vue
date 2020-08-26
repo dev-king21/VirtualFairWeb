@@ -295,6 +295,9 @@ export default {
     const activated = localStorage.getItem('activateKey')
     if (activated && activated.length > 4) {
       this.$store.dispatch('auth/logged')
+        .then(() => {
+          console.log(this.$store.state.auth)
+        })
     }
   },
   beforeDestroy () {

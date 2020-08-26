@@ -9,7 +9,7 @@ export default {
   },
 
   UPDATE_USER_INFO (state, payload) {
-    state.admin = payload === 'admin'
+    state.admin = payload.key === 'admin'
     if (payload.userInfo) state.userInfo = JSON.parse(JSON.stringify(payload.userInfo))
   },
 
