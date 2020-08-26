@@ -9,12 +9,12 @@ export default {
       axios.post('/api/admin/auth/login', JSON.parse(JSON.stringify(payload)))
         .then(response => {
           if (response.data.key) {
+            console.log('auth login res', response.data)
             const data = response.data
             localStorage.setItem('adminAccessToken', data.access_token)
             localStorage.setItem('activateKey', data.key)
             if (data.key !== 'admin') {
               localStorage.setItem('userInfo', JSON.stringify(data.user))
-              localStorage.getItem('userInfo')
             }
             commit('UPDATE_USER_INFO', data)
             commit('SET_BEARER', data.access_token)

@@ -88,10 +88,12 @@ export default {
       this.$store.dispatch('auth/login', payload)
         .then(() => { 
           this.$vs.loading.close() 
+          console.log('auth login success')
           this.goHome()
         })
         .catch(error => {
           this.$vs.loading.close()
+          console.log('auth login failed')
           this.$vs.notify({
             title: 'Error',
             text: error.message,

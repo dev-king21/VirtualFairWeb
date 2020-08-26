@@ -144,9 +144,13 @@ __webpack_require__.r(__webpack_exports__);
       this.$store.dispatch('auth/login', payload).then(function () {
         _this.$vs.loading.close();
 
+        console.log('auth login success');
+
         _this.goHome();
       })["catch"](function (error) {
         _this.$vs.loading.close();
+
+        console.log('auth login failed');
 
         _this.$vs.notify({
           title: 'Error',
