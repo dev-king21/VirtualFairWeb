@@ -208,7 +208,7 @@ export default [
     name: 'Exhibitor Webinar',
     icon: 'PackageIcon',
     i18n: 'Exhibitor Webinar'
-  },
+  }/* ,
   {
     header: 'Apps',
     icon: 'PackageIcon',
@@ -1008,6 +1008,6 @@ export default [
         ]
       }
     ]
-  }
+  } */
 ]
 
