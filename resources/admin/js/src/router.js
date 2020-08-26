@@ -1,7 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import 'firebase/auth'
-
 Vue.use(Router)
 
 const router = new Router({
@@ -17,23 +15,18 @@ const router = new Router({
       children: [
         {
           path: '/',
+          name: 'root',
           redirect: '/auth/login'
         },
         {
           path: '/user',
           name: 'user',
-          component: () => import('@/views/user/user-list/UserList.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/user/user-list/UserList.vue')
         },
         {
           path: '/exhibitor',
           name: 'exhibitor',
-          component: () => import('@/views/exhibitor/Webinar.vue'),
-          meta: {
-            rule: 'editor'
-          }
+          component: () => import('@/views/exhibitor/Webinar.vue')
         },
 
         {
@@ -44,20 +37,14 @@ const router = new Router({
         {
           path: '/contact/query',
           name: 'contact-query',
-          component: () => import('@/views/contacts/QueryContact.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/contacts/QueryContact.vue')
         },
 
 
         {
           path: '/contact/contact_message',
           name: 'contact-message',
-          component: () => import('@/views/contacts/ContactMessage.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/contacts/ContactMessage.vue')
         },
         {
           path: '/room',
@@ -66,12 +53,9 @@ const router = new Router({
         {
           path: '/room/all',
           name: 'room-all',
-          component: () => import('@/views/room/rooms/Rooms.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/room/rooms/Rooms.vue')
         },
-       /*  {
+        /*  {
           path: '/room/request_talk',
           name: 'request_talk',
           component: () => import('@/views/room/rooms/Talks.vue'),
@@ -82,10 +66,7 @@ const router = new Router({
         {
           path: '/room/scheduled_talk',
           name: 'scheduled_talk',
-          component: () => import('@/views/room/rooms/Talks.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/room/rooms/Talks.vue')
         },
         /* {
           path: '/room/live_talk',
@@ -98,18 +79,12 @@ const router = new Router({
         {
           path: '/room/past_talk',
           name: 'past_talk',
-          component: () => import('@/views/room/rooms/Talks.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/room/rooms/Talks.vue')
         },
         {
           path: '/rooms/talks/all/:room_id',
           name: 'room-talks',
-          component: () => import('@/views/room/rooms/Talks.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/room/rooms/Talks.vue')
         },
         {
           path: '/fair',
@@ -118,83 +93,53 @@ const router = new Router({
         {
           path: '/fair/all',
           name: 'fair-all',
-          component: () => import('@/views/fair/fair-list/FairListView.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/fair/fair-list/FairListView.vue')
         },
         {
           path: '/fair/next',
           name: 'fair-next',
-          component: () => import('@/views/fair/fair-list/FairListView.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/fair/fair-list/FairListView.vue')
         },
         {
           path: '/fair/live',
           name: 'fair-live',
-          component: () => import('@/views/fair/fair-list/FairListView.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/fair/fair-list/FairListView.vue')
         },
         {
           path: '/fair/past',
           name: 'fair-past',
-          component: () => import('@/views/fair/fair-list/FairListView.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/fair/fair-list/FairListView.vue')
         },
         {
           path: '/fair/sustainability',
           name: 'sustainability',
-          component: () => import('@/views/fair/sustainability/Sustainability.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/fair/sustainability/Sustainability.vue')
         },
         {
           path: '/fair/stands/:fair_id',
           name: 'fair-stands',
-          component: () => import('@/views/fair/stands/Stands.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/fair/stands/Stands.vue')
         },
         
         {
           path: '/fair/stands/detail/:id',
           name: 'stands-detail',
-          component: () => import('@/views/fair/stands-detail/StandDetail.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/fair/stands-detail/StandDetail.vue')
         },
         {
           path: '/fair/stands/:fair_id/:country_code',
           name: 'fair-stands-country',
-          component: () => import('@/views/fair/stands/Stands.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/fair/stands/Stands.vue')
         },
         {
           path: '/payment',
           name: 'payment',
-          component: () => import('@/views/DashboardAnalytics.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/DashboardAnalytics.vue')
         },
         {
           path: '/settings/country',
           name: 'country',
-          component: () => import('@/views/setting/country/CountryList.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/setting/country/CountryList.vue')
         },
         {
           path: '/settings/fair-type',
@@ -203,50 +148,32 @@ const router = new Router({
         {
           path: '/settings/fair-type/show',
           name: 'fair-type',
-          component: () => import('@/views/setting/fair/FairTypeList.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/setting/fair/FairTypeList.vue')
         },
         {
           path: '/settings/fair-type/edit',
           name: 'fair-type-create',
-          component: () => import('@/views/setting/fair/FairTypeEdit.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/setting/fair/FairTypeEdit.vue')
         },
         {
           path: '/settings/fair-type/edit/:ftype_id',
           name: 'fair-type-edit',
-          component: () => import('@/views/setting/fair/FairTypeEdit.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/setting/fair/FairTypeEdit.vue')
         },
         {
           path: '/settings/stand-type',
           name: 'stand-type',
-          component: () => import('@/views/setting/fair/StandTypeList.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/setting/fair/StandTypeList.vue')
         },
         {
           path: '/settings/stand-type/edit',
           name: 'stand-type-create',
-          component: () => import('@/views/setting/fair/StandTypeEdit.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/setting/fair/StandTypeEdit.vue')
         },
         {
           path: '/settings/stand-type/edit/:stype_id',
           name: 'stand-type-edit',
-          component: () => import('@/views/setting/fair/StandTypeEdit.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/setting/fair/StandTypeEdit.vue')
         },
         {
           path: '/settings/stand-type-item',
@@ -255,10 +182,7 @@ const router = new Router({
         {
           path: '/settings/stand-type-item/:stype_id',
           name: 'stand-type-item',
-          component: () => import('@/views/setting/fair/StandTypeItems.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/setting/fair/StandTypeItems.vue')
         },
         {
           path: '/settings/stand-location',
@@ -267,34 +191,22 @@ const router = new Router({
         {
           path: '/settings/stand-location/:ftype_id',
           name: 'stand-location',
-          component: () => import('@/views/setting/fair/StandLocation.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/setting/fair/StandLocation.vue')
         },
         {
           path: '/settings/advertisement',
           name: 'advertisement',
-          component: () => import('@/views/setting/advertisement/Advertisement.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/setting/advertisement/Advertisement.vue')
         },
         {
           path: '/dashboard/analytics',
           name: 'dashboard-analytics',
-          component: () => import('@/views/DashboardAnalytics.vue'),
-          meta: {
-            rule: 'editor'
-          }
+          component: () => import('@/views/DashboardAnalytics.vue')
         },
         {
           path: '/dashboard/ecommerce',
           name: 'dashboard-ecommerce',
-          component: () => import('@/views/DashboardECommerce.vue'),
-          meta: {
-            rule: 'admin'
-          }
+          component: () => import('@/views/DashboardECommerce.vue')
         },
         {
           path: '/apps/todo',
@@ -1483,20 +1395,9 @@ const router = new Router({
           }
         },
         {
-          path: '/home',
-          name: 'home',
-          component: () => import('@/views/Home.vue'),
-          meta: {
-            rule: 'editor'
-          }
-        },
-        {
           path: '/auth/login',
           name: 'auth-login',
-          component: () => import('@/views/auth/Login.vue'),
-          meta: {
-            rule: 'editor'
-          }
+          component: () => import('@/views/auth/Login.vue')
         },
         {
           path: '/auth/register',
@@ -1578,6 +1479,14 @@ const router = new Router({
       redirect: '/auth/login'
     }
   ]
+})
+
+router.beforeEach((to, from, next) => {
+  const activateKey = localStorage.getItem('activateKey')
+  if (to.name === 'root' || to.name === 'auth-login') return next()
+  if (!activateKey) return next('/auth/login')
+  if (to.name !== 'exhibitor' && activateKey !== 'admin') return next('/auth/login')
+  next()
 })
 
 router.afterEach(() => {

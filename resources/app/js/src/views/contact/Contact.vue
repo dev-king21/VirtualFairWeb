@@ -8,49 +8,49 @@
                     Dejanos tus datos y te contactenos
                 </div>
                 <div class="vx-row px-20 mt-8">
-                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-4/5" color="success" placeholder="Nombre" name="Nombre"
+                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3">
+                        <vs-input class="w-full" color="success" placeholder="Nombre" name="Nombre"
                             v-validate="'required'" data-vv-validate-on="blur" v-model="user.first_name"/>
                         <span class="text-danger text-sm">{{ errors.first('Nombre') }}</span>
                     </div>
-                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-4/5" color="success" placeholder="Apellido" name="Apellido"
+                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3">
+                        <vs-input class="w-full" color="success" placeholder="Apellido" name="Apellido"
                             v-validate="'required'" data-vv-validate-on="blur"  v-model="user.last_name"/>
                         <span class="text-danger text-sm">{{ errors.first('Apellido') }}</span>
                     </div>
-                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-4/5" color="success" placeholder="Email" name="Email"
+                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3">
+                        <vs-input class="w-full" color="success" placeholder="Email" name="Email"
                         v-validate="'required|email|min:5'" data-vv-validate-on="blur" v-model="user.email"/>
                         <span class="text-danger text-sm">{{ errors.first('Email') }}</span>
                     </div>
-                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-4/5" color="success" placeholder="Telefono" name="Telefono" 
+                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3">
+                        <vs-input class="w-full" color="success" placeholder="Telefono" name="Telefono" 
                         v-validate="'required|min:8'" data-vv-validate-on="blur" v-model="user.phone"/>
                         <span class="text-danger text-sm">{{ errors.first('Telefono') }}</span>
                     </div>
-                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-4/5" color="success" placeholder="Compania" name="Compania" 
+                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3">
+                        <vs-input class="w-full" color="success" placeholder="Compania" name="Compania" 
                             v-validate="'required'" data-vv-validate-on="blur" v-model="user.company"/>
                         <span class="text-danger text-sm">{{ errors.first('Compania') }}</span>
                     </div>
-                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-4/5" color="success" placeholder="Posicion" name="Posicion" 
+                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3">
+                        <vs-input class="w-full" color="success" placeholder="Posicion" name="Posicion" 
                         v-validate="'required'" data-vv-validate-on="blur" v-model="user.address"/>
                         <span class="text-danger text-sm">{{ errors.first('Posicion') }}</span>
                     </div>
-                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-4/5" color="success" placeholder="Seleccione un Pais" name="Pais"
+                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3">
+                        <vs-input class="w-full" color="success" placeholder="Seleccione un Pais" name="Pais"
                         v-validate="'required'" data-vv-validate-on="blur"  v-model="user.country"/>
                         <span class="text-danger text-sm">{{ errors.first('Pais') }}</span>
                     </div>
-                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-4/5" color="success" placeholder="Seleccione la Region" name="Region"
+                    <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3">
+                        <vs-input class="w-full" color="success" placeholder="Seleccione la Region" name="Region"
                         v-validate="'required'" data-vv-validate-on="blur"  v-model="user.region"/>
                         <span class="text-danger text-sm">{{ errors.first('Region') }}</span>
                     </div>
 
-                    <div class="vx-col w-full">
-                        <vs-textarea class="w-4/5" color="success" height="100px" v-model="user.message"
+                    <div class="vx-col w-full px-3">
+                        <vs-textarea class="w-full" color="success" height="100px" v-model="user.message"
                          placeholder="Comentarios" lines="5"></vs-textarea>
                     </div>
                 </div>
@@ -129,7 +129,7 @@ export default {
 }
 
 .home-contact-main {
-  min-height: calc(var(--vh, 1vh) * 100 - 150px);
+  min-height: calc(var(--vh, 1vh) * 100 - 162px);
 
   .contact-form {
     input, textarea {
@@ -173,7 +173,7 @@ export default {
   }
 
   .vx-col {
-      padding: 0 !important;
+      /* padding: 0 !important; */
   }
 }
 </style>

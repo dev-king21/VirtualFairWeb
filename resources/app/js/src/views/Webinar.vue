@@ -1,7 +1,7 @@
 <template>
   <div class="w-full">
     <app-header activeItem="1"></app-header>
-    <div class="flex items-center justify-end home-weinar-bg-img home-webinar-main">
+    <div class="flex justify-end home-weinar-bg-img home-webinar-main">
         <div class="w-3/4 p-10">
             <div class="webinar-title text-white font-bold my-6">RESERVE SUS WEBINARS</div>
             <div class="vx-row bg-white webinar-card" 
@@ -73,11 +73,6 @@ export default {
     }
   },
   created () {
-    const list = []
-    for (let i = 0; i < 4; i++) {
-      list.push(i)
-    }
-    this.webinar_list = list
     this.$http.post('/api/home/webinar')
       .then((res) => {
         this.webinar_list = res.data.webinars
@@ -88,6 +83,7 @@ export default {
 
 <style lang="scss">
 .home-webinar-main {
+  min-height: calc(var(--vh, 1vh) * 100 - 86px);
     .webinar-title {
         font-size: 3rem !important;
     }

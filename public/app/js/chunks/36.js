@@ -140,7 +140,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".watermark {\n  position: absolute;\n  bottom: 20px;\n  width: 50%;\n}[dir] .watermark {\n  margin: auto;\n}[dir=ltr] .watermark {\n  text-align: right;\n  right: 25%;\n  padding-right: 30px;\n}[dir=rtl] .watermark {\n  text-align: left;\n  left: 25%;\n  padding-left: 30px;\n}\n.home-contact-main {\n  min-height: calc(var(--vh, 1vh) * 100 - 150px);\n}\n.home-contact-main .contact-form input, .home-contact-main .contact-form textarea {\n  font-size: 0.9rem !important;\n}\n[dir] .home-contact-main .contact-form input, [dir] .home-contact-main .contact-form textarea {\n  border-radius: 0 !important;\n  padding: 0.6rem !important;\n}\n.home-contact-main .contact-form .vs-input--placeholder {\n  font-size: 0.9rem !important;\n}\n.home-contact-main .contact-form .input-span-placeholder {\n  color: #151515 !important;\n}\n[dir] .home-contact-main .contact-form .input-span-placeholder {\n  padding: 0.6rem !important;\n}\n[dir] .home-contact-main .contact-form .vs-con-textarea {\n  border-radius: 0 !important;\n}\n.home-contact-main .contact-form .con-slot-label {\n  font-size: 0.8rem;\n}\n.home-contact-main .contact-form .register-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .home-contact-main .contact-form .register-btn {\n  border-radius: 0px !important;\n  padding: 0.5rem 1rem !important;\n}\n[dir=ltr] .home-contact-main .contact-form .register-btn {\n  border-top-left-radius: 0.6rem !important;\n}\n[dir=rtl] .home-contact-main .contact-form .register-btn {\n  border-top-right-radius: 0.6rem !important;\n}\n.home-contact-main .contact-form .watermark {\n  position: absolute;\n  bottom: 20px;\n  /* width: 100 */\n}\n[dir=ltr] .home-contact-main .contact-form .watermark {\n  text-align: right;\n}\n[dir=rtl] .home-contact-main .contact-form .watermark {\n  text-align: left;\n}\n[dir=ltr] .home-contact-main .vx-row {\n  margin-left: 0 !important;\n  margin-right: 0 !important;\n}\n[dir=rtl] .home-contact-main .vx-row {\n  margin-right: 0 !important;\n  margin-left: 0 !important;\n}\n[dir] .home-contact-main .vx-col {\n  padding: 0 !important;\n}", ""]);
+exports.push([module.i, ".watermark {\n  position: absolute;\n  bottom: 20px;\n  width: 50%;\n}[dir] .watermark {\n  margin: auto;\n}[dir=ltr] .watermark {\n  text-align: right;\n  right: 25%;\n  padding-right: 30px;\n}[dir=rtl] .watermark {\n  text-align: left;\n  left: 25%;\n  padding-left: 30px;\n}\n.home-contact-main {\n  min-height: calc(var(--vh, 1vh) * 100 - 162px);\n}\n.home-contact-main .contact-form input, .home-contact-main .contact-form textarea {\n  font-size: 0.9rem !important;\n}\n[dir] .home-contact-main .contact-form input, [dir] .home-contact-main .contact-form textarea {\n  border-radius: 0 !important;\n  padding: 0.6rem !important;\n}\n.home-contact-main .contact-form .vs-input--placeholder {\n  font-size: 0.9rem !important;\n}\n.home-contact-main .contact-form .input-span-placeholder {\n  color: #151515 !important;\n}\n[dir] .home-contact-main .contact-form .input-span-placeholder {\n  padding: 0.6rem !important;\n}\n[dir] .home-contact-main .contact-form .vs-con-textarea {\n  border-radius: 0 !important;\n}\n.home-contact-main .contact-form .con-slot-label {\n  font-size: 0.8rem;\n}\n.home-contact-main .contact-form .register-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .home-contact-main .contact-form .register-btn {\n  border-radius: 0px !important;\n  padding: 0.5rem 1rem !important;\n}\n[dir=ltr] .home-contact-main .contact-form .register-btn {\n  border-top-left-radius: 0.6rem !important;\n}\n[dir=rtl] .home-contact-main .contact-form .register-btn {\n  border-top-right-radius: 0.6rem !important;\n}\n.home-contact-main .contact-form .watermark {\n  position: absolute;\n  bottom: 20px;\n  /* width: 100 */\n}\n[dir=ltr] .home-contact-main .contact-form .watermark {\n  text-align: right;\n}\n[dir=rtl] .home-contact-main .contact-form .watermark {\n  text-align: left;\n}\n[dir=ltr] .home-contact-main .vx-row {\n  margin-left: 0 !important;\n  margin-right: 0 !important;\n}\n[dir=rtl] .home-contact-main .vx-row {\n  margin-right: 0 !important;\n  margin-left: 0 !important;\n}\n.home-contact-main .vx-col {\n  /* padding: 0 !important; */\n}", ""]);
 
 // exports
 
@@ -219,7 +219,7 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4"
+                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3"
                 },
                 [
                   _c("vs-input", {
@@ -231,7 +231,7 @@ var render = function() {
                         expression: "'required'"
                       }
                     ],
-                    staticClass: "w-4/5",
+                    staticClass: "w-full",
                     attrs: {
                       color: "success",
                       placeholder: "Nombre",
@@ -258,7 +258,7 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4"
+                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3"
                 },
                 [
                   _c("vs-input", {
@@ -270,7 +270,7 @@ var render = function() {
                         expression: "'required'"
                       }
                     ],
-                    staticClass: "w-4/5",
+                    staticClass: "w-full",
                     attrs: {
                       color: "success",
                       placeholder: "Apellido",
@@ -297,7 +297,7 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4"
+                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3"
                 },
                 [
                   _c("vs-input", {
@@ -309,7 +309,7 @@ var render = function() {
                         expression: "'required|email|min:5'"
                       }
                     ],
-                    staticClass: "w-4/5",
+                    staticClass: "w-full",
                     attrs: {
                       color: "success",
                       placeholder: "Email",
@@ -336,7 +336,7 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4"
+                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3"
                 },
                 [
                   _c("vs-input", {
@@ -348,7 +348,7 @@ var render = function() {
                         expression: "'required|min:8'"
                       }
                     ],
-                    staticClass: "w-4/5",
+                    staticClass: "w-full",
                     attrs: {
                       color: "success",
                       placeholder: "Telefono",
@@ -375,7 +375,7 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4"
+                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3"
                 },
                 [
                   _c("vs-input", {
@@ -387,7 +387,7 @@ var render = function() {
                         expression: "'required'"
                       }
                     ],
-                    staticClass: "w-4/5",
+                    staticClass: "w-full",
                     attrs: {
                       color: "success",
                       placeholder: "Compania",
@@ -414,7 +414,7 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4"
+                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3"
                 },
                 [
                   _c("vs-input", {
@@ -426,7 +426,7 @@ var render = function() {
                         expression: "'required'"
                       }
                     ],
-                    staticClass: "w-4/5",
+                    staticClass: "w-full",
                     attrs: {
                       color: "success",
                       placeholder: "Posicion",
@@ -453,7 +453,7 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4"
+                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3"
                 },
                 [
                   _c("vs-input", {
@@ -465,7 +465,7 @@ var render = function() {
                         expression: "'required'"
                       }
                     ],
-                    staticClass: "w-4/5",
+                    staticClass: "w-full",
                     attrs: {
                       color: "success",
                       placeholder: "Seleccione un Pais",
@@ -492,7 +492,7 @@ var render = function() {
                 "div",
                 {
                   staticClass:
-                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4"
+                    "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3"
                 },
                 [
                   _c("vs-input", {
@@ -504,7 +504,7 @@ var render = function() {
                         expression: "'required'"
                       }
                     ],
-                    staticClass: "w-4/5",
+                    staticClass: "w-full",
                     attrs: {
                       color: "success",
                       placeholder: "Seleccione la Region",
@@ -529,10 +529,10 @@ var render = function() {
               _vm._v(" "),
               _c(
                 "div",
-                { staticClass: "vx-col w-full" },
+                { staticClass: "vx-col w-full px-3" },
                 [
                   _c("vs-textarea", {
-                    staticClass: "w-4/5",
+                    staticClass: "w-full",
                     attrs: {
                       color: "success",
                       height: "100px",

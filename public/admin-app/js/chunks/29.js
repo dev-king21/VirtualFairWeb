@@ -3019,7 +3019,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'v-nav-menu-item',
   props: {
@@ -3065,10 +3064,10 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   computed: {
-    canSee: function canSee() {
-      this.$acl.check(this.$store.state.AppActiveUser.userRole);
-      return this.to ? this.$acl.check(this.$router.match(this.to).meta.rule) : true;
-    },
+    /* canSee () {
+      this.$acl.check(this.$store.state.AppActiveUser.userRole)
+      return this.to ? this.$acl.check(this.$router.match(this.to).meta.rule) : true
+    }, */
     activeLink: function activeLink() {
       return !!((this.to === this.$route.path || this.$route.meta.parent === this.slug) && this.to);
     }
@@ -7583,66 +7582,62 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.canSee
-    ? _c(
-        "div",
-        {
-          staticClass: "vs-sidebar--item",
-          class: [
-            { "vs-sidebar-item-active": _vm.activeLink },
-            { "disabled-item pointer-events-none": _vm.isDisabled }
-          ]
-        },
-        [
-          _vm.to
-            ? _c(
-                "router-link",
-                {
-                  class: [{ "router-link-active": _vm.activeLink }],
-                  attrs: {
-                    tabindex: "-1",
-                    exact: "",
-                    to: _vm.to,
-                    target: _vm.target
-                  }
-                },
-                [
-                  !_vm.featherIcon
-                    ? _c("vs-icon", {
-                        attrs: { "icon-pack": _vm.iconPack, icon: _vm.icon }
-                      })
-                    : _c("feather-icon", {
-                        class: { "w-3 h-3": _vm.iconSmall },
-                        attrs: { icon: _vm.icon }
-                      }),
-                  _vm._v(" "),
-                  _vm._t("default")
-                ],
-                2
-              )
-            : _c(
-                "a",
-                {
-                  attrs: { target: _vm.target, href: _vm.href, tabindex: "-1" }
-                },
-                [
-                  !_vm.featherIcon
-                    ? _c("vs-icon", {
-                        attrs: { "icon-pack": _vm.iconPack, icon: _vm.icon }
-                      })
-                    : _c("feather-icon", {
-                        class: { "w-3 h-3": _vm.iconSmall },
-                        attrs: { icon: _vm.icon }
-                      }),
-                  _vm._v(" "),
-                  _vm._t("default")
-                ],
-                2
-              )
-        ],
-        1
-      )
-    : _vm._e()
+  return _c(
+    "div",
+    {
+      staticClass: "vs-sidebar--item",
+      class: [
+        { "vs-sidebar-item-active": _vm.activeLink },
+        { "disabled-item pointer-events-none": _vm.isDisabled }
+      ]
+    },
+    [
+      _vm.to
+        ? _c(
+            "router-link",
+            {
+              class: [{ "router-link-active": _vm.activeLink }],
+              attrs: {
+                tabindex: "-1",
+                exact: "",
+                to: _vm.to,
+                target: _vm.target
+              }
+            },
+            [
+              !_vm.featherIcon
+                ? _c("vs-icon", {
+                    attrs: { "icon-pack": _vm.iconPack, icon: _vm.icon }
+                  })
+                : _c("feather-icon", {
+                    class: { "w-3 h-3": _vm.iconSmall },
+                    attrs: { icon: _vm.icon }
+                  }),
+              _vm._v(" "),
+              _vm._t("default")
+            ],
+            2
+          )
+        : _c(
+            "a",
+            { attrs: { target: _vm.target, href: _vm.href, tabindex: "-1" } },
+            [
+              !_vm.featherIcon
+                ? _c("vs-icon", {
+                    attrs: { "icon-pack": _vm.iconPack, icon: _vm.icon }
+                  })
+                : _c("feather-icon", {
+                    class: { "w-3 h-3": _vm.iconSmall },
+                    attrs: { icon: _vm.icon }
+                  }),
+              _vm._v(" "),
+              _vm._t("default")
+            ],
+            2
+          )
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true

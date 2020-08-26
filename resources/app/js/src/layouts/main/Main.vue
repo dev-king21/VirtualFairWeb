@@ -268,6 +268,10 @@ export default {
     }
   },
   created () {
+    const activated = localStorage.getItem('activateKey')
+    if (activated && activated.length > 4) {
+      this.$store.dispatch('auth/logged')
+    }
     const color = this.navbarColor === '#fff' && this.isThemeDark ? '#10163a' : this.navbarColor
     this.updateNavbarColor(color)
     this.setNavMenuVisibility(this.$store.state.mainLayoutType)

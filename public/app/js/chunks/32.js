@@ -86,13 +86,6 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this = this;
 
-    var list = [];
-
-    for (var i = 0; i < 4; i++) {
-      list.push(i);
-    }
-
-    this.webinar_list = list;
     this.$http.post('/api/home/webinar').then(function (res) {
       _this.webinar_list = res.data.webinars;
     });
@@ -113,7 +106,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../node_modules/c
 
 
 // module
-exports.push([module.i, ".home-webinar-main .webinar-title {\n  font-size: 3rem !important;\n}\n[dir] .home-webinar-main .webinar-card {\n  margin-top: 1rem !important;\n}\n.home-webinar-main .webinar-card .description {\n  font-size: 0.9rem;\n}\n[dir=ltr] .home-webinar-main .vx-row {\n  margin-left: 0 !important;\n  margin-right: 0 !important;\n}\n[dir=rtl] .home-webinar-main .vx-row {\n  margin-right: 0 !important;\n  margin-left: 0 !important;\n}\n[dir] .home-webinar-main .vx-col {\n  padding: 0 !important;\n}", ""]);
+exports.push([module.i, ".home-webinar-main {\n  min-height: calc(var(--vh, 1vh) * 100 - 86px);\n}\n.home-webinar-main .webinar-title {\n  font-size: 3rem !important;\n}\n[dir] .home-webinar-main .webinar-card {\n  margin-top: 1rem !important;\n}\n.home-webinar-main .webinar-card .description {\n  font-size: 0.9rem;\n}\n[dir=ltr] .home-webinar-main .vx-row {\n  margin-left: 0 !important;\n  margin-right: 0 !important;\n}\n[dir=rtl] .home-webinar-main .vx-row {\n  margin-right: 0 !important;\n  margin-left: 0 !important;\n}\n[dir] .home-webinar-main .vx-col {\n  padding: 0 !important;\n}", ""]);
 
 // exports
 
@@ -174,8 +167,7 @@ var render = function() {
       _c(
         "div",
         {
-          staticClass:
-            "flex items-center justify-end home-weinar-bg-img home-webinar-main"
+          staticClass: "flex justify-end home-weinar-bg-img home-webinar-main"
         },
         [
           _c(

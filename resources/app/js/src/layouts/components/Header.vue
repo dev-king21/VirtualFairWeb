@@ -34,11 +34,11 @@
       </vs-navbar-item>
 
       <vs-navbar-item index="1" v-show="!hideNavbar">
-          <a class="h3" href="/app/home/webinar">Webinars</a>
+          <a class="h2" href="/app/home/webinar">Webinars</a>
       </vs-navbar-item>
 
       <vs-navbar-item index="3" v-show="!hideNavbar">
-          <a class="h3" href="/app/home/contact">Contactenos</a>
+          <a class="h2" href="/app/home/contact">Contactenos</a>
       </vs-navbar-item>
 
       <vs-navbar-item index="4" class="px-4" v-show="!hideNavbar">
@@ -51,16 +51,16 @@
     </template>
     <template v-else>
       <vs-navbar-item index="0" v-show="!hideNavbar&&loggedIn">
-          <a class="h3" href="/app/home/sustainability">sostenibilidad</a>
+          <a class="h2" href="/app/home/sustainability">sostenibilidad</a>
       </vs-navbar-item>
        <vs-navbar-item index="1" v-show="!hideNavbar&&!loggedIn">
-          <a class="h3" href="/app/home/sponsor">patrocinadores</a>
+          <a class="h2" href="/app/home/sponsor">patrocinadores</a>
       </vs-navbar-item>
       <vs-navbar-item index="2" v-show="!hideNavbar">
-          <a class="h3" href="/app/home/contact">Contacteons</a>
+          <a class="h2" href="/app/home/contact">CONTÁCTENOS</a>
       </vs-navbar-item>
       <vs-navbar-item index="3" v-show="!hideNavbar">
-          <a class="h3 flex items-center cursor-pointer" href.prevent @click="logout()">
+          <a class="h2 flex items-center cursor-pointer" href.prevent @click="logout()">
             <feather-icon svgClasses="w-5 h-5" icon="LogOutIcon"/>
             <span>Cerrar Session</span>
           </a>
@@ -178,11 +178,13 @@ export default {
 
     .vs-navbar--item {
       margin: 0;
+      cursor: pointer;
       a {
-        font-size: 0.9rem;
-        padding: 2.5rem 1.5rem;
+        font-size: 1.1rem;
+        padding: 2.5rem;
         text-transform: uppercase;
-        font-weight: 700;
+        font-weight: 600;
+        font-family: 'Lato';
         span {
           text-transform: uppercase;
         }
@@ -212,13 +214,19 @@ export default {
 
 .vs-dropdown--menu {
   border-radius: 0px !important;
+  border: none !important;
+  .vs-dropdown--item {
+    margin: 0 !important;
+    width: 100% !important;
+  }
   .vs-dropdown--item-link {
     text-transform: uppercase;
-    font-size: 0.8rem !important;
+    font-size: .9rem !important;
+    padding: 0.8rem !important;
   }
 
   .vs-dropdown--item-link:hover {
-    background:  !important;
+    background: black !important;
     color: white !important;
   }
 }

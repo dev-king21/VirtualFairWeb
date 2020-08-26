@@ -39,6 +39,10 @@ export default {
 </script>
 
 <style lang="scss">
+#page-login {
+  background: url('/images/home-background.png');
+  background-size: 100vw 100vh;
+}
 .login-tabs-container {
   min-height: 505px;
 

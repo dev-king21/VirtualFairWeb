@@ -287,6 +287,6 @@ Route::group(['middleware' => ['auth:admin']], function() {
 
 });
 
-Route::group(['middleware' => ['auth:admin,api']], function() {
+//Route::group(['middleware' => ['auth:admin,api']], function() {
     Route::get('/fair/now', 'FairController@current_fair');
-});
+//});
