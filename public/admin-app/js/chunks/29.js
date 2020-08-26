@@ -2155,7 +2155,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     activeUserInfo: function activeUserInfo() {
-      if (!this.$store.state.auth.userInfo) return {
+      if (this.$store.state.auth.admin) return {
         first_name: 'super',
         last_name: 'user',
         avatar: ''
