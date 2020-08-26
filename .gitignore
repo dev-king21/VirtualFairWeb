@@ -3,6 +3,7 @@
 /vendor
 /resources/admin
 /resources/app
+.env
 .env.backup
 .phpunit.result.cache
 Homestead.json
