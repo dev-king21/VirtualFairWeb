@@ -55,9 +55,15 @@ __webpack_require__.r(__webpack_exports__);
 
     this.$loading.show(this);
     this.$http.get('/api/fair/sponsor').then(function (response) {
-      _this.stands = response.data.stands;
-
       _this.$loading.hide(_this);
+
+      if (response.data.status === 'unknown_fair') {
+        _this.$router.back();
+      }
+
+      _this.stands = response.data.stands;
+    })["catch"](function () {
+      _this.$router.back();
     });
   }
 });

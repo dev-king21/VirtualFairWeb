@@ -233,6 +233,8 @@ class FairController extends Controller
 
     public function get_stands(Request $request, $fair_id = 0, $country_id = 0) {
         $res = array();
+       
+       
         if ($fair_id == 0)
         {
             $now = date("y-m-d");
@@ -242,6 +244,9 @@ class FairController extends Controller
             ]; 
             $query["status"] = 1;
             $res["fair"] = Fair::with('fair_type')->where($query)->first();
+            if (!isset($res["fair"])) {
+                return response()->json(["status"=> "unknown_fair"]);
+            }
             $fair_id = $res["fair"]->id;
         } else 
             $res["fair"] = Fair::with('fair_type')->find($fair_id);
@@ -316,6 +321,9 @@ class FairController extends Controller
             ]; 
             $query["status"] = 1;
             $res["fair"] = Fair::with('fair_type')->where($query)->first();
+            if (!isset($res["fair"])) {
+                return response()->json(["status"=> "unknown_fair"]);
+            }
             $fair_id = $res["fair"]->id;
         } else 
             $res["fair"] = Fair::with('fair_type')->find($fair_id);

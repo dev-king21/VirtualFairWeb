@@ -6,7 +6,7 @@
             <div class="flex flex-col setting-wrapper">
                 <div class="flex items-center bg-blue-dark pt-4 pb-2">
                     <div class="flex items-center ml-8 cursor-pointer" @click="$router.push('/setting/profile')">
-                        <img :src="`/fair_image/${user.avatar}`" class="user-img responsive mx-4">
+                        <img :src="`/fair_image/${user.avatar ? user.avatar : 'placeholder.png'}`" class="user-img responsive mx-4">
                         <div>
                             <div class="user-name h4 text-white">MI PERFIL</div>
                         </div>

@@ -161,13 +161,18 @@ __webpack_require__.r(__webpack_exports__);
 
     this.$loading.show(this);
     this.$http.get('/api/fair/get_current_stands').then(function (response) {
+      _this.$loading.hide(_this);
+
       var data = response.data;
       _this.fair = data.fair;
+
+      if (!_this.fair) {
+        return _this.$router.back();
+      }
+
       _this.fair_type = data.fair.fair_type;
       _this.country = data.country;
       _this.stands = data.stands;
-
-      _this.$loading.hide(_this);
     })["catch"](function () {});
     this.$http.post('/api/stand/ads/get').then(function (res) {
       _this.ads_list = res.data.ads;
@@ -396,76 +401,80 @@ var render = function() {
               "vx-col lg:w-3/4 md:w-2/3 sm:w-full xs:w-full py-8 px-12"
           },
           [
-            _c(
-              "div",
-              { staticClass: "relative w-full h-full" },
-              [
-                _vm.fair.fair_type !== undefined
-                  ? [
-                      _c("img", {
-                        ref: "refFairImg",
-                        staticClass: "stand_wrapper responsive",
-                        attrs: {
-                          src: "/fair_image/" + _vm.fair.fair_type.interior
-                        },
-                        on: {
-                          load: function($event) {
-                            return _vm.onLoadImg()
-                          }
-                        }
-                      })
-                    ]
-                  : _vm._e(),
-                _vm._v(" "),
-                _vm._l(
-                  _vm.stands.filter(function(st, index) {
-                    return st.country_id === _vm.country.id && index < 9
-                  }),
-                  function(item, index) {
-                    return [
-                      _c("img", {
-                        key: "stand-" + index,
-                        staticClass: "stand_img absolute cursor-pointer",
-                        style:
-                          "top: " +
-                          item.stand_location.top * 100 +
-                          "%; left: " +
-                          item.stand_location.left * _vm.img_width +
-                          "px",
-                        attrs: {
-                          src:
-                            "/fair_image/" +
-                            item.stand_location.stand_type.building
-                        },
-                        on: {
-                          click: function($event) {
-                            return _vm.goStandPage(item.id, item.user_id)
-                          }
-                        }
+            _vm.fair !== undefined
+              ? _c(
+                  "div",
+                  { staticClass: "relative w-full h-full" },
+                  [
+                    _vm.fair.fair_type !== undefined
+                      ? [
+                          _c("img", {
+                            ref: "refFairImg",
+                            staticClass: "stand_wrapper responsive",
+                            attrs: {
+                              src: "/fair_image/" + _vm.fair.fair_type.interior
+                            },
+                            on: {
+                              load: function($event) {
+                                return _vm.onLoadImg()
+                              }
+                            }
+                          })
+                        ]
+                      : _vm._e(),
+                    _vm._v(" "),
+                    _vm._l(
+                      _vm.stands.filter(function(st, index) {
+                        return st.country_id === _vm.country.id && index < 9
                       }),
-                      _vm._v(" "),
-                      _c("img", {
-                        key: "logo-" + index,
-                        staticClass: "logo_img rounded absolute cursor-pointer",
-                        style:
-                          "top: " +
-                          (item.stand_location.top - 0.01) * 100 +
-                          "%; left: " +
-                          (item.stand_location.left - 0.01) * _vm.img_width +
-                          "px",
-                        attrs: { src: _vm.logoImage(item.logo) },
-                        on: {
-                          click: function($event) {
-                            return _vm.goStandPage(item.id, item.user_id)
-                          }
-                        }
-                      })
-                    ]
-                  }
+                      function(item, index) {
+                        return [
+                          _c("img", {
+                            key: "stand-" + index,
+                            staticClass: "stand_img absolute cursor-pointer",
+                            style:
+                              "top: " +
+                              item.stand_location.top * 100 +
+                              "%; left: " +
+                              item.stand_location.left * _vm.img_width +
+                              "px",
+                            attrs: {
+                              src:
+                                "/fair_image/" +
+                                item.stand_location.stand_type.building
+                            },
+                            on: {
+                              click: function($event) {
+                                return _vm.goStandPage(item.id, item.user_id)
+                              }
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("img", {
+                            key: "logo-" + index,
+                            staticClass:
+                              "logo_img rounded absolute cursor-pointer",
+                            style:
+                              "top: " +
+                              (item.stand_location.top - 0.01) * 100 +
+                              "%; left: " +
+                              (item.stand_location.left - 0.01) *
+                                _vm.img_width +
+                              "px",
+                            attrs: { src: _vm.logoImage(item.logo) },
+                            on: {
+                              click: function($event) {
+                                return _vm.goStandPage(item.id, item.user_id)
+                              }
+                            }
+                          })
+                        ]
+                      }
+                    )
+                  ],
+                  2
                 )
-              ],
-              2
-            )
+              : _vm._e()
           ]
         ),
         _vm._v(" "),

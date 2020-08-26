@@ -42,8 +42,14 @@ export default {
     this.$loading.show(this)
     this.$http.get('/api/fair/sponsor')
       .then((response) => {
-        this.stands = response.data.stands  
         this.$loading.hide(this)
+        if (response.data.status === 'unknown_fair') {
+          this.$router.back()
+        }
+        this.stands = response.data.stands  
+      })
+      .catch(() => {
+        this.$router.back()
       })
   }
     

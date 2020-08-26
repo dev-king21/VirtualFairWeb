@@ -13,7 +13,7 @@
                         <div>
                             <div class="user-name text-white">MI PERFIL</div>
                         </div>
-                        <img :src="`/fair_image/${user.avatar}`" class="user-img responsive mx-4">
+                        <img :src="`/fair_image/${user.avatar ? user.avatar : 'placeholder.png'}`" class="user-img responsive mx-4">
                     </div>
                 </div>
                 <div class="flex flex-col bg-white text-center py-6" style="opacity: .9">

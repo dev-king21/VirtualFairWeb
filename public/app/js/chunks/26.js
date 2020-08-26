@@ -400,7 +400,13 @@ var render = function() {
                   [
                     _c("img", {
                       staticClass: "user-img responsive mx-4",
-                      attrs: { src: "/fair_image/" + _vm.user.avatar }
+                      attrs: {
+                        src:
+                          "/fair_image/" +
+                          (_vm.user.avatar
+                            ? _vm.user.avatar
+                            : "placeholder.png")
+                      }
                     }),
                     _vm._v(" "),
                     _vm._m(0)

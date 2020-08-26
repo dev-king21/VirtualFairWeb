@@ -4,13 +4,13 @@
       <bread-crumb 
           text="networking" 
           :avartar="true" 
-          :user_img="`/fair_image/${me.avatar}`" 
+          :user_img="`/fair_image/${me.avatar ? me.avatar : 'placeholder.png'}`" 
           :user_name="`${me.first_name} ${me.last_name}`"/>
       <div class="flex w-full flex-col px-8 bg-white-grey chatting-main">
           <div class="pl-8 pt-6">
               <h2>CHAT</h2>
           </div>
-          <div class="vx-row page-content">
+          <div class="vx-row page-content" v-if="contacts && contacts.length">
               <div class="vx-col lg:w-1/4 md:w-1/4 sm:w-1/3 xs:w-1/3 contact-panel">
                   <div class="contact-wrapper">
                     <component :is="scrollbarTag" ref="contactScrollPs" class="scroll-area-v-nav-menu pt-2" :settings="settings" @ps-scroll-y="psContactSectionScroll" @scroll="psContactSectionScroll" >
@@ -23,7 +23,7 @@
                           :expositor_company="`${item.company}`"
                           :expositor_profession="`${item.address}`"
                           :expositor_country="`${item.country}`"
-                          :user_img="`/fair_image/${item.avatar}`" 
+                          :user_img="`/fair_image/${item.avatar ? item.avatar : 'placeholder.png'}`" 
                           :key="`message-item-${index}`"
                           :count="item.send_unread_messages? item.send_unread_messages.length : 0"
                           v-for="(item, index) in contacts"/>
@@ -119,9 +119,10 @@ export default {
       this.active_user = this.contacts.find((it) => it.id === this.active_index)
       this.$http.post('/api/fair/chat/messages', {other: this.active_index})
         .then((res) => {
+          this.$loading.hide(this)
+
           this.messages = res.data.messages
           this.active_user.send_unread_messages = []
-          this.$loading.hide(this)
           setTimeout(() => {
             const scroll_el = this.$refs.messageScrollPs.$el || this.$refs.messageScrollPs
             scroll_el.scrollTop = scroll_el.scrollHeight
@@ -171,11 +172,15 @@ export default {
     this.me = userInfo
     this.$http.post('/api/fair/chat/contacts')
       .then((res) => {
+        this.$loading.hide(this)
         this.contacts = res.data.contacts
         if (this.contacts.length !== 0) {
           this.active_index = this.contacts[0].id //res.data.active_index
           this.getMessages()
         }
+      })
+      .catch(() => {
+        this.$loading.hide(this)
       })
     
     Echo.join('chat')

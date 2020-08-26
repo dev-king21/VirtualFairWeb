@@ -448,7 +448,13 @@ var render = function() {
                     _vm._v(" "),
                     _c("img", {
                       staticClass: "user-img responsive mx-4",
-                      attrs: { src: "/fair_image/" + _vm.user.avatar }
+                      attrs: {
+                        src:
+                          "/fair_image/" +
+                          (_vm.user.avatar
+                            ? _vm.user.avatar
+                            : "placeholder.png")
+                      }
                     })
                   ]
                 )

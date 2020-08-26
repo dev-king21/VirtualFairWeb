@@ -18,7 +18,7 @@
         </div>
         <div class="vx-row stand-home-main">
             <div class="vx-col lg:w-3/4 md:w-2/3 sm:w-full xs:w-full py-8 px-12">
-                <div class="relative w-full h-full">
+                <div class="relative w-full h-full" v-if="fair !== undefined">
                     <!-- <img class="stand_wrapper" @load="onLoadImg()" :src="`/fair_image/${fair.fair_type.interior}`"> -->
                     <template v-if="fair.fair_type !== undefined">
                         <img ref="refFairImg" class="stand_wrapper responsive" @load="onLoadImg()" :src="`/fair_image/${fair.fair_type.interior}`">
@@ -145,14 +145,20 @@ export default {
     this.$loading.show(this)
     this.$http.get('/api/fair/get_current_stands')
       .then((response) => {
+        this.$loading.hide(this)  
+
         const data = response.data
         this.fair = data.fair
+        if (!this.fair) {
+          return this.$router.back()
+        }
         this.fair_type = data.fair.fair_type
         this.country = data.country
         this.stands = data.stands
-        this.$loading.hide(this)  
+        
       })
       .catch(() => {})
+
     this.$http.post('/api/stand/ads/get')
       .then((res) => {
         this.ads_list = res.data.ads

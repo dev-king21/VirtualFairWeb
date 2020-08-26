@@ -143,11 +143,10 @@ __webpack_require__.r(__webpack_exports__);
       this.$http.post('/api/fair/chat/messages', {
         other: this.active_index
       }).then(function (res) {
-        _this.messages = res.data.messages;
-        _this.active_user.send_unread_messages = [];
-
         _this.$loading.hide(_this);
 
+        _this.messages = res.data.messages;
+        _this.active_user.send_unread_messages = [];
         setTimeout(function () {
           var scroll_el = _this.$refs.messageScrollPs.$el || _this.$refs.messageScrollPs;
           scroll_el.scrollTop = scroll_el.scrollHeight;
@@ -206,6 +205,8 @@ __webpack_require__.r(__webpack_exports__);
 
     this.me = userInfo;
     this.$http.post('/api/fair/chat/contacts').then(function (res) {
+      _this3.$loading.hide(_this3);
+
       _this3.contacts = res.data.contacts;
 
       if (_this3.contacts.length !== 0) {
@@ -213,6 +214,8 @@ __webpack_require__.r(__webpack_exports__);
 
         _this3.getMessages();
       }
+    })["catch"](function () {
+      _this3.$loading.hide(_this3);
     });
     Echo.join('chat').here(function (users) {
       _this3.online_users = users;
@@ -501,7 +504,9 @@ var render = function() {
         attrs: {
           text: "networking",
           avartar: true,
-          user_img: "/fair_image/" + _vm.me.avatar,
+          user_img:
+            "/fair_image/" +
+            (_vm.me.avatar ? _vm.me.avatar : "placeholder.png"),
           user_name: _vm.me.first_name + " " + _vm.me.last_name
         }
       }),
@@ -514,203 +519,213 @@ var render = function() {
         [
           _vm._m(0),
           _vm._v(" "),
-          _c("div", { staticClass: "vx-row page-content" }, [
-            _c(
-              "div",
-              {
-                staticClass:
-                  "vx-col lg:w-1/4 md:w-1/4 sm:w-1/3 xs:w-1/3 contact-panel"
-              },
-              [
+          _vm.contacts && _vm.contacts.length
+            ? _c("div", { staticClass: "vx-row page-content" }, [
                 _c(
                   "div",
-                  { staticClass: "contact-wrapper" },
+                  {
+                    staticClass:
+                      "vx-col lg:w-1/4 md:w-1/4 sm:w-1/3 xs:w-1/3 contact-panel"
+                  },
                   [
                     _c(
-                      _vm.scrollbarTag,
-                      {
-                        ref: "contactScrollPs",
-                        tag: "component",
-                        staticClass: "scroll-area-v-nav-menu pt-2",
-                        attrs: { settings: _vm.settings },
-                        on: {
-                          "ps-scroll-y": _vm.psContactSectionScroll,
-                          scroll: _vm.psContactSectionScroll
-                        }
-                      },
-                      _vm._l(_vm.contacts, function(item, index) {
-                        return _c("contact-item", {
-                          key: "message-item-" + index,
-                          staticClass: "cursor-pointer",
-                          attrs: {
-                            idx: item.id,
-                            select: _vm.chatTo,
-                            active_index: _vm.active_index,
-                            expositor_name:
-                              item.first_name + " " + item.last_name,
-                            expositor_company: "" + item.company,
-                            expositor_profession: "" + item.address,
-                            expositor_country: "" + item.country,
-                            user_img: "/fair_image/" + item.avatar,
-                            count: item.send_unread_messages
-                              ? item.send_unread_messages.length
-                              : 0
-                          }
-                        })
-                      }),
+                      "div",
+                      { staticClass: "contact-wrapper" },
+                      [
+                        _c(
+                          _vm.scrollbarTag,
+                          {
+                            ref: "contactScrollPs",
+                            tag: "component",
+                            staticClass: "scroll-area-v-nav-menu pt-2",
+                            attrs: { settings: _vm.settings },
+                            on: {
+                              "ps-scroll-y": _vm.psContactSectionScroll,
+                              scroll: _vm.psContactSectionScroll
+                            }
+                          },
+                          _vm._l(_vm.contacts, function(item, index) {
+                            return _c("contact-item", {
+                              key: "message-item-" + index,
+                              staticClass: "cursor-pointer",
+                              attrs: {
+                                idx: item.id,
+                                select: _vm.chatTo,
+                                active_index: _vm.active_index,
+                                expositor_name:
+                                  item.first_name + " " + item.last_name,
+                                expositor_company: "" + item.company,
+                                expositor_profession: "" + item.address,
+                                expositor_country: "" + item.country,
+                                user_img:
+                                  "/fair_image/" +
+                                  (item.avatar
+                                    ? item.avatar
+                                    : "placeholder.png"),
+                                count: item.send_unread_messages
+                                  ? item.send_unread_messages.length
+                                  : 0
+                              }
+                            })
+                          }),
+                          1
+                        )
+                      ],
                       1
                     )
-                  ],
-                  1
-                )
-              ]
-            ),
-            _vm._v(" "),
-            _c(
-              "div",
-              {
-                staticClass:
-                  "vx-col lg:w-3/4 md:w-3/4 sm:w-2/3 xs:w-2/3 content-panel"
-              },
-              [
+                  ]
+                ),
+                _vm._v(" "),
                 _c(
                   "div",
-                  { staticClass: "ml-4 my-3", staticStyle: { height: "100%" } },
+                  {
+                    staticClass:
+                      "vx-col lg:w-3/4 md:w-3/4 sm:w-2/3 xs:w-2/3 content-panel"
+                  },
                   [
                     _c(
                       "div",
                       {
-                        staticClass:
-                          "flex flex-row w-full items-center bg-white py-3"
+                        staticClass: "ml-4 my-3",
+                        staticStyle: { height: "100%" }
                       },
                       [
-                        _c("img", {
-                          staticClass: "user-img responsive mx-4",
-                          attrs: {
-                            src: "/fair_image/" + _vm.active_user.avatar
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "ml-2" }, [
-                          _c("div", { staticClass: "font-bold" }, [
-                            _vm._v(
-                              _vm._s(_vm.active_user.first_name) +
-                                " " +
-                                _vm._s(_vm.active_user.last_name)
-                            )
-                          ]),
-                          _vm._v(" "),
-                          _c("div", [
-                            _vm._v(
-                              _vm._s(
-                                _vm.online_users.find(function(user) {
-                                  return user.id === _vm.active_user.id
-                                })
-                                  ? "online"
-                                  : "offline"
-                              )
-                            )
-                          ])
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "mt-4" }, [
-                      _c(
-                        "div",
-                        { staticClass: "message-wrapper" },
-                        [
-                          _c(
-                            _vm.scrollbarTag,
-                            {
-                              ref: "messageScrollPs",
-                              tag: "component",
-                              staticClass: "scroll-area-v-nav-menu pt-2",
-                              attrs: { settings: _vm.settings },
-                              on: {
-                                "ps-scroll-y": _vm.psMessageSectionScroll,
-                                scroll: _vm.psMessageSectionScroll
+                        _c(
+                          "div",
+                          {
+                            staticClass:
+                              "flex flex-row w-full items-center bg-white py-3"
+                          },
+                          [
+                            _c("img", {
+                              staticClass: "user-img responsive mx-4",
+                              attrs: {
+                                src: "/fair_image/" + _vm.active_user.avatar
                               }
-                            },
-                            _vm._l(_vm.messages, function(item, index) {
-                              return _c("message-item", {
-                                key: "message-item-" + index,
-                                attrs: {
-                                  received:
-                                    item.sender_id === _vm.active_user.id,
-                                  content: item.message,
-                                  user_img:
-                                    "" +
-                                    (item.sender_id === _vm.active_user.id
-                                      ? "/fair_image/" + _vm.active_user.avatar
-                                      : "/fair_image/" + _vm.me.avatar)
-                                }
-                              })
                             }),
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c(
-                        "div",
-                        {
-                          staticClass:
-                            "w-full flex flex-row px-4 py-3 items-center justify-between bg-white msg-input"
-                        },
-                        [
-                          _c("vs-input", {
-                            staticClass: "w-full inputx",
-                            attrs: {
-                              placeholder: "Enviar mensaje...",
-                              size: "large"
-                            },
-                            on: { keypress: _vm.goEnter },
-                            model: {
-                              value: _vm.chat_text,
-                              callback: function($$v) {
-                                _vm.chat_text = $$v
-                              },
-                              expression: "chat_text"
-                            }
-                          }),
-                          _vm._v(" "),
+                            _vm._v(" "),
+                            _c("div", { staticClass: "ml-2" }, [
+                              _c("div", { staticClass: "font-bold" }, [
+                                _vm._v(
+                                  _vm._s(_vm.active_user.first_name) +
+                                    " " +
+                                    _vm._s(_vm.active_user.last_name)
+                                )
+                              ]),
+                              _vm._v(" "),
+                              _c("div", [
+                                _vm._v(
+                                  _vm._s(
+                                    _vm.online_users.find(function(user) {
+                                      return user.id === _vm.active_user.id
+                                    })
+                                      ? "online"
+                                      : "offline"
+                                  )
+                                )
+                              ])
+                            ])
+                          ]
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "mt-4" }, [
                           _c(
                             "div",
-                            { staticClass: "ml-6" },
+                            { staticClass: "message-wrapper" },
                             [
                               _c(
-                                "vs-button",
+                                _vm.scrollbarTag,
                                 {
-                                  staticClass: "send-btn cyan-dark",
-                                  attrs: { type: "filled" },
-                                  on: { click: _vm.sendMessage }
+                                  ref: "messageScrollPs",
+                                  tag: "component",
+                                  staticClass: "scroll-area-v-nav-menu pt-2",
+                                  attrs: { settings: _vm.settings },
+                                  on: {
+                                    "ps-scroll-y": _vm.psMessageSectionScroll,
+                                    scroll: _vm.psMessageSectionScroll
+                                  }
                                 },
-                                [
-                                  _c("feather-icon", {
+                                _vm._l(_vm.messages, function(item, index) {
+                                  return _c("message-item", {
+                                    key: "message-item-" + index,
                                     attrs: {
-                                      svgClasses: "w-6 h-6",
-                                      icon: "SendIcon"
+                                      received:
+                                        item.sender_id === _vm.active_user.id,
+                                      content: item.message,
+                                      user_img:
+                                        "" +
+                                        (item.sender_id === _vm.active_user.id
+                                          ? "/fair_image/" +
+                                            _vm.active_user.avatar
+                                          : "/fair_image/" + _vm.me.avatar)
                                     }
                                   })
+                                }),
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", [
+                          _c(
+                            "div",
+                            {
+                              staticClass:
+                                "w-full flex flex-row px-4 py-3 items-center justify-between bg-white msg-input"
+                            },
+                            [
+                              _c("vs-input", {
+                                staticClass: "w-full inputx",
+                                attrs: {
+                                  placeholder: "Enviar mensaje...",
+                                  size: "large"
+                                },
+                                on: { keypress: _vm.goEnter },
+                                model: {
+                                  value: _vm.chat_text,
+                                  callback: function($$v) {
+                                    _vm.chat_text = $$v
+                                  },
+                                  expression: "chat_text"
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                { staticClass: "ml-6" },
+                                [
+                                  _c(
+                                    "vs-button",
+                                    {
+                                      staticClass: "send-btn cyan-dark",
+                                      attrs: { type: "filled" },
+                                      on: { click: _vm.sendMessage }
+                                    },
+                                    [
+                                      _c("feather-icon", {
+                                        attrs: {
+                                          svgClasses: "w-6 h-6",
+                                          icon: "SendIcon"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
                                 ],
                                 1
                               )
                             ],
                             1
                           )
-                        ],
-                        1
-                      )
-                    ])
+                        ])
+                      ]
+                    )
                   ]
                 )
-              ]
-            )
-          ])
+              ])
+            : _vm._e()
         ]
       )
     ],
