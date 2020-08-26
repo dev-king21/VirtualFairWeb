@@ -1,15 +1,14 @@
 <template>
-  <div class="the-navbar__user-meta flex items-center" v-if="activeUserInfo.displayName">
+  <div class="the-navbar__user-meta flex items-center" v-if="activeUserInfo">
 
-    <div class="text-right leading-tight hidden sm:block">
-      <p class="font-semibold">{{ activeUserInfo.displayName }}</p>
-      <small>Available</small>
-    </div>
-
+    
     <vs-dropdown vs-custom-content vs-trigger-click class="cursor-pointer">
+      <div class="text-right leading-tight hidden sm:block">
+        <p class="font-semibold">{{ activeUserInfo.first_name }} {{ activeUserInfo.last_name }}</p>
+      </div>
 
       <div class="con-img ml-3">
-        <img v-if="activeUserInfo.photoURL" key="onlineImg" :src="activeUserInfo.photoURL" alt="user-img" width="40" height="40" class="rounded-full shadow-md cursor-pointer block" />
+        <img v-if="activeUserInfo.avatar" key="onlineImg" :src="`/fair_image/${avatar}`" alt="user-img" width="40" height="40" class="rounded-full shadow-md cursor-pointer block" />
       </div>
 
       <vs-dropdown-menu class="vx-navbar-dropdown">
@@ -22,7 +21,7 @@
             <span class="ml-2">Profile</span>
           </li>
 
-          <li
+          <!--li
             class="flex py-2 px-4 cursor-pointer hover:bg-primary hover:text-white"
             @click="$router.push('/apps/email').catch(() => {})">
             <feather-icon icon="MailIcon" svgClasses="w-4 h-4" />
@@ -48,7 +47,7 @@
             @click="$router.push('/apps/eCommerce/wish-list').catch(() => {})">
             <feather-icon icon="HeartIcon" svgClasses="w-4 h-4" />
             <span class="ml-2">Wish List</span>
-          </li>
+          </li-->
 
           <vs-divider class="m-1" />
 
@@ -74,7 +73,9 @@ export default {
   },
   computed: {
     activeUserInfo () {
-      return this.$store.state.AppActiveUser
+      if (!this.$store.state.auth.userInfo) return {first_name: 'super', last_name: 'user', avatar: ''}
+      //console.log(this.$store.state.userInfo)
+      return this.$store.state.auth.userInfo
     }
   },
   methods: {

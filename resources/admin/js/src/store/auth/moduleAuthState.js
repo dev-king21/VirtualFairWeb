@@ -1,4 +1,5 @@
 export default {
   loggedIn: false,
-  admin: false
+  admin: false,
+  userInfo: {}
 }

@@ -160,7 +160,9 @@ __webpack_require__.r(__webpack_exports__);
     goHome: function goHome() {
       var key = localStorage.getItem('activateKey');
       if (!key) return;
-      if (key && key === 'admin') this.$router.push('/user');else this.$router.push('/exhibitor');
+      if (key && key === 'admin') this.$router.push('/user');else {
+        this.user = this.$router.push('/exhibitor');
+      }
     },
     goLogin: function goLogin(event) {
       if (event.keyCode === 13) this.login();

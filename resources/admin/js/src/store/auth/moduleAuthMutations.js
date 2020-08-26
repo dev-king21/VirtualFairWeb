@@ -9,8 +9,8 @@ export default {
   },
 
   UPDATE_USER_INFO (state, payload) {
-    localStorage.setItem('activateKey', payload)
     state.admin = payload === 'admin'
+    if (payload.userInfo) state.userInfo = JSON.parse(JSON.stringify(payload.userInfo))
   },
 
   SET_ROLE (state, payload) {

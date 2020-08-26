@@ -23,10 +23,7 @@ Route::any('/init_setting', 'SettingController@dummyCreate');
 
 
 
-Route::group(['middleware' => 'auth:api'], function(){
-    Route::get('users', 'UserController@index')->middleware('isAdmin');
-    Route::get('users/{id}', 'UserController@show')->middleware('isAdminOrSelf');
-    
+Route::group(['middleware' => 'auth:api'], function() {
     Route::get('/fair/get_current_stands', 'FairController@get_stands');
     Route::post('/fair/sustainability', 'FairController@get_sustainability');
     Route::get('/fair/sponsor', 'FairController@get_sponsors');
@@ -108,15 +105,12 @@ Route::prefix('admin/auth')->group(function() {
     Route::post('login', 'AdminAuthController@login');
     Route::group(['middleware' => ['auth:admin']], function() {
         Route::post('logout', 'AdminAuthController@logout');
-        
     });
 });
 
 Route::group(['middleware' => ['auth:admin']], function() {
     Route::get('/exhibitor', 'RoomController@exhibitorWebinar');
-    //QueryContact and ContactMessge\
-    Route::post('/query', 'ContactController@addQueryContact');
-    Route::post('/contact_message', 'ContactController@addContactMessage');
+    //QueryContact and ContactMessage
     Route::get('/query/all', 'ContactController@getQueryContact');
     Route::get('/contact_message/all', 'ContactController@getContactMessage');
 
@@ -135,11 +129,6 @@ Route::group(['middleware' => ['auth:admin']], function() {
     Route::get('/fair/sustainability/get', 'FairController@getSustainabilityInfo');
     Route::post('/fair/sustainability/remove/{id}', 'SustainabilityController@deleteSusImg');
 
-    //home webinar
-    Route::post('/home/webinar', 'SettingController@get_reserved_webinars');
-
-
-
     //user
     Route::get('/user/all', 'UserController@allUser');
     Route::get('/user/request', 'UserController@requestUser');
@@ -147,7 +136,6 @@ Route::group(['middleware' => ['auth:admin']], function() {
     Route::get('/user/active', 'UserController@activeUser');
     Route::get('/user/past', 'UserController@pastUser');
     Route::post('/user/create', 'UserController@createUser');
-
 
     //fair
     Route::get('/fair/all', 'FairController@all_fairs');
@@ -283,10 +271,11 @@ Route::group(['middleware' => ['auth:admin']], function() {
 
     //all the information related to stand
     Route::get('fair/country/stand/information/{fair_id}/{country_id}', 'StandController@stand_information');
-
-
 });
 
-//Route::group(['middleware' => ['auth:admin,api']], function() {
+Route::group(['middleware' => []], function() {
     Route::get('/fair/now', 'FairController@current_fair');
-//});
+    Route::post('/home/webinar', 'SettingController@get_reserved_webinars');
+    Route::post('/query', 'ContactController@addQueryContact');
+    Route::post('/contact_message', 'ContactController@addContactMessage');
+});

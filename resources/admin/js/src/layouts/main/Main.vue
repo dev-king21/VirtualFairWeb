@@ -291,6 +291,11 @@ export default {
       this.disableThemeTour = true
       this.dynamicWatchers.rtl()
     })
+
+    const activated = localStorage.getItem('activateKey')
+    if (activated && activated.length > 4) {
+      this.$store.dispatch('auth/logged')
+    }
   },
   beforeDestroy () {
     Object.keys(this.dynamicWatchers).map(i => {

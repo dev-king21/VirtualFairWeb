@@ -2149,14 +2149,19 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {};
   },
   computed: {
     activeUserInfo: function activeUserInfo() {
-      return this.$store.state.AppActiveUser;
+      if (!this.$store.state.auth.userInfo) return {
+        first_name: 'super',
+        last_name: 'user',
+        avatar: ''
+      }; //console.log(this.$store.state.userInfo)
+
+      return this.$store.state.auth.userInfo;
     }
   },
   methods: {
@@ -3392,6 +3397,11 @@ var VxTour = function VxTour() {
 
       _this.dynamicWatchers.rtl();
     });
+    var activated = localStorage.getItem('activateKey');
+
+    if (activated && activated.length > 4) {
+      this.$store.dispatch('auth/logged');
+    }
   },
   beforeDestroy: function beforeDestroy() {
     var _this2 = this;
@@ -6679,23 +6689,11 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm.activeUserInfo.displayName
+  return _vm.activeUserInfo
     ? _c(
         "div",
         { staticClass: "the-navbar__user-meta flex items-center" },
         [
-          _c(
-            "div",
-            { staticClass: "text-right leading-tight hidden sm:block" },
-            [
-              _c("p", { staticClass: "font-semibold" }, [
-                _vm._v(_vm._s(_vm.activeUserInfo.displayName))
-              ]),
-              _vm._v(" "),
-              _c("small", [_vm._v("Available")])
-            ]
-          ),
-          _vm._v(" "),
           _c(
             "vs-dropdown",
             {
@@ -6703,14 +6701,28 @@ var render = function() {
               attrs: { "vs-custom-content": "", "vs-trigger-click": "" }
             },
             [
+              _c(
+                "div",
+                { staticClass: "text-right leading-tight hidden sm:block" },
+                [
+                  _c("p", { staticClass: "font-semibold" }, [
+                    _vm._v(
+                      _vm._s(_vm.activeUserInfo.first_name) +
+                        " " +
+                        _vm._s(_vm.activeUserInfo.last_name)
+                    )
+                  ])
+                ]
+              ),
+              _vm._v(" "),
               _c("div", { staticClass: "con-img ml-3" }, [
-                _vm.activeUserInfo.photoURL
+                _vm.activeUserInfo.avatar
                   ? _c("img", {
                       key: "onlineImg",
                       staticClass:
                         "rounded-full shadow-md cursor-pointer block",
                       attrs: {
-                        src: _vm.activeUserInfo.photoURL,
+                        src: "/fair_image/" + _vm.avatar,
                         alt: "user-img",
                         width: "40",
                         height: "40"
@@ -6743,100 +6755,6 @@ var render = function() {
                         }),
                         _vm._v(" "),
                         _c("span", { staticClass: "ml-2" }, [_vm._v("Profile")])
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      {
-                        staticClass:
-                          "flex py-2 px-4 cursor-pointer hover:bg-primary hover:text-white",
-                        on: {
-                          click: function($event) {
-                            _vm.$router.push("/apps/email").catch(function() {})
-                          }
-                        }
-                      },
-                      [
-                        _c("feather-icon", {
-                          attrs: { icon: "MailIcon", svgClasses: "w-4 h-4" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "ml-2" }, [_vm._v("Inbox")])
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      {
-                        staticClass:
-                          "flex py-2 px-4 cursor-pointer hover:bg-primary hover:text-white",
-                        on: {
-                          click: function($event) {
-                            _vm.$router.push("/apps/todo").catch(function() {})
-                          }
-                        }
-                      },
-                      [
-                        _c("feather-icon", {
-                          attrs: {
-                            icon: "CheckSquareIcon",
-                            svgClasses: "w-4 h-4"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "ml-2" }, [_vm._v("Tasks")])
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      {
-                        staticClass:
-                          "flex py-2 px-4 cursor-pointer hover:bg-primary hover:text-white",
-                        on: {
-                          click: function($event) {
-                            _vm.$router.push("/apps/chat").catch(function() {})
-                          }
-                        }
-                      },
-                      [
-                        _c("feather-icon", {
-                          attrs: {
-                            icon: "MessageSquareIcon",
-                            svgClasses: "w-4 h-4"
-                          }
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "ml-2" }, [_vm._v("Chat")])
-                      ],
-                      1
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "li",
-                      {
-                        staticClass:
-                          "flex py-2 px-4 cursor-pointer hover:bg-primary hover:text-white",
-                        on: {
-                          click: function($event) {
-                            _vm.$router
-                              .push("/apps/eCommerce/wish-list")
-                              .catch(function() {})
-                          }
-                        }
-                      },
-                      [
-                        _c("feather-icon", {
-                          attrs: { icon: "HeartIcon", svgClasses: "w-4 h-4" }
-                        }),
-                        _vm._v(" "),
-                        _c("span", { staticClass: "ml-2" }, [
-                          _vm._v("Wish List")
-                        ])
                       ],
                       1
                     ),

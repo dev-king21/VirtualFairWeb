@@ -105,7 +105,10 @@ export default {
       const key = localStorage.getItem('activateKey')
       if (!key) return
       if (key && key === 'admin') this.$router.push('/user')
-      else this.$router.push('/exhibitor')
+      else {
+        this.user = 
+        this.$router.push('/exhibitor')
+      }
     },
     goLogin (event) {
       if (event.keyCode === 13) this.login()

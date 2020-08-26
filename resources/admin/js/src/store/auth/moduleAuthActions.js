@@ -8,11 +8,16 @@ export default {
       
       axios.post('/api/admin/auth/login', JSON.parse(JSON.stringify(payload)))
         .then(response => {
-          console.log(response.data)
           if (response.data.key) {
-            localStorage.setItem('accessToken', response.data.access_token)
-            commit('UPDATE_USER_INFO', response.data.key)
-            commit('SET_BEARER', response.data.access_token)
+            const data = response.data
+            localStorage.setItem('accessToken', data.access_token)
+            localStorage.setItem('activateKey', data.key)
+            if (data.key !== 'admin') {
+              localStorage.setItem('userInfo', JSON.stringify(data.user))
+              localStorage.getItem('userInfo')
+            }
+            commit('UPDATE_USER_INFO', data)
+            commit('SET_BEARER', data.access_token)
             resolve()
           } else {
             reject({message: 'Wrong Key or Password'})
@@ -30,6 +35,7 @@ export default {
         .then(() => {
           commit('REMOVE_BEARER')
           localStorage.removeItem('activateKey')
+          localStorage.removeItem('userInfo')
           resolve()
         })
         .catch(error => { reject(error) })
@@ -38,7 +44,11 @@ export default {
   },
   logged ({commit}) {
     const key = localStorage.getItem('activateKey')
-    commit('SET_ROLE', key === 'admin')
+    const userInfoStr = localStorage.getItem('userInfo')
+    let userInfo = {}
+    if (userInfo) userInfo = JSON.parse(userInfoStr)
+    const user = {key, userInfo}
+    commit('UPDATE_USER_INFO', user)
     commit('SET_BEARER')
   },
   fetchAccessToken () {

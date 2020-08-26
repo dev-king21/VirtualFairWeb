@@ -17,19 +17,21 @@ class AdminAuthController extends Controller
         if (!Auth::guard('admin')->attempt($credentials))
             return response()->json(['error' => 'Unauthorized', $credentials]);  */
         
-        $user = AdminUser::where('email', $request->post('key'))->first();
-        if (!isset($user) || !Hash::check($request->post('password'), $user->password)) {
+        $admin = AdminUser::where('email', $request->post('key'))->first();
+        if (!isset($admin) || !Hash::check($request->post('password'), $admin->password)) {
             return response()->json(['error' => 'Unauthorized']);
         }
+        $admin->load('user');
 
-        $tokenResult = $user->createToken('Virtual Fair Admin Api Token');
+        $tokenResult = $admin->createToken('Virtual Fair Admin Api Token');
         $token = $tokenResult->token;
         if ($request->remember_me)
             $token->expires_at = Carbon::now()->addWeeks(1);
         
         $token->save();
         return response()->json([
-            'key' => $user->email,
+            'key' => $admin->email,
+            'user' => $admin->user,
             'access_token' => $tokenResult->accessToken,
             'token_type' => 'Bearer',
             'expires_at' => Carbon::parse(
