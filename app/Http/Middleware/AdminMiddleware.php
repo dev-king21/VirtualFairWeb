@@ -10,10 +10,10 @@ class AdminMiddleware
     {
         $user = $request->user();
         if (!isset($user)) {
-            return response()->json(["status" => "not_admin"]);
+            return response()->json(["status" => "error", "message"=> "not_admin"], 401);
         }
         if ( $user->role !== 'admin' && $user->role !== 'super' ) {
-            return response()->json(["status" => "not_admin"]);
+            return response()->json(["status" => "error", "message"=> "not_admin"], 401);
         }
         return $next($request);
     }
