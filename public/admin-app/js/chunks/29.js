@@ -3401,9 +3401,7 @@ var VxTour = function VxTour() {
     var activated = localStorage.getItem('activateKey');
 
     if (activated && activated.length > 4) {
-      this.$store.dispatch('auth/logged').then(function () {
-        console.log(_this.$store.state.auth);
-      });
+      this.$store.dispatch('auth/logged').then(function () {});
     }
   },
   beforeDestroy: function beforeDestroy() {

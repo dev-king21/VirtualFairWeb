@@ -6,6 +6,7 @@ export default {
     return new Promise((resolve, reject) => {
       axios.get('/api/user/all')
         .then((response) => {
+          console.log(response.data)
           commit('SET_USERS', response.data)
           resolve(response)
         })

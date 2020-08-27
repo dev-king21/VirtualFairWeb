@@ -705,6 +705,7 @@ __webpack_require__.r(__webpack_exports__);
     var commit = _ref.commit;
     return new Promise(function (resolve, reject) {
       _axios_js__WEBPACK_IMPORTED_MODULE_0__["default"].get('/api/user/all').then(function (response) {
+        console.log(response.data);
         commit('SET_USERS', response.data);
         resolve(response);
       })["catch"](function (error) {
