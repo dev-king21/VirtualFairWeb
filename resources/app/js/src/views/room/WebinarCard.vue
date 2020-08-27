@@ -22,7 +22,7 @@
             </span>
         </div>
         <div class="flex flex-row items-center mt-3 px-4">
-            <img class="user-img" :src="`/fair_image/${user_img}`"/>
+            <img class="user-img" :src="`/fair_image/${user_img ? user_img : 'placeholder.png'}`"/>
             <div class="ml-4 user-info">
                 <div class="fs-12 font-bold">Lic. {{expositor_name}}</div>
                 <div>{{expositor_profession}}</div>

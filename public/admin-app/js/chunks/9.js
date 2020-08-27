@@ -1304,7 +1304,7 @@ var render = function() {
                           _vm._v(" "),
                           _c("vs-td", [
                             _c("p", { staticClass: "product-category" }, [
-                              _vm._v(_vm._s(tr.password_key))
+                              _vm._v(_vm._s(tr.password))
                             ])
                           ]),
                           _vm._v(" "),

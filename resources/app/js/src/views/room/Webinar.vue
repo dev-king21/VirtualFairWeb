@@ -43,7 +43,7 @@
                             <div class="px-4">
                               <swiper :options="swiperOption">
                                 <swiper-slide :key="`swiper-item-${index}`" v-for="(item, index) in ads_list">
-                                  <img class="responsive" :src="`/fair_image/${item.url}`" alt="">
+                                  <img class="responsive" :src="`/fair_image/${item.url ? item.url : 'placeholder.png'}`" alt="">
                                   <!-- @assets/images/pages/carousel/banner-16.jpg-->
                                 </swiper-slide>
                                 <div class="swiper-pagination swiper-pagination2" slot="pagination"></div>

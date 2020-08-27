@@ -24,7 +24,7 @@
             {{title}}
         </div>
         <div class="flex flex-row items-center mt-2 px-4">
-            <img class="user-img" :src="`/fair_image/${user_img}`"/>
+            <img class="user-img" :src="`/fair_image/${user_img ? user_img : 'placeholder.png'}`"/>
             <div class="ml-4 user-info">
                 Lic. {{expositor_name}}<br>
                 {{expositor_profession}}

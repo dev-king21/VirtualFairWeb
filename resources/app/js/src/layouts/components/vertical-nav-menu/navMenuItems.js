@@ -75,7 +75,7 @@ export default [
   },
   {
     url: null,
-    name: 'Room',
+    name: 'Room & Webinars',
     icon: 'PackageIcon',
     i18n: 'Room',
     submenu: [
@@ -120,7 +120,7 @@ export default [
   },
   {
     url: null,
-    name: 'Fair',
+    name: 'Fair & Stands',
     icon: 'PackageIcon',
     i18n: 'Fair',
     submenu: [

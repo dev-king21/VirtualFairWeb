@@ -52,7 +52,7 @@
                         <div class="ml-4 mr-8">
                           <swiper :options="swiperOption">
                             <swiper-slide :key="`swiper-item-${index}`" v-for="(item, index) in ads_list">
-                              <img class="responsive" :src="`/fair_image/${item.url}`" alt="">
+                              <img class="responsive" :src="`/fair_image/${item.url ? item.url : 'placeholder.png'}`" alt="">
                               <!-- @assets/images/pages/carousel/banner-16.jpg-->
                             </swiper-slide>
                             <div class="swiper-pagination swiper-pagination2" slot="pagination"></div>
@@ -119,6 +119,7 @@ export default {
   },
   methods: {
     period (start_time, end_time) {
+      if(start_time === null || end_time === null) return ''
       const sd = this.$date.timeFormat(start_time)
       const ed = this.$date.timeFormat(end_time)  
       return `${sd} - ${ed}`  

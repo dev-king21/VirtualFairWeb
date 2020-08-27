@@ -189,7 +189,7 @@
               <p class="product-category">{{tr.key}}</p>
             </vs-td>
             <vs-td>
-              <p class="product-category">{{tr.password_key}}</p>
+              <p class="product-category">{{tr.password}}</p>
             </vs-td>
 
             <vs-td>

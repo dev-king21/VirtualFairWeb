@@ -37,7 +37,7 @@
           <a class="h2" href="/app/home/webinar">Webinars</a>
       </vs-navbar-item>
 
-      <vs-navbar-item index="3" v-show="!hideNavbar">
+      <vs-navbar-item index="2" v-show="!hideNavbar">
           <a class="h2" href="/app/home/contact">Contactenos</a>
       </vs-navbar-item>
 
@@ -53,7 +53,7 @@
       <vs-navbar-item index="0" v-show="!hideNavbar&&loggedIn">
           <a class="h2" href="/app/home/sustainability">sostenibilidad</a>
       </vs-navbar-item>
-       <vs-navbar-item index="1" v-show="!hideNavbar&&!loggedIn">
+      <vs-navbar-item index="1" v-show="!hideNavbar&&!loggedIn">
           <a class="h2" href="/app/home/sponsor">patrocinadores</a>
       </vs-navbar-item>
       <vs-navbar-item index="2" v-show="!hideNavbar">
@@ -180,8 +180,8 @@ export default {
       margin: 0;
       cursor: pointer;
       a {
-        font-size: 1.1rem;
-        padding: 2.5rem;
+        font-size: 1rem;
+        padding: 2.5rem 1.2rem;
         text-transform: uppercase;
         font-weight: 600;
         font-family: 'Lato';

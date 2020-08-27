@@ -579,7 +579,11 @@ var render = function() {
                                     _c("img", {
                                       staticClass: "responsive",
                                       attrs: {
-                                        src: "/fair_image/" + item.url,
+                                        src:
+                                          "/fair_image/" +
+                                          (item.url
+                                            ? item.url
+                                            : "placeholder.png"),
                                         alt: ""
                                       }
                                     })
@@ -741,7 +745,10 @@ var render = function() {
       _c("div", { staticClass: "flex flex-row items-center mt-3 px-4" }, [
         _c("img", {
           staticClass: "user-img",
-          attrs: { src: "/fair_image/" + _vm.user_img }
+          attrs: {
+            src:
+              "/fair_image/" + (_vm.user_img ? _vm.user_img : "placeholder.png")
+          }
         }),
         _vm._v(" "),
         _c("div", { staticClass: "ml-4 user-info" }, [

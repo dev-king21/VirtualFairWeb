@@ -199,6 +199,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     period: function period(start_time, end_time) {
+      if (start_time === null || end_time === null) return '';
       var sd = this.$date.timeFormat(start_time);
       var ed = this.$date.timeFormat(end_time);
       return "".concat(sd, " - ").concat(ed);
@@ -721,7 +722,9 @@ var render = function() {
                                 _c("img", {
                                   staticClass: "responsive",
                                   attrs: {
-                                    src: "/fair_image/" + item.url,
+                                    src:
+                                      "/fair_image/" +
+                                      (item.url ? item.url : "placeholder.png"),
                                     alt: ""
                                   }
                                 })
@@ -912,7 +915,10 @@ var render = function() {
       _c("div", { staticClass: "flex flex-row items-center mt-2 px-4" }, [
         _c("img", {
           staticClass: "user-img",
-          attrs: { src: "/fair_image/" + _vm.user_img }
+          attrs: {
+            src:
+              "/fair_image/" + (_vm.user_img ? _vm.user_img : "placeholder.png")
+          }
         }),
         _vm._v(" "),
         _c("div", { staticClass: "ml-4 user-info" }, [

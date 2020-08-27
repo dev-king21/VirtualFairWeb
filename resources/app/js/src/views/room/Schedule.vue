@@ -36,7 +36,7 @@
                         <div>
 
                         </div>
-                        <div class="vx-row" >
+                        <div class="vx-row">
                             <div class="vx-col w-1/3" :key="`all-schedule-${index}`" v-for="(item, index) in webinars" >
                                 <schedule-card 
                                     :reserved="item.talk_date === today"
@@ -78,6 +78,9 @@ export default {
   },
   methods: {
     period (start_time, end_time) {
+      if(start_time === null || end_time === null) {
+        return ''
+      }
       const sd = this.$date.timeFormat(start_time)
       const ed = this.$date.timeFormat(end_time)  
       return `${sd} - ${ed}`  
@@ -118,6 +121,7 @@ export default {
         const data = response.data
         this.today = data.today
         this.webinars = data.webinars
+        console.log("webinars", this.webinars)
         if (response.data.status === 'ok') {
           this.$vs.notify({
             title: 'éxito',
