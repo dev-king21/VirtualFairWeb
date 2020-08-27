@@ -42,19 +42,22 @@ class StandController extends Controller
         $user = $request->user();
         $payment = new Payment;
         $payment->link = $request->post('link');
-        $payment->payer_id = $request->post('link');
-        $payment->payer_country = $request->post('link');
-        $payment->payer_name = $request->post('link');
-        $payment->payer_email = $request->post('link');
-        $payment->payment_amount = $request->post('link');
-        $payment->payment_status = $request->post('link');
-        $payment->payment_capture_id = $request->post('link');
-        $payment->update_time = $request->post('link');
-        $payment->status = $request->post('link');
+        $payment->payer_id = $request->post('payer_id');
+        $payment->payer_country = $request->post('payer_country');
+        $payment->payer_name = $request->post('payer_name');
+        $payment->payer_email = $request->post('payer_email');
+        $payment->payment_amount = $request->post('payment_amount');
+        $payment->payment_status = $request->post('payment_status');
+        $payment->payment_capture_id = $request->post('payment_capture_id');
+        $payment->update_time = $request->post('update_time');
+        $payment->status = $request->post('status');
         $payment->user_id = $user->id;
 
         $payment->save();
-
+        $stand = Stand::find($request->post('stand_id'));
+        $stand->user_id = $request->user()->id;
+        $stand->save();
+        
         return response()->json(["status" => "ok"]);
     }
 

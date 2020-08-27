@@ -39,6 +39,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 
 
+var pay_stand_id = 0;
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     AppHeader: _layouts_components_Header_vue__WEBPACK_IMPORTED_MODULE_0__["default"],
@@ -52,6 +53,8 @@ __webpack_require__.r(__webpack_exports__);
     if (!this.$route.params.stand_id) {
       this.$router.back();
     }
+
+    pay_stand_id = this.$route.params.stand_id;
   },
   mounted: function mounted() {
     paypal.Buttons({
@@ -80,11 +83,25 @@ __webpack_require__.r(__webpack_exports__);
             payment_status: details.purchase_units[0].payments.captures[0].status,
             payment_capture_id: details.purchase_units[0].payments.captures[0].id,
             update_time: details.update_time,
-            status: details.status
+            status: details.status,
+            stand_id: pay_stand_id
           };
-          this.$http.post('/api/stand/payment/save_transaction', param).then(function () {
-            alert("Transaction completed by ".concat(details.payer.name.given_name));
+          console.log(param);
+          return fetch('/api/stand/payment/save_transaction', {
+            method: 'post',
+            headers: {
+              'content-type': 'application/json',
+              'Authorization': "Bearer ".concat(localStorage.getItem('accessToken'))
+            },
+            body: JSON.stringify(param)
+          }).then(function () {
+            location.href = '/app/stand/home';
           });
+          /* this.$http.post('/api/stand/payment/save_transaction', param)
+            .then(() => {
+              alert(`Transaction completed by ${  details.payer.name.given_name}`)
+            }) */
+
           /* this.$http.post('/api/stand/payment/', param)
             .then(res => {
               

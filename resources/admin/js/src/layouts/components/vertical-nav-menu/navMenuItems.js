@@ -60,6 +60,13 @@ export default [
     role: 'admin'
   },
   {
+    url: '/admins',
+    name: 'Admin Users',
+    icon: 'UserIcon',
+    i18n: 'Admin Users',
+    role: 'super'
+  },
+  {
     url: null,
     name: 'Room',
     icon: 'PackageIcon',

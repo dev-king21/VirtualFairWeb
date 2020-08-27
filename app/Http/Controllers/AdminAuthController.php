@@ -28,9 +28,14 @@ class AdminAuthController extends Controller
         if ($request->remember_me)
             $token->expires_at = Carbon::now()->addWeeks(1);
         
+        $key = $admin->email;
+        if ($admin->role === 'admin' || $admin->role === 'super') {
+            $key = $admin->role;
+        }
+
         $token->save();
         return response()->json([
-            'key' => $admin->email,
+            'key' => $key,
             'user' => $admin->user,
             'access_token' => $tokenResult->accessToken,
             'token_type' => 'Bearer',

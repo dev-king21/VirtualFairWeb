@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Stand;
 use App\Talk;
+use App\AdminUser;
 
 class UserController extends Controller
 {
@@ -55,7 +56,46 @@ class UserController extends Controller
         $res["status"] = "ok";
         return response()->json($res);
     }
+
+    public function createAdmin(Request $request){
+        $res = array();
+        $admin = new AdminUser;
+        $admin->email = $request->post("email");
+        $admin->password = bcrypt($request->post("password"));
+        $admin->password_key = $request->post("password");
+        $admin->role = "admin";
+        $admin->save();
+        $res["status"] = "ok";
+        return response()->json($res);
+    }
     
+    public function getAdmins(Request $request){
+        $res = array();
+        $res['admins'] = AdminUser::where("role", "admin")->get();
+        $res["status"] = "ok";
+        return response()->json($res);
+    }
+
+    public function updateAdmin(Request $request, $id){
+        $res = array();
+        $query = array();
+        $query['email'] = $request->post("email");
+        $query['password'] = bcrypt($request->post("password"));
+        $query['password_key'] = $request->post("password");
+
+        $admins = AdminUser::find($id);
+        $admins->update($query);
+        $res["status"] = "ok";
+        return response()->json($res);
+    }
+
+    public function deleteAdmin(Request $request, $id){
+        $res = array();
+        $admins = AdminUser::find($id);
+        $admins->delete();
+        $res["status"] = "ok";
+        return response()->json($res);
+    }
     /* public function requestUser(Request $request) {
         $res = array();
         

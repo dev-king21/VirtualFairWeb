@@ -24,6 +24,11 @@ const router = new Router({
           component: () => import('@/views/user/user-list/UserList.vue')
         },
         {
+          path: '/admins',
+          name: 'admins',
+          component: () => import('@/views/admins/Admins.vue')
+        },
+        {
           path: '/exhibitor',
           name: 'exhibitor',
           component: () => import('@/views/exhibitor/Webinar.vue')
@@ -1485,7 +1490,7 @@ router.beforeEach((to, from, next) => {
   const activateKey = localStorage.getItem('activateKey')
   if (to.name === 'root' || to.name === 'auth-login') return next()
   if (!activateKey) return next('/auth/login')
-  if (to.name !== 'exhibitor' && activateKey !== 'admin') return next('/auth/login')
+  if (to.name !== 'exhibitor' && activateKey !== 'admin' &&  activateKey !== 'super') return next('/auth/login')
   next()
 })
 

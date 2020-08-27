@@ -2150,12 +2150,18 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
+  watch: {},
   data: function data() {
     return {};
   },
   computed: {
     activeUserInfo: function activeUserInfo() {
       if (this.$store.state.auth.admin) return {
+        first_name: 'admin',
+        last_name: 'user',
+        avatar: ''
+      };
+      if (this.$store.state.auth["super"]) return {
         first_name: 'super',
         last_name: 'user',
         avatar: ''
@@ -2501,6 +2507,9 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
   computed: {
     isAdmin: function isAdmin() {
       return this.$store.state.auth.admin;
+    },
+    isSuper: function isSuper() {
+      return this.$store.state.auth["super"];
     },
     isGroupActive: function isGroupActive() {
       var _this = this;
@@ -7208,7 +7217,8 @@ var render = function() {
                             (!item.submenu &&
                               item.role &&
                                 item.role === "admin" &&
-                                _vm.isAdmin) ||
+                                (_vm.isAdmin || _vm.isSuper)) ||
+                            (item.role === "super" && _vm.isSuper) ||
                             !item.role
                               ? _c(
                                   "v-nav-menu-item",
@@ -7268,7 +7278,8 @@ var render = function() {
                                 )
                               : (item.role &&
                                   item.role === "admin" &&
-                                  _vm.isAdmin) ||
+                                  (_vm.isAdmin || _vm.isSuper)) ||
+                                (item.role === "super" && _vm.isSuper) ||
                                 !item.role
                               ? [
                                   _c("v-nav-menu-group", {
@@ -9484,6 +9495,12 @@ __webpack_require__.r(__webpack_exports__);
   icon: 'UserIcon',
   i18n: 'User',
   role: 'admin'
+}, {
+  url: '/admins',
+  name: 'Admin Users',
+  icon: 'UserIcon',
+  i18n: 'Admin Users',
+  role: 'super'
 }, {
   url: null,
   name: 'Room',

@@ -17,7 +17,6 @@ export default {
               localStorage.setItem('userInfo', JSON.stringify(data.user))
             }
             commit('UPDATE_USER_INFO', data)
-            commit('SET_BEARER', data.access_token)
             resolve()
           } else {
             reject({message: 'Wrong Key or Password'})

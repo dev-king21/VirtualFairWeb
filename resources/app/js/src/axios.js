@@ -17,7 +17,6 @@ instance.interceptors.request.use(function (config) {
 
 instance.interceptors.response.use(response => response,
   error => {
-    console.log(error.message)
     if (error.message.lastIndexOf('status code 401') !== -1) {
       localStorage.removeItem('userInfo')
       location.href = '/app/home'

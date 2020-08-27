@@ -286,6 +286,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.isAddShow = true;
     },
     editRecord: function editRecord(id) {
+      console.log(id);
       this.editId = id;
       this.isAddOrEdit = 1;
       this.popupTitle = 'Edit Room';
@@ -301,6 +302,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       var _this = this;
 
       var action = "/api/room/update/".concat(id);
+      console.log(action);
       var newData = {
         status: 0
       };
@@ -345,6 +347,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$http.get(action).then(function (response) {
         var res = response.data;
         _this3.rooms = res.rooms;
+        console.log(_this3.rooms);
 
         _this3.$loading.hide(_this3);
       })["catch"](function (error) {
@@ -356,12 +359,14 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
       var action = '/api/room/create';
       if (this.isAddOrEdit === 1) action = "/api/room/update/".concat(this.editId);
+      console.log(action);
       var newData = {
         name: this.name,
         country_id: this.country_id.value,
         description: this.description,
         status: 1
       };
+      console.log(newData);
       if (this.name === '' || this.country_id === 0 || this.description === '') return;
       this.$loading.show(this);
       this.$http.post(action, newData).then(function (response) {
@@ -407,6 +412,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
             label: _this5.countries[i].name
           });
         }
+
+        console.log(_this5.countryOptions);
 
         _this5.$loading.hide(_this5);
       })["catch"](function (error) {

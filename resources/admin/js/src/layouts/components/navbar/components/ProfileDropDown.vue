@@ -66,6 +66,8 @@
 <script>
 
 export default {
+  watch: {
+  },
   data () {
     return {
 
@@ -73,7 +75,8 @@ export default {
   },
   computed: {
     activeUserInfo () {
-      if (this.$store.state.auth.admin) return {first_name: 'super', last_name: 'user', avatar: ''}
+      if (this.$store.state.auth.admin) return {first_name: 'admin', last_name: 'user', avatar: ''}
+      if (this.$store.state.auth.super) return {first_name: 'super', last_name: 'user', avatar: ''}
       //console.log(this.$store.state.userInfo)
       return this.$store.state.auth.userInfo
     }

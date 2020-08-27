@@ -28,6 +28,7 @@
 import AppHeader from '@/layouts/components/Header.vue'
 import BreadCrumb from '@/views/custom/BreadCrumb.vue'
 
+let pay_stand_id = 0
 export default {
   components: {
     AppHeader,
@@ -45,6 +46,7 @@ export default {
     if (!this.$route.params.stand_id) {
       this.$router.back()  
     }
+    pay_stand_id = this.$route.params.stand_id
   },
   mounted () {
     paypal.Buttons({
@@ -75,12 +77,26 @@ export default {
             payment_status: details.purchase_units[0].payments.captures[0].status,
             payment_capture_id:  details.purchase_units[0].payments.captures[0].id,
             update_time: details.update_time,
-            status: details.status
+            status: details.status,
+            stand_id: pay_stand_id
           }
-          this.$http.post('/api/stand/payment/save_transaction', param)
+          console.log(param)
+          return fetch('/api/stand/payment/save_transaction', {
+            method: 'post',
+            headers: {
+              'content-type': 'application/json',
+              'Authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            },
+            body: JSON.stringify(param)
+          }).then(() => {
+            location.href = '/app/stand/home'
+          })
+        
+
+          /* this.$http.post('/api/stand/payment/save_transaction', param)
             .then(() => {
               alert(`Transaction completed by ${  details.payer.name.given_name}`)
-            })
+            }) */
           /* this.$http.post('/api/stand/payment/', param)
             .then(res => {
               
