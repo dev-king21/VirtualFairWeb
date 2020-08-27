@@ -144,7 +144,11 @@ __webpack_require__.r(__webpack_exports__);
 
       var data = response.data;
       _this3.webinar = data.webinar;
-      _this3.user = data.webinar.user;
+      if (_this3.webinar) _this3.user = data.webinar.user;
+
+      if (!_this3.webinar || !_this3.user) {
+        _this3.$router.back();
+      }
 
       if (response.data.status === 'ok') {
         _this3.$vs.notify({
@@ -337,107 +341,121 @@ var render = function() {
         [
           _c("nav-back-button"),
           _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass:
-                "flex items-center text-white mx-4 justify-between w-full"
-            },
-            [
-              _c(
+          _vm.webinar
+            ? _c(
                 "div",
-                { staticClass: "ml-4 h5 font-bold font-italic text-white" },
-                [_vm._v(_vm._s(_vm.webinar.title))]
-              ),
-              _vm._v(" "),
-              _c(
-                "div",
-                { staticClass: "flex items-center text-white justify-end" },
+                {
+                  staticClass:
+                    "flex items-center text-white mx-4 justify-between w-full"
+                },
                 [
                   _c(
                     "div",
-                    { staticClass: "flex items-center cursor-pointer mr-10" },
+                    { staticClass: "ml-4 h5 font-bold font-italic text-white" },
+                    [_vm._v(_vm._s(_vm.webinar.title))]
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "flex items-center text-white justify-end" },
                     [
-                      _c("img", {
-                        staticClass: "user-img",
-                        attrs: { src: "/fair_image/" + _vm.user.avatar }
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "uppercase ml-2" }, [
-                        _c(
-                          "div",
-                          {
-                            staticClass: "h6 font-italic font-bold text-white"
-                          },
-                          [_vm._v("Expositor:")]
-                        ),
-                        _vm._v(" "),
-                        _c("div", { staticClass: "fs-8 ml-3" }, [
-                          _vm._v(
-                            "\r\n                      Lic. " +
-                              _vm._s(_vm.user.first_name) +
-                              " " +
-                              _vm._s(_vm.user.last_name) +
-                              " "
-                          ),
-                          _c("br"),
-                          _vm._v(
-                            "\r\n                      " +
-                              _vm._s(_vm.user.address) +
-                              "\r\n                    "
+                      _vm.user
+                        ? _c(
+                            "div",
+                            {
+                              staticClass:
+                                "flex items-center cursor-pointer mr-10"
+                            },
+                            [
+                              _c("img", {
+                                staticClass: "user-img",
+                                attrs: {
+                                  src:
+                                    "/fair_image/" +
+                                    (_vm.user.avatar
+                                      ? _vm.user.avatar
+                                      : "placeholder.png")
+                                }
+                              }),
+                              _vm._v(" "),
+                              _c("div", { staticClass: "uppercase ml-2" }, [
+                                _c(
+                                  "div",
+                                  {
+                                    staticClass:
+                                      "h6 font-italic font-bold text-white"
+                                  },
+                                  [_vm._v("Expositor:")]
+                                ),
+                                _vm._v(" "),
+                                _c("div", { staticClass: "fs-8 ml-3" }, [
+                                  _vm._v(
+                                    "\r\n                      Lic. " +
+                                      _vm._s(_vm.user.first_name) +
+                                      " " +
+                                      _vm._s(_vm.user.last_name) +
+                                      " "
+                                  ),
+                                  _c("br"),
+                                  _vm._v(
+                                    "\r\n                      " +
+                                      _vm._s(_vm.user.address) +
+                                      "\r\n                    "
+                                  )
+                                ])
+                              ])
+                            ]
                           )
-                        ])
-                      ])
+                        : _vm._e(),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "flex items-center cursor-pointer mx-4",
+                          on: {
+                            click: function($event) {
+                              return _vm.downloadWebinar()
+                            }
+                          }
+                        },
+                        [
+                          _c("feather-icon", {
+                            attrs: { size: "w-8 h-8", icon: "DownloadIcon" }
+                          }),
+                          _vm._v(" "),
+                          _c("div", { staticClass: "uppercase ml-2 fs-8" }, [
+                            _vm._v(
+                              "\r\n                    descargar\r\n                  "
+                            )
+                          ])
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        {
+                          staticClass: "flex items-center cursor-pointer mx-4",
+                          on: {
+                            click: function($event) {
+                              return _vm.addToBoard()
+                            }
+                          }
+                        },
+                        [
+                          _c("svg-icon", {
+                            attrs: { size: "w-8 h-8", icon: "webinar" }
+                          }),
+                          _vm._v(" "),
+                          _vm._m(0)
+                        ],
+                        1
+                      )
                     ]
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "flex items-center cursor-pointer mx-4",
-                      on: {
-                        click: function($event) {
-                          return _vm.downloadWebinar()
-                        }
-                      }
-                    },
-                    [
-                      _c("feather-icon", {
-                        attrs: { size: "w-8 h-8", icon: "DownloadIcon" }
-                      }),
-                      _vm._v(" "),
-                      _c("div", { staticClass: "uppercase ml-2 fs-8" }, [
-                        _vm._v(
-                          "\r\n                    descargar\r\n                  "
-                        )
-                      ])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    {
-                      staticClass: "flex items-center cursor-pointer mx-4",
-                      on: {
-                        click: function($event) {
-                          return _vm.addToBoard()
-                        }
-                      }
-                    },
-                    [
-                      _c("svg-icon", {
-                        attrs: { size: "w-8 h-8", icon: "webinar" }
-                      }),
-                      _vm._v(" "),
-                      _vm._m(0)
-                    ],
-                    1
                   )
                 ]
               )
-            ]
-          )
+            : _vm._e()
         ],
         1
       ),

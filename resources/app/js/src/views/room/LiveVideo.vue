@@ -4,11 +4,11 @@
     <div class="flex w-full breadcrumb justify-between" >
       <!-- <div class="flex flex-row nav-item"> -->
           <nav-back-button/>
-          <div class="flex items-center text-white mx-4 justify-between w-full">
+          <div class="flex items-center text-white mx-4 justify-between w-full" v-if="webinar">
               <div class="ml-4 h5 font-bold font-italic text-white">{{webinar.title}}</div>
               <div class="flex items-center text-white justify-end">
-                <div class="flex items-center cursor-pointer mr-10">
-                  <img class="user-img" :src="`/fair_image/${user.avatar}`" />
+                <div class="flex items-center cursor-pointer mr-10" v-if="user">
+                  <img class="user-img" :src="`/fair_image/${user.avatar ? user.avatar : 'placeholder.png'}`" />
                   <div class="uppercase ml-2">
                     <div class="h6 font-italic font-bold text-white">Expositor:</div>
                     <div class="fs-8 ml-3">
@@ -120,7 +120,11 @@ export default {
         this.$loading.hide(this)
         const data = response.data
         this.webinar = data.webinar
-        this.user = data.webinar.user
+        if (this.webinar) this.user = data.webinar.user
+        if(!this.webinar||!this.user) 
+        {
+          this.$router.back()
+        }
         if (response.data.status === 'ok') {
           this.$vs.notify({
             title: 'éxito',
