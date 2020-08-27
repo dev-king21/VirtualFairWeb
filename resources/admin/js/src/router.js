@@ -139,7 +139,7 @@ const router = new Router({
         {
           path: '/payment',
           name: 'payment',
-          component: () => import('@/views/DashboardAnalytics.vue')
+          component: () => import('@/views/payment/Payment.vue')
         },
         {
           path: '/settings/country',
@@ -158,11 +158,17 @@ const router = new Router({
         {
           path: '/settings/fair-type/edit',
           name: 'fair-type-create',
+          meta: {
+            parent: 'fair-type'  
+          },
           component: () => import('@/views/setting/fair/FairTypeEdit.vue')
         },
         {
           path: '/settings/fair-type/edit/:ftype_id',
           name: 'fair-type-edit',
+          meta: {
+            parent: 'fair-type'  
+          },
           component: () => import('@/views/setting/fair/FairTypeEdit.vue')
         },
         {
@@ -173,11 +179,17 @@ const router = new Router({
         {
           path: '/settings/stand-type/edit',
           name: 'stand-type-create',
+          meta: {
+            parent: 'stand-type'  
+          },
           component: () => import('@/views/setting/fair/StandTypeEdit.vue')
         },
         {
           path: '/settings/stand-type/edit/:stype_id',
           name: 'stand-type-edit',
+          meta: {
+            parent: 'stand-type'  
+          },
           component: () => import('@/views/setting/fair/StandTypeEdit.vue')
         },
         {
@@ -187,15 +199,22 @@ const router = new Router({
         {
           path: '/settings/stand-type-item/:stype_id',
           name: 'stand-type-item',
+          meta: {
+            parent: 'stand-type-item'  
+          },
           component: () => import('@/views/setting/fair/StandTypeItems.vue')
         },
         {
           path: '/settings/stand-location',
+          name: 'stand-location-home',
           redirect: '/settings/stand-location/1'
         },
         {
           path: '/settings/stand-location/:ftype_id',
           name: 'stand-location',
+          meta: {
+            parent: 'stand-location-home'  
+          },
           component: () => import('@/views/setting/fair/StandLocation.vue')
         },
         {

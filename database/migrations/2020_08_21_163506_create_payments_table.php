@@ -26,6 +26,7 @@ class CreatePaymentsTable extends Migration
             $table->string('update_time');
             $table->string('status');
             $table->integer('user_id');
+            $table->integer('stand_id');
             $table->timestamps();
         });
     }

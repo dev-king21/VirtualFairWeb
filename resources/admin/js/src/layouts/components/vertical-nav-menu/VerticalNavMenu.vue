@@ -146,14 +146,18 @@ export default {
     },
     isGroupActive () {
       return (item) => {
+        
         const path        = this.$route.fullPath
         const routeParent = this.$route.meta ? this.$route.meta.parent : undefined
         let open          = false
-
         const func = (item) => {
           if (item.submenu) {
             item.submenu.forEach((item) => {
-              if (item.url && (path === item.url || routeParent === item.slug)) { open = true } else if (item.submenu) { func(item) }
+              //if (item.url !== '/settings/fair-type/show') console.log(path, item.url, routeParent, item.slug)
+              if (item.url && (path === item.url || routeParent === item.slug)) {
+                open = true 
+                console.log(path, item.url, routeParent, item.slug)
+              } else if (item.submenu) { func(item) }
             })
           }
         }

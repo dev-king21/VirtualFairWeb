@@ -121,6 +121,7 @@ Route::group(['middleware' => ['auth:admin']], function() {
         Route::post('/admins/update/{id}', 'UserController@updateAdmin')->middleware('is_super');
         Route::post('/admins/delete/{id}', 'UserController@deleteAdmin')->middleware('is_super');
 
+        Route::post('/payment/all', 'StandController@get_all_payments');    
 
         //advertisement
         Route::post('/setting/ads/create', 'AdsController@createAds');

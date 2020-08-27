@@ -53,13 +53,23 @@ class StandController extends Controller
         $payment->update_time = $request->post('update_time');
         $payment->status = $request->post('status');
         $payment->user_id = $user->id;
-
+        $payment->stand_id = $request->post('stand_id');
         $payment->save();
+
         $stand = Stand::find($request->post('stand_id'));
         $stand->user_id = $request->user()->id;
         $stand->save();
 
         return response()->json(["status" => "ok"]);
+    }
+
+    public function get_all_payments(Request $request) {
+        $res = array();
+        $res["payments"] = Payment::with(['user', 'stand' => function($qr) {
+            $qr->with(['fair', 'country'])->get();
+        }])->get();
+
+        return response()->json($res);
     }
 
     public function purchase_intent(Request $request) {

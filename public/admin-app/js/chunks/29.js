@@ -1503,14 +1503,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 
@@ -2522,8 +2514,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var func = function func(item) {
           if (item.submenu) {
             item.submenu.forEach(function (item) {
+              //if (item.url !== '/settings/fair-type/show') console.log(path, item.url, routeParent, item.slug)
               if (item.url && (path === item.url || routeParent === item.slug)) {
                 open = true;
+                console.log(path, item.url, routeParent, item.slug);
               } else if (item.submenu) {
                 func(item);
               }
@@ -5800,14 +5794,6 @@ var render = function() {
               1
             ),
             _vm._v(" "),
-            _c("i18n"),
-            _vm._v(" "),
-            _c("search-bar"),
-            _vm._v(" "),
-            _c("cart-drop-down"),
-            _vm._v(" "),
-            _c("notification-drop-down"),
-            _vm._v(" "),
             _c("profile-drop-down")
           ],
           1
@@ -5868,14 +5854,6 @@ var render = function() {
               : _vm._e(),
             _vm._v(" "),
             _c("vs-spacer"),
-            _vm._v(" "),
-            _c("i18n"),
-            _vm._v(" "),
-            _c("search-bar"),
-            _vm._v(" "),
-            _c("cart-drop-down"),
-            _vm._v(" "),
-            _c("notification-drop-down"),
             _vm._v(" "),
             _c("profile-drop-down")
           ],
@@ -9470,20 +9448,17 @@ __webpack_require__.r(__webpack_exports__);
   url: null,
   name: 'Contact',
   icon: 'MailIcon',
-  i18n: 'Contact',
+  slug: 'contact',
   role: 'admin',
   submenu: [{
     url: '/contact/query',
     name: 'Query Contacts',
-    slug: 'email',
+    slug: 'query contacts',
     icon: 'MailIcon'
-    /* ,
-    i18n: 'AllUsers' */
-
   }, {
     url: '/contact/contact_message',
     name: 'Contact Message',
-    slug: 'chat',
+    slug: 'contact message',
     icon: 'MessageSquareIcon'
     /* ,
     i18n: 'Chat' */
@@ -9493,49 +9468,34 @@ __webpack_require__.r(__webpack_exports__);
   url: '/user',
   name: 'User',
   icon: 'UserIcon',
-  i18n: 'User',
+  slug: 'user',
   role: 'admin'
 }, {
   url: '/admins',
   name: 'Admin Users',
   icon: 'UserIcon',
-  i18n: 'Admin Users',
+  slug: 'admin users',
   role: 'super'
 }, {
   url: null,
   name: 'Room',
   icon: 'PackageIcon',
-  i18n: 'Room',
+  slug: 'room',
   role: 'admin',
   submenu: [{
     url: '/room/all',
     name: 'All Rooms',
-    slug: 'email',
+    slug: 'all rooms',
     icon: 'MailIcon'
-  },
-  /* {
-    url: '/room/request_talk',
-    name: 'Request Webinars',
-    slug: 'chat',
-    icon: 'MessageSquareIcon'
-  }, */
-  {
+  }, {
     url: '/room/scheduled_talk',
     name: 'Reservados Webinars',
-    slug: 'todo',
+    slug: 'reserved webinars',
     icon: 'CheckSquareIcon'
-  },
-  /*  {
-    url: '/room/live_talk',
-    name: 'Live Webinars',
-    slug: 'calendar-simple-calendar',
-    icon: 'CalendarIcon',
-    tagColor: 'success'
-  }, */
-  {
+  }, {
     url: '/room/past_talk',
     name: 'VISTOS Webinars',
-    slug: 'calendar-simple-calendar',
+    slug: 'past Webinars',
     icon: 'CalendarIcon',
     tagColor: 'success'
     /* ,
@@ -9546,12 +9506,12 @@ __webpack_require__.r(__webpack_exports__);
   url: null,
   name: 'Fair',
   icon: 'PackageIcon',
-  i18n: 'Fair',
+  slug: 'fair',
   role: 'admin',
   submenu: [{
     url: '/fair/all',
     name: 'All Fairs',
-    slug: 'email',
+    slug: 'all fairs',
     icon: 'MailIcon'
     /* ,
     i18n: 'AllUsers' */
@@ -9559,7 +9519,7 @@ __webpack_require__.r(__webpack_exports__);
   }, {
     url: '/fair/next',
     name: 'Scheduled Fair',
-    slug: 'todo',
+    slug: 'next fair',
     icon: 'CheckSquareIcon'
     /* ,
     i18n: 'Todo' */
@@ -9567,7 +9527,7 @@ __webpack_require__.r(__webpack_exports__);
   }, {
     url: '/fair/live',
     name: 'Live Fair',
-    slug: 'calendar-simple-calendar',
+    slug: 'live fair',
     icon: 'CalendarIcon',
     tagColor: 'success'
     /* ,
@@ -9576,7 +9536,7 @@ __webpack_require__.r(__webpack_exports__);
   }, {
     url: '/fair/past',
     name: 'Past Fair',
-    slug: 'calendar-simple-calendar',
+    slug: 'past fair',
     icon: 'CalendarIcon',
     tagColor: 'success'
     /* ,
@@ -9592,11 +9552,12 @@ __webpack_require__.r(__webpack_exports__);
   url: '/payment',
   name: 'Payment',
   icon: 'PackageIcon',
-  i18n: 'Payment',
+  slug: 'Payment',
   role: 'admin'
 }, {
   url: null,
   name: 'Settings',
+  slug: 'settings',
   icon: 'SettingsIcon',
   role: 'admin',
   submenu: [{
@@ -9608,7 +9569,7 @@ __webpack_require__.r(__webpack_exports__);
     i18n: 'AllUsers' */
 
   }, {
-    url: '/settings/fair-type',
+    url: '/settings/fair-type/show',
     name: 'Fair Types',
     slug: 'fair-type',
     icon: 'MailIcon'
@@ -9618,10 +9579,9 @@ __webpack_require__.r(__webpack_exports__);
   }, {
     url: '/settings/stand-location',
     name: 'Stand Locations',
-    slug: 'stand-location',
+    slug: 'stand-location-home',
     icon: 'MailIcon'
-    /* ,
-    i18n: 'AllUsers' */
+    /* ,i18n: 'AllUsers' */
 
   }, {
     url: '/settings/stand-type',
@@ -9648,8 +9608,8 @@ __webpack_require__.r(__webpack_exports__);
 }, {
   url: '/exhibitor',
   name: 'Exhibitor Webinar',
-  icon: 'PackageIcon',
-  i18n: 'Exhibitor Webinar'
+  slug: 'exhibitor webinar',
+  icon: 'PackageIcon'
 }
 /* ,
 {

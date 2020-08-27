@@ -1,11 +1,3 @@
-<!-- =========================================================================================
-  File Name: TheNavbar.vue
-  Description: Navbar component
-  Component Name: TheNavbar
-
-========================================================================================== -->
-
-
 <template>
   <div class="relative">
 
@@ -20,13 +12,13 @@
 
         <vs-spacer />
 
-        <i18n />
+        <!-- <i18n />
 
         <search-bar />
 
         <cart-drop-down />
 
-        <notification-drop-down />
+        <notification-drop-down /> -->
 
         <profile-drop-down />
 

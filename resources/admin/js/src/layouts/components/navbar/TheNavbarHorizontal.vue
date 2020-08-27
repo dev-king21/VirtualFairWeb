@@ -10,16 +10,16 @@
         <span class="vx-logo-text text-primary">Vuexy</span>
       </router-link>
 
-      <i18n />
+      <!-- <i18n />
 
       <search-bar />
 
       <cart-drop-down />
 
-      <notification-drop-down />
+      <notification-drop-down /> -->
 
       <profile-drop-down />
-
+      
     </vs-navbar>
   </div>
 </div>

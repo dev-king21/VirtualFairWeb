@@ -69,14 +69,13 @@ export default {
       formData.append('name', this.ftype_name)
       if (this.building_file) formData.append('building_file', this.building_file)
       if (this.interior_file) formData.append('interior_file', this.interior_file)
-      this.$loading.show(this);
+      this.$loading.show(this)
       this.$http.post(action, formData, headers)
         .then((response) => {
-          this.$loading.hide(this);
+          this.$loading.hide(this)
           const res = response.data
           if (res.status === 'ok' && res.id) this.$router.push({ path: `/settings/fair-type/edit/${res.id}` })
-          if(response.data.status === 'ok')
-          {
+          if (response.data.status === 'ok') {
             this.$vs.notify({
               title: 'éxito',
               text: 'Te has registrado con éxito.',
@@ -84,9 +83,7 @@ export default {
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
-          }
-          else
-          {
+          } else {
             this.$vs.notify({
               title: 'Oyu',
               text: 'Operación fallida',

@@ -33,20 +33,19 @@ export default [
     url:null,
     name:'Contact',
     icon:'MailIcon',
-    i18n:'Contact',
+    slug: 'contact',
     role: 'admin',
     submenu: [
       {
         url: '/contact/query',
         name: 'Query Contacts',
-        slug: 'email',
-        icon: 'MailIcon'/* ,
-        i18n: 'AllUsers' */
+        slug: 'query contacts',
+        icon: 'MailIcon'
       },
       {
         url: '/contact/contact_message',
         name: 'Contact Message',
-        slug: 'chat',
+        slug: 'contact message',
         icon: 'MessageSquareIcon'/* ,
         i18n: 'Chat' */
       }
@@ -56,52 +55,39 @@ export default [
     url: '/user',
     name: 'User',
     icon: 'UserIcon',
-    i18n: 'User',
+    slug: 'user',
     role: 'admin'
   },
   {
     url: '/admins',
     name: 'Admin Users',
     icon: 'UserIcon',
-    i18n: 'Admin Users',
+    slug: 'admin users',
     role: 'super'
   },
   {
     url: null,
     name: 'Room',
     icon: 'PackageIcon',
-    i18n: 'Room',
+    slug: 'room',
     role: 'admin',
     submenu: [
       {
         url: '/room/all',
         name: 'All Rooms',
-        slug: 'email',
+        slug: 'all rooms',
         icon: 'MailIcon'
       },
-      /* {
-        url: '/room/request_talk',
-        name: 'Request Webinars',
-        slug: 'chat',
-        icon: 'MessageSquareIcon'
-      }, */
       {
         url: '/room/scheduled_talk',
         name: 'Reservados Webinars',
-        slug: 'todo',
+        slug: 'reserved webinars',
         icon: 'CheckSquareIcon'
       },
-      /*  {
-        url: '/room/live_talk',
-        name: 'Live Webinars',
-        slug: 'calendar-simple-calendar',
-        icon: 'CalendarIcon',
-        tagColor: 'success'
-      }, */
       {
         url: '/room/past_talk',
         name: 'VISTOS Webinars',
-        slug: 'calendar-simple-calendar',
+        slug: 'past Webinars',
         icon: 'CalendarIcon',
         tagColor: 'success'/* ,
         i18n: 'Calendar' */
@@ -112,27 +98,27 @@ export default [
     url: null,
     name: 'Fair',
     icon: 'PackageIcon',
-    i18n: 'Fair',
+    slug: 'fair',
     role: 'admin',
     submenu: [
       {
         url: '/fair/all',
         name: 'All Fairs',
-        slug: 'email',
+        slug: 'all fairs',
         icon: 'MailIcon'/* ,
         i18n: 'AllUsers' */
       },
       {
         url: '/fair/next',
         name: 'Scheduled Fair',
-        slug: 'todo',
+        slug: 'next fair',
         icon: 'CheckSquareIcon'/* ,
         i18n: 'Todo' */
       },
       {
         url: '/fair/live',
         name: 'Live Fair',
-        slug: 'calendar-simple-calendar',
+        slug: 'live fair',
         icon: 'CalendarIcon',
         tagColor: 'success'/* ,
         i18n: 'Calendar' */
@@ -140,7 +126,7 @@ export default [
       {
         url: '/fair/past',
         name: 'Past Fair',
-        slug: 'calendar-simple-calendar',
+        slug: 'past fair',
         icon: 'CalendarIcon',
         tagColor: 'success'/* ,
         i18n: 'Calendar' */
@@ -157,13 +143,14 @@ export default [
     url: '/payment',
     name: 'Payment',
     icon: 'PackageIcon',
-    i18n: 'Payment',
+    slug: 'Payment',
     role: 'admin'
   },
   
   {
     url: null,
     name: 'Settings',
+    slug: 'settings',
     icon: 'SettingsIcon',
     role: 'admin',
     submenu: [
@@ -175,7 +162,7 @@ export default [
         i18n: 'AllUsers' */
       },
       {
-        url: '/settings/fair-type',
+        url: '/settings/fair-type/show',
         name: 'Fair Types',
         slug: 'fair-type',
         icon: 'MailIcon'/* ,
@@ -184,9 +171,9 @@ export default [
       {
         url: '/settings/stand-location',
         name: 'Stand Locations',
-        slug: 'stand-location',
-        icon: 'MailIcon'/* ,
-        i18n: 'AllUsers' */
+        slug: 'stand-location-home',
+        icon: 'MailIcon'
+        /* ,i18n: 'AllUsers' */
       },
       {
         url: '/settings/stand-type',
@@ -213,8 +200,8 @@ export default [
   {
     url: '/exhibitor',
     name: 'Exhibitor Webinar',
-    icon: 'PackageIcon',
-    i18n: 'Exhibitor Webinar'
+    slug: 'exhibitor webinar',
+    icon: 'PackageIcon'
   }/* ,
   {
     header: 'Apps',
