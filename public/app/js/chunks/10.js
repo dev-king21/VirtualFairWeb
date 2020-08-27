@@ -687,7 +687,10 @@ var render = function() {
       _c("div", { staticClass: "relative card-img" }, [
         _c("img", {
           staticClass: "relative responsive",
-          attrs: { src: __webpack_require__("./resources/app/assets/images/pages sync recursive ^\\.\\/.*$")("./" + _vm.user_img) }
+          attrs: {
+            src: __webpack_require__("./resources/app/assets/images/pages sync recursive ^\\.\\/.*$")("./" +
+              (_vm.user_img ? _vm.user_img : "placeholder.png"))
+          }
         }),
         _vm._v(" "),
         _c(
