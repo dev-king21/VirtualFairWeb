@@ -10,7 +10,6 @@ export default {
   },
 
   UPDATE_USER_INFO (state, payload) {
-    console.log(payload.key)
     state.admin = payload.key === 'admin'
     state.super = payload.key === 'super'
     if (payload.userInfo) state.userInfo = JSON.parse(JSON.stringify(payload.userInfo))

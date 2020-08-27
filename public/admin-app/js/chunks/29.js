@@ -2514,10 +2514,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         var func = function func(item) {
           if (item.submenu) {
             item.submenu.forEach(function (item) {
-              //if (item.url !== '/settings/fair-type/show') console.log(path, item.url, routeParent, item.slug)
               if (item.url && (path === item.url || routeParent === item.slug)) {
                 open = true;
-                console.log(path, item.url, routeParent, item.slug);
               } else if (item.submenu) {
                 func(item);
               }
