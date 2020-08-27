@@ -95,6 +95,7 @@ __webpack_require__.r(__webpack_exports__);
       country: {},
       stands: [],
       ads_list: [],
+      me: {},
       loading: false,
       img_width: 0,
       img_height: 0,
@@ -124,7 +125,14 @@ __webpack_require__.r(__webpack_exports__);
     },
     goStandPage: function goStandPage(stand_id, user_id) {
       if (!user_id) {
-        return this.purchaseStand(stand_id);
+        if (this.me.type === 'lecturer') return this.purchaseStand(stand_id);
+        this.$vs.notify({
+          title: 'Notificación',
+          text: 'No eres expositor, por lo que no puedes adquirir un stand.',
+          color: 'success',
+          iconPack: 'feather',
+          icon: 'icon-mail'
+        });
       }
 
       return this.$router.push("/fair/stand/2/2/".concat(stand_id));
@@ -177,6 +185,13 @@ __webpack_require__.r(__webpack_exports__);
     this.$http.post('/api/stand/ads/get').then(function (res) {
       _this.ads_list = res.data.ads;
     });
+    var userInfo = localStorage.getItem('userInfo');
+
+    if (!userInfo) {
+      return this.$router.push('/home');
+    }
+
+    this.me = JSON.parse(userInfo);
   }
 });
 
