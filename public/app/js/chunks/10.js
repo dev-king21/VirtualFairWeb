@@ -124,6 +124,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     period: function period(start_time, end_time) {
+      if (start_time === null || end_time === null) return '';
       var sd = this.$date.timeFormat(start_time);
       var ed = this.$date.timeFormat(end_time);
       return "".concat(sd, " - ").concat(ed);

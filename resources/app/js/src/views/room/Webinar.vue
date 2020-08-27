@@ -105,6 +105,7 @@ export default {
   },
   methods: {
     period (start_time, end_time) {
+      if(start_time === null || end_time === null) return ''
       const sd = this.$date.timeFormat(start_time)
       const ed = this.$date.timeFormat(end_time)  
       return `${sd} - ${ed}`  
