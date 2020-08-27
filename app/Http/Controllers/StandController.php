@@ -13,6 +13,7 @@ use App\Portfolio;
 use App\GalleryDownload;
 use App\PortfolioDownload;
 use App\Appointment;
+use App\Payment;
 
 class StandController extends Controller
 {
@@ -57,7 +58,7 @@ class StandController extends Controller
         $stand = Stand::find($request->post('stand_id'));
         $stand->user_id = $request->user()->id;
         $stand->save();
-        
+
         return response()->json(["status" => "ok"]);
     }
 

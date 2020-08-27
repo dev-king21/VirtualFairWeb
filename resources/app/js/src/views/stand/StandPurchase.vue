@@ -67,12 +67,13 @@ export default {
       // This function captures the funds from the transaction.
         return actions.order.capture().then(function (details) {
         // This function shows a transaction success message to your buyer.
+          console.log(details)
           const param = {
             link: details.links[0].href,
             payer_id: details.payer.payer_id,
             payer_country: details.payer.address.country_code,
             payer_name: `${details.payer.name.given_name} ${details.payer.name.surname}`,
-            payer_email: details.email,
+            payer_email: details.payer.email_address,
             payment_amount: `${details.purchase_units[0].amount.value} ${details.purchase_units[0].amount.currency_code}`,
             payment_status: details.purchase_units[0].payments.captures[0].status,
             payment_capture_id:  details.purchase_units[0].payments.captures[0].id,
@@ -89,7 +90,7 @@ export default {
             },
             body: JSON.stringify(param)
           }).then(() => {
-            location.href = '/app/stand/home'
+            //location.href = '/app/stand/home'
           })
         
 
