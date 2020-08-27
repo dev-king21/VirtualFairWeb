@@ -1,8 +1,7 @@
 <template>
     <div class="room-webinar-card card-border" :class="{'card-border': !noborder}">
         <div class="relative card-img">
-            <img class="relative responsive" :src="require(`@assets/images/pages/${user_img ? user_img : 'placeholder.png'}`)">
-           
+            <img class="relative responsive" :src="`@assets/images/pages/${user_img}`">
             <div class="card-over text-white flex flex-col justify-between" >
                 <div>
                     <span class="text-white absolute py-4 px-6 bg-cyan-light" style="font-size: .9rem">{{$date.dateFormatWithoutYear(workdate)}}</span> 
