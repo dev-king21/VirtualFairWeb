@@ -5,7 +5,7 @@
     </vs-button>
 </template>
 <style lang="scss">
-.layout--full-page{
+.layout--full-page {
     .back-btn {
         border-radius: 0 !important;
         border-bottom-right-radius: 0.8rem !important;

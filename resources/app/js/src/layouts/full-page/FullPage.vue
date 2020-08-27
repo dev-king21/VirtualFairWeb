@@ -25,10 +25,9 @@ export default {
 </script>
 <style lang="scss">
 .layout--full-page {
-  /* .vs-button {
+  .vs-button {
     border-radius: 0 !important;
-  } */
-
+  }
 }
 
 .cyan-light {
