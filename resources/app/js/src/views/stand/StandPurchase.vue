@@ -90,7 +90,7 @@ export default {
             },
             body: JSON.stringify(param)
           }).then(() => {
-            //location.href = '/app/stand/home'
+            location.href = '/app/stand/home'
           })
         
 

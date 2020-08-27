@@ -95,7 +95,8 @@ var pay_stand_id = 0;
               'Authorization': "Bearer ".concat(localStorage.getItem('accessToken'))
             },
             body: JSON.stringify(param)
-          }).then(function () {//location.href = '/app/stand/home'
+          }).then(function () {
+            location.href = '/app/stand/home';
           });
           /* this.$http.post('/api/stand/payment/save_transaction', param)
             .then(() => {
