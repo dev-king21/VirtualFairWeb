@@ -89,7 +89,9 @@ class AuthController extends Controller
             ["end_date", ">=", $now]
         ]; 
         $fair = Fair::where($query)->first();
-        
+        if (!isset($res["fair"])) {
+            return response()->json(["status"=> "unknown_fair"]);
+        }
         $user = $request->user();
         if ($user->fair_id != $fair->id) {
             return response()->json(["status" => "unmatched_fair"]);
