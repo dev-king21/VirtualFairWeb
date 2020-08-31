@@ -192,8 +192,8 @@ export default [
         url: '/settings/stand-location',
         name: 'Stand Locations',
         slug: 'stand-location-home',
-        icon: 'MailIcon'
-        ,i18n: 'StandLocations'
+        icon: 'MailIcon',
+        i18n: 'StandLocations'
       },
       {
         url: '/settings/stand-type',
@@ -226,8 +226,8 @@ export default [
     icon: 'PackageIcon',
     i18n: 'ExhibitorWebinar'
 
-  },
-  {
+  }
+  /* {
     header: 'Apps',
     icon: 'PackageIcon',
     i18n: 'Apps',
@@ -1026,6 +1026,6 @@ export default [
         ]
       }
     ]
-  }
+  } */
 ]
 

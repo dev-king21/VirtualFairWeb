@@ -24,7 +24,7 @@ __webpack_require__.r(__webpack_exports__);
       _store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__["default"].isRegistered = true;
     }
 
-    var userInfo = localStorage.getItem('userInfo'); // console.log(userInfo)
+    var userInfo = localStorage.getItem('userInfo');
 
     if (userInfo && userInfo !== null) {
       userInfo = JSON.parse(userInfo);

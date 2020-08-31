@@ -13,7 +13,6 @@ export default {
       moduleAuth.isRegistered = true
     }
     let userInfo = localStorage.getItem('userInfo')
-    // console.log(userInfo)
     if (userInfo && userInfo !== null) {
       userInfo = JSON.parse(userInfo)
       if (userInfo.id !== 0 && userInfo.email && userInfo.email !== '') {
