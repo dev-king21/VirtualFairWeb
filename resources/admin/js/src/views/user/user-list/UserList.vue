@@ -116,14 +116,14 @@ export default {
           headerName: this.$t('UserName'),
           field: 'username',
           filter: true,
-          width: 300,
+          width: 200,
           cellRendererFramework: 'CellRendererLink'
         },
         {
           headerName: this.$t('Email'),
           field: 'email',
           filter: true,
-          width: 300
+          width: 200
 
         },
         {
@@ -144,8 +144,25 @@ export default {
           headerName: this.$t('Role'),
           field: 'type',
           filter: true,
-          width: 150
-        }
+          width: 100
+        },
+        {
+          headerName: this.$t('Fair') + ' ' + this.$t('Name'),
+          field: 'fair.name',
+          filter: true,
+          width: 200
+        }/* ,
+        {
+          headerName: this.$t('Actions'),
+          field: 'transactions',
+          filter: true,
+          width: 150,
+          cellRendererFramework: 'CellRendererActions',
+          cellRendererParams: {
+            editAction: this.editRecord,
+            removeAction: this.RemoveRecord
+          }
+        } */
       ],
 
       // Cell Renderer Components

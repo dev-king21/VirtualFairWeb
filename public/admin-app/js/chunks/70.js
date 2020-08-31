@@ -127,13 +127,13 @@ __webpack_require__.r(__webpack_exports__);
         headerName: this.$t('UserName'),
         field: 'username',
         filter: true,
-        width: 300,
+        width: 200,
         cellRendererFramework: 'CellRendererLink'
       }, {
         headerName: this.$t('Email'),
         field: 'email',
         filter: true,
-        width: 300
+        width: 200
       }, {
         headerName: this.$t('Country'),
         field: 'country',
@@ -148,8 +148,26 @@ __webpack_require__.r(__webpack_exports__);
         headerName: this.$t('Role'),
         field: 'type',
         filter: true,
-        width: 150
-      }],
+        width: 100
+      }, {
+        headerName: this.$t('Fair') + ' ' + this.$t('Name'),
+        field: 'fair.name',
+        filter: true,
+        width: 200
+      }
+      /* ,
+      {
+       headerName: this.$t('Actions'),
+       field: 'transactions',
+       filter: true,
+       width: 150,
+       cellRendererFramework: 'CellRendererActions',
+       cellRendererParams: {
+         editAction: this.editRecord,
+         removeAction: this.RemoveRecord
+       }
+      } */
+      ],
       // Cell Renderer Components
       components: {
         CellRendererLink: _cell_renderer_CellRendererLink_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
@@ -251,7 +269,7 @@ __webpack_require__.r(__webpack_exports__);
   name: 'CellRendererActions',
   methods: {
     editRecord: function editRecord() {
-      this.$router.push("/apps/user/user-edit/".concat(268))["catch"](function () {});
+      this.$router.push("/user/user-view/".concat(this.params.data.id))["catch"](function () {});
       /*
               Below line will be for actual product
               Currently it's commented due to demo purpose - Above url is for demo purpose
@@ -262,15 +280,22 @@ __webpack_require__.r(__webpack_exports__);
       this.$vs.dialog({
         type: 'confirm',
         color: 'danger',
-        title: 'Confirm Delete',
-        text: "You are about to delete \"".concat(this.params.data.username, "\""),
+        title: this.$t('DeleteTitle'),
+        text: this.$t('DeleteConfig'),
         accept: this.deleteRecord,
         acceptText: 'Delete'
       });
     },
     deleteRecord: function deleteRecord() {
+      var _this = this;
+
       /* Below two lines are just for demo purpose */
       this.showDeleteSuccess();
+      var action = "/api/user/delete/".concat(this.params.data.id);
+      this.$loading.show(this);
+      this.$http.post(action).then(function (response) {
+        _this.$loading.hide(_this);
+      });
       /* UnComment below lines for enabling true flow if deleting user */
       // this.$store.dispatch("userManagement/removeRecord", this.params.data.id)
       //   .then(()   => { this.showDeleteSuccess() })
@@ -279,8 +304,8 @@ __webpack_require__.r(__webpack_exports__);
     showDeleteSuccess: function showDeleteSuccess() {
       this.$vs.notify({
         color: 'success',
-        title: 'User Deleted',
-        text: 'The selected user was successfully deleted'
+        title: this.$t('Success'),
+        text: this.$t('DeleteMessage')
       });
     }
   }

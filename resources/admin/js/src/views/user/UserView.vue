@@ -35,6 +35,11 @@
                 <td>{{ user_data.email }}</td>
               </tr> 
               <tr>
+                <td class="font-semibold">{{$t('Fair')}} {{$t('Name')}}</td>
+                <td>{{ user_data.fair.name }}</td>
+              </tr> 
+
+              <tr>
                 <td class="font-semibold">{{$t('Role')}}</td>
                 <td>{{ user_data.type }}</td>
               </tr>
@@ -116,7 +121,7 @@ export default {
      .then((response) => {
           this.user_data = response.data.user
           // this.user_data = users
-          console.log(this.user_data.password)
+          console.log(this.user_data)
         })
       .catch((error) => { console.log(error) })
   }

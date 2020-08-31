@@ -23,7 +23,7 @@ class UserController extends Controller
     public function show(Request $request, $id)
     {
         $res = array();
-        $res['user'] = User::find($id);
+        $res['user'] = User::with(['fair'])->find($id);
         $res['status'] = 'ok';
         return response()->json($res);  
     }
@@ -31,7 +31,7 @@ class UserController extends Controller
     public function allUser()
     {
         $res = array();
-        $res["users"] = User::all();
+        $res["users"] = User::with(['fair'])->get();
         
         return response()->json($res);
 

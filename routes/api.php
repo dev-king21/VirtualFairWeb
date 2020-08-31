@@ -170,6 +170,8 @@ Route::group(['middleware' => ['auth:admin']], function() {
 
         Route::post('/fair/create', 'FairController@create_fair');
         Route::post('/fair/update/{id}', 'FairController@update_fair');
+        Route::post('/fair/delete/{id}', 'FairController@delete_fair');
+
         Route::get('/fair/request', 'FairController@requestFair');
         Route::get('/fair/book', 'FairController@bookedFair');
         Route::get('/fair/active', 'FairController@activeFair');

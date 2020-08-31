@@ -211,7 +211,12 @@ class FairController extends Controller
         $res['id'] = $id;
         return response()->json($res);
     }
-
+    public function delete_fair(Request $request, $id) {
+        $res = array();
+        Fair::whereId($id)->update($request->post());
+        $res["status"] = "ok";
+        return response()->json($res);
+    }
     public function get_countries(Request $request, $fair_id = 0) {
         $res = array();
         if ($fair_id == 0) {

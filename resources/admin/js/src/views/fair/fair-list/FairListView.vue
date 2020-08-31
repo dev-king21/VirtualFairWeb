@@ -467,7 +467,7 @@ export default {
       //   .catch(err => { console.error(err)       })
     },
     removeAction (id) {
-      const action = `/api/fair/update/${id}`
+      const action = `/api/fair/delete/${id}`
       const newData = {
         status: 0
       }

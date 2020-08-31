@@ -761,7 +761,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     removeAction: function removeAction(id) {
       var _this5 = this;
 
-      var action = "/api/fair/update/".concat(id);
+      var action = "/api/fair/delete/".concat(id);
       var newData = {
         status: 0
       };

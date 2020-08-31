@@ -22,6 +22,9 @@ class Fair extends Model
     public function sustainability() {
         return $this->hasOne('App\Sustainability');
     }
+    public function users(){
+        return $this->hasMany('App\User');
+    }
 
 
     protected $guarded = [];

@@ -79,6 +79,11 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
@@ -130,7 +135,7 @@ __webpack_require__.r(__webpack_exports__);
     this.$http.get(action).then(function (response) {
       _this.user_data = response.data.user; // this.user_data = users
 
-      console.log(_this.user_data.password);
+      console.log(_this.user_data);
     })["catch"](function (error) {
       console.log(error);
     });
@@ -305,6 +310,18 @@ var render = function() {
                             ]),
                             _vm._v(" "),
                             _c("td", [_vm._v(_vm._s(_vm.user_data.email))])
+                          ]),
+                          _vm._v(" "),
+                          _c("tr", [
+                            _c("td", { staticClass: "font-semibold" }, [
+                              _vm._v(
+                                _vm._s(_vm.$t("Fair")) +
+                                  " " +
+                                  _vm._s(_vm.$t("Name"))
+                              )
+                            ]),
+                            _vm._v(" "),
+                            _c("td", [_vm._v(_vm._s(_vm.user_data.fair.name))])
                           ]),
                           _vm._v(" "),
                           _c("tr", [

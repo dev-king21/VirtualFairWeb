@@ -10,7 +10,7 @@ export default {
   name: 'CellRendererActions',
   methods: {
     editRecord () {
-      this.$router.push(`/apps/user/user-edit/${  268}`).catch(() => {})
+      this.$router.push(`/user/user-view/${this.params.data.id}`).catch(() => {})
 
       /*
               Below line will be for actual product
@@ -23,16 +23,22 @@ export default {
       this.$vs.dialog({
         type: 'confirm',
         color: 'danger',
-        title: 'Confirm Delete',
-        text: `You are about to delete "${this.params.data.username}"`,
+        title: this.$t('DeleteTitle'),
+        text: this.$t('DeleteConfig'),
         accept: this.deleteRecord,
         acceptText: 'Delete'
       })
     },
     deleteRecord () {
       /* Below two lines are just for demo purpose */
-      this.showDeleteSuccess()
 
+      this.showDeleteSuccess()
+      const action = `/api/user/delete/${this.params.data.id}`
+      this.$loading.show(this)
+      this.$http.post(action)
+        .then((response) => {
+          this.$loading.hide(this)
+        })
       /* UnComment below lines for enabling true flow if deleting user */
       // this.$store.dispatch("userManagement/removeRecord", this.params.data.id)
       //   .then(()   => { this.showDeleteSuccess() })
@@ -41,8 +47,8 @@ export default {
     showDeleteSuccess () {
       this.$vs.notify({
         color: 'success',
-        title: 'User Deleted',
-        text: 'The selected user was successfully deleted'
+        title: this.$t('Success'),
+        text: this.$t('DeleteMessage')
       })
     }
   }

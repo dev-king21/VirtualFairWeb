@@ -28,6 +28,9 @@ class User extends Authenticatable
     public function stands() {
         return $this->hasMany("App\Stand");
     }
+    public function fair(){
+        return $this->belongsTo("App\Fair");
+    }
 
     public function talks() {
         return $this->hasMany("App\Talk");
