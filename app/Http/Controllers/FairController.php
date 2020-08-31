@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Fair;
 use App\Stand;
 use App\Country;
+use App\Region;
 use App\Contact;
 use App\StandLocation;
 use App\StandType;
@@ -71,6 +72,14 @@ class FairController extends Controller
         $fair = Fair::with('categories')->where($query)->first();
         if (isset($fair))
             $res["categories"] = $fair->categories;
+        $res["fair"] = $fair;
+        return response()->json($res);
+    }
+
+    public function get_country_regions(Request $request) {
+        $res = array();
+        $res["countries"] = Country::all();
+        $res["regions"] = Region::all();
         
         return response()->json($res);
     }
@@ -233,8 +242,8 @@ class FairController extends Controller
 
     public function get_stands(Request $request, $fair_id = 0, $country_id = 0) {
         $res = array();
-       
-       
+       /* $res['status'] = 'test';
+        return response()->json($res); */
         if ($fair_id == 0)
         {
             $now = date("y-m-d");
@@ -254,6 +263,9 @@ class FairController extends Controller
         if ($country_id == 0)
         {
             $res["country"] = Country::select('id', 'name', 'code')->where("status", 1)->first();
+            if (!isset($res["country"])) {
+                return response()->json(["status"=> "unknown_country"]);
+            }
             $country_id = $res["country"]->id;
         } else
             $res["country"] = Country::find($country_id);
@@ -331,6 +343,9 @@ class FairController extends Controller
         if ($country_id == 0)
         {
             $res["country"] = Country::select('id', 'name', 'code')->where("status", 1)->first();
+            if (!isset($res["country"])) {
+                return response()->json(["status"=> "unknown_country"]);
+            }
             $country_id = $res["country"]->id;
         } else
             $res["country"] = Country::find($country_id);

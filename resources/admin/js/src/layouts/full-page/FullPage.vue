@@ -9,7 +9,7 @@
 export default {
   created () {
     const activated = localStorage.getItem('activateKey')
-    if (activated && activated.length > 4) {
+    if (activated) {
       this.$store.dispatch('auth/logged')
     }
   }

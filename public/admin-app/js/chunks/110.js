@@ -180,17 +180,17 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this2.$vs.notify({
-            title: 'éxito',
-            text: 'Se ha eliminado con éxito.',
+            title: _this2.$t('Success'),
+            text: _this2.$t('DeleteMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
           _this2.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: _this2.$t('Error'),
+            text: _this2.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });

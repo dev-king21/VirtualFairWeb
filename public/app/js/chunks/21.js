@@ -255,8 +255,8 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this2.$vs.notify({
-            title: 'éxito',
-            text: 'Folleto registrado con éxito',
+            title: _this2.$t('Success'),
+            text: _this2.$t('SuccessMessage'),
             iconPack: 'feather',
             icon: 'icon-info',
             color: 'success'
@@ -277,8 +277,8 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this3.$vs.notify({
-            title: 'éxito',
-            text: 'Folleto registrado con éxito',
+            title: _this3.$t('Success'),
+            text: _this3.$t('DeleteMessage'),
             iconPack: 'feather',
             icon: 'icon-info',
             color: 'success'
@@ -450,7 +450,7 @@ var render = function() {
             _c(
               "div",
               { staticClass: "ml-2", staticStyle: { "font-size": "0.9rem" } },
-              [_vm._v("VER")]
+              [_vm._v(_vm._s(_vm.$t("See")))]
             )
           ],
           1
@@ -475,7 +475,7 @@ var render = function() {
             _c(
               "div",
               { staticClass: "ml-2", staticStyle: { "font-size": "0.9rem" } },
-              [_vm._v("BORRAR")]
+              [_vm._v(_vm._s(_vm.$t("Delete")))]
             )
           ],
           1
@@ -513,7 +513,11 @@ var render = function() {
       _c("app-header", { attrs: { activeItem: "0" } }),
       _vm._v(" "),
       _c("bread-crumb", {
-        attrs: { icon: "brochure", type: "svg", text: "CATÁLOGOS O BROCHURES" }
+        attrs: {
+          icon: "brochure",
+          type: "svg",
+          text: _vm.$t("CatalogBrochure")
+        }
       }),
       _vm._v(" "),
       _c(
@@ -580,7 +584,19 @@ var render = function() {
                             1
                           ),
                           _vm._v(" "),
-                          _vm._m(0)
+                          _c("div", { staticClass: "mt-4 text-center" }, [
+                            _vm._v(
+                              "\n                            " +
+                                _vm._s(_vm.$t("Upload")) +
+                                " PDF O JPG "
+                            ),
+                            _c("br"),
+                            _vm._v(
+                              "\n                            (" +
+                                _vm._s(_vm.$t("MaxSize")) +
+                                " 1mb)\n                        "
+                            )
+                          ])
                         ]
                       )
                     ]
@@ -648,7 +664,7 @@ var render = function() {
                                       staticClass: "ml-2",
                                       staticStyle: { "font-size": "0.9rem" }
                                     },
-                                    [_vm._v("GUARDAR")]
+                                    [_vm._v(_vm._s(_vm.$t("Save")))]
                                   )
                                 ],
                                 1
@@ -675,20 +691,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-4 text-center" }, [
-      _vm._v("\n                            SUBIR PDF O JPG "),
-      _c("br"),
-      _vm._v(
-        "\n                            (Peso maximo 1mb)\n                        "
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

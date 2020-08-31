@@ -95,17 +95,17 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
+            title: _this.$t('Success'),
+            text: _this.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
           _this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: _this.$t('Error'),
+            text: _this.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
@@ -225,7 +225,8 @@ var render = function() {
               _c("div", { staticClass: "contact-info" }, [
                 _c("div", [
                   _vm._v(
-                    "Nombre: " +
+                    _vm._s(_vm.$t("Name")) +
+                      ": " +
                       _vm._s(_vm.user.first_name) +
                       " " +
                       _vm._s(_vm.user.last_name)
@@ -234,17 +235,41 @@ var render = function() {
                 _vm._v(" "),
                 _c("div", [_vm._v("Email: " + _vm._s(_vm.user.email))]),
                 _vm._v(" "),
-                _c("div", [_vm._v("Teléfono: " + _vm._s(_vm.user.phone))]),
+                _c("div", [
+                  _vm._v(
+                    _vm._s(_vm.$t("Phone")) + ": " + _vm._s(_vm.user.phone)
+                  )
+                ]),
                 _vm._v(" "),
-                _c("div", [_vm._v("Posición: " + _vm._s(_vm.user.address))]),
+                _c("div", [
+                  _vm._v(
+                    _vm._s(_vm.$t("Position")) + ": " + _vm._s(_vm.user.address)
+                  )
+                ]),
                 _vm._v(" "),
-                _c("div", [_vm._v("Compañía: " + _vm._s(_vm.user.company))]),
+                _c("div", [
+                  _vm._v(
+                    _vm._s(_vm.$t("Company")) + ": " + _vm._s(_vm.user.company)
+                  )
+                ]),
                 _vm._v(" "),
-                _c("div", [_vm._v("País: " + _vm._s(_vm.user.country))]),
+                _c("div", [
+                  _vm._v(
+                    _vm._s(_vm.$t("Country")) + ": " + _vm._s(_vm.user.country)
+                  )
+                ]),
                 _vm._v(" "),
-                _c("div", [_vm._v("Región: " + _vm._s(_vm.user.region))]),
+                _c("div", [
+                  _vm._v(
+                    _vm._s(_vm.$t("Region")) + ": " + _vm._s(_vm.user.region)
+                  )
+                ]),
                 _vm._v(" "),
-                _vm._m(0)
+                _c("div", { staticClass: "flex" }, [
+                  _c("div", [_vm._v(_vm._s(_vm.$t("InterestArea")) + ": ")]),
+                  _vm._v(" "),
+                  _c("div")
+                ])
               ])
             ]
           ),
@@ -253,7 +278,7 @@ var render = function() {
             "div",
             { staticClass: "ml-4 mt-8", staticStyle: { width: "500px" } },
             [
-              _c("h3", [_vm._v("Mensaje para contacto")]),
+              _c("h3", [_vm._v(_vm._s(_vm.$t("ContactMsg")))]),
               _vm._v(" "),
               _c(
                 "div",
@@ -286,11 +311,7 @@ var render = function() {
                       staticClass: "ml-4",
                       staticStyle: { color: "#ee0000" }
                     },
-                    [
-                      _vm._v(
-                        "El mensaje no puede ser nulo. Por favor ingrese el mensaje"
-                      )
-                    ]
+                    [_vm._v(_vm._s(_vm.$t("MsgOption")))]
                   )
                 ],
                 1
@@ -312,7 +333,7 @@ var render = function() {
                         expression: "accept"
                       }
                     },
-                    [_vm._v("Acepto los términos y condiciones")]
+                    [_vm._v(_vm._s(_vm.$t("AcceptTerm")))]
                   ),
                   _vm._v(" "),
                   _c(
@@ -328,7 +349,7 @@ var render = function() {
                         expression: "mail_available"
                       }
                     },
-                    [_vm._v("Autorizo que me puedan contactar por correo")]
+                    [_vm._v(_vm._s(_vm.$t("EmailTerm")))]
                   ),
                   _vm._v(" "),
                   _c(
@@ -344,7 +365,7 @@ var render = function() {
                         expression: "phone_available"
                       }
                     },
-                    [_vm._v("Autorizo que me puedan contactar por teléfono")]
+                    [_vm._v(_vm._s(_vm.$t("PhoneTerm")))]
                   )
                 ],
                 1
@@ -360,7 +381,7 @@ var render = function() {
                       staticClass: "cyan-dark",
                       on: { click: _vm.contactRequest }
                     },
-                    [_vm._v("CONTACTAR")]
+                    [_vm._v(_vm._s(_vm.$t("Contact")))]
                   )
                 ],
                 1
@@ -373,18 +394,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex" }, [
-      _c("div", [_vm._v("Área de interés: ")]),
-      _vm._v(" "),
-      _c("div")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

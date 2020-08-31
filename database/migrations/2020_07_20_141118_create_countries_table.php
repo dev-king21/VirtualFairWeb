@@ -17,12 +17,12 @@ class CreateCountriesTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('code');
-            $table->string('phone');
+            /* $table->string('phone');
             $table->string('continent');
             $table->string('capital')->nullable();
-            $table->string('currency')->nullable();
+            $table->string('currency')->nullable(); */
             
-            $table->integer('status');
+            $table->integer('status')->default(0);
             $table->timestamps();
         });
     }

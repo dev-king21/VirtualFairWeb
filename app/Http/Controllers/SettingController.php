@@ -16,6 +16,7 @@ use App\Appointment;
 use App\Contact;
 use App\ContactRequest;
 use App\Country;
+use App\Region;
 use App\Gallery;
 use App\BusinessCard;
 use App\File;
@@ -693,9 +694,28 @@ class SettingController extends Controller
     public function get_reserved_webinars(Request $request) {
       $res = array();
       $now = date("Y-m-d");
-      $res["webinars"] = Talk::with('user')->where([["talk_date", ">=", $now]])->get();
+      $res["webinars"] = Talk::with('user', 'room')->where([["talk_date", ">=", $now]])->get();
 
       return response()->json($res);
+    }
+
+    public function country_region_build() {
+      set_time_limit(3000);
+      $ctry_string = file_get_contents(app_path('data.json'));
+      $data = json_decode($ctry_string, true);
+      foreach ($data as $item) {
+        $ctry = new Country;
+        $ctry->name = $item["countryName"];
+        $ctry->code = $item["countryShortCode"];
+        $ctry->save();
+        foreach($item["regions"] as $reg) {
+          $region = new Region;
+          $region->name = $reg["name"];
+          $region->code = isset($reg["shortCode"])? $reg["shortCode"] : '';
+          $region->country_id = $ctry->id;
+          $region->save();
+        }
+      }
     }
 
     public function dummyCreate() {

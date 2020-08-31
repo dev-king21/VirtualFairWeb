@@ -1,20 +1,20 @@
 <template>
     <div class="setting-webinar-card card-border" :class="{'card-border': !noborder}">
         <div class="relative card-img">
-            <img class="relative responsive" :src="`/fair_image/${user_img}`">
-            <div class="card-over text-white flex flex-col justify-between" >
+            <img class="relative responsive" :src="`/fair_image/${background}`">
+            <div class="card-over text-white flex flex-col w-full justify-between" >
                 <div>
-                    <span class="text-white absolute p-3 bg-cyan-light" style="font-size: 0.8rem">{{workdate}}</span> 
+                    <span class="text-white absolute p-3 bg-cyan-light" style="font-size: 0.8rem">{{$date.dateFormatWithoutYear(workdate)}}</span> 
                 </div>
                 <div class="card-title">
                     <div class="flex flex-row items-center">
                         <template v-if="live">
                             <svg-icon size="w-8 h-8" icon="live"/>
-                            <div class="ml-2 text-white" style="font-size: 0.8rem">EN VIVO</div>
+                            <div class="ml-2 text-white uppercase" style="font-size: 0.8rem">{{$t('Live')}} </div>
                         </template>
                         <template v-else>
                             <svg-icon size="w-8 h-8" icon="video"/>
-                            <div class="ml-2 text-white" style="font-size: 0.8rem">GRABADO</div>
+                            <div class="ml-2 text-white font-bold uppercase" style="font-size: 0.8rem">{{$t('Recorded')}} </div>
                         </template>
                     </div>
                     <div style="font-style: italic">{{title}}</div>
@@ -28,18 +28,18 @@
             </span>
         </div>
         <div class="flex flex-row items-center mt-2 px-4">
-            <img class="user-img" :src="`/fair_image/${user_img}`"/>
+            <img class="user-img" :src="`/fair_image/${user_img ? user_img : 'placeholder.png'}`"/>
             <div class="ml-4 user-info">
                 <div class="h6 font-bold">Lic. {{expositor_name}}</div>
                 <div>{{expositor_profession}}</div>
             </div>
         </div>
         <div class="flex flex-row justify-end items-center mt-2">
-            <vs-button v-show="!reserved" class="cyan-dark event-btn">
-                VER DE NUEVO 
+            <vs-button v-show="!reserved" class="cyan-dark event-btn uppercase">
+                {{$t('SeeAgain')}}
             </vs-button>
-            <vs-button v-show="reserved" class="blue-dark event-btn p-big">
-                VER
+            <vs-button v-show="reserved" class="blue-dark event-btn p-big uppercase">
+                {{$t('See')}}
             </vs-button>
         </div>
         <!-- <vs-divider class="px-2" /> -->
@@ -76,6 +76,10 @@ export default {
       type: String,
       required: true  
     },
+    background: {
+      type: String,
+      required: true  
+    },
     reserved: {
       type: Boolean,
       required: false
@@ -96,9 +100,9 @@ export default {
     
     .user-img {
         border-radius: 50%;
-        background-color: #33333355;
+        background-color: #33333388;
         height: 4rem !important;
-        width: auto;
+        width: 4rem !important;
     }
 
     .event-btn {
@@ -129,13 +133,9 @@ export default {
         left: 0;
         bottom: 0;
         .card-title {
-            background: #33333355;
+            background: #33333399;
             padding: 0.6rem;
         }
-    }
-
-    .card-img {
-        background: #000000AA;
     }
 
 }

@@ -79,8 +79,8 @@ __webpack_require__.r(__webpack_exports__);
 
         if (!data.stand || !data.stand.id) {
           _this.$vs.notify({
-            title: 'error',
-            text: 'primero debe comprar el soporte.',
+            title: _this.$t('Error'),
+            text: _this.$t('BucketMsg'),
             iconPack: 'feather',
             icon: 'icon-alert-circle',
             color: 'danger'
@@ -265,7 +265,11 @@ var render = function() {
               ]),
               _vm._v(" "),
               _c("div", [
-                _vm._m(0),
+                _c("div", { staticClass: "flex items-center mt-4 ml-8" }, [
+                  _c("div", { staticClass: "h2" }, [
+                    _vm._v(_vm._s(_vm.$t("CompanyInfo")))
+                  ])
+                ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "w-full mt-4 ml-12" }, [
                   _c("div", {
@@ -281,16 +285,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex items-center mt-4 ml-8" }, [
-      _c("div", { staticClass: "h2" }, [_vm._v("Informacion de la empresa")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -328,7 +323,9 @@ var render = function() {
         attrs: { svgClasses: "w-6 h-6", icon: "ArrowLeftIcon" }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "back-text" }, [_vm._v("VOLVER")])
+      _c("div", { staticClass: "back-text" }, [
+        _vm._v(_vm._s(_vm.$t("Return")))
+      ])
     ],
     1
   )

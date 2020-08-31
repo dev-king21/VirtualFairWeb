@@ -15,12 +15,12 @@
                 </div>
                 <div class="flex items-start w-full mt-3 px-4">
                     <svg-icon size="w-6 h-6" icon="profession" class="text-yellow-light"/>
-                    <span class="ml-4">Expositor: {{expositor_profession}}</span>
+                    <span class="ml-4">{{$t('Exhibitor')}}: {{expositor_profession}}</span>
                 </div>
             </div>
             <div class="vx-col flex items-end justify-end w-1/4">
                 <vs-button class="blue-light event-btn p-big">
-                    IR LA CITA
+                    {{$t('GoAppointment')}}
                 </vs-button>
             </div>
         </div>

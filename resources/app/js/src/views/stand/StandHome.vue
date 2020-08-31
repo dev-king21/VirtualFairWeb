@@ -6,21 +6,21 @@
                 <nav-back-button/>
                 <div class="flex items-center text-white w-full justify-center">
                     <div class="w-1/3 p-8">
-                        <div class="uppercase fs-10 text-white">Buscar por categoria</div>
-                        <vs-input class="w-full"/>
+                        <div class="uppercase fs-10 text-white">{{$t('SearchCategory')}}</div>
+                        <vs-input :placeholder="$t('Search')" class="w-full"/>
                     </div>
                     <div class="w-1/3 p-8">
-                        <div class="uppercase fs-10 text-white">Buscar por nombre</div>
-                        <vs-input placeholder="Buscar" class="w-full"/>
+                        <div class="uppercase fs-10 text-white">{{$t('SearchName')}}</div>
+                        <vs-input :placeholder="$t('Search')" class="w-full"/>
                     </div>
                 </div>
             </div>
         </div>
         <div class="vx-row stand-home-main">
             <div class="vx-col lg:w-3/4 md:w-2/3 sm:w-full xs:w-full py-8 px-12">
-                <div class="relative w-full h-full" v-if="fair !== undefined">
+                <div class="relative w-full h-full" v-if="fair">
                     <!-- <img class="stand_wrapper" @load="onLoadImg()" :src="`/fair_image/${fair.fair_type.interior}`"> -->
-                    <template v-if="fair.fair_type !== undefined">
+                    <template v-if="fair.fair_type">
                         <img ref="refFairImg" class="stand_wrapper responsive" @load="onLoadImg()" :src="`/fair_image/${fair.fair_type.interior}`">
                     </template>
                     <template v-for="(item, index) in stands.filter((st, index) => st.country_id === country.id && index < 9)">
@@ -40,7 +40,7 @@
                 </div>
             </div>    
             <div class="vx-col lg:w-1/4 md:w-1/3 sm:w-full xs: w-full">
-                <div class="uppercase mt-4 fs-11 font-bold mb-4">publicidad</div>
+                <div class="uppercase mt-4 fs-11 font-bold mb-4">{{$t('Ads')}}</div>
                 <div class="mr-4">
                   <swiper :options="swiperOption">
                     <swiper-slide :key="`swiper-item-${index}`" v-for="(item, index) in ads_list">
@@ -122,25 +122,6 @@ export default {
     purchaseStand (stand_id) {
       
       this.$router.push(`/stand/purchase/${stand_id}`)
-      /* this.$loading.show(this)
-      this.$http.post('/api/stand/purchase', {stand: stand_id})
-        .then((response) => {
-          this.$loading.hide(this)
-          const data = response.data
-          if (data.status !== 'ok') return console.log(data.msg)
-          this.$vs.notify({
-            title:'Notificación',
-            text:'¡Ha comprado el stand con éxito! <br> Puede editar su stand en la página de configuración',
-            color:'success',
-            iconPack: 'feather',
-            icon:'icon-mail'})
-          setTimeout(() => {
-            this.$router.push('/setting/stand').catch(() => {})  
-          }, 3000)  
-          
-
-        })
-        .catch((error) => console.log(error)) */
     },
     onLoadImg () {
       this.loading = true
@@ -152,8 +133,9 @@ export default {
     this.$loading.show(this)
     this.$http.get('/api/fair/get_current_stands')
       .then((response) => {
-        this.$loading.hide(this)  
 
+        this.$loading.hide(this)  
+        console.log(response.data)
         const data = response.data
         this.fair = data.fair
         if (!this.fair) {

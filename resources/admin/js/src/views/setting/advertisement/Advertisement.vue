@@ -4,7 +4,7 @@
     <div class="vx-row">
       <div class="vx-col w-full lg:w-1/4 sm:w-1 mb-base">
         <vx-card class="overlay-card overflow-hidden">
-            <h3 class="mb-2 text-warning font-bold">Advertisement Image</h3>
+            <h3 class="mb-2 text-warning font-bold">{{$t('Advertisement')}} {{$t('Image')}}</h3>
             <div class="mb-8">
               <file-upload :preview="ads_image" :upload_key="'advertisement'" :onSuccess="changeUploadFile" />
             </div>
@@ -12,7 +12,7 @@
         <div class="flex items-center justify-center mb-4">
           <vs-button class="mt-4" type="filled" icon-pack="feather" icon="icon-save" color="success"
               @click="saveAction">
-              Add Image
+              {{$t('Add')}} {{$t('Image')}}
           </vs-button> 
         </div>
       </div>
@@ -25,11 +25,11 @@
                     <img :src="`/fair_image/${ad.url}`" alt="content-img" class="responsive card-img-top">
                     <div class="flex items-center justify-between mt-5 px-4 pb-4">
                         <vs-button class="mt-4" type="filled" icon-pack="feather" icon="icon-trash" color="success" @click="remove(ad)">
-                            Delete
+                            {{$t('Delete')}}
                         </vs-button> 
                         <vs-switch class="mt-4 ml-2" color="success" v-model="ad.show" @change="updateStatus(ad)">
-                            <span slot="on">Show</span>
-                            <span slot="off">Cancel</span>
+                            <span slot="on">{{$t('Show')}}</span>
+                            <span slot="off">{{$t('Cancel')}}</span>
                         </vs-switch>
                     </div>
                 </div>
@@ -89,8 +89,8 @@ export default {
           if(response.data.status === 'ok')
           {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
@@ -100,9 +100,9 @@ export default {
           else
           {
             this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
+              title: this.$t('Error'),
+              text: this.$t('FailMessage'),
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
@@ -126,8 +126,8 @@ export default {
         this.$loading.hide(this)  
         if (response.data.status === 'ok') {
           this.$vs.notify({
-            title: 'éxito',
-            text: 'Ha sido cambiado exitosamente.',
+            title: this.$t('Success'),
+            text: this.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
@@ -135,9 +135,9 @@ export default {
           
         } else {
           this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: this.$t('Error'),
+            text: this.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           })
@@ -155,8 +155,8 @@ export default {
           }
         if (response.data.status === 'ok') {
           this.$vs.notify({
-            title: 'éxito',
-            text: 'Fue eliminado con éxito.',
+            title: this.$t('Success'),
+            text: this.$t('DeleteMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
@@ -164,9 +164,9 @@ export default {
           
         } else {
           this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: this.$t('Error'),
+            text: this.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           })

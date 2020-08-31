@@ -14,6 +14,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
 /* harmony import */ var _views_custom_BreadCrumb_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/views/custom/BreadCrumb.vue */ "./resources/app/js/src/views/custom/BreadCrumb.vue");
 /* harmony import */ var _WebinarCard_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./WebinarCard.vue */ "./resources/app/js/src/views/setting/WebinarCard.vue");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_7__);
 //
 //
 //
@@ -83,6 +89,31 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
 
 
 
@@ -94,14 +125,64 @@ __webpack_require__.r(__webpack_exports__);
     NavBackButton: _views_custom_NavBackButton_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
     BreadCrumb: _views_custom_BreadCrumb_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_2__["default"],
-    WebinarCard: _WebinarCard_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
+    vSelect: vue_select__WEBPACK_IMPORTED_MODULE_5___default.a,
+    WebinarCard: _WebinarCard_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_7__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_7__["swiperSlide"]
   },
   data: function data() {
     return {
       me: {},
       reserved_webinars: [],
-      past_webinars: []
+      past_webinars: [],
+      categories: [{
+        id: 0,
+        label: this.$t('Category')
+      }, {
+        id: 1,
+        label: this.$t('Live')
+      }, {
+        id: 2,
+        label: this.$t('Recorded')
+      }],
+      selected_category: {
+        id: 0,
+        label: this.$t('Category')
+      },
+      ads_list: [],
+      swiperOption: {
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+          delay: 4000,
+          disableOnInteraction: false
+        },
+        effect: 'fade',
+        pagination: {
+          el: '.swiper-pagination2',
+          clickable: true
+        },
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev'
+        }
+      }
     };
+  },
+  computed: {
+    available: function available() {
+      return (this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars && this.reserved_webinars.length !== 0 || (this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars && this.past_webinars.length !== 0;
+    },
+    webinar_count: function webinar_count() {
+      var count = 0;
+      if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars) count += this.reserved_webinars.length;
+      if ((this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars) count += this.past_webinars.length;
+      return count;
+    },
+    selected_cat_id: function selected_cat_id() {
+      if (this.selected_category) return this.selected_category.id;
+      return 0;
+    }
   },
   methods: {
     period: function period(start_time, end_time) {
@@ -120,26 +201,12 @@ __webpack_require__.r(__webpack_exports__);
       _this.$loading.hide(_this);
 
       var data = response.data;
+      console.log(data);
       _this.reserved_webinars = data.reserved_webinars;
       _this.past_webinars = data.past_webinars;
-
-      if (response.data.status === 'ok') {
-        _this.$vs.notify({
-          title: 'éxito',
-          text: 'Te has registrado con éxito.',
-          color: 'success',
-          iconPack: 'feather',
-          icon: 'icon-alert-circle'
-        });
-      } else {
-        _this.$vs.notify({
-          title: 'Oyu',
-          text: 'Operación fallida',
-          color: 'error',
-          iconPack: 'feather',
-          icon: 'icon-alert-circle'
-        });
-      }
+    });
+    this.$http.post('/api/stand/ads/get').then(function (res) {
+      _this.ads_list = res.data.ads;
     });
   }
 });
@@ -221,7 +288,7 @@ var render = function() {
         { staticClass: "w-full setting-webinar-main" },
         [
           _c("bread-crumb", {
-            attrs: { icon: "webinar", type: "svg", text: "mis webinar" }
+            attrs: { icon: "webinar", type: "svg", text: _vm.$t("MyWebinar") }
           }),
           _vm._v(" "),
           _c("div", { staticClass: "w-full bg-white-grey" }, [
@@ -238,22 +305,32 @@ var render = function() {
                     { staticClass: "p-6 pb-2 flex flex-row items-center" },
                     [
                       _c("span", { staticClass: "h6 font-bold" }, [
-                        _vm._v("(6 DISPONIBLES)")
+                        _vm._v(
+                          "(" +
+                            _vm._s(_vm.webinar_count) +
+                            " " +
+                            _vm._s(_vm.$t("Available")) +
+                            ")"
+                        )
                       ]),
                       _vm._v(" "),
                       _c(
                         "span",
                         {
                           staticClass:
-                            "h6 ml-10 flex flex-row items-center ml-2 chevron-border"
+                            "h6 ml-10 flex flex-row items-center ml-2"
                         },
                         [
-                          _c("span", { staticClass: "mr-6" }, [
-                            _vm._v("CATEGORIA")
-                          ]),
-                          _vm._v(" "),
-                          _c("feather-icon", {
-                            attrs: { icon: "ChevronRightIcon" }
+                          _c("v-select", {
+                            staticStyle: { width: "200px" },
+                            attrs: { options: _vm.categories },
+                            model: {
+                              value: _vm.selected_category,
+                              callback: function($$v) {
+                                _vm.selected_category = $$v
+                              },
+                              expression: "selected_category"
+                            }
                           })
                         ],
                         1
@@ -262,16 +339,19 @@ var render = function() {
                       _c(
                         "span",
                         {
-                          staticClass:
-                            "h6 ml-4 flex flex-row items-center ml-2 chevron-border"
+                          staticClass: "h6 ml-4 flex flex-row items-center ml-2"
                         },
                         [
-                          _c("span", { staticClass: "mr-6" }, [
-                            _vm._v("EN VIVO")
-                          ]),
-                          _vm._v(" "),
-                          _c("feather-icon", {
-                            attrs: { icon: "ChevronRightIcon" }
+                          _c("v-select", {
+                            staticStyle: { width: "160px" },
+                            attrs: { options: _vm.categories },
+                            model: {
+                              value: _vm.selected_category,
+                              callback: function($$v) {
+                                _vm.selected_category = $$v
+                              },
+                              expression: "selected_category"
+                            }
                           })
                         ],
                         1
@@ -280,12 +360,11 @@ var render = function() {
                       _c(
                         "span",
                         {
-                          staticClass:
-                            "h6 ml-4 flex flex-row items-center ml-2 chevron-border"
+                          staticClass: "h6 ml-4 flex flex-row items-center ml-2"
                         },
                         [
                           _c("span", { staticClass: "mr-6" }, [
-                            _vm._v("EXPOSITOR")
+                            _vm._v(_vm._s(_vm.$t("Exhibitor")))
                           ]),
                           _vm._v(" "),
                           _c("feather-icon", {
@@ -297,92 +376,224 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _vm._m(0),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "vx-row" },
-                    _vm._l(_vm.reserved_webinars, function(item, index) {
-                      return _c(
-                        "div",
-                        {
-                          key: "all-schedule-" + index,
-                          staticClass: "vx-col w-1/3"
-                        },
-                        [
+                  _vm.selected_cat_id === 0 || _vm.selected_cat_id === 1
+                    ? _c("div", [
+                        _c("div", { staticClass: "px-8" }, [
                           _c(
-                            "div",
-                            { staticClass: "px-2" },
+                            "h2",
+                            { staticClass: "font-bold my-8 uppercase" },
                             [
-                              _c("webinar-card", {
-                                attrs: {
-                                  reserved: true,
-                                  workdate: item.talk.talk_date,
-                                  time: _vm.period(
-                                    item.talk.start_time,
-                                    item.talk.end_time
-                                  ),
-                                  title: item.talk.title,
-                                  expositor_name:
-                                    _vm.me.first_name + " " + _vm.me.last_name,
-                                  expositor_profession: "" + _vm.me.address,
-                                  user_img: "" + _vm.me.avatar,
-                                  live: item.talk.live === 1
-                                }
-                              })
-                            ],
-                            1
+                              _vm._v(
+                                _vm._s(_vm.$t("Reserved")) +
+                                  " Or " +
+                                  _vm._s(_vm.$t("Aggregates"))
+                              )
+                            ]
                           )
-                        ]
-                      )
-                    }),
-                    0
-                  ),
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "vx-row" },
+                          _vm._l(_vm.reserved_webinars, function(item, index) {
+                            return _c(
+                              "div",
+                              {
+                                key: "all-schedule-" + index,
+                                staticClass: "vx-col w-1/3"
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  { staticClass: "px-2" },
+                                  [
+                                    _c("webinar-card", {
+                                      attrs: {
+                                        reserved: true,
+                                        workdate: item.talk.talk_date,
+                                        time: _vm.period(
+                                          item.talk.start_time,
+                                          item.talk.end_time
+                                        ),
+                                        title: item.talk.title,
+                                        expositor_name:
+                                          item.talk.user.first_name +
+                                          " " +
+                                          item.talk.user.last_name,
+                                        expositor_profession:
+                                          "" + item.talk.user.address,
+                                        background: item.talk.background,
+                                        user_img: "" + item.talk.user.avatar,
+                                        live: item.talk.live === 1
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]
+                            )
+                          }),
+                          0
+                        )
+                      ])
+                    : _vm._e(),
                   _vm._v(" "),
-                  _vm._m(1),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "vx-row" },
-                    _vm._l(_vm.past_webinars, function(item, index) {
-                      return _c(
-                        "div",
-                        {
-                          key: "all-schedule-" + index,
-                          staticClass: "vx-col w-1/3"
-                        },
-                        [
+                  _vm.selected_cat_id === 0 || _vm.selected_cat_id === 2
+                    ? _c("div", [
+                        _c("div", { staticClass: "px-8" }, [
                           _c(
-                            "div",
-                            { staticClass: "px-2" },
-                            [
-                              _c("webinar-card", {
-                                attrs: {
-                                  workdate: item.talk.talk_date,
-                                  time: _vm.period(
-                                    item.talk.start_time,
-                                    item.talk.end_time
-                                  ),
-                                  title: item.talk.title,
-                                  expositor_name:
-                                    _vm.me.first_name + " " + _vm.me.last_name,
-                                  expositor_profession: "" + _vm.me.address,
-                                  user_img: "" + _vm.me.avatar,
-                                  live: item.talk.live === 1
-                                }
-                              })
-                            ],
-                            1
+                            "h2",
+                            { staticClass: "font-bold uppercase my-8" },
+                            [_vm._v(_vm._s(_vm.$t("Seen")) + " ")]
                           )
-                        ]
-                      )
-                    }),
-                    0
-                  )
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "div",
+                          { staticClass: "vx-row" },
+                          _vm._l(_vm.past_webinars, function(item, index) {
+                            return _c(
+                              "div",
+                              {
+                                key: "all-schedule-" + index,
+                                staticClass: "vx-col w-1/3"
+                              },
+                              [
+                                _c(
+                                  "div",
+                                  { staticClass: "px-2" },
+                                  [
+                                    _c("webinar-card", {
+                                      attrs: {
+                                        workdate: item.talk.talk_date,
+                                        time: _vm.period(
+                                          item.talk.start_time,
+                                          item.talk.end_time
+                                        ),
+                                        title: item.talk.title,
+                                        expositor_name:
+                                          _vm.me.first_name +
+                                          " " +
+                                          _vm.me.last_name,
+                                        expositor_profession:
+                                          "" + _vm.me.address,
+                                        background: item.talk.background,
+                                        user_img: "" + _vm.me.avatar,
+                                        live: item.talk.live === 1
+                                      }
+                                    })
+                                  ],
+                                  1
+                                )
+                              ]
+                            )
+                          }),
+                          0
+                        )
+                      ])
+                    : _vm._e()
                 ]
               ),
               _vm._v(" "),
-              _vm._m(2)
+              _c(
+                "div",
+                { staticClass: "vx-col w-1/4 event-los-panel bg-white-grey" },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "ml-8 bg-white",
+                      staticStyle: { height: "100%" }
+                    },
+                    [
+                      _c("div", { staticClass: "p-6 font-bold" }, [
+                        _c("span", { staticClass: "h6 font-bold upper-case" }, [
+                          _vm._v(_vm._s(_vm.$t("Ads")) + " ")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "px-4" },
+                        [
+                          _c(
+                            "swiper",
+                            { attrs: { options: _vm.swiperOption } },
+                            [
+                              _vm._l(_vm.ads_list, function(item, index) {
+                                return _c(
+                                  "swiper-slide",
+                                  { key: "swiper-item-" + index },
+                                  [
+                                    _c("img", {
+                                      staticClass: "responsive",
+                                      attrs: {
+                                        src:
+                                          "/fair_image/" +
+                                          (item.url
+                                            ? item.url
+                                            : "placeholder.png"),
+                                        alt: ""
+                                      }
+                                    })
+                                  ]
+                                )
+                              }),
+                              _vm._v(" "),
+                              _c("div", {
+                                staticClass:
+                                  "swiper-pagination swiper-pagination2",
+                                attrs: { slot: "pagination" },
+                                slot: "pagination"
+                              }),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "swiper-button-prev",
+                                  attrs: { slot: "button-prev" },
+                                  slot: "button-prev"
+                                },
+                                [
+                                  _c("feather-icon", {
+                                    staticStyle: { color: "black" },
+                                    attrs: {
+                                      svgClasses: "w-6 h-6 mt-3 ml-3",
+                                      icon: "ChevronLeftIcon"
+                                    }
+                                  })
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "div",
+                                {
+                                  staticClass: "swiper-button-next",
+                                  attrs: { slot: "button-next" },
+                                  slot: "button-next"
+                                },
+                                [
+                                  _c("feather-icon", {
+                                    staticStyle: { color: "black" },
+                                    attrs: {
+                                      svgClasses: "w-6 h-6 mt-3 ml-3",
+                                      icon: "ChevronRightIcon"
+                                    }
+                                  })
+                                ],
+                                1
+                              )
+                            ],
+                            2
+                          )
+                        ],
+                        1
+                      )
+                    ]
+                  )
+                ]
+              )
             ])
           ])
         ],
@@ -392,46 +603,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "px-8" }, [
-      _c("h2", { staticClass: "font-bold my-4" }, [
-        _vm._v("RESERVADOS O AGREGADOS")
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "px-8" }, [
-      _c("h2", { staticClass: "font-bold my-4" }, [_vm._v("VISTOS")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "vx-col w-1/4 event-los-panel bg-white-grey" },
-      [
-        _c(
-          "div",
-          { staticClass: "ml-8 bg-white", staticStyle: { height: "100%" } },
-          [
-            _c("div", { staticClass: "p-6 font-bold" }, [
-              _c("span", { staticClass: "h6" }, [_vm._v("PUBLICIDAD")])
-            ])
-          ]
-        )
-      ]
-    )
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

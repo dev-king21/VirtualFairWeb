@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Validator;
 use App\User;
+use App\Fair;
 use App\CategoryInterest;
 use Carbon\Carbon;
 
@@ -13,7 +14,6 @@ class AuthController extends Controller
 {
     public function register(Request $request)
     {
-        
         $v = Validator::make($request->all(), [
             'first_name' => 'required',
             'last_name' => 'required',
@@ -24,7 +24,7 @@ class AuthController extends Controller
             'region' => 'required',
             'email' => 'required|email',
             'password'  => 'required|min:8',
-            'type'  => 'required',
+            'type'  => 'required'
         ]);
         if ($v->fails())
         {
@@ -32,6 +32,17 @@ class AuthController extends Controller
                 'status' => 'error',
                 'errors' => $v->errors()
             ]);
+        }
+
+        $now = date("y-m-d");
+        $query = [
+            ["start_date", "<=", $now], 
+            ["end_date", ">=", $now],
+        ]; 
+        $fair = Fair::where($query)->first();
+        $cnt = User::where(["fair_id"=>$fair->id, "email" => $request->post('email')])->count();
+        if ($cnt != 0) {
+            return response()->json(["status" => "already_exist"]);
         }
         
         $user = new User;
@@ -44,6 +55,7 @@ class AuthController extends Controller
         $user->region = $request->post('region');
         $user->email = $request->post('email');
         $user->type = $request->post('type');
+        $user->fair_id = $fair->id;
         $user->password = bcrypt($request->post('password'));
         if (isset($request->avatar_file)) {
             $b_fileName =  md5(time()).'.'.$request->avatar_file->extension();  
@@ -70,8 +82,18 @@ class AuthController extends Controller
         $credentials = $request->only('email', 'password');
         if (!Auth::attempt($credentials))
             return response()->json(['error' => 'Unauthorized']);
+
+        $now = date("y-m-d");
+        $query = [
+            ["start_date", "<=", $now], 
+            ["end_date", ">=", $now]
+        ]; 
+        $fair = Fair::where($query)->first();
         
         $user = $request->user();
+        if ($user->fair_id != $fair->id) {
+            return response()->json(["status" => "unmatched_fair"]);
+        }
         $user->load(['category_interests' => function($qr){
             $qr->with('category')->get();
         }]);
@@ -137,7 +159,13 @@ class AuthController extends Controller
         $user->type = $request->post('type');
         if ($request->post('password') != '')
             $user->password = bcrypt($request->post('password'));
-        
+
+        if (isset($request->avatar_file)) {
+            $b_fileName = md5(time()).'.'.$request->avatar_file->extension();  
+            $request->avatar_file->move(public_path('fair_image'), $b_fileName);
+            $user->avatar = $b_fileName;
+        }
+            
         $user->save();
         unset($user->password);
         

@@ -7,42 +7,42 @@
                 <div class="flex items-center justify-between bg-blue-dark">
                     <div class="flex items-center text-white mx-6" >
                         <svg-icon size="w-10 h-10" icon="profile"/>
-                        <div class="h3 text-white ml-4">MI CUENTA</div>
+                        <div class="h3 text-white ml-4">{{$t('MyAccount')}}</div>
                     </div>
                     <div class="flex items-center py-3 cursor-pointer" @click="$router.push('/setting/profile')">
                         <div>
-                            <div class="user-name text-white">MI PERFIL</div>
+                            <div class="user-name text-white">{{$t('MyProfile')}}</div>
                         </div>
                         <img :src="`/fair_image/${user.avatar ? user.avatar : 'placeholder.png'}`" class="user-img responsive mx-4">
                     </div>
                 </div>
                 <div class="flex flex-col bg-white text-center py-6" style="opacity: .9">
-                    <h3>¡Hola! {{user.first_name}} {{user.last_name}} </h3>
-                    <h4 class="mt-2">Que deseas hacer?</h4>
+                    <h3>{{$t('Hello')}}! {{user.first_name}} {{user.last_name}} </h3>
+                    <h4 class="mt-2">{{$t('YouWant')}}</h4>
                 </div>
                 <div class="flex px-12" style="background: #ffffff44; height: 100%;">
                     <div class="flex flex-col py-12 w-full justify-center">
                         <template v-if="user.type === 'user'">
                             <div class="flex items-center justify-between buttons-row2">
-                                <setting-button cls="bg-blue-dark" to="/setting/schedule" icon="topic" text="ver mi agenda"></setting-button>
-                                <setting-button cls="bg-grey-real" to="/setting/webinar" icon="webinar" text="mis webinars"></setting-button>
+                                <setting-button cls="bg-blue-dark" to="/setting/schedule" icon="topic" :text="$t('SeeMySchedule')"></setting-button>
+                                <setting-button cls="bg-grey-real" to="/setting/webinar" icon="webinar" :text="$t('SeeMyWebinar')"></setting-button>
                             </div>
                             <div class="flex items-center justify-between mt-12 buttons-row2">
-                                <setting-button cls="bg-blue-light" to="/setting/download" icon="download" text="mis descargasy archivos guardados"></setting-button>
-                                <setting-button cls="bg-cyan-light" to="/setting/contact" icon="address-book" text="mis contactos"></setting-button>
+                                <setting-button cls="bg-blue-light" to="/setting/download" icon="download" :text="$t('MyDownload')"></setting-button>
+                                <setting-button cls="bg-cyan-light" to="/setting/contact" icon="address-book" :text="$t('MyContact')"></setting-button>
                             </div>
                         </template>
                         <template v-else>
                             <div class="flex items-center justify-between buttons-row2">
-                                <setting-button cls="bg-cyan-dark" to="/setting/stand" icon="stand" text="mi stand"></setting-button>
-                                <setting-button cls="bg-blue-dark" to="/setting/schedule" icon="topic" text="ver mi agenda"></setting-button>
+                                <setting-button cls="bg-cyan-dark" to="/setting/stand" icon="stand" :text="$t('MyStand')"></setting-button>
+                                <setting-button cls="bg-blue-dark" to="/setting/schedule" icon="topic" :text="$t('SeeMySchedule')"></setting-button>
                             </div>
                             <div class="flex items-center justify-between mt-12 buttons-row2">
-                                <setting-button cls="bg-grey-real" to="/setting/webinar" icon="webinar" text="mis webinars"></setting-button>
-                                <setting-button cls="bg-blue-light" to="/setting/download" icon="download" text="mis descargasy archivos guardados"></setting-button>
+                                <setting-button cls="bg-grey-real" to="/setting/webinar" icon="webinar" :text="$t('SeeMyWebinar')"></setting-button>
+                                <setting-button cls="bg-blue-light" to="/setting/download" icon="download" :text="$t('MyDownload')"></setting-button>
                             </div>
                             <div class="flex items-center justify-between mt-12 buttons-row2">
-                                <setting-button cls="bg-cyan-light" to="/setting/contact" icon="address-book" text="mis contactos"></setting-button>
+                                <setting-button cls="bg-cyan-light" to="/setting/contact" icon="address-book" :text="$t('MyContact')"></setting-button>
                             </div>
                         </template>
                     </div>

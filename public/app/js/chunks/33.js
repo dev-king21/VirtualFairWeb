@@ -62,8 +62,8 @@ __webpack_require__.r(__webpack_exports__);
 
         if (!data.stand || !data.stand.id) {
           _this.$vs.notify({
-            title: 'error',
-            text: 'primero debe comprar el soporte.',
+            title: _this.$t('Error'),
+            text: _this.$t('BucketMsg'),
             iconPack: 'feather',
             icon: 'icon-alert-circle',
             color: 'danger'
@@ -162,7 +162,7 @@ var render = function() {
       _c("app-header", { attrs: { activeItem: "0" } }),
       _vm._v(" "),
       _c("bread-crumb", {
-        attrs: { icon: "address-book", type: "svg", text: "contacto" }
+        attrs: { icon: "address-book", type: "svg", text: _vm.$t("Contact") }
       }),
       _vm._v(" "),
       _c("div", { staticClass: "w-full setting-stand-contact bg-white-grey" }, [

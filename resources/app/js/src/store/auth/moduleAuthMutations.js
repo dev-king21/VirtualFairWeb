@@ -3,6 +3,11 @@ export default {
   SET_BEARER (state) {
     state.loggedIn = true
   },
+  
+  SET_LANG (state, payload) {
+    console.log(payload)
+    state.lang = payload
+  },
 
   REMOVE_BEARER (state) {
     state.loggedIn = false

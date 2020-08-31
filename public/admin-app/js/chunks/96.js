@@ -304,17 +304,17 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
+            title: _this.$t('Success'),
+            text: _this.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
           _this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: _this.$t('Error'),
+            text: _this.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
@@ -350,17 +350,17 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this2.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
+            title: _this2.$t('Success'),
+            text: _this2.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
           _this2.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: _this2.$t('Error'),
+            text: _this2.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
@@ -388,17 +388,17 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this3.$vs.notify({
-            title: 'éxito',
-            text: 'Ha sido cambiado exitosamente.',
+            title: _this3.$t('Success'),
+            text: _this3.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
           _this3.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: _this3.$t('Error'),
+            text: _this3.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
@@ -420,17 +420,17 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this4.$vs.notify({
-            title: 'éxito',
-            text: 'Fue eliminado con éxito.',
+            title: _this4.$t('Success'),
+            text: _this4.$t('DeleteMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
           _this4.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: _this4.$t('Error'),
+            text: _this4.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
@@ -561,7 +561,7 @@ var render = function() {
           }
         }),
         _vm._v(" "),
-        _c("span", [_vm._v("Drop Image File or ")]),
+        _c("span", [_vm._v(_vm._s(_vm.$t("DropImage")) + " ")]),
         _vm._v(" "),
         _c(
           "span",
@@ -574,7 +574,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("Browse")]
+          [_vm._v(_vm._s(_vm.$t("Browse")))]
         )
       ],
       1
@@ -605,7 +605,15 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", [
     _c("div", { staticClass: "vx-row mb-6" }, [
-      _vm._m(0),
+      _c(
+        "div",
+        { staticClass: "vx-col sm:w-1/3 w-full flex items-center text-right" },
+        [
+          _c("h3", [
+            _vm._v(_vm._s(_vm.$t("Select")) + " " + _vm._s(_vm.$t("Fair")))
+          ])
+        ]
+      ),
       _vm._v(" "),
       _c(
         "div",
@@ -657,7 +665,13 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "vx-row" }, [
-      _vm._m(1),
+      _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
+        _c("h4", [
+          _vm._v(
+            _vm._s(_vm.$t("Sustainabililty")) + " " + _vm._s(_vm.$t("Title"))
+          )
+        ])
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -679,7 +693,13 @@ var render = function() {
     ]),
     _vm._v(" "),
     _c("div", { staticClass: "vx-row" }, [
-      _vm._m(2),
+      _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
+        _c("h4", [
+          _vm._v(
+            _vm._s(_vm.$t("Sustainability")) + " " + _vm._s(_vm.$t("Content"))
+          )
+        ])
+      ]),
       _vm._v(" "),
       _c(
         "div",
@@ -716,7 +736,15 @@ var render = function() {
             },
             on: { click: _vm.saveSustainability }
           },
-          [_vm._v("\n        Save Description\n    ")]
+          [
+            _vm._v(
+              "\n        " +
+                _vm._s(_vm.$t("Save")) +
+                " " +
+                _vm._s(_vm.$t("Description")) +
+                "\n    "
+            )
+          ]
         )
       ],
       1
@@ -735,7 +763,13 @@ var render = function() {
                 _c(
                   "h3",
                   { staticClass: "vx-col w-full lg:w-1/2 sm:w-1 mb-2" },
-                  [_vm._v("Ads Image")]
+                  [
+                    _vm._v(
+                      _vm._s(_vm.$t("Sustainability")) +
+                        " " +
+                        _vm._s(_vm.$t("Image"))
+                    )
+                  ]
                 ),
                 _vm._v(" "),
                 _c(
@@ -750,7 +784,15 @@ var render = function() {
                     },
                     on: { click: _vm.saveAction }
                   },
-                  [_vm._v("\n            Add Image\n         ")]
+                  [
+                    _vm._v(
+                      "\n            " +
+                        _vm._s(_vm.$t("Add")) +
+                        " " +
+                        _vm._s(_vm.$t("Image")) +
+                        "\n         "
+                    )
+                  ]
                 )
               ],
               1
@@ -822,7 +864,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                          Delete\n                      "
+                              "\n                          " +
+                                _vm._s(_vm.$t("Delete")) +
+                                "\n                      "
                             )
                           ]
                         ),
@@ -847,13 +891,13 @@ var render = function() {
                           },
                           [
                             _c("span", { attrs: { slot: "on" }, slot: "on" }, [
-                              _vm._v("Show")
+                              _vm._v(_vm._s(_vm.$t("Show")))
                             ]),
                             _vm._v(" "),
                             _c(
                               "span",
                               { attrs: { slot: "off" }, slot: "off" },
-                              [_vm._v("Cancel")]
+                              [_vm._v(_vm._s(_vm.$t("Cancel")))]
                             )
                           ]
                         )
@@ -872,34 +916,7 @@ var render = function() {
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c(
-      "div",
-      { staticClass: "vx-col sm:w-1/3 w-full flex items-center text-right" },
-      [_c("h3", [_vm._v("Select Fair")])]
-    )
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-      _c("h4", [_vm._v("Sustainability Title")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-      _c("h4", [_vm._v("Sustainability Content")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

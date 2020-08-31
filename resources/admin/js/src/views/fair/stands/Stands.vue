@@ -18,7 +18,7 @@
             <div class="chat__contacts">
                 <ul class="chat__contacts bordered-items" >
                     <div class="chat__contact flex items-center px-2 pt-4 pb-2 borded-items ml-3" @click="showStands(0)">
-                        <h5 class="font-semibold ">All</h5>
+                        <h5 class="font-semibold ">{{$t('All')}}</h5>
                       </div>
                       <vs-divider class="d-theme-border-grey-light m-0" />
                     <div v-for=" (country, index) in searchedCountries" :key="index">

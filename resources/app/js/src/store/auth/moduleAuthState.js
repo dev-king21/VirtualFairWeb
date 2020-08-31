@@ -1,3 +1,4 @@
 export default {
-  loggedIn: false
+  loggedIn: false,
+  lang: 'en'
 }

@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <app-header activeItem="0"></app-header>
-        <bread-crumb icon="address-book" type="svg" text="contacto" />
+        <bread-crumb icon="address-book" type="svg" :text="$t('Contact')" />
         <div class="w-full setting-stand-contact bg-white-grey">
             <div class="w-full px-10">
                 <div class="vx-row w-full pt-8">
@@ -11,7 +11,7 @@
                                 <img :src="`/fair_image/${item.url}`" class="responsive" />
                                 <div @click="removeBusinessCard(item.id)" class="flex items-center justify-center text-white mt-2 py-2 yellow-dark w-full cursor-pointer">
                                     <svg-icon size="w-5 h-5" icon="erase" />
-                                    <div class="ml-2" style="font-size: 0.9rem">BORRAR</div>
+                                    <div class="ml-2" style="font-size: 0.9rem">{{$t('Delete')}}</div>
                                 </div>
                             </div>
                         </div>
@@ -22,10 +22,10 @@
                                 <feather-icon svgClases="w-10 h-10" class="cursor-pointer" @click="browseBusinessCard()" icon="PlusIcon"/>
                             </div>
                             <div class="mt-4 text-center">
-                                SUBIR TARJETA <br>
-                                DE PRESENTACION <br>
-                                FORMATO JPG O PDF<br> 
-                                (Peso maximo 500kb)
+                                {{$t('UploadCard')}} <br>
+                                {{$t('Presentation')}} <br>
+                                {{$t('Format')}} JPG O PDF<br> 
+                                ({{$t('MaxSize')}} 500kb)
                             </div>
                         </div>
                     </template>
@@ -34,14 +34,14 @@
                             <div class="flex flex-col justify-between mx-3 my-3 bg-white" style="border: 1px solid #e2e2e2; border-radius: 0.8rem;">
                                 <div class="flex flex-col items-center w-full px-3 mt-8" >
                                     <div class="my-4 text-center h3">
-                                        Nuevo Contacto
+                                        {{$t('NewContact')}}
                                     </div> 
                                     <div class="my-4 blue-dark flex items-center justify-center text-white" style="border-radius: 50%; width: 4rem; height: 4rem">
                                         <svg-icon size="w-10 h-10" icon="address-book"/>
                                     </div>
                                     <div @click="saveBusinessCard()" class="flex items-center justify-center text-white py-2 my-4 cyan-dark w-full cursor-pointer">
                                         <feather-icon size="w-5 h-5" icon="SaveIcon" />
-                                        <div class="ml-2" style="font-size: 0.9rem">GUARDAR</div>
+                                        <div class="ml-2" style="font-size: 0.9rem">{{$t('Save')}}</div>
                                     </div>
                                 </div>
                             </div>
@@ -115,8 +115,8 @@ export default {
           const data = response.data
           if (!data.stand || !data.stand.id) {
             this.$vs.notify({
-              title: 'error',
-              text: 'primero debe comprar el soporte.',
+              title: this.$t('Error'),
+              text: this.$t('BucketMsg'),
               iconPack: 'feather',
               icon: 'icon-alert-circle',
               color: 'danger'
@@ -135,8 +135,8 @@ export default {
       
       if (!this.card_file || this.card_file.size > 500 * 1024) {
         this.$vs.notify({
-          title: 'error de formato de archivo',
-          text: 'El tamaño del archivo debe ser inferior a 500 KB y tener el formato jpg, pdf',
+          title: this.$t('FileFormatTitle'),
+          text: this.$t('FileSizeContent'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -158,8 +158,8 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Folleto registrado con éxito',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               iconPack: 'feather',
               icon: 'icon-info',
               color: 'success'
@@ -175,8 +175,8 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Folleto registrado con éxito',
+              title: this.$t('Success'),
+              text: this.$t('DeleteMessage'),
               iconPack: 'feather',
               icon: 'icon-info',
               color: 'success'

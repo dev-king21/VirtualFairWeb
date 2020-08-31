@@ -233,6 +233,16 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -283,7 +293,9 @@ __webpack_require__.r(__webpack_exports__);
       users: [],
       exhibitor: '',
       place: '',
-      talk_id: 0
+      talk_id: 0,
+      logo: '',
+      logo_file: null
     };
   },
   computed: {
@@ -299,6 +311,68 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   methods: {
+    make_logo: function make_logo(logo) {
+      if (logo) return logo;else return 'placeholder.png';
+    },
+    browseLogoImg: function browseLogoImg() {
+      this.$refs.refLogoFile.click();
+    },
+    readerData: function readerData(rawFile) {
+      var _this = this;
+
+      return new Promise(function (resolve) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+          _this.$refs.logoPreview.src = e.target.result;
+          _this.logo_file = rawFile; //this.onSuccess(sendData)
+
+          resolve();
+        };
+
+        _this.logo_show = true;
+        reader.readAsDataURL(rawFile);
+      });
+    },
+    validateAndUpload: function validateAndUpload(files) {
+      if (files.length !== 1) {
+        this.$vs.notify({
+          title: this.$t('TooManyFileTitle'),
+          text: this.$t('TooManyFileContent'),
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        });
+        return;
+      }
+
+      var rawFile = files[0]; // only use files[0]
+
+      if (!this.isImage(rawFile)) {
+        this.$vs.notify({
+          title: this.$t('FileFormatTitle'),
+          text: this.$t('FileFormatContent'),
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        });
+        return false;
+      }
+
+      this.previewLogo(rawFile);
+    },
+    isImage: function isImage(file) {
+      return /\.(jpeg|png|gif|jpg)$/.test(file.name);
+    },
+    previewLogo: function previewLogo(file) {
+      this.$refs.refLogoFile.value = null; // fix can't select the same excel
+
+      this.readerData(file);
+    },
+    logoChanged: function logoChanged(e) {
+      var files = e.target.files;
+      this.validateAndUpload(files);
+    },
     deleteData: function deleteData(id) {//   this.$store.dispatch('dataList/removeItem', id).catch(err => { console.error(err) })
     },
     cancelAction: function cancelAction() {
@@ -314,37 +388,44 @@ __webpack_require__.r(__webpack_exports__);
       return [year, month, day].join('-');
     },
     editTalk: function editTalk() {
-      var _this = this;
+      var _this2 = this;
 
-      if (this.talk_id === 0 || this.startTime === null || this.endTime === null) return;
+      if (this.talk_id === 0 || this.startTime === null || this.endTime === null || this.logo_file === null) return;
       var action = "/api/exhibitor/update/".concat(this.talk_id);
-      var newData = {
-        start_time: this.startTime,
-        end_time: this.endTime
+      var newData = new FormData();
+      var headers = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
       };
+      newData.append('start_time', this.startTime);
+      newData.append('end_time', this.endTime);
+      if (this.logo_file) newData.append('background', this.logo_file);
       this.$loading.show(this);
-      this.$http.post(action, newData).then(function (response) {
-        _this.$loading.hide(_this);
+      this.$http.post(action, newData, headers).then(function (response) {
+        _this2.$loading.hide(_this2);
 
         if (response.data.status === 'ok') {
-          _this.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
+          _this2.$vs.notify({
+            title: _this2.$t('Success'),
+            text: _this2.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
-          _this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+          _this2.$vs.notify({
+            title: _this2.$t('Error'),
+            text: _this2.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         }
 
-        _this.loadContent();
+        _this2.loadContent();
+
+        _this2.isAddShow = false;
       });
     },
     EditData: function EditData(talk_id) {
@@ -386,7 +467,7 @@ __webpack_require__.r(__webpack_exports__);
       this.addNewDataSidebar = val;
     },
     updateStatus: function updateStatus(tr) {
-      var _this2 = this;
+      var _this3 = this;
 
       var action = "/api/room/talk/update/".concat(tr.id);
       var param = {
@@ -394,21 +475,21 @@ __webpack_require__.r(__webpack_exports__);
       };
       this.$loading.show(this);
       this.$http.post(action, param).then(function (response) {
-        _this2.$loading.hide(_this2);
+        _this3.$loading.hide(_this3);
 
         if (response.data.status === 'ok') {
-          _this2.$vs.notify({
-            title: 'éxito',
-            text: 'Ha sido cambiado exitosamente.',
+          _this3.$vs.notify({
+            title: _this3.$t('Success'),
+            text: _this3.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
-          _this2.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+          _this3.$vs.notify({
+            title: _this3.$t('Error'),
+            text: _this3.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
@@ -416,15 +497,15 @@ __webpack_require__.r(__webpack_exports__);
       });
     },
     loadContent: function loadContent() {
-      var _this3 = this;
+      var _this4 = this;
 
       var action = '/api/exhibitor';
       this.$loading.show(this);
       this.$http.get(action).then(function (response) {
         var res = response.data;
-        _this3.talks = res.talks;
+        _this4.talks = res.talks;
 
-        _this3.$loading.hide(_this3);
+        _this4.$loading.hide(_this4);
       })["catch"](function (error) {
         return console.log(error);
       });
@@ -457,7 +538,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, "#data-list-thumb-view .vs-con-table .product-name {\n  max-width: 23rem;\n}\n#data-list-thumb-view .vs-con-table .vs-table--header {\n  display: flex;\n  flex-wrap: wrap-reverse;\n}\n[dir=ltr] #data-list-thumb-view .vs-con-table .vs-table--header {\n  margin-left: 1.5rem;\n  margin-right: 1.5rem;\n}\n[dir=rtl] #data-list-thumb-view .vs-con-table .vs-table--header {\n  margin-right: 1.5rem;\n  margin-left: 1.5rem;\n}\n#data-list-thumb-view .vs-con-table .vs-table--header > span {\n  display: flex;\n  flex-grow: 1;\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table--header .vs-table--search {\n  padding-top: 0;\n}\n#data-list-thumb-view .vs-con-table .vs-table--header .vs-table--search .vs-table--search-input {\n  font-size: 1rem;\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table--header .vs-table--search .vs-table--search-input {\n  padding: 0.9rem 2.5rem;\n}\n[dir=ltr] #data-list-thumb-view .vs-con-table .vs-table--header .vs-table--search .vs-table--search-input + i {\n  left: 1rem;\n}\n[dir=rtl] #data-list-thumb-view .vs-con-table .vs-table--header .vs-table--search .vs-table--search-input + i {\n  right: 1rem;\n}\n[dir=ltr] #data-list-thumb-view .vs-con-table .vs-table--header .vs-table--search .vs-table--search-input:focus + i {\n  left: 1rem;\n}\n[dir=rtl] #data-list-thumb-view .vs-con-table .vs-table--header .vs-table--search .vs-table--search-input:focus + i {\n  right: 1rem;\n}\n#data-list-thumb-view .vs-con-table .vs-table {\n  border-collapse: separate;\n  border-spacing: 0 1.3rem;\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table {\n  padding: 0 1rem;\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table tr {\n  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table tr td {\n  padding: 10px;\n}\n[dir=ltr] #data-list-thumb-view .vs-con-table .vs-table tr td:first-child {\n  border-top-left-radius: 0.5rem;\n  border-bottom-left-radius: 0.5rem;\n}\n[dir=rtl] #data-list-thumb-view .vs-con-table .vs-table tr td:first-child {\n  border-top-right-radius: 0.5rem;\n  border-bottom-right-radius: 0.5rem;\n}\n[dir=ltr] #data-list-thumb-view .vs-con-table .vs-table tr td:last-child {\n  border-top-right-radius: 0.5rem;\n  border-bottom-right-radius: 0.5rem;\n}\n[dir=rtl] #data-list-thumb-view .vs-con-table .vs-table tr td:last-child {\n  border-top-left-radius: 0.5rem;\n  border-bottom-left-radius: 0.5rem;\n}\n#data-list-thumb-view .vs-con-table .vs-table tr td.img-container span {\n  display: flex;\n  justify-content: flex-start;\n}\n#data-list-thumb-view .vs-con-table .vs-table tr td.img-container .product-img {\n  height: 110px;\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table tr td.td-check {\n  padding: 20px !important;\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table--thead th {\n  padding-top: 0;\n  padding-bottom: 0;\n}\n#data-list-thumb-view .vs-con-table .vs-table--thead th .vs-table-text {\n  text-transform: uppercase;\n  font-weight: 600;\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table--thead th.td-check {\n  padding: 0 15px !important;\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table--thead tr {\n  background: none;\n  box-shadow: none;\n}\n#data-list-thumb-view .vs-con-table .vs-table--pagination {\n  justify-content: center;\n}", ""]);
+exports.push([module.i, "#data-list-thumb-view .vs-con-table .product-name {\n  max-width: 23rem;\n}\n#data-list-thumb-view .vs-con-table .vs-table--header {\n  display: flex;\n  flex-wrap: wrap-reverse;\n}\n[dir=ltr] #data-list-thumb-view .vs-con-table .vs-table--header {\n  margin-left: 1.5rem;\n  margin-right: 1.5rem;\n}\n[dir=rtl] #data-list-thumb-view .vs-con-table .vs-table--header {\n  margin-right: 1.5rem;\n  margin-left: 1.5rem;\n}\n#data-list-thumb-view .vs-con-table .vs-table--header > span {\n  display: flex;\n  flex-grow: 1;\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table--header .vs-table--search {\n  padding-top: 0;\n}\n#data-list-thumb-view .vs-con-table .vs-table--header .vs-table--search .vs-table--search-input {\n  font-size: 1rem;\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table--header .vs-table--search .vs-table--search-input {\n  padding: 0.9rem 2.5rem;\n}\n[dir=ltr] #data-list-thumb-view .vs-con-table .vs-table--header .vs-table--search .vs-table--search-input + i {\n  left: 1rem;\n}\n[dir=rtl] #data-list-thumb-view .vs-con-table .vs-table--header .vs-table--search .vs-table--search-input + i {\n  right: 1rem;\n}\n[dir=ltr] #data-list-thumb-view .vs-con-table .vs-table--header .vs-table--search .vs-table--search-input:focus + i {\n  left: 1rem;\n}\n[dir=rtl] #data-list-thumb-view .vs-con-table .vs-table--header .vs-table--search .vs-table--search-input:focus + i {\n  right: 1rem;\n}\n#data-list-thumb-view .vs-con-table .fair_logo {\n  height: 50px;\n  width: auto;\n}\n#data-list-thumb-view .vs-con-table .vs-table {\n  border-collapse: separate;\n  border-spacing: 0 1.3rem;\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table {\n  padding: 0 1rem;\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table tr {\n  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.05);\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table tr td {\n  padding: 10px;\n}\n[dir=ltr] #data-list-thumb-view .vs-con-table .vs-table tr td:first-child {\n  border-top-left-radius: 0.5rem;\n  border-bottom-left-radius: 0.5rem;\n}\n[dir=rtl] #data-list-thumb-view .vs-con-table .vs-table tr td:first-child {\n  border-top-right-radius: 0.5rem;\n  border-bottom-right-radius: 0.5rem;\n}\n[dir=ltr] #data-list-thumb-view .vs-con-table .vs-table tr td:last-child {\n  border-top-right-radius: 0.5rem;\n  border-bottom-right-radius: 0.5rem;\n}\n[dir=rtl] #data-list-thumb-view .vs-con-table .vs-table tr td:last-child {\n  border-top-left-radius: 0.5rem;\n  border-bottom-left-radius: 0.5rem;\n}\n#data-list-thumb-view .vs-con-table .vs-table tr td.img-container span {\n  display: flex;\n  justify-content: flex-start;\n}\n#data-list-thumb-view .vs-con-table .vs-table tr td.img-container .product-img {\n  height: 110px;\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table tr td.td-check {\n  padding: 20px !important;\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table--thead th {\n  padding-top: 0;\n  padding-bottom: 0;\n}\n#data-list-thumb-view .vs-con-table .vs-table--thead th .vs-table-text {\n  text-transform: uppercase;\n  font-weight: 600;\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table--thead th.td-check {\n  padding: 0 15px !important;\n}\n[dir] #data-list-thumb-view .vs-con-table .vs-table--thead tr {\n  background: none;\n  box-shadow: none;\n}\n#data-list-thumb-view .vs-con-table .vs-table--pagination {\n  justify-content: center;\n}", ""]);
 
 // exports
 
@@ -602,12 +683,6 @@ var render = function() {
                           ]),
                           _vm._v(" "),
                           _c("vs-td", [
-                            _c("p", { staticClass: "product-price" }, [
-                              _vm._v(_vm._s(tr.peoples))
-                            ])
-                          ]),
-                          _vm._v(" "),
-                          _c("vs-td", [
                             _c(
                               "p",
                               {
@@ -627,6 +702,16 @@ var render = function() {
                             _c("p", { staticClass: "product-price" }, [
                               _vm._v(_vm._s(tr.end_time))
                             ])
+                          ]),
+                          _vm._v(" "),
+                          _c("vs-td", [
+                            _c("img", {
+                              staticClass: "fair_logo",
+                              attrs: {
+                                src: "/fair_image/" + tr.background,
+                                alt: "content-img"
+                              }
+                            })
                           ]),
                           _vm._v(" "),
                           _c(
@@ -689,7 +774,7 @@ var render = function() {
                       _c("vx-card", [
                         _c("div", { staticClass: "vx-row mb-6" }, [
                           _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                            _c("span", [_vm._v("Place")])
+                            _c("span", [_vm._v(_vm._s(_vm.$t("Place")))])
                           ]),
                           _vm._v(" "),
                           _c(
@@ -714,7 +799,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("div", { staticClass: "vx-row mb-6" }, [
                           _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                            _c("span", [_vm._v("Exhibitor")])
+                            _c("span", [_vm._v(_vm._s(_vm.$t("Exhibitor")))])
                           ]),
                           _vm._v(" "),
                           _c(
@@ -739,7 +824,13 @@ var render = function() {
                         _vm._v(" "),
                         _c("div", { staticClass: "vx-row mb-6" }, [
                           _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                            _c("span", [_vm._v("Webinar title")])
+                            _c("span", [
+                              _vm._v(
+                                _vm._s(_vm.$t("Webinar")) +
+                                  " " +
+                                  _vm._s(_vm.$t("Title"))
+                              )
+                            ])
                           ]),
                           _vm._v(" "),
                           _c(
@@ -764,7 +855,13 @@ var render = function() {
                         _vm._v(" "),
                         _c("div", { staticClass: "vx-row mb-6" }, [
                           _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                            _c("span", [_vm._v("Webinar Date")])
+                            _c("span", [
+                              _vm._v(
+                                _vm._s(_vm.$t("Webinar")) +
+                                  " " +
+                                  _vm._s(_vm.$t("Date"))
+                              )
+                            ])
                           ]),
                           _vm._v(" "),
                           _c(
@@ -794,7 +891,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("div", { staticClass: "vx-row mb-6" }, [
                           _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                            _c("span", [_vm._v("Description")])
+                            _c("span", [_vm._v(_vm._s(_vm.$t("Description")))])
                           ]),
                           _vm._v(" "),
                           _c(
@@ -819,7 +916,13 @@ var render = function() {
                         _vm._v(" "),
                         _c("div", { staticClass: "vx-row mb-6" }, [
                           _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                            _c("span", [_vm._v("Exhibitor Name")])
+                            _c("span", [
+                              _vm._v(
+                                _vm._s(_vm.$t("Exhibitor")) +
+                                  " " +
+                                  _vm._s(_vm.$t("Name"))
+                              )
+                            ])
                           ]),
                           _vm._v(" "),
                           _c(
@@ -844,7 +947,13 @@ var render = function() {
                         _vm._v(" "),
                         _c("div", { staticClass: "vx-row mb-6" }, [
                           _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                            _c("span", [_vm._v("Exhibitor Profession")])
+                            _c("span", [
+                              _vm._v(
+                                _vm._s(_vm.$t("Exhibitor")) +
+                                  " " +
+                                  _vm._s(_vm.$t("Profession"))
+                              )
+                            ])
                           ]),
                           _vm._v(" "),
                           _c(
@@ -869,7 +978,13 @@ var render = function() {
                         _vm._v(" "),
                         _c("div", { staticClass: "vx-row mb-6" }, [
                           _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                            _c("span", [_vm._v("Exhibitor Company")])
+                            _c("span", [
+                              _vm._v(
+                                _vm._s(_vm.$t("Exhibitor")) +
+                                  " " +
+                                  _vm._s(_vm.$t("Company"))
+                              )
+                            ])
                           ]),
                           _vm._v(" "),
                           _c(
@@ -894,7 +1009,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("div", { staticClass: "vx-row mb-6" }, [
                           _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                            _c("span", [_vm._v("Key")])
+                            _c("span", [_vm._v(_vm._s(_vm.$t("Key")))])
                           ]),
                           _vm._v(" "),
                           _c(
@@ -919,7 +1034,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("div", { staticClass: "vx-row mb-6" }, [
                           _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                            _c("span", [_vm._v("Password")])
+                            _c("span", [_vm._v(_vm._s(_vm.$t("Password")))])
                           ]),
                           _vm._v(" "),
                           _c(
@@ -944,7 +1059,16 @@ var render = function() {
                         _vm._v(" "),
                         _c("div", { staticClass: "vx-row mb-6" }, [
                           _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                            _c("span", [_vm._v("Period(Start ~ End)")])
+                            _c("span", [
+                              _vm._v(
+                                _vm._s(_vm.$t("Period")) +
+                                  "(" +
+                                  _vm._s(_vm.$t("Start")) +
+                                  " ~ " +
+                                  _vm._s(_vm.$t("End")) +
+                                  ")"
+                              )
+                            ])
                           ]),
                           _vm._v(" "),
                           _c(
@@ -984,6 +1108,39 @@ var render = function() {
                               ]
                             ],
                             2
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "vx-row mb-6" }, [
+                          _c("div", { staticClass: "vx-col sm:w-1/4 w-full" }, [
+                            _c("span", [_vm._v("Background")])
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "vx-col sm:w-3/4 text-center mt-0" },
+                            [
+                              _c("img", {
+                                ref: "logoPreview",
+                                staticClass: "cursor-pointer",
+                                staticStyle: { height: "120px", width: "auto" },
+                                attrs: {
+                                  src: "/fair_image/" + _vm.make_logo(_vm.logo),
+                                  alt: "content-img"
+                                },
+                                on: { click: _vm.browseLogoImg }
+                              }),
+                              _vm._v(" "),
+                              _c("input", {
+                                ref: "refLogoFile",
+                                staticClass: "hidden",
+                                attrs: {
+                                  type: "file",
+                                  accept: ".png, .gif, .jpg, .jpeg"
+                                },
+                                on: { change: _vm.logoChanged }
+                              })
+                            ]
                           )
                         ]),
                         _vm._v(" "),
@@ -1135,44 +1292,54 @@ var render = function() {
               _c("vs-th", [_vm._v("ID")]),
               _vm._v(" "),
               _c("vs-th", { attrs: { "sort-key": "title" } }, [
-                _vm._v("Place")
+                _vm._v(_vm._s(_vm.$t("Place")))
               ]),
               _vm._v(" "),
               _c("vs-th", { attrs: { "sort-key": "title" } }, [
-                _vm._v("Title")
+                _vm._v(_vm._s(_vm.$t("Title")))
               ]),
               _vm._v(" "),
               _c("vs-th", { attrs: { "sort-key": "title" } }, [
-                _vm._v("Description")
+                _vm._v(_vm._s(_vm.$t("Description")))
               ]),
               _vm._v(" "),
               _c("vs-th", { attrs: { "sort-key": "title" } }, [
-                _vm._v("Exhibitor Name/Profession/Company")
-              ]),
-              _vm._v(" "),
-              _c("vs-th", { attrs: { "sort-key": "title" } }, [_vm._v("Key")]),
-              _vm._v(" "),
-              _c("vs-th", { attrs: { "sort-key": "title" } }, [
-                _vm._v("Password")
-              ]),
-              _vm._v(" "),
-              _c("vs-th", { attrs: { "sort-key": "title" } }, [
-                _vm._v("Number of People")
-              ]),
-              _vm._v(" "),
-              _c("vs-th", { attrs: { "sort-key": "title" } }, [
-                _vm._v("Webinar Date")
+                _vm._v(
+                  _vm._s(_vm.$t("Exhibitor")) +
+                    " " +
+                    _vm._s(_vm.$t("Name")) +
+                    " /" +
+                    _vm._s(_vm.$t("Profession")) +
+                    " /" +
+                    _vm._s(_vm.$t("Company"))
+                )
               ]),
               _vm._v(" "),
               _c("vs-th", { attrs: { "sort-key": "title" } }, [
-                _vm._v("Start Time")
+                _vm._v(_vm._s(_vm.$t("Key")))
               ]),
               _vm._v(" "),
               _c("vs-th", { attrs: { "sort-key": "title" } }, [
-                _vm._v("End Time")
+                _vm._v(_vm._s(_vm.$t("Password")))
               ]),
               _vm._v(" "),
-              _c("vs-th", [_vm._v("Action")])
+              _c("vs-th", { attrs: { "sort-key": "title" } }, [
+                _vm._v(_vm._s(_vm.$t("Webinar")) + " " + _vm._s(_vm.$t("Date")))
+              ]),
+              _vm._v(" "),
+              _c("vs-th", { attrs: { "sort-key": "title" } }, [
+                _vm._v(_vm._s(_vm.$t("StartTime")))
+              ]),
+              _vm._v(" "),
+              _c("vs-th", { attrs: { "sort-key": "title" } }, [
+                _vm._v(_vm._s(_vm.$t("EndTime")))
+              ]),
+              _vm._v(" "),
+              _c("vs-th", { attrs: { "sort-key": "title" } }, [
+                _vm._v(_vm._s(_vm.$t("Background")))
+              ]),
+              _vm._v(" "),
+              _c("vs-th", [_vm._v(_vm._s(_vm.$t("Actions")))])
             ],
             1
           )

@@ -86,6 +86,10 @@ __webpack_require__.r(__webpack_exports__);
       type: String,
       required: true
     },
+    background: {
+      type: String,
+      required: true
+    },
     reserved: {
       type: Boolean,
       required: false
@@ -111,7 +115,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".setting-webinar-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .setting-webinar-card {\n  background: white;\n  margin: 1rem;\n}\n.setting-webinar-card .user-img {\n  height: 4rem !important;\n  width: auto;\n}\n[dir] .setting-webinar-card .user-img {\n  border-radius: 50%;\n  background-color: #33333355;\n}\n.setting-webinar-card .event-btn {\n  font-size: 1rem !important;\n  min-width: 9rem !important;\n}\n[dir] .setting-webinar-card .event-btn {\n  padding: 0.8rem 0.6rem !important;\n  margin-top: 0.8rem !important;\n}\n[dir] .setting-webinar-card .event-btn.p-big {\n  padding: 0.8rem 1.2rem !important;\n}\n.setting-webinar-card .desc-info {\n  font-size: 0.9rem;\n  font-style: italic;\n}\n[dir] .setting-webinar-card .desc-info {\n  padding: 0 1rem;\n}\n.setting-webinar-card .user-info {\n  font-size: 0.9rem;\n}\n.setting-webinar-card .card-over {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  bottom: 0;\n}\n[dir=ltr] .setting-webinar-card .card-over {\n  left: 0;\n}\n[dir=rtl] .setting-webinar-card .card-over {\n  right: 0;\n}\n[dir] .setting-webinar-card .card-over .card-title {\n  background: #33333355;\n  padding: 0.6rem;\n}\n[dir] .setting-webinar-card .card-img {\n  background: #000000AA;\n}\n[dir] .card-border {\n  border: 1px solid #F2F2F2;\n}", ""]);
+exports.push([module.i, ".setting-webinar-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .setting-webinar-card {\n  background: white;\n  margin: 1rem;\n}\n.setting-webinar-card .user-img {\n  height: 4rem !important;\n  width: 4rem !important;\n}\n[dir] .setting-webinar-card .user-img {\n  border-radius: 50%;\n  background-color: #33333388;\n}\n.setting-webinar-card .event-btn {\n  font-size: 1rem !important;\n  min-width: 9rem !important;\n}\n[dir] .setting-webinar-card .event-btn {\n  padding: 0.8rem 0.6rem !important;\n  margin-top: 0.8rem !important;\n}\n[dir] .setting-webinar-card .event-btn.p-big {\n  padding: 0.8rem 1.2rem !important;\n}\n.setting-webinar-card .desc-info {\n  font-size: 0.9rem;\n  font-style: italic;\n}\n[dir] .setting-webinar-card .desc-info {\n  padding: 0 1rem;\n}\n.setting-webinar-card .user-info {\n  font-size: 0.9rem;\n}\n.setting-webinar-card .card-over {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  bottom: 0;\n}\n[dir=ltr] .setting-webinar-card .card-over {\n  left: 0;\n}\n[dir=rtl] .setting-webinar-card .card-over {\n  right: 0;\n}\n[dir] .setting-webinar-card .card-over .card-title {\n  background: #33333399;\n  padding: 0.6rem;\n}\n[dir] .card-border {\n  border: 1px solid #F2F2F2;\n}", ""]);
 
 // exports
 
@@ -173,12 +177,15 @@ var render = function() {
       _c("div", { staticClass: "relative card-img" }, [
         _c("img", {
           staticClass: "relative responsive",
-          attrs: { src: "/fair_image/" + _vm.user_img }
+          attrs: { src: "/fair_image/" + _vm.background }
         }),
         _vm._v(" "),
         _c(
           "div",
-          { staticClass: "card-over text-white flex flex-col justify-between" },
+          {
+            staticClass:
+              "card-over text-white flex flex-col w-full justify-between"
+          },
           [
             _c("div", [
               _c(
@@ -187,7 +194,7 @@ var render = function() {
                   staticClass: "text-white absolute p-3 bg-cyan-light",
                   staticStyle: { "font-size": "0.8rem" }
                 },
-                [_vm._v(_vm._s(_vm.workdate))]
+                [_vm._v(_vm._s(_vm.$date.dateFormatWithoutYear(_vm.workdate)))]
               )
             ]),
             _vm._v(" "),
@@ -205,10 +212,10 @@ var render = function() {
                         _c(
                           "div",
                           {
-                            staticClass: "ml-2 text-white",
+                            staticClass: "ml-2 text-white uppercase",
                             staticStyle: { "font-size": "0.8rem" }
                           },
-                          [_vm._v("EN VIVO")]
+                          [_vm._v(_vm._s(_vm.$t("Live")) + " ")]
                         )
                       ]
                     : [
@@ -219,10 +226,10 @@ var render = function() {
                         _c(
                           "div",
                           {
-                            staticClass: "ml-2 text-white",
+                            staticClass: "ml-2 text-white font-bold uppercase",
                             staticStyle: { "font-size": "0.8rem" }
                           },
-                          [_vm._v("GRABADO")]
+                          [_vm._v(_vm._s(_vm.$t("Recorded")) + " ")]
                         )
                       ]
                 ],
@@ -256,7 +263,10 @@ var render = function() {
       _c("div", { staticClass: "flex flex-row items-center mt-2 px-4" }, [
         _c("img", {
           staticClass: "user-img",
-          attrs: { src: "/fair_image/" + _vm.user_img }
+          attrs: {
+            src:
+              "/fair_image/" + (_vm.user_img ? _vm.user_img : "placeholder.png")
+          }
         }),
         _vm._v(" "),
         _c("div", { staticClass: "ml-4 user-info" }, [
@@ -283,9 +293,13 @@ var render = function() {
                   expression: "!reserved"
                 }
               ],
-              staticClass: "cyan-dark event-btn"
+              staticClass: "cyan-dark event-btn uppercase"
             },
-            [_vm._v("\n            VER DE NUEVO \n        ")]
+            [
+              _vm._v(
+                "\n            " + _vm._s(_vm.$t("SeeAgain")) + "\n        "
+              )
+            ]
           ),
           _vm._v(" "),
           _c(
@@ -299,9 +313,9 @@ var render = function() {
                   expression: "reserved"
                 }
               ],
-              staticClass: "blue-dark event-btn p-big"
+              staticClass: "blue-dark event-btn p-big uppercase"
             },
-            [_vm._v("\n            VER\n        ")]
+            [_vm._v("\n            " + _vm._s(_vm.$t("See")) + "\n        ")]
           )
         ],
         1

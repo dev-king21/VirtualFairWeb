@@ -191,7 +191,58 @@ var render = function() {
         [
           _c("bread-crumb", { attrs: { text: "pagar stand" } }),
           _vm._v(" "),
-          _vm._m(0)
+          _c("div", { staticClass: "flex justify-center bg-white-grey" }, [
+            _c(
+              "div",
+              {
+                staticClass: "w-1/2 my-6",
+                staticStyle: { "max-width": "600px" }
+              },
+              [
+                _c(
+                  "div",
+                  { staticClass: "py-6 font-bold text-center bg-white h2" },
+                  [
+                    _vm._v(
+                      "\n                    " +
+                        _vm._s(_vm.$t("CostStand")) +
+                        ": ¢250.000\n                "
+                    )
+                  ]
+                ),
+                _vm._v(" "),
+                _c(
+                  "div",
+                  {
+                    staticClass: "flex flex-col py-4 px-8",
+                    staticStyle: { background: "#f8f8f8" }
+                  },
+                  [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "text-center",
+                        staticStyle: { color: "#222" }
+                      },
+                      [
+                        _vm._v(
+                          "\n                        " +
+                            _vm._s(_vm.$t("PaymentInfo")) +
+                            "\n                    "
+                        )
+                      ]
+                    ),
+                    _vm._v(" "),
+                    _c("div", {
+                      staticStyle: { "border-bottom": "1px solid #c2c2c2" }
+                    }),
+                    _vm._v(" "),
+                    _vm._m(0)
+                  ]
+                )
+              ]
+            )
+          ])
         ],
         1
       )
@@ -204,55 +255,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "flex justify-center bg-white-grey" }, [
-      _c(
-        "div",
-        { staticClass: "w-1/2 my-6", staticStyle: { "max-width": "600px" } },
-        [
-          _c("div", { staticClass: "py-6 font-bold text-center bg-white h2" }, [
-            _vm._v(
-              "\n                    Costo del Stand: ¢250.000\n                "
-            )
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            {
-              staticClass: "flex flex-col py-4 px-8",
-              staticStyle: { background: "#f8f8f8" }
-            },
-            [
-              _c(
-                "div",
-                { staticClass: "text-center", staticStyle: { color: "#222" } },
-                [
-                  _vm._v(
-                    "\n                        Por favor ingrese la información de Pago\n                    "
-                  )
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", {
-                staticStyle: { "border-bottom": "1px solid #c2c2c2" }
-              }),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "mt-12 flex items-center justify-center w-full"
-                },
-                [
-                  _c("div", {
-                    staticClass: "w-4/5",
-                    attrs: { id: "paypal-button" }
-                  })
-                ]
-              )
-            ]
-          )
-        ]
-      )
-    ])
+    return _c(
+      "div",
+      { staticClass: "mt-12 flex items-center justify-center w-full" },
+      [_c("div", { staticClass: "w-4/5", attrs: { id: "paypal-button" } })]
+    )
   }
 ]
 render._withStripped = true

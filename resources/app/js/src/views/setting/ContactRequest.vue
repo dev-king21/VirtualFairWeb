@@ -1,19 +1,19 @@
 <template>
     <div class="w-full">
         <app-header activeItem="0"></app-header>
-        <bread-crumb icon="address-book" type="svg" text="mis contactors" 
-                    :second="true" second_icon="DownloadIcon" second_text="Descargar todos los contactos"/>
+        <bread-crumb icon="address-book" type="svg" :text="$t('MyContact')" 
+                    :second="true" second_icon="DownloadIcon" :second_text="$t('DownloadContact')"/>
         <div class="flex w-full flex-col bg-white-grey setting-contact-main">
             <div class="bg-white">
                 <div>
                     <vs-table :data="contacts">
                     <template slot="thead">
-                        <vs-th>NOMBRE</vs-th>
+                        <vs-th>{{$t('Name')}}</vs-th>
                         <vs-th>EMAIL</vs-th>
-                        <vs-th>TEL</vs-th>
-                        <vs-th>PUESTO</vs-th>
-                        <vs-th>COMPANIA</vs-th>
-                        <vs-th>PAIS</vs-th>
+                        <vs-th>{{$t('Phone')}}</vs-th>
+                        <vs-th>{{$t('Market')}}</vs-th>
+                        <vs-th>{{$t('Company')}}</vs-th>
+                        <vs-th>{{$t('Country')}}</vs-th>
                         <vs-th></vs-th>
                     </template>
                     <template slot-scope="{data}">
@@ -45,7 +45,7 @@
 
                             <vs-td>
                             <vs-button type="filled" class="link-btn" @click="openDetail(data[indextr].id)" :class="(!data[indextr].active)? 'cyan-dark' : 'grey-real'">
-                                VER MAS
+                                {{$t('SeeMore')}}
                             </vs-button>
                             </vs-td>
 
@@ -56,19 +56,19 @@
                 </div>
                 <vs-popup title="" class="contact-popup" :active.sync="detailShow">
                     <div class="flex justify-end text-white text-right">
-                        <div class="bg-cyan-dark" style="padding: 10px 24px">CONTACTOR POR TELEFONO</div>
+                        <div class="bg-cyan-dark" style="padding: 10px 24px">{{$t('TelephoneContact')}}</div>
                     </div>
                     <div class="px-20 mt-8" v-if="active_item">
-                        <div class="mb-3 font-italic">Nombre: {{active_item.requestor.first_name}} {{active_item.requestor.last_name}}</div>
+                        <div class="mb-3 font-italic">{{$t('Name')}}: {{active_item.requestor.first_name}} {{active_item.requestor.last_name}}</div>
                         <div class="mb-3 font-italic">Email: {{active_item.requestor.email}}</div>
-                        <div class="mb-3 font-italic">Telefono: {{active_item.requestor.phone}}</div>
-                        <div class="mb-3 font-italic">Posicion: {{active_item.requestor.address}}</div>
-                        <div class="mb-3 font-italic">Compania: {{active_item.requestor.company}}</div>
-                        <div class="mb-3 font-italic">Pais: {{active_item.requestor.country}}</div>
-                        <div class="mb-3 font-italic">Region: {{active_item.requestor.region}}</div>
-                        <div class="mb-16 font-italic">Area de interes: {{active_item.requestor.concern}}</div>
+                        <div class="mb-3 font-italic">{{$t('Phone')}}: {{active_item.requestor.phone}}</div>
+                        <div class="mb-3 font-italic">{{$t('Position')}}: {{active_item.requestor.address}}</div>
+                        <div class="mb-3 font-italic">{{$t('Company')}}: {{active_item.requestor.company}}</div>
+                        <div class="mb-3 font-italic">{{$t('Country')}}: {{active_item.requestor.country}}</div>
+                        <div class="mb-3 font-italic">{{$t('Region')}}: {{active_item.requestor.region}}</div>
+                        <div class="mb-16 font-italic">{{$t('InterestArea')}}: {{active_item.requestor.concern}}</div>
                         <div>
-                            Mensaje de contacto
+                            {{$t('ContactMsg')}}
                         </div>
                         <div class="m-10">
                             Me gustaria que me contacten para que me den mas detalles del proyector que estan desarrollando en Moravia    
@@ -107,23 +107,7 @@ export default {
         this.$loading.hide(this)
         const data = response.data
         this.contacts = data.requests
-        if (response.data.status === 'ok') {
-          this.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
-            color: 'success',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          })
-        } else {
-          this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          })
-        } 
+        
       })
   }
     

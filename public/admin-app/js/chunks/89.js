@@ -374,8 +374,8 @@ var render = function() {
           {
             name: "validate",
             rawName: "v-validate",
-            value: "required|min:5",
-            expression: "'required|min:5'"
+            value: "required",
+            expression: "'required'"
           }
         ],
         staticClass: "w-full",

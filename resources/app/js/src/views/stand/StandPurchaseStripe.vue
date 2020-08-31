@@ -6,17 +6,17 @@
             <div class="flex justify-center bg-white-grey">
                 <div class="w-1/2 my-6" style="max-width: 600px; text-center">
                     <div class="py-6 font-bold text-center bg-white h2">
-                        Costo del Stand: ¢250.000
+                        {{$t('CostStand')}}: ¢250.000
                     </div>
                     <div class="flex flex-col py-4 px-8" style="background: #f8f8f8"> 
                         <div class="text-center" style="color: #222;">
-                            Por favor ingrese la información de Pago
+                            {{$t('PaymentInfo')}}
                         </div>
                         <div style="border-bottom: 1px solid #c2c2c2;">
 
                         </div>
                         <div class="mt-6">
-                            <div>Numero del tarjeta</div>
+                            <div>{{$t('CardNum')}}</div>
                             <div id="card-number-element" class="field"></div>
                         </div>
                         <div class="mt-6 flex justify-between">
@@ -30,17 +30,17 @@
                             </div>
                         </div>
                         <div class="mt-6">
-                            <div>Numero del tarjeta</div>
+                            <div>{{$t('CardNum')}}</div>
                             <div class="field" :class="{'StripeElement--focus': holder_focus}">
                                 <vs-input @focus="holder_focus=true" @blur="holder_focus=false" class="w-full" placeholder="Numero del tarjeta" v-model="holder_name"  />
                             </div>
                         </div>
                         <div class="mt-12 flex items-center justify-between">
-                            <vs-button class="w-1/2 bg-danger py-4 fs-12" @click="checkoutStand" >Realizer Pago</vs-button>
+                            <vs-button class="w-1/2 bg-danger py-4 fs-12" @click="checkoutStand" >{{$t('Payment Realizer')}}</vs-button>
                             <div>
-                                <div>AI completar la compra, aceptas estas</div>
+                                <div>{{$t('CompletePurchase')}}</div>
                                 <div class="text-cyan-dark font-bold">
-                                    Condiciones de uso
+                                    {{$t('TermUse')}}
                                 </div>
                             </div>
                         </div>
@@ -155,8 +155,8 @@ export default {
         //this.loadPaymentMethods()
         this.$loading.hide(this)
         this.$vs.notify({
-          title: 'éxito',
-          text: 'Gracias por comprar.<br> El pago se realizó correctamente.',
+          title: $t('Success'),
+          text: $t('PaymentMsg'),
           color: 'success',
           iconPack: 'feather',
           icon: 'icon-alert-circle'

@@ -139,24 +139,6 @@ __webpack_require__.r(__webpack_exports__);
     },
     purchaseStand: function purchaseStand(stand_id) {
       this.$router.push("/stand/purchase/".concat(stand_id));
-      /* this.$loading.show(this)
-      this.$http.post('/api/stand/purchase', {stand: stand_id})
-        .then((response) => {
-          this.$loading.hide(this)
-          const data = response.data
-          if (data.status !== 'ok') return console.log(data.msg)
-          this.$vs.notify({
-            title:'Notificación',
-            text:'¡Ha comprado el stand con éxito! <br> Puede editar su stand en la página de configuración',
-            color:'success',
-            iconPack: 'feather',
-            icon:'icon-mail'})
-          setTimeout(() => {
-            this.$router.push('/setting/stand').catch(() => {})  
-          }, 3000)  
-          
-          })
-        .catch((error) => console.log(error)) */
     },
     onLoadImg: function onLoadImg() {
       this.loading = true;
@@ -171,6 +153,7 @@ __webpack_require__.r(__webpack_exports__);
     this.$http.get('/api/fair/get_current_stands').then(function (response) {
       _this.$loading.hide(_this);
 
+      console.log(response.data);
       var data = response.data;
       _this.fair = data.fair;
 
@@ -326,7 +309,9 @@ var render = function() {
         attrs: { svgClasses: "w-6 h-6", icon: "ArrowLeftIcon" }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "back-text" }, [_vm._v("VOLVER")])
+      _c("div", { staticClass: "back-text" }, [
+        _vm._v(_vm._s(_vm.$t("Return")))
+      ])
     ],
     1
   )
@@ -378,10 +363,13 @@ var render = function() {
                   { staticClass: "w-1/3 p-8" },
                   [
                     _c("div", { staticClass: "uppercase fs-10 text-white" }, [
-                      _vm._v("Buscar por categoria")
+                      _vm._v(_vm._s(_vm.$t("SearchCategory")))
                     ]),
                     _vm._v(" "),
-                    _c("vs-input", { staticClass: "w-full" })
+                    _c("vs-input", {
+                      staticClass: "w-full",
+                      attrs: { placeholder: _vm.$t("Search") }
+                    })
                   ],
                   1
                 ),
@@ -391,12 +379,12 @@ var render = function() {
                   { staticClass: "w-1/3 p-8" },
                   [
                     _c("div", { staticClass: "uppercase fs-10 text-white" }, [
-                      _vm._v("Buscar por nombre")
+                      _vm._v(_vm._s(_vm.$t("SearchName")))
                     ]),
                     _vm._v(" "),
                     _c("vs-input", {
                       staticClass: "w-full",
-                      attrs: { placeholder: "Buscar" }
+                      attrs: { placeholder: _vm.$t("Search") }
                     })
                   ],
                   1
@@ -416,12 +404,12 @@ var render = function() {
               "vx-col lg:w-3/4 md:w-2/3 sm:w-full xs:w-full py-8 px-12"
           },
           [
-            _vm.fair !== undefined
+            _vm.fair
               ? _c(
                   "div",
                   { staticClass: "relative w-full h-full" },
                   [
-                    _vm.fair.fair_type !== undefined
+                    _vm.fair.fair_type
                       ? [
                           _c("img", {
                             ref: "refFairImg",
@@ -498,7 +486,7 @@ var render = function() {
           { staticClass: "vx-col lg:w-1/4 md:w-1/3 sm:w-full xs: w-full" },
           [
             _c("div", { staticClass: "uppercase mt-4 fs-11 font-bold mb-4" }, [
-              _vm._v("publicidad")
+              _vm._v(_vm._s(_vm.$t("Ads")))
             ]),
             _vm._v(" "),
             _c(

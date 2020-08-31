@@ -11,6 +11,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/store/auth/moduleAuth.js */ "./resources/app/js/src/store/auth/moduleAuth.js");
 /* harmony import */ var _layouts_components_Header_vue__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/layouts/components/Header.vue */ "./resources/app/js/src/layouts/components/Header.vue");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_2__);
 //
 //
 //
@@ -122,11 +124,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    AppHeader: _layouts_components_Header_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
+    AppHeader: _layouts_components_Header_vue__WEBPACK_IMPORTED_MODULE_1__["default"],
+    vSelect: vue_select__WEBPACK_IMPORTED_MODULE_2___default.a
   },
   data: function data() {
     return {
@@ -138,12 +144,17 @@ __webpack_require__.r(__webpack_exports__);
       repeat_password: '',
       accept_chk: false,
       avatar_show: false,
-      avatar_file: null
+      avatar_file: null,
+      fair_title: '',
+      countries: [],
+      regions: [],
+      selected_country: undefined,
+      selected_region: undefined
     };
   },
   computed: {
     validateForm: function validateForm() {
-      return !this.errors.any() && this.user.email !== '' && this.user.password !== '' && this.repeat_password !== '' && this.repeat_password === this.user.password && this.user.first_name !== '' && this.user.last_name !== '' && this.user.phone !== '' && this.user.address !== '' && this.user.company !== '' && this.user.country !== '' && this.user.region !== '' && this.accept_chk;
+      return !this.errors.any() && this.user.email !== '' && this.user.password !== '' && this.repeat_password !== '' && this.repeat_password === this.user.password && this.user.first_name !== '' && this.user.last_name !== '' && this.user.phone !== '' && this.user.address !== '' && this.user.company !== '' && this.user.country && this.user.region && this.accept_chk;
     }
   },
   methods: {
@@ -165,10 +176,24 @@ __webpack_require__.r(__webpack_exports__);
       this.$store.dispatch('auth/register', this.user).then(function (response) {
         _this.$loading.hide(_this);
 
+        console.log(response.data.status);
+
+        if (response.data.status === 'already_exist') {
+          _this.$vs.notify({
+            title: _this.$t('Error'),
+            text: _this.$t('UserAlreadyExistMsg'),
+            iconPack: 'feather',
+            icon: 'icon-info',
+            color: 'danger'
+          });
+
+          return;
+        }
+
         if (response.data.status === 'ok') {
           _this.$vs.notify({
-            title: 'éxito',
-            text: 'su cuenta se ha registrado correctamente',
+            title: _this.$t('Success'),
+            text: _this.$t('RegisterSuccess'),
             iconPack: 'feather',
             icon: 'icon-info',
             color: 'success'
@@ -181,6 +206,23 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (error) {
         return console.log(error);
       });
+    },
+    setUserCountry: function setUserCountry() {
+      if (this.selected_country) {
+        this.user.country = this.selected_country.name;
+      } else {
+        this.user.country = undefined;
+      }
+
+      this.selected_region = undefined;
+      this.user.region = undefined;
+    },
+    setUserRegion: function setUserRegion() {
+      if (this.selected_region) {
+        this.user.region = this.selected_region.name;
+      } else {
+        this.user.region = undefined;
+      }
     },
     browseAvatarImg: function browseAvatarImg() {
       this.$refs.refAvatarFile.click();
@@ -253,11 +295,38 @@ __webpack_require__.r(__webpack_exports__);
     if (this.$route.params.type === 'expositor') this.user.type = 'lecturer';
     this.$http.get('/api/fair/now/category').then(function (res) {
       if (res.data.categories) {
+        _this3.fair_title = res.data.fair.name;
         _this3.categories = res.data.categories;
 
         for (var i = 0; i < _this3.categories.length; i++) {
           _this3.cat_checked.push(false);
         }
+      }
+
+      if (!res.data.fair) {
+        _this3.$vs.notify({
+          title: _this3.$t('Error'),
+          text: _this3.$t('FairNotExistMsg'),
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        });
+
+        _this3.$router.push('/home')["catch"](function () {});
+      }
+    });
+    this.$http.get('/api/country_info').then(function (res) {
+      if (res.data.countries) {
+        _this3.countries = res.data.countries;
+        _this3.regions = res.data.regions;
+        _this3.selected_country = {
+          id: 0,
+          label: _this3.$t('SelectCountry')
+        };
+        _this3.selected_region = {
+          id: 0,
+          label: _this3.$t('SelectRegion')
+        };
       }
     });
   }
@@ -277,7 +346,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".watermark {\n  position: fixed;\n  bottom: 20px;\n  width: 100%;\n}[dir] .watermark {\n  margin: auto;\n}[dir=ltr] .watermark {\n  text-align: right;\n  padding-right: 30px;\n}[dir=rtl] .watermark {\n  text-align: left;\n  padding-left: 30px;\n}\n.participant-main {\n  min-height: calc(var(--vh, 1vh) * 100 - 86px);\n}\n[dir] .participant-main .left-panel {\n  background: #283ac4;\n}\n.participant-main .left-panel .think-text {\n  font-weight: bold;\n  text-transform: uppercase;\n  font-size: 5rem;\n}\n[dir] .participant-main .left-panel .think-text {\n  border: 1px solid white;\n  margin: 0 8rem;\n}\n.participant-main .left-panel .left-content {\n  height: 100%;\n}\n[dir] .participant-main .right-panel {\n  background: white !important;\n}\n.participant-main .right-panel input, .participant-main .right-panel textarea {\n  font-size: 0.9rem !important;\n}\n[dir] .participant-main .right-panel input, [dir] .participant-main .right-panel textarea {\n  border-radius: 0 !important;\n  padding: 0.6rem !important;\n}\n.participant-main .right-panel .vs-input--placeholder {\n  font-size: 0.9rem !important;\n}\n.participant-main .right-panel .input-span-placeholder {\n  color: #151515 !important;\n}\n[dir] .participant-main .right-panel .input-span-placeholder {\n  padding: 0.6rem !important;\n}\n[dir] .participant-main .right-panel .vs-con-textarea {\n  border-radius: 0 !important;\n}\n.participant-main .right-panel .con-slot-label {\n  font-size: 0.8rem;\n}\n.participant-main .right-panel .register-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .participant-main .right-panel .register-btn {\n  padding: 0.8rem 1rem !important;\n}\n.participant-main .right-panel .attach-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .participant-main .right-panel .attach-btn {\n  padding: 0.8rem 1rem !important;\n}", ""]);
+exports.push([module.i, ".watermark {\n  position: fixed;\n  bottom: 20px;\n  width: 100%;\n}[dir] .watermark {\n  margin: auto;\n}[dir=ltr] .watermark {\n  text-align: right;\n  padding-right: 30px;\n}[dir=rtl] .watermark {\n  text-align: left;\n  padding-left: 30px;\n}\n.participant-main {\n  min-height: calc(var(--vh, 1vh) * 100 - 86px);\n}\n[dir] .participant-main .left-panel {\n  background: #283ac4;\n}\n.participant-main .left-panel .think-text {\n  font-weight: bold;\n  text-transform: uppercase;\n  font-size: 5rem;\n}\n[dir] .participant-main .left-panel .think-text {\n  border: 1px solid white;\n  margin: 0 8rem;\n}\n.participant-main .left-panel .left-content {\n  height: 100%;\n}\n[dir] .participant-main .right-panel {\n  background: white !important;\n}\n.participant-main .right-panel input, .participant-main .right-panel textarea {\n  font-size: 0.9rem !important;\n}\n[dir] .participant-main .right-panel input, [dir] .participant-main .right-panel textarea {\n  border-radius: 0 !important;\n  padding: 0.6rem !important;\n}\n.participant-main .right-panel .vs-input--placeholder {\n  font-size: 0.9rem !important;\n}\n.participant-main .right-panel .input-span-placeholder {\n  color: #151515 !important;\n}\n[dir] .participant-main .right-panel .input-span-placeholder {\n  padding: 0.6rem !important;\n}\n[dir] .participant-main .right-panel .vs-con-textarea {\n  border-radius: 0 !important;\n}\n.participant-main .right-panel .con-slot-label {\n  font-size: 0.8rem;\n}\n.participant-main .right-panel .register-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .participant-main .right-panel .register-btn {\n  padding: 0.8rem 1rem !important;\n}\n.participant-main .right-panel .attach-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .participant-main .right-panel .attach-btn {\n  padding: 0.8rem 1rem !important;\n}\n[dir] .participant-main .right-panel .vs__dropdown-toggle {\n  border-radius: 0 !important;\n}", ""]);
 
 // exports
 
@@ -360,7 +429,9 @@ var render = function() {
                   [
                     _c("feather-icon", { attrs: { icon: "ArrowLeftIcon" } }),
                     _vm._v(" "),
-                    _c("span", { staticClass: "ml-2" }, [_vm._v("VOLVER")])
+                    _c("span", { staticClass: "ml-2" }, [
+                      _vm._v(_vm._s(_vm.$t("Return")))
+                    ])
                   ],
                   1
                 )
@@ -390,7 +461,13 @@ var render = function() {
                 "vx-col w-full bg-white lg:w-1/2 sm:w-1/2 xs:w-1/2 right-panel"
             },
             [
-              _vm._m(1),
+              _c("div", { staticClass: "text-center p-5" }, [
+                _c("h2", { staticClass: "font-bold mb-4" }, [
+                  _vm._v(_vm._s(_vm.$t("WelcomeMsg")) + ":")
+                ]),
+                _vm._v(" "),
+                _c("h2", [_vm._v(_vm._s(_vm.fair_title))])
+              ]),
               _vm._v(" "),
               _c(
                 "div",
@@ -415,7 +492,7 @@ var render = function() {
                         staticClass: "w-full",
                         attrs: {
                           color: "success",
-                          placeholder: "Nombre",
+                          placeholder: _vm.$t("FirstName"),
                           name: "Nombre",
                           "data-vv-validate-on": "blur"
                         },
@@ -454,7 +531,7 @@ var render = function() {
                         staticClass: "w-full",
                         attrs: {
                           color: "success",
-                          placeholder: "Apellido",
+                          placeholder: _vm.$t("LastName"),
                           name: "Apellido",
                           "data-vv-validate-on": "blur"
                         },
@@ -532,7 +609,7 @@ var render = function() {
                         staticClass: "w-full",
                         attrs: {
                           color: "success",
-                          placeholder: "Telefono",
+                          placeholder: _vm.$t("Phone"),
                           name: "Telefono",
                           "data-vv-validate-on": "blur"
                         },
@@ -571,7 +648,7 @@ var render = function() {
                         staticClass: "w-full",
                         attrs: {
                           color: "success",
-                          placeholder: "Compania",
+                          placeholder: _vm.$t("Company"),
                           name: "Compania",
                           "data-vv-validate-on": "blur"
                         },
@@ -610,7 +687,7 @@ var render = function() {
                         staticClass: "w-full",
                         attrs: {
                           color: "success",
-                          placeholder: "Posicion",
+                          placeholder: _vm.$t("Position"),
                           name: "Posicion",
                           "data-vv-validate-on": "blur"
                         },
@@ -650,7 +727,7 @@ var render = function() {
                         attrs: {
                           type: "password",
                           color: "success",
-                          placeholder: "Seleccione una constrasena",
+                          placeholder: _vm.$t("SelectPassword"),
                           name: "constrasena",
                           "data-vv-validate-on": "blur"
                         },
@@ -690,7 +767,7 @@ var render = function() {
                         attrs: {
                           type: "password",
                           color: "success",
-                          placeholder: "Repita la contrasena",
+                          placeholder: _vm.$t("ConfirmPassword"),
                           name: "contrasena",
                           "data-vv-validate-on": "blur"
                         },
@@ -717,28 +794,15 @@ var render = function() {
                         "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4"
                     },
                     [
-                      _c("vs-input", {
-                        directives: [
-                          {
-                            name: "validate",
-                            rawName: "v-validate",
-                            value: "required",
-                            expression: "'required'"
-                          }
-                        ],
-                        staticClass: "w-full",
-                        attrs: {
-                          color: "success",
-                          placeholder: "Seleccione un Pais",
-                          name: "Pais",
-                          "data-vv-validate-on": "blur"
-                        },
+                      _c("v-select", {
+                        attrs: { options: _vm.countries },
+                        on: { input: _vm.setUserCountry },
                         model: {
-                          value: _vm.user.country,
+                          value: _vm.selected_country,
                           callback: function($$v) {
-                            _vm.$set(_vm.user, "country", $$v)
+                            _vm.selected_country = $$v
                           },
-                          expression: "user.country"
+                          expression: "selected_country"
                         }
                       }),
                       _vm._v(" "),
@@ -756,28 +820,19 @@ var render = function() {
                         "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4"
                     },
                     [
-                      _c("vs-input", {
-                        directives: [
-                          {
-                            name: "validate",
-                            rawName: "v-validate",
-                            value: "required",
-                            expression: "'required'"
-                          }
-                        ],
-                        staticClass: "w-full",
+                      _c("v-select", {
                         attrs: {
-                          color: "success",
-                          placeholder: "Seleccione la Region",
-                          name: "Region",
-                          "data-vv-validate-on": "blur"
+                          options: _vm.regions.filter(function(it) {
+                            return it.country_id === _vm.selected_country.id
+                          })
                         },
+                        on: { input: _vm.setUserRegion },
                         model: {
-                          value: _vm.user.region,
+                          value: _vm.selected_region,
                           callback: function($$v) {
-                            _vm.$set(_vm.user, "region", $$v)
+                            _vm.selected_region = $$v
                           },
-                          expression: "user.region"
+                          expression: "selected_region"
                         }
                       }),
                       _vm._v(" "),
@@ -805,7 +860,7 @@ var render = function() {
                               }
                             ]
                           },
-                          [_vm._v("Agregar fotograpia o logotipo")]
+                          [_vm._v(_vm._s(_vm.$t("AddLogo")))]
                         ),
                         _vm._v(" "),
                         _c("div", [
@@ -833,7 +888,7 @@ var render = function() {
                             staticClass: "cyan-light ml-2 attach-btn",
                             on: { click: _vm.browseAvatarImg }
                           },
-                          [_vm._v("Adjuntar")]
+                          [_vm._v(_vm._s(_vm.$t("Attach")))]
                         )
                       ],
                       1
@@ -842,7 +897,9 @@ var render = function() {
                   _vm._v(" "),
                   _c("div", { staticClass: "vx-col w-full mb-2" }, [
                     _vm._v(
-                      "\n                    Seleccione un area de interes\n                "
+                      "\n                    " +
+                        _vm._s(_vm.$t("SelectInterest")) +
+                        "\n                "
                     )
                   ]),
                   _vm._v(" "),
@@ -891,7 +948,9 @@ var render = function() {
                         },
                         [
                           _vm._v(
-                            "\n                        REGISTRARME\n                    "
+                            "\n                        " +
+                              _vm._s(_vm.$t("Register")) +
+                              "\n                    "
                           )
                         ]
                       )
@@ -918,7 +977,7 @@ var render = function() {
                             expression: "accept_chk"
                           }
                         },
-                        [_vm._v("Acepto los terminos y condiciones")]
+                        [_vm._v(_vm._s(_vm.$t("AcceptTerm")))]
                       )
                     ],
                     1
@@ -927,7 +986,7 @@ var render = function() {
                 2
               ),
               _vm._v(" "),
-              _vm._m(2)
+              _vm._m(1)
             ]
           )
         ]
@@ -962,18 +1021,6 @@ var staticRenderFns = [
         _c("br"),
         _vm._v(" \n                    The Box\n                ")
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-center p-5" }, [
-      _c("h2", { staticClass: "font-bold mb-4" }, [
-        _vm._v("Bienvenido al Registro de usuario para:")
-      ]),
-      _vm._v(" "),
-      _c("h2", [_vm._v("EXPO ARQUITECTURA MODERNA")])
     ])
   },
   function() {

@@ -170,8 +170,8 @@ __webpack_require__.r(__webpack_exports__);
 
         if (!data.stand || !data.stand.id) {
           _this3.$vs.notify({
-            title: 'error',
-            text: 'primero debe comprar el soporte.',
+            title: _this3.$t('Error'),
+            text: _this3.$t('BucketMsg'),
             iconPack: 'feather',
             icon: 'icon-alert-circle',
             color: 'danger'
@@ -193,8 +193,8 @@ __webpack_require__.r(__webpack_exports__);
 
       if (!this.gallery_file || this.gallery_file.size > 100 * 1024 * 1024) {
         this.$vs.notify({
-          title: 'error de formato de archivo',
-          text: 'El tamaño del archivo debe ser inferior a 100 MB y tener el formato .avi, .mp4, .3gp, .jpg, .png, .gif, .jpeg',
+          title: this.$t('FileFormatTitle'),
+          text: this.$t('FileFormatSize'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -204,8 +204,8 @@ __webpack_require__.r(__webpack_exports__);
 
       if (this.isVideo(this.gallery_file.name) && (!this.gallery_title || this.gallery_title === '')) {
         this.$vs.notify({
-          title: 'Error de título del catálogo',
-          text: 'Ingrese corregir el mosaico del catálogo',
+          title: this.$t('CatalogTitle'),
+          text: this.$t('CatalogTitleContent'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -232,8 +232,8 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this4.$vs.notify({
-            title: 'éxito',
-            text: 'Folleto registrado con éxito',
+            title: _this4.$t('Success'),
+            text: _this4.$t('SuccessMessage'),
             iconPack: 'feather',
             icon: 'icon-info',
             color: 'success'
@@ -254,8 +254,8 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this5.$vs.notify({
-            title: 'éxito',
-            text: 'Folleto registrado con éxito',
+            title: _this5.$t('Success'),
+            text: _this5.$t('DeleteMessage'),
             iconPack: 'feather',
             icon: 'icon-info',
             color: 'success'
@@ -461,7 +461,7 @@ var render = function() {
       _c("app-header", { attrs: { activeItem: "0" } }),
       _vm._v(" "),
       _c("bread-crumb", {
-        attrs: { icon: "gallery", type: "svg", text: "GALERÍA" }
+        attrs: { icon: "gallery", type: "svg", text: _vm.$t("Gallery") }
       }),
       _vm._v(" "),
       _c("div", { staticClass: "w-full setting-stand-video bg-white-grey" }, [
@@ -602,7 +602,19 @@ var render = function() {
                           1
                         ),
                         _vm._v(" "),
-                        _vm._m(0)
+                        _c("div", { staticClass: "mt-4 text-center" }, [
+                          _vm._v(
+                            "\n                          " +
+                              _vm._s(_vm.$t("Upload")) +
+                              " IMAGE O VIDEO "
+                          ),
+                          _c("br"),
+                          _vm._v(
+                            "\n                          (" +
+                              _vm._s(_vm.$t("MaxSize")) +
+                              " 100mb)\n                      "
+                          )
+                        ])
                       ]
                     )
                   ]
@@ -675,7 +687,7 @@ var render = function() {
                                     staticClass: "ml-2",
                                     staticStyle: { "font-size": "0.9rem" }
                                   },
-                                  [_vm._v("GUARDAR")]
+                                  [_vm._v(_vm._s(_vm.$t("Save")))]
                                 )
                               ],
                               1
@@ -705,20 +717,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-4 text-center" }, [
-      _vm._v("\n                          SUBIR FOTO O VIDEO "),
-      _c("br"),
-      _vm._v(
-        "\n                          (Peso maximo 100mb)\n                      "
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -772,7 +771,15 @@ var render = function() {
           staticClass:
             "vx-col flex items-center justify-center text-white w-3/5 bg-dark"
         },
-        [_vm._v("\n          " + _vm._s(_vm.readed) + " vistars\n        ")]
+        [
+          _vm._v(
+            "\n          " +
+              _vm._s(_vm.readed) +
+              " " +
+              _vm._s(_vm.$t("Viewers")) +
+              "\n        "
+          )
+        ]
       ),
       _vm._v(" "),
       _c("div", { staticClass: "vx-col w-2/5" }, [
@@ -793,7 +800,7 @@ var render = function() {
             _c(
               "div",
               { staticClass: "ml-2", staticStyle: { "font-size": "0.9rem" } },
-              [_vm._v("BORRAR")]
+              [_vm._v(_vm._s(_vm.$t("Delete")))]
             )
           ],
           1

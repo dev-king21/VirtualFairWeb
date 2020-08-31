@@ -3,7 +3,7 @@
         <app-header activeItem="0"></app-header>
         <bread-crumb icon="schedule-edit" type="svg" 
             second second_center second_icon="video" second_type="svg"
-            text="citas" second_text="Las citas se realizarán mediante videoconferencia" />
+            :text="$t('Appointment')" :second_text="$t('VideoConference')" />
         <div class="w-full stand-schedule-edit bg-white-grey">
           <div class="flex flex-col items-center justify-center">
             <div class="w-2/3 mt-2">
@@ -21,7 +21,7 @@
                         </div>
                         <div class="ml-4">
                           <div class="uppercase h5 font-bold">
-                            SELECCIONE EL DÍA
+                            {{$t('SelectDay')}}
                           </div>
                           <div class="text-cyan-dark h1 font-bold uppercase mt-4">
                             {{month_for_schedule.toUpperCase()}}  {{year_for_schedule}}
@@ -29,7 +29,7 @@
                         </div>
                       </div>
                       <div class="flex items-center justify-center mt-4">
-                        <datepicker :inline="true" :language="es" v-model="schedule_date"/>
+                        <datepicker :inline="true" :language="language" v-model="schedule_date"/>
                       </div>
                     </div>
                   </div>
@@ -39,7 +39,7 @@
                     <div class="p-6" style="border: 1px solid #e2e2e2">
                       <div class="flex items-center justify-center mb-4">
                         <feather-icon size="w-8 h-8" class="text-yellow-light" icon="ClockIcon" />
-                        <div class="uppercase h5 font-bold ml-4">SELECCIONE LA HORA</div>
+                        <div class="uppercase h5 font-bold ml-4"> {{$t('SelectTime')}}</div>
                       </div>
                       <div class="vx-row">
                         <div class="vx-col w-1/4 timetable text-center" 
@@ -62,14 +62,14 @@
               </div>
               <div class="m-2">
                 <div class="px-4 py-2 bg-white">
-                  <div class="h5 font-bold">Asunto cita:</div>
+                  <div class="h5 font-bold">{{$t('SubjectAppointment')}}:</div>
                   <div>
                     <vs-textarea v-model="schedule_text" />
                   </div>
                 </div>
               </div>
               <div class="text-center mb-4">
-                <vs-button class="cyan-dark" @click="request_schedule()">AGENDAR</vs-button>
+                <vs-button class="cyan-dark" @click="request_schedule()">{{$t('Schedule')}}</vs-button>
               </div>
             </div>
           </div>    
@@ -114,6 +114,10 @@ export default {
     },
     year_for_schedule () {
       return this.$date.yearStringFromDate(this.schedule_date)
+    },
+    language () {
+      const lang = localStorage.getItem('language')
+      return (!lang || lang === 'en') ? this.en : this.es
     }
   },
   methods: {
@@ -186,20 +190,12 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
-              color: 'success',
+              title: this.$t('Success'),
+              text: this.$t('DeleteMessage'),
               iconPack: 'feather',
-              icon: 'icon-alert-circle'
-            })
-          } else {
-            this.$vs.notify({
-              title: 'Oyu',
-              text: 'Error de registro',
-              color: 'error',
-              iconPack: 'feather',
-              icon: 'icon-alert-circle'
-            })
+              icon: 'icon-info',
+              color: 'success'
+            })  
           }
         }).catch(() => {
           

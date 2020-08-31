@@ -16,7 +16,7 @@
         </div>
         <div>
           <div class="flex items-center mt-4 ml-8">
-            <div class="h2">Informacion de la empresa</div>
+            <div class="h2">{{$t('CompanyInfo')}}</div>
           </div>
           <div class="w-full mt-4 ml-12">
             <div v-html="description"></div>
@@ -60,9 +60,9 @@ export default {
           const data = response.data
           if (data.status === 'error') return console.log(data.msg)
           if (!data.stand || !data.stand.id) {
-            this.$vs.notify({
-              title: 'error',
-              text: 'primero debe comprar el soporte.',
+             this.$vs.notify({
+              title: this.$t('Error'),
+              text: this.$t('BucketMsg'),
               iconPack: 'feather',
               icon: 'icon-alert-circle',
               color: 'danger'

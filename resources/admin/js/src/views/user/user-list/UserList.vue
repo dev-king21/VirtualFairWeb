@@ -91,7 +91,7 @@ export default {
   },
   data () {
     return {
-
+      usersData: [],
       searchQuery: '',
 
       // AgGrid
@@ -113,41 +113,38 @@ export default {
           headerCheckboxSelection: true
         },
         {
-          headerName: 'Username',
+          headerName: this.$t('UserName'),
           field: 'username',
           filter: true,
-          width: 210,
+          width: 300,
           cellRendererFramework: 'CellRendererLink'
         },
         {
-          headerName: 'Email',
+          headerName: this.$t('Email'),
           field: 'email',
           filter: true,
-          width: 225
+          width: 300
+
         },
         {
-          headerName: 'Name',
-          field: 'name',
-          filter: true,
-          width: 200
-        },
-        {
-          headerName: 'Country',
+          headerName: this.$t('Country'),
+          
           field: 'country',
           filter: true,
           width: 150
+
         },
         {
-          headerName: 'Role',
-          field: 'role',
+          headerName: this.$t('Region'),
+          field: 'region',
           filter: true,
           width: 150
         },
         {
-          headerName: 'Actions',
-          field: 'transactions',
-          width: 150,
-          cellRendererFramework: 'CellRendererActions'
+          headerName: this.$t('Role'),
+          field: 'type',
+          filter: true,
+          width: 150
         }
       ],
 
@@ -160,9 +157,9 @@ export default {
   },
   
   computed: {
-    usersData () {
+    /* usersData () {
       return this.$store.state.user.users
-    },
+    }, */
     paginationPageSize () {
       if (this.gridApi) return this.gridApi.paginationGetPageSize()
       else return 10
@@ -216,11 +213,14 @@ export default {
     }
   },
   created () {
-    if (!moduleUser.isRegistered) {
-      this.$store.registerModule('user', moduleUser)
-      moduleUser.isRegistered = true
-    }
-    this.$store.dispatch('user/allUser').catch(err => { console.error(err) })
+    this.$http.get('/api/user/all')
+        .then((response) => {
+          const users = response.data.users
+          users.map(item => item.username = item.first_name + " " + item.last_name)
+          this.usersData = users
+        })
+        .catch((error) => { console.log(error) })
+    
   }
 }
 

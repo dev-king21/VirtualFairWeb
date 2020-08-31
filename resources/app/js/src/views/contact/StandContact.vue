@@ -5,33 +5,33 @@
         <div class="flex w-full justify-center px-8 py-2 bg-white-grey stand-contact-main">
           <div class="h4 mt-8 font-italic" style="width: 500px;">
             <div class="contact-info">
-              <div>Nombre: {{user.first_name}} {{user.last_name}}</div>
+              <div>{{$t('Name')}}: {{user.first_name}} {{user.last_name}}</div>
               <div>Email: {{user.email}}</div>
-              <div>Teléfono: {{user.phone}}</div>
-              <div>Posición: {{user.address}}</div>
-              <div>Compañía: {{user.company}}</div>
-              <div>País: {{user.country}}</div>
-              <div>Región: {{user.region}}</div>
+              <div>{{$t('Phone')}}: {{user.phone}}</div>
+              <div>{{$t('Position')}}: {{user.address}}</div>
+              <div>{{$t('Company')}}: {{user.company}}</div>
+              <div>{{$t('Country')}}: {{user.country}}</div>
+              <div>{{$t('Region')}}: {{user.region}}</div>
               <div class="flex">
-                <div>Área de interés: </div>
+                <div>{{$t('InterestArea')}}: </div>
                 <div>
                 </div>
               </div>
             </div>
           </div>
           <div class="ml-4 mt-8" style="width: 500px">
-            <h3>Mensaje para contacto</h3>
+            <h3>{{$t('ContactMsg')}}</h3>
             <div class="mb-4">
               <vs-textarea class="mt-2" placeholder="Escriba el mensaje aquí" style="height: 120px;" v-model="contact_text"/>
-              <div class="ml-4" style="color: #ee0000" v-show="error_contact_text">El mensaje no puede ser nulo. Por favor ingrese el mensaje</div>
+              <div class="ml-4" style="color: #ee0000" v-show="error_contact_text">{{$t('MsgOption')}}</div>
             </div>
             <div>
-              <vs-checkbox color="rgb(103, 179, 81)" class="mb-4" v-model="accept">Acepto los términos y condiciones</vs-checkbox>
-              <vs-checkbox color="rgb(103, 179, 81)" class="mb-4" v-model="mail_available">Autorizo que me puedan contactar por correo</vs-checkbox>
-              <vs-checkbox color="rgb(103, 179, 81)" class="mb-4" v-model="phone_available">Autorizo que me puedan contactar por teléfono</vs-checkbox>
+              <vs-checkbox color="rgb(103, 179, 81)" class="mb-4" v-model="accept">{{$t('AcceptTerm')}}</vs-checkbox>
+              <vs-checkbox color="rgb(103, 179, 81)" class="mb-4" v-model="mail_available">{{$t('EmailTerm')}}</vs-checkbox>
+              <vs-checkbox color="rgb(103, 179, 81)" class="mb-4" v-model="phone_available">{{$t('PhoneTerm')}}</vs-checkbox>
             </div>
             <div class="text-center mt-12">
-              <vs-button @click="contactRequest" class="cyan-dark">CONTACTAR</vs-button>
+              <vs-button @click="contactRequest" class="cyan-dark">{{$t('Contact')}}</vs-button>
             </div>
           </div>  
         </div>
@@ -79,17 +79,17 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
           } else {
             this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
+              title: this.$t('Error'),
+              text: this.$t('FailMessage'),
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })

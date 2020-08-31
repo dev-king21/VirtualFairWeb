@@ -177,7 +177,7 @@ __webpack_require__.r(__webpack_exports__);
           _this2.$vs.notify({
             title: 'Oyu',
             text: 'Operación fallida',
-            color: 'error',
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });

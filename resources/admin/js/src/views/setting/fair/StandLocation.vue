@@ -1,22 +1,22 @@
 <template>
     <div class="flex flex-col mt-0">
         <div class="text-warning font-bold h3 mb-4">
-            Stand Arrangement in Fair Space  [Type: {{fair_type.name}}]
+            {{$t('StandArrange')}}[{{$t('Type')}}: {{fair_type.name}}]
         </div>
         <vx-card class="flex">
             <div slot="no-body">
                 <div class="flex justify-between flex-wrap absolute" id="select-button">
                     <vs-button class="mt-0" type="filled" icon-pack="feather" icon="icon-crosshair" color="success"
                         @click="ftypeOpen()">
-                        Select Fair Type
+                        {{$t('Select')}} {{$t('FairTypes')}}
                     </vs-button>    
                     <vs-button class="mt-0 ml-5" type="filled" icon-pack="feather" icon="icon-plus" color="success"
                         @click="stypeOpen()">
-                        Insert Stand Type
+                        {{$t('Insert')}} {{$t('StandTypes')}}
                     </vs-button>
                     <vs-button class="mt-0 ml-5" type="filled" icon-pack="feather" icon="icon-save" color="primary"
                         @click="saveLocations()">
-                        Save Stands Location
+                        {{$t('Save')}} {{$t('StandLocation')}}
                     </vs-button>
                 </div>
                 <div id="location-wrapper">
@@ -27,7 +27,7 @@
                             :key="idx"  :w="calcW(location.width)" :h="calcH(location.height)" :x="calcX(location.left)" :y="calcY(location.top)"
                             :parent="false" :lock-aspect-ratio="true" :resizable="false" @dragstop="modifyLocation"
                             :debug="true" :min-width="100" :min-height="100">
-                        <p class="text-primary font-bold">Stand: {{idx + 1}}</p>
+                        <p class="text-primary font-bold">{{$t('Stand')}}: {{idx + 1}}</p>
                         <vs-button class="mt-5 rem-btn" type="filled" icon-pack="feather" icon="icon-trash" color="primary"
                             @click="removeStandLocation(idx)">
                         </vs-button>    
@@ -40,7 +40,7 @@
                         position-right spacer v-model="ftype_active">
                         <div class="header-sidebar text-center" slot="header">
                             <vs-avatar size="70px" src="/fair_image/placeholder.png" />
-                            <h4 class="text-danger"> Select Fair Types </h4>
+                            <h4 class="text-danger"> {{$t('Select')}} {{$t('FairTypes')}}</h4>
                         </div>
                         <component :is="scrollbarTag" ref="verticalNavMenuPs" class="scroll-area-v-nav-menu pt-2" :settings="settings" @ps-scroll-y="psSectionScroll" @scroll="psSectionScroll" >
                             <template v-for="(ftype, idx) in ftypes">
@@ -59,7 +59,7 @@
                         position-right spacer v-model="stype_active">
                         <div class="header-sidebar text-center" slot="header">
                             <vs-avatar size="70px" src="/fair_image/placeholder.png" />
-                            <h4 class="text-danger"> Select Fair Types </h4>
+                            <h4 class="text-danger">{{$t('Select')}} {{$t('FairTypes')}} </h4>
                         </div>
                         <component :is="scrollbarTag" ref="verticalNavMenuPs" class="scroll-area-v-nav-menu pt-2" :settings="settings" @ps-scroll-y="psSectionScroll" @scroll="psSectionScroll" >
                             <template v-for="(stype, idx) in stypes">
@@ -193,17 +193,17 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
           } else {
             this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
+              title: this.$t('Error'),
+              text: this.$t('FailMessage'),
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
@@ -222,17 +222,17 @@ export default {
             this.$loading.hide(this)
             if (response.data.status === 'ok') {
               this.$vs.notify({
-                title: 'éxito',
-                text: 'Se ha eliminado con éxito.',
+                title: this.$t('Success'),
+                text: this.$t('DeleteMessage'),
                 color: 'success',
                 iconPack: 'feather',
                 icon: 'icon-alert-circle'
               })
             } else {
               this.$vs.notify({
-                title: 'Oyu',
-                text: 'Operación fallida',
-                color: 'error',
+                title: this.$t('Error'),
+                text: this.$t('FailMessage'),
+                color: 'danger',
                 iconPack: 'feather',
                 icon: 'icon-alert-circle'
               })

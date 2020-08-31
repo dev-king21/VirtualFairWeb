@@ -14,11 +14,12 @@ export default {
             commit('SET_BEARER', response.data.access_token)
             resolve()
           } else {
-            reject({message: 'Wrong Email or Password'})
+            if (response.data.status === 'unmatched_fair') reject({message: 'unregistered_current_fair'})
+            else reject({message: 'wrong_credentials'})
           }
         })
         .catch(() => {
-          reject({message: 'Wrong Email or Password'})
+          reject({message: 'wrong_credentials'})
         })
     })
   },

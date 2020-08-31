@@ -345,7 +345,8 @@ var render = function() {
                       _c("div", { staticClass: "mt-0 ml-4" }, [
                         _c("h5", { staticClass: "mb-2" }, [
                           _vm._v(
-                            "UserName: " +
+                            _vm._s(_vm.$t("UserName")) +
+                              ": " +
                               _vm._s(_vm.stand.user.first_name) +
                               " " +
                               _vm._s(_vm.stand.user.last_name)
@@ -354,7 +355,8 @@ var render = function() {
                         _vm._v(" "),
                         _c("h5", { staticClass: "mb-2" }, [
                           _vm._v(
-                            "Name: " +
+                            _vm._s(_vm.$t("Name")) +
+                              ": " +
                               _vm._s(_vm.stand.user.first_name) +
                               " " +
                               _vm._s(_vm.stand.user.last_name)
@@ -362,11 +364,19 @@ var render = function() {
                         ]),
                         _vm._v(" "),
                         _c("h5", { staticClass: "mb-2" }, [
-                          _vm._v("Email: " + _vm._s(_vm.stand.user.email))
+                          _vm._v(
+                            _vm._s(_vm.$t("Email")) +
+                              ": " +
+                              _vm._s(_vm.stand.user.email)
+                          )
                         ]),
                         _vm._v(" "),
                         _c("h5", { staticClass: "mb-2" }, [
-                          _vm._v("Country: " + _vm._s(_vm.stand.user.country))
+                          _vm._v(
+                            _vm._s(_vm.$t("Country")) +
+                              ": " +
+                              _vm._s(_vm.stand.user.country)
+                          )
                         ])
                       ]),
                       _vm._v(" "),
@@ -411,11 +421,19 @@ var render = function() {
                         },
                         [
                           _c("h5", { staticClass: "mb-2" }, [
-                            _vm._v("Phone: " + _vm._s(_vm.stand.contact.phone))
+                            _vm._v(
+                              _vm._s(_vm.$t("Phone")) +
+                                ": " +
+                                _vm._s(_vm.stand.contact.phone)
+                            )
                           ]),
                           _vm._v(" "),
                           _c("h5", { staticClass: "mb-2" }, [
-                            _vm._v("Email: " + _vm._s(_vm.stand.contact.email))
+                            _vm._v(
+                              _vm._s(_vm.$t("Email")) +
+                                ": " +
+                                _vm._s(_vm.stand.contact.email)
+                            )
                           ]),
                           _vm._v(" "),
                           _c("h5", { staticClass: "mb-2" }, [

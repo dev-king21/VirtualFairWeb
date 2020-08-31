@@ -1,10 +1,3 @@
-/*=========================================================================================
-  File Name: i18n.js
-  Description: i18n configuration file. Imports i18n data.
-
-==========================================================================================*/
-
-
 import Vue from 'vue'
 import VueI18n from 'vue-i18n'
 import i18nData from './i18nData'

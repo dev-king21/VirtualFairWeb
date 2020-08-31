@@ -3,7 +3,7 @@
         <div class="vx-row">
             <div class="vx-col w-full mb-base text-right">
                 <vs-button color="success" icon-pack="feather" icon="icon-plus" type="filled" :to="{path: '/settings/stand-type/edit'}">
-                    Add New Stand Type
+                    {{$t('AddNew')}} {{$t('StandTypes')}}
                 </vs-button>
             </div>
         </div>
@@ -14,7 +14,7 @@
                         <img :src="'/fair_image/' + stype.building" alt="content-img" class="responsive rounded-lg">
                     </div>
                     <span class="mb-2 h2">{{ stype.name }}</span>
-                    <p class="text-primary">Stand Items: {{'/settings/stand-type/edit/'+stype.id}}</p>
+                    <p class="text-primary">{{$t('StandTypes')}}: {{'/settings/stand-type/edit/'+stype.id}}</p>
                     <div class="flex justify-between flex-wrap">
                         <vs-button 
                             class="mt-4 mr-2 shadow-lg" 
@@ -24,12 +24,12 @@
                             icon="icon-navigation" 
                             gradient-color-secondary="#CE9FFC"
                             :to="{path: '/settings/stand-type-item/'+stype.id}">
-                            Go Stand Type Items
+                            {{$t('GoStandItems')}}
                         </vs-button> 
                         
                         <vs-button class="mt-4" type="border" icon-pack="feather" icon="icon-edit" color="warning"
                             :to="{path: '/settings/stand-type/edit/'+stype.id}">
-                            Edit
+                            {{$t('Edit')}}
                         </vs-button>
                     </div>
                 </vx-card>

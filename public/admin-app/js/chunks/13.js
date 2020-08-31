@@ -596,7 +596,7 @@ var render = function() {
                       },
                       [
                         _c("h5", { staticClass: "font-semibold " }, [
-                          _vm._v("All")
+                          _vm._v(_vm._s(_vm.$t("All")))
                         ])
                       ]
                     ),

@@ -205,17 +205,17 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this.$vs.notify({
-            title: 'éxito',
-            text: 'Borrado exitosamente.',
+            title: _this.$t('Success'),
+            text: _this.$t('DeleteMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
           _this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: _this.$t('Error'),
+            text: _this.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
@@ -242,17 +242,17 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this2.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
+            title: _this2.$t('Success'),
+            text: _this2.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
           _this2.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: _this2.$t('Error'),
+            text: _this2.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
@@ -516,7 +516,7 @@ var render = function() {
                   }),
                   _vm._v(" "),
                   _c("span", { staticClass: "ml-2 text-base text-primary" }, [
-                    _vm._v("Add New")
+                    _vm._v(_vm._s(_vm.$t("AddNew")))
                   ])
                 ],
                 1
@@ -541,7 +541,7 @@ var render = function() {
                       _c("vx-card", [
                         _c("div", { staticClass: "vx-row mb-6" }, [
                           _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                            _c("span", [_vm._v("Email")])
+                            _c("span", [_vm._v(_vm._s(_vm.$t("Email")))])
                           ]),
                           _vm._v(" "),
                           _c(
@@ -565,7 +565,7 @@ var render = function() {
                         _vm._v(" "),
                         _c("div", { staticClass: "vx-row mb-6" }, [
                           _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
-                            _c("span", [_vm._v("Password")])
+                            _c("span", [_vm._v(_vm._s(_vm.$t("Password")))])
                           ]),
                           _vm._v(" "),
                           _c(
@@ -599,7 +599,7 @@ var render = function() {
                                   staticClass: "mr-3 mb-2",
                                   on: { click: _vm.AddEditAdmin }
                                 },
-                                [_vm._v("OK")]
+                                [_vm._v(_vm._s(_vm.$t("Ok")))]
                               ),
                               _vm._v(" "),
                               _c(
@@ -613,7 +613,7 @@ var render = function() {
                                     }
                                   }
                                 },
-                                [_vm._v("Cancel")]
+                                [_vm._v(_vm._s(_vm.$t("Cancel")))]
                               )
                             ],
                             1
@@ -644,7 +644,7 @@ var render = function() {
                   _c("div", { staticClass: " w-full mb-base" }, [
                     _c("div", { staticClass: "vx-row mb-6" }, [
                       _c("div", { staticClass: "vx-col w-full" }, [
-                        _c("h3", [_vm._v("Do you Really Delete?")])
+                        _c("h3", [_vm._v(_vm._s(_vm.$t("DeleteConfig")))])
                       ])
                     ]),
                     _vm._v(" "),
@@ -659,7 +659,7 @@ var render = function() {
                               staticClass: "mr-3 mb-2",
                               on: { click: _vm.DeleteAction }
                             },
-                            [_vm._v("OK")]
+                            [_vm._v(_vm._s(_vm.$t("Ok")))]
                           ),
                           _vm._v(" "),
                           _c(
@@ -673,7 +673,7 @@ var render = function() {
                                 }
                               }
                             },
-                            [_vm._v("Cancel")]
+                            [_vm._v(_vm._s(_vm.$t("Cancel")))]
                           )
                         ],
                         1
@@ -790,17 +790,21 @@ var render = function() {
             "template",
             { slot: "thead" },
             [
-              _c("vs-th", [_vm._v("ID")]),
-              _vm._v(" "),
-              _c("vs-th", { attrs: { "sort-key": "title" } }, [_vm._v("Name")]),
+              _c("vs-th", [_vm._v(_vm._s(_vm.$t("ID")))]),
               _vm._v(" "),
               _c("vs-th", { attrs: { "sort-key": "title" } }, [
-                _vm._v("Password")
+                _vm._v(_vm._s(_vm.$t("Name")))
               ]),
               _vm._v(" "),
-              _c("vs-th", { attrs: { "sort-key": "title" } }, [_vm._v("Role")]),
+              _c("vs-th", { attrs: { "sort-key": "title" } }, [
+                _vm._v(_vm._s(_vm.$t("Password")))
+              ]),
               _vm._v(" "),
-              _c("vs-th", [_vm._v("Action")])
+              _c("vs-th", { attrs: { "sort-key": "title" } }, [
+                _vm._v(_vm._s(_vm.$t("Role")))
+              ]),
+              _vm._v(" "),
+              _c("vs-th", [_vm._v(_vm._s(_vm.$t("Actions")))])
             ],
             1
           )

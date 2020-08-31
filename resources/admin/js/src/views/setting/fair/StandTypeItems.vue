@@ -1,34 +1,34 @@
 <template>
     <div class="mt-0">
         <div class="text-warning font-bold h3">
-            Stand Items Arrangement in Stand Space  [Type: {{stand_type.name}}]
+            {{$t('StandArrangeSpace')}} [{{$t('Type')}}: {{stand_type.name}}]
         </div>
         <div class="demo-alignment mb-4">
             <vs-button class="mt-5" type="filled" icon-pack="feather" icon="icon-crosshair" color="success"
                 @click="stypeOpen()">
-                Select Stand Type
+                {{$t('Select')}} {{$t('StandTypes')}}
             </vs-button>    
             <vs-button class="mt-5" type="filled" icon-pack="feather" icon="icon-save" color="primary"
                 @click="saveLocations()">
-                Save Stand Items' Location
+                {{$t('Save')}} {{$t('StandItems')}}' {{$t('Location')}}
             </vs-button>
             <vs-dropdown>
                 <a class="flex items-center h4 text-success" href="#">
-                    Insert Stand Item
+                    {{$t('Insert')}} {{$t('StandItems')}}
                     <i class="material-icons">expand_more</i>
                 </a>
                 <vs-dropdown-menu>
                     <vs-dropdown-item @click="insertStandItem(0)">
-                        Image Item
+                        {{$t('Image')}} {{$t('Item')}}
                     </vs-dropdown-item>
                     <vs-dropdown-item divider @click="insertStandItem(1)">
-                        Video Item
+                        {{$t('Video')}} {{$t('Item')}}
                     </vs-dropdown-item>
                     <vs-dropdown-item divider @click="insertStandItem(2)">
-                        Logo Item
+                        {{$t('Logo')}} {{$t('Item')}}
                     </vs-dropdown-item>
                     <vs-dropdown-item divider @click="insertStandItem(3)">
-                        Billboard Item
+                        {{$t('Billboard')}} {{$t('Item')}}
                     </vs-dropdown-item>
                     
                 </vs-dropdown-menu>
@@ -195,19 +195,19 @@ export default {
       this.$http.post('/api/stand_type_item/save', param)
         .then((response) => {
           this.$loading.hide(this) 
-          if (response.data.status === 'ok') {
+           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
           } else {
             this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
+              title: this.$t('Error'),
+              text: this.$t('FailMessage'),
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
@@ -226,19 +226,19 @@ export default {
           .then((response) => {
             this.$loading.hide(this)
           
-            if (response.data.status === 'ok') {
+           if (response.data.status === 'ok') {
               this.$vs.notify({
-                title: 'éxito',
-                text: 'Se ha eliminado con éxito.',
+                title: this.$t('Success'),
+                text: this.$t('DeleteMessage'),
                 color: 'success',
                 iconPack: 'feather',
                 icon: 'icon-alert-circle'
               })
             } else {
               this.$vs.notify({
-                title: 'Oyu',
-                text: 'Operación fallida',
-                color: 'error',
+                title: this.$t('Error'),
+                text: this.$t('FailMessage'),
+                color: 'danger',
                 iconPack: 'feather',
                 icon: 'icon-alert-circle'
               })

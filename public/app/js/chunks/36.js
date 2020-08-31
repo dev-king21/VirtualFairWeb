@@ -93,8 +93,8 @@ __webpack_require__.r(__webpack_exports__);
 
       if (!this.user.message) {
         this.$vs.notify({
-          title: 'Error',
-          text: 'Ingrese el contenido del mensaje.',
+          title: this.$t('Error'),
+          text: this.$t('EnterMessage'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -104,8 +104,8 @@ __webpack_require__.r(__webpack_exports__);
       this.$http.post('/api/contact_message', this.user).then(function (res) {
         if (res.data.status === 'ok') {
           _this.$vs.notify({
-            title: 'Notificación',
-            text: 'Hemos recibido su petición. \n Por favor espera.',
+            title: _this.$t('Notification'),
+            text: _this.$t('RequestReceive'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-mail'
@@ -198,7 +198,7 @@ var render = function() {
     [
       _c("app-header", { attrs: { activeItem: "1" } }),
       _vm._v(" "),
-      _c("bread-crumb", { attrs: { text: "contactenos" } }),
+      _c("bread-crumb", { attrs: { text: _vm.$t("ContactUs") } }),
       _vm._v(" "),
       _c(
         "div",
@@ -210,7 +210,9 @@ var render = function() {
           _c("div", { staticClass: "bg-white my-4 py-2 w-1/2 contact-form" }, [
             _c("div", { staticClass: "h1 text-center mt-8" }, [
               _vm._v(
-                "\n                Dejanos tus datos y te contactenos\n            "
+                "\n                " +
+                  _vm._s(_vm.$t("ContactMessage")) +
+                  "\n            "
               )
             ]),
             _vm._v(" "),
@@ -234,7 +236,7 @@ var render = function() {
                     staticClass: "w-full",
                     attrs: {
                       color: "success",
-                      placeholder: "Nombre",
+                      placeholder: _vm.$t("FirstName"),
                       name: "Nombre",
                       "data-vv-validate-on": "blur"
                     },
@@ -273,7 +275,7 @@ var render = function() {
                     staticClass: "w-full",
                     attrs: {
                       color: "success",
-                      placeholder: "Apellido",
+                      placeholder: _vm.$t("LastName"),
                       name: "Apellido",
                       "data-vv-validate-on": "blur"
                     },
@@ -351,7 +353,7 @@ var render = function() {
                     staticClass: "w-full",
                     attrs: {
                       color: "success",
-                      placeholder: "Telefono",
+                      placeholder: _vm.$t("Phone"),
                       name: "Telefono",
                       "data-vv-validate-on": "blur"
                     },
@@ -390,7 +392,7 @@ var render = function() {
                     staticClass: "w-full",
                     attrs: {
                       color: "success",
-                      placeholder: "Compania",
+                      placeholder: _vm.$t("Company"),
                       name: "Compania",
                       "data-vv-validate-on": "blur"
                     },
@@ -429,7 +431,7 @@ var render = function() {
                     staticClass: "w-full",
                     attrs: {
                       color: "success",
-                      placeholder: "Posicion",
+                      placeholder: _vm.$t("Position"),
                       name: "Posicion",
                       "data-vv-validate-on": "blur"
                     },
@@ -468,7 +470,7 @@ var render = function() {
                     staticClass: "w-full",
                     attrs: {
                       color: "success",
-                      placeholder: "Seleccione un Pais",
+                      placeholder: _vm.$t("SelectCompany"),
                       name: "Pais",
                       "data-vv-validate-on": "blur"
                     },
@@ -507,7 +509,7 @@ var render = function() {
                     staticClass: "w-full",
                     attrs: {
                       color: "success",
-                      placeholder: "Seleccione la Region",
+                      placeholder: _vm.$t("SelectRegion"),
                       name: "Region",
                       "data-vv-validate-on": "blur"
                     },
@@ -536,7 +538,7 @@ var render = function() {
                     attrs: {
                       color: "success",
                       height: "100px",
-                      placeholder: "Comentarios",
+                      placeholder: _vm.$t("Comments"),
                       lines: "5"
                     },
                     model: {
@@ -589,7 +591,7 @@ var render = function() {
                     staticClass: "cyan-dark register-btn",
                     on: { click: _vm.send_message }
                   },
-                  [_vm._v("CONTACTAR")]
+                  [_vm._v(_vm._s(_vm.$t("Contact")))]
                 )
               ],
               1

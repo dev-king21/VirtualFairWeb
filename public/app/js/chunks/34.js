@@ -141,6 +141,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     },
     year_for_schedule: function year_for_schedule() {
       return this.$date.yearStringFromDate(this.schedule_date);
+    },
+    language: function language() {
+      var lang = localStorage.getItem('language');
+      return !lang || lang === 'en' ? this.en : this.es;
     }
   },
   methods: {
@@ -221,19 +225,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
         if (response.data.status === 'ok') {
           _this.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
-            color: 'success',
+            title: _this.$t('Success'),
+            text: _this.$t('DeleteMessage'),
             iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          });
-        } else {
-          _this.$vs.notify({
-            title: 'Oyu',
-            text: 'Error de registro',
-            color: 'error',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
+            icon: 'icon-info',
+            color: 'success'
           });
         }
       })["catch"](function () {});
@@ -348,8 +344,8 @@ var render = function() {
           second_center: "",
           second_icon: "video",
           second_type: "svg",
-          text: "citas",
-          second_text: "Las citas se realizarán mediante videoconferencia"
+          text: _vm.$t("Appointment"),
+          second_text: _vm.$t("VideoConference")
         }
       }),
       _vm._v(" "),
@@ -424,7 +420,9 @@ var render = function() {
                                 { staticClass: "uppercase h5 font-bold" },
                                 [
                                   _vm._v(
-                                    "\n                        SELECCIONE EL DÍA\n                      "
+                                    "\n                        " +
+                                      _vm._s(_vm.$t("SelectDay")) +
+                                      "\n                      "
                                   )
                                 ]
                               ),
@@ -458,7 +456,7 @@ var render = function() {
                           },
                           [
                             _c("datepicker", {
-                              attrs: { inline: true, language: _vm.es },
+                              attrs: { inline: true, language: _vm.language },
                               model: {
                                 value: _vm.schedule_date,
                                 callback: function($$v) {
@@ -498,7 +496,7 @@ var render = function() {
                             _c(
                               "div",
                               { staticClass: "uppercase h5 font-bold ml-4" },
-                              [_vm._v("SELECCIONE LA HORA")]
+                              [_vm._v(" " + _vm._s(_vm.$t("SelectTime")))]
                             )
                           ],
                           1
@@ -557,7 +555,7 @@ var render = function() {
               _c("div", { staticClass: "m-2" }, [
                 _c("div", { staticClass: "px-4 py-2 bg-white" }, [
                   _c("div", { staticClass: "h5 font-bold" }, [
-                    _vm._v("Asunto cita:")
+                    _vm._v(_vm._s(_vm.$t("SubjectAppointment")) + ":")
                   ]),
                   _vm._v(" "),
                   _c(
@@ -592,7 +590,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("AGENDAR")]
+                    [_vm._v(_vm._s(_vm.$t("Schedule")))]
                   )
                 ],
                 1

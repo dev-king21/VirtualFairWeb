@@ -173,7 +173,9 @@ var render = function() {
         attrs: { svgClasses: "w-6 h-6", icon: "ArrowLeftIcon" }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "back-text" }, [_vm._v("VOLVER")])
+      _c("div", { staticClass: "back-text" }, [
+        _vm._v(_vm._s(_vm.$t("Return")))
+      ])
     ],
     1
   )

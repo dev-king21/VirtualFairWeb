@@ -8,12 +8,12 @@
         </div>
         <div class="vx-row">
           <div class="vx-col flex items-center justify-center text-white w-3/5 bg-dark" style="padding: 0.5rem 0 !important">
-            {{readed}} vistars
+            {{readed}} {{$t('Viewers')}}
           </div>
           <div class="vx-col w-2/5">
               <div @click="downloadVideo" class="flex items-center justify-center text-white py-2 cyan-dark w-full cursor-pointer">
                   <feather-icon size="w-6 h-6" icon="DownloadIcon" />
-                  <div class="ml-2 uppercase" style="font-size: 0.9rem">Descargar</div>
+                  <div class="ml-2 uppercase" style="font-size: 0.9rem">{{$t('Download')}}</div>
               </div>
           </div>
         </div>

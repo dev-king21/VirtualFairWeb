@@ -177,7 +177,7 @@ var render = function() {
               _c(
                 "div",
                 { staticClass: "webinar-title text-white font-bold my-6" },
-                [_vm._v("RESERVE SUS WEBINARS")]
+                [_vm._v(_vm._s(_vm.$t("ReserveWebinar")))]
               ),
               _vm._v(" "),
               _vm._l(_vm.webinar_list, function(webinar, index) {
@@ -200,7 +200,7 @@ var render = function() {
                         _c("div", { staticClass: "font-bold" }, [
                           _c("div", { staticClass: "vx-row mt-10 fs-11" }, [
                             _c("div", { staticClass: "vx-col w-3/5" }, [
-                              _c("div", [_vm._v("¿Cuándo?")]),
+                              _c("div", [_vm._v(_vm._s(_vm.$t("When")) + "?")]),
                               _vm._v(" "),
                               _c(
                                 "div",
@@ -225,7 +225,9 @@ var render = function() {
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "vx-col w-2/5" }, [
-                              _c("div", [_vm._v("¿Dónde?")]),
+                              _c("div", [
+                                _vm._v(_vm._s(_vm.$t("Where")) + "?")
+                              ]),
                               _vm._v(" "),
                               _c(
                                 "div",
@@ -236,7 +238,7 @@ var render = function() {
                                   }),
                                   _vm._v(" "),
                                   _c("div", { staticClass: "ml-2" }, [
-                                    _vm._v("EVENTO ONLINE")
+                                    _vm._v(_vm._s(webinar.room.name))
                                   ])
                                 ],
                                 1
@@ -246,7 +248,9 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "font-italic mt-4" }, [
                             _vm._v(
-                              "\n                          ¿Quién?\n                      "
+                              "\n                          " +
+                                _vm._s(_vm.$t("Who")) +
+                                "?\n                      "
                             )
                           ]),
                           _vm._v(" "),
@@ -261,7 +265,8 @@ var render = function() {
                             ),
                             _c("br"),
                             _vm._v(
-                              "\n                          Graduago de la Universidad de Barcelona. Cuenta con una Licenciatura en Mercadeo 4.0\n                      "
+                              "\n                          " +
+                                _vm._s(webinar.exhibitor_profession)
                             )
                           ]),
                           _vm._v(" "),
@@ -276,7 +281,7 @@ var render = function() {
                           _c(
                             "div",
                             { staticClass: "font-bold font-italic mb-2" },
-                            [_vm._v("Informacion General:")]
+                            [_vm._v(_vm._s(_vm.$t("GeneralInfo")) + ":")]
                           ),
                           _vm._v(" "),
                           _c("div", {
@@ -294,11 +299,11 @@ var render = function() {
                           { staticClass: "text-right" },
                           [
                             _c("vs-button", { staticClass: "yellow-light" }, [
-                              _vm._v("MI INTERESA")
+                              _vm._v(_vm._s(_vm.$t("MyInterest")))
                             ]),
                             _vm._v(" "),
                             _c("vs-button", { staticClass: "cyan-dark" }, [
-                              _vm._v("REGISTRAME")
+                              _vm._v(_vm._s(_vm.$t("Register")))
                             ])
                           ],
                           1

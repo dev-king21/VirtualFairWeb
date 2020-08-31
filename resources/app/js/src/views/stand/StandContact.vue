@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <app-header activeItem="0"></app-header>
-        <bread-crumb icon="address-book" type="svg" text="contacto" />
+        <bread-crumb icon="address-book" type="svg" :text="$t('Contact')" />
         <div class="w-full setting-stand-contact bg-white-grey">
             <div class="w-full px-10">
                 <div class="vx-row w-full pt-8">
@@ -45,8 +45,8 @@ export default {
           const data = response.data
           if (!data.stand || !data.stand.id) {
             this.$vs.notify({
-              title: 'error',
-              text: 'primero debe comprar el soporte.',
+              title: this.$t('Error'),
+              text: this.$t('BucketMsg'),
               iconPack: 'feather',
               icon: 'icon-alert-circle',
               color: 'danger'

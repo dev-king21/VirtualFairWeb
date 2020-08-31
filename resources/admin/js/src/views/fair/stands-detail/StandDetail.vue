@@ -24,10 +24,10 @@
                   <div class="vx-row">
                     <div class="vx-col xs:1 sm:w-1/2 md:w-1/2 xl:1/2" >
                       <div  class="mt-0 ml-4" >
-                        <h5 class="mb-2">UserName: {{ stand.user.first_name}} {{stand.user.last_name}}</h5>
-                        <h5 class="mb-2">Name: {{ stand.user.first_name}} {{stand.user.last_name}}</h5>
-                        <h5 class="mb-2">Email: {{ stand.user.email }}</h5>
-                        <h5 class="mb-2">Country: {{ stand.user.country }}</h5>
+                        <h5 class="mb-2">{{$t('UserName')}}: {{ stand.user.first_name}} {{stand.user.last_name}}</h5>
+                        <h5 class="mb-2">{{$t('Name')}}: {{ stand.user.first_name}} {{stand.user.last_name}}</h5>
+                        <h5 class="mb-2">{{$t('Email')}}: {{ stand.user.email }}</h5>
+                        <h5 class="mb-2">{{$t('Country')}}: {{ stand.user.country }}</h5>
                       </div>  
                       <div class="vx-row mt-base">
                         <div class="vx-col xs:1 sm:w-1 md:w-1/3 xl:1"></div>
@@ -39,8 +39,8 @@
                     </div>
                     <div class="vx-col xs:1 sm:w-1/2 md:w-1/2 xl:1/2">
                        <div  class="mt-0 ml-4 pl-10 py-3" style="border-left: 5px solid #e2e2e2">
-                        <h5 class="mb-2">Phone: {{ stand.contact.phone }}</h5>
-                        <h5 class="mb-2">Email: {{ stand.contact.email }}</h5>
+                        <h5 class="mb-2">{{$t('Phone')}}: {{ stand.contact.phone }}</h5>
+                        <h5 class="mb-2">{{$t('Email')}}: {{ stand.contact.email }}</h5>
                         <h5 class="mb-2">Address: {{ stand.contact.address}}</h5>
                         <h5 class="mb-2">Whatsapp: {{ stand.contact.whatsapp }}</h5>
                         <h5 class="mb-2">Google: {{ stand.contact.google }}</h5>

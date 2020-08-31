@@ -16,13 +16,13 @@
                                 </div>
                             </a>
                             <vs-dropdown-menu class="dropdown-userinfo">
-                                <div class="mb-1 font-italic">Nombre: {{item.requestor.first_name}} {{item.requestor.last_name}} </div>
+                                <div class="mb-1 font-italic">{{$t('Name')}}: {{item.requestor.first_name}} {{item.requestor.last_name}} </div>
                                 <div class="mb-1 font-italic">Email: {{item.requestor.email}}</div>
-                                <div class="mb-1 font-italic">Telefono: {{item.requestor.phone}}</div>
-                                <div class="mb-1 font-italic">Posicion: {{item.requestor.address}}</div>
-                                <div class="mb-1 font-italic">Compania: {{item.requestor.company}}</div>
-                                <div class="mb-1 font-italic">Pais: {{item.requestor.country}}</div>
-                                <div class="mb-1 font-italic">Region: {{item.requestor.region}}</div>
+                                <div class="mb-1 font-italic">{{$t('Phone')}}: {{item.requestor.phone}}</div>
+                                <div class="mb-1 font-italic">{{$t('Position')}}: {{item.requestor.address}}</div>
+                                <div class="mb-1 font-italic">{{$t('Company')}}: {{item.requestor.company}}</div>
+                                <div class="mb-1 font-italic">{{$t('Country')}}: {{item.requestor.country}}</div>
+                                <div class="mb-1 font-italic">{{$t('Region')}}: {{item.requestor.region}}</div>
                             </vs-dropdown-menu>
                         </vs-dropdown>
                     </div>
@@ -33,10 +33,10 @@
                             <svg-icon class="mx-2 cursor-pointer" size="w-8 h-8" icon="facebook"/>
                         </a>
                         <vs-dropdown-menu class="dropdown-userinfo">
-                            <div class="mb-1 font-bold">Para agregar su Facebook debe copiar el URL de su pagina</div>
-                            <div class="mb-1 font-italic">Ejemplo</div>
+                            <div class="mb-1 font-bold">{{$t('Facebook')}}</div>
+                            <div class="mb-1 font-italic">{{$t('Example')}}</div>
                             <div class="mb-1 font-italic"><vs-input placeholder="https://www.facebook.com/..." v-model="contact.facebook" class="w-full"></vs-input></div>
-                            <div class="mb-1 font-italic text-center"><vs-button @click="saveContact()" class="cyan-dark">GUARDAR</vs-button></div>
+                            <div class="mb-1 font-italic text-center"><vs-button @click="saveContact()" class="cyan-dark">{{$t('Save')}}</vs-button></div>
                         </vs-dropdown-menu>
                     </vs-dropdown>
                     <vs-dropdown vs-custom-content vs-trigger-click>
@@ -44,10 +44,10 @@
                             <svg-icon class="mx-2 cursor-pointer" size="w-8 h-8" icon="instagram"/>
                         </a>
                         <vs-dropdown-menu class="dropdown-userinfo">
-                            <div class="mb-1 font-bold">Para agregar su Instagram debe copiar el URL de su pagina</div>
-                            <div class="mb-1 font-italic">Ejemplo</div>
+                            <div class="mb-1 font-bold">{{$t('Instagram')}}</div>
+                            <div class="mb-1 font-italic">{{$t('Example')}}</div>
                             <div class="mb-1 font-italic"><vs-input placeholder="https://www.instagram.com/..." v-model="contact.instagram" class="w-full"></vs-input></div>
-                            <div class="mb-1 font-italic text-center"><vs-button @click="saveContact()" class="cyan-dark">GUARDAR</vs-button></div>
+                            <div class="mb-1 font-italic text-center"><vs-button @click="saveContact()" class="cyan-dark">{{$t('Save')}}</vs-button></div>
                         </vs-dropdown-menu>
                     </vs-dropdown>
                     <vs-dropdown vs-custom-content vs-trigger-click>
@@ -55,10 +55,10 @@
                             <svg-icon class="mx-2 cursor-pointer" size="w-8 h-8" icon="linkedin"/>
                         </a>
                         <vs-dropdown-menu class="dropdown-userinfo">
-                            <div class="mb-1 font-bold">Para agregar su LinkedIn debe copiar el URL de su pagina</div>
-                            <div class="mb-1 font-italic">Ejemplo</div>
+                            <div class="mb-1 font-bold">{{$t('LinkedIn')}}</div>
+                            <div class="mb-1 font-italic">{{$t('Example')}}</div>
                             <div class="mb-1 font-italic"><vs-input placeholder="https://www.linkedin.com/company/..." v-model="contact.linkedin" class="w-full"></vs-input></div>
-                            <div class="mb-1 font-italic text-center"><vs-button @click="saveContact()" class="cyan-dark">GUARDAR</vs-button></div>
+                            <div class="mb-1 font-italic text-center"><vs-button @click="saveContact()" class="cyan-dark">{{$t('Save')}}</vs-button></div>
                         </vs-dropdown-menu>
                     </vs-dropdown>
                     <vs-dropdown vs-custom-content vs-trigger-click>
@@ -66,10 +66,10 @@
                             <svg-icon class="mx-2 cursor-pointer" size="w-8 h-8" icon="whatsapp"/>
                         </a>
                         <vs-dropdown-menu class="dropdown-userinfo">
-                            <div class="mb-1 font-bold">Para agregar su WhatsApp debe copiar el URL de su pagina</div>
-                            <div class="mb-1 font-italic">Ejemplo</div>
+                            <div class="mb-1 font-bold">{{$t('WhatsApp')}}</div>
+                            <div class="mb-1 font-italic">{{$t('Example')}}</div>
                             <div class="mb-1 font-italic"><vs-input v-model="contact.whatsapp" class="w-full"></vs-input></div>
-                            <div class="mb-1 font-italic text-center"><vs-button @click="saveContact()" class="cyan-dark">GUARDAR</vs-button></div>
+                            <div class="mb-1 font-italic text-center"><vs-button @click="saveContact()" class="cyan-dark">{{$t('Save')}}</vs-button></div>
                         </vs-dropdown-menu>
                     </vs-dropdown>
                     <vs-dropdown vs-custom-content vs-trigger-click>
@@ -77,21 +77,21 @@
                             <svg-icon class="mx-2 cursor-pointer" size="w-8 h-8" icon="youtube"/>
                         </a>
                         <vs-dropdown-menu class="dropdown-userinfo">
-                            <div class="mb-1 font-bold">Para agregar su Youtube debe copiar el URL de su pagina</div>
-                            <div class="mb-1 font-italic">Ejemplo</div>
+                            <div class="mb-1 font-bold">{{$t('Youtube')}}</div>
+                            <div class="mb-1 font-italic">{{$t('Example')}}</div>
                             <div class="mb-1 font-italic"><vs-input placeholder="https://www.youtube.com/channel/..." v-model="contact.youtube" class="w-full"></vs-input></div>
-                            <div class="mb-1 font-italic text-center"><vs-button @click="saveContact()" class="cyan-dark">GUARDAR</vs-button></div>
+                            <div class="mb-1 font-italic text-center"><vs-button @click="saveContact()" class="cyan-dark">{{$t('Save')}}</vs-button></div>
                         </vs-dropdown-menu>
                     </vs-dropdown>
                 </div>
             </div>
         </div>
         <div class="absolute flex items-center justify-between w-full px-6 py-4 stand-footer">
-            <stand-button class="stand-button" icon="list" to="/setting/stand/information" text="agregar information de la empresa"/>
-            <stand-button class="stand-button" icon="brochure" to="/setting/stand/brochure" text="subir catalogosy brochures"/>
-            <stand-button class="stand-button" icon="gallery" to="/setting/stand/video" text="subir fotos y videos"/>
-            <stand-button class="stand-button" icon="schedule-edit" to="/setting/stand/schedule" text="ver citas"/>
-            <stand-button class="stand-button" icon="address-book" to="/setting/stand/contact" text="subir tarjeta de presentacion"/>
+            <stand-button class="stand-button" icon="list" to="/setting/stand/information" :text="$t('AddCompanyInfo')"/>
+            <stand-button class="stand-button" icon="brochure" to="/setting/stand/brochure" :text="$t('UploadCatglog')"/>
+            <stand-button class="stand-button" icon="gallery" to="/setting/stand/video" :text="$t('UploadPhoto')"/>
+            <stand-button class="stand-button" icon="schedule-edit" to="/setting/stand/schedule" :text="$t('SeeSchedule')"/>
+            <stand-button class="stand-button" icon="address-book" to="/setting/stand/contact" :text="$t('UploadBussiness')"/>
         </div>
         <div class="absolute stand-wrapper" style="border: 1px solid red">
             <div class="absolute" style="top: 64px">
@@ -106,7 +106,7 @@
             <div class="absolute" style="bottom: 74px; right: 0">
                 <div class="flex flex-col items-center justify-center text-white relative px-2 py-4 bg-blue-dark chatting-btn">
                   <svg-icon size="w-6 h-6" icon="contact"/>
-                  <div class="ml-2 text-center cursor-pointer btn-text" @click="$router.push('/fair/chatting')">CHATEAR CON UN USEARIO</div>
+                  <div class="ml-2 text-center cursor-pointer btn-text" @click="$router.push('/fair/chatting')">{{$t('ChattingOwner')}}</div>
                 </div>
             </div>
             <div class="absolute stand-item-wrapper flex flex-col items-center justify-center text-white" 
@@ -114,7 +114,7 @@
                 :style="`left: ${s_content.stand_type_item.left * 100}%; top: ${s_content.stand_type_item.top * 100}%; width: ${s_content.stand_type_item.width * 100}%; height: ${s_content.stand_type_item.height * 100}%; background: #ffffff33; border: 1px solid green`">
                 <template v-if="!s_content.content||s_content.content ===''">
                     <div class="stand-item text-center bg-blue-dark cursor-pointer">
-                        <div @click="browseStandContent(s_content.stand_type_item.type, s_content.id)">subir {{s_content.stand_type_item.type}}</div>
+                        <div @click="browseStandContent(s_content.stand_type_item.type, s_content.id)">{{$t('Upload')}} {{s_content.stand_type_item.type}}</div>
                     </div>
                 </template>
                 <template v-else>
@@ -172,8 +172,8 @@ export default {
           this.$loading.hide(this)
           if (response.data.status !== 'error') {
             this.$vs.notify({
-              title:'Notificación',
-              text:'Información de contacto guardada correctamente.',
+              title:this.$t('Notification'),
+              text: this.$t('ContactInfo'),
               color:'danger',
               iconPack: 'feather',
               icon:'icon-mail'})
@@ -188,8 +188,8 @@ export default {
     validateAndUpload (files) {
       if (files.length !== 1) {
         this.$vs.notify({
-          title: 'Error - Too Many Files',
-          text: 'Only support uploading one file!',
+          title: this.$t('TooManyFileTitle'),
+          text: this.$t('TooManyFileContent'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -199,8 +199,8 @@ export default {
       const rawFile = files[0] // only use files[0]
       if (!this.isValidExt(rawFile)) {
         this.$vs.notify({
-          title: 'error de formato de archivo',
-          text: `El tamaño del archivo debe ser inferior a 500 KB y tener el formato ${this.content_type}`,
+          title: this.$t('FileFormatTitle'),
+          text: `${this.$t('FileFormatTitle')} ${this.content_type}`,
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -239,17 +239,17 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
           } else {
             this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
+              title: this.$t('Error'),
+              text: this.$t('FailMessage'),
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
@@ -266,21 +266,13 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Se ha eliminado con éxito.',
-              color: 'success',
+              title: this.$t('Success'),
+              text: this.$t('DeleteMessage'),
               iconPack: 'feather',
-              icon: 'icon-alert-circle'
-            })
-          } else {
-            this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
-              iconPack: 'feather',
-              icon: 'icon-alert-circle'
-            })
-          } 
+              icon: 'icon-info',
+              color: 'success'
+            })  
+          }
           if (response.data.status === 'ok') {
             this.refresh()
           }
@@ -298,29 +290,29 @@ export default {
           if (data.status === 'error') {
             if (data.msg === 'unknown_fair') {
               this.$vs.notify({
-                title: 'Error',
-                text: 'Actualmente no hay ferias en curso.',
+                title: this.$t('Error'),
+                text: this.$t('NoCurrentFair'),
                 iconPack: 'feather',
                 icon: 'icon-alert-circle',
                 color: 'danger'
               })
-              this.$router.back()
+              return this.$router.back()
             } else {
               this.$vs.notify({
-                title: 'Error',
-                text: 'Tienes que comprar un stand en la feria actual.',
+                title: this.$t('Error'),
+                text: this.$t('NoStandBuy'),
                 iconPack: 'feather',
                 icon: 'icon-alert-circle',
                 color: 'danger'
               })
-              this.$router.back()
+              return this.$router.back()
             }
           }
         
           if (!data.stand || !data.stand.id) {
             this.$vs.notify({
-              title: 'error',
-              text: 'primero debe comprar el soporte.',
+              title: this.$t('Error'),
+              text: this.$t('BucketMsg'),
               iconPack: 'feather',
               icon: 'icon-alert-circle',
               color: 'danger'

@@ -2,7 +2,7 @@
   <div>
     <div class="vx-row mb-6">
       <div class="vx-col sm:w-1/3 w-full flex items-center text-right">
-        <h3>Select Fair</h3>
+        <h3>{{$t('Select')}} {{$t('Fair')}}</h3>
       </div>
       <div class="vx-col sm:w-2/3 w-full">
           <v-select v-model="fair_id"  :clearable="false" :options="fairOptions" v-validate="'required'" name="role" :dir="$vs.rtl ? 'rtl' : 'ltr'" @input="showSustainability" />
@@ -11,7 +11,7 @@
     </div>
     <div class="vx-row">
       <div class="vx-col sm:w-1/3 w-full">
-        <h4>Sustainability Title</h4>
+        <h4>{{$t('Sustainabililty')}} {{$t('Title')}}</h4>
       </div>
       <div class="vx-col sm:w-2/3 w-full">
         <vs-textarea class="w-full" v-model="sustainability_title"/>
@@ -19,7 +19,7 @@
     </div>
     <div class="vx-row">
       <div class="vx-col sm:w-1/3 w-full">
-        <h4>Sustainability Content</h4>
+        <h4>{{$t('Sustainability')}} {{$t('Content')}}</h4>
       </div>
       <div class="vx-col sm:w-2/3 w-full">
         <vs-textarea class="w-full" v-model="sustainability_content"/>
@@ -28,17 +28,17 @@
      <div class="flex mb-6 justify-end ">
        <vs-button class="mt-4" type="filled" icon-pack="feather" icon="icon-save" color="success"
           @click="saveSustainability">
-          Save Description
+          {{$t('Save')}} {{$t('Description')}}
       </vs-button> 
     </div>
     <div class="vx-row">
       <div class="vx-col w-full lg:w-1/3 sm:w-1 mb-base">
         <vx-card class="overlay-card overflow-hidden">
           <div class="vx-row">
-            <h3 class="vx-col w-full lg:w-1/2 sm:w-1 mb-2">Ads Image</h3>
+            <h3 class="vx-col w-full lg:w-1/2 sm:w-1 mb-2">{{$t('Sustainability')}} {{$t('Image')}}</h3>
             <vs-button class="vx-col w-full lg:w-1/2 sm:w-1 mb-2" type="filled" icon-pack="feather" icon="icon-save" color="success"
               @click="saveAction">
-              Add Image
+              {{$t('Add')}} {{$t('Image')}}
            </vs-button> 
            </div>
             <div class="mb-8">
@@ -56,11 +56,11 @@
                     <img :src="`/fair_image/${sustainbilityImg.url}`" alt="content-img" class="responsive card-img-top">
                     <div class="flex items-center justify-between mt-5 px-4 pb-4">
                         <vs-button class="mt-4" type="filled" icon-pack="feather" icon="icon-trash" color="success" @click="remove(sustainbilityImg)">
-                            Delete
+                            {{$t('Delete')}}
                         </vs-button> 
                         <vs-switch class="mt-4 ml-2" color="success" v-model="sustainbilityImg.show" @change="updateStatus(sustainbilityImg)">
-                            <span slot="on">Show</span>
-                            <span slot="off">Cancel</span>
+                            <span slot="on">{{$t('Show')}}</span>
+                            <span slot="off">{{$t('Cancel')}}</span>
                         </vs-switch>
                     </div>
                 </div>
@@ -137,17 +137,17 @@ export default {
           this.loadContent()
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
           } else {
             this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
+              title: this.$t('Error'),
+              text: this.$t('FailMessage'),
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
@@ -180,8 +180,8 @@ export default {
           }
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
@@ -189,9 +189,9 @@ export default {
            
           } else {
             this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
+              title: this.$t('Error'),
+              text: this.$t('FailMessage'),
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
@@ -215,8 +215,8 @@ export default {
         this.$loading.hide(this)  
         if (response.data.status === 'ok') {
           this.$vs.notify({
-            title: 'éxito',
-            text: 'Ha sido cambiado exitosamente.',
+            title: this.$t('Success'),
+            text: this.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
@@ -224,9 +224,9 @@ export default {
           
         } else {
           this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: this.$t('Error'),
+            text: this.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           })
@@ -244,8 +244,8 @@ export default {
         }
         if (response.data.status === 'ok') {
           this.$vs.notify({
-            title: 'éxito',
-            text: 'Fue eliminado con éxito.',
+            title: this.$t('Success'),
+            text: this.$t('DeleteMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
@@ -253,9 +253,9 @@ export default {
           
         } else {
           this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: this.$t('Error'),
+            text: this.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           })

@@ -12,15 +12,15 @@
 
         <vs-spacer />
 
-        <!-- <i18n />
+        <i18n />
 
-        <search-bar />
+        <!-- <search-bar />
 
         <cart-drop-down />
 
-        <notification-drop-down /> -->
-
-        <profile-drop-down />
+        <notification-drop-down />
+ -->
+        <profile-drop-down class="ml-4" />
 
       </vs-navbar>
     </div>

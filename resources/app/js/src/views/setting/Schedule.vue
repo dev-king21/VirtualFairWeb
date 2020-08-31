@@ -2,13 +2,13 @@
     <div class="w-full">
         <app-header activeItem="0"></app-header>
         <div class="w-full setting-schedule-main">
-            <bread-crumb icon="topic" type="svg" text="mi agenda" />
+            <bread-crumb icon="topic" type="svg" :text="$t('MySchedule')" />
             <div class="w-full">
                 <div class="vx-row page-content">
                     <div class="vx-col lg:w-1/4 md:w-1/4 sm:w-1/4 xs:w-1/4 event-panel bg-white-grey">
                         <div class="p-4 bg-cyan-dark">
-                            <span class="h2 text-white font-bold stroke-text">Mis</span>
-                            <span class="h2 text-white font-bold">Evantos:</span>
+                            <span class="h2 text-white font-bold stroke-text">{{$t('My')}}</span>
+                            <span class="h2 text-white font-bold">{{$t('Event')}}:</span>
                         </div>
                         <div :key="`webinar-date-${index}`" v-for="(wdate, index) in webinars_dates">
                             <div class="mt-8 ml-6 h6 font-bold">
@@ -29,8 +29,8 @@
                     <div class="vx-col w-1/2 event-los-panel bg-white">
                         <div class="flex flex-row justify-between items-center bg-blue-light">
                             <div class="p-4 ml-8">
-                                <span class="h2 text-white font-bold">Mis</span>
-                                <span class="h2 text-white font-bold stroke-text">Citas:</span>
+                                <span class="h2 text-white font-bold">{{$t('My')}}</span>
+                                <span class="h2 text-white font-bold stroke-text">{{$t('Quote')}}:</span>
                             </div>
                         </div>
                         <div :key="`dating-item-${index}`" v-for="(apo_date, index) in appointments_dates">
@@ -48,7 +48,7 @@
                         </div>
                     </div>
                     <div class="vx-col lg:w-1/4 md:w-1/4 sm:w-1/4 xs:w-1/4 event-panel bg-white">
-                        <div class="uppercase fs-11 mt-8 ml-4 font-bold mb-4">PUBLICIDAD</div>
+                        <div class="uppercase fs-11 mt-8 ml-4 font-bold mb-4">{{$t('Ads')}}</div>
                         <div class="ml-4 mr-8">
                           <swiper :options="swiperOption">
                             <swiper-slide :key="`swiper-item-${index}`" v-for="(item, index) in ads_list">
@@ -119,7 +119,7 @@ export default {
   },
   methods: {
     period (start_time, end_time) {
-      if(start_time === null || end_time === null) return ''
+      if (start_time === null || end_time === null) return ''
       const sd = this.$date.timeFormat(start_time)
       const ed = this.$date.timeFormat(end_time)  
       return `${sd} - ${ed}`  
@@ -136,6 +136,10 @@ export default {
         this.appointments = data.appointments
         this.webinars_dates = data.webinars_dates
         this.webinars = data.webinars
+      })
+    this.$http.post('/api/stand/ads/get')
+      .then((res) => {
+        this.ads_list = res.data.ads
       })
     this.$http.post('/api/stand/ads/get')
       .then((res) => {

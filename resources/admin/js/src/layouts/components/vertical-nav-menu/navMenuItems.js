@@ -35,19 +35,22 @@ export default [
     icon:'MailIcon',
     slug: 'contact',
     role: 'admin',
+    i18n: 'Contact',
     submenu: [
       {
         url: '/contact/query',
         name: 'Query Contacts',
         slug: 'query contacts',
-        icon: 'MailIcon'
+        icon: 'MailIcon',
+        i18n: 'QueryContact'
+
       },
       {
         url: '/contact/contact_message',
         name: 'Contact Message',
         slug: 'contact message',
-        icon: 'MessageSquareIcon'/* ,
-        i18n: 'Chat' */
+        icon: 'MessageSquareIcon',
+        i18n: 'ContactMessage'
       }
     ]
   },
@@ -56,14 +59,18 @@ export default [
     name: 'User',
     icon: 'UserIcon',
     slug: 'user',
-    role: 'admin'
+    role: 'admin',
+    i18n: 'User'
+
   },
   {
     url: '/admins',
     name: 'Admin Users',
     icon: 'UserIcon',
     slug: 'admin users',
-    role: 'super'
+    role: 'super',
+    i18n: 'AdminUser'
+
   },
   {
     url: null,
@@ -71,26 +78,31 @@ export default [
     icon: 'PackageIcon',
     slug: 'room',
     role: 'admin',
+    i18n: 'Room',
     submenu: [
       {
         url: '/room/all',
         name: 'All Rooms',
         slug: 'all rooms',
-        icon: 'MailIcon'
+        icon: 'MailIcon',
+        i18n: 'AllRoom'
+
       },
       {
         url: '/room/scheduled_talk',
-        name: 'Reservados Webinars',
+        name: 'Reserved Webinars',
         slug: 'reserved webinars',
-        icon: 'CheckSquareIcon'
+        icon: 'CheckSquareIcon',
+        i18n: 'ReservedWebinar'
       },
       {
         url: '/room/past_talk',
-        name: 'VISTOS Webinars',
+        name: 'Past Webinars',
         slug: 'past Webinars',
         icon: 'CalendarIcon',
-        tagColor: 'success'/* ,
-        i18n: 'Calendar' */
+        tagColor: 'success',
+        i18n: 'PastWebinar'
+
       }
     ]
   },
@@ -100,42 +112,46 @@ export default [
     icon: 'PackageIcon',
     slug: 'fair',
     role: 'admin',
+    i18n: 'Fair',
+    
     submenu: [
       {
         url: '/fair/all',
         name: 'All Fairs',
         slug: 'all fairs',
-        icon: 'MailIcon'/* ,
-        i18n: 'AllUsers' */
+        icon: 'MailIcon',
+        i18n: 'AllFair'
       },
       {
         url: '/fair/next',
         name: 'Scheduled Fair',
         slug: 'next fair',
-        icon: 'CheckSquareIcon'/* ,
-        i18n: 'Todo' */
+        icon: 'CheckSquareIcon',
+        i18n: 'ScheduledFair'
       },
       {
         url: '/fair/live',
         name: 'Live Fair',
         slug: 'live fair',
         icon: 'CalendarIcon',
-        tagColor: 'success'/* ,
-        i18n: 'Calendar' */
+        tagColor: 'success',
+        i18n: 'LiveFair'
       },
       {
         url: '/fair/past',
         name: 'Past Fair',
         slug: 'past fair',
         icon: 'CalendarIcon',
-        tagColor: 'success'/* ,
-        i18n: 'Calendar' */
+        tagColor: 'success',
+        i18n: 'PastFair'
       },
       {
         url: '/fair/sustainability',
         name: 'Sustainability',
         slug: 'sustainability',
-        icon: 'MailIcon'
+        icon: 'MailIcon',
+        i18n: 'Sustainability'
+
       }
     ]
   },
@@ -144,7 +160,9 @@ export default [
     name: 'Payment',
     icon: 'PackageIcon',
     slug: 'Payment',
-    role: 'admin'
+    role: 'admin',
+    i18n: 'Payment'
+
   },
   
   {
@@ -153,47 +171,51 @@ export default [
     slug: 'settings',
     icon: 'SettingsIcon',
     role: 'admin',
+    i18n: 'Settings',
+
     submenu: [
       {
         url: '/settings/country',
         name: 'Countries',
         slug: 'countries',
-        icon: 'MailIcon'/* ,
-        i18n: 'AllUsers' */
+        icon: 'MailIcon',
+        i18n: 'Countries'
       },
       {
         url: '/settings/fair-type/show',
         name: 'Fair Types',
         slug: 'fair-type',
-        icon: 'MailIcon'/* ,
-        i18n: 'AllUsers' */
+        icon: 'MailIcon',
+        i18n: 'FairTypes'
       },
       {
         url: '/settings/stand-location',
         name: 'Stand Locations',
         slug: 'stand-location-home',
         icon: 'MailIcon'
-        /* ,i18n: 'AllUsers' */
+        ,i18n: 'StandLocations'
       },
       {
         url: '/settings/stand-type',
         name: 'Stand Types',
         slug: 'stand-type',
-        icon: 'MailIcon'/* ,
-        i18n: 'AllUsers' */
+        icon: 'MailIcon',
+        i18n: 'StandTypes'
       },
       {
         url: '/settings/stand-type-item',
         name: 'Stand Items',
         slug: 'stand-type-item',
-        icon: 'MailIcon'/* ,
-        i18n: 'AllUsers' */
+        icon: 'MailIcon',
+        i18n: 'StandItems'
       },
       {
         url: '/settings/advertisement',
         name: 'Advertisement',
         slug: 'advertisement',
-        icon: 'MailIcon'
+        icon: 'MailIcon',
+        i18n: 'Advertisements'
+
       }
     ]
   },
@@ -201,8 +223,10 @@ export default [
     url: '/exhibitor',
     name: 'Exhibitor Webinar',
     slug: 'exhibitor webinar',
-    icon: 'PackageIcon'
-  }/* ,
+    icon: 'PackageIcon',
+    i18n: 'ExhibitorWebinar'
+
+  },
   {
     header: 'Apps',
     icon: 'PackageIcon',
@@ -1002,6 +1026,6 @@ export default [
         ]
       }
     ]
-  } */
+  }
 ]
 

@@ -113,8 +113,8 @@ __webpack_require__.r(__webpack_exports__);
 
         if (!data.stand || !data.stand.id) {
           _this.$vs.notify({
-            title: 'error',
-            text: 'primero debe comprar el soporte.',
+            title: _this.$t('Error'),
+            text: _this.$t('BucketMsg'),
             iconPack: 'feather',
             icon: 'icon-alert-circle',
             color: 'danger'
@@ -360,7 +360,7 @@ var render = function() {
                 attrs: {
                   icon: "list",
                   to: "/stand/information/" + _vm.$route.params.stand_id,
-                  text: "SOBRE NOSOTROS"
+                  text: _vm.$t("AboutUs")
                 }
               }),
               _vm._v(" "),
@@ -369,7 +369,7 @@ var render = function() {
                 attrs: {
                   icon: "brochure",
                   to: "/stand/brochure/" + _vm.$route.params.stand_id,
-                  text: "CATÁLOGOS Y BROCHURES"
+                  text: _vm.$t("CatalogBrochure")
                 }
               }),
               _vm._v(" "),
@@ -378,7 +378,7 @@ var render = function() {
                 attrs: {
                   icon: "gallery",
                   to: "/stand/gallery/" + _vm.$route.params.stand_id,
-                  text: "GALERÍA"
+                  text: _vm.$t("Gallery")
                 }
               }),
               _vm._v(" "),
@@ -387,7 +387,7 @@ var render = function() {
                 attrs: {
                   icon: "schedule-edit",
                   to: "/stand/schedule/" + _vm.$route.params.stand_id,
-                  text: "AGENDAR CITAS"
+                  text: _vm.$t("ScheduleAppointment")
                 }
               }),
               _vm._v(" "),
@@ -396,7 +396,7 @@ var render = function() {
                 attrs: {
                   icon: "address-book",
                   to: "/stand/contact/" + _vm.$route.params.stand_id,
-                  text: "CONTACTO"
+                  text: _vm.$t("Contact")
                 }
               })
             ],
@@ -435,7 +435,7 @@ var render = function() {
                             "ml-2 text-center cursor-pointer btn-text",
                           on: { click: _vm.goChatting }
                         },
-                        [_vm._v("CHATEAR CON UN USEARIO DEL STAND")]
+                        [_vm._v(_vm._s(_vm.$t("ChattingOwner")))]
                       )
                     ],
                     1

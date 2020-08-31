@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <app-header activeItem="0"></app-header>
-        <bread-crumb icon="brochure" type="svg" text="CATÁLOGOS O BROCHURES" />
+        <bread-crumb icon="brochure" type="svg" :text="$t('CatalogBrochure')" />
         <div class="w-full setting-stand-brochure bg-white-grey">
             <div class="w-full px-10 pb-4 mt-4">
                 <div class="vx-row w-full">
@@ -20,8 +20,8 @@
                                 <feather-icon class="cursor-pointer" svgClases="w-10 h-10" icon="PlusIcon" @click="browseBrochure"/>
                             </div>
                             <div class="mt-4 text-center">
-                                SUBIR PDF O JPG <br>
-                                (Peso maximo 1mb)
+                                {{$t('Upload')}} PDF O JPG <br>
+                                ({{$t('MaxSize')}} 1mb)
                             </div>
                         </div>
                     </template>
@@ -38,7 +38,7 @@
                                     <div class="vx-col w-full">
                                         <div @click="saveBrochure()" class="flex items-center justify-center text-white py-2 cyan-dark w-full cursor-pointer">
                                             <feather-icon size="w-5 h-5" icon="SaveIcon" />
-                                            <div class="ml-2" style="font-size: 0.9rem">GUARDAR</div>
+                                            <div class="ml-2" style="font-size: 0.9rem">{{$t('Save')}}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -167,8 +167,8 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Folleto registrado con éxito',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               iconPack: 'feather',
               icon: 'icon-info',
               color: 'success'
@@ -184,8 +184,8 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Folleto registrado con éxito',
+              title: this.$t('Success'),
+              text: this.$t('DeleteMessage'),
               iconPack: 'feather',
               icon: 'icon-info',
               color: 'success'

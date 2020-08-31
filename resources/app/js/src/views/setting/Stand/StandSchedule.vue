@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <app-header activeItem="0"></app-header>
-        <bread-crumb icon="schedule-edit" type="svg" text="mis citas" />
+        <bread-crumb icon="schedule-edit" type="svg" :text="$t('MyAppointment')" />
         <div class="w-full setting-stand-schedule bg-white-grey">
             <div class="vx-row mt-4">
               <div class="vx-col w-1/3">
@@ -9,7 +9,7 @@
                   <div class="p-6" style="border: 1px solid #e2e2e2">
                     <div class="flex items-center justify-center mb-4">
                       <feather-icon size="w-8 h-8" class="text-yellow-light" icon="ClockIcon" />
-                      <div class="uppercase h5 font-bold ml-4">SELECCIONE LA HORA</div>
+                      <div class="uppercase h5 font-bold ml-4">{{$t('SelectTime')}}</div>
                     </div>
                     <div class="vx-row">
                       <div class="vx-col w-1/3 timetable text-center" 
@@ -23,7 +23,7 @@
                       </div>
                     </div>
                     <div class="text-center">
-                      <vs-button @click="saveTimetable" class="cyan-dark">AGREGAR</vs-button>
+                      <vs-button @click="saveTimetable" class="cyan-dark">{{$t('Add')}}</vs-button>
                     </div>
                   </div>
                 </div>
@@ -41,13 +41,13 @@
                                     <feather-icon class="ml-2 text-cyan-dark" icon="ClockIcon"/>
                                     <div class="mx-4">
                                         <div>{{period(apo.start_time, apo.end_time)}}</div>
-                                        <div>Nombre: {{apo.requestor.first_name}} {{apo.requestor.last_name}}</div>
-                                        <div>Compania: {{apo.requestor.company}}</div>
-                                        <div>Pais: {{apo.requestor.country}}</div>
+                                        <div>{{$t('Name')}}: {{apo.requestor.first_name}} {{apo.requestor.last_name}}</div>
+                                        <div>{{$t('Company')}}: {{apo.requestor.company}}</div>
+                                        <div>{{$t('Country')}}: {{apo.requestor.country}}</div>
                                     </div>
                                 </div>
                                 <div class="flex mt-6 justify-end">
-                                    <vs-button class="cyan-dark">IR A LA CITA</vs-button>
+                                    <vs-button class="cyan-dark">{{$t('Go to appointment')}}</vs-button>
                                 </div>
                             </div>
                         </div>
@@ -155,24 +155,12 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
-              color: 'success',
+              title: this.$t('Success'),
+              text: this.$t('DeleteMessage'),
               iconPack: 'feather',
-              icon: 'icon-alert-circle'
-            })
-            if (response.data.time_table) {
-              const tt = response.data.time_table.replace(/\s/g, '')
-              this.make_availables(tt.split(','))
-            }
-          } else {
-            this.$vs.notify({
-              title: 'Oyu',
-              text: 'Error de registro',
-              color: 'error',
-              iconPack: 'feather',
-              icon: 'icon-alert-circle'
-            })
+              icon: 'icon-info',
+              color: 'success'
+            })  
           }
         })
     },
@@ -193,20 +181,12 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
-              color: 'success',
+              title: this.$t('Success'),
+              text: this.$t('DeleteMessage'),
               iconPack: 'feather',
-              icon: 'icon-alert-circle'
-            })
-          } else {
-            this.$vs.notify({
-              title: 'Oyu',
-              text: 'Error de registro',
-              color: 'error',
-              iconPack: 'feather',
-              icon: 'icon-alert-circle'
-            })
+              icon: 'icon-info',
+              color: 'success'
+            })  
           }
         }).catch(() => {
           
@@ -223,23 +203,7 @@ export default {
     this.$http.post('/api/setting/my_stand/schedule')
       .then((response) => {
         this.$loading.hide(this)
-        if (response.data.status === 'ok') {
-          this.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
-            color: 'success',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          })
-        } else {
-          this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          })
-        } 
+        
         const data = response.data
         this.appointments_dates = data.appointments_dates
         this.appointments = data.appointments

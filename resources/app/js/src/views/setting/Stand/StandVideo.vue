@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <app-header activeItem="0"></app-header>
-        <bread-crumb icon="gallery" type="svg" text="GALERÍA" />
+        <bread-crumb icon="gallery" type="svg" :text="$t('Gallery')" />
         <div class="w-full setting-stand-video bg-white-grey">
             <div class="w-full px-10 pb-4 mt-4">
                 <div class="h3 m-2 font-bold" v-show="hasImage">
@@ -33,8 +33,8 @@
                               <feather-icon svgClases="w-10 h-10" class="cursor-pointer" icon="PlusIcon" @click="browseVideo()" />
                           </div>
                           <div class="mt-4 text-center">
-                              SUBIR FOTO O VIDEO <br>
-                              (Peso maximo 100mb)
+                              {{$t('Upload')}} IMAGE O VIDEO <br>
+                              ({{$t('MaxSize')}} 100mb)
                           </div>
                       </div>
                     </template>
@@ -51,7 +51,7 @@
                                     <div class="vx-col w-full">
                                         <div @click="saveGallery()" class="flex items-center justify-center text-white py-2 cyan-dark w-full cursor-pointer">
                                             <feather-icon size="w-5 h-5" icon="SaveIcon" />
-                                            <div class="ml-2" style="font-size: 0.9rem">GUARDAR</div>
+                                            <div class="ml-2" style="font-size: 0.9rem">{{$t('Save')}}</div>
                                         </div>
                                     </div>
                                 </div>
@@ -143,8 +143,8 @@ export default {
           const data = response.data
           if (!data.stand || !data.stand.id) {
             this.$vs.notify({
-              title: 'error',
-              text: 'primero debe comprar el soporte.',
+              title: this.$t('Error'),
+              text: this.$t('BucketMsg'),
               iconPack: 'feather',
               icon: 'icon-alert-circle',
               color: 'danger'
@@ -163,8 +163,8 @@ export default {
       
       if (!this.gallery_file || this.gallery_file.size > 100 * 1024 * 1024) {
         this.$vs.notify({
-          title: 'error de formato de archivo',
-          text: 'El tamaño del archivo debe ser inferior a 100 MB y tener el formato .avi, .mp4, .3gp, .jpg, .png, .gif, .jpeg',
+          title: this.$t('FileFormatTitle'),
+          text: this.$t('FileFormatSize'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -174,8 +174,8 @@ export default {
 
       if (this.isVideo(this.gallery_file.name) && (!this.gallery_title || this.gallery_title === '')) {
         this.$vs.notify({
-          title: 'Error de título del catálogo',
-          text: 'Ingrese corregir el mosaico del catálogo',
+          title: this.$t('CatalogTitle'),
+          text: this.$t('CatalogTitleContent'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -200,8 +200,8 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Folleto registrado con éxito',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               iconPack: 'feather',
               icon: 'icon-info',
               color: 'success'
@@ -217,8 +217,8 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Folleto registrado con éxito',
+              title:this.$t('Success'),
+              text: this.$t('DeleteMessage'),
               iconPack: 'feather',
               icon: 'icon-info',
               color: 'success'

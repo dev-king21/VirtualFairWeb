@@ -154,7 +154,9 @@ var render = function() {
           _c("div", { staticClass: "bg-white px-4" }, [
             _c("div", { staticClass: "h3 text-center my-4" }, [
               _vm._v(
-                "\n                Gracias a la colaboracion de nuestros patrocinadores este evento fue posible\n            "
+                "\n                " +
+                  _vm._s(_vm.$t("ThanksGreeting")) +
+                  "\n            "
               )
             ]),
             _vm._v(" "),

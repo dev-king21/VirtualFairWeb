@@ -18,7 +18,8 @@ use Illuminate\Support\Facades\Route;
 //     return $request->user();
 // });
 
-Route::post('/register_country', 'CountryController@dummyCreate');
+//Route::post('/register_country', 'CountryController@dummyCreate');
+Route::any('/country_region_build', 'SettingController@country_region_build');
 Route::any('/init_setting', 'SettingController@dummyCreate');
 
 
@@ -110,6 +111,10 @@ Route::prefix('admin/auth')->group(function() {
 
 Route::group(['middleware' => ['auth:admin']], function() {
     Route::get('/exhibitor', 'RoomController@exhibitorWebinar');
+     //exhibitor webinar
+     Route::post('/exhibitor/update/{talk_id}', 'RoomController@updateWebinar');
+
+
     //QueryContact and ContactMessage
     Route::group(['middleware' => ['is_admin']], function() {
         Route::get('/query/all', 'ContactController@getQueryContact');
@@ -139,6 +144,8 @@ Route::group(['middleware' => ['auth:admin']], function() {
 
         //user
         Route::get('/user/all', 'UserController@allUser');
+        Route::get('/user/show/{id}', 'UserController@show');
+
         Route::get('/user/request', 'UserController@requestUser');
         Route::get('/user/book', 'UserController@bookedUser');
         Route::get('/user/active', 'UserController@activeUser');
@@ -230,16 +237,12 @@ Route::group(['middleware' => ['auth:admin']], function() {
         // Route::get('/rooms/talks/live', 'RoomController@LiveTalks');
         Route::get('/rooms/talks/past', 'RoomController@PastTalks');
 
-        //exhibitor webinar
-
-        Route::post('/exhibitor/update/{talk_id}', 'RoomController@updateWebinar');
-
-
-
         //talk
         Route::post('/room/talk/create', 'RoomController@create_talk');
         Route::post('/room/talk/update/{id}', 'RoomController@update_talk');
         Route::get('/room/talk/all', 'RoomController@all_talk');
+        Route::post('/room/talk/delete/{id}', 'RoomController@delete_talk');
+
 
         //country
         Route::get('/country/all', 'CountryController@show');
@@ -287,4 +290,5 @@ Route::group(['middleware' => []], function() {
     Route::post('/query', 'ContactController@addQueryContact');
     Route::post('/contact_message', 'ContactController@addContactMessage');
     Route::get('/fair/now/category', 'FairController@current_fair_category');
+    Route::get('/country_info', 'FairController@get_country_regions');
 });

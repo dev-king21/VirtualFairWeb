@@ -13,26 +13,26 @@
         <template v-if="!logInClicked">
           <div class="login-btn flex items-center text-white cursor-pointer" @click="logInClicked = true"> 
             <feather-icon svgClasses="w-6 h-6" icon="LogInIcon" />
-            <span class="ml-4">INGRESAR</span>
+            <span class="ml-4 uppercase">{{$t('Login')}}</span>
           </div>
         </template>
         <template v-else>
           <div class="login-form w-full lg:w-1/6 md:w-1/4 sm:w-1/3 xs:w-1/2 absolute"  style="z-index: 3; right: 0; top: 86px">
             <div class="h6 font-bold text-white">
-              Por favor ingrese sus datos
+              {{$t('LoginInfor')}}
             </div>
             <div class="login-input">
-              <vs-input color="success" class="w-full" placeholder="Ingrese su email" 
+              <vs-input color="success" class="w-full" :placeholder="$t('EnterEmail')" 
                 v-validate="'required|email'" data-vv-validate-on="blur" name="email" v-model="auth.email"/>
               <span class="text-danger text-sm">{{ errors.first('email') }}</span>
             </div>
             <div class="login-input">
-              <vs-input color="success" class="w-full" placeholder="Ingrese su contrasena" type="password"
+              <vs-input color="success" class="w-full" :placeholder="$t('EnterPassword')" type="password"
                 v-validate="'required'" data-vv-validate-on="blur" name="contrasena" @keypress="goEnter" v-model="auth.password"/>
               <span class="text-danger text-sm">{{ errors.first('contrasena') }}</span>
             </div>
             <div class="mt-8">
-              <vs-button class="w-full sign-btn" :disabled="!validateAuthParam" @click="login()" color="#164A8B">INGRESAR</vs-button>
+              <vs-button class="w-full sign-btn" :disabled="!validateAuthParam" @click="login()" color="#164A8B">{{$t('Login')}}</vs-button>
             </div>  
           </div>
         </template>
@@ -41,11 +41,11 @@
         <div class="vx-col w-full lg:w-1/4 sm:w-1/3 xs:w-1/2">
           <div class="contact-card">
             <div class="text-center pt-5 mb-3 font-bold">
-              TIENES DUDAS? DEJANOS SABERLAS
+              {{$t('DoubtMessage')}}
             </div>
             <div class="contact-content">
               <div class="contact-input">
-                <vs-input color="success" class="w-full" placeholder="Nombre" 
+                <vs-input color="success" class="w-full" :placeholder="$t('Name')" 
                   v-validate="'required'" data-vv-validate-on="blur" name="contact_name" v-model="contact_name"/>
                 <span class="text-danger text-sm">{{ errors.first('contact_name') }}</span>
               </div>
@@ -54,19 +54,19 @@
                   v-validate="'required|email'" data-vv-validate-on="blur" name="contact_email" v-model="contact_email"/></div>
                   <span class="text-danger text-sm">{{ errors.first('contact_email') }}</span>
               <div class="contact-input">
-                <vs-textarea color="success" height="100px" class="w-full" placeholder="Consulta" 
+                <vs-textarea color="success" height="100px" class="w-full" :placeholder="$t('Query')" 
                   data-vv-validate-on="blur" name="contact_message" v-model="contact_message"/>
               </div>
             </div>
             <div @click="send_message" class="contact-input text-right">
-              <vs-button class="message-btn" >Enviar</vs-button>
+              <vs-button class="message-btn" >{{$t('Send')}}</vs-button>
             </div>
           </div>
         </div>
         <div class="vx-col text-right">
           <div class="contact-btn cyan-dark flex items-center justify-end cursor-pointer">
             <svg-icon icon="contact"></svg-icon>
-            <span class="text-white ml-2">CONTACTA CON NOSOTROS</span>
+            <span class="text-white uppercase ml-2">{{$t('ContactUs')}}</span>
           </div>
         </div>
       </div>
@@ -95,8 +95,8 @@
               <div class="text-white">
                 <div class="live-panel text-center cursor-pointer" @click="$router.push('/room/live-video')">
                   <svg-icon size="w-10 h-10" icon="live"/>
-                  <div class="text-center font-bold">
-                    EN VIVO
+                  <div class="text-center font-bold uppercase">
+                    {{$t('Live')}}
                   </div>
                 </div>
               </div>
@@ -109,7 +109,7 @@
           stands
         </router-link>
         <router-link class="main-link" to="/room/schedule">
-          Agenda del congreso
+          {{$t('WebinarSchedule')}}
         </router-link>
         <router-link class="main-link" to="/room/webinar">
           webinars
@@ -120,7 +120,7 @@
              style="margin-top: 0px; background: #ff0000; margin-left: 2px;" :badge="msg_count" />
         </router-link>
         <router-link class="main-link" to="/home/sponsor">
-          patrocinadores
+          {{$t('Sponsors')}}
         </router-link>
       </div>  
     </template>  
@@ -164,15 +164,26 @@ export default {
         .then(() => {
           this.$loading.hide(this)
         })
-        .catch(() => {
+        .catch((error) => {
           this.$loading.hide(this)
-          this.$vs.notify({
-            title: 'Error',
-            text: 'Correo electrónico o la contraseña son incorrectos.',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle',
-            color: 'danger'
-          })
+          console.log(error)
+          if (error.message === 'wrong_credentials') {
+            this.$vs.notify({
+              title: this.$t('Error'),
+              text: this.$t('WrongEmailPassword'),
+              iconPack: 'feather',
+              icon: 'icon-alert-circle',
+              color: 'danger'
+            })
+          } else {
+            this.$vs.notify({
+              title: this.$t('Error'),
+              text: this.$t('NotRegisteredMsg'),
+              iconPack: 'feather',
+              icon: 'icon-alert-circle',
+              color: 'danger'
+            })
+          }         
         })
       this.auth.email = ''
       this.auth.password = ''
@@ -195,8 +206,8 @@ export default {
           if (res.data.status === 'ok') {
             this.$loading.hide(this)
             this.$vs.notify({
-              title:'Notificación',
-              text:'Hemos recibido su petición. \n Por favor espera.',
+              title:this.$t('Notification'),
+              text:this.$t('RequestReceive'),
               color:'success',
               iconPack: 'feather',
               icon:'icon-mail'

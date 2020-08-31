@@ -1,7 +1,9 @@
-const dayStr = ['DOM', 'LUN', 'MAR', 'MIÉ', 'JUE', 'VIE', 'SÁB']
-const monthStr = ['Enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
-
+const dayStrEs = ['DOM', 'LUN', 'MAR', 'MIÉ', 'JUE', 'VIE', 'SÁB']
+const monthStrEs = ['Enero', 'febrero', 'marzo', 'abril', 'mayo', 'junio', 'julio', 'agosto', 'septiembre', 'octubre', 'noviembre', 'diciembre']
+const dayStrEn = ['MON', 'TUE', 'WED', 'THR', 'FRI', 'SAT', 'SUN']
+const monthStrEn = ['January', 'Febrary', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December']
 export default {
+  
   timeFormat (timeString) {
     const timeArr = timeString.split(':')  
     if (timeArr.length < 2) return timeString
@@ -31,17 +33,39 @@ export default {
 
   dateFormatWithYear (dateString) {
     const dt = new Date(dateString)
+    let language = localStorage.getItem("language")
+    let dayStr = dayStrEn
+    let monthStr = monthStrEn
+    if(language === 'es') {
+      dayStr = dayStrEs
+      monthStr = monthStrEs
+    }
+
     return `${dayStr[dt.getDay()]} ${dt.getDate()} de ${monthStr[dt.getMonth()]}, ${dt.getFullYear()}` 
   },
 
   dateFormatWithoutYear (dateString) {
     const dt = new Date(dateString)
     
-
+    let language = localStorage.getItem("language")
+    let dayStr = dayStrEn
+    let monthStr = monthStrEn
+    
+    if(language === 'es') {
+      dayStr = dayStrEs
+      monthStr = monthStrEs
+    }
     return `${dt.getDate() > 9 ? dt.getDate() : `0${dt.getDate()}`} DE ${monthStr[dt.getMonth()].toUpperCase()}` 
   },
 
   dayStringFromDate (dateString) {
+    let language = localStorage.getItem("language")
+    let dayStr = dayStrEn
+    let monthStr = monthStrEn
+    if(language === 'es') {
+      dayStr = dayStrEs
+      monthStr = monthStrEs
+    }
     const date = new Date(dateString)
     return dayStr[date.getDay()]
   },
@@ -52,6 +76,13 @@ export default {
   },
 
   monthStringFromDate (dateString) {
+    let language = localStorage.getItem("language")
+    let dayStr = dayStrEn
+    let monthStr = monthStrEn
+    if(language === 'es') {
+      dayStr = dayStrEs
+      monthStr = monthStrEs
+    }
     const date = new Date(dateString)
     return monthStr[date.getMonth()]
   },

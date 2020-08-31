@@ -13,21 +13,22 @@
         </template>
       </vs-navbar-title>
     </div>
+    <i18n class="mr-8" />
     <template v-if="!loggedIn">
-      <vs-navbar-item index="0" v-show="!hideNavbar">
+      <vs-navbar-item index="0" class="ml-4" v-show="!hideNavbar">
         <!-- <a class="h3" href="/app/home">Registrarme</a> -->
         <vs-dropdown >
-          <a class="a-icon" href="#">
-            Registrarme
+          <a class="a-icon" href="#" >
+            {{$t('SignUp')}}
             <vs-icon class="" icon="expand_more"></vs-icon>
           </a>
 
-          <vs-dropdown-menu>
+          <vs-dropdown-menu >
             <vs-dropdown-item to="/auth/register/participant">
-              Registro Participante
+            {{$t('Register')}} {{$t('Competitor')}} 
             </vs-dropdown-item>
             <vs-dropdown-item to="/auth/register/expositor">
-              Registro Expositor
+              {{$t('Register')}} {{$t('Exhibitor')}} 
             </vs-dropdown-item>
           </vs-dropdown-menu>
         </vs-dropdown>
@@ -38,7 +39,7 @@
       </vs-navbar-item>
 
       <vs-navbar-item index="2" v-show="!hideNavbar">
-          <a class="h2" href="/app/home/contact">Contactenos</a>
+          <a class="h2" href="/app/home/contact">{{$t('ContactUs')}}</a>
       </vs-navbar-item>
 
       <vs-navbar-item index="4" class="px-4" v-show="!hideNavbar">
@@ -50,25 +51,25 @@
       </vs-navbar-item>
     </template>
     <template v-else>
-      <vs-navbar-item index="0" v-show="!hideNavbar&&loggedIn">
-          <a class="h2" href="/app/home/sustainability">sostenibilidad</a>
+      <vs-navbar-item index="0" class="ml-4" v-show="!hideNavbar&&loggedIn">
+          <a class="h2" href="/app/home/sustainability">{{$t('Sustainability')}}</a>
       </vs-navbar-item>
       <vs-navbar-item index="1" v-show="!hideNavbar&&!loggedIn">
-          <a class="h2" href="/app/home/sponsor">patrocinadores</a>
+          <a class="h2" href="/app/home/sponsor">{{$t('Sponsors')}}</a>
       </vs-navbar-item>
       <vs-navbar-item index="2" v-show="!hideNavbar">
-          <a class="h2" href="/app/home/contact">CONTÁCTENOS</a>
+          <a class="h2" href="/app/home/contact">{{$t('ContactUs')}}</a>
       </vs-navbar-item>
       <vs-navbar-item index="3" v-show="!hideNavbar">
           <a class="h2 flex items-center cursor-pointer" href.prevent @click="logout()">
             <feather-icon svgClasses="w-5 h-5" icon="LogOutIcon"/>
-            <span>Cerrar Session</span>
+            <span>{{$t('LogOut')}}</span>
           </a>
       </vs-navbar-item>
       <vs-navbar-item index="4" v-show="!hideNavbar">
           <a class="setting-nav text-center"  href="/app/setting">
             <svg-icon size="w-8 h-8" icon="profile"/>
-            <div class="fs-10 text-white">Mi Cuenta</div>
+            <div class="fs-10 text-white">{{$t('MyAccount')}}</div>
           </a>
       </vs-navbar-item>
     </template>
@@ -76,6 +77,7 @@
 </template>
 <script>
 import moduleAuth from '@/store/auth/moduleAuth.js'
+import i18n from './navbar/components/I18n.vue'
 export default {
   props: {
     activeItem: {
@@ -87,12 +89,15 @@ export default {
       required: false
     }
   },
+  components: {
+    i18n
+  },
   data () {
     return {
       search: '',
       active_item: 0,
       fair_logo: null,
-      fair_title: ''
+      fair_title: '',
     }
   },
   computed: {
@@ -113,7 +118,7 @@ export default {
           this.$router.push('/home').catch(() => {})
         })
         .catch(() => { })
-    }
+    }    
   },
   created () {
     if (!moduleAuth.isRegistered) {
@@ -124,10 +129,10 @@ export default {
     this.$http.get('/api/fair/now')
       .then((res) => {
         if (res.data.fair) {
+          this.isFairExist = true
           this.fair_logo = res.data.fair.logo
           this.fair_title = res.data.fair.name
         }
-        
       })
   }
 }

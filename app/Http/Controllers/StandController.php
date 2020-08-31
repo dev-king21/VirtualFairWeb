@@ -14,6 +14,7 @@ use App\GalleryDownload;
 use App\PortfolioDownload;
 use App\Appointment;
 use App\Payment;
+use Mail;
 
 class StandController extends Controller
 {
@@ -212,7 +213,27 @@ class StandController extends Controller
         $app->start_time = $request->post('start_time');
         $app->end_time = $request->post('end_time');
         $app->save();
-        $res["status"] = "ok";    
+        $res["status"] = "ok";
+
+        /* $data['user'] = User::find($uid);
+        $data['owner'] = $app->stand()->user();
+        $data['schedule_date'] = $app->schedule_date;
+        $data['start_time'] = $app->start_time;
+        $data['end_time'] = $app->end_time;
+        
+        Mail::send('emails.user', $data, function ($message) {
+            $owner_email = $data['owner']->email;
+            $message->from(env('MAIL_USERNAME'), 'Feria Virtuales Support Team ');
+            $message->to($data['user']->email, $data['user']->first_name.' '.$data['user']->last_name);
+            $message->subject("Your contact request has been sent successfully!");
+        });
+
+        Mail::send('emails.owner', $data, function ($message) {
+            $user_email = $data['user']->email;
+            $message->from(env('MAIL_USERNAME'), 'Feria Virtuales Support Team ');
+            $message->to($data['owner']->email, $data['owner']->first_name.' '.$data['owner']->last_name);
+            $message->subject("You received contact request from user, $user_email!");
+        }); */
         return response()->json($res);
     }
      

@@ -3,7 +3,7 @@
         <div class="vx-row">
             <div class="vx-col w-full mb-base text-right">
                 <vs-button color="success" icon-pack="feather" icon="icon-plus" type="filled" :to="{path: '/settings/fair-type/edit/1'}">
-                    Add New Fair Type
+                    {{$t('AddNew')}} {{$t('FairTypes')}}
                 </vs-button>
             </div>
         </div>
@@ -16,7 +16,7 @@
                         </router-link>
                     </div>
                     <h5 class="mb-2">{{ ftype.name }}</h5>
-                    <p class="text-primary">Stand Items: {{ ftype.stand_locations.length }}</p>
+                    <p class="text-primary">{{$t('StandItems')}}: {{ ftype.stand_locations.length }}</p>
                     <div class="flex justify-between flex-wrap">
                         <vs-button 
                             class="mt-4 mr-2 shadow-lg" 
@@ -26,12 +26,12 @@
                             icon="icon-navigation" 
                             gradient-color-secondary="#CE9FFC"
                             :to="{path: '/settings/stand-location/'+ftype.id}">
-                            Go Stand Locations
+                            {{$t('GoStandLocation')}}
                         </vs-button>    
                         <vs-button class="mt-4" type="border" icon-pack="feather" icon="icon-edit"
                             color="warning"
                             :to="{path: '/settings/fair-type/edit/'+ftype.id}">
-                            Edit
+                            {{$t('Edit')}}
                         </vs-button>
                     </div>
                 </vx-card>

@@ -28,17 +28,17 @@
             </div>
         </div>
         <div class="absolute flex items-center justify-between w-full px-12 py-8 stand-footer">
-            <stand-button class="stand-button" icon="list" :to="`/stand/information/${$route.params.stand_id}`" text="SOBRE NOSOTROS"/>
-            <stand-button class="stand-button" icon="brochure" :to="`/stand/brochure/${$route.params.stand_id}`" text="CATÁLOGOS Y BROCHURES"/>
-            <stand-button class="stand-button" icon="gallery" :to="`/stand/gallery/${$route.params.stand_id}`" text="GALERÍA"/>
-            <stand-button class="stand-button" icon="schedule-edit" :to="`/stand/schedule/${$route.params.stand_id}`" text="AGENDAR CITAS"/>
-            <stand-button class="stand-button" icon="address-book" :to="`/stand/contact/${$route.params.stand_id}`" text="CONTACTO"/>
+            <stand-button class="stand-button" icon="list" :to="`/stand/information/${$route.params.stand_id}`" :text="$t('AboutUs')"/>
+            <stand-button class="stand-button" icon="brochure" :to="`/stand/brochure/${$route.params.stand_id}`" :text="$t('CatalogBrochure')"/>
+            <stand-button class="stand-button" icon="gallery" :to="`/stand/gallery/${$route.params.stand_id}`" :text="$t('Gallery')"/>
+            <stand-button class="stand-button" icon="schedule-edit" :to="`/stand/schedule/${$route.params.stand_id}`" :text="$t('ScheduleAppointment')"/>
+            <stand-button class="stand-button" icon="address-book" :to="`/stand/contact/${$route.params.stand_id}`" :text="$t('Contact')"/>
         </div>
         <div class="absolute stand-wrapper" style="border: 1px solid red">
             <div class="absolute" style="bottom: 7.3rem; right: 0">
                 <div class="flex flex-col items-center justify-center text-white relative px-2 py-4 bg-blue-dark chatting-btn">
                   <svg-icon size="w-8 h-8" icon="contact"/>
-                  <div class="ml-2 text-center cursor-pointer btn-text" @click="goChatting">CHATEAR CON UN USEARIO DEL STAND</div>
+                  <div class="ml-2 text-center cursor-pointer btn-text" @click="goChatting">{{$t('ChattingOwner')}}</div>
                 </div>
             </div>
             <div class="absolute stand-item-wrapper flex flex-col items-center justify-center text-white" 
@@ -96,8 +96,8 @@ export default {
         
           if (!data.stand || !data.stand.id) {
             this.$vs.notify({
-              title: 'error',
-              text: 'primero debe comprar el soporte.',
+              title: this.$t('Error'),
+              text: this.$t('BucketMsg'),
               iconPack: 'feather',
               icon: 'icon-alert-circle',
               color: 'danger'

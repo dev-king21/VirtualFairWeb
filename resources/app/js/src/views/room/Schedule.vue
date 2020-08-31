@@ -2,13 +2,13 @@
     <div class="w-full">
         <app-header activeItem="0"></app-header>
         <div class="w-full room-schedule-main">
-            <bread-crumb icon="topic" type="svg" text="agenda del congreso" />
+            <bread-crumb icon="topic" type="svg" :text="$t('WebinarSchedule')" />
             <div class="w-full h-full">
                 <div class="vx-row page-content">
                     <div class="vx-col lg:w-1/4 md:w-1/4 sm:w-1/4 xs:w-1/4 event-panel bg-white-grey">
                         <div class="p-3 bg-cyan-dark">
-                            <span class="fs-24 text-white ml-4" style="font-weight: 900">Evantos</span>
-                            <span class="fs-24 text-white stroke-text ml-2" style="font-weight: 100">del día</span>
+                            <span class="fs-24 text-white ml-4" style="font-weight: 900">{{$t('Event')}}</span>
+                            <span class="fs-24 text-white stroke-text ml-2" style="font-weight: 100">{{$t('Day')}}</span>
                         </div>
                         <schedule-card 
                             :reserved="true"
@@ -17,7 +17,7 @@
                             :title="item.title"
                             :expositor_name="`${item.user.first_name} ${item.user.last_name}`"
                             :expositor_profession="`${item.user.address}`"
-                            :user_img="`${item.user.avatar}`" 
+                            :user_img="`${item.user.avatar ? item.user.avatar : 'placeholder.png'}`" 
                             :id="item.id"
                             :add="addToBoard"
                             :show="show"
@@ -26,11 +26,11 @@
                     <div class="vx-col w-3/4 event-los-panel bg-white-grey">
                         <div class="flex flex-row justify-between items-center bg-blue-light">
                             <div class="p-3 ml-8">
-                                <span class="fs-24 text-white stroke-text" style="font-weight: 100">Todos</span>
-                                <span class="fs-24 text-white font-bold ml-2" style="font-weight: 900">los Evantos</span>
+                                <span class="fs-24 text-white stroke-text" style="font-weight: 100">{{$t('Everyone')}}</span>
+                                <span class="fs-24 text-white font-bold ml-2" style="font-weight: 900">{{$t('Event')}}</span>
                             </div>
                             <div class="text-white fs-12 bg-blue-dark cursor-pointer font-normal p-6" @click="$router.push('/room/webinar')">
-                                VER TODOS LOS WEBINARS
+                                {{$t('SeeWebinar')}}
                             </div>
                         </div>
                         <div>
@@ -78,7 +78,7 @@ export default {
   },
   methods: {
     period (start_time, end_time) {
-      if(start_time === null || end_time === null) {
+      if (start_time === null || end_time === null) {
         return ''
       }
       const sd = this.$date.timeFormat(start_time)
@@ -95,17 +95,17 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
           } else {
             this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
+              title: this.$t('Error'),
+              text: this.$t('FailMessage'),
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
@@ -121,24 +121,6 @@ export default {
         const data = response.data
         this.today = data.today
         this.webinars = data.webinars
-        console.log("webinars", this.webinars)
-        if (response.data.status === 'ok') {
-          this.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
-            color: 'success',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          })
-        } else {
-          this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          })
-        } 
       })
   }
 }

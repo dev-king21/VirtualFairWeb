@@ -1,20 +1,20 @@
 <template>
     <div class="w-full">
         <app-header activeItem="1"></app-header>
-        <bread-crumb text="contactenos" />
+        <bread-crumb :text="$t('ContactUs')" />
         <div class="flex w-full justify-center bg-white-grey home-contact-main">
             <div class="bg-white my-4 py-2 w-1/2 contact-form">
                 <div class="h1 text-center mt-8">
-                    Dejanos tus datos y te contactenos
+                    {{$t('ContactMessage')}}
                 </div>
                 <div class="vx-row px-20 mt-8">
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3">
-                        <vs-input class="w-full" color="success" placeholder="Nombre" name="Nombre"
+                        <vs-input class="w-full" color="success" :placeholder="$t('FirstName')" name="Nombre"
                             v-validate="'required'" data-vv-validate-on="blur" v-model="user.first_name"/>
                         <span class="text-danger text-sm">{{ errors.first('Nombre') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3">
-                        <vs-input class="w-full" color="success" placeholder="Apellido" name="Apellido"
+                        <vs-input class="w-full" color="success" :placeholder="$t('LastName')" name="Apellido"
                             v-validate="'required'" data-vv-validate-on="blur"  v-model="user.last_name"/>
                         <span class="text-danger text-sm">{{ errors.first('Apellido') }}</span>
                     </div>
@@ -24,34 +24,34 @@
                         <span class="text-danger text-sm">{{ errors.first('Email') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3">
-                        <vs-input class="w-full" color="success" placeholder="Telefono" name="Telefono" 
+                        <vs-input class="w-full" color="success" :placeholder="$t('Phone')" name="Telefono" 
                         v-validate="'required|min:8'" data-vv-validate-on="blur" v-model="user.phone"/>
                         <span class="text-danger text-sm">{{ errors.first('Telefono') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3">
-                        <vs-input class="w-full" color="success" placeholder="Compania" name="Compania" 
+                        <vs-input class="w-full" color="success" :placeholder="$t('Company')" name="Compania" 
                             v-validate="'required'" data-vv-validate-on="blur" v-model="user.company"/>
                         <span class="text-danger text-sm">{{ errors.first('Compania') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3">
-                        <vs-input class="w-full" color="success" placeholder="Posicion" name="Posicion" 
+                        <vs-input class="w-full" color="success" :placeholder="$t('Position')" name="Posicion" 
                         v-validate="'required'" data-vv-validate-on="blur" v-model="user.address"/>
                         <span class="text-danger text-sm">{{ errors.first('Posicion') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3">
-                        <vs-input class="w-full" color="success" placeholder="Seleccione un Pais" name="Pais"
+                        <vs-input class="w-full" color="success" :placeholder="$t('SelectCompany')" name="Pais"
                         v-validate="'required'" data-vv-validate-on="blur"  v-model="user.country"/>
                         <span class="text-danger text-sm">{{ errors.first('Pais') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3">
-                        <vs-input class="w-full" color="success" placeholder="Seleccione la Region" name="Region"
+                        <vs-input class="w-full" color="success" :placeholder="$t('SelectRegion')" name="Region"
                         v-validate="'required'" data-vv-validate-on="blur"  v-model="user.region"/>
                         <span class="text-danger text-sm">{{ errors.first('Region') }}</span>
                     </div>
 
                     <div class="vx-col w-full px-3">
                         <vs-textarea class="w-full" color="success" height="100px" v-model="user.message"
-                         placeholder="Comentarios" lines="5"></vs-textarea>
+                         :placeholder="$t('Comments')" lines="5"></vs-textarea>
                     </div>
                 </div>
                 <div class="flex items-center justify-center mt-8">
@@ -62,7 +62,7 @@
                     <svg-icon icon="youtube" size="w-8 h-8 mx-1" ></svg-icon>
                 </div>
                 <div class="mt-8 text-center">
-                    <vs-button class="cyan-dark register-btn" @click="send_message">CONTACTAR</vs-button>
+                    <vs-button class="cyan-dark register-btn" @click="send_message">{{$t('Contact')}}</vs-button>
                 </div>
                 <div class="text-right mr-2" style="margin-top: -50px;" >
                     <svg-icon icon="watermark" size="w-24 h-24" color="text-cyan-dark"/>
@@ -79,8 +79,8 @@ export default {
     send_message () {
       if (!this.user.message) {
         this.$vs.notify({
-          title: 'Error',
-          text: 'Ingrese el contenido del mensaje.',
+          title: this.$t('Error'),
+          text: this.$t('EnterMessage'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -91,8 +91,8 @@ export default {
         .then((res) => {
           if (res.data.status === 'ok') {
             this.$vs.notify({
-              title:'Notificación',
-              text:'Hemos recibido su petición. \n Por favor espera.',
+              title:this.$t('Notification'),
+              text:this.$t('RequestReceive'),
               color:'success',
               iconPack: 'feather',
               icon:'icon-mail'

@@ -8,6 +8,8 @@ use App\Talk;
 use App\Country;
 use App\User;
 use App\AdminUser;
+use App\Fair;
+use App\Category;
 
 class RoomController extends Controller
 {
@@ -45,6 +47,7 @@ class RoomController extends Controller
         $talk = new Talk;
         $talk->room_id = $request->post("room_id");
         $talk->user_id = $request->post("user_id");
+        $talk->live = $request->post("live");
         $talk->status = 1;
         $talk->title = $request->post("title");
         $talk->exhibitor_name = $request->post("exhibitor_name");
@@ -74,8 +77,44 @@ class RoomController extends Controller
 
     public function update_talk(Request $request, $id){
         $res = array();
-        $appointment = Talk::whereId($id)->update($request->post());
+        $query = array();
+        $talk = Talk::where('id', $id);
+        $query['room_id'] = $request->post("room_id");
+        $query['user_id'] = $request->post("user_id");
+        $talk->live = $request->post("live");
+
+        $query['status'] = 1;
+        $query['title'] =  $request->post("title");
+        $query['exhibitor_name'] =  $request->post("exhibitor_name");
+        $query['exhibitor_profession'] =  $request->post("exhibitor_profession");
+        $query['exhibitor_company'] =  $request->post("exhibitor_company");
+        $query['description'] =  $request->post("description");
+        $query['key'] =  $request->post("key");
+        $query['password'] =  $request->post("password");
+        $query['talk_date'] =  $request->post("talk_date");
+        $query['start_time'] =  $request->post("start_time");
+        $query['end_time'] =  $request->post("end_time");
+
+        $talk->update($query);
+
+        $query = array();
+        $admin_user = AdminUser::where("id" , $request->post('user_id'));
+        $query['email'] = $request->post("key");
+        $query['password'] = bcrypt($request->post("password"));
+        $query['password_key'] = $request->post("password");
+        $admin_user->update($query);
         $res["status"] = "ok";
+        return response()->json($res);
+    }
+
+    public function delete_talk(Request $request, $id){
+        $res = array();
+        $talk = Talk::find($id);
+        $user_id = $talk->user_id;
+        $talk->delete();
+        $user = User::find($user_id);
+        $user->delete();
+        $res['status'] = 'ok';
         return response()->json($res);
     }
 
@@ -198,6 +237,15 @@ class RoomController extends Controller
         ->where($query)->get();
         $res["rooms"] = Room::all();
         $res["users"] = User::where("type", "lecturer")->get();
+        
+        $now = date("y-m-d");
+        $query1 = [
+            ["start_date", "<=", $now], 
+            ["end_date", ">=", $now]
+        ]; 
+        $query1["status"] = 1;
+        $fair = Fair::where($query1)->first();
+        $res["categories"] = Category::where('fair_id', $fair->id)->first();
         return response()->json($res);
     }
 
@@ -234,6 +282,16 @@ class RoomController extends Controller
         ->where($query)->get();
         $res["rooms"] = Room::all();
         $res["users"] = User::where("type", "lecturer")->get();
+
+        $now = date("y-m-d");
+        $query1 = [
+            ["start_date", "<=", $now], 
+            ["end_date", ">=", $now]
+        ]; 
+        $query1["status"] = 1;
+        $fair = Fair::where($query1)->first();
+        $res["categories"] = Category::where('fair_id', $fair->id)->first();
+
         return response()->json($res);
     }
 
@@ -258,9 +316,24 @@ class RoomController extends Controller
 
     public function updateWebinar(Request $request, $talk_id){
         $res = array();
-        Talk::whereId($talk_id)->update($request->post());
+        $query['start_time'] = $request->post('start_time');
+        $query['end_time'] = $request->post('end_time');
+
+        $request->validate([
+            'background' => 'mimes:png,gif,jpeg,jpg',
+        ]);
+  
+        if (isset($request->background)) {
+            $b_fileName =  md5(time()).'.'.$request->background->extension();  
+            $request->background->move(public_path('fair_image'), $b_fileName);
+            $query['background'] = $b_fileName;
+        } 
+
+        Talk::whereId($talk_id)->update($query);
         $res["status"] = "ok";
         return response()->json($res);
+
+       
     }
 
 }

@@ -186,8 +186,8 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status !== 'error') {
           _this.$vs.notify({
-            title: 'Notificación',
-            text: 'Información de contacto guardada correctamente.',
+            title: _this.$t('Notification'),
+            text: _this.$t('ContactInfo'),
             color: 'danger',
             iconPack: 'feather',
             icon: 'icon-mail'
@@ -204,8 +204,8 @@ __webpack_require__.r(__webpack_exports__);
     validateAndUpload: function validateAndUpload(files) {
       if (files.length !== 1) {
         this.$vs.notify({
-          title: 'Error - Too Many Files',
-          text: 'Only support uploading one file!',
+          title: this.$t('TooManyFileTitle'),
+          text: this.$t('TooManyFileContent'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -217,8 +217,8 @@ __webpack_require__.r(__webpack_exports__);
 
       if (!this.isValidExt(rawFile)) {
         this.$vs.notify({
-          title: 'error de formato de archivo',
-          text: "El tama\xF1o del archivo debe ser inferior a 500 KB y tener el formato ".concat(this.content_type),
+          title: this.$t('FileFormatTitle'),
+          text: "".concat(this.$t('FileFormatTitle'), " ").concat(this.content_type),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -260,17 +260,17 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this2.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
+            title: _this2.$t('Success'),
+            text: _this2.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
           _this2.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: _this2.$t('Error'),
+            text: _this2.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
@@ -292,19 +292,11 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this3.$vs.notify({
-            title: 'éxito',
-            text: 'Se ha eliminado con éxito.',
-            color: 'success',
+            title: _this3.$t('Success'),
+            text: _this3.$t('DeleteMessage'),
             iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          });
-        } else {
-          _this3.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
+            icon: 'icon-info',
+            color: 'success'
           });
         }
 
@@ -328,31 +320,31 @@ __webpack_require__.r(__webpack_exports__);
         if (data.status === 'error') {
           if (data.msg === 'unknown_fair') {
             _this4.$vs.notify({
-              title: 'Error',
-              text: 'Actualmente no hay ferias en curso.',
+              title: _this4.$t('Error'),
+              text: _this4.$t('NoCurrentFair'),
               iconPack: 'feather',
               icon: 'icon-alert-circle',
               color: 'danger'
             });
 
-            _this4.$router.back();
+            return _this4.$router.back();
           } else {
             _this4.$vs.notify({
-              title: 'Error',
-              text: 'Tienes que comprar un stand en la feria actual.',
+              title: _this4.$t('Error'),
+              text: _this4.$t('NoStandBuy'),
               iconPack: 'feather',
               icon: 'icon-alert-circle',
               color: 'danger'
             });
 
-            _this4.$router.back();
+            return _this4.$router.back();
           }
         }
 
         if (!data.stand || !data.stand.id) {
           _this4.$vs.notify({
-            title: 'error',
-            text: 'primero debe comprar el soporte.',
+            title: _this4.$t('Error'),
+            text: _this4.$t('BucketMsg'),
             iconPack: 'feather',
             icon: 'icon-alert-circle',
             color: 'danger'
@@ -538,7 +530,8 @@ var render = function() {
                                     { staticClass: "mb-1 font-italic" },
                                     [
                                       _vm._v(
-                                        "Nombre: " +
+                                        _vm._s(_vm.$t("Name")) +
+                                          ": " +
                                           _vm._s(item.requestor.first_name) +
                                           " " +
                                           _vm._s(item.requestor.last_name) +
@@ -562,7 +555,8 @@ var render = function() {
                                     { staticClass: "mb-1 font-italic" },
                                     [
                                       _vm._v(
-                                        "Telefono: " +
+                                        _vm._s(_vm.$t("Phone")) +
+                                          ": " +
                                           _vm._s(item.requestor.phone)
                                       )
                                     ]
@@ -573,7 +567,8 @@ var render = function() {
                                     { staticClass: "mb-1 font-italic" },
                                     [
                                       _vm._v(
-                                        "Posicion: " +
+                                        _vm._s(_vm.$t("Position")) +
+                                          ": " +
                                           _vm._s(item.requestor.address)
                                       )
                                     ]
@@ -584,7 +579,8 @@ var render = function() {
                                     { staticClass: "mb-1 font-italic" },
                                     [
                                       _vm._v(
-                                        "Compania: " +
+                                        _vm._s(_vm.$t("Company")) +
+                                          ": " +
                                           _vm._s(item.requestor.company)
                                       )
                                     ]
@@ -595,7 +591,8 @@ var render = function() {
                                     { staticClass: "mb-1 font-italic" },
                                     [
                                       _vm._v(
-                                        "Pais: " +
+                                        _vm._s(_vm.$t("Country")) +
+                                          ": " +
                                           _vm._s(item.requestor.country)
                                       )
                                     ]
@@ -606,7 +603,8 @@ var render = function() {
                                     { staticClass: "mb-1 font-italic" },
                                     [
                                       _vm._v(
-                                        "Region: " +
+                                        _vm._s(_vm.$t("Region")) +
+                                          ": " +
                                           _vm._s(item.requestor.region)
                                       )
                                     ]
@@ -660,13 +658,11 @@ var render = function() {
                           { staticClass: "dropdown-userinfo" },
                           [
                             _c("div", { staticClass: "mb-1 font-bold" }, [
-                              _vm._v(
-                                "Para agregar su Facebook debe copiar el URL de su pagina"
-                              )
+                              _vm._v(_vm._s(_vm.$t("Facebook")))
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "mb-1 font-italic" }, [
-                              _vm._v("Ejemplo")
+                              _vm._v(_vm._s(_vm.$t("Example")))
                             ]),
                             _vm._v(" "),
                             _c(
@@ -704,7 +700,7 @@ var render = function() {
                                       }
                                     }
                                   },
-                                  [_vm._v("GUARDAR")]
+                                  [_vm._v(_vm._s(_vm.$t("Save")))]
                                 )
                               ],
                               1
@@ -744,13 +740,11 @@ var render = function() {
                           { staticClass: "dropdown-userinfo" },
                           [
                             _c("div", { staticClass: "mb-1 font-bold" }, [
-                              _vm._v(
-                                "Para agregar su Instagram debe copiar el URL de su pagina"
-                              )
+                              _vm._v(_vm._s(_vm.$t("Instagram")))
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "mb-1 font-italic" }, [
-                              _vm._v("Ejemplo")
+                              _vm._v(_vm._s(_vm.$t("Example")))
                             ]),
                             _vm._v(" "),
                             _c(
@@ -788,7 +782,7 @@ var render = function() {
                                       }
                                     }
                                   },
-                                  [_vm._v("GUARDAR")]
+                                  [_vm._v(_vm._s(_vm.$t("Save")))]
                                 )
                               ],
                               1
@@ -828,13 +822,11 @@ var render = function() {
                           { staticClass: "dropdown-userinfo" },
                           [
                             _c("div", { staticClass: "mb-1 font-bold" }, [
-                              _vm._v(
-                                "Para agregar su LinkedIn debe copiar el URL de su pagina"
-                              )
+                              _vm._v(_vm._s(_vm.$t("LinkedIn")))
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "mb-1 font-italic" }, [
-                              _vm._v("Ejemplo")
+                              _vm._v(_vm._s(_vm.$t("Example")))
                             ]),
                             _vm._v(" "),
                             _c(
@@ -873,7 +865,7 @@ var render = function() {
                                       }
                                     }
                                   },
-                                  [_vm._v("GUARDAR")]
+                                  [_vm._v(_vm._s(_vm.$t("Save")))]
                                 )
                               ],
                               1
@@ -913,13 +905,11 @@ var render = function() {
                           { staticClass: "dropdown-userinfo" },
                           [
                             _c("div", { staticClass: "mb-1 font-bold" }, [
-                              _vm._v(
-                                "Para agregar su WhatsApp debe copiar el URL de su pagina"
-                              )
+                              _vm._v(_vm._s(_vm.$t("WhatsApp")))
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "mb-1 font-italic" }, [
-                              _vm._v("Ejemplo")
+                              _vm._v(_vm._s(_vm.$t("Example")))
                             ]),
                             _vm._v(" "),
                             _c(
@@ -954,7 +944,7 @@ var render = function() {
                                       }
                                     }
                                   },
-                                  [_vm._v("GUARDAR")]
+                                  [_vm._v(_vm._s(_vm.$t("Save")))]
                                 )
                               ],
                               1
@@ -994,13 +984,11 @@ var render = function() {
                           { staticClass: "dropdown-userinfo" },
                           [
                             _c("div", { staticClass: "mb-1 font-bold" }, [
-                              _vm._v(
-                                "Para agregar su Youtube debe copiar el URL de su pagina"
-                              )
+                              _vm._v(_vm._s(_vm.$t("Youtube")))
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "mb-1 font-italic" }, [
-                              _vm._v("Ejemplo")
+                              _vm._v(_vm._s(_vm.$t("Example")))
                             ]),
                             _vm._v(" "),
                             _c(
@@ -1039,7 +1027,7 @@ var render = function() {
                                       }
                                     }
                                   },
-                                  [_vm._v("GUARDAR")]
+                                  [_vm._v(_vm._s(_vm.$t("Save")))]
                                 )
                               ],
                               1
@@ -1068,7 +1056,7 @@ var render = function() {
                 attrs: {
                   icon: "list",
                   to: "/setting/stand/information",
-                  text: "agregar information de la empresa"
+                  text: _vm.$t("AddCompanyInfo")
                 }
               }),
               _vm._v(" "),
@@ -1077,7 +1065,7 @@ var render = function() {
                 attrs: {
                   icon: "brochure",
                   to: "/setting/stand/brochure",
-                  text: "subir catalogosy brochures"
+                  text: _vm.$t("UploadCatglog")
                 }
               }),
               _vm._v(" "),
@@ -1086,7 +1074,7 @@ var render = function() {
                 attrs: {
                   icon: "gallery",
                   to: "/setting/stand/video",
-                  text: "subir fotos y videos"
+                  text: _vm.$t("UploadPhoto")
                 }
               }),
               _vm._v(" "),
@@ -1095,7 +1083,7 @@ var render = function() {
                 attrs: {
                   icon: "schedule-edit",
                   to: "/setting/stand/schedule",
-                  text: "ver citas"
+                  text: _vm.$t("SeeSchedule")
                 }
               }),
               _vm._v(" "),
@@ -1104,7 +1092,7 @@ var render = function() {
                 attrs: {
                   icon: "address-book",
                   to: "/setting/stand/contact",
-                  text: "subir tarjeta de presentacion"
+                  text: _vm.$t("UploadBussiness")
                 }
               })
             ],
@@ -1180,7 +1168,7 @@ var render = function() {
                             }
                           }
                         },
-                        [_vm._v("CHATEAR CON UN USEARIO")]
+                        [_vm._v(_vm._s(_vm.$t("ChattingOwner")))]
                       )
                     ],
                     1
@@ -1230,7 +1218,8 @@ var render = function() {
                                 },
                                 [
                                   _vm._v(
-                                    "subir " +
+                                    _vm._s(_vm.$t("Upload")) +
+                                      " " +
                                       _vm._s(s_content.stand_type_item.type)
                                   )
                                 ]

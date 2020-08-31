@@ -251,17 +251,17 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
+            title: _this.$t('Success'),
+            text: _this.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
           _this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: _this.$t('Error'),
+            text: _this.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
@@ -289,17 +289,17 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this2.$vs.notify({
-            title: 'éxito',
-            text: 'Ha sido cambiado exitosamente.',
+            title: _this2.$t('Success'),
+            text: _this2.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
           _this2.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: _this2.$t('Error'),
+            text: _this2.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
@@ -321,17 +321,17 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this3.$vs.notify({
-            title: 'éxito',
-            text: 'Fue eliminado con éxito.',
+            title: _this3.$t('Success'),
+            text: _this3.$t('DeleteMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
           _this3.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: _this3.$t('Error'),
+            text: _this3.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
@@ -451,7 +451,7 @@ var render = function() {
           }
         }),
         _vm._v(" "),
-        _c("span", [_vm._v("Drop Image File or ")]),
+        _c("span", [_vm._v(_vm._s(_vm.$t("DropImage")) + " ")]),
         _vm._v(" "),
         _c(
           "span",
@@ -464,7 +464,7 @@ var render = function() {
               }
             }
           },
-          [_vm._v("Browse")]
+          [_vm._v(_vm._s(_vm.$t("Browse")))]
         )
       ],
       1
@@ -501,7 +501,9 @@ var render = function() {
         [
           _c("vx-card", { staticClass: "overlay-card overflow-hidden" }, [
             _c("h3", { staticClass: "mb-2 text-warning font-bold" }, [
-              _vm._v("Advertisement Image")
+              _vm._v(
+                _vm._s(_vm.$t("Advertisement")) + " " + _vm._s(_vm.$t("Image"))
+              )
             ]),
             _vm._v(" "),
             _c(
@@ -536,7 +538,15 @@ var render = function() {
                   },
                   on: { click: _vm.saveAction }
                 },
-                [_vm._v("\n            Add Image\n        ")]
+                [
+                  _vm._v(
+                    "\n            " +
+                      _vm._s(_vm.$t("Add")) +
+                      " " +
+                      _vm._s(_vm.$t("Image")) +
+                      "\n        "
+                  )
+                ]
               )
             ],
             1
@@ -592,7 +602,9 @@ var render = function() {
                           },
                           [
                             _vm._v(
-                              "\n                          Delete\n                      "
+                              "\n                          " +
+                                _vm._s(_vm.$t("Delete")) +
+                                "\n                      "
                             )
                           ]
                         ),
@@ -617,13 +629,13 @@ var render = function() {
                           },
                           [
                             _c("span", { attrs: { slot: "on" }, slot: "on" }, [
-                              _vm._v("Show")
+                              _vm._v(_vm._s(_vm.$t("Show")))
                             ]),
                             _vm._v(" "),
                             _c(
                               "span",
                               { attrs: { slot: "off" }, slot: "off" },
-                              [_vm._v("Cancel")]
+                              [_vm._v(_vm._s(_vm.$t("Cancel")))]
                             )
                           ]
                         )

@@ -87,17 +87,17 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this.$vs.notify({
-            title: 'éxito',
-            text: 'Se ha descargado con éxito.',
+            title: _this.$t('Success'),
+            text: _this.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
           _this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: _this.$t('Error'),
+            text: _this.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
@@ -115,17 +115,17 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this2.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
+            title: _this2.$t('Success'),
+            text: _this2.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
           _this2.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: _this2.$t('Error'),
+            text: _this2.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
@@ -148,24 +148,6 @@ __webpack_require__.r(__webpack_exports__);
 
       if (!_this3.webinar || !_this3.user) {
         _this3.$router.back();
-      }
-
-      if (response.data.status === 'ok') {
-        _this3.$vs.notify({
-          title: 'éxito',
-          text: 'Te has registrado con éxito.',
-          color: 'success',
-          iconPack: 'feather',
-          icon: 'icon-alert-circle'
-        });
-      } else {
-        _this3.$vs.notify({
-          title: 'Oyu',
-          text: 'Operación fallida',
-          color: 'error',
-          iconPack: 'feather',
-          icon: 'icon-alert-circle'
-        });
       }
     });
   }
@@ -302,7 +284,9 @@ var render = function() {
         attrs: { svgClasses: "w-6 h-6", icon: "ArrowLeftIcon" }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "back-text" }, [_vm._v("VOLVER")])
+      _c("div", { staticClass: "back-text" }, [
+        _vm._v(_vm._s(_vm.$t("Return")))
+      ])
     ],
     1
   )
@@ -385,7 +369,7 @@ var render = function() {
                                     staticClass:
                                       "h6 font-italic font-bold text-white"
                                   },
-                                  [_vm._v("Expositor:")]
+                                  [_vm._v(_vm._s(_vm.$t("Exhibitor")) + ":")]
                                 ),
                                 _vm._v(" "),
                                 _c("div", { staticClass: "fs-8 ml-3" }, [
@@ -425,7 +409,9 @@ var render = function() {
                           _vm._v(" "),
                           _c("div", { staticClass: "uppercase ml-2 fs-8" }, [
                             _vm._v(
-                              "\r\n                    descargar\r\n                  "
+                              "\r\n                    " +
+                                _vm._s(_vm.$t("Download")) +
+                                "\r\n                  "
                             )
                           ])
                         ],
@@ -447,7 +433,19 @@ var render = function() {
                             attrs: { size: "w-8 h-8", icon: "webinar" }
                           }),
                           _vm._v(" "),
-                          _vm._m(0)
+                          _c("div", { staticClass: "uppercase ml-2 fs-8" }, [
+                            _vm._v(
+                              "\r\n                    " +
+                                _vm._s(_vm.$t("Schedule")) +
+                                " "
+                            ),
+                            _c("br"),
+                            _vm._v(
+                              "\r\n                   " +
+                                _vm._s(_vm.$t("MyTable")) +
+                                "\r\n                  "
+                            )
+                          ])
                         ],
                         1
                       )
@@ -503,7 +501,7 @@ var render = function() {
                     1
                   ),
                   _vm._v(" "),
-                  _c("div", [_vm._v("EN VIVO")]),
+                  _c("div", [_vm._v(_vm._s(_vm.$t("Live")))]),
                   _vm._v(" "),
                   _c(
                     "div",
@@ -526,18 +524,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "uppercase ml-2 fs-8" }, [
-      _vm._v("\r\n                    Agenda a "),
-      _c("br"),
-      _vm._v("\r\n                    mi tableo\r\n                  ")
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

@@ -35,6 +35,8 @@ class CreateTalksTable extends Migration
 
             $table->date("talk_date");
             $table->integer("live")->default(1);
+            $table->integer("category_id")->nullable();
+            $table->string("background")->nullable();
             $table->string("video")->nullable();
             $table->timestamps();
         });

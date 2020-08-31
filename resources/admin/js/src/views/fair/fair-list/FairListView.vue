@@ -12,7 +12,7 @@
           <!-- ADD NEW -->
           <div class="btn-add-new p-3 mb-4 mr-4 rounded-lg cursor-pointer flex items-center justify-center text-lg font-medium text-base text-primary border border-solid border-primary" @click="addNewData">
               <feather-icon icon="PlusIcon" svgClasses="h-4 w-4" />
-              <span class="ml-2 text-base text-primary">Add New</span>
+              <span class="ml-2 text-base text-primary">{{$t('AddNew')}}</span>
           </div>
         </div>
 
@@ -21,7 +21,7 @@
               <!-- <vx-card> -->
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/4 w-full">
-                    <span>Fair Name</span>
+                    <span>{{$t('Fair')}} {{$t('Name')}}</span>
                   </div>
                   <div class="vx-col sm:w-3/4 w-full">
                     <vs-input class="w-full" v-model="name"/>
@@ -29,7 +29,7 @@
                 </div>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/4 w-full">
-                    <span>Fair Type</span>
+                    <span>{{$t('FairTypes')}}</span>
                   </div>
                   <div class="vx-col sm:w-3/4 w-full">
                      <div class="vx-row">
@@ -39,7 +39,7 @@
                                   <img :src="`/fair_image/${ftype.building}`" alt="content-img" class="responsive card-img-top">
                                 </div>
                                 <h5 class="mb-2">{{ ftype.name }}</h5>
-                                <p class="text-primary">Stand Items: {{ ftype.stand_locations.length }}</p>
+                                <p class="text-primary">{{$t('StandItems')}}: {{ ftype.stand_locations.length }}</p>
                             </vx-card>
                           </div>
                       </div>
@@ -48,7 +48,7 @@
 
                  <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/4 w-full">
-                    <span>Period(Start ~ End)</span>
+                    <span>{{$t('Period')}}({{$t('Start')}}~{{$t('End')}})</span>
                   </div>
                   <div class="vx-col sm:w-3/4 demo-alignment mt-0">
                      <template>
@@ -61,7 +61,7 @@
 
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/4 w-full">
-                    <span>Area de Interes</span>
+                    <span>{{$t('InterestArea')}}</span>
                   </div>
                   <div class="vx-col sm:w-3/4 mt-0">
                     <vs-chips class="w-full" color="rgb(115,103,240)" placeholder="Nueva categoría" v-model="categories">
@@ -83,8 +83,8 @@
 
                 <div class="vx-row">
                   <div class="vx-col sm:w-2/3 w-full ml-auto">
-                    <vs-button class="mr-3 mb-2" @click="addEditFair()">OK</vs-button>
-                    <vs-button color="warning" type="border" class="mb-2" @click="cancelAction()" >Cancel</vs-button>
+                    <vs-button class="mr-3 mb-2" @click="addEditFair()">{{$t('Ok')}}</vs-button>
+                    <vs-button color="warning" type="border" class="mb-2" @click="cancelAction()" >{{$t('Cancel')}}</vs-button>
                   </div>
                 </div>
 
@@ -121,11 +121,11 @@
 
       <template slot="thead">
         <vs-th sort-key="id">ID</vs-th>
-        <vs-th sort-key="name">Name</vs-th>
-        <vs-th sort-key="start_date">Start Date</vs-th>
-        <vs-th sort-key="end_date">End Date</vs-th>
-        <vs-th sort-key="logo">logo</vs-th>
-        <vs-th>Action</vs-th>
+        <vs-th sort-key="name">{{$t('Name')}}</vs-th>
+        <vs-th sort-key="start_date">{{$t('StartDate')}}</vs-th>
+        <vs-th sort-key="end_date">{{$t('EndDate')}}</vs-th>
+        <vs-th sort-key="logo">{{$t('Logo')}}</vs-th>
+        <vs-th>{{$t('Actions')}}</vs-th>
       </template>
 
         <template slot-scope="{data}">
@@ -211,7 +211,7 @@ export default {
       active_idx: 0,
       isAddOrEdit: 0,
       editId: 0,
-      deleteId: 0
+      deleteId: 0,
     }
   },
   computed: {
@@ -258,8 +258,8 @@ export default {
     validateAndUpload (files) {
       if (files.length !== 1) {
         this.$vs.notify({
-          title: 'Error - Too Many Files',
-          text: 'Only support uploading one file!',
+          title: this.$t('TooManyFileTitle'),
+          text: this.$t('TooManyFileContent'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -269,8 +269,8 @@ export default {
       const rawFile = files[0] // only use files[0]
       if (!this.isImage(rawFile)) {
         this.$vs.notify({
-          title: 'File Format Error',
-          text: 'Only supports upload .png, .gif, .jpg, .jpeg suffix files',
+          title: this.$t('FileFormatTitle'),
+          text: this.$t('FileFormatContent'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -309,7 +309,7 @@ export default {
       // this.sidebarData = JSON.parse(JSON.stringify(this.blankData))
       this.editId = id
       this.isAddOrEdit = 1
-      this.popupTitle = 'Edit Fair'
+      this.popupTitle = this.$t('Edit')
 
       const fair = this.fairs.find((item) => item.id === id)
       this.name = fair.name
@@ -391,17 +391,17 @@ export default {
 
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
           } else {
             this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
+              title: this.$t('Error'),
+              text: this.$t('FailMessage'),
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
@@ -448,8 +448,8 @@ export default {
       this.$vs.dialog({
         type: 'confirm',
         color: 'danger',
-        title: 'Confirm Delete',
-        text: 'Do you really delete it?',
+        title: this.$t('DeleteTitle'),
+        text: this.$t('DeleteConfig'),
         accept: this.deleteRecord,
         acceptText: 'Delete'
       })
@@ -475,31 +475,14 @@ export default {
       this.$http.post(action, newData)
         .then((response) => {
           this.$loading.hide(this)
-          if (response.data.status === 'ok') {
-            this.$vs.notify({
-              title: 'éxito',
-              text: 'Se ha eliminado con éxito.',
-              color: 'success',
-              iconPack: 'feather',
-              icon: 'icon-alert-circle'
-            })
-          } else {
-            this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
-              iconPack: 'feather',
-              icon: 'icon-alert-circle'
-            })
-          }
           this.loadContent()
         })
     },
     showDeleteSuccess () {
       this.$vs.notify({
         color: 'success',
-        title: 'Fair Deleted',
-        text: 'The selected Fair was successfully deleted'
+        title: this.$t('Success'),
+        text: this.$t('DeleteMessage')
       })
     }
   },

@@ -6,7 +6,7 @@
                 <div class="flex items-center m-4 text-white">
                         <div class="flex items-center cursor-pointer" @click="$router.back()">
                             <feather-icon icon="ArrowLeftIcon"></feather-icon>
-                            <span class="ml-2">VOLVER</span>
+                            <span class="ml-2">{{$t('SeeAgain')}}</span>
                         </div>
                 </div>
                 <div class="flex flex-col">

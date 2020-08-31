@@ -20,7 +20,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var activated = localStorage.getItem('activateKey');
 
-    if (activated && activated.length > 4) {
+    if (activated) {
       this.$store.dispatch('auth/logged');
     }
   }

@@ -135,8 +135,8 @@ __webpack_require__.r(__webpack_exports__);
 
         if (!data.stand || !data.stand.id) {
           _this2.$vs.notify({
-            title: 'error',
-            text: 'primero debe comprar el soporte.',
+            title: _this2.$t('Error'),
+            text: _this2.$t('BucketMsg'),
             iconPack: 'feather',
             icon: 'icon-alert-circle',
             color: 'danger'
@@ -182,8 +182,8 @@ __webpack_require__.r(__webpack_exports__);
     validateAndUpload: function validateAndUpload(files) {
       if (files.length !== 1) {
         this.$vs.notify({
-          title: 'Error - Too Many Files',
-          text: 'Only support uploading one file!',
+          title: this.$t('TooManyFileTitle'),
+          text: this.$t('TooManyFileContent'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -195,8 +195,8 @@ __webpack_require__.r(__webpack_exports__);
 
       if (!this.isImage(rawFile)) {
         this.$vs.notify({
-          title: 'File Format Error',
-          text: 'Only supports upload .png, .gif, .jpg, .jpeg suffix files',
+          title: this.$t('FileFormatTitle'),
+          text: this.$t('FileFormatContent'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -351,7 +351,9 @@ var render = function() {
         attrs: { svgClasses: "w-6 h-6", icon: "ArrowLeftIcon" }
       }),
       _vm._v(" "),
-      _c("div", { staticClass: "back-text" }, [_vm._v("VOLVER")])
+      _c("div", { staticClass: "back-text" }, [
+        _vm._v(_vm._s(_vm.$t("Return")))
+      ])
     ],
     1
   )
@@ -442,9 +444,17 @@ var render = function() {
                             "text-center text-black fs-8 cursor-pointer"
                         },
                         [
-                          _vm._v(" \r\n                    SUBIR LOGO "),
+                          _vm._v(
+                            " \r\n                    " +
+                              _vm._s(_vm.$t("Upload")) +
+                              " LOGO "
+                          ),
                           _c("br"),
-                          _vm._v(" TAMANO 150 * 150px \r\n                  ")
+                          _vm._v(
+                            " " +
+                              _vm._s(_vm.$t("Size")) +
+                              " 150 * 150px \r\n                  "
+                          )
                         ]
                       ),
                       _vm._v(" "),
@@ -468,7 +478,7 @@ var render = function() {
                               _vm._s(
                                 _vm.stand.company
                                   ? _vm.stand.company
-                                  : "Nombre de la Empresa"
+                                  : "" + _vm.$t("CompanyName")
                               )
                           )
                         ])
@@ -497,7 +507,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("AGREGAR")]
+                    [_vm._v(_vm._s(_vm.$t("Add")))]
                   )
                 ],
                 2
@@ -509,7 +519,7 @@ var render = function() {
                   { staticClass: "flex items-center mt-4 ml-8" },
                   [
                     _c("div", { staticClass: "h3 font-bold" }, [
-                      _vm._v("Informacion de la empresa")
+                      _vm._v(_vm._s(_vm.$t("CompanyInfo")))
                     ]),
                     _vm._v(" "),
                     _c(
@@ -522,7 +532,7 @@ var render = function() {
                           }
                         }
                       },
-                      [_vm._v("AGREGAR")]
+                      [_vm._v(_vm._s(_vm.$t("Add")))]
                     )
                   ],
                   1
@@ -541,7 +551,7 @@ var render = function() {
                       : [
                           _c("vs-textarea", {
                             staticStyle: { height: "250px" },
-                            attrs: { placeholder: "Informacion de la empresa" },
+                            attrs: { placeholder: _vm.$t("CompanyInfo") },
                             model: {
                               value: _vm.stand.description,
                               callback: function($$v) {
@@ -570,7 +580,7 @@ var render = function() {
                         }
                       }
                     },
-                    [_vm._v("GUARDAR")]
+                    [_vm._v(_vm._s(_vm.$t("Save")))]
                   )
                 ],
                 1

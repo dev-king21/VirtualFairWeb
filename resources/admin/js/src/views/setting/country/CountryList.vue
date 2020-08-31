@@ -142,26 +142,26 @@ export default {
           headerCheckboxSelection: true
         },
         {
-          headerName: 'Country Name',
+          headerName: this.$t('Contry') + ' ' + this.$t('Name'),
           field: 'name',
           filter: true,
           width: 210,
           cellRendererFramework: 'CellRendererLink'
         },
         {
-          headerName: 'Continent Name',
+          headerName: this.$t('Continent') + ' ' + this.$t('Name'),
           field: 'continent',
           filter: true,
           width: 210,
         },
         {
-          headerName: 'Code',
+          headerName: this.$t('code'),
           field: 'code',
           filter: true,
           width: 225
         },
         {
-          headerName: 'Status',
+          headerName: this.$t('Status'),
           field: 'status_text',
           filter: true,
           width: 200,

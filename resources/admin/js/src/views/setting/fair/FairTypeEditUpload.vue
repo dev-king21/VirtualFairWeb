@@ -6,7 +6,7 @@
       <div class="flex justify-between flex-wrap">
         <vs-button class="mt-4" type="border" icon-pack="feather" icon="icon-x" color="dark"
             @click="cancelAction()">
-            Cancel
+            {{$t('Cancel')}}
         </vs-button>
       </div>
     </div>
@@ -17,8 +17,8 @@
       @dragenter="handleDragover"
       class="px-8 py-16 mt-4 cursor-pointer text-center border-2 border-dashed d-theme-border-grey-light d-theme-dark-bg text-xl">
       <feather-icon icon="UploadCloudIcon" svgClasses="h-16 w-16 stroke-current text-grey" class="block" />
-      <span>Drop Image File or </span>
-      <span class="font-medium text-primary" @click.stop="$refs.fileInput.click()">Browse</span>
+      <span>{{$t('DropImage')}} </span>
+      <span class="font-medium text-primary" @click.stop="$refs.fileInput.click()">{{$t('Browse')}}</span>
       <!-- <vs-button type="border" @click.stop="$refs.fileInput.click()">Browse</vs-button> -->
     </div>
   </div>
@@ -86,8 +86,8 @@ export default {
     validateAndUpload (files) {
       if (files.length !== 1) {
         this.$vs.notify({
-          title: 'Error - Too Many Files',
-          text: 'Only support uploading one file!',
+          title: this.$t('TooManyFileTitle'),
+          text: this.$t('TooManyFileContent'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -97,8 +97,8 @@ export default {
       const rawFile = files[0] // only use files[0]
       if (!this.isImage(rawFile)) {
         this.$vs.notify({
-          title: 'File Format Error',
-          text: 'Only supports upload .png, .gif, .jpg, .jpeg suffix files',
+          title: this.$t('FileFormatTitle'),
+          text: this.$t('FileFormatContent'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'

@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <app-header activeItem="0"></app-header>
-        <bread-crumb icon="address-book" type="svg" text="MIS CONTACTOS" />
+        <bread-crumb icon="address-book" type="svg" :text="$t('MyContact')" />
         <div class="w-full setting-stand-brochure bg-white-grey">
             <div class="w-full px-20 pb-4 mt-4">
                 <div class="vx-row w-full">
@@ -43,23 +43,7 @@ export default {
         this.$loading.hide(this)
         const data = response.data
         this.contacts = data.requests
-        if (response.data.status === 'ok') {
-          this.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
-            color: 'success',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          })
-        } else {
-          this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          })
-        } 
+        
       })
   }
 }

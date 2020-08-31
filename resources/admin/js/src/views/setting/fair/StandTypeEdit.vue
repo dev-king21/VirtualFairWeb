@@ -4,13 +4,13 @@
         <vs-input label-placeholder="Stand Type Name" v-model="stype_name" />
         <vs-button class="mt-4" type="filled" icon-pack="feather" icon="icon-save" color="success"
             @click="saveAction()">
-            Save
+            {{$t('Save')}}
         </vs-button> 
     </div>
     <div class="vx-row">
       <div class="vx-col w-full lg:w-1/3 sm:w-full mb-base">
         <vx-card class="overlay-card overflow-hidden">
-            <h3 class="mb-2 text-warning font-bold">Building Image</h3>
+            <h3 class="mb-2 text-warning font-bold">{{$t('BuildingImage')}}</h3>
             <div class="mb-8">
               <file-upload :preview="building_image" :upload_key="'building'" :onSuccess="changeUploadFile" />
             </div>
@@ -18,7 +18,7 @@
       </div>
       <div class="vx-col w-full lg:w-2/3 sm:w-full mb-base">
         <vx-card class="overlay-card overflow-hidden">
-            <h3 class="mb-2 text-warning font-bold">Interior Hall Image</h3>
+            <h3 class="mb-2 text-warning font-bold">{{$t('Interior')}}</h3>
             <div class="mb-8">
               <file-upload :preview="interior_image" :upload_key="'interior'" :onSuccess="changeUploadFile" />
             </div>
@@ -77,19 +77,19 @@ export default {
         .then((response) => {
           this.$loading.hide(this)
           const res = response.data
-          if (response.data.status === 'ok') {
+           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
           } else {
             this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
+              title: this.$t('Error'),
+              text: this.$t('FailMessage'),
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })

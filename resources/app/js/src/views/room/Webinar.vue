@@ -6,16 +6,16 @@
             <div class="w-full bg-white-grey">
                 <div class="vx-row page-content">
                     <div class="vx-col lg:w-3/4 md:w-3/4 sm:w-3/4 xs:w-3/4 px-4 event-panel bg-white">
-                        <div class="p-6 pb-2 flex flex-row items-center">
-                            <span class="h6 font-bold">(8 DISPONIBLES)</span>
+                        <div class="p-6 pb-2 flex flex-row items-center" v-if="webinars && webinars.length != 0">
+                            <span class="h6 font-bold">({{webinars.length}} {{$t('Available')}})</span>
                             <span class="h6 ml-10 flex flex-row items-center ml-2 chevron-border">
-                                <span class="mr-6">CATEGORIA</span> <feather-icon icon="ChevronRightIcon" />
+                                <span class="mr-6">{{$t('Category')}}</span> <feather-icon icon="ChevronRightIcon" />
                             </span>
                             <span class="h6 ml-4 flex flex-row items-center ml-2 chevron-border">
-                                <span class="mr-6">EN VIVO</span> <feather-icon icon="ChevronRightIcon" />
+                                <span class="mr-6">{{$t('Live')}}</span> <feather-icon icon="ChevronRightIcon" />
                             </span>
                             <span class="h6 ml-4 flex flex-row items-center ml-2 chevron-border">
-                                <span class="mr-6">EXPOSITOR</span> <feather-icon icon="ChevronRightIcon" />
+                                <span class="mr-6">{{$t('Exhibitor')}}</span> <feather-icon icon="ChevronRightIcon" />
                             </span>
                         </div>
                         <div class="vx-row" >
@@ -27,6 +27,7 @@
                                         :title="item.title"
                                         :expositor_name="`${item.user.first_name} ${item.user.last_name}`"
                                         :expositor_profession="`${item.user.address}`"
+                                        :background="item.background"
                                         :user_img="`${item.user.avatar}`"
                                         :id="item.id" 
                                         :show="show"
@@ -38,7 +39,7 @@
                     <div class="vx-col w-1/4 event-los-panel bg-white-grey">
                         <div class="ml-8 bg-white" style="height: 100%">
                             <div class="p-6 fs-11 font-bold">
-                              PUBLICIDAD
+                              {{$t('Ads')}}
                             </div>
                             <div class="px-4">
                               <swiper :options="swiperOption">
@@ -105,7 +106,8 @@ export default {
   },
   methods: {
     period (start_time, end_time) {
-      if(start_time === null || end_time === null) return ''
+      console.log(start_time, end_time)
+      if (start_time === null || end_time === null) return ''
       const sd = this.$date.timeFormat(start_time)
       const ed = this.$date.timeFormat(end_time)  
       return `${sd} - ${ed}`  
@@ -120,17 +122,17 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
           } else {
             this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
+              title: this.$t('Error'),
+              text: this.$t('FailMessage'),
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
@@ -145,23 +147,7 @@ export default {
         this.$loading.hide(this)
         const data = response.data
         this.webinars = data.webinars
-        if (response.data.status === 'ok') {
-          this.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
-            color: 'success',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          })
-        } else {
-          this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          })
-        } 
+        console.log(this.webinars)
       })
     this.$http.post('/api/stand/ads/get')
       .then((res) => {

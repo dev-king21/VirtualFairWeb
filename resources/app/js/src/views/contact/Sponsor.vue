@@ -6,7 +6,7 @@
         <div class="flex w-full flex-col px-8 py-6 bg-white-grey sponsor-main">
             <div class="bg-white px-4">
                 <div class="h3 text-center my-4">
-                    Gracias a la colaboracion de nuestros patrocinadores este evento fue posible
+                    {{$t('ThanksGreeting')}}
                 </div>
                 <div class="vx-row">
                     <div class="vx-col lg:w-1/5 md:w-1/5 sm:w-1/5 xs:w-1/5"

@@ -10,23 +10,23 @@
                 <div class="info-logo grey-real flex items-center justify-center cursor-pointer" @click="browseLogoImg()">
                   <img ref="logoPreview" v-show="logo_show" :src="`/fair_image/${stand.logo}`" class="info-logo" />
                   <div v-show="!logo_show" class="text-center text-black fs-8 cursor-pointer"> 
-                    SUBIR LOGO <br> TAMANO 150 * 150px 
+                    {{$t('Upload')}} LOGO <br> {{$t('Size')}} 150 * 150px 
                   </div>
                   <input class="hidden" type="file" ref="refLogoFile" accept=".png, .gif, .jpg, .jpeg" @change="logoChanged">
                 </div>
                 <template v-if="!name_edit">
                     <div class="h3 font-bold mx-4">
-                    {{ (stand.company)? stand.company : 'Nombre de la Empresa'}}</div>
+                    {{ (stand.company)? stand.company : `${$t('CompanyName')}`}}</div>
                 </template>
                 <template v-else>
                     <vs-input class="mx-4" placeholder="Nombre de la Empresa" v-model="stand.company"></vs-input>
                 </template>
-                <vs-button class="blue-dark save-btn" @click="name_edit = true">AGREGAR</vs-button>
+                <vs-button class="blue-dark save-btn" @click="name_edit = true">{{$t('Add')}}</vs-button>
             </div>
             <div>
                 <div class="flex items-center mt-4 ml-8">
-                    <div class="h3 font-bold">Informacion de la empresa</div>
-                    <vs-button class="ml-2 blue-dark save-btn" @click="desc_edit = true">AGREGAR</vs-button>
+                    <div class="h3 font-bold">{{$t('CompanyInfo')}}</div>
+                    <vs-button class="ml-2 blue-dark save-btn" @click="desc_edit = true">{{$t('Add')}}</vs-button>
                 </div>
                 <div class="w-full mt-4 ml-12">
                     <template v-if="!desc_edit">
@@ -34,12 +34,12 @@
                     </div>
                     </template>
                     <template v-else>
-                        <vs-textarea style="height: 250px;" placeholder="Informacion de la empresa" v-model="stand.description"/>
+                        <vs-textarea style="height: 250px;" :placeholder="$t('CompanyInfo')" v-model="stand.description"/>
                     </template>
                 </div>
             </div>
             <div class="text-center my-4">
-                <vs-button class="allsave-btn cyan-dark" @click="saveInformation()">GUARDAR</vs-button>
+                <vs-button class="allsave-btn cyan-dark" @click="saveInformation()">{{$t('Save')}}</vs-button>
             </div>
         </div>
     </div>
@@ -117,8 +117,8 @@ export default {
           if (data.status === 'error') return console.log(data.msg)
           if (!data.stand || !data.stand.id) {
             this.$vs.notify({
-              title: 'error',
-              text: 'primero debe comprar el soporte.',
+              title: this.$t('Error'),
+              text: this.$t('BucketMsg'),
               iconPack: 'feather',
               icon: 'icon-alert-circle',
               color: 'danger'
@@ -158,8 +158,8 @@ export default {
     validateAndUpload (files) {
       if (files.length !== 1) {
         this.$vs.notify({
-          title: 'Error - Too Many Files',
-          text: 'Only support uploading one file!',
+          title: this.$t('TooManyFileTitle'),
+          text: this.$t('TooManyFileContent'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -169,8 +169,8 @@ export default {
       const rawFile = files[0] // only use files[0]
       if (!this.isImage(rawFile)) {
         this.$vs.notify({
-          title: 'File Format Error',
-          text: 'Only supports upload .png, .gif, .jpg, .jpeg suffix files',
+          title: this.$t('FileFormatTitle'),
+          text: this.$t('FileFormatContent'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'

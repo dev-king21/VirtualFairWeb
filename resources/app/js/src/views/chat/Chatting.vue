@@ -33,7 +33,7 @@
               <div class="vx-col lg:w-3/4 md:w-3/4 sm:w-2/3 xs:w-2/3 content-panel">
                   <div class="ml-4 my-3" style="height: 100%">
                       <div class="flex flex-row w-full items-center bg-white py-3">
-                          <img :src="`/fair_image/${active_user.avatar}`" class="user-img responsive mx-4">
+                          <img :src="`/fair_image/${active_user.avatar ? active_user.avatar : 'placeholder.png'}`" class="user-img responsive mx-4">
                           <div class="ml-2">
                               <div class="font-bold">{{active_user.first_name}} {{active_user.last_name}}</div>
                               <div>{{online_users.find((user) => user.id === active_user.id) ? 'online': 'offline'}}</div>
@@ -45,7 +45,7 @@
                             <message-item
                                 :received="item.sender_id === active_user.id" 
                                 :content="item.message"
-                                :user_img="`${item.sender_id === active_user.id ? `/fair_image/${active_user.avatar}` : `/fair_image/${me.avatar}` }`" 
+                                :user_img="`${item.sender_id === active_user.id ? `/fair_image/${active_user.avatar ? active_user.avatar : 'placeholder.png'}` : `/fair_image/${me.avatar ? me.avatar : 'placeholder.png'}` }`" 
                                 :key="`message-item-${index}`"
                                 v-for="(item, index) in messages"/>
                           </component>

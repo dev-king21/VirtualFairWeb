@@ -169,7 +169,7 @@ export default {
             this.$vs.notify({
               title: 'Oyu',
               text: 'Operación fallida',
-              color: 'error',
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })

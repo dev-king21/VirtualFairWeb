@@ -24,9 +24,9 @@ __webpack_require__.r(__webpack_exports__);
       _store_auth_moduleAuth_js__WEBPACK_IMPORTED_MODULE_0__["default"].isRegistered = true;
     }
 
-    var userInfo = localStorage.getItem('userInfo');
+    var userInfo = localStorage.getItem('userInfo'); // console.log(userInfo)
 
-    if (userInfo) {
+    if (userInfo && userInfo !== null) {
       userInfo = JSON.parse(userInfo);
 
       if (userInfo.id !== 0 && userInfo.email && userInfo.email !== '') {
@@ -50,7 +50,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, "[dir] .layout--full-page .vs-button {\n  border-radius: 0 !important;\n}\n[dir] .cyan-light {\n  background: #8BAFB6 !important;\n}\n[dir] .cyan-dark {\n  background: #00818D !important;\n}\n[dir] .blue-light {\n  background: #164A8B !important;\n}\n[dir] .blue-dark {\n  background: #123058 !important;\n}\n[dir] .yellow-light {\n  background: #FFC700 !important;\n}\n[dir] .yellow-dark {\n  background: #FA712A !important;\n}\n[dir] .green-light {\n  background: #009D00 !important;\n}\n[dir] .grey-real {\n  background: #AEB4C2 !important;\n}\n[dir] .card-grey {\n  background: #EAEFF0 !important;\n}\n.font-italic {\n  font-style: italic;\n}\n.uppercase {\n  text-transform: uppercase;\n}\n.fs-4 {\n  font-size: 0.4rem !important;\n}\n.fs-6 {\n  font-size: 0.6rem !important;\n}\n.fs-7 {\n  font-size: 0.7rem !important;\n}\n.fs-8 {\n  font-size: 0.8rem !important;\n}\n.fs-10 {\n  font-size: 1rem !important;\n}\n.fs-11 {\n  font-size: 1.1rem !important;\n}\n.fs-12 {\n  font-size: 1.2rem !important;\n}\n.fs-14 {\n  font-size: 1.4rem !important;\n}\n.fs-16 {\n  font-size: 1.6rem !important;\n}\n.fs-20 {\n  font-size: 2rem !important;\n}\n.fs-24 {\n  font-size: 2.4rem !important;\n}\n.fs-28 {\n  font-size: 2.8rem !important;\n}\n.fs-32 {\n  font-size: 3.2rem !important;\n}\n.fs-36 {\n  font-size: 3.6rem !important;\n}\n.fs-40 {\n  font-size: 4rem !important;\n}\n.fs-52 {\n  font-size: 5.2rem !important;\n}\n.swiper-pagination .swiper-pagination-bullet {\n  width: 40px !important;\n  height: 6px !important;\n  opacity: 0.8 !important;\n}\n[dir] .swiper-pagination .swiper-pagination-bullet {\n  border-radius: 3px !important;\n  background: transparent !important;\n  border: 1px solid white !important;\n}\n[dir] .swiper-pagination .swiper-pagination-bullet-active {\n  background: white !important;\n}\n.swiper-pagination2 .swiper-pagination-bullet {\n  width: 28px !important;\n  height: 4px !important;\n  opacity: 0.8 !important;\n}\n[dir] .swiper-pagination2 .swiper-pagination-bullet {\n  border-radius: 3px !important;\n  background: transparent !important;\n  border: 1px solid white !important;\n}\n[dir] .swiper-pagination2 .swiper-pagination-bullet-active {\n  background: white !important;\n}\n.swiper-button-prev, [dir] .swiper-container-rtl .swiper-button-next {\n  border-radius: 100%;\n  width: 40px !important;\n  height: 40px !important;\n  background: #ffffff;\n  opacity: 0.6 !important;\n  background-image: none !important;\n}\n.swiper-button-next, [dir] .swiper-container-rtl .swiper-button-prev {\n  border-radius: 100%;\n  width: 40px !important;\n  height: 40px !important;\n  background: #ffffff;\n  opacity: 0.6 !important;\n  background-image: none !important;\n}", ""]);
+exports.push([module.i, "[dir] .layout--full-page .vs-button {\n  border-radius: 0 !important;\n}\n[dir] .cyan-light {\n  background: #8BAFB6 !important;\n}\n[dir] .cyan-dark {\n  background: #00818D !important;\n}\n[dir] .blue-light {\n  background: #164A8B !important;\n}\n[dir] .blue-dark {\n  background: #123058 !important;\n}\n[dir] .yellow-light {\n  background: #FFC700 !important;\n}\n[dir] .yellow-dark {\n  background: #FA712A !important;\n}\n[dir] .green-light {\n  background: #009D00 !important;\n}\n[dir] .grey-real {\n  background: #AEB4C2 !important;\n}\n[dir] .card-grey {\n  background: #EAEFF0 !important;\n}\n.font-italic {\n  font-style: italic !important;\n}\n.uppercase {\n  text-transform: uppercase !important;\n}\n.vs-button.uppercase .vs-button-text {\n  text-transform: uppercase !important;\n}\n.fs-4 {\n  font-size: 0.4rem !important;\n}\n.fs-6 {\n  font-size: 0.6rem !important;\n}\n.fs-7 {\n  font-size: 0.7rem !important;\n}\n.fs-8 {\n  font-size: 0.8rem !important;\n}\n.fs-10 {\n  font-size: 1rem !important;\n}\n.fs-11 {\n  font-size: 1.1rem !important;\n}\n.fs-12 {\n  font-size: 1.2rem !important;\n}\n.fs-14 {\n  font-size: 1.4rem !important;\n}\n.fs-16 {\n  font-size: 1.6rem !important;\n}\n.fs-20 {\n  font-size: 2rem !important;\n}\n.fs-24 {\n  font-size: 2.4rem !important;\n}\n.fs-28 {\n  font-size: 2.8rem !important;\n}\n.fs-32 {\n  font-size: 3.2rem !important;\n}\n.fs-36 {\n  font-size: 3.6rem !important;\n}\n.fs-40 {\n  font-size: 4rem !important;\n}\n.fs-52 {\n  font-size: 5.2rem !important;\n}\n.swiper-pagination .swiper-pagination-bullet {\n  width: 40px !important;\n  height: 6px !important;\n  opacity: 0.8 !important;\n}\n[dir] .swiper-pagination .swiper-pagination-bullet {\n  border-radius: 3px !important;\n  background: transparent !important;\n  border: 1px solid white !important;\n}\n[dir] .swiper-pagination .swiper-pagination-bullet-active {\n  background: white !important;\n}\n.swiper-pagination2 .swiper-pagination-bullet {\n  width: 28px !important;\n  height: 4px !important;\n  opacity: 0.8 !important;\n}\n[dir] .swiper-pagination2 .swiper-pagination-bullet {\n  border-radius: 3px !important;\n  background: transparent !important;\n  border: 1px solid white !important;\n}\n[dir] .swiper-pagination2 .swiper-pagination-bullet-active {\n  background: white !important;\n}\n.swiper-button-prev, [dir] .swiper-container-rtl .swiper-button-next {\n  border-radius: 100%;\n  width: 40px !important;\n  height: 40px !important;\n  background: #ffffff;\n  opacity: 0.6 !important;\n  background-image: none !important;\n}\n.swiper-button-next, [dir] .swiper-container-rtl .swiper-button-prev {\n  border-radius: 100%;\n  width: 40px !important;\n  height: 40px !important;\n  background: #ffffff;\n  opacity: 0.6 !important;\n  background-image: none !important;\n}", ""]);
 
 // exports
 
@@ -262,13 +262,15 @@ __webpack_require__.r(__webpack_exports__);
           commit('SET_BEARER', response.data.access_token);
           resolve();
         } else {
-          reject({
-            message: 'Wrong Email or Password'
+          if (response.data.status === 'unmatched_fair') reject({
+            message: 'unregistered_current_fair'
+          });else reject({
+            message: 'wrong_credentials'
           });
         }
       })["catch"](function () {
         reject({
-          message: 'Wrong Email or Password'
+          message: 'wrong_credentials'
         });
       });
     });
@@ -359,6 +361,10 @@ __webpack_require__.r(__webpack_exports__);
   SET_BEARER: function SET_BEARER(state) {
     state.loggedIn = true;
   },
+  SET_LANG: function SET_LANG(state, payload) {
+    console.log(payload);
+    state.lang = payload;
+  },
   REMOVE_BEARER: function REMOVE_BEARER(state) {
     state.loggedIn = false;
   },
@@ -392,7 +398,8 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
-  loggedIn: false
+  loggedIn: false,
+  lang: 'en'
 });
 
 /***/ })

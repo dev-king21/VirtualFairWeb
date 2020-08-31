@@ -1,7 +1,7 @@
 <template>
     <div class="w-full">
         <app-header activeItem="0"></app-header>
-        <bread-crumb icon="gallery" type="svg" text="GALERÍA" />
+        <bread-crumb icon="gallery" type="svg" :text="$t('Gallery')" />
         <div class="w-full setting-stand-video bg-white-grey">
             <div class="w-full px-10 pb-4 mt-4">
                 <div class="vx-row w-full">
@@ -64,9 +64,9 @@ export default {
           this.$loading.hide(this)
           const data = response.data
           if (!data.stand || !data.stand.id) {
-            this.$vs.notify({
-              title: 'error',
-              text: 'primero debe comprar el soporte.',
+           this.$vs.notify({
+              title: this.$t('Error'),
+              text: this.$t('BucketMsg'),
               iconPack: 'feather',
               icon: 'icon-alert-circle',
               color: 'danger'
@@ -96,23 +96,15 @@ export default {
       this.$http.post('/api/stand/gallery/download', {_id: id})
         .then((response) => {
           this.$loading.hide(this)
-          if (response.data.status === 'ok') {
+         if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Se ha descargado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
-          } else {
-            this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
-              iconPack: 'feather',
-              icon: 'icon-alert-circle'
-            })
-          } 
+          }
         })
     },
     showVideo (id) {

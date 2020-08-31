@@ -132,8 +132,8 @@ __webpack_require__.r(__webpack_exports__);
 
         if (!data.stand || !data.stand.id) {
           _this.$vs.notify({
-            title: 'error',
-            text: 'primero debe comprar el soporte.',
+            title: _this.$t('Error'),
+            text: _this.$t('BucketMsg'),
             iconPack: 'feather',
             icon: 'icon-alert-circle',
             color: 'danger'
@@ -155,8 +155,8 @@ __webpack_require__.r(__webpack_exports__);
 
       if (!this.card_file || this.card_file.size > 500 * 1024) {
         this.$vs.notify({
-          title: 'error de formato de archivo',
-          text: 'El tamaño del archivo debe ser inferior a 500 KB y tener el formato jpg, pdf',
+          title: this.$t('FileFormatTitle'),
+          text: this.$t('FileSizeContent'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -178,8 +178,8 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this2.$vs.notify({
-            title: 'éxito',
-            text: 'Folleto registrado con éxito',
+            title: _this2.$t('Success'),
+            text: _this2.$t('SuccessMessage'),
             iconPack: 'feather',
             icon: 'icon-info',
             color: 'success'
@@ -200,8 +200,8 @@ __webpack_require__.r(__webpack_exports__);
 
         if (response.data.status === 'ok') {
           _this3.$vs.notify({
-            title: 'éxito',
-            text: 'Folleto registrado con éxito',
+            title: _this3.$t('Success'),
+            text: _this3.$t('DeleteMessage'),
             iconPack: 'feather',
             icon: 'icon-info',
             color: 'success'
@@ -293,7 +293,7 @@ var render = function() {
       _c("app-header", { attrs: { activeItem: "0" } }),
       _vm._v(" "),
       _c("bread-crumb", {
-        attrs: { icon: "address-book", type: "svg", text: "contacto" }
+        attrs: { icon: "address-book", type: "svg", text: _vm.$t("Contact") }
       }),
       _vm._v(" "),
       _c("div", { staticClass: "w-full setting-stand-contact bg-white-grey" }, [
@@ -352,7 +352,7 @@ var render = function() {
                                     staticClass: "ml-2",
                                     staticStyle: { "font-size": "0.9rem" }
                                   },
-                                  [_vm._v("BORRAR")]
+                                  [_vm._v(_vm._s(_vm.$t("Delete")))]
                                 )
                               ],
                               1
@@ -402,7 +402,31 @@ var render = function() {
                           1
                         ),
                         _vm._v(" "),
-                        _vm._m(0)
+                        _c("div", { staticClass: "mt-4 text-center" }, [
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(_vm.$t("UploadCard")) +
+                              " "
+                          ),
+                          _c("br"),
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(_vm.$t("Presentation")) +
+                              " "
+                          ),
+                          _c("br"),
+                          _vm._v(
+                            "\n                            " +
+                              _vm._s(_vm.$t("Format")) +
+                              " JPG O PDF"
+                          ),
+                          _c("br"),
+                          _vm._v(
+                            " \n                            (" +
+                              _vm._s(_vm.$t("MaxSize")) +
+                              " 500kb)\n                        "
+                          )
+                        ])
                       ]
                     )
                   ]
@@ -431,7 +455,9 @@ var render = function() {
                                 { staticClass: "my-4 text-center h3" },
                                 [
                                   _vm._v(
-                                    "\n                                    Nuevo Contacto\n                                "
+                                    "\n                                    " +
+                                      _vm._s(_vm.$t("NewContact")) +
+                                      "\n                                "
                                   )
                                 ]
                               ),
@@ -480,7 +506,7 @@ var render = function() {
                                       staticClass: "ml-2",
                                       staticStyle: { "font-size": "0.9rem" }
                                     },
-                                    [_vm._v("GUARDAR")]
+                                    [_vm._v(_vm._s(_vm.$t("Save")))]
                                   )
                                 ],
                                 1
@@ -507,24 +533,7 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "mt-4 text-center" }, [
-      _vm._v("\n                            SUBIR TARJETA "),
-      _c("br"),
-      _vm._v("\n                            DE PRESENTACION "),
-      _c("br"),
-      _vm._v("\n                            FORMATO JPG O PDF"),
-      _c("br"),
-      _vm._v(
-        " \n                            (Peso maximo 500kb)\n                        "
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

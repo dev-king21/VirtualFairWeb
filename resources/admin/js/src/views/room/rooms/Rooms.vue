@@ -17,7 +17,7 @@
               <div class="chat__contacts">
                   <ul class="chat__contacts bordered-items" >
                       <div class="chat__contact flex items-center px-2 pt-4 pb-2 borded-items ml-3" @click="showTalks(0)">
-                        <h5 class="font-semibold ">All</h5>
+                        <h5 class="font-semibold ">{{$t('All')}}</h5>
                       </div>
                       <vs-divider class="d-theme-border-grey-light m-0" />
                       <div v-for=" (country, index) in searchedCountries" :key="index">
@@ -49,14 +49,14 @@
           <!-- ADD NEW -->
           <div class="btn-add-new p-3 mb-4 mr-4 rounded-lg cursor-pointer flex items-center justify-center text-lg font-medium text-base text-primary border border-solid border-primary" @click="addNewData">
               <feather-icon icon="PlusIcon" svgClasses="h-4 w-4" />
-              <span class="ml-2 text-base text-primary">Add New</span>
+              <span class="ml-2 text-base text-primary">{{$t('AddNew')}}</span>
           </div>
           <vs-popup class="w-full mb-base items-center" :title="popupTitle" :active.sync="isAddShow">
             <div class=" w-full mb-base">
               <vx-card>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/3 w-full">
-                    <span>Room Name</span>
+                    <span>{{$t('Room')}} {{$t('Name')}}</span>
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
                     <vs-input class="w-full" v-model="name"/>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/3 w-full">
-                    <span>Country</span>
+                    <span>{{$t('Country')}}</span>
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
                      <v-select v-model="country_id"  :clearable="false" :options="countryOptions" v-validate="'required'" name="role" :dir="$vs.rtl ? 'rtl' : 'ltr'" />
@@ -73,7 +73,7 @@
                 </div>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/3 w-full">
-                    <span>Description</span>
+                    <span>{{$t('Description')}}</span>
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
                     <vs-input class="w-full" v-model="description" />
@@ -82,8 +82,8 @@
                 
                 <div class="vx-row">
                   <div class="vx-col sm:w-2/3 w-full ml-auto">
-                    <vs-button class="mr-3 mb-2" @click="addEditRoom()">OK</vs-button>
-                    <vs-button color="warning" type="border" class="mb-2" @click="cancelAction()" >Cancel</vs-button>
+                    <vs-button class="mr-3 mb-2" @click="addEditRoom()">{{$t('Ok')}}</vs-button>
+                    <vs-button color="warning" type="border" class="mb-2" @click="cancelAction()" >{{$t('Cancel')}}</vs-button>
                   </div>
                 </div>
 
@@ -171,28 +171,28 @@ export default {
           filter: true
         },
         {
-          headerName: 'Country Name',
+          headerName: this.$t('Country') + '' + this.$t('Name'),
           field: 'country.name',
           filter: true,
           width: 180,
           cellRendererFramework: 'CellRendererLink'
         },
         {
-          headerName: 'Room Name',
+          headerName: this.$t('Room') + '' + this.$t('Name'),
           field: 'name',
           filter: true,
           width: 240,
           cellRendererFramework: 'CellRendererLink'
         },        
         {
-          headerName: 'Description',
+          headerName: this.$t('Description'),
           field: 'description',
           filter: true,
           width: 240,
           cellRendererFramework: 'CellRendererLink'
         },
         {
-          headerName: 'Actions',
+          headerName: this.$t('Actions'),
           field: 'transactions',
           width: 150,
           cellRendererFramework: 'CellRendererActions',
@@ -284,14 +284,14 @@ export default {
       this.country_id = 0
       this.description = ''
       this.isAddOrEdit = 0
-      this.popupTitle = 'Add Room'
+      this.popupTitle = this.$t('Add')
       this.isAddShow = true
     },
     editRecord (id) {
       console.log(id)
       this.editId = id
       this.isAddOrEdit = 1
-      this.popupTitle = 'Edit Room'
+      this.popupTitle = this.$t('Edit')
 
       const room = this.rooms.find((item) => item.id === id)
       this.name = room.name
@@ -312,17 +312,17 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Se ha eliminado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('DeleteMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
           } else {
             this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
+              title: this.$t('Error'),
+              text: this.$t('FailMessage'),
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
@@ -372,17 +372,17 @@ export default {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
           } else {
             this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
+              title: this.$t('Error'),
+              text: this.$t('FailMessage'),
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })

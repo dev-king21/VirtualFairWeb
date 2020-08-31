@@ -46,26 +46,26 @@
             </template>
             <div v-if="loading" class="absolute w-full stand-contents flex items-center justify-center">
               <vs-button @click="goto('card-gallery')" type="relief" class="ml-8 items-center" color="success" icon-pack="feather" icon="icon-image">
-                Gallery
+                {{$t('Gallery')}}
               </vs-button>
               <vs-button type="relief" class="ml-8" color="success" icon-pack="feather" icon="icon-layers">
-                Portfolio
+                {{$t('Portfolio')}}
               </vs-button>
               <vs-button type="relief" class="ml-8" color="success" icon-pack="feather" icon="icon-download-cloud">
-                Files
+                {{$t('Files')}}
               </vs-button>
               <vs-button type="relief" class="ml-8" color="success" icon-pack="feather" icon="icon-airplay">
-                Appointment
+                {{$t('Appointment')}}
               </vs-button>
               <vs-button type="relief" class="ml-8" color="success" icon-pack="feather" icon="icon-link">
-                Contact
+                {{$t('Contact')}}
               </vs-button>
             </div>
         </div>
     </div>
     <div class="vx-row mx-20">
       <vx-card class="mt-base" ref="card-gallery" v-show="stand.gallerys && stand.gallerys.length">
-        <div class="text-success h2 mb-4">Gallery</div>
+        <div class="text-success h2 mb-4">{{$t('Gallery')}}</div>
         <div style="height: 800px;">
             <swiper :options="swiperOptionTop" class="gallery-top" ref="swiperTop" :dir="$vs.rtl ? 'rtl' : 'ltr'" key="swiper-main">
               <swiper-slide v-for="(gallery_item, index) in stand.gallerys" :key="`gallery-main-${index}`">
@@ -83,7 +83,7 @@
         </div>
       </vx-card>
       <vx-card class="mt-base" v-show="stand.portfolios && stand.portfolios.length">
-        <div class="text-success h2 mb-10">Portfolio</div>
+        <div class="text-success h2 mb-10">{{$t('Portfolio')}}</div>
         <div class="vx-row mx-5">
           <div class="vx-col w-full sm:w-1/2 lg:w-1/3 mb-base" v-for="(portfolio_item, index) in stand.portfolios" :key="`portfolio-item-${index}`">
               <vx-card class="hover-card">
@@ -101,7 +101,7 @@
         </div>
       </vx-card>
       <vx-card class="mt-base" v-show="stand.files && stand.files.length">
-        <div class="text-success h2 mb-10">Files</div>
+        <div class="text-success h2 mb-10">{{$t('Files')}}</div>
         <div v-for="(file_item, index) in stand.files" :key="`file-item-${index}`">
           <router-link :to="`/fire_image/${file_item.url}`">
             <feather-icon class="ml-2" icon="DownloadCloudIcon"></feather-icon>
@@ -110,7 +110,7 @@
         </div>
       </vx-card>
       <vx-card class="mt-base" >
-        <div class="text-success h2 mb-10">Contact</div>
+        <div class="text-success h2 mb-10">{{$t('Contact')}}</div>
         <div class="vx-row mx-5">
           <div class="vx-col w-full xs:w-full sm:w-full md-1/2 lg:w-1/2 mb-base">
             <div class="flex flex-start items-center flex-wrap">
@@ -119,11 +119,11 @@
             </div>
             <div class="flex flex-start items-center flex-wrap mt-3">
               <feather-icon class="w-5 h-5 mr-2" icon="PhoneIcon"></feather-icon>
-              <h5>Phone: </h5>
+              <h5>{{$t('Phone')}}: </h5>
             </div>
             <div class="flex flex-start items-center flex-wrap mt-3">
               <feather-icon class="w-5 h-5 mr-2" icon="MapPinIcon"></feather-icon>
-              <h5>Address: </h5>
+              <h5>{{$t('Address')}}: </h5>
             </div>
             <div class="flex flex-start mt-10">
               <!-- <router-link v-if="stand.contact.google" :to="``"> -->

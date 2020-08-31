@@ -2,7 +2,7 @@
     <div class="room-schedule-card" :class="{'card-border': !noborder}">
         <div class="flex reserved">
             <template v-if="reserved">
-                <span class="text-white font-normal">RESERVED</span>
+                <span class="text-white font-normal">{{$t('Reserved')}}</span>
             </template>
         </div>
         <div class="flex flex-row justify-between items-center mt-2">
@@ -17,7 +17,7 @@
         </div>
         <div class="flex flex-row justify-between items-center mt-2">
             <span class="flex items-center ml-4">
-                <span class="">CONFERENCIA:</span>
+                <span class="">{{$t('Conference')}}:</span>
             </span>
         </div>
         <div class="desc-info">
@@ -31,11 +31,11 @@
             </div>
         </div>
         <div class="flex flex-row justify-between items-center mt-4">
-            <vs-button class="cyan-light event-btn" @click="addToBoard">
-                AGREGAR A MI TABLEO 
+            <vs-button class="cyan-light event-btn uppercase" @click="addToBoard">
+                {{$t('AddBoard')}}
             </vs-button>
-            <vs-button class="blue-light event-btn p-big" @click="showOrReserve">
-                INICIAR
+            <vs-button class="blue-light event-btn p-big uppercase" @click="showOrReserve">
+                {{$t('Start')}}
             </vs-button>
         </div>
         <!-- <vs-divider class="px-2" /> -->
@@ -114,7 +114,7 @@ export default {
         border-radius: 50%;
         background-color: #33333355;
         height: 4rem !important;
-        width: auto;
+        width: 4rem!important;
     }
 
     .event-btn {

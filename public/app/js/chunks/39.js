@@ -123,24 +123,6 @@ __webpack_require__.r(__webpack_exports__);
 
       var data = response.data;
       _this.contacts = data.requests;
-
-      if (response.data.status === 'ok') {
-        _this.$vs.notify({
-          title: 'éxito',
-          text: 'Te has registrado con éxito.',
-          color: 'success',
-          iconPack: 'feather',
-          icon: 'icon-alert-circle'
-        });
-      } else {
-        _this.$vs.notify({
-          title: 'Oyu',
-          text: 'Operación fallida',
-          color: 'error',
-          iconPack: 'feather',
-          icon: 'icon-alert-circle'
-        });
-      }
     });
   }
 });
@@ -221,10 +203,10 @@ var render = function() {
         attrs: {
           icon: "address-book",
           type: "svg",
-          text: "mis contactors",
+          text: _vm.$t("MyContact"),
           second: true,
           second_icon: "DownloadIcon",
-          second_text: "Descargar todos los contactos"
+          second_text: _vm.$t("DownloadContact")
         }
       }),
       _vm._v(" "),
@@ -336,7 +318,9 @@ var render = function() {
                                         },
                                         [
                                           _vm._v(
-                                            "\n                            VER MAS\n                        "
+                                            "\n                            " +
+                                              _vm._s(_vm.$t("SeeMore")) +
+                                              "\n                        "
                                           )
                                         ]
                                       )
@@ -356,17 +340,17 @@ var render = function() {
                         "template",
                         { slot: "thead" },
                         [
-                          _c("vs-th", [_vm._v("NOMBRE")]),
+                          _c("vs-th", [_vm._v(_vm._s(_vm.$t("Name")))]),
                           _vm._v(" "),
                           _c("vs-th", [_vm._v("EMAIL")]),
                           _vm._v(" "),
-                          _c("vs-th", [_vm._v("TEL")]),
+                          _c("vs-th", [_vm._v(_vm._s(_vm.$t("Phone")))]),
                           _vm._v(" "),
-                          _c("vs-th", [_vm._v("PUESTO")]),
+                          _c("vs-th", [_vm._v(_vm._s(_vm.$t("Market")))]),
                           _vm._v(" "),
-                          _c("vs-th", [_vm._v("COMPANIA")]),
+                          _c("vs-th", [_vm._v(_vm._s(_vm.$t("Company")))]),
                           _vm._v(" "),
-                          _c("vs-th", [_vm._v("PAIS")]),
+                          _c("vs-th", [_vm._v(_vm._s(_vm.$t("Country")))]),
                           _vm._v(" "),
                           _c("vs-th")
                         ],
@@ -401,7 +385,7 @@ var render = function() {
                           staticClass: "bg-cyan-dark",
                           staticStyle: { padding: "10px 24px" }
                         },
-                        [_vm._v("CONTACTOR POR TELEFONO")]
+                        [_vm._v(_vm._s(_vm.$t("TelephoneContact")))]
                       )
                     ]
                   ),
@@ -410,7 +394,8 @@ var render = function() {
                     ? _c("div", { staticClass: "px-20 mt-8" }, [
                         _c("div", { staticClass: "mb-3 font-italic" }, [
                           _vm._v(
-                            "Nombre: " +
+                            _vm._s(_vm.$t("Name")) +
+                              ": " +
                               _vm._s(_vm.active_item.requestor.first_name) +
                               " " +
                               _vm._s(_vm.active_item.requestor.last_name)
@@ -425,48 +410,57 @@ var render = function() {
                         _vm._v(" "),
                         _c("div", { staticClass: "mb-3 font-italic" }, [
                           _vm._v(
-                            "Telefono: " +
+                            _vm._s(_vm.$t("Phone")) +
+                              ": " +
                               _vm._s(_vm.active_item.requestor.phone)
                           )
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "mb-3 font-italic" }, [
                           _vm._v(
-                            "Posicion: " +
+                            _vm._s(_vm.$t("Position")) +
+                              ": " +
                               _vm._s(_vm.active_item.requestor.address)
                           )
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "mb-3 font-italic" }, [
                           _vm._v(
-                            "Compania: " +
+                            _vm._s(_vm.$t("Company")) +
+                              ": " +
                               _vm._s(_vm.active_item.requestor.company)
                           )
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "mb-3 font-italic" }, [
                           _vm._v(
-                            "Pais: " + _vm._s(_vm.active_item.requestor.country)
+                            _vm._s(_vm.$t("Country")) +
+                              ": " +
+                              _vm._s(_vm.active_item.requestor.country)
                           )
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "mb-3 font-italic" }, [
                           _vm._v(
-                            "Region: " +
+                            _vm._s(_vm.$t("Region")) +
+                              ": " +
                               _vm._s(_vm.active_item.requestor.region)
                           )
                         ]),
                         _vm._v(" "),
                         _c("div", { staticClass: "mb-16 font-italic" }, [
                           _vm._v(
-                            "Area de interes: " +
+                            _vm._s(_vm.$t("InterestArea")) +
+                              ": " +
                               _vm._s(_vm.active_item.requestor.concern)
                           )
                         ]),
                         _vm._v(" "),
                         _c("div", [
                           _vm._v(
-                            "\n                        Mensaje de contacto\n                    "
+                            "\n                        " +
+                              _vm._s(_vm.$t("ContactMsg")) +
+                              "\n                    "
                           )
                         ]),
                         _vm._v(" "),

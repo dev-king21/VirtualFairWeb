@@ -10,7 +10,7 @@
                 <div class="flex items-center cursor-pointer mr-10" v-if="user">
                   <img class="user-img" :src="`/fair_image/${user.avatar ? user.avatar : 'placeholder.png'}`" />
                   <div class="uppercase ml-2">
-                    <div class="h6 font-italic font-bold text-white">Expositor:</div>
+                    <div class="h6 font-italic font-bold text-white">{{$t('Exhibitor')}}:</div>
                     <div class="fs-8 ml-3">
                       Lic. {{user.first_name}} {{user.last_name}} <br>
                       {{user.address}}
@@ -20,14 +20,14 @@
                 <div @click="downloadWebinar()" class="flex items-center cursor-pointer mx-4">
                   <feather-icon size="w-8 h-8" icon="DownloadIcon" />
                   <div class="uppercase ml-2 fs-8">
-                    descargar
+                    {{$t('Download')}}
                   </div>
                 </div>
                 <div @click="addToBoard()" class="flex items-center cursor-pointer mx-4">
                   <svg-icon size="w-8 h-8" icon="webinar" />
                   <div class="uppercase ml-2 fs-8">
-                    Agenda a <br>
-                    mi tableo
+                    {{$t('Schedule')}} <br>
+                   {{$t('MyTable')}}
                   </div>
                 </div>
               </div>
@@ -39,7 +39,7 @@
       <div class="absolute" style="top: 157px; left: 0">
         <div class="flex flex-col items-center justify-center text-white relative py-4 px-6" style="background: #ffffff88; color: #ffffffcc;">
             <div class="text-center"><svg-icon size="w-8 h-8" icon="live" /></div>
-            <div>EN VIVO</div>
+            <div>{{$t('Live')}}</div>
             <div class="flex ites-center">
                 <feather-icon icon="EyeIcon"/>
                 <div class="ml-2">1232</div>
@@ -69,19 +69,19 @@ export default {
       this.$http.post('/api/room/webinar/download', {_id: this.$route.params.webinar_id})
         .then((response) => {
           this.$loading.hide(this)
-          if (response.data.status === 'ok') {
+           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Se ha descargado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
           } else {
             this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
+              title: this.$t('Error'),
+              text: this.$t('FailMessage'),
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
@@ -93,19 +93,19 @@ export default {
       this.$http.post('/api/room/webinar/add_to_board', {_id: this.$route.params.webinar_id})
         .then((response) => {
           this.$loading.hide(this)
-          if (response.data.status === 'ok') {
+           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
           } else {
             this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
+              title: this.$t('Error'),
+              text: this.$t('FailMessage'),
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
@@ -125,23 +125,6 @@ export default {
         {
           this.$router.back()
         }
-        if (response.data.status === 'ok') {
-          this.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
-            color: 'success',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          })
-        } else {
-          this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          })
-        } 
       })
   }
 }

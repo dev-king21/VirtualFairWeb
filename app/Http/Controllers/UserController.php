@@ -22,12 +22,10 @@ class UserController extends Controller
 
     public function show(Request $request, $id)
     {
-        $user = User::find($id);
-        return response()->json(
-            [
-                'status' => 'success',
-                'user' => $user->toArray()
-            ], 200);
+        $res = array();
+        $res['user'] = User::find($id);
+        $res['status'] = 'ok';
+        return response()->json($res);  
     }
 
     public function allUser()

@@ -534,8 +534,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
     validateAndUpload: function validateAndUpload(files) {
       if (files.length !== 1) {
         this.$vs.notify({
-          title: 'Error - Too Many Files',
-          text: 'Only support uploading one file!',
+          title: this.$t('TooManyFileTitle'),
+          text: this.$t('TooManyFileContent'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -547,8 +547,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
       if (!this.isImage(rawFile)) {
         this.$vs.notify({
-          title: 'File Format Error',
-          text: 'Only supports upload .png, .gif, .jpg, .jpeg suffix files',
+          title: this.$t('FileFormatTitle'),
+          text: this.$t('FileFormatContent'),
           iconPack: 'feather',
           icon: 'icon-alert-circle',
           color: 'danger'
@@ -591,7 +591,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       // this.sidebarData = JSON.parse(JSON.stringify(this.blankData))
       this.editId = id;
       this.isAddOrEdit = 1;
-      this.popupTitle = 'Edit Fair';
+      this.popupTitle = this.$t('Edit');
       var fair = this.fairs.find(function (item) {
         return item.id === id;
       });
@@ -675,17 +675,17 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
         if (response.data.status === 'ok') {
           _this3.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
+            title: _this3.$t('Success'),
+            text: _this3.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
           _this3.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: _this3.$t('Error'),
+            text: _this3.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
@@ -742,8 +742,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       this.$vs.dialog({
         type: 'confirm',
         color: 'danger',
-        title: 'Confirm Delete',
-        text: 'Do you really delete it?',
+        title: this.$t('DeleteTitle'),
+        text: this.$t('DeleteConfig'),
         accept: this.deleteRecord,
         acceptText: 'Delete'
       });
@@ -769,32 +769,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       this.$http.post(action, newData).then(function (response) {
         _this5.$loading.hide(_this5);
 
-        if (response.data.status === 'ok') {
-          _this5.$vs.notify({
-            title: 'éxito',
-            text: 'Se ha eliminado con éxito.',
-            color: 'success',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          });
-        } else {
-          _this5.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          });
-        }
-
         _this5.loadContent();
       });
     },
     showDeleteSuccess: function showDeleteSuccess() {
       this.$vs.notify({
         color: 'success',
-        title: 'Fair Deleted',
-        text: 'The selected Fair was successfully deleted'
+        title: this.$t('Success'),
+        text: this.$t('DeleteMessage')
       });
     }
   },
@@ -1435,7 +1417,7 @@ var render = function() {
                       _c(
                         "span",
                         { staticClass: "ml-2 text-base text-primary" },
-                        [_vm._v("Add New")]
+                        [_vm._v(_vm._s(_vm.$t("AddNew")))]
                       )
                     ],
                     1
@@ -1459,7 +1441,13 @@ var render = function() {
                   _c("div", { staticClass: " w-full px-20 mb-base" }, [
                     _c("div", { staticClass: "vx-row mb-6" }, [
                       _c("div", { staticClass: "vx-col sm:w-1/4 w-full" }, [
-                        _c("span", [_vm._v("Fair Name")])
+                        _c("span", [
+                          _vm._v(
+                            _vm._s(_vm.$t("Fair")) +
+                              " " +
+                              _vm._s(_vm.$t("Name"))
+                          )
+                        ])
                       ]),
                       _vm._v(" "),
                       _c(
@@ -1483,7 +1471,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "vx-row mb-6" }, [
                       _c("div", { staticClass: "vx-col sm:w-1/4 w-full" }, [
-                        _c("span", [_vm._v("Fair Type")])
+                        _c("span", [_vm._v(_vm._s(_vm.$t("FairTypes")))])
                       ]),
                       _vm._v(" "),
                       _c("div", { staticClass: "vx-col sm:w-3/4 w-full" }, [
@@ -1538,7 +1526,8 @@ var render = function() {
                                     _vm._v(" "),
                                     _c("p", { staticClass: "text-primary" }, [
                                       _vm._v(
-                                        "Stand Items: " +
+                                        _vm._s(_vm.$t("StandItems")) +
+                                          ": " +
                                           _vm._s(ftype.stand_locations.length)
                                       )
                                     ])
@@ -1555,7 +1544,16 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "vx-row mb-6" }, [
                       _c("div", { staticClass: "vx-col sm:w-1/4 w-full" }, [
-                        _c("span", [_vm._v("Period(Start ~ End)")])
+                        _c("span", [
+                          _vm._v(
+                            _vm._s(_vm.$t("Period")) +
+                              "(" +
+                              _vm._s(_vm.$t("Start")) +
+                              "~" +
+                              _vm._s(_vm.$t("End")) +
+                              ")"
+                          )
+                        ])
                       ]),
                       _vm._v(" "),
                       _c(
@@ -1600,7 +1598,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "vx-row mb-6" }, [
                       _c("div", { staticClass: "vx-col sm:w-1/4 w-full" }, [
-                        _c("span", [_vm._v("Area de Interes")])
+                        _c("span", [_vm._v(_vm._s(_vm.$t("InterestArea")))])
                       ]),
                       _vm._v(" "),
                       _c(
@@ -1693,7 +1691,7 @@ var render = function() {
                                 }
                               }
                             },
-                            [_vm._v("OK")]
+                            [_vm._v(_vm._s(_vm.$t("Ok")))]
                           ),
                           _vm._v(" "),
                           _c(
@@ -1707,7 +1705,7 @@ var render = function() {
                                 }
                               }
                             },
-                            [_vm._v("Cancel")]
+                            [_vm._v(_vm._s(_vm.$t("Cancel")))]
                           )
                         ],
                         1
@@ -1827,19 +1825,23 @@ var render = function() {
             [
               _c("vs-th", { attrs: { "sort-key": "id" } }, [_vm._v("ID")]),
               _vm._v(" "),
-              _c("vs-th", { attrs: { "sort-key": "name" } }, [_vm._v("Name")]),
+              _c("vs-th", { attrs: { "sort-key": "name" } }, [
+                _vm._v(_vm._s(_vm.$t("Name")))
+              ]),
               _vm._v(" "),
               _c("vs-th", { attrs: { "sort-key": "start_date" } }, [
-                _vm._v("Start Date")
+                _vm._v(_vm._s(_vm.$t("StartDate")))
               ]),
               _vm._v(" "),
               _c("vs-th", { attrs: { "sort-key": "end_date" } }, [
-                _vm._v("End Date")
+                _vm._v(_vm._s(_vm.$t("EndDate")))
               ]),
               _vm._v(" "),
-              _c("vs-th", { attrs: { "sort-key": "logo" } }, [_vm._v("logo")]),
+              _c("vs-th", { attrs: { "sort-key": "logo" } }, [
+                _vm._v(_vm._s(_vm.$t("Logo")))
+              ]),
               _vm._v(" "),
-              _c("vs-th", [_vm._v("Action")])
+              _c("vs-th", [_vm._v(_vm._s(_vm.$t("Actions")))])
             ],
             1
           )

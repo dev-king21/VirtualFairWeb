@@ -6,11 +6,11 @@
             <div class="flex justify-center bg-white-grey">
                 <div class="w-1/2 my-6" style="max-width: 600px; text-center">
                     <div class="py-6 font-bold text-center bg-white h2">
-                        Costo del Stand: ¢250.000
+                        {{$t('CostStand')}}: ¢250.000
                     </div>
                     <div class="flex flex-col py-4 px-8" style="background: #f8f8f8"> 
                         <div class="text-center" style="color: #222;">
-                            Por favor ingrese la información de Pago
+                            {{$t('PaymentInfo')}}
                         </div>
                         <div style="border-bottom: 1px solid #c2c2c2;">
 

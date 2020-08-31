@@ -9,7 +9,7 @@
               <vx-card>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/3 w-full">
-                    <span>Place</span>
+                    <span>{{$t('Place')}}</span>
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
                     <vs-input class="w-full" :disabled="true" v-model="place"/>
@@ -17,7 +17,7 @@
                 </div>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/3 w-full">
-                    <span>Exhibitor</span>
+                    <span>{{$t('Exhibitor')}}</span>
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
                     <vs-input class="w-full" :disabled="true" v-model="exhibitor"/>
@@ -25,7 +25,7 @@
                 </div>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/3 w-full">
-                    <span>Webinar title</span>
+                    <span>{{$t('Webinar')}} {{$t('Title')}}</span>
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
                     <vs-input class="w-full" :disabled="true" v-model="title"/>
@@ -33,7 +33,7 @@
                 </div>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/3 w-full">
-                    <span>Webinar Date</span>
+                    <span>{{$t('Webinar')}} {{$t('Date')}}</span>
                   </div>
                   <div class="vx-col sm:w-2/3  mt-0">
                      <template>
@@ -43,7 +43,7 @@
                 </div>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/3 w-full">
-                    <span>Description</span>
+                    <span>{{$t('Description')}}</span>
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
                     <vs-input class="w-full" :disabled="true" v-model="description" />
@@ -51,7 +51,7 @@
                 </div>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/3 w-full">
-                    <span>Exhibitor Name</span>
+                    <span>{{$t('Exhibitor')}} {{$t('Name')}}</span>
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
                     <vs-input class="w-full" :disabled="true" v-model="exhibitor_name" />
@@ -59,7 +59,7 @@
                 </div>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/3 w-full">
-                    <span>Exhibitor Profession</span>
+                    <span>{{$t('Exhibitor')}} {{$t('Profession')}}</span>
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
                     <vs-input class="w-full" :disabled="true" v-model="exhibitor_profession" />
@@ -67,7 +67,7 @@
                 </div>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/3 w-full">
-                    <span>Exhibitor Company</span>
+                    <span>{{$t('Exhibitor')}} {{$t('Company')}}</span>
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
                     <vs-input class="w-full" :disabled="true" v-model="exhibitor_company" />
@@ -75,7 +75,7 @@
                 </div>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/3 w-full">
-                    <span>Key</span>
+                    <span>{{$t('Key')}}</span>
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
                     <vs-input class="w-full" :disabled="true" v-model="key" />
@@ -83,7 +83,7 @@
                 </div>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/3 w-full">
-                    <span>Password</span>
+                    <span>{{$t('Password')}}</span>
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
                     <vs-input class="w-full" type="password" :disabled="true" v-model="password" />
@@ -91,7 +91,7 @@
                 </div>
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/3 w-full">
-                    <span>Period(Start ~ End)</span>
+                    <span>{{$t('Period')}}({{$t('Start')}} ~ {{$t('End')}})</span>
                   </div>
                   <div class="vx-col sm:w-2/3 mt-0">
                      <template>
@@ -99,6 +99,16 @@
                         <span> ~ </span>
                         <flat-pickr :config="configdateTimePicker" v-model="endTime" placeholder="End time" />
                     </template> 
+                  </div>
+                </div>
+                <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/4 w-full">
+                    <span>Background</span>
+                  </div>
+                  <div class="vx-col sm:w-3/4 text-center mt-0">
+                      <img :src="`/fair_image/${make_logo(logo)}`" alt="content-img" ref="logoPreview" 
+                          @click="browseLogoImg" class="cursor-pointer" style="height: 120px; width: auto">
+                      <input class="hidden" type="file" ref="refLogoFile" accept=".png, .gif, .jpg, .jpeg" @change="logoChanged">
                   </div>
                 </div>
                 <div class="vx-row">
@@ -138,19 +148,20 @@
 
       <template slot="thead">
         <vs-th>ID</vs-th>
-        <vs-th sort-key="title">Place</vs-th>
-        <vs-th sort-key="title">Title</vs-th>
-        <vs-th sort-key="title">Description</vs-th>
-        <vs-th sort-key="title">Exhibitor Name/Profession/Company</vs-th>
-        <vs-th sort-key="title">Key</vs-th>
-        <vs-th sort-key="title">Password</vs-th>
-        <vs-th sort-key="title">Number of People</vs-th>
-        <vs-th sort-key="title">Webinar Date</vs-th>
+        <vs-th sort-key="title">{{$t('Place')}}</vs-th>
+        <vs-th sort-key="title">{{$t('Title')}}</vs-th>
+        <vs-th sort-key="title">{{$t('Description')}}</vs-th>
+        <vs-th sort-key="title">{{$t('Exhibitor')}} {{$t('Name')}} /{{$t('Profession')}} /{{$t('Company')}}</vs-th>
+        <vs-th sort-key="title">{{$t('Key')}}</vs-th>
+        <vs-th sort-key="title">{{$t('Password')}}</vs-th>
+        <vs-th sort-key="title">{{$t('Webinar')}} {{$t('Date')}}</vs-th>
 
-        <vs-th sort-key="title">Start Time</vs-th>
-        <vs-th sort-key="title">End Time</vs-th>
+        <vs-th sort-key="title">{{$t('StartTime')}}</vs-th>
+        <vs-th sort-key="title">{{$t('EndTime')}}</vs-th>
+        <vs-th sort-key="title">{{$t('Background')}}</vs-th>
 
-        <vs-th>Action</vs-th>
+
+        <vs-th>{{$t('Actions')}}</vs-th>
       </template>
 
       <template slot-scope="{data}">
@@ -190,10 +201,6 @@
             <vs-td>
               <p class="product-category">{{tr.password}}</p>
             </vs-td>
-
-            <vs-td>
-              <p class="product-price">{{ tr.peoples }}</p>
-            </vs-td>
              <vs-td>
               <p class="product-name font-medium truncate">{{ tr.talk_date }}</p>
             </vs-td>
@@ -203,6 +210,9 @@
             <vs-td>
               <p class="product-price">{{ tr.end_time }}</p>
             </vs-td>
+            <vs-td>
+                  <img :src="`/fair_image/${tr.background}`" alt="content-img" class="fair_logo">
+              </vs-td>
             <vs-td class="whitespace-no-wrap">
                 <feather-icon icon="EditIcon" svgClasses="w-5 h-5 hover:text-primary stroke-current" @click.stop="EditData(tr.id)" />
 
@@ -268,7 +278,9 @@ export default {
       users:[],
       exhibitor: '',
       place: '',
-      talk_id: 0
+      talk_id: 0,
+      logo: '',
+      logo_file: null
     }
   },
   computed: {
@@ -283,7 +295,61 @@ export default {
     }
   },
   methods: {
-    
+     make_logo (logo) {
+      if (logo) return logo
+      else return 'placeholder.png'
+    },
+    browseLogoImg () {
+      this.$refs.refLogoFile.click()
+    },
+     readerData (rawFile) {
+      return new Promise((resolve) => {
+        const reader = new FileReader()
+        reader.onload = e => {
+          this.$refs.logoPreview.src = e.target.result
+          this.logo_file = rawFile
+          //this.onSuccess(sendData)
+          resolve()
+        }
+        this.logo_show = true
+        reader.readAsDataURL(rawFile)
+      })
+    },
+     validateAndUpload (files) {
+      if (files.length !== 1) {
+        this.$vs.notify({
+          title: this.$t('TooManyFileTitle'),
+          text: this.$t('TooManyFileContent'),
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        })
+        return
+      }
+      const rawFile = files[0] // only use files[0]
+      if (!this.isImage(rawFile)) {
+        this.$vs.notify({
+          title: this.$t('FileFormatTitle'),
+          text: this.$t('FileFormatContent'),
+          iconPack: 'feather',
+          icon: 'icon-alert-circle',
+          color: 'danger'
+        })
+        return false
+      }
+      this.previewLogo(rawFile)
+    },
+    isImage (file) {
+      return /\.(jpeg|png|gif|jpg)$/.test(file.name)
+    },
+    previewLogo (file) {
+      this.$refs.refLogoFile.value = null // fix can't select the same excel
+      this.readerData(file)
+    },  
+    logoChanged (e) {
+      const files = e.target.files
+      this.validateAndUpload(files)  
+    },
     deleteData (id) {
     //   this.$store.dispatch('dataList/removeItem', id).catch(err => { console.error(err) })
     },
@@ -300,35 +366,40 @@ export default {
       return [year, month, day].join('-')
     },
     editTalk () {
-      if (this.talk_id === 0 || this.startTime === null || this.endTime === null) return
+      if (this.talk_id === 0 || this.startTime === null || this.endTime === null || this.logo_file === null) return
       const action = `/api/exhibitor/update/${this.talk_id}`
-      const newData = {
-        start_time: this.startTime,
-        end_time: this.endTime
+      const newData = new FormData()
+      const headers = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
       }
-      
+      newData.append('start_time', this.startTime)
+      newData.append('end_time', this.endTime)
+      if(this.logo_file) newData.append('background', this.logo_file)
       this.$loading.show(this)
-      this.$http.post(action, newData)
+      this.$http.post(action, newData, headers)
         .then((response) => {
           this.$loading.hide(this)
           if (response.data.status === 'ok') {
             this.$vs.notify({
-              title: 'éxito',
-              text: 'Te has registrado con éxito.',
+              title: this.$t('Success'),
+              text: this.$t('SuccessMessage'),
               color: 'success',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
           } else {
             this.$vs.notify({
-              title: 'Oyu',
-              text: 'Operación fallida',
-              color: 'error',
+              title: this.$t('Error'),
+              text: this.$t('FailMessage'),
+              color: 'danger',
               iconPack: 'feather',
               icon: 'icon-alert-circle'
             })
           }
           this.loadContent()
+          this.isAddShow = false
         })
     },
     EditData (talk_id) {
@@ -377,17 +448,17 @@ export default {
         this.$loading.hide(this)  
         if (response.data.status === 'ok') {
           this.$vs.notify({
-            title: 'éxito',
-            text: 'Ha sido cambiado exitosamente.',
+            title: this.$t('Success'),
+            text: this.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           })
         } else {
           this.$vs.notify({
-            title: 'Oyu',
-            text: 'Operación fallida',
-            color: 'error',
+            title: this.$t('Error'),
+            text: this.$t('FailMessage'),
+            color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           })
@@ -457,6 +528,10 @@ export default {
           }
         }
       }
+    }
+    .fair_logo{
+      height: 50px;
+      width: auto;
     }
 
     .vs-table {

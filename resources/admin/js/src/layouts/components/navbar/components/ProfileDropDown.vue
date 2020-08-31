@@ -77,7 +77,7 @@ export default {
     activeUserInfo () {
       if (this.$store.state.auth.admin) return {first_name: 'admin', last_name: 'user', avatar: ''}
       if (this.$store.state.auth.super) return {first_name: 'super', last_name: 'user', avatar: ''}
-      //console.log(this.$store.state.userInfo)
+      console.log(this.$store.state.auth.userInfo)
       return this.$store.state.auth.userInfo
     }
   },

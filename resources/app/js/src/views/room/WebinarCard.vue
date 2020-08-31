@@ -1,15 +1,15 @@
 <template>
     <div class="room-webinar-card card-border" :class="{'card-border': !noborder}">
         <div class="relative card-img">
-            <img class="relative responsive" :src="`@assets/images/pages/${user_img}`">
-            <div class="card-over text-white flex flex-col justify-between" >
+            <img class="relative responsive" :src="`/fair_image/${background}`">
+            <div class="card-over text-white flex flex-col w-full justify-between" >
                 <div>
                     <span class="text-white absolute py-4 px-6 bg-cyan-light" style="font-size: .9rem">{{$date.dateFormatWithoutYear(workdate)}}</span> 
                 </div>
                 <div class="card-title">
                     <div class="flex flex-row items-center">
                         <svg-icon size="w-8 h-8" icon="live"/>
-                        <div class="ml-2 text-white">EN VIVO</div>
+                        <div class="ml-2 text-white font-bold uppercase">{{$t('Live')}}</div>
                     </div>
                     <div style="font-style: italic">{{title}}</div>
                 </div>
@@ -29,11 +29,11 @@
             </div>
         </div>
         <div class="flex flex-row justify-between items-center mt-6">
-            <vs-button @click="addToBoard()" class="cyan-dark event-btn">
-                AGREGAR A MI TABLEO 
+            <vs-button @click="addToBoard()" class="cyan-dark event-btn uppercase">
+                {{$t('AddBoard')}}
             </vs-button>
-            <vs-button class="blue-dark event-btn p-big" @click="showWebinar()">
-                VER
+            <vs-button class="blue-dark event-btn p-big uppercase" @click="showWebinar()">
+                {{$t('See')}}
             </vs-button>
         </div>
         <!-- <vs-divider class="px-2" /> -->
@@ -70,6 +70,10 @@ export default {
       type: String,
       required: true  
     },
+    background: {
+      type: String,
+      required: true  
+    },
     id: {
       type: Number,
       required: true
@@ -102,9 +106,9 @@ export default {
     
     .user-img {
         border-radius: 50%;
-        background-color: #33333355;
+        background-color: #33333399;
         height: 4rem !important;
-        width: auto;
+        width: 4rem !important;
     }
 
     .event-btn {
@@ -133,13 +137,13 @@ export default {
         left: 0;
         bottom: 0;
         .card-title {
-            background: #33333355;
+            background: #33333399;
             padding: 0.6rem;
         }
     }
 
     .card-img {
-        background: #000000AA;
+        //background: #000000AA;
     }
 
 }

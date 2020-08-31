@@ -195,25 +195,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
         if (response.data.status === 'ok') {
           _this.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
-            color: 'success',
+            title: _this.$t('Success'),
+            text: _this.$t('DeleteMessage'),
             iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          });
-
-          if (response.data.time_table) {
-            var tt = response.data.time_table.replace(/\s/g, '');
-
-            _this.make_availables(tt.split(','));
-          }
-        } else {
-          _this.$vs.notify({
-            title: 'Oyu',
-            text: 'Error de registro',
-            color: 'error',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
+            icon: 'icon-info',
+            color: 'success'
           });
         }
       });
@@ -236,19 +222,11 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
         if (response.data.status === 'ok') {
           _this2.$vs.notify({
-            title: 'éxito',
-            text: 'Te has registrado con éxito.',
-            color: 'success',
+            title: _this2.$t('Success'),
+            text: _this2.$t('DeleteMessage'),
             iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          });
-        } else {
-          _this2.$vs.notify({
-            title: 'Oyu',
-            text: 'Error de registro',
-            color: 'error',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
+            icon: 'icon-info',
+            color: 'success'
           });
         }
       })["catch"](function () {});
@@ -262,24 +240,6 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
     this.make_end_time_table();
     this.$http.post('/api/setting/my_stand/schedule').then(function (response) {
       _this3.$loading.hide(_this3);
-
-      if (response.data.status === 'ok') {
-        _this3.$vs.notify({
-          title: 'éxito',
-          text: 'Te has registrado con éxito.',
-          color: 'success',
-          iconPack: 'feather',
-          icon: 'icon-alert-circle'
-        });
-      } else {
-        _this3.$vs.notify({
-          title: 'Oyu',
-          text: 'Operación fallida',
-          color: 'error',
-          iconPack: 'feather',
-          icon: 'icon-alert-circle'
-        });
-      }
 
       var data = response.data;
       _this3.appointments_dates = data.appointments_dates;
@@ -482,7 +442,11 @@ var render = function() {
       _c("app-header", { attrs: { activeItem: "0" } }),
       _vm._v(" "),
       _c("bread-crumb", {
-        attrs: { icon: "schedule-edit", type: "svg", text: "mis citas" }
+        attrs: {
+          icon: "schedule-edit",
+          type: "svg",
+          text: _vm.$t("MyAppointment")
+        }
       }),
       _vm._v(" "),
       _c(
@@ -511,7 +475,7 @@ var render = function() {
                         _c(
                           "div",
                           { staticClass: "uppercase h5 font-bold ml-4" },
-                          [_vm._v("SELECCIONE LA HORA")]
+                          [_vm._v(_vm._s(_vm.$t("SelectTime")))]
                         )
                       ],
                       1
@@ -568,7 +532,7 @@ var render = function() {
                             staticClass: "cyan-dark",
                             on: { click: _vm.saveTimetable }
                           },
-                          [_vm._v("AGREGAR")]
+                          [_vm._v(_vm._s(_vm.$t("Add")))]
                         )
                       ],
                       1
@@ -641,7 +605,8 @@ var render = function() {
                                       _vm._v(" "),
                                       _c("div", [
                                         _vm._v(
-                                          "Nombre: " +
+                                          _vm._s(_vm.$t("Name")) +
+                                            ": " +
                                             _vm._s(apo.requestor.first_name) +
                                             " " +
                                             _vm._s(apo.requestor.last_name)
@@ -650,14 +615,16 @@ var render = function() {
                                       _vm._v(" "),
                                       _c("div", [
                                         _vm._v(
-                                          "Compania: " +
+                                          _vm._s(_vm.$t("Company")) +
+                                            ": " +
                                             _vm._s(apo.requestor.company)
                                         )
                                       ]),
                                       _vm._v(" "),
                                       _c("div", [
                                         _vm._v(
-                                          "Pais: " +
+                                          _vm._s(_vm.$t("Country")) +
+                                            ": " +
                                             _vm._s(apo.requestor.country)
                                         )
                                       ])
@@ -673,7 +640,11 @@ var render = function() {
                                     _c(
                                       "vs-button",
                                       { staticClass: "cyan-dark" },
-                                      [_vm._v("IR A LA CITA")]
+                                      [
+                                        _vm._v(
+                                          _vm._s(_vm.$t("Go to appointment"))
+                                        )
+                                      ]
                                     )
                                   ],
                                   1
@@ -751,7 +722,15 @@ var render = function() {
           staticClass:
             "vx-col flex items-center justify-center text-white w-3/5 bg-dark"
         },
-        [_vm._v("\n          " + _vm._s(_vm.readed) + " vistars\n        ")]
+        [
+          _vm._v(
+            "\n          " +
+              _vm._s(_vm.readed) +
+              " " +
+              _vm._s(_vm.$t("Viewers")) +
+              "\n        "
+          )
+        ]
       ),
       _vm._v(" "),
       _c("div", { staticClass: "vx-col w-2/5" }, [
@@ -772,7 +751,7 @@ var render = function() {
             _c(
               "div",
               { staticClass: "ml-2", staticStyle: { "font-size": "0.9rem" } },
-              [_vm._v("BORRAR")]
+              [_vm._v(_vm._s(_vm.$t("Delete")))]
             )
           ],
           1

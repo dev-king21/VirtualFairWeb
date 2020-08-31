@@ -8,12 +8,12 @@
         </div>
         <div class="vx-row">
             <div class="vx-col flex items-center justify-center text-white w-3/5 bg-dark">
-              {{readed}} vistars
+              {{readed}} {{$t('Viewers')}}
             </div>
             <div class="vx-col w-2/5">
                 <div @click="removeVideo(id)" class="flex items-center justify-center text-white py-2 yellow-dark w-full cursor-pointer">
                     <svg-icon size="w-5 h-5" icon="erase" />
-                    <div class="ml-2" style="font-size: 0.9rem">BORRAR</div>
+                    <div class="ml-2" style="font-size: 0.9rem">{{$t('Delete')}}</div>
                 </div>
             </div>
         </div>
