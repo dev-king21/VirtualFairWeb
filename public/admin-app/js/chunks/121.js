@@ -312,17 +312,21 @@ var render = function() {
                             _c("td", [_vm._v(_vm._s(_vm.user_data.email))])
                           ]),
                           _vm._v(" "),
-                          _c("tr", [
-                            _c("td", { staticClass: "font-semibold" }, [
-                              _vm._v(
-                                _vm._s(_vm.$t("Fair")) +
-                                  " " +
-                                  _vm._s(_vm.$t("Name"))
-                              )
-                            ]),
-                            _vm._v(" "),
-                            _c("td", [_vm._v(_vm._s(_vm.user_data.fair.name))])
-                          ]),
+                          _vm.user_data.fair
+                            ? _c("tr", [
+                                _c("td", { staticClass: "font-semibold" }, [
+                                  _vm._v(
+                                    _vm._s(_vm.$t("Fair")) +
+                                      " " +
+                                      _vm._s(_vm.$t("Name"))
+                                  )
+                                ]),
+                                _vm._v(" "),
+                                _c("td", [
+                                  _vm._v(_vm._s(_vm.user_data.fair.name))
+                                ])
+                              ])
+                            : _vm._e(),
                           _vm._v(" "),
                           _c("tr", [
                             _c("td", { staticClass: "font-semibold" }, [

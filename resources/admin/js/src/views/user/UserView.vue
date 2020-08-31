@@ -34,7 +34,7 @@
                 <td class="font-semibold">{{$t('Email')}}</td>
                 <td>{{ user_data.email }}</td>
               </tr> 
-              <tr>
+              <tr v-if='user_data.fair'>
                 <td class="font-semibold">{{$t('Fair')}} {{$t('Name')}}</td>
                 <td>{{ user_data.fair.name }}</td>
               </tr> 
