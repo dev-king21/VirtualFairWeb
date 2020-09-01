@@ -171,7 +171,8 @@ export default {
     UploadBussiness: 'Upload bussiness card',
     MyAppointment: 'My Appointments',
     ContactInfo: "Contact information saved correctly.",
-    CompanyName: 'Company Name'
+    CompanyName: 'Company Name',
+    InsertCompanyInfo: 'Please fill in the information about your company.'
 
   },
   es: {
@@ -345,6 +346,7 @@ export default {
     UploadBussiness: 'subir tarjeta de presentacion',
     MyAppointment: 'mis citas',
     ContactInfo: 'Información de contacto guardada correctamente.',
-    CompanyName: 'Nombre de la Empresa'
+    CompanyName: '  Nombre de la Empresa',
+    InsertCompanyInfo: 'por favor complete la información sobre su empresa'
   }
 }

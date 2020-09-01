@@ -893,8 +893,7 @@ var render = function() {
                                 color: "success",
                                 name: "Contrasena",
                                 "data-vv-validate-on": "blur",
-                                "label-placeholder":
-                                  "Seleccione una constrasena"
+                                "label-placeholder": _vm.$t("SelectPassword")
                               },
                               model: {
                                 value: _vm.user.password,
@@ -930,7 +929,7 @@ var render = function() {
                                 color: "success",
                                 name: "Apellido",
                                 "data-vv-validate-on": "blur",
-                                "label-placeholder": "Repita la contrasena"
+                                "label-placeholder": _vm.$t("ConfirmPassword")
                               },
                               model: {
                                 value: _vm.repeat_password,

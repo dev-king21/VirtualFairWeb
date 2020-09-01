@@ -73,11 +73,11 @@
                                 </div>
                                 <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-2">
                                     <vs-input class="w-4/5" type="password" color="success" name="Contrasena"
-                                        v-validate="'required'" data-vv-validate-on="blur" v-model="user.password" label-placeholder="Seleccione una constrasena"/>
+                                        v-validate="'required'" data-vv-validate-on="blur" v-model="user.password" :label-placeholder="$t('SelectPassword')"/>
                                 </div>
                                 <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-2">
                                     <vs-input class="w-4/5" type="password" color="success"  name="Apellido"
-                                        v-validate="'required'" data-vv-validate-on="blur" v-model="repeat_password" label-placeholder="Repita la contrasena"/>
+                                        v-validate="'required'" data-vv-validate-on="blur" v-model="repeat_password" :label-placeholder="$t('ConfirmPassword')"/>
                                 </div>
                                 <div class="vx-col w-full text-center mt-base">
                                     <vs-button to="/setting/home" class="yellow-dark frm-button">
@@ -167,7 +167,7 @@ export default {
           this.$router.go()  
         })  
     },
-    setUserCountry () {
+    setUserCountry () { 
       if (this.selected_country) {
         this.user.country = this.selected_country.name
       } else {

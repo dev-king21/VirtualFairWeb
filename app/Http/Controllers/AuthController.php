@@ -38,6 +38,7 @@ class AuthController extends Controller
         $query = [
             ["start_date", "<=", $now], 
             ["end_date", ">=", $now],
+            ["status", "=", 1]
         ]; 
         $fair = Fair::where($query)->first();
         $cnt = User::where(["fair_id"=>$fair->id, "email" => $request->post('email')])->count();
@@ -80,22 +81,21 @@ class AuthController extends Controller
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-        if (!Auth::attempt($credentials))
-            return response()->json(['error' => 'Unauthorized']);
-
+        
         $now = date("y-m-d");
         $query = [
             ["start_date", "<=", $now], 
-            ["end_date", ">=", $now]
+            ["end_date", ">=", $now],
+            ["status", "=", 1]
         ]; 
         $fair = Fair::where($query)->first();
-        if (!isset($res["fair"])) {
+        if (!isset($fair)) {
             return response()->json(["status"=> "unknown_fair"]);
         }
+        if (!Auth::attempt(["email"=> $request->post("email"), "password"=>$request->post("password"), "fair_id" => $fair->id]))
+            return response()->json(['error' => 'Unauthorized']);
+
         $user = $request->user();
-        if ($user->fair_id != $fair->id) {
-            return response()->json(["status" => "unmatched_fair"]);
-        }
         $user->load(['category_interests' => function($qr){
             $qr->with('category')->get();
         }]);

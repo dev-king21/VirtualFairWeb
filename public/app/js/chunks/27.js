@@ -80,7 +80,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     description: function description() {
-      return this.stand.description ? this.stand.description.replace(/\n/g, '<br>') : 'por favor complete la información sobre su empresa';
+      return this.stand.description ? this.stand.description.replace(/\n/g, '<br>') : this.$t('InsertCompanyInfo');
     }
   },
   methods: {
@@ -486,7 +486,7 @@ var render = function() {
                     : [
                         _c("vs-input", {
                           staticClass: "mx-4",
-                          attrs: { placeholder: "Nombre de la Empresa" },
+                          attrs: { placeholder: _vm.$t("CompanyName") },
                           model: {
                             value: _vm.stand.company,
                             callback: function($$v) {

@@ -154,6 +154,7 @@ export default {
       })
 
     const userInfo = localStorage.getItem('userInfo')
+    console.log(userInfo)
     if (!userInfo) {
       return this.$router.push('/home')
     }

@@ -14,6 +14,7 @@ export default {
             commit('SET_BEARER', response.data.access_token)
             resolve()
           } else {
+            console.log(response.data)
             if (response.data.status === 'unmatched_fair') reject({message: 'unregistered_current_fair'})
             else reject({message: 'wrong_credentials'})
           }

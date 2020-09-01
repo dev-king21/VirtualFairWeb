@@ -102,7 +102,8 @@ export default {
     TooManyFileContent: 'Only support uploading one file!',
     FileFormatTitle: 'File Format Error',
     FileFormatContent: 'Only supports upload .png, .gif, .jpg, .jpeg suffix files',
-    WebinarType: 'Webinar Type'
+    WebinarType: 'Webinar Type',
+    NewCategory: 'New Category'
 
   },
   es: {
@@ -206,7 +207,7 @@ export default {
     TooManyFileContent: '¡Solo admite la carga de un archivo!',
     FileFormatTitle: 'Error de formato de archivo',
     FileFormatContent: 'Solo admite la carga de archivos de sufijo .png, .gif, .jpg, .jpeg',
-    WebinarType: 'Tipo de webinar'
-
+    WebinarType: 'Tipo de webinar',
+    NewCategory: 'Nueva categoría'
   }
 }

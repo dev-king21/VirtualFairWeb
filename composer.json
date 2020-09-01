@@ -10,12 +10,14 @@
     "require": {
         "php": "^7.2.5",
         "fideloper/proxy": "^4.2",
+        "firebase/php-jwt": "^5.2",
         "fruitcake/laravel-cors": "^1.0",
         "guzzlehttp/guzzle": "^6.3",
         "laravel/cashier": "^12.2",
         "laravel/framework": "^7.0",
         "laravel/passport": "^8.0",
         "laravel/tinker": "^2.0",
+        "macsidigital/laravel-zoom": "^4.0",
         "paypal/rest-api-sdk-php": "*",
         "pusher/pusher-php-server": "~4.0",
         "smartins/passport-multiauth": "^7.0"

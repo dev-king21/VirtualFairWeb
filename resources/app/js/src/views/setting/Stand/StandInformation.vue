@@ -19,7 +19,7 @@
                     {{ (stand.company)? stand.company : `${$t('CompanyName')}`}}</div>
                 </template>
                 <template v-else>
-                    <vs-input class="mx-4" placeholder="Nombre de la Empresa" v-model="stand.company"></vs-input>
+                    <vs-input class="mx-4" :placeholder="$t('CompanyName')" v-model="stand.company"></vs-input>
                 </template>
                 <vs-button class="blue-dark save-btn" @click="name_edit = true">{{$t('Add')}}</vs-button>
             </div>
@@ -68,7 +68,7 @@ export default {
   },
   computed: {
     description () {
-      return this.stand.description ? this.stand.description.replace(/\n/g, '<br>') : 'por favor complete la información sobre su empresa'
+      return this.stand.description ? this.stand.description.replace(/\n/g, '<br>') : this.$t('InsertCompanyInfo')
     }  
   },
   methods: {

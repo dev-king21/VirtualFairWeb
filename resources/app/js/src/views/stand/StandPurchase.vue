@@ -91,19 +91,7 @@ export default {
             body: JSON.stringify(param)
           }).then(() => {
             location.href = '/app/stand/home'
-          })
-        
-
-          /* this.$http.post('/api/stand/payment/save_transaction', param)
-            .then(() => {
-              alert(`Transaction completed by ${  details.payer.name.given_name}`)
-            }) */
-          /* this.$http.post('/api/stand/payment/', param)
-            .then(res => {
-              
-
-            }) */
-          
+          })          
         })
       }
     }).render('#paypal-button')

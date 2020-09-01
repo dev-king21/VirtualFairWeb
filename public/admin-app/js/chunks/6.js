@@ -1611,7 +1611,7 @@ var render = function() {
                               staticClass: "w-full",
                               attrs: {
                                 color: "rgb(115,103,240)",
-                                placeholder: "Nueva categoría"
+                                placeholder: _vm.$t("NewCategory")
                               },
                               model: {
                                 value: _vm.categories,

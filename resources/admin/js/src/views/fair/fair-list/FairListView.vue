@@ -64,7 +64,7 @@
                     <span>{{$t('InterestArea')}}</span>
                   </div>
                   <div class="vx-col sm:w-3/4 mt-0">
-                    <vs-chips class="w-full" color="rgb(115,103,240)" placeholder="Nueva categoría" v-model="categories">
+                    <vs-chips class="w-full" color="rgb(115,103,240)" :placeholder="$t('NewCategory')" v-model="categories">
                       <vs-chip @click="removeCategory(index)" v-for="(category, index) in categories" :key="`interest-item-${index}`" closable> {{ category }} </vs-chip>
                     </vs-chips>
                   </div>

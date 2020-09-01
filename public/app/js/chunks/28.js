@@ -169,6 +169,7 @@ __webpack_require__.r(__webpack_exports__);
       _this.ads_list = res.data.ads;
     });
     var userInfo = localStorage.getItem('userInfo');
+    console.log(userInfo);
 
     if (!userInfo) {
       return this.$router.push('/home');

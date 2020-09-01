@@ -26,7 +26,7 @@ __webpack_require__.r(__webpack_exports__);
 
     var userInfo = localStorage.getItem('userInfo');
 
-    if (userInfo && userInfo !== null) {
+    if (userInfo && userInfo !== null && userInfo !== 'null') {
       userInfo = JSON.parse(userInfo);
 
       if (userInfo.id !== 0 && userInfo.email && userInfo.email !== '') {
@@ -262,6 +262,7 @@ __webpack_require__.r(__webpack_exports__);
           commit('SET_BEARER', response.data.access_token);
           resolve();
         } else {
+          console.log(response.data);
           if (response.data.status === 'unmatched_fair') reject({
             message: 'unregistered_current_fair'
           });else reject({
