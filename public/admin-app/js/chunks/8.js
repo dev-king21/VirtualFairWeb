@@ -689,7 +689,6 @@ __webpack_require__.r(__webpack_exports__);
       var webinarOption = this.webinarOptions.find(function (item) {
         return item.value === talk.live;
       });
-      console.log(roomOption);
       this.room_id = roomOption;
       console.log(this.place);
       this.user_id = userOption;

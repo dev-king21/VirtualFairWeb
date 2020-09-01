@@ -283,7 +283,8 @@ __webpack_require__.r(__webpack_exports__);
         title: this.$t('DeleteTitle'),
         text: this.$t('DeleteConfig'),
         accept: this.deleteRecord,
-        acceptText: 'Delete'
+        acceptText: this.$t('Delete'),
+        cancelText: this.$t('Cancel')
       });
     },
     deleteRecord: function deleteRecord() {

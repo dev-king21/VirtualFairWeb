@@ -577,7 +577,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       this.isAddOrEdit = 0;
       this.categories = [];
       this.logo = '';
-      this.popupTitle = 'Add Fair';
+      this.popupTitle = this.$t('Add');
       this.isAddShow = true;
     },
     deleteData: function deleteData(id) {
@@ -672,6 +672,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       this.$loading.show(this);
       this.$http.post(action, formData, headers).then(function (response) {
         _this3.$loading.hide(_this3);
+
+        console.log("dsfsdf", response.data);
 
         if (response.data.status === 'ok') {
           _this3.$vs.notify({

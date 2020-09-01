@@ -74,10 +74,11 @@ export default {
       this.$vs.dialog({
         type: 'confirm',
         color: 'danger',
-        title: 'Confirm Delete',
-        text: `Do you really delete it?`,
+        title: this.$t('DeleteTitle'),
+        text: this.$t('DeleteConfig'),
         accept: this.deleteRecord,
-        acceptText: 'Delete'
+        acceptText: this.$t('Delete'),
+        cancelText: this.$t('Cancel')
       })
     },
     deleteRecord () {
@@ -93,8 +94,8 @@ export default {
     showDeleteSuccess () {
       this.$vs.notify({
         color: 'success',
-        title: 'Room Deleted',
-        text: 'The selected Room was successfully deleted'
+        title: this.$t('Success'),
+        text: this.$t('DeleteMessage')
       })
     }
   }, 

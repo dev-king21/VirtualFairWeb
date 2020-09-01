@@ -154,7 +154,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     validateForm: function validateForm() {
-      return !this.errors.any() && this.user.email !== '' && this.user.password !== '' && this.repeat_password !== '' && this.repeat_password === this.user.password && this.user.first_name !== '' && this.user.last_name !== '' && this.user.phone !== '' && this.user.address !== '' && this.user.company !== '' && this.user.country && this.user.region && this.accept_chk;
+      console.log("password", this.selected_country);
+      console.log("confirm", this.selected_region);
+      return !this.errors.any() && this.user.email !== '' && this.user.password !== '' && this.repeat_password !== '' && this.repeat_password === this.user.password && this.user.first_name !== '' && this.user.last_name !== '' && this.user.phone !== '' && this.user.address !== '' && this.user.company !== '' && this.selected_country && this.selected_region && this.accept_chk;
     }
   },
   methods: {

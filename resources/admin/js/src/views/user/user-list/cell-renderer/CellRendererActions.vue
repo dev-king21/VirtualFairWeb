@@ -26,7 +26,8 @@ export default {
         title: this.$t('DeleteTitle'),
         text: this.$t('DeleteConfig'),
         accept: this.deleteRecord,
-        acceptText: 'Delete'
+        acceptText: this.$t('Delete'),
+        cancelText: this.$t('Cancel')
       })
     },
     deleteRecord () {

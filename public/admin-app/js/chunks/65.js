@@ -294,7 +294,10 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
         return item.id === id;
       });
       this.name = room.name;
-      this.country_id = room.country_id;
+      var countryOption = this.countryOptions.find(function (item) {
+        return item.value === room.country_id;
+      });
+      this.country_id = countryOption;
       this.description = room.description;
       this.isAddShow = true;
     },
@@ -309,24 +312,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       this.$loading.show(this);
       this.$http.post(action, newData).then(function (response) {
         _this.$loading.hide(_this);
-
-        if (response.data.status === 'ok') {
-          _this.$vs.notify({
-            title: _this.$t('Success'),
-            text: _this.$t('DeleteMessage'),
-            color: 'success',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          });
-        } else {
-          _this.$vs.notify({
-            title: _this.$t('Error'),
-            text: _this.$t('FailMessage'),
-            color: 'danger',
-            iconPack: 'feather',
-            icon: 'icon-alert-circle'
-          });
-        }
 
         _this.loadContent();
       });
@@ -398,6 +383,8 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     loadContent: function loadContent() {
       var _this5 = this;
 
+      this.countryOptions = [];
+      this.rooms = [];
       var action = '/api/rooms/all';
       this.$loading.show(this);
       this.$http.get(action).then(function (response) {
@@ -526,10 +513,11 @@ __webpack_require__.r(__webpack_exports__);
       this.$vs.dialog({
         type: 'confirm',
         color: 'danger',
-        title: 'Confirm Delete',
-        text: "Do you really delete it?",
+        title: this.$t('DeleteTitle'),
+        text: this.$t('DeleteConfig'),
         accept: this.deleteRecord,
-        acceptText: 'Delete'
+        acceptText: this.$t('Delete'),
+        cancelText: this.$t('Cancel')
       });
     },
     deleteRecord: function deleteRecord() {
@@ -544,8 +532,8 @@ __webpack_require__.r(__webpack_exports__);
     showDeleteSuccess: function showDeleteSuccess() {
       this.$vs.notify({
         color: 'success',
-        title: 'Room Deleted',
-        text: 'The selected Room was successfully deleted'
+        title: this.$t('Success'),
+        text: this.$t('DeleteMessage')
       });
     }
   },

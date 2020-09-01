@@ -421,7 +421,6 @@ export default {
       const userOption = this.userOptions.find((item) => item.value === talk.user_id)
       const webinarOption = this.webinarOptions.find((item) => item.value === talk.live)
 
-      console.log(roomOption)
       this.room_id = roomOption
       console.log(this.place)
       this.user_id = userOption

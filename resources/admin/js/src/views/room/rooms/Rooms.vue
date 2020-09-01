@@ -295,7 +295,8 @@ export default {
 
       const room = this.rooms.find((item) => item.id === id)
       this.name = room.name
-      this.country_id = room.country_id
+      const countryOption = this.countryOptions.find((item) => item.value === room.country_id)
+      this.country_id = countryOption
       this.description = room.description 
       this.isAddShow = true
     },
@@ -310,23 +311,6 @@ export default {
       this.$http.post(action, newData)
         .then((response) => {
           this.$loading.hide(this)
-          if (response.data.status === 'ok') {
-            this.$vs.notify({
-              title: this.$t('Success'),
-              text: this.$t('DeleteMessage'),
-              color: 'success',
-              iconPack: 'feather',
-              icon: 'icon-alert-circle'
-            })
-          } else {
-            this.$vs.notify({
-              title: this.$t('Error'),
-              text: this.$t('FailMessage'),
-              color: 'danger',
-              iconPack: 'feather',
-              icon: 'icon-alert-circle'
-            })
-          }
           this.loadContent()
         })
     },
@@ -391,6 +375,8 @@ export default {
         })
     },
     loadContent () {
+      this.countryOptions = []
+      this.rooms = []
       const action = '/api/rooms/all'
       this.$loading.show(this)
       this.$http.get(action)
