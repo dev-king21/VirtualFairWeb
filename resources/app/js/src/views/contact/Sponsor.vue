@@ -2,7 +2,7 @@
     <div class="w-full">
         <app-header activeItem="2"></app-header>
         <bread-crumb 
-            icon="MonitorIcon" text="patrocinadores" />
+            icon="MonitorIcon" :text="$t('Sponsors')" />
         <div class="flex w-full flex-col px-8 py-6 bg-white-grey sponsor-main">
             <div class="bg-white px-4">
                 <div class="h3 text-center my-4">
@@ -16,7 +16,7 @@
                                 <img class="contact-logo" :src="`/fair_image/${item.logo}`"/>
                             </div>
                             <div class="text-center my-3">
-                                <vs-button :to="`/fair/contact/${item.id}`" class="cyan-dark contact-btn">contactar</vs-button>
+                                <vs-button :to="`/fair/contact/${item.id}`" class="cyan-dark contact-btn">{{$t('Contact')}}</vs-button>
                             </div>
                         </div>
                     </div>

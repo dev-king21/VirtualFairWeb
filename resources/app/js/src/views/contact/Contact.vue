@@ -167,7 +167,7 @@ export default {
     input, textarea {
         border-radius: 0 !important;
         font-size: 0.9rem !important;
-        padding: 0.6rem !important;
+        // padding: 0.6rem !important;
     }
     .vs-input--placeholder {
         font-size: 0.9rem !important;

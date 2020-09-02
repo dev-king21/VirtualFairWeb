@@ -88,6 +88,7 @@ __webpack_require__.r(__webpack_exports__);
 
     this.$http.post('/api/home/webinar').then(function (res) {
       _this.webinar_list = res.data.webinars;
+      console.log(_this.webinar_list);
     });
   }
 });
@@ -188,7 +189,24 @@ var render = function() {
                     staticClass: "vx-row bg-white webinar-card"
                   },
                   [
-                    _vm._m(0, true),
+                    _c(
+                      "div",
+                      { staticClass: "vx-row w-2/5 flex items-center" },
+                      [
+                        _c("div", { staticClass: "w-full h-full p-4" }, [
+                          _c("img", {
+                            staticClass: "responsive",
+                            attrs: {
+                              src:
+                                "/fair_image/" +
+                                (webinar.user.avatar
+                                  ? webinar.user.avatar
+                                  : "placeholder.png")
+                            }
+                          })
+                        ])
+                      ]
+                    ),
                     _vm._v(" "),
                     _c(
                       "div",
@@ -322,35 +340,10 @@ var render = function() {
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "vx-row w-2/5 flex items-center" }, [
-      _c("div", { staticClass: "w-full h-full p-4" }, [
-        _c("img", {
-          staticClass: "responsive",
-          attrs: { src: __webpack_require__(/*! @assets/images/pages/foto_expositores2.jpg */ "./resources/app/assets/images/pages/foto_expositores2.jpg") }
-        })
-      ])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
-
-/***/ }),
-
-/***/ "./resources/app/assets/images/pages/foto_expositores2.jpg":
-/*!*****************************************************************!*\
-  !*** ./resources/app/assets/images/pages/foto_expositores2.jpg ***!
-  \*****************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "/images/foto_expositores2.jpg?540be9c9ed0ce027e3d7795fe10a4a17";
 
 /***/ }),
 

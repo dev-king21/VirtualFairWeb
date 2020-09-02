@@ -27,6 +27,7 @@
                                         :workdate="item.talk_date"
                                         :time="period(item.start_time, item.end_time)"
                                         :title="item.title"
+                                        :webinarType="item.live"
                                         :expositor_name="`${item.user.first_name} ${item.user.last_name}`"
                                         :expositor_profession="`${item.user.address}`"
                                         :background="item.background"

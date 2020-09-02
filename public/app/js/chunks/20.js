@@ -87,6 +87,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -314,6 +315,10 @@ __webpack_require__.r(__webpack_exports__);
     },
     title: {
       type: String,
+      required: true
+    },
+    webinarType: {
+      type: Number,
       required: true
     },
     expositor_name: {
@@ -601,6 +606,7 @@ var render = function() {
                                     item.end_time
                                   ),
                                   title: item.title,
+                                  webinarType: item.live,
                                   expositor_name:
                                     item.user.first_name +
                                     " " +
@@ -797,7 +803,15 @@ var render = function() {
                   _c(
                     "div",
                     { staticClass: "ml-2 text-white font-bold uppercase" },
-                    [_vm._v(_vm._s(_vm.$t("Live")))]
+                    [
+                      _vm._v(
+                        _vm._s(
+                          _vm.webinarType === 1
+                            ? _vm.$t("Live")
+                            : _vm.$t("Recorded")
+                        )
+                      )
+                    ]
                   )
                 ],
                 1

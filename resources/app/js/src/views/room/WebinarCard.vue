@@ -9,7 +9,7 @@
                 <div class="card-title">
                     <div class="flex flex-row items-center">
                         <svg-icon size="w-8 h-8" icon="live"/>
-                        <div class="ml-2 text-white font-bold uppercase">{{$t('Live')}}</div>
+                        <div class="ml-2 text-white font-bold uppercase">{{webinarType===1 ? $t('Live') : $t('Recorded')}}</div>
                     </div>
                     <div style="font-style: italic">{{title}}</div>
                 </div>
@@ -48,6 +48,10 @@ export default {
     },
     title: {
       type: String,
+      required: true
+    },
+    webinarType: {
+      type: Number,
       required: true
     },
     expositor_name: {

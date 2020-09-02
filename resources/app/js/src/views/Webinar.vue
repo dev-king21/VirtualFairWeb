@@ -8,7 +8,7 @@
                 :key="`home-webinar-item-${index}`" v-for="(webinar, index) in webinar_list" >
                 <div class="vx-row w-2/5 flex items-center">
                     <div class="w-full h-full p-4">
-                        <img src="@assets/images/pages/foto_expositores2.jpg" class="responsive"/>
+                        <img :src="`/fair_image/${webinar.user.avatar ? webinar.user.avatar : 'placeholder.png'}`" class="responsive"/>
                     </div>
                 </div>
                 <div class="vx-row flex flex-col justify-between w-3/5">
@@ -76,6 +76,7 @@ export default {
     this.$http.post('/api/home/webinar')
       .then((res) => {
         this.webinar_list = res.data.webinars
+        console.log(this.webinar_list)
       })
   }
 }

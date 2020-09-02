@@ -388,7 +388,6 @@ export default {
       this.$http.post(action, formData, headers)
         .then((response) => {
           this.$loading.hide(this)
-          console.log("dsfsdf", response.data)
           if (response.data.status === 'ok') {
             this.$vs.notify({
               title: this.$t('Success'),

@@ -141,7 +141,7 @@ var render = function() {
       _c("app-header", { attrs: { activeItem: "2" } }),
       _vm._v(" "),
       _c("bread-crumb", {
-        attrs: { icon: "MonitorIcon", text: "patrocinadores" }
+        attrs: { icon: "MonitorIcon", text: _vm.$t("Sponsors") }
       }),
       _vm._v(" "),
       _c(
@@ -189,7 +189,7 @@ var render = function() {
                               staticClass: "cyan-dark contact-btn",
                               attrs: { to: "/fair/contact/" + item.id }
                             },
-                            [_vm._v("contactar")]
+                            [_vm._v(_vm._s(_vm.$t("Contact")))]
                           )
                         ],
                         1
