@@ -10,7 +10,6 @@ class ZoomMeetingController extends Controller
 {
     public function get_users(Request $request) {
 
-
     }
 
     public function all_users(Request $request) {
@@ -32,6 +31,8 @@ class ZoomMeetingController extends Controller
             'password' => 'secret'
         ]);
     }
+
+    
 
     
 }

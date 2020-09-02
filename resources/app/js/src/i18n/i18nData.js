@@ -33,9 +33,10 @@ export default {
     EventDay: 'Events of the Day',
     AllEvent: 'All the Events',
     SeeWebinar: 'See All Webinars',
+    Type: 'Type',
     Reserved: 'Reserved',
     Conference: 'Conference',
-    AddBoard: 'Add to my table',
+    AddBoard: 'Add to my board',
     Start: 'Start',
     See: 'See',
     Download: 'Download',
@@ -72,8 +73,8 @@ export default {
     Appointment: 'Appointment',
     MyTable: 'My Table',
     Event: 'Events',
-    Day: 'of the day',
-    Everyone: 'Everyone',
+    Day: 'of Today',
+    Everyone: 'All',
     Available: 'Available',
     Upload: 'Upload',
     MaxSize: 'Maximum size',
@@ -122,7 +123,7 @@ export default {
     GeneralInfo: 'General information',
     MyInterest: 'My Interest',
     WelcomeMsg: 'Welcome to the User Registration',
-    SelectPassword: 'Select a Password',
+    SelectPassword: 'Password',
     ConfirmPassword: 'Confirm a Password',
     AddLogo: 'Add Photo or Logo',
     Attach: 'Attach',
@@ -172,7 +173,9 @@ export default {
     MyAppointment: 'My Appointments',
     ContactInfo: "Contact information saved correctly.",
     CompanyName: 'Company Name',
-    InsertCompanyInfo: 'Please fill in the information about your company.'
+    InsertCompanyInfo: 'Please fill in the information about your company.',
+    PasswordValidator: 'Password (greater than 8 characters and must contain upper and lower case)',
+    ConfirmValidator: 'It should be the same as the password'
 
   },
   es: {
@@ -208,9 +211,10 @@ export default {
     EventDay: 'Eventos del día',
     AllEvent: 'Todos los eventos',
     SeeWebinar: 'VER TODOS LOS WEBINARS', 
+    Type: 'Tipo',
     Reserved: 'Reservado',
     Conference: 'CONFERENCIA',
-    AddBoard: 'Agregar a mi cuenta',
+    AddBoard: 'Agregar a mi tablero',
     Start: 'INICIAR',
     See: 'Ver',
     Download: 'Descargar',
@@ -297,7 +301,7 @@ export default {
     GeneralInfo: 'Información General',
     MyInterest: 'ME INTERESA',
     WelcomeMsg: 'Bienvenido al registro de usuario para',
-    SelectPassword: 'Contraseña (mayor a 8 caracteres y debe contener mayúsculas y minúsculas)',
+    SelectPassword: 'Contraseña',
     ConfirmPassword: 'Repita la contraseña',
     AddLogo: 'Agregar fotografía o logotipo',
     Attach: 'Adjuntar',
@@ -347,6 +351,8 @@ export default {
     MyAppointment: 'Mis citas',
     ContactInfo: 'Información de contacto guardada correctamente.',
     CompanyName: '  Nombre de la Empresa',
-    InsertCompanyInfo: 'Por favor complete la información sobre su empresa'
+    InsertCompanyInfo: 'Por favor complete la información sobre su empresa',
+    PasswordValidator: 'Contraseña (más de 8 caracteres y debe contener mayúsculas y minúsculas)',
+    ConfirmValidator: 'Debe ser la misma que la contraseña.'
   }
 }

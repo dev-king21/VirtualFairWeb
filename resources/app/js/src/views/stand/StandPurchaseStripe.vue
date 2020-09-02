@@ -82,7 +82,6 @@ export default {
         return false
       }
       return true
-
     },
     includeStripe (URL, callback) {
       const documentTag = document
@@ -155,8 +154,8 @@ export default {
         //this.loadPaymentMethods()
         this.$loading.hide(this)
         this.$vs.notify({
-          title: $t('Success'),
-          text: $t('PaymentMsg'),
+          title: this.$t('Success'),
+          text: this.$t('PaymentMsg'),
           color: 'success',
           iconPack: 'feather',
           icon: 'icon-alert-circle'

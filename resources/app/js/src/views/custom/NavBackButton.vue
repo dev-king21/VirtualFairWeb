@@ -1,7 +1,7 @@
 <template>
     <vs-button class="back-btn mb-6 text-center text-white" @click="$router.back()" color="black">
         <feather-icon svgClasses="w-6 h-6" icon="ArrowLeftIcon"></feather-icon>
-        <div class="back-text">{{$t('Return')}}</div>
+        <div class="back-text uppercase">{{$t('Return')}}</div>
     </vs-button>
 </template>
 <style lang="scss">

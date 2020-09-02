@@ -8,7 +8,10 @@ import store from './store/store'
 import i18n from './i18n/i18n'
 import VueClipboard from 'vue-clipboard2'
 // import VueTour from 'vue-tour'
-import VeeValidate from 'vee-validate'
+import VeeValidate, {Validator} from 'vee-validate'
+import en from 'vee-validate/dist/locale/en'
+import es from 'vee-validate/dist/locale/es'
+
 import * as VueGoogleMaps from 'vue2-google-maps'
 import { VueHammer } from 'vue2-hammer'
 import VueLazyLoad from 'vue-lazyload'
@@ -44,6 +47,9 @@ Vue.use(VueGoogleMaps, {
 // Vuejs - Vue wrapper for hammerjs
 Vue.use(VueHammer)
 Vue.config.productionTip = false
+let lang = localStorage.getItem('language')
+if (!lang) lang = 'en'
+Validator.localize(lang, (lang === 'en') ? en : es)
 
 new Vue({
   router,

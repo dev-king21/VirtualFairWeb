@@ -1,5 +1,5 @@
 <template>
-<vs-navbar v-model="active_item" class="flex flex-end">
+<vs-navbar class="flex flex-end">
     <div slot="title">
       <vs-navbar-title class="flex items-center">
         <router-link to="/home" >

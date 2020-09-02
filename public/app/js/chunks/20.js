@@ -14,10 +14,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vuejs_datepicker__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! vuejs-datepicker */ "./node_modules/vuejs-datepicker/dist/vuejs-datepicker.esm.js");
 /* harmony import */ var _views_custom_BreadCrumb_vue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/views/custom/BreadCrumb.vue */ "./resources/app/js/src/views/custom/BreadCrumb.vue");
 /* harmony import */ var _WebinarCard_vue__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./WebinarCard.vue */ "./resources/app/js/src/views/room/WebinarCard.vue");
-/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
-/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
-/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! vue-select */ "./node_modules/vue-select/dist/vue-select.js");
+/* harmony import */ var vue_select__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(vue_select__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! swiper/dist/css/swiper.min.css */ "./node_modules/swiper/dist/css/swiper.min.css");
+/* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
+/* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_7__);
 //
 //
 //
@@ -83,6 +85,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+
 
 
 
@@ -97,11 +102,40 @@ __webpack_require__.r(__webpack_exports__);
     BreadCrumb: _views_custom_BreadCrumb_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     Datepicker: vuejs_datepicker__WEBPACK_IMPORTED_MODULE_2__["default"],
     WebinarCard: _WebinarCard_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
-    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_6__["swiper"],
-    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_6__["swiperSlide"]
+    vSelect: vue_select__WEBPACK_IMPORTED_MODULE_5___default.a,
+    swiper: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_7__["swiper"],
+    swiperSlide: vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_7__["swiperSlide"]
   },
   data: function data() {
     return {
+      categories: [{
+        id: 0,
+        label: this.$t('Category')
+      }, {
+        id: 1,
+        label: this.$t('Reserved')
+      }, {
+        id: 2,
+        label: this.$t('Seen')
+      }],
+      types: [{
+        id: 0,
+        label: this.$t('Type')
+      }, {
+        id: 1,
+        label: this.$t('Live')
+      }, {
+        id: 2,
+        label: this.$t('Recorded')
+      }],
+      selected_type: {
+        id: 0,
+        label: this.$t('Type')
+      },
+      selected_category: {
+        id: 0,
+        label: this.$t('Category')
+      },
       webinars: [],
       ads_list: [],
       swiperOption: {
@@ -123,9 +157,50 @@ __webpack_require__.r(__webpack_exports__);
       }
     };
   },
+  computed: {
+    webinar_count: function webinar_count() {
+      var _this = this;
+
+      var count = 0;
+
+      if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.webinars) {
+        if (this.selected_type_id === 0) {
+          count += this.webinars.length;
+        } else {
+          count += this.webinars.filter(function (it) {
+            return it.live === _this.selected_type_id;
+          }).length;
+        }
+      }
+
+      return count;
+    },
+    filtered_webinars: function filtered_webinars() {
+      var _this2 = this;
+
+      if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.webinars) {
+        if (this.selected_type_id === 0) {
+          return this.webinars;
+        } else {
+          return this.webinars.filter(function (it) {
+            return it.live === _this2.selected_type_id;
+          });
+        }
+      }
+
+      return [];
+    },
+    selected_cat_id: function selected_cat_id() {
+      if (this.selected_category) return this.selected_category.id;
+      return 0;
+    },
+    selected_type_id: function selected_type_id() {
+      if (this.selected_type) return this.selected_type.id;
+      return 0;
+    }
+  },
   methods: {
     period: function period(start_time, end_time) {
-      console.log(start_time, end_time);
       if (start_time === null || end_time === null) return '';
       var sd = this.$date.timeFormat(start_time);
       var ed = this.$date.timeFormat(end_time);
@@ -135,26 +210,26 @@ __webpack_require__.r(__webpack_exports__);
       this.$router.push("/room/webinar/".concat(id));
     },
     addToBoard: function addToBoard(id) {
-      var _this = this;
+      var _this3 = this;
 
       this.$loading.show(this);
       this.$http.post('/api/room/webinar/add_to_board', {
         _id: id
       }).then(function (response) {
-        _this.$loading.hide(_this);
+        _this3.$loading.hide(_this3);
 
         if (response.data.status === 'ok') {
-          _this.$vs.notify({
-            title: _this.$t('Success'),
-            text: _this.$t('SuccessMessage'),
+          _this3.$vs.notify({
+            title: _this3.$t('Success'),
+            text: _this3.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
-          _this.$vs.notify({
-            title: _this.$t('Error'),
-            text: _this.$t('FailMessage'),
+          _this3.$vs.notify({
+            title: _this3.$t('Error'),
+            text: _this3.$t('FailMessage'),
             color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
@@ -164,18 +239,17 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
-    var _this2 = this;
+    var _this4 = this;
 
     this.$loading.show(this);
     this.$http.post('/api/room/webinar').then(function (response) {
-      _this2.$loading.hide(_this2);
+      _this4.$loading.hide(_this4);
 
       var data = response.data;
-      _this2.webinars = data.webinars;
-      console.log(_this2.webinars);
+      _this4.webinars = data.webinars;
     });
     this.$http.post('/api/stand/ads/get').then(function (res) {
-      _this2.ads_list = res.data.ads;
+      _this4.ads_list = res.data.ads;
     });
   }
 });
@@ -303,7 +377,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, "[dir] .room-webinar-main .page-content {\n  background: white;\n}\n.room-webinar-main .page-content .event-panel {\n  font-size: 0.8rem;\n  font-weight: 900;\n  min-height: calc(var(--vh, 1vh) * 100 - 150px);\n}\n[dir] .room-webinar-main .page-content .event-panel {\n  padding: 0 !important;\n}\n[dir] .room-webinar-main .page-content .event-panel .chevron-border {\n  border: 1px solid #f2f2f2;\n  border-radius: 0.5rem;\n  padding: 0.4rem;\n}\n.room-webinar-main .page-content .event-los-panel {\n  font-size: 0.8rem;\n  font-weight: 900;\n  min-height: calc(var(--vh, 1vh) * 100 - 150px);\n}\n[dir] .room-webinar-main .page-content .event-los-panel {\n  padding: 0 !important;\n}\n[dir] .room-webinar-main .vx-row {\n  margin: 0 !important;\n}\n[dir] .room-webinar-main .vx-col {\n  padding: 0 !important;\n}", ""]);
+exports.push([module.i, "[dir] .room-webinar-main .page-content {\n  background: white;\n}\n.room-webinar-main .page-content .event-panel {\n  font-size: 0.8rem;\n  font-weight: 900;\n  min-height: calc(var(--vh, 1vh) * 100 - 162px);\n}\n[dir] .room-webinar-main .page-content .event-panel {\n  padding: 0 !important;\n}\n[dir] .room-webinar-main .page-content .event-panel .chevron-border {\n  border: 1px solid #f2f2f2;\n  border-radius: 0.5rem;\n  padding: 0.4rem;\n}\n.room-webinar-main .page-content .event-los-panel {\n  font-size: 0.8rem;\n  font-weight: 900;\n  min-height: calc(var(--vh, 1vh) * 100 - 162px);\n}\n[dir] .room-webinar-main .page-content .event-los-panel {\n  padding: 0 !important;\n}\n[dir] .room-webinar-main .vx-row {\n  margin: 0 !important;\n}\n[dir] .room-webinar-main .vx-col {\n  padding: 0 !important;\n}", ""]);
 
 // exports
 
@@ -322,7 +396,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".room-webinar-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .room-webinar-card {\n  background: white;\n  margin: 1rem;\n}\n.room-webinar-card .user-img {\n  height: 4rem !important;\n  width: 4rem !important;\n}\n[dir] .room-webinar-card .user-img {\n  border-radius: 50%;\n  background-color: #33333399;\n}\n.room-webinar-card .event-btn {\n  font-size: 0.85rem !important;\n}\n[dir] .room-webinar-card .event-btn {\n  padding: 1rem 1.2rem !important;\n}\n[dir] .room-webinar-card .event-btn.p-big {\n  padding: 1rem 2rem !important;\n}\n.room-webinar-card .desc-info {\n  font-size: 0.9rem;\n  font-style: italic;\n}\n[dir] .room-webinar-card .desc-info {\n  padding: 0 1rem;\n}\n.room-webinar-card .user-info {\n  font-size: 0.9rem;\n}\n.room-webinar-card .card-over {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  bottom: 0;\n}\n[dir=ltr] .room-webinar-card .card-over {\n  left: 0;\n}\n[dir=rtl] .room-webinar-card .card-over {\n  right: 0;\n}\n[dir] .room-webinar-card .card-over .card-title {\n  background: #33333399;\n  padding: 0.6rem;\n}\n[dir] .card-border {\n  border: 1px solid #F2F2F2;\n}", ""]);
+exports.push([module.i, ".room-webinar-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .room-webinar-card {\n  background: white;\n  margin: 1rem;\n}\n.room-webinar-card .user-img {\n  height: 5rem !important;\n  width: 5rem !important;\n}\n[dir] .room-webinar-card .user-img {\n  border-radius: 50%;\n  background-color: #33333399;\n}\n.room-webinar-card .event-btn {\n  font-size: 0.85rem !important;\n}\n[dir] .room-webinar-card .event-btn {\n  padding: 0.8rem 1.2rem !important;\n}\n[dir] .room-webinar-card .event-btn.p-big {\n  padding: 0.8rem 2rem !important;\n}\n.room-webinar-card .desc-info {\n  font-size: 0.9rem;\n  font-style: italic;\n}\n[dir] .room-webinar-card .desc-info {\n  padding: 0 1rem;\n}\n.room-webinar-card .user-info {\n  font-size: 0.9rem;\n}\n.room-webinar-card .card-over {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  bottom: 0;\n}\n[dir=ltr] .room-webinar-card .card-over {\n  left: 0;\n}\n[dir=rtl] .room-webinar-card .card-over {\n  right: 0;\n}\n[dir] .room-webinar-card .card-over .card-title {\n  background: #33333399;\n  padding: 0.6rem;\n}\n[dir] .card-border {\n  border: 1px solid #F2F2F2;\n}", ""]);
 
 // exports
 
@@ -427,82 +501,87 @@ var render = function() {
                     "vx-col lg:w-3/4 md:w-3/4 sm:w-3/4 xs:w-3/4 px-4 event-panel bg-white"
                 },
                 [
-                  _vm.webinars && _vm.webinars.length != 0
-                    ? _c(
-                        "div",
-                        { staticClass: "p-6 pb-2 flex flex-row items-center" },
+                  _c(
+                    "div",
+                    { staticClass: "p-6 pb-2 flex flex-row items-center" },
+                    [
+                      _c("span", { staticClass: "h6 font-bold" }, [
+                        _vm._v(
+                          "(" +
+                            _vm._s(_vm.webinar_count) +
+                            " " +
+                            _vm._s(_vm.$t("Available")) +
+                            ")"
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass:
+                            "h6 ml-10 flex flex-row items-center ml-2"
+                        },
                         [
-                          _c("span", { staticClass: "h6 font-bold" }, [
-                            _vm._v(
-                              "(" +
-                                _vm._s(_vm.webinars.length) +
-                                " " +
-                                _vm._s(_vm.$t("Available")) +
-                                ")"
-                            )
+                          _c("v-select", {
+                            staticStyle: { width: "200px" },
+                            attrs: { options: _vm.categories },
+                            model: {
+                              value: _vm.selected_category,
+                              callback: function($$v) {
+                                _vm.selected_category = $$v
+                              },
+                              expression: "selected_category"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass: "h6 ml-4 flex flex-row items-center ml-2"
+                        },
+                        [
+                          _c("v-select", {
+                            staticStyle: { width: "160px" },
+                            attrs: { options: _vm.types },
+                            model: {
+                              value: _vm.selected_type,
+                              callback: function($$v) {
+                                _vm.selected_type = $$v
+                              },
+                              expression: "selected_type"
+                            }
+                          })
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "span",
+                        {
+                          staticClass:
+                            "h6 ml-4 flex flex-row items-center ml-2 chevron-border"
+                        },
+                        [
+                          _c("span", { staticClass: "mr-6" }, [
+                            _vm._v(_vm._s(_vm.$t("Exhibitor")))
                           ]),
                           _vm._v(" "),
-                          _c(
-                            "span",
-                            {
-                              staticClass:
-                                "h6 ml-10 flex flex-row items-center ml-2 chevron-border"
-                            },
-                            [
-                              _c("span", { staticClass: "mr-6" }, [
-                                _vm._v(_vm._s(_vm.$t("Category")))
-                              ]),
-                              _vm._v(" "),
-                              _c("feather-icon", {
-                                attrs: { icon: "ChevronRightIcon" }
-                              })
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            {
-                              staticClass:
-                                "h6 ml-4 flex flex-row items-center ml-2 chevron-border"
-                            },
-                            [
-                              _c("span", { staticClass: "mr-6" }, [
-                                _vm._v(_vm._s(_vm.$t("Live")))
-                              ]),
-                              _vm._v(" "),
-                              _c("feather-icon", {
-                                attrs: { icon: "ChevronRightIcon" }
-                              })
-                            ],
-                            1
-                          ),
-                          _vm._v(" "),
-                          _c(
-                            "span",
-                            {
-                              staticClass:
-                                "h6 ml-4 flex flex-row items-center ml-2 chevron-border"
-                            },
-                            [
-                              _c("span", { staticClass: "mr-6" }, [
-                                _vm._v(_vm._s(_vm.$t("Exhibitor")))
-                              ]),
-                              _vm._v(" "),
-                              _c("feather-icon", {
-                                attrs: { icon: "ChevronRightIcon" }
-                              })
-                            ],
-                            1
-                          )
-                        ]
+                          _c("feather-icon", {
+                            attrs: { icon: "ChevronRightIcon" }
+                          })
+                        ],
+                        1
                       )
-                    : _vm._e(),
+                    ]
+                  ),
                   _vm._v(" "),
                   _c(
                     "div",
                     { staticClass: "vx-row" },
-                    _vm._l(_vm.webinars, function(item, index) {
+                    _vm._l(_vm.filtered_webinars, function(item, index) {
                       return _c(
                         "div",
                         {
@@ -758,7 +837,7 @@ var render = function() {
         }),
         _vm._v(" "),
         _c("div", { staticClass: "ml-4 user-info" }, [
-          _c("div", { staticClass: "fs-12 font-bold" }, [
+          _c("div", { staticClass: "fs-10 font-bold" }, [
             _vm._v("Lic. " + _vm._s(_vm.expositor_name))
           ]),
           _vm._v(" "),
@@ -773,7 +852,7 @@ var render = function() {
           _c(
             "vs-button",
             {
-              staticClass: "cyan-dark event-btn uppercase",
+              staticClass: "cyan-dark event-btn uppercase font-bold",
               on: {
                 click: function($event) {
                   return _vm.addToBoard()
@@ -790,7 +869,7 @@ var render = function() {
           _c(
             "vs-button",
             {
-              staticClass: "blue-dark event-btn p-big uppercase",
+              staticClass: "blue-dark event-btn p-big uppercase font-bold",
               on: {
                 click: function($event) {
                   return _vm.showWebinar()

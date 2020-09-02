@@ -7,24 +7,24 @@
                 <div class="vx-row page-content">
                     <div class="vx-col lg:w-3/4 md:w-3/4 sm:w-3/4 xs:w-3/4 px-4 event-panel bg-white">
                         <div class="p-6 pb-2 flex flex-row items-center">
-                            <span class="h6 font-bold">({{webinar_count}} {{$t('Available')}})</span>
+                            <span class="h6 font-bold">({{reserved_webinar_count + past_webinar_count}} {{$t('Available')}})</span>
                             <span class="h6 ml-10 flex flex-row items-center ml-2">
                                 <!-- <span class="mr-6">{{$t('Category')}}</span> <feather-icon icon="ChevronRightIcon" /> -->
                                 <v-select v-model="selected_category" :options="categories" style="width: 200px;"/>
                             </span>
                             <span class="h6 ml-4 flex flex-row items-center ml-2">
-                                <v-select v-model="selected_category" :options="categories" style="width: 160px;"/>
+                                <v-select v-model="selected_type" :options="types" style="width: 160px;"/>
                             </span>
                             <span class="h6 ml-4 flex flex-row items-center ml-2">
                                 <span class="mr-6">{{$t('Exhibitor')}}</span> <feather-icon icon="ChevronRightIcon" />
                             </span>
                         </div>
-                        <div v-if="selected_cat_id === 0 || selected_cat_id === 1">
+                        <div v-if="reserved_webinar_count > 0">
                           <div class="px-8">
                               <h2 class="font-bold my-8 uppercase">{{$t('Reserved')}} Or {{$t('Aggregates')}}</h2>
                           </div>
                           <div class="vx-row" >
-                              <div class="vx-col w-1/3" :key="`all-schedule-${index}`" v-for="(item, index) in reserved_webinars" >
+                              <div class="vx-col w-1/3" :key="`all-schedule-${index}`" v-for="(item, index) in filtered_reserved_webinars" >
                                   <div class="px-2">
                                       <webinar-card 
                                           :reserved="true"
@@ -41,12 +41,12 @@
                               </div>    
                           </div>
                         </div>
-                        <div v-if="selected_cat_id === 0 || selected_cat_id === 2">
+                        <div v-if="past_webinar_count > 0">
                           <div class="px-8">
                               <h2 class="font-bold uppercase my-8">{{$t('Seen')}} </h2>
                           </div>
                           <div class="vx-row" >
-                              <div class="vx-col w-1/3" :key="`all-schedule-${index}`" v-for="(item, index) in past_webinars" >
+                              <div class="vx-col w-1/3" :key="`all-schedule-${index}`" v-for="(item, index) in filtered_past_webinars" >
                                   <div class="px-2">
                                       <webinar-card 
                                           :workdate="item.talk.talk_date"
@@ -116,9 +116,15 @@ export default {
       past_webinars: [],
       categories: [
         {id: 0, label: this.$t('Category')},
+        {id: 1, label: this.$t('Reserved')},
+        {id: 2, label: this.$t('Seen')}
+      ],
+      types: [
+        {id: 0, label: this.$t('Type')},
         {id: 1, label: this.$t('Live')},
         {id: 2, label: this.$t('Recorded')}
       ],
+      selected_type: {id: 0, label: this.$t('Type')},
       selected_category: {id: 0, label: this.$t('Category')},
       ads_list: [],
       swiperOption: {
@@ -142,26 +148,65 @@ export default {
   },
   computed: {
     available () {
-      return  ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars && this.reserved_webinars.length !== 0) || 
-              ((this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars && this.past_webinars.length !== 0)
+      return (this.reserved_webinar_count + this.past_webinar_count) > 0
     },
-    webinar_count () {
+    reserved_webinar_count () {
       let count = 0
-      if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars) count += this.reserved_webinars.length
-      if ((this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars) count += this.past_webinars.length
+      if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars) {
+        if (this.selected_type_id === 0) {
+          count += this.reserved_webinars.length
+        } else {
+          count += this.reserved_webinars.filter((it) => it.talk.live === this.selected_type_id).length
+        }
+      }
       return count
+    },
+    past_webinar_count () {
+      let count = 0
+      if ((this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars) {
+        if (this.selected_type_id === 0) {
+          count += this.past_webinars.length
+        } else {
+          count += this.past_webinars.filter((it) => it.talk.live === this.selected_type_id).length
+        }
+      }
+      return count
+    },
+    filtered_reserved_webinars () {
+      if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars) {
+        if (this.selected_type_id === 0) {
+          return this.reserved_webinars
+        } else {
+          return this.reserved_webinars.filter((it) => it.talk.live === this.selected_type_id)
+        }
+      }
+      return []
+    },
+    filtered_past_webinars () {
+      if ((this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars) {
+        if (this.selected_type_id === 0) {
+          return this.past_webinars
+        } else {
+          return this.past_webinars.filter((it) => it.talk.live === this.selected_type_id)
+        }
+      }
+      return []
     },
     selected_cat_id () {
       if (this.selected_category) return this.selected_category.id
+      return 0
+    },
+    selected_type_id () {
+      if (this.selected_type) return this.selected_type.id
       return 0
     }
   },
   methods: {
     period (start_time, end_time) {
       if (start_time === null || end_time === null) return ''
-      const sd = this.$date.timeFormat(start_time)
-      const ed = this.$date.timeFormat(end_time)  
-      return `${sd} - ${ed}`  
+      const st = this.$date.timeFormat(start_time)
+      const et = this.$date.timeFormat(end_time)  
+      return `${st} - ${et}`  
     }  
   },
   created () {
@@ -171,7 +216,6 @@ export default {
       .then((response) => {
         this.$loading.hide(this)
         const data = response.data
-        console.log(data)
         this.reserved_webinars = data.reserved_webinars
         this.past_webinars = data.past_webinars
       })

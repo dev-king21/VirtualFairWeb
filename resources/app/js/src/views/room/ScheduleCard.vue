@@ -2,7 +2,7 @@
     <div class="room-schedule-card" :class="{'card-border': !noborder}">
         <div class="flex reserved">
             <template v-if="reserved">
-                <span class="text-white font-normal">{{$t('Reserved')}}</span>
+                <span class="text-white uppercase font-normal">{{$t('Reserved')}}</span>
             </template>
         </div>
         <div class="flex flex-row justify-between items-center mt-2">
@@ -31,10 +31,10 @@
             </div>
         </div>
         <div class="flex flex-row justify-between items-center mt-4">
-            <vs-button class="cyan-light event-btn uppercase" @click="addToBoard">
+            <vs-button class="cyan-light event-btn uppercase font-bold" @click="addToBoard">
                 {{$t('AddBoard')}}
             </vs-button>
-            <vs-button class="blue-light event-btn p-big uppercase" @click="showOrReserve">
+            <vs-button class="blue-light event-btn p-big uppercase font-bold" @click="showOrReserve">
                 {{$t('Start')}}
             </vs-button>
         </div>
@@ -102,9 +102,9 @@ export default {
     font-size: 1rem;
     font-weight: normal;
     .reserved {
-        height: 1.6rem;
+        height: 1.75rem;
         span {
-            font-size: 0.6rem;
+            font-size: 0.75rem;
             padding: 0.5rem;
             background: #FFC700
         }
@@ -113,8 +113,8 @@ export default {
     .user-img {
         border-radius: 50%;
         background-color: #33333355;
-        height: 4rem !important;
-        width: 4rem!important;
+        height: 5rem !important;
+        width: 5rem!important;
     }
 
     .event-btn {

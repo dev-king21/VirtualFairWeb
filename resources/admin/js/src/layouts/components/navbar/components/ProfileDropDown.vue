@@ -2,13 +2,13 @@
   <div class="the-navbar__user-meta flex items-center" v-if="activeUserInfo">
 
     
-    <vs-dropdown vs-custom-content vs-trigger-click class="cursor-pointer">
-      <div class="text-right leading-tight hidden sm:block">
-        <p class="font-semibold">{{ activeUserInfo.first_name }} {{ activeUserInfo.last_name }}</p>
+    <vs-dropdown vs-custom-content vs-trigger-click class="cursor-pointer flex items-center">
+      <div class="con-img mr-3">
+        <img v-if="activeUserInfo.avatar" key="onlineImg" :src="`/fair_image/${activeUserInfo.avatar}`" alt="user-img" width="40" height="40" class="rounded-full shadow-md cursor-pointer block" />
       </div>
-
-      <div class="con-img ml-3">
-        <img v-if="activeUserInfo.avatar" key="onlineImg" :src="`/fair_image/${avatar}`" alt="user-img" width="40" height="40" class="rounded-full shadow-md cursor-pointer block" />
+      
+      <div class="leading-tight hidden sm:block">
+        <p class="font-semibold">{{ activeUserInfo.first_name }} {{ activeUserInfo.last_name }}</p>
       </div>
 
       <vs-dropdown-menu class="vx-navbar-dropdown">

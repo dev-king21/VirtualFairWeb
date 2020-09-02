@@ -287,7 +287,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".room-schedule-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .room-schedule-card {\n  background: white;\n  margin: 1rem;\n}\n.room-schedule-card .reserved {\n  height: 1.6rem;\n}\n.room-schedule-card .reserved span {\n  font-size: 0.6rem;\n}\n[dir] .room-schedule-card .reserved span {\n  padding: 0.5rem;\n  background: #FFC700;\n}\n.room-schedule-card .user-img {\n  height: 4rem !important;\n  width: 4rem !important;\n}\n[dir] .room-schedule-card .user-img {\n  border-radius: 50%;\n  background-color: #33333355;\n}\n.room-schedule-card .event-btn {\n  font-size: 0.85rem !important;\n}\n[dir] .room-schedule-card .event-btn {\n  padding: 0.9rem 1.2rem !important;\n}\n[dir] .room-schedule-card .event-btn.p-big {\n  padding: 0.9rem 2rem !important;\n}\n.room-schedule-card .desc-info {\n  font-size: 0.9rem;\n  font-style: italic;\n}\n[dir] .room-schedule-card .desc-info {\n  padding: 0 1rem;\n}\n.room-schedule-card .user-info {\n  font-size: 0.9rem;\n}\n[dir] .card-border {\n  border: 1px solid #E2E2E2;\n}", ""]);
+exports.push([module.i, ".room-schedule-card {\n  font-size: 1rem;\n  font-weight: normal;\n}[dir] .room-schedule-card {\n  background: white;\n  margin: 1rem;\n}\n.room-schedule-card .reserved {\n  height: 1.75rem;\n}\n.room-schedule-card .reserved span {\n  font-size: 0.75rem;\n}\n[dir] .room-schedule-card .reserved span {\n  padding: 0.5rem;\n  background: #FFC700;\n}\n.room-schedule-card .user-img {\n  height: 5rem !important;\n  width: 5rem !important;\n}\n[dir] .room-schedule-card .user-img {\n  border-radius: 50%;\n  background-color: #33333355;\n}\n.room-schedule-card .event-btn {\n  font-size: 0.85rem !important;\n}\n[dir] .room-schedule-card .event-btn {\n  padding: 0.9rem 1.2rem !important;\n}\n[dir] .room-schedule-card .event-btn.p-big {\n  padding: 0.9rem 2rem !important;\n}\n.room-schedule-card .desc-info {\n  font-size: 0.9rem;\n  font-style: italic;\n}\n[dir] .room-schedule-card .desc-info {\n  padding: 0 1rem;\n}\n.room-schedule-card .user-info {\n  font-size: 0.9rem;\n}\n[dir] .card-border {\n  border: 1px solid #E2E2E2;\n}", ""]);
 
 // exports
 
@@ -581,9 +581,11 @@ var render = function() {
         [
           _vm.reserved
             ? [
-                _c("span", { staticClass: "text-white font-normal" }, [
-                  _vm._v(_vm._s(_vm.$t("Reserved")))
-                ])
+                _c(
+                  "span",
+                  { staticClass: "text-white uppercase font-normal" },
+                  [_vm._v(_vm._s(_vm.$t("Reserved")))]
+                )
               ]
             : _vm._e()
         ],
@@ -663,7 +665,7 @@ var render = function() {
           _c(
             "vs-button",
             {
-              staticClass: "cyan-light event-btn uppercase",
+              staticClass: "cyan-light event-btn uppercase font-bold",
               on: { click: _vm.addToBoard }
             },
             [
@@ -676,7 +678,7 @@ var render = function() {
           _c(
             "vs-button",
             {
-              staticClass: "blue-light event-btn p-big uppercase",
+              staticClass: "blue-light event-btn p-big uppercase font-bold",
               on: { click: _vm.showOrReserve }
             },
             [_vm._v("\n            " + _vm._s(_vm.$t("Start")) + "\n        ")]

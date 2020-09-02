@@ -24,15 +24,15 @@
         <div class="flex flex-row items-center mt-3 px-4">
             <img class="user-img" :src="`/fair_image/${user_img ? user_img : 'placeholder.png'}`"/>
             <div class="ml-4 user-info">
-                <div class="fs-12 font-bold">Lic. {{expositor_name}}</div>
+                <div class="fs-10 font-bold">Lic. {{expositor_name}}</div>
                 <div>{{expositor_profession}}</div>
             </div>
         </div>
         <div class="flex flex-row justify-between items-center mt-6">
-            <vs-button @click="addToBoard()" class="cyan-dark event-btn uppercase">
+            <vs-button @click="addToBoard()" class="cyan-dark event-btn uppercase font-bold">
                 {{$t('AddBoard')}}
             </vs-button>
-            <vs-button class="blue-dark event-btn p-big uppercase" @click="showWebinar()">
+            <vs-button class="blue-dark event-btn p-big uppercase font-bold" @click="showWebinar()">
                 {{$t('See')}}
             </vs-button>
         </div>
@@ -107,17 +107,17 @@ export default {
     .user-img {
         border-radius: 50%;
         background-color: #33333399;
-        height: 4rem !important;
-        width: 4rem !important;
+        height: 5rem !important;
+        width: 5rem !important;
     }
 
     .event-btn {
         font-size: 0.85rem !important;
-        padding: 1rem 1.2rem !important;
+        padding: 0.8rem 1.2rem !important;
     }
     
     .event-btn.p-big {
-        padding: 1rem 2rem !important;
+        padding: 0.8rem 2rem !important;
     } 
     
     .desc-info {

@@ -140,11 +140,25 @@ __webpack_require__.r(__webpack_exports__);
         label: this.$t('Category')
       }, {
         id: 1,
+        label: this.$t('Reserved')
+      }, {
+        id: 2,
+        label: this.$t('Seen')
+      }],
+      types: [{
+        id: 0,
+        label: this.$t('Type')
+      }, {
+        id: 1,
         label: this.$t('Live')
       }, {
         id: 2,
         label: this.$t('Recorded')
       }],
+      selected_type: {
+        id: 0,
+        label: this.$t('Type')
+      },
       selected_category: {
         id: 0,
         label: this.$t('Category')
@@ -171,42 +185,103 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     available: function available() {
-      return (this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars && this.reserved_webinars.length !== 0 || (this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars && this.past_webinars.length !== 0;
+      return this.reserved_webinar_count + this.past_webinar_count > 0;
     },
-    webinar_count: function webinar_count() {
+    reserved_webinar_count: function reserved_webinar_count() {
+      var _this = this;
+
       var count = 0;
-      if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars) count += this.reserved_webinars.length;
-      if ((this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars) count += this.past_webinars.length;
+
+      if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars) {
+        if (this.selected_type_id === 0) {
+          count += this.reserved_webinars.length;
+        } else {
+          count += this.reserved_webinars.filter(function (it) {
+            return it.talk.live === _this.selected_type_id;
+          }).length;
+        }
+      }
+
       return count;
+    },
+    past_webinar_count: function past_webinar_count() {
+      var _this2 = this;
+
+      var count = 0;
+
+      if ((this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars) {
+        if (this.selected_type_id === 0) {
+          count += this.past_webinars.length;
+        } else {
+          count += this.past_webinars.filter(function (it) {
+            return it.talk.live === _this2.selected_type_id;
+          }).length;
+        }
+      }
+
+      return count;
+    },
+    filtered_reserved_webinars: function filtered_reserved_webinars() {
+      var _this3 = this;
+
+      if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars) {
+        if (this.selected_type_id === 0) {
+          return this.reserved_webinars;
+        } else {
+          return this.reserved_webinars.filter(function (it) {
+            return it.talk.live === _this3.selected_type_id;
+          });
+        }
+      }
+
+      return [];
+    },
+    filtered_past_webinars: function filtered_past_webinars() {
+      var _this4 = this;
+
+      if ((this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars) {
+        if (this.selected_type_id === 0) {
+          return this.past_webinars;
+        } else {
+          return this.past_webinars.filter(function (it) {
+            return it.talk.live === _this4.selected_type_id;
+          });
+        }
+      }
+
+      return [];
     },
     selected_cat_id: function selected_cat_id() {
       if (this.selected_category) return this.selected_category.id;
+      return 0;
+    },
+    selected_type_id: function selected_type_id() {
+      if (this.selected_type) return this.selected_type.id;
       return 0;
     }
   },
   methods: {
     period: function period(start_time, end_time) {
       if (start_time === null || end_time === null) return '';
-      var sd = this.$date.timeFormat(start_time);
-      var ed = this.$date.timeFormat(end_time);
-      return "".concat(sd, " - ").concat(ed);
+      var st = this.$date.timeFormat(start_time);
+      var et = this.$date.timeFormat(end_time);
+      return "".concat(st, " - ").concat(et);
     }
   },
   created: function created() {
-    var _this = this;
+    var _this5 = this;
 
     this.me = JSON.parse(localStorage.getItem('userInfo'));
     this.$loading.show(this);
     this.$http.post('/api/setting/webinar').then(function (response) {
-      _this.$loading.hide(_this);
+      _this5.$loading.hide(_this5);
 
       var data = response.data;
-      console.log(data);
-      _this.reserved_webinars = data.reserved_webinars;
-      _this.past_webinars = data.past_webinars;
+      _this5.reserved_webinars = data.reserved_webinars;
+      _this5.past_webinars = data.past_webinars;
     });
     this.$http.post('/api/stand/ads/get').then(function (res) {
-      _this.ads_list = res.data.ads;
+      _this5.ads_list = res.data.ads;
     });
   }
 });
@@ -307,7 +382,10 @@ var render = function() {
                       _c("span", { staticClass: "h6 font-bold" }, [
                         _vm._v(
                           "(" +
-                            _vm._s(_vm.webinar_count) +
+                            _vm._s(
+                              _vm.reserved_webinar_count +
+                                _vm.past_webinar_count
+                            ) +
                             " " +
                             _vm._s(_vm.$t("Available")) +
                             ")"
@@ -344,13 +422,13 @@ var render = function() {
                         [
                           _c("v-select", {
                             staticStyle: { width: "160px" },
-                            attrs: { options: _vm.categories },
+                            attrs: { options: _vm.types },
                             model: {
-                              value: _vm.selected_category,
+                              value: _vm.selected_type,
                               callback: function($$v) {
-                                _vm.selected_category = $$v
+                                _vm.selected_type = $$v
                               },
-                              expression: "selected_category"
+                              expression: "selected_type"
                             }
                           })
                         ],
@@ -376,7 +454,7 @@ var render = function() {
                     ]
                   ),
                   _vm._v(" "),
-                  _vm.selected_cat_id === 0 || _vm.selected_cat_id === 1
+                  _vm.reserved_webinar_count > 0
                     ? _c("div", [
                         _c("div", { staticClass: "px-8" }, [
                           _c(
@@ -395,7 +473,10 @@ var render = function() {
                         _c(
                           "div",
                           { staticClass: "vx-row" },
-                          _vm._l(_vm.reserved_webinars, function(item, index) {
+                          _vm._l(_vm.filtered_reserved_webinars, function(
+                            item,
+                            index
+                          ) {
                             return _c(
                               "div",
                               {
@@ -438,7 +519,7 @@ var render = function() {
                       ])
                     : _vm._e(),
                   _vm._v(" "),
-                  _vm.selected_cat_id === 0 || _vm.selected_cat_id === 2
+                  _vm.past_webinar_count > 0
                     ? _c("div", [
                         _c("div", { staticClass: "px-8" }, [
                           _c(
@@ -451,7 +532,10 @@ var render = function() {
                         _c(
                           "div",
                           { staticClass: "vx-row" },
-                          _vm._l(_vm.past_webinars, function(item, index) {
+                          _vm._l(_vm.filtered_past_webinars, function(
+                            item,
+                            index
+                          ) {
                             return _c(
                               "div",
                               {

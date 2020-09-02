@@ -6648,38 +6648,34 @@ var render = function() {
           _c(
             "vs-dropdown",
             {
-              staticClass: "cursor-pointer",
+              staticClass: "cursor-pointer flex items-center",
               attrs: { "vs-custom-content": "", "vs-trigger-click": "" }
             },
             [
-              _c(
-                "div",
-                { staticClass: "text-right leading-tight hidden sm:block" },
-                [
-                  _c("p", { staticClass: "font-semibold" }, [
-                    _vm._v(
-                      _vm._s(_vm.activeUserInfo.first_name) +
-                        " " +
-                        _vm._s(_vm.activeUserInfo.last_name)
-                    )
-                  ])
-                ]
-              ),
-              _vm._v(" "),
-              _c("div", { staticClass: "con-img ml-3" }, [
+              _c("div", { staticClass: "con-img mr-3" }, [
                 _vm.activeUserInfo.avatar
                   ? _c("img", {
                       key: "onlineImg",
                       staticClass:
                         "rounded-full shadow-md cursor-pointer block",
                       attrs: {
-                        src: "/fair_image/" + _vm.avatar,
+                        src: "/fair_image/" + _vm.activeUserInfo.avatar,
                         alt: "user-img",
                         width: "40",
                         height: "40"
                       }
                     })
                   : _vm._e()
+              ]),
+              _vm._v(" "),
+              _c("div", { staticClass: "leading-tight hidden sm:block" }, [
+                _c("p", { staticClass: "font-semibold" }, [
+                  _vm._v(
+                    _vm._s(_vm.activeUserInfo.first_name) +
+                      " " +
+                      _vm._s(_vm.activeUserInfo.last_name)
+                  )
+                ])
               ]),
               _vm._v(" "),
               _c("vs-dropdown-menu", { staticClass: "vx-navbar-dropdown" }, [

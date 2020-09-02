@@ -30,14 +30,16 @@
                 </div>
                 <div class="vx-row px-20">
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-full" color="success" :placeholder="$t('FirstName')" name="Nombre"
+                        <vs-input class="w-full" color="success" :placeholder="$t('FirstName')" name="FirstName"
                             v-validate="'required'" data-vv-validate-on="blur" v-model="user.first_name"/>
-                        <span class="text-danger text-sm">{{ errors.first('Nombre') }}</span>
+                        <span class="text-danger text-sm">{{ errors.first('FirstName') && errors.first('FirstName').replace('FirstName', $t('FirstName')) }}</span>
+
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-full" color="success" :placeholder="$t('LastName')" name="Apellido"
+                        <vs-input class="w-full" color="success" :placeholder="$t('LastName')" name="LastName"
                             v-validate="'required'" data-vv-validate-on="blur"  v-model="user.last_name"/>
-                        <span class="text-danger text-sm">{{ errors.first('Apellido') }}</span>
+                        <span class="text-danger text-sm">{{ errors.first('LastName')  && errors.first('LastName').replace('LastName', $t('LastName'))}}</span>
+
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
                         <vs-input class="w-full" color="success" placeholder="Email" name="Email"
@@ -45,41 +47,46 @@
                         <span class="text-danger text-sm">{{ errors.first('Email') }}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-full" color="success" :placeholder="$t('Phone')" name="Telefono" 
+                        <vs-input class="w-full" color="success" :placeholder="$t('Phone')" name="Phone" 
                         v-validate="'required|min:8'" data-vv-validate-on="blur" v-model="user.phone"/>
-                        <span class="text-danger text-sm">{{ errors.first('Telefono') }}</span>
+                        <span class="text-danger text-sm">{{ errors.first('Phone') && errors.first('Phone').replace('Phone', $t('Phone'))}}</span>
+
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-full" color="success" :placeholder="$t('Company')" name="Compania" 
+                        <vs-input class="w-full" color="success" :placeholder="$t('Company')" name="Company" 
                             v-validate="'required'" data-vv-validate-on="blur" v-model="user.company"/>
-                        <span class="text-danger text-sm">{{ errors.first('Compania') }}</span>
+                        <span class="text-danger text-sm">{{ errors.first('Company') && errors.first('Company').replace('Company', $t('Company'))}}</span>
+
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
-                        <vs-input class="w-full" color="success" :placeholder="$t('Position')" name="Posicion" 
+                        <vs-input class="w-full" color="success" :placeholder="$t('Position')" name="Position" 
                         v-validate="'required'" data-vv-validate-on="blur" v-model="user.address"/>
-                        <span class="text-danger text-sm">{{ errors.first('Posicion') }}</span>
+                        <span class="text-danger text-sm">{{ errors.first('Position') && errors.first('Position').replace('Position', $t('Position'))}}</span>
+
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
                         <vs-input class="w-full" type="password" color="success" :placeholder="$t('SelectPassword')" name="constrasena"
-                        v-validate="'required|min:8'" data-vv-validate-on="blur"  v-model="user.password"/>
-                        <span class="text-danger text-sm">{{ errors.first('constrasena') }}</span>
+                         @blur="PasswordValidate"  v-model="user.password"/>
+                        <span class="text-danger text-sm">{{ password_error}}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
                         <vs-input class="w-full" type="password" color="success" :placeholder="$t('ConfirmPassword')" name="contrasena"
-                        v-validate="'required|min:8'" data-vv-validate-on="blur"  v-model="repeat_password"/>
-                        <span class="text-danger text-sm">{{ errors.first('constrasena') }}</span>
+                        @blur="ConfirmValidate"  v-model="repeat_password"/>
+                        <span class="text-danger text-sm">{{ confirm_error}}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
                         <!--vs-input class="w-full" color="success" :placeholder="$t('SelectCountry')" name="Pais"
                         v-validate="'required'" data-vv-validate-on="blur"  v-model="user.country"/-->
                         <v-select v-model="selected_country" @input="setUserCountry" :options="countries"/> 
-                        <span class="text-danger text-sm">{{ errors.first('Pais') }}</span>
+                        <span class="text-danger text-sm">{{ errors.first('Country') && errors.first('Country').replace('Country', $t('Country'))}}</span>
+
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
                         <!--vs-input class="w-full" color="success" :placeholder="$t('SelectRegion')" name="Region"
                         v-validate="'required'" data-vv-validate-on="blur"  v-model="user.region"/-->
                         <v-select v-model="selected_region" @input="setUserRegion" :options="regions.filter((it) => it.country_id === selected_country.id)"/> 
-                        <span class="text-danger text-sm">{{ errors.first('Region') }}</span>
+                        <span class="text-danger text-sm">{{ errors.first('Region') && errors.first('Region').replace('Region', $t('Region'))}}</span>
+
                     </div>
                     <div class="vx-col w-full my-4">
                         <div class="flex items-center">
@@ -135,13 +142,13 @@ export default {
       countries: [],
       regions: [],
       selected_country: undefined,
-      selected_region: undefined
+      selected_region: undefined,
+      password_error: '',
+      confirm_error: ''
     }
   },
   computed: {
     validateForm () {
-      console.log("password", this.selected_country)
-      console.log("confirm", this.selected_region)
       return !this.errors.any() && 
             this.user.email !== '' && 
             this.user.password !== '' &&
@@ -265,7 +272,18 @@ export default {
     previewAvatar (file) {
       this.$refs.refAvatarFile.value = null // fix can't select the same excel
       this.readerData(file)
-    } 
+    },
+    PasswordValidate () {
+      if (!this.user.password || this.user.password.length < 8 || !(/(?=.*[a-z])(?=.*[A-Z])/.test(this.user.password)))
+          this.password_error = this.$t('PasswordValidator')
+      else this.password_error = ''
+    },
+    ConfirmValidate () {
+      if(this.user.password !== this.user.repeat_password)
+        this.confirm_error = this.$t('ConfirmValidator')
+      else
+        this.confirm_error = ''
+    }
   },
   created () {
     if (!moduleAuth.isRegistered) {
@@ -337,7 +355,7 @@ export default {
         input, textarea {
           border-radius: 0 !important;
           font-size: 0.9rem !important;
-          padding: 0.6rem !important;
+          // padding: 0.6rem !important;
         }
         .vs-input--placeholder {
           font-size: 0.9rem !important;

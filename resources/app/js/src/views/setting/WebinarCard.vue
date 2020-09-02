@@ -35,10 +35,10 @@
             </div>
         </div>
         <div class="flex flex-row justify-end items-center mt-2">
-            <vs-button v-show="!reserved" class="cyan-dark event-btn uppercase">
+            <vs-button v-show="!reserved" class="cyan-dark event-btn uppercase font-bold">
                 {{$t('SeeAgain')}}
             </vs-button>
-            <vs-button v-show="reserved" class="blue-dark event-btn p-big uppercase">
+            <vs-button v-show="reserved" class="blue-dark event-btn p-big uppercase font-bold">
                 {{$t('See')}}
             </vs-button>
         </div>
@@ -107,13 +107,13 @@ export default {
 
     .event-btn {
         font-size: 1rem !important;
-        padding: 0.8rem 0.6rem !important;
+        padding: 1rem !important;
         min-width: 9rem !important;
-        margin-top: 0.8rem !important;
+        margin-top: .8rem !important;
     }
 
     .event-btn.p-big {
-        padding: 0.8rem 1.2rem !important;
+        padding: 1rem 2rem !important;
     }
 
     .desc-info {

@@ -291,16 +291,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c(
     "vs-navbar",
-    {
-      staticClass: "flex flex-end",
-      model: {
-        value: _vm.active_item,
-        callback: function($$v) {
-          _vm.active_item = $$v
-        },
-        expression: "active_item"
-      }
-    },
+    { staticClass: "flex flex-end" },
     [
       _c(
         "div",

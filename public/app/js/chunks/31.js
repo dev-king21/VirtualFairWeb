@@ -126,6 +126,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -149,13 +156,13 @@ __webpack_require__.r(__webpack_exports__);
       countries: [],
       regions: [],
       selected_country: undefined,
-      selected_region: undefined
+      selected_region: undefined,
+      password_error: '',
+      confirm_error: ''
     };
   },
   computed: {
     validateForm: function validateForm() {
-      console.log("password", this.selected_country);
-      console.log("confirm", this.selected_region);
       return !this.errors.any() && this.user.email !== '' && this.user.password !== '' && this.repeat_password !== '' && this.repeat_password === this.user.password && this.user.first_name !== '' && this.user.last_name !== '' && this.user.phone !== '' && this.user.address !== '' && this.user.company !== '' && this.selected_country && this.selected_region && this.accept_chk;
     }
   },
@@ -284,6 +291,12 @@ __webpack_require__.r(__webpack_exports__);
       this.$refs.refAvatarFile.value = null; // fix can't select the same excel
 
       this.readerData(file);
+    },
+    PasswordValidate: function PasswordValidate() {
+      if (!this.user.password || this.user.password.length < 8 || !/(?=.*[a-z])(?=.*[A-Z])/.test(this.user.password)) this.password_error = this.$t('PasswordValidator');else this.password_error = '';
+    },
+    ConfirmValidate: function ConfirmValidate() {
+      if (this.user.password !== this.user.repeat_password) this.confirm_error = this.$t('ConfirmValidator');else this.confirm_error = '';
     }
   },
   created: function created() {
@@ -348,7 +361,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../../../node_module
 
 
 // module
-exports.push([module.i, ".watermark {\n  position: fixed;\n  bottom: 20px;\n  width: 100%;\n}[dir] .watermark {\n  margin: auto;\n}[dir=ltr] .watermark {\n  text-align: right;\n  padding-right: 30px;\n}[dir=rtl] .watermark {\n  text-align: left;\n  padding-left: 30px;\n}\n.participant-main {\n  min-height: calc(var(--vh, 1vh) * 100 - 86px);\n}\n[dir] .participant-main .left-panel {\n  background: #283ac4;\n}\n.participant-main .left-panel .think-text {\n  font-weight: bold;\n  text-transform: uppercase;\n  font-size: 5rem;\n}\n[dir] .participant-main .left-panel .think-text {\n  border: 1px solid white;\n  margin: 0 8rem;\n}\n.participant-main .left-panel .left-content {\n  height: 100%;\n}\n[dir] .participant-main .right-panel {\n  background: white !important;\n}\n.participant-main .right-panel input, .participant-main .right-panel textarea {\n  font-size: 0.9rem !important;\n}\n[dir] .participant-main .right-panel input, [dir] .participant-main .right-panel textarea {\n  border-radius: 0 !important;\n  padding: 0.6rem !important;\n}\n.participant-main .right-panel .vs-input--placeholder {\n  font-size: 0.9rem !important;\n}\n.participant-main .right-panel .input-span-placeholder {\n  color: #151515 !important;\n}\n[dir] .participant-main .right-panel .input-span-placeholder {\n  padding: 0.6rem !important;\n}\n[dir] .participant-main .right-panel .vs-con-textarea {\n  border-radius: 0 !important;\n}\n.participant-main .right-panel .con-slot-label {\n  font-size: 0.8rem;\n}\n.participant-main .right-panel .register-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .participant-main .right-panel .register-btn {\n  padding: 0.8rem 1rem !important;\n}\n.participant-main .right-panel .attach-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .participant-main .right-panel .attach-btn {\n  padding: 0.8rem 1rem !important;\n}\n[dir] .participant-main .right-panel .vs__dropdown-toggle {\n  border-radius: 0 !important;\n}", ""]);
+exports.push([module.i, ".watermark {\n  position: fixed;\n  bottom: 20px;\n  width: 100%;\n}[dir] .watermark {\n  margin: auto;\n}[dir=ltr] .watermark {\n  text-align: right;\n  padding-right: 30px;\n}[dir=rtl] .watermark {\n  text-align: left;\n  padding-left: 30px;\n}\n.participant-main {\n  min-height: calc(var(--vh, 1vh) * 100 - 86px);\n}\n[dir] .participant-main .left-panel {\n  background: #283ac4;\n}\n.participant-main .left-panel .think-text {\n  font-weight: bold;\n  text-transform: uppercase;\n  font-size: 5rem;\n}\n[dir] .participant-main .left-panel .think-text {\n  border: 1px solid white;\n  margin: 0 8rem;\n}\n.participant-main .left-panel .left-content {\n  height: 100%;\n}\n[dir] .participant-main .right-panel {\n  background: white !important;\n}\n.participant-main .right-panel input, .participant-main .right-panel textarea {\n  font-size: 0.9rem !important;\n}\n[dir] .participant-main .right-panel input, [dir] .participant-main .right-panel textarea {\n  border-radius: 0 !important;\n}\n.participant-main .right-panel .vs-input--placeholder {\n  font-size: 0.9rem !important;\n}\n.participant-main .right-panel .input-span-placeholder {\n  color: #151515 !important;\n}\n[dir] .participant-main .right-panel .input-span-placeholder {\n  padding: 0.6rem !important;\n}\n[dir] .participant-main .right-panel .vs-con-textarea {\n  border-radius: 0 !important;\n}\n.participant-main .right-panel .con-slot-label {\n  font-size: 0.8rem;\n}\n.participant-main .right-panel .register-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .participant-main .right-panel .register-btn {\n  padding: 0.8rem 1rem !important;\n}\n.participant-main .right-panel .attach-btn {\n  font-size: 0.8rem !important;\n}\n[dir] .participant-main .right-panel .attach-btn {\n  padding: 0.8rem 1rem !important;\n}\n[dir] .participant-main .right-panel .vs__dropdown-toggle {\n  border-radius: 0 !important;\n}", ""]);
 
 // exports
 
@@ -495,7 +508,7 @@ var render = function() {
                         attrs: {
                           color: "success",
                           placeholder: _vm.$t("FirstName"),
-                          name: "Nombre",
+                          name: "FirstName",
                           "data-vv-validate-on": "blur"
                         },
                         model: {
@@ -508,7 +521,14 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("span", { staticClass: "text-danger text-sm" }, [
-                        _vm._v(_vm._s(_vm.errors.first("Nombre")))
+                        _vm._v(
+                          _vm._s(
+                            _vm.errors.first("FirstName") &&
+                              _vm.errors
+                                .first("FirstName")
+                                .replace("FirstName", _vm.$t("FirstName"))
+                          )
+                        )
                       ])
                     ],
                     1
@@ -534,7 +554,7 @@ var render = function() {
                         attrs: {
                           color: "success",
                           placeholder: _vm.$t("LastName"),
-                          name: "Apellido",
+                          name: "LastName",
                           "data-vv-validate-on": "blur"
                         },
                         model: {
@@ -547,7 +567,14 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("span", { staticClass: "text-danger text-sm" }, [
-                        _vm._v(_vm._s(_vm.errors.first("Apellido")))
+                        _vm._v(
+                          _vm._s(
+                            _vm.errors.first("LastName") &&
+                              _vm.errors
+                                .first("LastName")
+                                .replace("LastName", _vm.$t("LastName"))
+                          )
+                        )
                       ])
                     ],
                     1
@@ -612,7 +639,7 @@ var render = function() {
                         attrs: {
                           color: "success",
                           placeholder: _vm.$t("Phone"),
-                          name: "Telefono",
+                          name: "Phone",
                           "data-vv-validate-on": "blur"
                         },
                         model: {
@@ -625,7 +652,14 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("span", { staticClass: "text-danger text-sm" }, [
-                        _vm._v(_vm._s(_vm.errors.first("Telefono")))
+                        _vm._v(
+                          _vm._s(
+                            _vm.errors.first("Phone") &&
+                              _vm.errors
+                                .first("Phone")
+                                .replace("Phone", _vm.$t("Phone"))
+                          )
+                        )
                       ])
                     ],
                     1
@@ -651,7 +685,7 @@ var render = function() {
                         attrs: {
                           color: "success",
                           placeholder: _vm.$t("Company"),
-                          name: "Compania",
+                          name: "Company",
                           "data-vv-validate-on": "blur"
                         },
                         model: {
@@ -664,7 +698,14 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("span", { staticClass: "text-danger text-sm" }, [
-                        _vm._v(_vm._s(_vm.errors.first("Compania")))
+                        _vm._v(
+                          _vm._s(
+                            _vm.errors.first("Company") &&
+                              _vm.errors
+                                .first("Company")
+                                .replace("Company", _vm.$t("Company"))
+                          )
+                        )
                       ])
                     ],
                     1
@@ -690,7 +731,7 @@ var render = function() {
                         attrs: {
                           color: "success",
                           placeholder: _vm.$t("Position"),
-                          name: "Posicion",
+                          name: "Position",
                           "data-vv-validate-on": "blur"
                         },
                         model: {
@@ -703,7 +744,14 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("span", { staticClass: "text-danger text-sm" }, [
-                        _vm._v(_vm._s(_vm.errors.first("Posicion")))
+                        _vm._v(
+                          _vm._s(
+                            _vm.errors.first("Position") &&
+                              _vm.errors
+                                .first("Position")
+                                .replace("Position", _vm.$t("Position"))
+                          )
+                        )
                       ])
                     ],
                     1
@@ -717,22 +765,14 @@ var render = function() {
                     },
                     [
                       _c("vs-input", {
-                        directives: [
-                          {
-                            name: "validate",
-                            rawName: "v-validate",
-                            value: "required|min:8",
-                            expression: "'required|min:8'"
-                          }
-                        ],
                         staticClass: "w-full",
                         attrs: {
                           type: "password",
                           color: "success",
                           placeholder: _vm.$t("SelectPassword"),
-                          name: "constrasena",
-                          "data-vv-validate-on": "blur"
+                          name: "constrasena"
                         },
+                        on: { blur: _vm.PasswordValidate },
                         model: {
                           value: _vm.user.password,
                           callback: function($$v) {
@@ -743,7 +783,7 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("span", { staticClass: "text-danger text-sm" }, [
-                        _vm._v(_vm._s(_vm.errors.first("constrasena")))
+                        _vm._v(_vm._s(_vm.password_error))
                       ])
                     ],
                     1
@@ -757,22 +797,14 @@ var render = function() {
                     },
                     [
                       _c("vs-input", {
-                        directives: [
-                          {
-                            name: "validate",
-                            rawName: "v-validate",
-                            value: "required|min:8",
-                            expression: "'required|min:8'"
-                          }
-                        ],
                         staticClass: "w-full",
                         attrs: {
                           type: "password",
                           color: "success",
                           placeholder: _vm.$t("ConfirmPassword"),
-                          name: "contrasena",
-                          "data-vv-validate-on": "blur"
+                          name: "contrasena"
                         },
+                        on: { blur: _vm.ConfirmValidate },
                         model: {
                           value: _vm.repeat_password,
                           callback: function($$v) {
@@ -783,7 +815,7 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("span", { staticClass: "text-danger text-sm" }, [
-                        _vm._v(_vm._s(_vm.errors.first("constrasena")))
+                        _vm._v(_vm._s(_vm.confirm_error))
                       ])
                     ],
                     1
@@ -809,7 +841,14 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("span", { staticClass: "text-danger text-sm" }, [
-                        _vm._v(_vm._s(_vm.errors.first("Pais")))
+                        _vm._v(
+                          _vm._s(
+                            _vm.errors.first("Country") &&
+                              _vm.errors
+                                .first("Country")
+                                .replace("Country", _vm.$t("Country"))
+                          )
+                        )
                       ])
                     ],
                     1
@@ -839,7 +878,14 @@ var render = function() {
                       }),
                       _vm._v(" "),
                       _c("span", { staticClass: "text-danger text-sm" }, [
-                        _vm._v(_vm._s(_vm.errors.first("Region")))
+                        _vm._v(
+                          _vm._s(
+                            _vm.errors.first("Region") &&
+                              _vm.errors
+                                .first("Region")
+                                .replace("Region", _vm.$t("Region"))
+                          )
+                        )
                       ])
                     ],
                     1
