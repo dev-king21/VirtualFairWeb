@@ -21,7 +21,7 @@
               <!-- <vx-card> -->
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/4 w-full">
-                    <span>{{$t('Fair')}} {{$t('Name')}}</span>
+                    <span>{{$t('Name')}}</span>
                   </div>
                   <div class="vx-col sm:w-3/4 w-full">
                     <vs-input class="w-full" v-model="name"/>
@@ -48,13 +48,13 @@
 
                  <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/4 w-full">
-                    <span>{{$t('Period')}}({{$t('Start')}}~{{$t('End')}})</span>
+                    <span>{{$t('Period')}}</span>
                   </div>
                   <div class="vx-col sm:w-3/4 demo-alignment mt-0">
                      <template>
-                        <datepicker placeholder="Start Date" :format="format" v-model="startDate"></datepicker>
+                        <datepicker :placeholder="$t('StartDate')" :format="format" v-model="startDate"></datepicker>
                         <span> ~ </span>
-                        <datepicker placeholder="End Date" :format="format" v-model="endDate"></datepicker>
+                        <datepicker :placeholder="$t('EndDate')" :format="format" v-model="endDate"></datepicker>
                     </template> 
                   </div>
                 </div>
@@ -72,7 +72,7 @@
 
                 <div class="vx-row mb-6">
                   <div class="vx-col sm:w-1/4 w-full">
-                    <span>logo</span>
+                    <span>{{$t('Logo')}}</span>
                   </div>
                   <div class="vx-col sm:w-3/4 text-center mt-0">
                       <img :src="`/fair_image/${make_logo(logo)}`" alt="content-img" ref="logoPreview" 

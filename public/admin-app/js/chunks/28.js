@@ -4594,50 +4594,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
 var render = function(_h, _vm) {
   var _c = _vm._c
-  return _c(
-    "footer",
-    { staticClass: "the-footer flex-wrap justify-between", class: _vm.classes },
-    [
-      _c("p", [
-        _c("span", [_vm._v("COPYRIGHT ©")]),
-        _vm._v(" "),
-        _c("span", [_vm._v(_vm._s(new Date().getFullYear()) + " ")]),
-        _vm._v(" "),
-        _c(
-          "a",
-          {
-            attrs: {
-              href: "https://1.envato.market/vuexy_admin",
-              target: "_blank",
-              rel: "nofollow"
-            }
-          },
-          [_vm._v("Pixinvent")]
-        ),
-        _vm._v(" "),
-        _c("span", { staticClass: "hidden sm:inline-block" }, [
-          _vm._v(", All rights Reserved")
-        ])
-      ]),
-      _vm._v(" "),
-      _c(
-        "span",
-        { staticClass: "md:flex hidden items-center" },
-        [
-          _c("span", [_vm._v("Hand-crafted & Made with")]),
-          _vm._v(" "),
-          _c("feather-icon", {
-            staticClass: "ml-2",
-            attrs: {
-              icon: "HeartIcon",
-              svgClasses: "stroke-current text-danger w-6 h-6"
-            }
-          })
-        ],
-        1
-      )
-    ]
-  )
+  return _c("footer", {
+    staticClass: "the-footer flex-wrap justify-between",
+    class: _vm.classes
+  })
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -7765,25 +7725,6 @@ var render = function() {
         ? _c("vx-tour", { attrs: { steps: _vm.steps } })
         : _vm._e(),
       _vm._v(" "),
-      !_vm.disableCustomizer
-        ? _c("the-customizer", {
-            attrs: {
-              footerType: _vm.footerType,
-              hideScrollToTop: _vm.hideScrollToTop,
-              navbarType: _vm.navbarType,
-              navbarColor: _vm.navbarColor,
-              routerTransition: _vm.routerTransition
-            },
-            on: {
-              toggleHideScrollToTop: _vm.toggleHideScrollToTop,
-              updateFooter: _vm.updateFooter,
-              updateNavbar: _vm.updateNavbar,
-              updateNavbarColor: _vm.updateNavbarColor,
-              updateRouterTransition: _vm.updateRouterTransition
-            }
-          })
-        : _vm._e(),
-      _vm._v(" "),
       _c("v-nav-menu", {
         attrs: {
           navMenuItems: _vm.navMenuItems,
@@ -8024,7 +7965,7 @@ var render = function() {
                             on: {
                               changeRouteTitle: _vm.changeRouteTitle,
                               setAppClasses: function(classesStr) {
-                                return _vm.$emit("setAppClasses", classesStr)
+                                return _vm.$emit(classesStr)
                               },
                               update_nav_menu: function(fn) {
                                 return fn(_vm.navMenuItems)

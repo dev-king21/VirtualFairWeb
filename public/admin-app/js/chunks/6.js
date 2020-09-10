@@ -1441,13 +1441,7 @@ var render = function() {
                   _c("div", { staticClass: " w-full px-20 mb-base" }, [
                     _c("div", { staticClass: "vx-row mb-6" }, [
                       _c("div", { staticClass: "vx-col sm:w-1/4 w-full" }, [
-                        _c("span", [
-                          _vm._v(
-                            _vm._s(_vm.$t("Fair")) +
-                              " " +
-                              _vm._s(_vm.$t("Name"))
-                          )
-                        ])
+                        _c("span", [_vm._v(_vm._s(_vm.$t("Name")))])
                       ]),
                       _vm._v(" "),
                       _c(
@@ -1544,16 +1538,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "vx-row mb-6" }, [
                       _c("div", { staticClass: "vx-col sm:w-1/4 w-full" }, [
-                        _c("span", [
-                          _vm._v(
-                            _vm._s(_vm.$t("Period")) +
-                              "(" +
-                              _vm._s(_vm.$t("Start")) +
-                              "~" +
-                              _vm._s(_vm.$t("End")) +
-                              ")"
-                          )
-                        ])
+                        _c("span", [_vm._v(_vm._s(_vm.$t("Period")))])
                       ]),
                       _vm._v(" "),
                       _c(
@@ -1563,7 +1548,7 @@ var render = function() {
                           [
                             _c("datepicker", {
                               attrs: {
-                                placeholder: "Start Date",
+                                placeholder: _vm.$t("StartDate"),
                                 format: _vm.format
                               },
                               model: {
@@ -1579,7 +1564,7 @@ var render = function() {
                             _vm._v(" "),
                             _c("datepicker", {
                               attrs: {
-                                placeholder: "End Date",
+                                placeholder: _vm.$t("EndDate"),
                                 format: _vm.format
                               },
                               model: {
@@ -1645,7 +1630,7 @@ var render = function() {
                     _vm._v(" "),
                     _c("div", { staticClass: "vx-row mb-6" }, [
                       _c("div", { staticClass: "vx-col sm:w-1/4 w-full" }, [
-                        _c("span", [_vm._v("logo")])
+                        _c("span", [_vm._v(_vm._s(_vm.$t("Logo")))])
                       ]),
                       _vm._v(" "),
                       _c(

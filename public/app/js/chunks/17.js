@@ -324,11 +324,17 @@ var render = function() {
             }
           },
           [
-            _c("svg-icon", { attrs: { size: "w-5 h-5", icon: "eye" } }),
+            _c("svg-icon", {
+              staticClass: "mt-1",
+              attrs: { size: "w-5 h-5", icon: "eye" }
+            }),
             _vm._v(" "),
             _c(
               "div",
-              { staticClass: "ml-2", staticStyle: { "font-size": "0.9rem" } },
+              {
+                staticClass: "ml-2 uppercase",
+                staticStyle: { "font-size": "0.9rem" }
+              },
               [_vm._v(_vm._s(_vm.$t("See")))]
             )
           ],
@@ -349,8 +355,9 @@ var render = function() {
             }
           },
           [
-            _c("feather-icon", {
-              attrs: { size: "w-5 h-5", icon: "DownloadIcon" }
+            _c("svg-icon", {
+              staticClass: "mt-1",
+              attrs: { size: "w-5 h-5", icon: "download" }
             }),
             _vm._v(" "),
             _c(

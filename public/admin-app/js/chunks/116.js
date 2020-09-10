@@ -396,7 +396,7 @@ var render = function() {
       _vm._v(" "),
       _c(
         "div",
-        { staticClass: "demo-alignment mb-4" },
+        { staticClass: "demo-alignment mb-4 mt-4" },
         [
           _c(
             "vs-button",
@@ -447,8 +447,6 @@ var render = function() {
                   _vm._s(_vm.$t("Save")) +
                   " " +
                   _vm._s(_vm.$t("StandItems")) +
-                  "' " +
-                  _vm._s(_vm.$t("Location")) +
                   "\n        "
               )
             ]

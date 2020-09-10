@@ -427,7 +427,7 @@ var render = function() {
       { staticClass: "flex justify-between flex-wrap mb-4" },
       [
         _c("vs-input", {
-          attrs: { "label-placeholder": "Stand Type Name" },
+          attrs: { "label-placeholder": _vm.$t("StandTypeName") },
           model: {
             value: _vm.stype_name,
             callback: function($$v) {

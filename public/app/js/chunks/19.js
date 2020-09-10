@@ -482,7 +482,7 @@ var render = function() {
                         "div",
                         {
                           staticClass:
-                            "text-white fs-12 bg-blue-dark cursor-pointer font-normal p-6",
+                            "text-white fs-14 bg-blue-dark cursor-pointer font-normal p-6",
                           staticStyle: { "word-spacing": "0.3rem !important" },
                           on: {
                             click: function($event) {

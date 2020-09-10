@@ -3,14 +3,14 @@
         <div class="text-warning font-bold h3">
             {{$t('StandArrangeSpace')}} [{{$t('Type')}}: {{stand_type.name}}]
         </div>
-        <div class="demo-alignment mb-4">
+        <div class="demo-alignment mb-4 mt-4">
             <vs-button class="mt-5" type="filled" icon-pack="feather" icon="icon-crosshair" color="success"
                 @click="stypeOpen()">
                 {{$t('Select')}} {{$t('StandTypes')}}
             </vs-button>    
             <vs-button class="mt-5" type="filled" icon-pack="feather" icon="icon-save" color="primary"
                 @click="saveLocations()">
-                {{$t('Save')}} {{$t('StandItems')}}' {{$t('Location')}}
+                {{$t('Save')}} {{$t('StandItems')}}
             </vs-button>
             <vs-dropdown>
                 <a class="flex items-center h4 text-success" href="#">

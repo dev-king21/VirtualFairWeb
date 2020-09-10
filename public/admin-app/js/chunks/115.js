@@ -381,7 +381,7 @@ var render = function() {
         _vm._v(
           "\n        " +
             _vm._s(_vm.$t("StandArrange")) +
-            "[" +
+            " [" +
             _vm._s(_vm.$t("Type")) +
             ": " +
             _vm._s(_vm.fair_type.name) +
@@ -473,7 +473,7 @@ var render = function() {
                     "\n                    " +
                       _vm._s(_vm.$t("Save")) +
                       " " +
-                      _vm._s(_vm.$t("StandLocation")) +
+                      _vm._s(_vm.$t("StandLocations")) +
                       "\n                "
                   )
                 ]

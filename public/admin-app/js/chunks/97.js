@@ -501,9 +501,7 @@ var render = function() {
         [
           _c("vx-card", { staticClass: "overlay-card overflow-hidden" }, [
             _c("h3", { staticClass: "mb-2 text-warning font-bold" }, [
-              _vm._v(
-                _vm._s(_vm.$t("Advertisement")) + " " + _vm._s(_vm.$t("Image"))
-              )
+              _vm._v(_vm._s(_vm.$t("AdsImage")))
             ]),
             _vm._v(" "),
             _c(

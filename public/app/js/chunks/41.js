@@ -1065,7 +1065,7 @@ var render = function() {
                 attrs: {
                   icon: "brochure",
                   to: "/setting/stand/brochure",
-                  text: _vm.$t("UploadCatglog")
+                  text: _vm.$t("UploadCatalog")
                 }
               }),
               _vm._v(" "),

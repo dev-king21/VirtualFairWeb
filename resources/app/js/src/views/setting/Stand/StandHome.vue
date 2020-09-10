@@ -88,7 +88,7 @@
         </div>
         <div class="absolute flex items-center justify-between w-full px-6 py-4 stand-footer">
             <stand-button class="stand-button" icon="list" to="/setting/stand/information" :text="$t('AddCompanyInfo')"/>
-            <stand-button class="stand-button" icon="brochure" to="/setting/stand/brochure" :text="$t('UploadCatglog')"/>
+            <stand-button class="stand-button" icon="brochure" to="/setting/stand/brochure" :text="$t('UploadCatalog')"/>
             <stand-button class="stand-button" icon="gallery" to="/setting/stand/video" :text="$t('UploadPhoto')"/>
             <stand-button class="stand-button" icon="schedule-edit" to="/setting/stand/schedule" :text="$t('SeeSchedule')"/>
             <stand-button class="stand-button" icon="address-book" to="/setting/stand/contact" :text="$t('UploadBussiness')"/>

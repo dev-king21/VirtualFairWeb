@@ -35,9 +35,9 @@
 
       <template slot="thead">
         <vs-th sort-key="id">ID</vs-th>
-        <vs-th sort-key="name">Name</vs-th>
+        <vs-th sort-key="name">{{$t('Name')}}</vs-th>
         <vs-th sort-key="email">Email</vs-th>
-        <vs-th sort-key="message">Message</vs-th>
+        <vs-th sort-key="message">{{$t('Message')}}</vs-th>
       </template>
 
         <template slot-scope="{data}">

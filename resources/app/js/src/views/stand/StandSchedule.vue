@@ -191,15 +191,19 @@ export default {
           if (response.data.status === 'ok') {
             this.$vs.notify({
               title: this.$t('Success'),
-              text: this.$t('DeleteMessage'),
+              text: this.$t('SuccessMessage'),
               iconPack: 'feather',
               icon: 'icon-info',
               color: 'success'
-            })  
+            }) 
+            this.selected_index = null
+            this.schedule_text = ''
+
           }
         }).catch(() => {
           
         })
+
     }  
   },
   created () {

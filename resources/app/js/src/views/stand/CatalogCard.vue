@@ -9,13 +9,13 @@
         <div class="vx-row">
           <div class="vx-col w-1/2">
             <div @click="showBrochure(id)" class="flex items-center justify-center text-white py-2 cyan-dark w-full cursor-pointer">
-                <svg-icon size="w-5 h-5" icon="eye" />
-                <div class="ml-2" style="font-size: 0.9rem">{{$t('See')}}</div>
+                <svg-icon class="mt-1" size="w-5 h-5" icon="eye" />
+                <div class="ml-2 uppercase" style="font-size: 0.9rem">{{$t('See')}}</div>
             </div>
           </div>
           <div class="vx-col w-1/2">
             <div @click="downloadBrochure(id)" class="flex items-center justify-center text-white py-2 yellow-dark w-full cursor-pointer">
-                <feather-icon size="w-5 h-5" icon="DownloadIcon" />
+                <svg-icon class="mt-1" size="w-5 h-5" icon="download" />
                 <div class="ml-2 uppercase" style="font-size: 0.9rem">{{$t('Download')}}</div>
             </div>
           </div>

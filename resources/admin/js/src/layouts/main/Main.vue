@@ -3,7 +3,7 @@
 
     <vx-tour :steps="steps" v-if="!disableThemeTour && (windowWidth >= 1200 && mainLayoutType === 'vertical' && verticalNavMenuWidth == 'default')" />
 
-    <the-customizer
+   <!--  <the-customizer
       v-if                    = "!disableCustomizer"
       :footerType             = "footerType"
       :hideScrollToTop        = "hideScrollToTop"
@@ -14,7 +14,7 @@
       @updateFooter           = "updateFooter"
       @updateNavbar           = "updateNavbar"
       @updateNavbarColor      = "updateNavbarColor"
-      @updateRouterTransition = "updateRouterTransition" />
+      @updateRouterTransition = "updateRouterTransition" /> -->
 
     <v-nav-menu
       :navMenuItems = "navMenuItems"
@@ -107,7 +107,7 @@
               </back-to-top>
 
               <transition :name="routerTransition" mode="out-in">
-                <router-view @changeRouteTitle="changeRouteTitle" @setAppClasses="(classesStr) => $emit('setAppClasses', classesStr)" @update_nav_menu="(fn) => fn(navMenuItems)" />
+                <router-view @changeRouteTitle="changeRouteTitle" @setAppClasses="(classesStr) => $emit(classesStr)" @update_nav_menu="(fn) => fn(navMenuItems)" />
               </transition>
             </div>
           </div>

@@ -45,14 +45,14 @@
             </div>
             <div class="contact-content">
               <div class="contact-input">
-                <vs-input color="success" class="w-full" :placeholder="$t('Name')" 
-                  v-validate="'required'" data-vv-validate-on="blur" name="contact_name" v-model="contact_name"/>
-                <span class="text-danger text-sm">{{ errors.first('contact_name') }}</span>
+                <vs-input color="success" class="w-full" :placeholder="$t('Name')" name="Name"
+                  v-validate="'required'" data-vv-validate-on="blur" v-model="contact_name"/>
+                <span class="text-danger text-sm">{{ errors.first('Name') && errors.first('Name').replace('Name', $t('Name')) }}</span>
               </div>
               <div class="contact-input">
                 <vs-input color="success" class="w-full" placeholder="Email"
-                  v-validate="'required|email'" data-vv-validate-on="blur" name="contact_email" v-model="contact_email"/></div>
-                  <span class="text-danger text-sm">{{ errors.first('contact_email') }}</span>
+                  v-validate="'required|email'" data-vv-validate-on="blur" name="Email" v-model="contact_email"/></div>
+                  <span class="text-danger text-sm">{{ errors.first('Email') }}</span>
               <div class="contact-input">
                 <vs-textarea color="success" height="100px" class="w-full" :placeholder="$t('Query')" 
                   data-vv-validate-on="blur" name="contact_message" v-model="contact_message"/>

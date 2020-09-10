@@ -185,7 +185,7 @@ export default {
     Sustainability: 'SOSTENIBILIDAD',
     ContactUs: 'Contáctenos',
     Logout: 'Cerrar sesión',
-    MyAccount: 'Mi Cuanta',
+    MyAccount: 'Mi Cuenta',
     Live: 'En Vivo',
     Recorded: 'Grabado',
     WebinarSchedule: 'Agenda del Congreso',

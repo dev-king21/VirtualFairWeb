@@ -1,7 +1,7 @@
 <template>
     <div class="flex flex-col mt-0">
         <div class="text-warning font-bold h3 mb-4">
-            {{$t('StandArrange')}}[{{$t('Type')}}: {{fair_type.name}}]
+            {{$t('StandArrange')}} [{{$t('Type')}}: {{fair_type.name}}]
         </div>
         <vx-card class="flex">
             <div slot="no-body">
@@ -16,7 +16,7 @@
                     </vs-button>
                     <vs-button class="mt-0 ml-5" type="filled" icon-pack="feather" icon="icon-save" color="primary"
                         @click="saveLocations()">
-                        {{$t('Save')}} {{$t('StandLocation')}}
+                        {{$t('Save')}} {{$t('StandLocations')}}
                     </vs-button>
                 </div>
                 <div id="location-wrapper">

@@ -469,30 +469,32 @@ var render = function() {
             [
               _c("vs-th", { attrs: { "sort-key": "id" } }, [_vm._v("ID")]),
               _vm._v(" "),
-              _c("vs-th", { attrs: { "sort-key": "name" } }, [_vm._v("Name")]),
+              _c("vs-th", { attrs: { "sort-key": "name" } }, [
+                _vm._v(_vm._s(_vm.$t("Name")))
+              ]),
               _vm._v(" "),
               _c("vs-th", { attrs: { "sort-key": "email" } }, [
                 _vm._v("Email")
               ]),
               _vm._v(" "),
               _c("vs-th", { attrs: { "sort-key": "company" } }, [
-                _vm._v("company")
+                _vm._v(_vm._s(_vm.$t("Company")))
               ]),
               _vm._v(" "),
               _c("vs-th", { attrs: { "sort-key": "phone" } }, [
-                _vm._v("Phone")
+                _vm._v(_vm._s(_vm.$t("Phone")))
               ]),
               _vm._v(" "),
               _c("vs-th", { attrs: { "sort-key": "address" } }, [
-                _vm._v("Address")
+                _vm._v(_vm._s(_vm.$t("Address")))
               ]),
               _vm._v(" "),
               _c("vs-th", { attrs: { "sort-key": "country" } }, [
-                _vm._v("Country")
+                _vm._v(_vm._s(_vm.$t("Country")))
               ]),
               _vm._v(" "),
               _c("vs-th", { attrs: { "sort-key": "message" } }, [
-                _vm._v("Message")
+                _vm._v(_vm._s(_vm.$t("Message")))
               ])
             ],
             1

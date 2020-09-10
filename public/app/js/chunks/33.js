@@ -226,11 +226,14 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
         if (response.data.status === 'ok') {
           _this.$vs.notify({
             title: _this.$t('Success'),
-            text: _this.$t('DeleteMessage'),
+            text: _this.$t('SuccessMessage'),
             iconPack: 'feather',
             icon: 'icon-info',
             color: 'success'
           });
+
+          _this.selected_index = null;
+          _this.schedule_text = '';
         }
       })["catch"](function () {});
     }

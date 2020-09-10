@@ -702,8 +702,8 @@ var render = function() {
                                   attrs: {
                                     color: "success",
                                     placeholder: _vm.$t("Name"),
-                                    "data-vv-validate-on": "blur",
-                                    name: "contact_name"
+                                    name: "Name",
+                                    "data-vv-validate-on": "blur"
                                   },
                                   model: {
                                     value: _vm.contact_name,
@@ -719,7 +719,12 @@ var render = function() {
                                   { staticClass: "text-danger text-sm" },
                                   [
                                     _vm._v(
-                                      _vm._s(_vm.errors.first("contact_name"))
+                                      _vm._s(
+                                        _vm.errors.first("Name") &&
+                                          _vm.errors
+                                            .first("Name")
+                                            .replace("Name", _vm.$t("Name"))
+                                      )
                                     )
                                   ]
                                 )
@@ -745,7 +750,7 @@ var render = function() {
                                     color: "success",
                                     placeholder: "Email",
                                     "data-vv-validate-on": "blur",
-                                    name: "contact_email"
+                                    name: "Email"
                                   },
                                   model: {
                                     value: _vm.contact_email,
@@ -760,7 +765,7 @@ var render = function() {
                             ),
                             _vm._v(" "),
                             _c("span", { staticClass: "text-danger text-sm" }, [
-                              _vm._v(_vm._s(_vm.errors.first("contact_email")))
+                              _vm._v(_vm._s(_vm.errors.first("Email")))
                             ]),
                             _vm._v(" "),
                             _c(

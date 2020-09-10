@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="flex justify-between flex-wrap mb-4">
-        <vs-input label-placeholder="Stand Type Name" v-model="stype_name" />
+        <vs-input :label-placeholder="$t('StandTypeName')" v-model="stype_name" />
         <vs-button class="mt-4" type="filled" icon-pack="feather" icon="icon-save" color="success"
             @click="saveAction()">
             {{$t('Save')}}

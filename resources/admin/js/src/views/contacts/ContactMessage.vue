@@ -35,13 +35,13 @@
 
       <template slot="thead">
         <vs-th sort-key="id">ID</vs-th>
-        <vs-th sort-key="name">Name</vs-th>
+        <vs-th sort-key="name">{{$t('Name')}}</vs-th>
         <vs-th sort-key="email">Email</vs-th>
-        <vs-th sort-key="company">company</vs-th>
-        <vs-th sort-key="phone">Phone</vs-th>
-        <vs-th sort-key="address">Address</vs-th>
-        <vs-th sort-key="country">Country</vs-th>
-        <vs-th sort-key="message">Message</vs-th>
+        <vs-th sort-key="company">{{$t('Company')}}</vs-th>
+        <vs-th sort-key="phone">{{$t('Phone')}}</vs-th>
+        <vs-th sort-key="address">{{$t('Address')}}</vs-th>
+        <vs-th sort-key="country">{{$t('Country')}}</vs-th>
+        <vs-th sort-key="message">{{$t('Message')}}</vs-th>
       </template>
 
         <template slot-scope="{data}">

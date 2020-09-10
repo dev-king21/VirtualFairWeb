@@ -489,7 +489,7 @@ class FairController extends Controller
         $res = array();
         $fairs = Fair::with(['sustainability'=> function($qr){
             $qr->with('sustainability_images')->get();
-        }])->get();
+        }])->where("status", 1)->get();
         $res["status"] = "ok";
         $res["fairs"] = $fairs;
         return response()->json($res);

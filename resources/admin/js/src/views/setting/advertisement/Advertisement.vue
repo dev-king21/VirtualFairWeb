@@ -4,7 +4,7 @@
     <div class="vx-row">
       <div class="vx-col w-full lg:w-1/4 sm:w-1 mb-base">
         <vx-card class="overlay-card overflow-hidden">
-            <h3 class="mb-2 text-warning font-bold">{{$t('Advertisement')}} {{$t('Image')}}</h3>
+            <h3 class="mb-2 text-warning font-bold">{{$t('AdsImage')}}</h3>
             <div class="mb-8">
               <file-upload :preview="ads_image" :upload_key="'advertisement'" :onSuccess="changeUploadFile" />
             </div>
