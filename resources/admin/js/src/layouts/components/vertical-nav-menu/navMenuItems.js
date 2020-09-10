@@ -6,7 +6,7 @@ export default [
   //   icon: "MailIcon",
   //   i18n: "Email",
   // },
- /*  {
+  /*  {
     url: null,
     name: 'Dashboard',
     tag: '2',
@@ -226,8 +226,8 @@ export default [
     icon: 'PackageIcon',
     i18n: 'ExhibitorWebinar'
 
-  },
-  {
+  }
+  /* {
     header: 'Apps',
     icon: 'PackageIcon',
     i18n: 'Apps',
@@ -1026,6 +1026,6 @@ export default [
         ]
       }
     ]
-  }
+  } */
 ]
 
