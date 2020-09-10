@@ -177,8 +177,9 @@ export default {
     PasswordValidator: 'Password (greater than 8 characters and must contain upper and lower case)',
     ConfirmValidator: 'It should be the same as the password',
     NoMatchingOption: 'Sorry, no matching option',
-    Or: "Or"
-
+    Or: "Or",
+    WebinarOption: "You must wait until you are allowed to see this webinar",
+    WebinarDate: "You must wait until this webinar opens",
   },
   es: {
     Sustainability: 'SOSTENIBILIDAD',
@@ -357,6 +358,8 @@ export default {
     PasswordValidator: 'Contraseña (más de 8 caracteres y debe contener mayúsculas y minúsculas)',
     ConfirmValidator: 'Debe ser la misma que la contraseña.',
     NoMatchingOption: 'Lo siento, no hay opción de coincidencia',
-    Or: "O"
+    Or: "O",
+    WebinarOption: "Debe esperar hasta que se le permita ver este webinar.",
+    WebinarDate: "Debe esperar hasta que se abra este webinar"
   }
 }

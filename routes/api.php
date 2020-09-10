@@ -88,6 +88,9 @@ Route::group(['middleware' => 'auth:api'], function() {
     Route::post('/room/webinar/show', 'TalkController@get_webinar');
     Route::post('/room/webinar/download', 'TalkController@download_webinar');
     Route::post('/room/webinar/add_to_board', 'TalkController@add_to_board_webinar');
+    Route::get('/room/talk/check/{id}', 'RoomController@check_talk');
+
+    Route::post('/room/webinar/see', 'TalkController@see_webinar');
 
 });
 
@@ -246,7 +249,6 @@ Route::group(['middleware' => ['auth:admin']], function() {
         Route::post('/room/talk/update/{id}', 'RoomController@update_talk');
         Route::get('/room/talk/all', 'RoomController@all_talk');
         Route::post('/room/talk/delete/{id}', 'RoomController@delete_talk');
-
 
         //country
         Route::get('/country/all', 'CountryController@show');

@@ -97,6 +97,23 @@ __webpack_require__.r(__webpack_exports__);
     live: {
       type: Boolean,
       required: false
+    },
+    userOption: {
+      type: Number,
+      required: true
+    },
+    show: {
+      type: Function,
+      required: false
+    },
+    id: {
+      type: Number,
+      required: true
+    }
+  },
+  methods: {
+    showWebinar: function showWebinar() {
+      this.show(this.user_option, this.id);
     }
   }
 });
@@ -313,7 +330,12 @@ var render = function() {
                   expression: "reserved"
                 }
               ],
-              staticClass: "blue-dark event-btn p-big uppercase font-bold"
+              staticClass: "blue-dark event-btn p-big uppercase font-bold",
+              on: {
+                click: function($event) {
+                  return _vm.showWebinar()
+                }
+              }
             },
             [_vm._v("\n            " + _vm._s(_vm.$t("See")) + "\n        ")]
           )

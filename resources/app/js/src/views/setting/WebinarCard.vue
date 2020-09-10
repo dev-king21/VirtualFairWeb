@@ -38,7 +38,7 @@
             <vs-button v-show="!reserved" class="cyan-dark event-btn uppercase font-bold">
                 {{$t('SeeAgain')}}
             </vs-button>
-            <vs-button v-show="reserved" class="blue-dark event-btn p-big uppercase font-bold">
+            <vs-button v-show="reserved" class="blue-dark event-btn p-big uppercase font-bold" @click="showWebinar()">
                 {{$t('See')}}
             </vs-button>
         </div>
@@ -87,6 +87,23 @@ export default {
     live: {
       type: Boolean,
       required: false
+    },
+    userOption: {
+      type: Number,
+      required: true
+    },
+    show: {
+      type: Function,
+      required: false  
+    },
+    id: {
+      type: Number,
+      required: true
+    }
+  },
+  methods: {
+    showWebinar () {
+      this.show(this.user_option, this.id)
     }
   }
 }

@@ -82,6 +82,10 @@ export default {
       type: Number,
       required: true
     },
+    user_option: {
+      type: Number,
+      required: true
+    },
     show: {
       type: Function,
       required: false  
@@ -93,8 +97,7 @@ export default {
   },
   methods: {
     showWebinar () {
-      //const now = 
-      if (this.show && this.id) this.show(this.id)  
+      this.show(this.user_option, this.id)
     },
     addToBoard () {
       if (this.add && this.id) this.add(this.id)  

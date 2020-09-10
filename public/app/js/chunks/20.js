@@ -89,6 +89,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -209,30 +210,89 @@ __webpack_require__.r(__webpack_exports__);
       var ed = this.$date.timeFormat(end_time);
       return "".concat(sd, " - ").concat(ed);
     },
-    show: function show(id) {
-      this.$router.push("/room/webinar/".concat(id));
+    show: function show(option, id) {
+      var _this3 = this;
+
+      if (option === 0) {
+        this.$vs.notify({
+          title: this.$t('Error'),
+          text: this.$t('WebinarOption'),
+          color: 'danger',
+          iconPack: 'feather',
+          icon: 'icon-alert-circle'
+        });
+        return;
+      }
+
+      var action = "/api/room/talk/check/".concat(id);
+      this.$loading.show(this);
+      this.$http.get(action).then(function (response) {
+        console.log(response.data);
+
+        _this3.$loading.hide(_this3);
+
+        if (response.data.status !== 'ok') {
+          _this3.$vs.notify({
+            title: _this3.$t('Error'),
+            text: _this3.$t('WebinarDate'),
+            color: 'danger',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          });
+        } else {
+          if (_this3.show && _this3.id) _this3.show(_this3.id);
+
+          _this3.$loading.show(_this3);
+
+          _this3.$http.post('/api/room/webinar/see', {
+            _id: id
+          }).then(function (response) {
+            _this3.$loading.hide(_this3);
+
+            if (response.data.status === 'ok') {
+              _this3.$vs.notify({
+                title: _this3.$t('Success'),
+                text: _this3.$t('SuccessMessage'),
+                color: 'success',
+                iconPack: 'feather',
+                icon: 'icon-alert-circle'
+              });
+            } else {
+              _this3.$vs.notify({
+                title: _this3.$t('Error'),
+                text: _this3.$t('FailMessage'),
+                color: 'danger',
+                iconPack: 'feather',
+                icon: 'icon-alert-circle'
+              });
+            }
+          });
+        }
+      }); // this.$router.push(`/room/webinar/${id}`)
     },
     addToBoard: function addToBoard(id) {
-      var _this3 = this;
+      var _this4 = this;
 
       this.$loading.show(this);
       this.$http.post('/api/room/webinar/add_to_board', {
         _id: id
       }).then(function (response) {
-        _this3.$loading.hide(_this3);
+        _this4.$loading.hide(_this4);
+
+        console.log(response.data);
 
         if (response.data.status === 'ok') {
-          _this3.$vs.notify({
-            title: _this3.$t('Success'),
-            text: _this3.$t('SuccessMessage'),
+          _this4.$vs.notify({
+            title: _this4.$t('Success'),
+            text: _this4.$t('SuccessMessage'),
             color: 'success',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
           });
         } else {
-          _this3.$vs.notify({
-            title: _this3.$t('Error'),
-            text: _this3.$t('FailMessage'),
+          _this4.$vs.notify({
+            title: _this4.$t('Error'),
+            text: _this4.$t('FailMessage'),
             color: 'danger',
             iconPack: 'feather',
             icon: 'icon-alert-circle'
@@ -242,7 +302,7 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
-    var _this4 = this;
+    var _this5 = this;
 
     this.categories = [{
       id: 0,
@@ -266,30 +326,30 @@ __webpack_require__.r(__webpack_exports__);
     }];
     this.$loading.show(this);
     this.$http.post('/api/room/webinar').then(function (response) {
-      _this4.$loading.hide(_this4);
+      _this5.$loading.hide(_this5);
 
       var data = response.data;
-      _this4.webinars = data.webinars;
+      _this5.webinars = data.webinars;
 
       var _loop = function _loop(wc) {
         // console.log(this.exhibitors, this.webinars[wc].user_id, this.exhibitors.lastIndexOf((ex) => ex.id === this.webinars[wc].user_id))
-        if (!_this4.exhibitors.find(function (ex) {
-          return ex.id === _this4.webinars[wc].user_id;
+        if (!_this5.exhibitors.find(function (ex) {
+          return ex.id === _this5.webinars[wc].user_id;
         })) {
-          _this4.exhibitors.push({
-            id: _this4.webinars[wc].user_id,
-            label: _this4.webinars[wc].exhibitor_name
+          _this5.exhibitors.push({
+            id: _this5.webinars[wc].user_id,
+            label: _this5.webinars[wc].exhibitor_name
           });
         }
       };
 
-      for (var wc in _this4.webinars) {
+      for (var wc in _this5.webinars) {
         _loop(wc);
       } // console.log(this.exhibitors)
 
     });
     this.$http.post('/api/stand/ads/get').then(function (res) {
-      _this4.ads_list = res.data.ads;
+      _this5.ads_list = res.data.ads;
     });
   }
 });
@@ -388,6 +448,10 @@ __webpack_require__.r(__webpack_exports__);
       type: Number,
       required: true
     },
+    user_option: {
+      type: Number,
+      required: true
+    },
     show: {
       type: Function,
       required: false
@@ -399,8 +463,7 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     showWebinar: function showWebinar() {
-      //const now = 
-      if (this.show && this.id) this.show(this.id);
+      this.show(this.user_option, this.id);
     },
     addToBoard: function addToBoard() {
       if (this.add && this.id) this.add(this.id);
@@ -656,6 +719,7 @@ var render = function() {
                                   background: item.background,
                                   user_img: "" + item.user.avatar,
                                   id: item.id,
+                                  user_option: item.user_option,
                                   show: _vm.show,
                                   add: _vm.addToBoard
                                 }

@@ -111,6 +111,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 
 
@@ -290,57 +296,119 @@ __webpack_require__.r(__webpack_exports__);
       var st = this.$date.timeFormat(start_time);
       var et = this.$date.timeFormat(end_time);
       return "".concat(st, " - ").concat(et);
+    },
+    show: function show(option, id) {
+      var _this5 = this;
+
+      if (option === 0) {
+        this.$vs.notify({
+          title: this.$t('Error'),
+          text: this.$t('WebinarOption'),
+          color: 'danger',
+          iconPack: 'feather',
+          icon: 'icon-alert-circle'
+        });
+        return;
+      }
+
+      var action = "/api/room/talk/check/".concat(id);
+      this.$loading.show(this);
+      this.$http.get(action).then(function (response) {
+        console.log(response.data);
+
+        _this5.$loading.hide(_this5);
+
+        if (response.data.status !== 'ok') {
+          _this5.$vs.notify({
+            title: _this5.$t('Error'),
+            text: _this5.$t('WebinarDate'),
+            color: 'danger',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          });
+        } else {
+          if (_this5.show && _this5.id) _this5.show(_this5.id);
+
+          _this5.$loading.show(_this5);
+
+          _this5.$http.post('/api/room/webinar/see', {
+            _id: id
+          }).then(function (response) {
+            _this5.$loading.hide(_this5);
+
+            if (response.data.status === 'ok') {
+              _this5.$vs.notify({
+                title: _this5.$t('Success'),
+                text: _this5.$t('SuccessMessage'),
+                color: 'success',
+                iconPack: 'feather',
+                icon: 'icon-alert-circle'
+              });
+
+              _this5.$router.go();
+            } else {
+              _this5.$vs.notify({
+                title: _this5.$t('Error'),
+                text: _this5.$t('FailMessage'),
+                color: 'danger',
+                iconPack: 'feather',
+                icon: 'icon-alert-circle'
+              });
+            }
+          });
+        }
+      });
     }
   },
   created: function created() {
-    var _this5 = this;
+    var _this6 = this;
 
     this.me = JSON.parse(localStorage.getItem('userInfo'));
     this.$loading.show(this);
     this.$http.post('/api/setting/webinar').then(function (response) {
-      _this5.$loading.hide(_this5);
+      _this6.$loading.hide(_this6);
 
       var data = response.data;
-      _this5.reserved_webinars = data.reserved_webinars;
-      _this5.past_webinars = data.past_webinars;
+      _this6.reserved_webinars = data.reserved_webinars;
+      _this6.past_webinars = data.past_webinars;
       console.log(data);
 
       var _loop = function _loop(wc) {
         // console.log(this.exhibitors, this.webinars[wc].user_id, this.exhibitors.lastIndexOf((ex) => ex.id === this.webinars[wc].user_id))
-        if (!_this5.exhibitors.find(function (ex) {
-          return ex.id === _this5.reserved_webinars[wc].talk.user_id;
+        if (!_this6.exhibitors.find(function (ex) {
+          return ex.id === _this6.reserved_webinars[wc].talk.user_id;
         })) {
-          _this5.exhibitors.push({
-            id: _this5.reserved_webinars[wc].talk.user_id,
-            label: _this5.reserved_webinars[wc].talk.exhibitor_name
+          _this6.exhibitors.push({
+            id: _this6.reserved_webinars[wc].talk.user_id,
+            label: _this6.reserved_webinars[wc].talk.exhibitor_name
           });
         }
       };
 
-      for (var wc in _this5.reserved_webinars) {
+      for (var wc in _this6.reserved_webinars) {
         _loop(wc);
       }
 
       var _loop2 = function _loop2(_wc) {
         // console.log(this.exhibitors, this.webinars[wc].user_id, this.exhibitors.lastIndexOf((ex) => ex.id === this.webinars[wc].user_id))
-        if (!_this5.exhibitors.find(function (ex) {
-          return ex.id === _this5.past_webinars[_wc].talk.user_id;
+        if (!_this6.exhibitors.find(function (ex) {
+          return ex.id === _this6.past_webinars[_wc].talk.user_id;
         })) {
-          _this5.exhibitors.push({
-            id: _this5.past_webinars[_wc].talk.user_id,
-            label: _this5.past_webinars[_wc].talk.exhibitor_name
+          _this6.exhibitors.push({
+            id: _this6.past_webinars[_wc].talk.user_id,
+            label: _this6.past_webinars[_wc].talk.exhibitor_name
           });
         }
       };
 
-      for (var _wc in _this5.past_webinars) {
+      for (var _wc in _this6.past_webinars) {
         _loop2(_wc);
       }
 
-      console.log(_this5.exhibitors);
+      console.log(_this6.exhibitors);
     });
     this.$http.post('/api/stand/ads/get').then(function (res) {
-      _this5.ads_list = res.data.ads;
+      _this6.ads_list = res.data.ads;
     });
   }
 });
@@ -569,8 +637,11 @@ var render = function() {
                                         expositor_profession:
                                           "" + item.talk.user.address,
                                         background: item.talk.background,
+                                        userOption: item.talk.user_option,
                                         user_img: "" + item.talk.user.avatar,
-                                        live: item.talk.live === 1
+                                        live: item.talk.live === 1,
+                                        id: item.talk.id,
+                                        show: _vm.show
                                       }
                                     })
                                   ],
@@ -625,8 +696,11 @@ var render = function() {
                                         expositor_profession:
                                           "" + item.talk.exhibitor_profession,
                                         background: item.talk.background,
+                                        userOption: item.talk.user_option,
                                         user_img: "" + _vm.me.avatar,
-                                        live: item.talk.live === 1
+                                        live: item.talk.live === 1,
+                                        id: item.talk.id,
+                                        show: _vm.show
                                       }
                                     })
                                   ],

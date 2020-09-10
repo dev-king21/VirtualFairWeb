@@ -34,8 +34,11 @@
                                           :expositor_name="`${item.talk.user.first_name} ${item.talk.user.last_name}`"
                                           :expositor_profession="`${item.talk.user.address}`"
                                           :background="item.talk.background"
+                                          :userOption="item.talk.user_option"
                                           :user_img="`${item.talk.user.avatar}`"
                                           :live="item.talk.live===1"
+                                          :id="item.talk.id"
+                                          :show="show"
                                           />
                                   </div>
                               </div>    
@@ -55,8 +58,11 @@
                                           :expositor_name="`${item.talk.exhibitor_name}`"
                                           :expositor_profession="`${item.talk.exhibitor_profession}`"
                                           :background="item.talk.background"
+                                          :userOption="item.talk.user_option"
                                           :user_img="`${me.avatar}`"
-                                          :live="item.talk.live===1" />
+                                          :live="item.talk.live===1"
+                                          :id="item.talk.id"
+                                          :show="show" />
                                   </div>
                               </div>    
                           </div>
@@ -225,6 +231,62 @@ export default {
       const st = this.$date.timeFormat(start_time)
       const et = this.$date.timeFormat(end_time)  
       return `${st} - ${et}`  
+    },
+    show (option, id) {
+      if (option === 0) {
+        this.$vs.notify({
+          title: this.$t('Error'),
+          text: this.$t('WebinarOption'),
+          color: 'danger',
+          iconPack: 'feather',
+          icon: 'icon-alert-circle'
+        })
+        return
+      }
+      const action = `/api/room/talk/check/${id}`
+      this.$loading.show(this)
+      this.$http.get(action)
+        .then((response) => {
+          console.log(response.data)
+          this.$loading.hide(this)
+          if (response.data.status !== 'ok') {
+            this.$vs.notify({
+              title: this.$t('Error'),
+              text: this.$t('WebinarDate'),
+              color: 'danger',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+            
+          } else {
+            if (this.show && this.id) this.show(this.id)  
+            
+            this.$loading.show(this)
+            this.$http.post('/api/room/webinar/see', {_id: id})
+              .then((response) => {
+                this.$loading.hide(this)
+                if (response.data.status === 'ok') {
+                  this.$vs.notify({
+                    title: this.$t('Success'),
+                    text: this.$t('SuccessMessage'),
+                    color: 'success',
+                    iconPack: 'feather',
+                    icon: 'icon-alert-circle'
+                  })
+                  this.$router.go()
+
+                } else {
+                  this.$vs.notify({
+                    title: this.$t('Error'),
+                    text: this.$t('FailMessage'),
+                    color: 'danger',
+                    iconPack: 'feather',
+                    icon: 'icon-alert-circle'
+                  })
+                } 
+              })
+          }
+        })
     }  
   },
   created () {

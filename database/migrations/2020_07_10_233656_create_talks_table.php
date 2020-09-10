@@ -38,6 +38,8 @@ class CreateTalksTable extends Migration
             $table->integer("category_id")->nullable();
             $table->string("background")->nullable();
             $table->string("video")->nullable();
+            $table->integer("user_option")->default(0);
+
             $table->timestamps();
         });
     }

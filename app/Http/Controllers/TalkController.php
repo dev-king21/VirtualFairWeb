@@ -73,7 +73,10 @@ class TalkController extends Controller
         
         $count = WebinarTicket::where(["user_id"=> $user->id, "talk_id" => $id])->count();    
         if ($count !== 0) {
-            return response()->json(["status" => "already_inserted"]);
+            $download = WebinarTicket::where(["user_id"=> $user->id, "talk_id" => $id])->first();
+            $query['user_id'] = $user->id;
+            $query['talk_id'] = $id;
+            $download->update($query);   
         }
 
         $download = new WebinarTicket;
@@ -84,5 +87,31 @@ class TalkController extends Controller
         $res["status"] = "ok";
         
         return response()->json($res);
+    }
+
+    public function see_webinar(Request $request) {
+        $res = array();
+        $id = $request->post("_id");
+        $user = $request->user();
+        if (!isset($id) || !isset($user)) 
+            return response()->json(["status" => "unknown_webinar"]);
+        $count = WebinarTicket::where(["user_id"=> $user->id, "talk_id" => $id])->count();    
+        if ($count !== 0) {
+            $download = WebinarTicket::where(["user_id"=> $user->id, "talk_id" => $id])->first();
+            $query['user_id'] = $user->id;
+            $query['talk_id'] = $id;
+            $query['seen'] = 1;
+            $download->update($query);            
+        }
+        else {
+            $download = new WebinarTicket;
+            $download->user_id = $user->id;
+            $download->talk_id = $id;
+            $download->seen = 1;
+            $download->save();
+        }
+        $res["status"] = "ok";
+        return response()->json($res);
+
     }
 }

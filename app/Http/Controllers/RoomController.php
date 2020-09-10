@@ -59,6 +59,7 @@ class RoomController extends Controller
         $talk->talk_date = $request->post("talk_date");
         $talk->start_time = $request->post("start_time");
         $talk->end_time = $request->post("end_time");
+        $talk->user_option = $request->post("user_option");
 
         $talk->save();
        
@@ -94,11 +95,12 @@ class RoomController extends Controller
         $query['talk_date'] =  $request->post("talk_date");
         $query['start_time'] =  $request->post("start_time");
         $query['end_time'] =  $request->post("end_time");
+        $query['user_option'] = $request->post("user_option");
 
         $talk->update($query);
 
         $query = array();
-        $admin_user = AdminUser::where("id" , $request->post('user_id'));
+        $admin_user = AdminUser::where("user_id" , $request->post('user_id'));
         $query['email'] = $request->post("key");
         $query['password'] = bcrypt($request->post("password"));
         $query['password_key'] = $request->post("password");
@@ -107,7 +109,7 @@ class RoomController extends Controller
         return response()->json($res);
     }
 
-    public function delete_talk(Request $request, $id){
+    public function delete_talk(Request $request, $id) {
         $res = array();
         $talk = Talk::find($id);
         $user_id = $talk->user_id;
@@ -115,6 +117,25 @@ class RoomController extends Controller
         $user = User::find($user_id);
         $user->delete();
         $res['status'] = 'ok';
+        return response()->json($res);
+    }
+
+    public function check_talk(Request $request, $id) { 
+        $res = array();
+        $talk = Talk::find($id);
+        $nowDate = date("Y-m-d");
+        $nowTime = date("H:i:s");
+        if($nowDate < $talk->talk_date) {
+            $res['status'] = 'not talk date';
+        }
+        else if ($nowDate == $talk->talk_date) {
+            if($talk->start_time <= $nowTime && $talk->end_time >= $nowTime){
+                $res['status'] = 'ok';
+            }
+        }
+        else if ($nowDate > $talk->talk_date) $res['status'] = 'ok';
+        $res['start'] = $talk->talk_date;
+        $res['nowTime'] = $nowDate;
         return response()->json($res);
     }
 
@@ -236,7 +257,6 @@ class RoomController extends Controller
         $res["talks"] = Talk::with(['user', 'room'])
         ->where($query)->get();
         $res["rooms"] = Room::all();
-        $res["users"] = User::where("type", "lecturer")->get();
         
         $now = date("y-m-d");
         $query1 = [
@@ -245,6 +265,8 @@ class RoomController extends Controller
         ]; 
         $query1["status"] = 1;
         $fair = Fair::where($query1)->first();
+        $res["users"] = User::where(["type"=>"lecturer", "fair_id"=>$fair->id])->get();
+
         $res["categories"] = Category::where('fair_id', $fair->id)->first();
         return response()->json($res);
     }

@@ -34,6 +34,7 @@
                                         :background="item.background"
                                         :user_img="`${item.user.avatar}`"
                                         :id="item.id" 
+                                        :user_option="item.user_option"
                                         :show="show"
                                         :add="addToBoard"/>
                                 </div>
@@ -165,14 +166,67 @@ export default {
       const ed = this.$date.timeFormat(end_time)  
       return `${sd} - ${ed}`  
     },
-    show (id) {
-      this.$router.push(`/room/webinar/${id}`)
+    show (option, id) {
+      if (option === 0) {
+        this.$vs.notify({
+          title: this.$t('Error'),
+          text: this.$t('WebinarOption'),
+          color: 'danger',
+          iconPack: 'feather',
+          icon: 'icon-alert-circle'
+        })
+        return
+      }
+      const action = `/api/room/talk/check/${id}`
+      this.$loading.show(this)
+      this.$http.get(action)
+        .then((response) => {
+          console.log(response.data)
+          this.$loading.hide(this)
+          if (response.data.status !== 'ok') {
+            this.$vs.notify({
+              title: this.$t('Error'),
+              text: this.$t('WebinarDate'),
+              color: 'danger',
+              iconPack: 'feather',
+              icon: 'icon-alert-circle'
+            })
+            
+          } else {
+            if (this.show && this.id) this.show(this.id)  
+            
+            this.$loading.show(this)
+            this.$http.post('/api/room/webinar/see', {_id: id})
+              .then((response) => {
+                this.$loading.hide(this)
+                if (response.data.status === 'ok') {
+                  this.$vs.notify({
+                    title: this.$t('Success'),
+                    text: this.$t('SuccessMessage'),
+                    color: 'success',
+                    iconPack: 'feather',
+                    icon: 'icon-alert-circle'
+                  })
+                } else {
+                  this.$vs.notify({
+                    title: this.$t('Error'),
+                    text: this.$t('FailMessage'),
+                    color: 'danger',
+                    iconPack: 'feather',
+                    icon: 'icon-alert-circle'
+                  })
+                } 
+              })
+          }
+        })
+      // this.$router.push(`/room/webinar/${id}`)
     },
     addToBoard (id) {
       this.$loading.show(this)
       this.$http.post('/api/room/webinar/add_to_board', {_id: id})
         .then((response) => {
           this.$loading.hide(this)
+          console.log(response.data)
           if (response.data.status === 'ok') {
             this.$vs.notify({
               title: this.$t('Success'),

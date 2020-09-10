@@ -505,9 +505,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 
 
 
@@ -641,6 +638,8 @@ __webpack_require__.r(__webpack_exports__);
       var action = '/api/room/talk/create';
       if (this.isAddOrEdit === 1) action = "/api/room/talk/update/".concat(this.talk_id);
       this.webinarDate = this.formatDate(this.webinarDate);
+      var option = 0;
+      if (this.checkOption === true) option = 1;
       var newData = {
         title: this.title,
         room_id: this.room_id.value,
@@ -652,6 +651,9 @@ __webpack_require__.r(__webpack_exports__);
         exhibitor_company: this.exhibitor_company,
         key: this.key,
         password: this.password,
+        user_option: option,
+        start_time: this.startTime,
+        end_time: this.endTime,
         // password_key: this.password_key,
         talk_date: this.webinarDate
       };
@@ -710,6 +712,9 @@ __webpack_require__.r(__webpack_exports__);
       this.exhibitor_company = talk.exhibitor_company;
       this.key = talk.key;
       this.password = talk.password;
+      if (talk.user_option === 1) this.checkOption = true;
+      this.startTime = talk.start_time;
+      this.endTime = talk.endTime;
     },
     cancelAction: function cancelAction() {
       this.isAddShow = false;
@@ -727,6 +732,7 @@ __webpack_require__.r(__webpack_exports__);
       this.key = '';
       this.password = '';
       this.isAddOrEdit = 0;
+      this.checkOption = false;
       this.popupTitle = this.$t('Add');
       this.isAddShow = true;
     },
@@ -1620,23 +1626,7 @@ var render = function() {
                                   },
                                   expression: "room_id"
                                 }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                {
-                                  directives: [
-                                    {
-                                      name: "show",
-                                      rawName: "v-show",
-                                      value: _vm.errors.has("role"),
-                                      expression: "errors.has('role')"
-                                    }
-                                  ],
-                                  staticClass: "text-danger text-sm"
-                                },
-                                [_vm._v(_vm._s(_vm.errors.first("role")))]
-                              )
+                              })
                             ],
                             1
                           )
@@ -1673,23 +1663,7 @@ var render = function() {
                                   },
                                   expression: "user_id"
                                 }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                {
-                                  directives: [
-                                    {
-                                      name: "show",
-                                      rawName: "v-show",
-                                      value: _vm.errors.has("role"),
-                                      expression: "errors.has('role')"
-                                    }
-                                  ],
-                                  staticClass: "text-danger text-sm"
-                                },
-                                [_vm._v(_vm._s(_vm.errors.first("role")))]
-                              )
+                              })
                             ],
                             1
                           )
@@ -1726,23 +1700,7 @@ var render = function() {
                                   },
                                   expression: "webinarType"
                                 }
-                              }),
-                              _vm._v(" "),
-                              _c(
-                                "span",
-                                {
-                                  directives: [
-                                    {
-                                      name: "show",
-                                      rawName: "v-show",
-                                      value: _vm.errors.has("role"),
-                                      expression: "errors.has('role')"
-                                    }
-                                  ],
-                                  staticClass: "text-danger text-sm"
-                                },
-                                [_vm._v(_vm._s(_vm.errors.first("role")))]
-                              )
+                              })
                             ],
                             1
                           )

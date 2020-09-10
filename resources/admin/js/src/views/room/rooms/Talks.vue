@@ -19,7 +19,6 @@
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
                      <v-select v-model="room_id"  :clearable="false" :options="roomOptions" v-validate="'required'" name="role" :dir="$vs.rtl ? 'rtl' : 'ltr'" />
-                      <span class="text-danger text-sm"  v-show="errors.has('role')">{{ errors.first('role') }}</span>
                   </div>
                 </div>
                 <div class="vx-row mb-6">
@@ -28,7 +27,6 @@
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
                      <v-select v-model="user_id"  :clearable="false" :options="userOptions" v-validate="'required'" name="role" :dir="$vs.rtl ? 'rtl' : 'ltr'" />
-                      <span class="text-danger text-sm"  v-show="errors.has('role')">{{ errors.first('role') }}</span>
                   </div>
                 </div>
                 <div class="vx-row mb-6">
@@ -37,7 +35,6 @@
                   </div>
                   <div class="vx-col sm:w-2/3 w-full">
                      <v-select v-model="webinarType"  :clearable="false" :options="webinarOptions" v-validate="'required'" name="role" :dir="$vs.rtl ? 'rtl' : 'ltr'" />
-                      <span class="text-danger text-sm"  v-show="errors.has('role')">{{ errors.first('role') }}</span>
                   </div>
                 </div>
                 <div class="vx-row mb-6">
@@ -381,6 +378,9 @@ export default {
       if(this.isAddOrEdit === 1)
         action = `/api/room/talk/update/${this.talk_id}`
       this.webinarDate = this.formatDate(this.webinarDate)
+      let option = 0
+      if(this.checkOption === true)
+        option = 1
       const newData = {
         title: this.title,
         room_id: this.room_id.value,
@@ -392,6 +392,9 @@ export default {
         exhibitor_company: this.exhibitor_company,
         key: this.key,
         password: this.password,
+        user_option : option,
+        start_time : this.startTime,
+        end_time : this.endTime,
         // password_key: this.password_key,
         talk_date: this.webinarDate
       }
@@ -441,7 +444,10 @@ export default {
       this.exhibitor_company = talk.exhibitor_company
       this.key = talk.key
       this.password = talk.password
-
+      if(talk.user_option === 1)
+        this.checkOption = true
+      this.startTime = talk.start_time
+      this.endTime = talk.endTime
     },
     cancelAction () {
       this.isAddShow = false
@@ -459,6 +465,7 @@ export default {
       this.key = ''
       this.password = ''
       this.isAddOrEdit = 0
+      this.checkOption = false
       this.popupTitle = this.$t('Add')
       this.isAddShow = true
     },
