@@ -24,6 +24,7 @@ class ZoomMeetingController extends Controller
 
     public function create_user(Request $request) {
         $data = array();
+        
         $user = Zoom::user()->create([ 
             'first_name' => 'First Name',
             'last_name' => 'Last Name',

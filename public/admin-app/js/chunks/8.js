@@ -500,6 +500,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -527,6 +535,7 @@ __webpack_require__.r(__webpack_exports__);
       isMounted: false,
       addNewDataSidebar: false,
       sidebarData: {},
+      checkOption: false,
       talks: [],
       isPast: false,
       switch1: false,
@@ -1960,6 +1969,32 @@ var render = function() {
                                     _vm.password = $$v
                                   },
                                   expression: "password"
+                                }
+                              })
+                            ],
+                            1
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "vx-row mb-6" }, [
+                          _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
+                            _c("span", [
+                              _vm._v(_vm._s(_vm.$t("WebinarOption")))
+                            ])
+                          ]),
+                          _vm._v(" "),
+                          _c(
+                            "div",
+                            { staticClass: "vx-col sm:w-2/3 w-full" },
+                            [
+                              _c("vs-checkbox", {
+                                staticClass: "inline-flex",
+                                model: {
+                                  value: _vm.checkOption,
+                                  callback: function($$v) {
+                                    _vm.checkOption = $$v
+                                  },
+                                  expression: "checkOption"
                                 }
                               })
                             ],

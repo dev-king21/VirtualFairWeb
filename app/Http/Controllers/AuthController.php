@@ -9,9 +9,12 @@ use App\User;
 use App\Fair;
 use App\CategoryInterest;
 use Carbon\Carbon;
+use App\Traits\ZoomController;
 
 class AuthController extends Controller
 {
+    use ZoomController;
+    
     public function register(Request $request)
     {
         $v = Validator::make($request->all(), [
@@ -74,7 +77,7 @@ class AuthController extends Controller
                 $cat_int->save();
             }
         }
-        
+        ZoomController::create_user($request);
         return response()->json(['status' => 'ok', 'interest' => $cat_interests], 200);
     }
 

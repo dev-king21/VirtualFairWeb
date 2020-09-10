@@ -110,7 +110,7 @@ export default {
     PasswordIncorrect: 'Password is incorrect',
     PasswordValidator: 'Password (greater than 8 characters and must contain upper and lower case)',
     ConfirmValidator: 'It should be the same as the password',
-
+    WebinarOption: 'See by all users'
   },
   es: {
     Room: 'Sala',
@@ -220,5 +220,6 @@ export default {
     PasswordIncorrect: 'Password is incorrect',
     PasswordValidator: 'Contraseña (más de 8 caracteres y debe contener mayúsculas y minúsculas)',
     ConfirmValidator: 'Debe ser la misma que la contraseña.',
+    WebinarOption: 'Ver por todas las usuarias'
   }
 }

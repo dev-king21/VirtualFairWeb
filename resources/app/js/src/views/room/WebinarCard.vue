@@ -93,6 +93,7 @@ export default {
   },
   methods: {
     showWebinar () {
+      //const now = 
       if (this.show && this.id) this.show(this.id)  
     },
     addToBoard () {

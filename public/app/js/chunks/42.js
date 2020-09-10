@@ -203,7 +203,8 @@ __webpack_require__.r(__webpack_exports__);
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars) {
         if (this.selected_type_id === 0) {
           count += this.reserved_webinars.filter(function (it) {
-            return _this.selected_exhibitor_id === 0 ? true : it.talk.user_id === _this.selected_exhibitor_id;
+            if (_this.selected_exhibitor_id === 0) return true;
+            return it.talk.user_id === _this.selected_exhibitor_id;
           }).length;
         } else {
           count += this.reserved_webinars.filter(function (it) {
@@ -222,7 +223,8 @@ __webpack_require__.r(__webpack_exports__);
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars) {
         if (this.selected_type_id === 0) {
           count += this.past_webinars.filter(function (it) {
-            return _this2.selected_exhibitor_id === 0 ? true : it.talk.user_id === _this2.selected_exhibitor_id;
+            if (_this2.selected_exhibitor_id === 0) return true;
+            return it.talk.user_id === _this2.selected_exhibitor_id;
           }).length;
         } else {
           count += this.past_webinars.filter(function (it) {
@@ -239,7 +241,8 @@ __webpack_require__.r(__webpack_exports__);
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars) {
         if (this.selected_type_id === 0) {
           return this.reserved_webinars.filter(function (it) {
-            return _this3.selected_exhibitor_id === 0 ? true : it.talk.user_id === _this3.selected_exhibitor_id;
+            if (_this3.selected_exhibitor_id === 0) return true;
+            return it.talk.user_id === _this3.selected_exhibitor_id;
           });
         } else {
           return this.reserved_webinars.filter(function (it) {
@@ -256,7 +259,8 @@ __webpack_require__.r(__webpack_exports__);
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars) {
         if (this.selected_type_id === 0) {
           return this.past_webinars.filter(function (it) {
-            return _this4.selected_exhibitor_id === 0 ? true : it.talk.user_id === _this4.selected_exhibitor_id;
+            if (_this4.selected_exhibitor_id === 0) return true;
+            return it.talk.user_id === _this4.selected_exhibitor_id;
           });
         } else {
           return this.past_webinars.filter(function (it) {

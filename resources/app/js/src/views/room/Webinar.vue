@@ -121,7 +121,10 @@ export default {
       let count = 0
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.webinars) {
         if (this.selected_type_id === 0) {
-          count += this.webinars.filter((it) => this.selected_exhibitor_id === 0 ? true : it.user_id === this.selected_exhibitor_id).length
+          count += this.webinars.filter((it) => {
+            if (this.selected_exhibitor_id === 0) return true
+            return it.user_id === this.selected_exhibitor_id
+          }).length
         } else {
           count += this.webinars.filter((it) => (it.live === this.selected_type_id) && (this.selected_exhibitor_id === 0 ? true : it.user_id === this.selected_exhibitor_id)).length
         }
@@ -131,7 +134,10 @@ export default {
     filtered_webinars () {
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.webinars) {
         if (this.selected_type_id === 0) {
-          return this.webinars.filter((it) => this.selected_exhibitor_id === 0 ? true : it.user_id === this.selected_exhibitor_id)
+          return this.webinars.filter((it) => {
+            if (this.selected_exhibitor_id === 0) return true
+            return it.user_id === this.selected_exhibitor_id
+          })
         } else {
           return this.webinars.filter((it) => (it.live === this.selected_type_id) && (this.selected_exhibitor_id === 0 ? true : it.user_id === this.selected_exhibitor_id)) 
         }

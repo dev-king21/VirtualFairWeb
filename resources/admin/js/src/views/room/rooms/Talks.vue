@@ -106,6 +106,14 @@
                     <vs-input class="w-full" type="password" v-model="password" />
                   </div>
                 </div>
+                <div class="vx-row mb-6">
+                  <div class="vx-col sm:w-1/3 w-full">
+                    <span>{{$t('WebinarOption')}}</span>
+                  </div>
+                  <div class="vx-col sm:w-2/3 w-full">
+                    <vs-checkbox class="inline-flex" v-model="checkOption"/>
+                  </div>
+                </div>
                 <div class="vx-row">
                   <div class="vx-col sm:w-2/3 w-full ml-auto">
                     <vs-button class="mr-3 mb-2" @click="addEditTalk()">{{$t('Ok')}}</vs-button>
@@ -265,7 +273,7 @@ export default {
       isMounted: false,
       addNewDataSidebar: false,
       sidebarData: {},
-
+      checkOption: false,
       talks:[],
       isPast: false,
       switch1: false,

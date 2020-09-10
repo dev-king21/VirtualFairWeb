@@ -156,7 +156,10 @@ export default {
       let count = 0
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars) {
         if (this.selected_type_id === 0) {
-          count += this.reserved_webinars.filter((it) => this.selected_exhibitor_id === 0 ? true : it.talk.user_id === this.selected_exhibitor_id).length
+          count += this.reserved_webinars.filter((it) => {
+            if (this.selected_exhibitor_id === 0) return true
+            return it.talk.user_id === this.selected_exhibitor_id
+          }).length
         } else {
           count += this.reserved_webinars.filter((it) => (it.talk.live === this.selected_type_id) && (this.selected_exhibitor_id === 0 ? true : it.talk.user_id === this.selected_exhibitor_id)).length
         }
@@ -167,7 +170,10 @@ export default {
       let count = 0
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars) {
         if (this.selected_type_id === 0) {
-          count += this.past_webinars.filter((it) => this.selected_exhibitor_id === 0 ? true : it.talk.user_id === this.selected_exhibitor_id).length
+          count += this.past_webinars.filter((it) => {
+            if (this.selected_exhibitor_id === 0) return true
+            return it.talk.user_id === this.selected_exhibitor_id
+          }).length
         } else {
           count += this.past_webinars.filter((it) => (it.talk.live === this.selected_type_id) && (this.selected_exhibitor_id === 0 ? true : it.talk.user_id === this.selected_exhibitor_id)).length
         }
@@ -177,7 +183,10 @@ export default {
     filtered_reserved_webinars () {
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars) {
         if (this.selected_type_id === 0) {
-          return this.reserved_webinars.filter((it) => this.selected_exhibitor_id === 0 ? true : it.talk.user_id === this.selected_exhibitor_id)
+          return this.reserved_webinars.filter((it) => {
+            if (this.selected_exhibitor_id === 0) return true
+            return it.talk.user_id === this.selected_exhibitor_id
+          })
         } else {
           return this.reserved_webinars.filter((it) => (it.talk.live === this.selected_type_id) && (this.selected_exhibitor_id === 0 ? true : it.talk.user_id === this.selected_exhibitor_id)) 
         }
@@ -187,8 +196,10 @@ export default {
     filtered_past_webinars () {
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars) {
         if (this.selected_type_id === 0) {
-          return this.past_webinars.filter((it) => this.selected_exhibitor_id === 0 ? true : it.talk.user_id === this.selected_exhibitor_id)
-
+          return this.past_webinars.filter((it) => {
+            if (this.selected_exhibitor_id === 0) return true
+            return it.talk.user_id === this.selected_exhibitor_id
+          })
         } else {
           return this.past_webinars.filter((it) => (it.talk.live === this.selected_type_id) && (this.selected_exhibitor_id === 0 ? true : it.talk.user_id === this.selected_exhibitor_id)) 
         }
