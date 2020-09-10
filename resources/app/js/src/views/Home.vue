@@ -115,7 +115,7 @@
           webinars
         </router-link>
         <router-link class="main-link flex" to="/fair/chatting">
-          <span>Networking</span>
+          <span>NETWORKING</span>
           <feather-icon class="ml-2 networking-badge" icon=""
              style="margin-top: 0px; background: #ff0000; margin-left: 2px;" :badge="msg_count" />
         </router-link>

@@ -30,6 +30,7 @@ class ZoomMeetingController extends Controller
             'email' => 'test@test.com',
             'password' => 'secret'
         ]);
+        
     }
 
     public function create_webinar(Request $request) {

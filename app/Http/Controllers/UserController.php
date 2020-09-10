@@ -94,105 +94,28 @@ class UserController extends Controller
         $res["status"] = "ok";
         return response()->json($res);
     }
-    /* public function requestUser(Request $request) {
+   
+    public function saveProfile(Request $request) {
         $res = array();
+        $user = $request->user();
+        $res["user"] = $user;
+        if($user->password_key != $request->post("old_password")){
+            $res["status"] = "not exact password";
+        }
+        else{
+            $query['password'] = bcrypt($request->post('password'));
+            $query['password_key'] = $request->post('password');
+            AdminUser::find($user->id)->update($query);
+            $res["status"] = "ok";
+        }
         
-        $stands = Stand::with(['fair', 'user'])->where("status", "=", 0)
-        ->whereHas("fair", function($q){
-            $today = date("y-m-d");
-            $query = [
-                ["start_date", ">", $today]
-            ];
-            $q->where($query);
-        })->get();
-
-        $now = date("y-m-d h:i:s");
-        $query = [
-            ["start_time", ">", $now],
-            ["status", "=", 0]
-        ];
-        $talks = Talk::with(['room', 'user'])->where($query)->get();
-
-        $res["stands"] = $stands;
-        $res["talks"] = $talks;
-
         return response()->json($res);
     }
-
-    public function bookedUser(Request $request) {
+    public function getPassword(Request $request) {
         $res = array();
-        $stands = Stand::with(['fair', 'user'])->where("status", "=", 1)
-        ->whereHas("fair", function($q){
-            $today = date("y-m-d");
-            $query = [
-                ["start_date", ">", $today]
-            ];
-            $q->where($query);
-        })->get();
-
-        $now = date("y-m-d h:i:s");
-        $query = [
-            ["start_time", ">", $now],
-            ["status", "=", 1]
-        ];
-        $talks = Talk::with(['room', 'user'])->where($query)->get();
-
-        $res["stands"] = $stands;
-        $res["talks"] = $talks;
-
+        $user = $request->user();
+        $res["password_key"] = $user->password_key;
+        $res["status"] = "ok";
         return response()->json($res);
     }
-
-    public function activeUser(Request $request) {
-        $res = array();
-        $stands = Stand::with(['fair', 'user'])->where("status", "=", 1)
-        ->whereHas("fair", function($q){
-            $today = date("y-m-d");
-            $query = [
-                ["start_date", "<=", $today],
-                ["end_date",">=", $today]
-            ];
-            $q->where($query);
-        })->get();
-
-        $now = date("y-m-d h:i:s");
-        $query = [
-            ["start_time", "<=", $now],
-            ["end_time",">=", $now], 
-            ["status", "=", 1]
-        ];
-        $talks = Talk::with(['room', 'user'])->where($query)->get();
-
-        $res["stands"] = $stands;
-        $res["talks"] = $talks;
-
-        return response()->json($res);
-    }
-
-    public function pastUser(Request $request) {
-        $res = array();
-
-        $stands = Stand::with(['fair', 'user'])->where("status", "=", 1)
-        ->whereHas("fair", function($q){
-            $today = date("y-m-d");
-            $query = [
-                ["start_date", ">", $today]
-            ];
-            $q->where($query);
-        })->get();
-
-        $now = date("y-m-d h:i:s");
-        $query = [
-            ["start_time", ">", $now],
-            ["status", "=", 1]
-        ];
-        $talks = Talk::with(['room', 'user'])->where($query)->get();
-
-        $res["stands"] = $stands;
-        $res["talks"] = $talks;
-
-        return response()->json($res);
-    } */
-
-
 }

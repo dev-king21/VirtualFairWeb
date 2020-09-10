@@ -88,6 +88,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 
 
@@ -109,33 +110,23 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      categories: [{
+      categories: [],
+      types: [],
+      exhibitors: [{
         id: 0,
-        label: this.$t('Category')
-      }, {
-        id: 1,
-        label: this.$t('Reserved')
-      }, {
-        id: 2,
-        label: this.$t('Seen')
-      }],
-      types: [{
-        id: 0,
-        label: this.$t('Type')
-      }, {
-        id: 1,
-        label: this.$t('Live')
-      }, {
-        id: 2,
-        label: this.$t('Recorded')
+        label: this.$t('Everyone')
       }],
       selected_type: {
         id: 0,
-        label: this.$t('Type')
+        label: this.$t('Everyone')
       },
       selected_category: {
         id: 0,
-        label: this.$t('Category')
+        label: this.$t('Everyone')
+      },
+      selected_exhibitor: {
+        id: 0,
+        label: this.$t('Everyone')
       },
       webinars: [],
       ads_list: [],
@@ -166,10 +157,12 @@ __webpack_require__.r(__webpack_exports__);
 
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.webinars) {
         if (this.selected_type_id === 0) {
-          count += this.webinars.length;
+          count += this.webinars.filter(function (it) {
+            return _this.selected_exhibitor_id === 0 ? true : it.user_id === _this.selected_exhibitor_id;
+          }).length;
         } else {
           count += this.webinars.filter(function (it) {
-            return it.live === _this.selected_type_id;
+            return it.live === _this.selected_type_id && (_this.selected_exhibitor_id === 0 ? true : it.user_id === _this.selected_exhibitor_id);
           }).length;
         }
       }
@@ -181,10 +174,12 @@ __webpack_require__.r(__webpack_exports__);
 
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.webinars) {
         if (this.selected_type_id === 0) {
-          return this.webinars;
+          return this.webinars.filter(function (it) {
+            return _this2.selected_exhibitor_id === 0 ? true : it.user_id === _this2.selected_exhibitor_id;
+          });
         } else {
           return this.webinars.filter(function (it) {
-            return it.live === _this2.selected_type_id;
+            return it.live === _this2.selected_type_id && (_this2.selected_exhibitor_id === 0 ? true : it.user_id === _this2.selected_exhibitor_id);
           });
         }
       }
@@ -197,6 +192,11 @@ __webpack_require__.r(__webpack_exports__);
     },
     selected_type_id: function selected_type_id() {
       if (this.selected_type) return this.selected_type.id;
+      return 0;
+    },
+    selected_exhibitor_id: function selected_exhibitor_id() {
+      console.log(this.selected_exhibitor);
+      if (this.selected_exhibitor) return this.selected_exhibitor.id;
       return 0;
     }
   },
@@ -242,12 +242,49 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this4 = this;
 
+    this.categories = [{
+      id: 0,
+      label: this.$t('Everyone')
+    }, {
+      id: 1,
+      label: this.$t('Reserved')
+    }, {
+      id: 2,
+      label: this.$t('Seen')
+    }];
+    this.types = [{
+      id: 0,
+      label: this.$t('Everyone')
+    }, {
+      id: 1,
+      label: this.$t('Live')
+    }, {
+      id: 2,
+      label: this.$t('Recorded')
+    }];
     this.$loading.show(this);
     this.$http.post('/api/room/webinar').then(function (response) {
       _this4.$loading.hide(_this4);
 
       var data = response.data;
       _this4.webinars = data.webinars;
+
+      var _loop = function _loop(wc) {
+        // console.log(this.exhibitors, this.webinars[wc].user_id, this.exhibitors.lastIndexOf((ex) => ex.id === this.webinars[wc].user_id))
+        if (!_this4.exhibitors.find(function (ex) {
+          return ex.id === _this4.webinars[wc].user_id;
+        })) {
+          _this4.exhibitors.push({
+            id: _this4.webinars[wc].user_id,
+            label: _this4.webinars[wc].exhibitor_name
+          });
+        }
+      };
+
+      for (var wc in _this4.webinars) {
+        _loop(wc);
+      } // console.log(this.exhibitors)
+
     });
     this.$http.post('/api/stand/ads/get').then(function (res) {
       _this4.ads_list = res.data.ads;
@@ -566,16 +603,19 @@ var render = function() {
                       _c(
                         "span",
                         {
-                          staticClass:
-                            "h6 ml-4 flex flex-row items-center ml-2 chevron-border"
+                          staticClass: "h6 ml-4 flex flex-row items-center ml-2"
                         },
                         [
-                          _c("span", { staticClass: "mr-6" }, [
-                            _vm._v(_vm._s(_vm.$t("Exhibitor")))
-                          ]),
-                          _vm._v(" "),
-                          _c("feather-icon", {
-                            attrs: { icon: "ChevronRightIcon" }
+                          _c("v-select", {
+                            staticStyle: { width: "160px" },
+                            attrs: { options: _vm.exhibitors },
+                            model: {
+                              value: _vm.selected_exhibitor,
+                              callback: function($$v) {
+                                _vm.selected_exhibitor = $$v
+                              },
+                              expression: "selected_exhibitor"
+                            }
                           })
                         ],
                         1
@@ -607,11 +647,9 @@ var render = function() {
                                   ),
                                   title: item.title,
                                   webinarType: item.live,
-                                  expositor_name:
-                                    item.user.first_name +
-                                    " " +
-                                    item.user.last_name,
-                                  expositor_profession: "" + item.user.address,
+                                  expositor_name: "" + item.exhibitor_name,
+                                  expositor_profession:
+                                    "" + item.exhibitor_profession,
                                   background: item.background,
                                   user_img: "" + item.user.avatar,
                                   id: item.id,

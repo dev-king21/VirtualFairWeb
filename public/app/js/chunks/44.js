@@ -180,7 +180,7 @@ var render = function() {
         "div",
         { staticClass: "w-full purchase-main" },
         [
-          _c("bread-crumb", { attrs: { text: "pagar stand" } }),
+          _c("bread-crumb", { attrs: { text: _vm.$t("Pay") + " stand" } }),
           _vm._v(" "),
           _c("div", { staticClass: "flex justify-center bg-white-grey" }, [
             _c(

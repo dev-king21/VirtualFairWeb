@@ -175,7 +175,9 @@ export default {
     CompanyName: 'Company Name',
     InsertCompanyInfo: 'Please fill in the information about your company.',
     PasswordValidator: 'Password (greater than 8 characters and must contain upper and lower case)',
-    ConfirmValidator: 'It should be the same as the password'
+    ConfirmValidator: 'It should be the same as the password',
+    NoMatchingOption: 'Sorry, no matching option',
+    Or: "Or"
 
   },
   es: {
@@ -353,6 +355,8 @@ export default {
     CompanyName: '  Nombre de la Empresa',
     InsertCompanyInfo: 'Por favor complete la información sobre su empresa',
     PasswordValidator: 'Contraseña (más de 8 caracteres y debe contener mayúsculas y minúsculas)',
-    ConfirmValidator: 'Debe ser la misma que la contraseña.'
+    ConfirmValidator: 'Debe ser la misma que la contraseña.',
+    NoMatchingOption: 'Lo siento, no hay opción de coincidencia',
+    Or: "O"
   }
 }

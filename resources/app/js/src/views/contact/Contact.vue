@@ -43,7 +43,11 @@
                         <span class="text-danger text-sm">{{ errors.first('Country') && errors.first('Country').replace('Country', $t('Country'))}}</span>
                     </div>
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-6 px-3">
-                        <v-select v-model="selected_region" @input="setUserRegion" :options="regions.filter((it) => it.country_id === selected_country.id)"/> 
+                        <v-select v-model="selected_region" @input="setUserRegion" :options="regions.filter((it) => it.country_id === selected_country.id)">
+                           <span slot="no-options" @click="$refs.select.open=false">
+                            {{$t('NoMatchingOption')}}
+                          </span>
+                        </v-select> 
                         <span class="text-danger text-sm">{{ errors.first('Region') && errors.first('Region').replace('Region', $t('Region'))}}</span>
                     </div>
 

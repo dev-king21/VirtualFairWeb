@@ -133,6 +133,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 
 
 
@@ -296,7 +300,7 @@ __webpack_require__.r(__webpack_exports__);
       if (!this.user.password || this.user.password.length < 8 || !/(?=.*[a-z])(?=.*[A-Z])/.test(this.user.password)) this.password_error = this.$t('PasswordValidator');else this.password_error = '';
     },
     ConfirmValidate: function ConfirmValidate() {
-      if (this.user.password !== this.user.repeat_password) this.confirm_error = this.$t('ConfirmValidator');else this.confirm_error = '';
+      if (this.user.password !== this.repeat_password) this.confirm_error = this.$t('ConfirmValidator');else this.confirm_error = '';
     }
   },
   created: function created() {
@@ -861,21 +865,45 @@ var render = function() {
                         "vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4"
                     },
                     [
-                      _c("v-select", {
-                        attrs: {
-                          options: _vm.regions.filter(function(it) {
-                            return it.country_id === _vm.selected_country.id
-                          })
-                        },
-                        on: { input: _vm.setUserRegion },
-                        model: {
-                          value: _vm.selected_region,
-                          callback: function($$v) {
-                            _vm.selected_region = $$v
+                      _c(
+                        "v-select",
+                        {
+                          attrs: {
+                            options: _vm.regions.filter(function(it) {
+                              return it.country_id === _vm.selected_country.id
+                            })
                           },
-                          expression: "selected_region"
-                        }
-                      }),
+                          on: { input: _vm.setUserRegion },
+                          model: {
+                            value: _vm.selected_region,
+                            callback: function($$v) {
+                              _vm.selected_region = $$v
+                            },
+                            expression: "selected_region"
+                          }
+                        },
+                        [
+                          _c(
+                            "span",
+                            {
+                              attrs: { slot: "no-options" },
+                              on: {
+                                click: function($event) {
+                                  _vm.$refs.select.open = false
+                                }
+                              },
+                              slot: "no-options"
+                            },
+                            [
+                              _vm._v(
+                                "\n                        " +
+                                  _vm._s(_vm.$t("NoMatchingOption")) +
+                                  "\n                      "
+                              )
+                            ]
+                          )
+                        ]
+                      ),
                       _vm._v(" "),
                       _c("span", { staticClass: "text-danger text-sm" }, [
                         _vm._v(

@@ -172,10 +172,10 @@ __webpack_require__.r(__webpack_exports__);
       webinar_list: [],
       categories: [{
         id: 0,
-        label: this.$t('Category')
+        label: this.$t('Everyone')
       }, {
         id: 1,
-        label: "".concat(this.$t('Catalog'), " O ").concat(this.$t('Brochure'))
+        label: "".concat(this.$t('CatalogBrochure'))
       }, {
         id: 2,
         label: 'VIDEOS'
@@ -185,7 +185,7 @@ __webpack_require__.r(__webpack_exports__);
       }],
       selected_category: {
         id: 0,
-        label: this.$t('Category')
+        label: this.$t('Everyone')
       }
     };
   },
@@ -629,13 +629,7 @@ var render = function() {
                       _c(
                         "span",
                         { staticClass: "h4 font-bold ml-4 uppercase" },
-                        [
-                          _vm._v(
-                            _vm._s(_vm.$t("Catalog")) +
-                              " O " +
-                              _vm._s(_vm.$t("Brochure"))
-                          )
-                        ]
+                        [_vm._v(_vm._s(_vm.$t("CatalogBrochure")))]
                       )
                     ],
                     1

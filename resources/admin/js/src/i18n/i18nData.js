@@ -103,7 +103,13 @@ export default {
     FileFormatTitle: 'File Format Error',
     FileFormatContent: 'Only supports upload .png, .gif, .jpg, .jpeg suffix files',
     WebinarType: 'Webinar Type',
-    NewCategory: 'New Category'
+    NewCategory: 'New Category',
+    OldPassword: 'Old Password',
+    NewPassword: 'New Password',
+    ConfirmPassword: 'Confirm Password',
+    PasswordIncorrect: 'Password is incorrect',
+    PasswordValidator: 'Password (greater than 8 characters and must contain upper and lower case)',
+    ConfirmValidator: 'It should be the same as the password',
 
   },
   es: {
@@ -207,6 +213,12 @@ export default {
     FileFormatTitle: 'Error de formato de archivo',
     FileFormatContent: 'Solo admite la carga de archivos de sufijo .png, .gif, .jpg, .jpeg',
     WebinarType: 'Tipo de webinar',
-    NewCategory: 'Nueva categoría'
+    NewCategory: 'Nueva categoría',
+    OldPassword: 'OldPassword',
+    NewPassword: 'NewPassword',
+    ConfirmPassword: 'Confirm Password',
+    PasswordIncorrect: 'Password is incorrect',
+    PasswordValidator: 'Contraseña (más de 8 caracteres y debe contener mayúsculas y minúsculas)',
+    ConfirmValidator: 'Debe ser la misma que la contraseña.',
   }
 }

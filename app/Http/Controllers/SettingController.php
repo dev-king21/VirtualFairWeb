@@ -639,14 +639,10 @@ class SettingController extends Controller
       $user = $request->user();
       $res["reserved_webinars"] = WebinarTicket::with(["talk"=> function($qr) {
                                       $qr->with("user")->get(); 
-                                  }])->whereHas("talk", function($qr) use($now) { 
-                                      $qr->where("talk_date", ">=", $now); 
-                                  })->where("user_id", $user->id)->get();
+                                  }])->where(["user_id"=> $user->id, "seen" => 0])->get();
       $res["past_webinars"] = WebinarTicket::with(["talk"=> function($qr) { 
                                       $qr->with("user")->get(); 
-                                  }])->whereHas("talk", function($qr) use($now) {
-                                      $qr->where("talk_date", "<", $now); 
-                                  })->where("user_id", $user->id)->get();
+                                  }])->where(["user_id"=> $user->id, "seen" => 1])->get();
       
       return response()->json($res);
     }

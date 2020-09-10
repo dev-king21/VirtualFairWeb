@@ -13,7 +13,7 @@
                 <div class="w-full mb-8 pb-4 bg-white" v-if="selected_cat_id === 0 || selected_cat_id === 1">
                     <div class="m-2 p-4 flex items-center w-full mt-1 mx-2 mb-4">
                         <svg-icon size="w-8 h-8 text-black" icon="brochure" />
-                        <span class="h4 font-bold ml-4 uppercase">{{$t('Catalog')}} O {{$t('Brochure')}}</span>
+                        <span class="h4 font-bold ml-4 uppercase">{{$t('CatalogBrochure')}}</span>
                     </div>
                     <div class="vx-row w-full">
                         <div class="vx-col w-1/4" :key="`catalog-item-${index}`" v-for="(item, index) in catalog_list">
@@ -89,12 +89,12 @@ export default {
       video_list: [],
       webinar_list: [],
       categories: [
-        {id: 0, label: this.$t('Category')},
-        {id: 1, label: `${this.$t('Catalog')} O ${this.$t('Brochure')}`},
+        {id: 0, label: this.$t('Everyone')},
+        {id: 1, label: `${this.$t('CatalogBrochure')}`},
         {id: 2, label: 'VIDEOS'},
         {id: 3, label: 'WEBINARS'}
       ],
-      selected_category: {id: 0, label: this.$t('Category')}
+      selected_category: {id: 0, label: this.$t('Everyone')}
     }
   },
   computed: {

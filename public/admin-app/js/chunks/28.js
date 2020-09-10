@@ -1879,10 +1879,10 @@ __webpack_require__.r(__webpack_exports__);
       this.$i18n.locale = locale;
       if (locale === 'en') return {
         flag: 'us',
-        lang: 'English'
+        lang: 'ENGLISH'
       };else if (locale === 'es') return {
         flag: 'es',
-        lang: 'Spanish'
+        lang: 'SPANISH'
       };
     }
   },
@@ -2147,10 +2147,41 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   watch: {},
   data: function data() {
-    return {};
+    return {
+      isShow: false,
+      email: '',
+      password: '',
+      oldPassword: '',
+      newPassword: '',
+      confirmPassword: '',
+      old_error: '',
+      password_error: '',
+      confirm_error: ''
+    };
   },
   computed: {
     activeUserInfo: function activeUserInfo() {
@@ -2164,19 +2195,74 @@ __webpack_require__.r(__webpack_exports__);
         last_name: 'user',
         avatar: ''
       };
-      console.log(this.$store.state.auth.userInfo);
       return this.$store.state.auth.userInfo;
     }
   },
   methods: {
-    logout: function logout() {
+    PasswordCheck: function PasswordCheck() {
+      if (this.password !== this.oldPassword) this.old_error = this.$t("PasswordIncorrect");else this.old_error = '';
+    },
+    PasswordValidate: function PasswordValidate() {
+      if (!this.newPassword || this.newPassword.length < 8 || !/(?=.*[a-z])(?=.*[A-Z])/.test(this.newPassword)) this.password_error = this.$t('PasswordValidator');else this.password_error = '';
+    },
+    ConfirmValidate: function ConfirmValidate() {
+      if (this.newPassword !== this.confirmPassword) this.confirm_error = this.$t('ConfirmValidator');else this.confirm_error = '';
+    },
+    EditProfile: function EditProfile() {
       var _this = this;
+
+      var action = '/api/user/get-password';
+      this.$loading.show(this);
+      this.$http.post(action).then(function (response) {
+        _this.$loading.hide(_this);
+      });
+      this.isShow = true;
+    },
+    cancelAction: function cancelAction() {
+      this.isShow = false;
+    },
+    SaveProfile: function SaveProfile() {
+      var _this2 = this;
+
+      if (!this.oldPassword || !this.newPassword || !this.confirmPassword) return;
+      var action = '/api/user/profile/save';
+      var newData = {
+        old_password: this.old_password,
+        password: this.newPassword
+      };
+      this.$loading.show(this);
+      this.$http.post(action, newData).then(function (response) {
+        _this2.$loading.hide(_this2);
+
+        if (response.data.status === 'ok') {
+          _this2.$vs.notify({
+            title: _this2.$t('Success'),
+            text: _this2.$t('SuccessMessage'),
+            color: 'success',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          });
+
+          _this2.isShow = false;
+        } else if (response.data.status === 'not exact password') {
+          _this2.$vs.notify({
+            title: _this2.$t('Error'),
+            text: _this2.$t('PasswordIncorrect'),
+            color: 'danger',
+            iconPack: 'feather',
+            icon: 'icon-alert-circle'
+          });
+        }
+      });
+    },
+    logout: function logout() {
+      var _this3 = this;
 
       this.$loading.show(this);
       this.$store.dispatch('auth/logout').then(function () {
-        _this.$loading.hide(_this);
+        _this3.$loading.hide(_this3);
 
-        _this.$router.push('/auth/login');
+        _this3.$router.push('/auth/login');
       })["catch"](function (error) {
         console.log('error', error);
       });
@@ -5851,10 +5937,6 @@ var render = function() {
               }
             }),
             _vm._v(" "),
-            _vm.windowWidth >= 992
-              ? _c("bookmarks", { attrs: { navbarColor: _vm.navbarColor } })
-              : _vm._e(),
-            _vm._v(" "),
             _c("vs-spacer"),
             _vm._v(" "),
             _c("i18n"),
@@ -6450,7 +6532,7 @@ var render = function() {
                   alt: "en"
                 }
               }),
-              _vm._v("  English")
+              _vm._v("  ENGLISH")
             ]
           ),
           _vm._v(" "),
@@ -6471,7 +6553,7 @@ var render = function() {
                   alt: "pt"
                 }
               }),
-              _vm._v("  Spanish")
+              _vm._v("  SPANISH")
             ]
           )
         ],
@@ -6688,20 +6770,16 @@ var render = function() {
                       {
                         staticClass:
                           "flex py-2 px-4 cursor-pointer hover:bg-primary hover:text-white",
-                        on: {
-                          click: function($event) {
-                            _vm.$router
-                              .push("/pages/profile")
-                              .catch(function() {})
-                          }
-                        }
+                        on: { click: _vm.EditProfile }
                       },
                       [
                         _c("feather-icon", {
                           attrs: { icon: "UserIcon", svgClasses: "w-4 h-4" }
                         }),
                         _vm._v(" "),
-                        _c("span", { staticClass: "ml-2" }, [_vm._v("Profile")])
+                        _c("span", { staticClass: "ml-2" }, [
+                          _vm._v(_vm._s(_vm.$t("Profile")))
+                        ])
                       ],
                       1
                     ),
@@ -6730,6 +6808,146 @@ var render = function() {
               ])
             ],
             1
+          ),
+          _vm._v(" "),
+          _c(
+            "vs-popup",
+            {
+              staticClass: "w-full mb-base items-center",
+              attrs: { title: _vm.$t("Profile"), active: _vm.isShow },
+              on: {
+                "update:active": function($event) {
+                  _vm.isShow = $event
+                }
+              }
+            },
+            [
+              _c(
+                "div",
+                { staticClass: " w-full mb-base" },
+                [
+                  _c("vx-card", [
+                    _c("div", { staticClass: "vx-row mb-6" }, [
+                      _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
+                        _c("span", [_vm._v(_vm._s(_vm.$t("OldPassword")))])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "vx-col sm:w-2/3 w-full" },
+                        [
+                          _c("vs-input", {
+                            staticClass: "w-full",
+                            attrs: { type: "password" },
+                            model: {
+                              value: _vm.oldPassword,
+                              callback: function($$v) {
+                                _vm.oldPassword = $$v
+                              },
+                              expression: "oldPassword"
+                            }
+                          })
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "vx-row mb-6" }, [
+                      _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
+                        _c("span", [_vm._v(_vm._s(_vm.$t("NewPassword")))])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "vx-col sm:w-2/3 w-full" },
+                        [
+                          _c("vs-input", {
+                            staticClass: "w-full",
+                            attrs: { type: "password" },
+                            on: { blur: _vm.PasswordValidate },
+                            model: {
+                              value: _vm.newPassword,
+                              callback: function($$v) {
+                                _vm.newPassword = $$v
+                              },
+                              expression: "newPassword"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "text-danger text-sm" }, [
+                            _vm._v(_vm._s(_vm.password_error))
+                          ])
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "vx-row mb-6" }, [
+                      _c("div", { staticClass: "vx-col sm:w-1/3 w-full" }, [
+                        _c("span", [_vm._v(_vm._s(_vm.$t("ConfirmPassword")))])
+                      ]),
+                      _vm._v(" "),
+                      _c(
+                        "div",
+                        { staticClass: "vx-col sm:w-2/3 w-full" },
+                        [
+                          _c("vs-input", {
+                            staticClass: "w-full",
+                            attrs: { type: "password" },
+                            on: { blur: _vm.ConfirmValidate },
+                            model: {
+                              value: _vm.confirmPassword,
+                              callback: function($$v) {
+                                _vm.confirmPassword = $$v
+                              },
+                              expression: "confirmPassword"
+                            }
+                          }),
+                          _vm._v(" "),
+                          _c("span", { staticClass: "text-danger text-sm" }, [
+                            _vm._v(_vm._s(_vm.confirm_error))
+                          ])
+                        ],
+                        1
+                      )
+                    ]),
+                    _vm._v(" "),
+                    _c("div", { staticClass: "vx-row" }, [
+                      _c(
+                        "div",
+                        { staticClass: "vx-col sm:w-2/3 w-full ml-auto" },
+                        [
+                          _c(
+                            "vs-button",
+                            {
+                              staticClass: "mr-3 mb-2",
+                              on: { click: _vm.SaveProfile }
+                            },
+                            [_vm._v(_vm._s(_vm.$t("Ok")))]
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "vs-button",
+                            {
+                              staticClass: "mb-2",
+                              attrs: { color: "warning", type: "border" },
+                              on: {
+                                click: function($event) {
+                                  return _vm.cancelAction()
+                                }
+                              }
+                            },
+                            [_vm._v(_vm._s(_vm.$t("Cancel")))]
+                          )
+                        ],
+                        1
+                      )
+                    ])
+                  ])
+                ],
+                1
+              )
+            ]
           )
         ],
         1

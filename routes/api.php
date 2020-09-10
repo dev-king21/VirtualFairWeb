@@ -113,6 +113,8 @@ Route::group(['middleware' => ['auth:admin']], function() {
     Route::get('/exhibitor', 'RoomController@exhibitorWebinar');
      //exhibitor webinar
      Route::post('/exhibitor/update/{talk_id}', 'RoomController@updateWebinar');
+     Route::post('/user/profile/save', 'UserController@saveProfile');
+     Route::post('/user/get-password', 'UserController@getPassword');
 
 
     //QueryContact and ContactMessage

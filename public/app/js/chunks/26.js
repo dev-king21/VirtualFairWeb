@@ -111,6 +111,13 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -130,10 +137,18 @@ __webpack_require__.r(__webpack_exports__);
       user: {},
       repeat_password: '',
       selected_country: undefined,
-      selected_region: undefined
+      selected_region: undefined,
+      password_error: '',
+      confirm_error: ''
     };
   },
   methods: {
+    PasswordValidate: function PasswordValidate() {
+      if (!this.user.password || this.user.password.length < 8 || !/(?=.*[a-z])(?=.*[A-Z])/.test(this.user.password)) this.password_error = this.$t('PasswordValidator');else this.password_error = '';
+    },
+    ConfirmValidate: function ConfirmValidate() {
+      if (this.user.password !== this.repeat_password) this.confirm_error = this.$t('ConfirmValidator');else this.confirm_error = '';
+    },
     saveProfile: function saveProfile() {
       var _this = this;
 
@@ -264,6 +279,7 @@ __webpack_require__.r(__webpack_exports__);
   created: function created() {
     var _this3 = this;
 
+    console.log("adfdsf");
     var userInfo = localStorage.getItem('userInfo');
 
     if (!userInfo) {
@@ -281,6 +297,7 @@ __webpack_require__.r(__webpack_exports__);
       _this3.$loading.hide(_this3);
 
       _this3.user = response.data;
+      console.log(_this3.user);
     })["catch"](function (error) {
       return console.log(error);
     });
@@ -288,14 +305,20 @@ __webpack_require__.r(__webpack_exports__);
       if (res.data.countries) {
         _this3.countries = res.data.countries;
         _this3.regions = res.data.regions;
-        _this3.selected_country = {
-          id: 0,
-          label: _this3.$t('SelectCountry')
-        };
-        _this3.selected_region = {
-          id: 0,
-          label: _this3.$t('SelectRegion')
-        };
+
+        if (_this3.user) {
+          _this3.selected_country = _this3.user.country;
+          _this3.selected_region = _this3.user.region;
+        } else {
+          _this3.selected_country = {
+            id: 0,
+            label: _this3.$t('SelectCountry')
+          };
+          _this3.selected_region = {
+            id: 0,
+            label: _this3.$t('SelectRegion')
+          };
+        }
       }
     });
   }
@@ -477,64 +500,63 @@ var render = function() {
           _c("nav-back-button"),
           _vm._v(" "),
           _c("div", { staticClass: "flex flex-col setting-wrapper" }, [
-            _c(
-              "div",
-              { staticClass: "flex items-center bg-blue-dark pt-4 pb-2" },
-              [
-                _c(
-                  "div",
-                  {
-                    staticClass: "flex items-center ml-8 cursor-pointer",
-                    on: {
-                      click: function($event) {
-                        return _vm.$router.push("/setting/profile")
-                      }
+            _c("div", { staticClass: "bg-blue-dark pt-4 pb-2" }, [
+              _c(
+                "div",
+                {
+                  staticClass: "flex items-center cursor-pointer",
+                  on: {
+                    click: function($event) {
+                      return _vm.$router.push("/setting/profile")
                     }
-                  },
-                  [
-                    _c("img", {
-                      staticClass: "user-img responsive mx-4",
-                      attrs: {
-                        src:
-                          "/fair_image/" +
-                          (_vm.user.avatar
-                            ? _vm.user.avatar
-                            : "placeholder.png")
-                      }
-                    }),
-                    _vm._v(" "),
-                    _c("div", [
-                      _c("div", { staticClass: "user-name h4 text-white" }, [
-                        _vm._v(_vm._s(_vm.$t("MyProfile")))
+                  }
+                },
+                [
+                  _c("img", {
+                    staticClass: "user-img responsive mx-4",
+                    attrs: {
+                      src:
+                        "/fair_image/" +
+                        (_vm.user.avatar ? _vm.user.avatar : "placeholder.png")
+                    }
+                  }),
+                  _vm._v(" "),
+                  _c("div", [
+                    _c(
+                      "div",
+                      {
+                        staticClass: "user-name h4 text-white",
+                        staticStyle: { width: "100px" }
+                      },
+                      [_vm._v(_vm._s(_vm.$t("MyProfile")))]
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    {
+                      staticClass: "flex flex-col items-center w-full",
+                      staticStyle: {}
+                    },
+                    [
+                      _c("h3", { staticClass: "text-center text-white " }, [
+                        _vm._v(
+                          _vm._s(_vm.$t("Hello")) +
+                            "! " +
+                            _vm._s(_vm.user.first_name) +
+                            " " +
+                            _vm._s(_vm.user.last_name)
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("h4", { staticClass: "text-center text-white mt-2" }, [
+                        _vm._v(_vm._s(_vm.$t("YouWant")))
                       ])
-                    ])
-                  ]
-                ),
-                _vm._v(" "),
-                _c(
-                  "div",
-                  {
-                    staticClass: "flex flex-col items-center mx-24",
-                    staticStyle: {}
-                  },
-                  [
-                    _c("h3", { staticClass: "text-center text-white " }, [
-                      _vm._v(
-                        _vm._s(_vm.$t("Hello")) +
-                          "! " +
-                          _vm._s(_vm.user.first_name) +
-                          " " +
-                          _vm._s(_vm.user.last_name)
-                      )
-                    ]),
-                    _vm._v(" "),
-                    _c("h4", { staticClass: "text-center text-white mt-2" }, [
-                      _vm._v(_vm._s(_vm.$t("YouWant")))
-                    ])
-                  ]
-                )
-              ]
-            ),
+                    ]
+                  )
+                ]
+              )
+            ]),
             _vm._v(" "),
             _c(
               "div",
@@ -803,24 +825,48 @@ var render = function() {
                               _vm._v(_vm._s(_vm.$t("SelectRegion")))
                             ]),
                             _vm._v(" "),
-                            _c("v-select", {
-                              staticClass: "w-4/5",
-                              attrs: {
-                                options: _vm.regions.filter(function(it) {
-                                  return (
-                                    it.country_id === _vm.selected_country.id
-                                  )
-                                })
-                              },
-                              on: { input: _vm.setUserRegion },
-                              model: {
-                                value: _vm.selected_region,
-                                callback: function($$v) {
-                                  _vm.selected_region = $$v
+                            _c(
+                              "v-select",
+                              {
+                                staticClass: "w-4/5",
+                                attrs: {
+                                  options: _vm.regions.filter(function(it) {
+                                    return (
+                                      it.country_id === _vm.selected_country.id
+                                    )
+                                  })
                                 },
-                                expression: "selected_region"
-                              }
-                            })
+                                on: { input: _vm.setUserRegion },
+                                model: {
+                                  value: _vm.selected_region,
+                                  callback: function($$v) {
+                                    _vm.selected_region = $$v
+                                  },
+                                  expression: "selected_region"
+                                }
+                              },
+                              [
+                                _c(
+                                  "span",
+                                  {
+                                    attrs: { slot: "no-options" },
+                                    on: {
+                                      click: function($event) {
+                                        _vm.$refs.select.open = false
+                                      }
+                                    },
+                                    slot: "no-options"
+                                  },
+                                  [
+                                    _vm._v(
+                                      "\n                                    " +
+                                        _vm._s(_vm.$t("NoMatchingOption")) +
+                                        "\n                                  "
+                                    )
+                                  ]
+                                )
+                              ]
+                            )
                           ],
                           1
                         ),
@@ -879,22 +925,14 @@ var render = function() {
                           },
                           [
                             _c("vs-input", {
-                              directives: [
-                                {
-                                  name: "validate",
-                                  rawName: "v-validate",
-                                  value: "required",
-                                  expression: "'required'"
-                                }
-                              ],
                               staticClass: "w-4/5",
                               attrs: {
                                 type: "password",
                                 color: "success",
                                 name: "Contrasena",
-                                "data-vv-validate-on": "blur",
                                 "label-placeholder": _vm.$t("SelectPassword")
                               },
+                              on: { blur: _vm.PasswordValidate },
                               model: {
                                 value: _vm.user.password,
                                 callback: function($$v) {
@@ -902,7 +940,11 @@ var render = function() {
                                 },
                                 expression: "user.password"
                               }
-                            })
+                            }),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "text-danger text-sm" }, [
+                              _vm._v(_vm._s(_vm.password_error))
+                            ])
                           ],
                           1
                         ),
@@ -915,22 +957,14 @@ var render = function() {
                           },
                           [
                             _c("vs-input", {
-                              directives: [
-                                {
-                                  name: "validate",
-                                  rawName: "v-validate",
-                                  value: "required",
-                                  expression: "'required'"
-                                }
-                              ],
                               staticClass: "w-4/5",
                               attrs: {
                                 type: "password",
                                 color: "success",
                                 name: "Apellido",
-                                "data-vv-validate-on": "blur",
                                 "label-placeholder": _vm.$t("ConfirmPassword")
                               },
+                              on: { blur: _vm.ConfirmValidate },
                               model: {
                                 value: _vm.repeat_password,
                                 callback: function($$v) {
@@ -938,7 +972,11 @@ var render = function() {
                                 },
                                 expression: "repeat_password"
                               }
-                            })
+                            }),
+                            _vm._v(" "),
+                            _c("span", { staticClass: "text-danger text-sm" }, [
+                              _vm._v(_vm._s(_vm.confirm_error))
+                            ])
                           ],
                           1
                         ),

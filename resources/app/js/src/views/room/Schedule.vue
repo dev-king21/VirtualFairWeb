@@ -29,7 +29,7 @@
                                 <span class="fs-24 text-white stroke-text" style="font-weight: 100">{{$t('Everyone')}}</span>
                                 <span class="fs-24 text-white font-bold ml-2" style="font-weight: 900">{{$t('Event')}}</span>
                             </div>
-                            <div class="text-white fs-12 bg-blue-dark cursor-pointer font-normal p-6" @click="$router.push('/room/webinar')">
+                            <div class="text-white fs-12 bg-blue-dark cursor-pointer font-normal p-6" style="word-spacing: 0.3rem !important" @click="$router.push('/room/webinar')">
                                 {{$t('SeeWebinar')}}
                             </div>
                         </div>

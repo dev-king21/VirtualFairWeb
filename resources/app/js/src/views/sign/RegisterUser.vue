@@ -84,7 +84,11 @@
                     <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-4">
                         <!--vs-input class="w-full" color="success" :placeholder="$t('SelectRegion')" name="Region"
                         v-validate="'required'" data-vv-validate-on="blur"  v-model="user.region"/-->
-                        <v-select v-model="selected_region" @input="setUserRegion" :options="regions.filter((it) => it.country_id === selected_country.id)"/> 
+                        <v-select v-model="selected_region" @input="setUserRegion" :options="regions.filter((it) => it.country_id === selected_country.id)"> 
+                          <span slot="no-options" @click="$refs.select.open=false">
+                            {{$t('NoMatchingOption')}}
+                          </span>
+                        </v-select>
                         <span class="text-danger text-sm">{{ errors.first('Region') && errors.first('Region').replace('Region', $t('Region'))}}</span>
 
                     </div>
@@ -279,7 +283,7 @@ export default {
       else this.password_error = ''
     },
     ConfirmValidate () {
-      if(this.user.password !== this.user.repeat_password)
+      if(this.user.password !== this.repeat_password)
         this.confirm_error = this.$t('ConfirmValidator')
       else
         this.confirm_error = ''

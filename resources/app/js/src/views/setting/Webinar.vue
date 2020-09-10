@@ -16,12 +16,12 @@
                                 <v-select v-model="selected_type" :options="types" style="width: 160px;"/>
                             </span>
                             <span class="h6 ml-4 flex flex-row items-center ml-2">
-                                <span class="mr-6">{{$t('Exhibitor')}}</span> <feather-icon icon="ChevronRightIcon" />
+                                <v-select v-model="selected_exhibitor" :options="exhibitors" style="width: 160px;"/> 
                             </span>
                         </div>
                         <div v-if="reserved_webinar_count > 0">
                           <div class="px-8">
-                              <h2 class="font-bold my-8 uppercase">{{$t('Reserved')}} Or {{$t('Aggregates')}}</h2>
+                              <h2 class="font-bold my-8 uppercase">{{$t('Reserved')}} {{$t('Or')}} {{$t('Aggregates')}}</h2>
                           </div>
                           <div class="vx-row" >
                               <div class="vx-col w-1/3" :key="`all-schedule-${index}`" v-for="(item, index) in filtered_reserved_webinars" >
@@ -52,8 +52,8 @@
                                           :workdate="item.talk.talk_date"
                                           :time="period(item.talk.start_time, item.talk.end_time)"
                                           :title="item.talk.title"
-                                          :expositor_name="`${me.first_name} ${me.last_name}`"
-                                          :expositor_profession="`${me.address}`"
+                                          :expositor_name="`${item.talk.exhibitor_name}`"
+                                          :expositor_profession="`${item.talk.exhibitor_profession}`"
                                           :background="item.talk.background"
                                           :user_img="`${me.avatar}`"
                                           :live="item.talk.live===1" />
@@ -114,18 +114,20 @@ export default {
       me: {},
       reserved_webinars: [],
       past_webinars: [],
+      exhibitors: [{id: 0, label: this.$t('Everyone')}],
+      selected_exhibitor: {id: 0, label: this.$t('Everyone')},
       categories: [
-        {id: 0, label: this.$t('Category')},
+        {id: 0, label: this.$t('Everyone')},
         {id: 1, label: this.$t('Reserved')},
         {id: 2, label: this.$t('Seen')}
       ],
       types: [
-        {id: 0, label: this.$t('Type')},
+        {id: 0, label: this.$t('Everyone')},
         {id: 1, label: this.$t('Live')},
         {id: 2, label: this.$t('Recorded')}
       ],
-      selected_type: {id: 0, label: this.$t('Type')},
-      selected_category: {id: 0, label: this.$t('Category')},
+      selected_type: {id: 0, label: this.$t('Everyone')},
+      selected_category: {id: 0, label: this.$t('Everyone')},
       ads_list: [],
       swiperOption: {
         spaceBetween: 30,
@@ -154,9 +156,9 @@ export default {
       let count = 0
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars) {
         if (this.selected_type_id === 0) {
-          count += this.reserved_webinars.length
+          count += this.reserved_webinars.filter((it) => this.selected_exhibitor_id === 0 ? true : it.talk.user_id === this.selected_exhibitor_id).length
         } else {
-          count += this.reserved_webinars.filter((it) => it.talk.live === this.selected_type_id).length
+          count += this.reserved_webinars.filter((it) => (it.talk.live === this.selected_type_id) && (this.selected_exhibitor_id === 0 ? true : it.talk.user_id === this.selected_exhibitor_id)).length
         }
       }
       return count
@@ -165,9 +167,9 @@ export default {
       let count = 0
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars) {
         if (this.selected_type_id === 0) {
-          count += this.past_webinars.length
+          count += this.past_webinars.filter((it) => this.selected_exhibitor_id === 0 ? true : it.talk.user_id === this.selected_exhibitor_id).length
         } else {
-          count += this.past_webinars.filter((it) => it.talk.live === this.selected_type_id).length
+          count += this.past_webinars.filter((it) => (it.talk.live === this.selected_type_id) && (this.selected_exhibitor_id === 0 ? true : it.talk.user_id === this.selected_exhibitor_id)).length
         }
       }
       return count
@@ -175,9 +177,9 @@ export default {
     filtered_reserved_webinars () {
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars) {
         if (this.selected_type_id === 0) {
-          return this.reserved_webinars
+          return this.reserved_webinars.filter((it) => this.selected_exhibitor_id === 0 ? true : it.talk.user_id === this.selected_exhibitor_id)
         } else {
-          return this.reserved_webinars.filter((it) => it.talk.live === this.selected_type_id)
+          return this.reserved_webinars.filter((it) => (it.talk.live === this.selected_type_id) && (this.selected_exhibitor_id === 0 ? true : it.talk.user_id === this.selected_exhibitor_id)) 
         }
       }
       return []
@@ -185,9 +187,10 @@ export default {
     filtered_past_webinars () {
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars) {
         if (this.selected_type_id === 0) {
-          return this.past_webinars
+          return this.past_webinars.filter((it) => this.selected_exhibitor_id === 0 ? true : it.talk.user_id === this.selected_exhibitor_id)
+
         } else {
-          return this.past_webinars.filter((it) => it.talk.live === this.selected_type_id)
+          return this.past_webinars.filter((it) => (it.talk.live === this.selected_type_id) && (this.selected_exhibitor_id === 0 ? true : it.talk.user_id === this.selected_exhibitor_id)) 
         }
       }
       return []
@@ -198,6 +201,10 @@ export default {
     },
     selected_type_id () {
       if (this.selected_type) return this.selected_type.id
+      return 0
+    },
+    selected_exhibitor_id () {
+      if (this.selected_exhibitor) return this.selected_exhibitor.id
       return 0
     }
   },
@@ -218,6 +225,20 @@ export default {
         const data = response.data
         this.reserved_webinars = data.reserved_webinars
         this.past_webinars = data.past_webinars
+        console.log(data)
+        for (const wc in this.reserved_webinars) {
+          // console.log(this.exhibitors, this.webinars[wc].user_id, this.exhibitors.lastIndexOf((ex) => ex.id === this.webinars[wc].user_id))
+          if (!this.exhibitors.find((ex) => ex.id === this.reserved_webinars[wc].talk.user_id)) {
+            this.exhibitors.push({id: this.reserved_webinars[wc].talk.user_id, label: this.reserved_webinars[wc].talk.exhibitor_name})
+          }
+        }
+        for (const wc in this.past_webinars) {
+          // console.log(this.exhibitors, this.webinars[wc].user_id, this.exhibitors.lastIndexOf((ex) => ex.id === this.webinars[wc].user_id))
+          if (!this.exhibitors.find((ex) => ex.id === this.past_webinars[wc].talk.user_id)) {
+            this.exhibitors.push({id: this.past_webinars[wc].talk.user_id, label: this.past_webinars[wc].talk.exhibitor_name})
+          }
+        }
+        console.log(this.exhibitors)
       })
     this.$http.post('/api/stand/ads/get')
       .then((res) => {

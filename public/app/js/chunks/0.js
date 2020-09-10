@@ -202,10 +202,10 @@ __webpack_require__.r(__webpack_exports__);
       this.$i18n.locale = locale;
       if (locale === 'en') return {
         flag: 'us',
-        lang: 'English'
+        lang: 'ENGLISH'
       };else if (locale === 'es') return {
         flag: 'es',
-        lang: 'Spanish'
+        lang: 'SPANISH'
       };
     }
   },
@@ -702,7 +702,7 @@ var render = function() {
                   alt: "en"
                 }
               }),
-              _vm._v("  English")
+              _vm._v("  ENGLISH")
             ]
           ),
           _vm._v(" "),
@@ -723,7 +723,7 @@ var render = function() {
                   alt: "pt"
                 }
               }),
-              _vm._v("  Spanish")
+              _vm._v("  SPANISH")
             ]
           )
         ],

@@ -45,10 +45,10 @@
                             
                         </div>
                     </div>
-                    <div class="text-right">
+                    <!-- <div class="text-right">
                         <vs-button class="yellow-light">{{$t('MyInterest')}}</vs-button>
                         <vs-button class="cyan-dark">{{$t('Register')}}</vs-button>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>
@@ -76,7 +76,6 @@ export default {
     this.$http.post('/api/home/webinar')
       .then((res) => {
         this.webinar_list = res.data.webinars
-        console.log(this.webinar_list)
       })
   }
 }

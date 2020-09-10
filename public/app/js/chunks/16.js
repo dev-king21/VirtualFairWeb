@@ -928,7 +928,7 @@ var render = function() {
                         attrs: { to: "/fair/chatting" }
                       },
                       [
-                        _c("span", [_vm._v("Networking")]),
+                        _c("span", [_vm._v("NETWORKING")]),
                         _vm._v(" "),
                         _c("feather-icon", {
                           staticClass: "ml-2 networking-badge",

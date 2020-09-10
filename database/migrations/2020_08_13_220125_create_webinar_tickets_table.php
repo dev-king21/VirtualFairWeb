@@ -17,6 +17,7 @@ class CreateWebinarTicketsTable extends Migration
             $table->id();
             $table->integer("user_id");
             $table->integer("talk_id");
+            $table->integer("seen")->default(0);
             $table->timestamps();
         });
     }

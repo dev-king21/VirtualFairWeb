@@ -135,9 +135,17 @@ __webpack_require__.r(__webpack_exports__);
       me: {},
       reserved_webinars: [],
       past_webinars: [],
+      exhibitors: [{
+        id: 0,
+        label: this.$t('Everyone')
+      }],
+      selected_exhibitor: {
+        id: 0,
+        label: this.$t('Everyone')
+      },
       categories: [{
         id: 0,
-        label: this.$t('Category')
+        label: this.$t('Everyone')
       }, {
         id: 1,
         label: this.$t('Reserved')
@@ -147,7 +155,7 @@ __webpack_require__.r(__webpack_exports__);
       }],
       types: [{
         id: 0,
-        label: this.$t('Type')
+        label: this.$t('Everyone')
       }, {
         id: 1,
         label: this.$t('Live')
@@ -157,11 +165,11 @@ __webpack_require__.r(__webpack_exports__);
       }],
       selected_type: {
         id: 0,
-        label: this.$t('Type')
+        label: this.$t('Everyone')
       },
       selected_category: {
         id: 0,
-        label: this.$t('Category')
+        label: this.$t('Everyone')
       },
       ads_list: [],
       swiperOption: {
@@ -194,10 +202,12 @@ __webpack_require__.r(__webpack_exports__);
 
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars) {
         if (this.selected_type_id === 0) {
-          count += this.reserved_webinars.length;
+          count += this.reserved_webinars.filter(function (it) {
+            return _this.selected_exhibitor_id === 0 ? true : it.talk.user_id === _this.selected_exhibitor_id;
+          }).length;
         } else {
           count += this.reserved_webinars.filter(function (it) {
-            return it.talk.live === _this.selected_type_id;
+            return it.talk.live === _this.selected_type_id && (_this.selected_exhibitor_id === 0 ? true : it.talk.user_id === _this.selected_exhibitor_id);
           }).length;
         }
       }
@@ -211,10 +221,12 @@ __webpack_require__.r(__webpack_exports__);
 
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars) {
         if (this.selected_type_id === 0) {
-          count += this.past_webinars.length;
+          count += this.past_webinars.filter(function (it) {
+            return _this2.selected_exhibitor_id === 0 ? true : it.talk.user_id === _this2.selected_exhibitor_id;
+          }).length;
         } else {
           count += this.past_webinars.filter(function (it) {
-            return it.talk.live === _this2.selected_type_id;
+            return it.talk.live === _this2.selected_type_id && (_this2.selected_exhibitor_id === 0 ? true : it.talk.user_id === _this2.selected_exhibitor_id);
           }).length;
         }
       }
@@ -226,10 +238,12 @@ __webpack_require__.r(__webpack_exports__);
 
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 1) && this.reserved_webinars) {
         if (this.selected_type_id === 0) {
-          return this.reserved_webinars;
+          return this.reserved_webinars.filter(function (it) {
+            return _this3.selected_exhibitor_id === 0 ? true : it.talk.user_id === _this3.selected_exhibitor_id;
+          });
         } else {
           return this.reserved_webinars.filter(function (it) {
-            return it.talk.live === _this3.selected_type_id;
+            return it.talk.live === _this3.selected_type_id && (_this3.selected_exhibitor_id === 0 ? true : it.talk.user_id === _this3.selected_exhibitor_id);
           });
         }
       }
@@ -241,10 +255,12 @@ __webpack_require__.r(__webpack_exports__);
 
       if ((this.selected_cat_id === 0 || this.selected_cat_id === 2) && this.past_webinars) {
         if (this.selected_type_id === 0) {
-          return this.past_webinars;
+          return this.past_webinars.filter(function (it) {
+            return _this4.selected_exhibitor_id === 0 ? true : it.talk.user_id === _this4.selected_exhibitor_id;
+          });
         } else {
           return this.past_webinars.filter(function (it) {
-            return it.talk.live === _this4.selected_type_id;
+            return it.talk.live === _this4.selected_type_id && (_this4.selected_exhibitor_id === 0 ? true : it.talk.user_id === _this4.selected_exhibitor_id);
           });
         }
       }
@@ -257,6 +273,10 @@ __webpack_require__.r(__webpack_exports__);
     },
     selected_type_id: function selected_type_id() {
       if (this.selected_type) return this.selected_type.id;
+      return 0;
+    },
+    selected_exhibitor_id: function selected_exhibitor_id() {
+      if (this.selected_exhibitor) return this.selected_exhibitor.id;
       return 0;
     }
   },
@@ -279,6 +299,41 @@ __webpack_require__.r(__webpack_exports__);
       var data = response.data;
       _this5.reserved_webinars = data.reserved_webinars;
       _this5.past_webinars = data.past_webinars;
+      console.log(data);
+
+      var _loop = function _loop(wc) {
+        // console.log(this.exhibitors, this.webinars[wc].user_id, this.exhibitors.lastIndexOf((ex) => ex.id === this.webinars[wc].user_id))
+        if (!_this5.exhibitors.find(function (ex) {
+          return ex.id === _this5.reserved_webinars[wc].talk.user_id;
+        })) {
+          _this5.exhibitors.push({
+            id: _this5.reserved_webinars[wc].talk.user_id,
+            label: _this5.reserved_webinars[wc].talk.exhibitor_name
+          });
+        }
+      };
+
+      for (var wc in _this5.reserved_webinars) {
+        _loop(wc);
+      }
+
+      var _loop2 = function _loop2(_wc) {
+        // console.log(this.exhibitors, this.webinars[wc].user_id, this.exhibitors.lastIndexOf((ex) => ex.id === this.webinars[wc].user_id))
+        if (!_this5.exhibitors.find(function (ex) {
+          return ex.id === _this5.past_webinars[_wc].talk.user_id;
+        })) {
+          _this5.exhibitors.push({
+            id: _this5.past_webinars[_wc].talk.user_id,
+            label: _this5.past_webinars[_wc].talk.exhibitor_name
+          });
+        }
+      };
+
+      for (var _wc in _this5.past_webinars) {
+        _loop2(_wc);
+      }
+
+      console.log(_this5.exhibitors);
     });
     this.$http.post('/api/stand/ads/get').then(function (res) {
       _this5.ads_list = res.data.ads;
@@ -441,12 +496,16 @@ var render = function() {
                           staticClass: "h6 ml-4 flex flex-row items-center ml-2"
                         },
                         [
-                          _c("span", { staticClass: "mr-6" }, [
-                            _vm._v(_vm._s(_vm.$t("Exhibitor")))
-                          ]),
-                          _vm._v(" "),
-                          _c("feather-icon", {
-                            attrs: { icon: "ChevronRightIcon" }
+                          _c("v-select", {
+                            staticStyle: { width: "160px" },
+                            attrs: { options: _vm.exhibitors },
+                            model: {
+                              value: _vm.selected_exhibitor,
+                              callback: function($$v) {
+                                _vm.selected_exhibitor = $$v
+                              },
+                              expression: "selected_exhibitor"
+                            }
                           })
                         ],
                         1
@@ -463,7 +522,9 @@ var render = function() {
                             [
                               _vm._v(
                                 _vm._s(_vm.$t("Reserved")) +
-                                  " Or " +
+                                  " " +
+                                  _vm._s(_vm.$t("Or")) +
+                                  " " +
                                   _vm._s(_vm.$t("Aggregates"))
                               )
                             ]
@@ -556,11 +617,9 @@ var render = function() {
                                         ),
                                         title: item.talk.title,
                                         expositor_name:
-                                          _vm.me.first_name +
-                                          " " +
-                                          _vm.me.last_name,
+                                          "" + item.talk.exhibitor_name,
                                         expositor_profession:
-                                          "" + _vm.me.address,
+                                          "" + item.talk.exhibitor_profession,
                                         background: item.talk.background,
                                         user_img: "" + _vm.me.avatar,
                                         live: item.talk.live === 1

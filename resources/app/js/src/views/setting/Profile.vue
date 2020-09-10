@@ -4,17 +4,18 @@
         <div class="flex w-full items-start justify-between setting-bg-img setting-profile-main">
             <nav-back-button></nav-back-button>
             <div class="flex flex-col setting-wrapper">
-                <div class="flex items-center bg-blue-dark pt-4 pb-2">
-                    <div class="flex items-center ml-8 cursor-pointer" @click="$router.push('/setting/profile')">
+                <div class="bg-blue-dark pt-4 pb-2">
+                    <div class="flex items-center cursor-pointer" @click="$router.push('/setting/profile')">
                         <img :src="`/fair_image/${user.avatar ? user.avatar : 'placeholder.png'}`" class="user-img responsive mx-4">
                         <div>
-                            <div class="user-name h4 text-white">{{$t('MyProfile')}}</div>
+                            <div class="user-name h4 text-white" style="width: 100px;">{{$t('MyProfile')}}</div>
+                        </div>
+                        <div class="flex flex-col items-center w-full" style="backgound">
+                          <h3 class="text-center text-white ">{{$t('Hello')}}! {{user.first_name}} {{user.last_name}}</h3>
+                          <h4 class="text-center text-white mt-2">{{$t('YouWant')}}</h4>
                         </div>
                     </div>
-                    <div class="flex flex-col items-center mx-24" style="backgound">
-                        <h3 class="text-center text-white ">{{$t('Hello')}}! {{user.first_name}} {{user.last_name}}</h3>
-                        <h4 class="text-center text-white mt-2">{{$t('YouWant')}}</h4>
-                    </div>
+                    
                 </div>
                 <div class="flex px-12" style="background: #ffffffDD; height: 100%;">
                     <div class="flex flex-col py-12 px-20 w-full items-center">
@@ -53,7 +54,11 @@
                                 <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-2">
                                     <!-- <vs-input class="w-4/5" color="success" label-placeholder="Seleccione la Region"/> -->
                                     <div class="ml-1">{{$t('SelectRegion')}}</div>
-                                    <v-select class="w-4/5" v-model="selected_region" @input="setUserRegion" :options="regions.filter((it) => it.country_id === selected_country.id)"/> 
+                                    <v-select class="w-4/5" v-model="selected_region" @input="setUserRegion" :options="regions.filter((it) => it.country_id === selected_country.id)"> 
+                                      <span slot="no-options" @click="$refs.select.open=false">
+                                        {{$t('NoMatchingOption')}}
+                                      </span>
+                                    </v-select>
                                 </div>
                                 <div class="vx-col w-full my-6">
                                     <div class="flex items-center">
@@ -73,11 +78,13 @@
                                 </div>
                                 <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-2">
                                     <vs-input class="w-4/5" type="password" color="success" name="Contrasena"
-                                        v-validate="'required'" data-vv-validate-on="blur" v-model="user.password" :label-placeholder="$t('SelectPassword')"/>
+                                        @blur="PasswordValidate" v-model="user.password" :label-placeholder="$t('SelectPassword')"/>
+                                        <span class="text-danger text-sm">{{ password_error}}</span>
                                 </div>
                                 <div class="vx-col w-full lg:w-1/2 md:w-1/2 sm:w-full xs:w-full mb-2">
                                     <vs-input class="w-4/5" type="password" color="success"  name="Apellido"
-                                        v-validate="'required'" data-vv-validate-on="blur" v-model="repeat_password" :label-placeholder="$t('ConfirmPassword')"/>
+                                        @blur="ConfirmValidate" v-model="repeat_password" :label-placeholder="$t('ConfirmPassword')"/>
+                                        <span class="text-danger text-sm">{{ confirm_error}}</span>
                                 </div>
                                 <div class="vx-col w-full text-center mt-base">
                                     <vs-button to="/setting/home" class="yellow-dark frm-button">
@@ -116,10 +123,23 @@ export default {
       user: {},
       repeat_password: '',
       selected_country: undefined,
-      selected_region: undefined
+      selected_region: undefined,
+      password_error: '',
+      confirm_error: ''
     }
   },
   methods: {
+    PasswordValidate () {
+      if (!this.user.password || this.user.password.length < 8 || !(/(?=.*[a-z])(?=.*[A-Z])/.test(this.user.password)))
+          this.password_error = this.$t('PasswordValidator')
+      else this.password_error = ''
+    },
+    ConfirmValidate () {
+      if(this.user.password !== this.repeat_password)
+        this.confirm_error = this.$t('ConfirmValidator')
+      else
+        this.confirm_error = ''
+    },
     saveProfile () {
       this.$loading.show(this)
       
@@ -236,7 +256,7 @@ export default {
     }   
   },
   created () {
-    
+    console.log("adfdsf")
     let userInfo = localStorage.getItem('userInfo')
     if (!userInfo) {
       return this.$router.push('/home')
@@ -250,6 +270,7 @@ export default {
       .then((response) => {
         this.$loading.hide(this)
         this.user = response.data  
+        console.log(this.user)
       })
       .catch((error) => console.log(error))
     this.$http.get('/api/country_info')
@@ -257,8 +278,15 @@ export default {
         if (res.data.countries) {
           this.countries = res.data.countries
           this.regions = res.data.regions
-          this.selected_country = {id: 0, label: this.$t('SelectCountry')}
-          this.selected_region = {id: 0, label: this.$t('SelectRegion')}
+          if(this.user) {
+            this.selected_country = this.user.country
+            this.selected_region = this.user.region
+          }
+          else {
+            this.selected_country = {id: 0, label: this.$t('SelectCountry')}
+            this.selected_region = {id: 0, label: this.$t('SelectRegion')}
+          }
+          
         }        
       })
   }

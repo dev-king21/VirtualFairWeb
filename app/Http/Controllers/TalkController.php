@@ -30,7 +30,7 @@ class TalkController extends Controller
     public function get_webinars(Request $request) {
         $res = array();
         $now = date("Y-m-d");
-        $res["webinars"] = Talk::with("user")->where("talk_date", "<=", $now)->get();
+        $res["webinars"] = Talk::with("user")->whereNotNull("background")->whereNotNull("start_time")->get();
         
         return response()->json($res);
     }

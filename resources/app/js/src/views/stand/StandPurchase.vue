@@ -2,7 +2,7 @@
     <div class="w-full">
         <app-header ></app-header>
         <div class="w-full purchase-main">
-            <bread-crumb text="pagar stand" />
+            <bread-crumb :text="`${$t('Pay')} stand`" />
             <div class="flex justify-center bg-white-grey">
                 <div class="w-1/2 my-6" style="max-width: 600px; text-center">
                     <div class="py-6 font-bold text-center bg-white h2">

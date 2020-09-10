@@ -483,6 +483,7 @@ var render = function() {
                         {
                           staticClass:
                             "text-white fs-12 bg-blue-dark cursor-pointer font-normal p-6",
+                          staticStyle: { "word-spacing": "0.3rem !important" },
                           on: {
                             click: function($event) {
                               return _vm.$router.push("/room/webinar")
