@@ -361,6 +361,14 @@ const router = new Router({
           }
         },
         {
+          path: '/setting/video-chart',
+          name: 'setting-video-chart',
+          component: () => import('@/views/setting/VideoChart.vue'),
+          meta: {
+            rule: 'editor'
+          }
+        },
+        {
           path: '/setting/stand/information',
           name: 'setting-stand-info',
           component: () => import('@/views/setting/Stand/StandInformation.vue'),

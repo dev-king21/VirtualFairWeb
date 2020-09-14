@@ -19,7 +19,7 @@
                 </div>
             </div>
             <div class="vx-col flex items-end justify-end w-1/4">
-                <vs-button class="blue-light event-btn p-big">
+                <vs-button class="blue-light event-btn p-big" @click="GoVideoChart()">
                     {{$t('GoAppointment')}}
                 </vs-button>
             </div>
@@ -44,7 +44,20 @@ export default {
     logo: {
       type: String, 
       required: true  
+    },
+    videoChart: {
+        type: Function,
+        required: true
+    },
+    id: {
+        type: Number,
+        required: true
     }
+  },
+  methods: {
+      GoVideoChart () {
+          this.videoChart(this.id)
+      }
   }
 }
 </script>

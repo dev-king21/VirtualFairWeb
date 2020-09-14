@@ -43,7 +43,9 @@
                                     :time="period(apo.start_time, apo.end_time)"
                                     :stand_no="`${apo.stand.id}`"
                                     :expositor_profession="apo.stand.user.address"
-                                    :logo="`${apo.stand.logo}`" />
+                                    :logo="`${apo.stand.logo}`"
+                                    :videoChart="videoChart"
+                                    :id="apo.user_id" />
                             </div>    
                         </div>
                     </div>
@@ -118,6 +120,9 @@ export default {
     }
   },
   methods: {
+    videoChart () {
+      this.$router.push('/setting/video-chart')
+    },
     period (start_time, end_time) {
       if (start_time === null || end_time === null) return ''
       const sd = this.$date.timeFormat(start_time)

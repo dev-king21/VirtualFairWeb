@@ -54,6 +54,19 @@ __webpack_require__.r(__webpack_exports__);
     logo: {
       type: String,
       required: true
+    },
+    videoChart: {
+      type: Function,
+      required: true
+    },
+    id: {
+      type: Number,
+      required: true
+    }
+  },
+  methods: {
+    GoVideoChart: function GoVideoChart() {
+      this.videoChart(this.id);
     }
   }
 });
@@ -79,6 +92,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(swiper_dist_css_swiper_min_css__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! vue-awesome-swiper */ "./node_modules/vue-awesome-swiper/dist/vue-awesome-swiper.js");
 /* harmony import */ var vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(vue_awesome_swiper__WEBPACK_IMPORTED_MODULE_7__);
+//
+//
 //
 //
 //
@@ -198,6 +213,9 @@ __webpack_require__.r(__webpack_exports__);
     };
   },
   methods: {
+    videoChart: function videoChart() {
+      this.$router.push('/setting/video-chart');
+    },
     period: function period(start_time, end_time) {
       if (start_time === null || end_time === null) return '';
       var sd = this.$date.timeFormat(start_time);
@@ -547,13 +565,24 @@ var render = function() {
         "div",
         { staticClass: "vx-col flex items-end justify-end w-1/4" },
         [
-          _c("vs-button", { staticClass: "blue-light event-btn p-big" }, [
-            _vm._v(
-              "\n                " +
-                _vm._s(_vm.$t("GoAppointment")) +
-                "\n            "
-            )
-          ])
+          _c(
+            "vs-button",
+            {
+              staticClass: "blue-light event-btn p-big",
+              on: {
+                click: function($event) {
+                  return _vm.GoVideoChart()
+                }
+              }
+            },
+            [
+              _vm._v(
+                "\n                " +
+                  _vm._s(_vm.$t("GoAppointment")) +
+                  "\n            "
+              )
+            ]
+          )
         ],
         1
       )
@@ -719,7 +748,9 @@ var render = function() {
                                     stand_no: "" + apo.stand.id,
                                     expositor_profession:
                                       apo.stand.user.address,
-                                    logo: "" + apo.stand.logo
+                                    logo: "" + apo.stand.logo,
+                                    videoChart: _vm.videoChart,
+                                    id: apo.user_id
                                   }
                                 })
                               ],

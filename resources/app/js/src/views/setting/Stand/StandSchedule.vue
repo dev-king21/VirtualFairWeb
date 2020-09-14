@@ -47,7 +47,7 @@
                                     </div>
                                 </div>
                                 <div class="flex mt-6 justify-end">
-                                    <vs-button class="cyan-dark">{{$t('Go to appointment')}}</vs-button>
+                                    <vs-button class="cyan-dark" >{{$t('GoAppointment')}}</vs-button>
                                 </div>
                             </div>
                         </div>
@@ -87,6 +87,7 @@ export default {
       const ed = this.$date.timeFormat(end_time)  
       return `${sd} - ${ed}`  
     },  
+   
     make_time_table () {
       const list = []
       for (let i = 0; i < 27; i++) {

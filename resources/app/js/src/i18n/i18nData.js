@@ -273,7 +273,7 @@ export default {
     Youtube: 'Para agregar su Youtube debe copiar el URL de su página',
     Size: 'TAMAÑO',
     Add: 'AGREGAR',
-    GoAppointment: 'IR A LA CITA',
+    GoAppointment: 'IR LA CITA',
     Market: 'PUESTO',
     SeeMore: 'VER MAS',
     TelephoneContact: 'CONTACTAR POR TELEFONO',
